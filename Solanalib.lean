@@ -1,3 +1,12 @@
+/-
+Copyright (c) 2026 Solana Foundation. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Solanalib Contributors
+-/
+import Solanalib.Primitives.Lamports
+import Solanalib.Account.Basic
+import Solanalib.Account.Transfer
+
 /-!
 # Solanalib
 
@@ -17,7 +26,3 @@ top of the core primitives and live in their own subdirectories.
 * `Solanalib.Primitives` — units and identifiers (`Lamports`, eventually `Pubkey`, `Slot`).
 * `Solanalib.Account`    — the account model and operations over it.
 -/
-
-import Solanalib.Primitives.Lamports
-import Solanalib.Account.Basic
-import Solanalib.Account.Transfer
