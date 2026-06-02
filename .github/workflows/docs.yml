@@ -3,6 +3,16 @@ name: Docs
 on:
   push:
     branches: [main]
+    # Only rebuild docs when something the rendered site actually depends on
+    # changes. Allowlist over blocklist: a new top-level file is skipped by
+    # default rather than silently triggering a 10-minute Docs build.
+    paths:
+      - "Solanalib/**"
+      - "Solanalib.lean"
+      - "lakefile.lean"
+      - "lake-manifest.json"
+      - "lean-toolchain"
+      - ".github/workflows/docs.yml"
   workflow_dispatch:
 
 permissions:
