@@ -1,0 +1,8 @@
+/.lake/
+/lake-packages/
+/build/
+.DS_Store
+*.olean
+
+# Claude Code local settings
+/.claude/
