@@ -15,6 +15,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Installs the toolchain pinned in lean-toolchain, fetches the Mathlib
-      # olean cache (since Mathlib is a require), and runs `lake build`.
-      - uses: leanprover/lean-action@v1
+      - name: Install elan (Lean toolchain manager)
+        run: |
+          set -euxo pipefail
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf \
+            | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Resolve dependencies
+        run: lake update
+
+      - name: Fetch pre-built Mathlib oleans
+        run: lake exe cache get
+
+      - name: Build library
+        run: lake build
