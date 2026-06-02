@@ -14,7 +14,13 @@ Dependencies:
 package solanalib where
   leanOptions := #[
     ⟨`pp.unicode.fun, true⟩,
-    ⟨`autoImplicit, false⟩
+    ⟨`autoImplicit, false⟩,
+    -- Mathlib's style linters, enabled as warnings (CI fails on any warning).
+    ⟨`weak.linter.style.longLine, true⟩,
+    ⟨`weak.linter.style.lambdaSyntax, true⟩,
+    ⟨`weak.linter.style.dollarSyntax, true⟩,
+    ⟨`weak.linter.style.cdotPattern, true⟩,
+    ⟨`weak.linter.style.commandStart, true⟩
   ]
   testDriver := "SolanalibTest"
 

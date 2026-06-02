@@ -10,6 +10,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Textual style checks
+        run: ./scripts/lint-style.sh
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -29,7 +37,19 @@ jobs:
         run: lake exe cache get
 
       - name: Build library
-        run: lake build
+        run: |
+          set -o pipefail
+          lake build 2>&1 | tee build.log
+
+      - name: Fail on warnings in Solanalib source
+        run: |
+          # Treat any Lean warning emitted for a Solanalib*/ source file as a
+          # build failure. External-library warnings (e.g. Mathlib's own
+          # deprecation messages) are ignored — they're not actionable here.
+          if grep -E '^warning: (Solanalib|SolanalibTest)/' build.log; then
+            echo "::error::lake build produced warnings on Solanalib source"
+            exit 1
+          fi
 
       - name: Run tests
         run: lake test
