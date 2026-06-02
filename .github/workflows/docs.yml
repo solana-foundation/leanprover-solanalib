@@ -20,12 +20,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Cache Lean toolchain + Lake deps + doc-gen4's own build output. Without
+      # this cache the doc-gen4 compile from source dominates the build at ~10
+      # minutes. Cache key includes the doc-gen4 commit (resolved into the
+      # manifest) so a doc-gen4 bump invalidates the cache.
+      - name: Cache Lean toolchain and Lake deps
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.elan
+            .lake/packages
+          key: lake-docs-${{ runner.os }}-${{ hashFiles('lake-manifest.json', 'lean-toolchain') }}
+          restore-keys: |
+            lake-docs-${{ runner.os }}-
+            lake-${{ runner.os }}-
+
       - name: Install elan (Lean toolchain manager)
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
           set -euxo pipefail
           curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf \
             | sh -s -- -y --default-toolchain none
-          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Add elan to PATH
+        run: echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
       # Pulls doc-gen4 into the manifest (gated behind -Kenv=dev in lakefile.lean).
       - name: Resolve dependencies with -Kenv=dev

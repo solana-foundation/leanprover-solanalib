@@ -23,13 +23,34 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # ~/.elan holds the Lean toolchain (~200MB); .lake/packages holds every
+      # dep clone + their pre-built oleans (~1GB with Mathlib). Both are stable
+      # against any change that doesn't touch lake-manifest.json or lean-
+      # toolchain, so cache aggressively keyed on those two files.
+      - name: Cache Lean toolchain and Lake deps
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.elan
+            .lake/packages
+          key: lake-${{ runner.os }}-${{ hashFiles('lake-manifest.json', 'lean-toolchain') }}
+          restore-keys: |
+            lake-${{ runner.os }}-
+
       - name: Install elan (Lean toolchain manager)
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
           set -euxo pipefail
           curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf \
             | sh -s -- -y --default-toolchain none
-          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
+      - name: Add elan to PATH
+        run: echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      # On a warm cache .lake/packages is already populated; lake just verifies
+      # the manifest matches and exits in ~1s. On a cold cache it does the full
+      # 100s+ clone of every dep.
       - name: Resolve dependencies
         run: lake update
 
