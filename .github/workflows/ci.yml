@@ -13,7 +13,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Textual style checks
         run: ./scripts/lint-style.sh
@@ -21,7 +21,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       # ~/.elan holds the Lean toolchain (~200MB); .lake/packages holds every
       # dep clone + their pre-built oleans (~1GB with Mathlib). Both are stable
@@ -29,7 +29,7 @@ jobs:
       # toolchain, so cache aggressively keyed on those two files.
       - name: Cache Lean toolchain and Lake deps
         id: cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.elan
