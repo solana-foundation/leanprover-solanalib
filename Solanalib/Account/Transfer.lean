@@ -41,7 +41,7 @@ theorem transfer_preserves_total
     (transfer src dst amount h).source.lamports
       + (transfer src dst amount h).destination.lamports
       = src.lamports + dst.lamports := by
-  simp [transfer, debit, credit]
+  simp only [transfer, debit, credit]
   omega
 
 end Solanalib.Account
