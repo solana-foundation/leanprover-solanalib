@@ -16,6 +16,7 @@ package solanalib where
     ⟨`pp.unicode.fun, true⟩,
     ⟨`autoImplicit, false⟩
   ]
+  testDriver := "SolanalibTest"
 
 require "leanprover-community" / "mathlib" @ git "v4.31.0-rc1"
 
@@ -25,3 +26,5 @@ require «doc-gen4» from git
 
 @[default_target]
 lean_lib Solanalib where
+
+lean_lib SolanalibTest where

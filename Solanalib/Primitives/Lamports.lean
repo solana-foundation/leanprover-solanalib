@@ -19,6 +19,12 @@ docs.
 The real on-chain representation is `u64`, so values exceeding `2 ^ 64 - 1`
 cannot occur on a live cluster; that bound belongs in a higher-level wrapper
 and is deliberately not enforced here.
+
+## Main definitions
+
+* `Lamports` — a parse-time notation for `Nat`. Use this name in signatures
+  to mark "this is a lamport count".
+* `Solanalib.Lamports.perSol` — the number of lamports in one SOL.
 -/
 
 namespace Solanalib.Lamports

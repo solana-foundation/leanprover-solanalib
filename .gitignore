@@ -1,8 +1,7 @@
 /.lake/
-/lake-packages/
 /build/
+.cache/
 .DS_Store
-*.olean
 
-# Claude Code local settings
-/.claude/
+# Claude Code per-machine settings (skills under .claude/skills/ ARE committed)
+/.claude/settings.local.json

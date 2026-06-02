@@ -13,12 +13,24 @@ is **conservation**: the total lamports across the two accounts is invariant.
 This is the Solana analogue of "conservation of mass" and is the first
 property any state-transition system over accounts should respect — every
 richer invariant in the library will eventually reduce, in part, to this one.
+
+## Main definitions
+
+* `Solanalib.Account.TransferResult` — the pair of accounts after a transfer.
+* `Solanalib.Account.transfer` — move lamports between two accounts, given a
+  sufficiency proof on the source.
+
+## Main statements
+
+* `transfer_preserves_total` — total lamports across `source` and `destination`
+  are preserved by `transfer`.
 -/
 
 namespace Solanalib.Account
 
 /-- The result of a `transfer`: the source and destination accounts after
 the lamports have moved. -/
+@[ext]
 structure TransferResult where
   /-- The source account, with `amount` lamports debited. -/
   source : Account
@@ -41,9 +53,7 @@ theorem transfer_preserves_total
     (transfer src dst amount h).source.lamports
       + (transfer src dst amount h).destination.lamports
       = src.lamports + dst.lamports := by
-  have eq_src : (transfer src dst amount h).source.lamports = src.lamports - amount := rfl
-  have eq_dst : (transfer src dst amount h).destination.lamports = dst.lamports + amount := rfl
-  rw [eq_src, eq_dst]
+  simp [transfer]
   omega
 
 end Solanalib.Account

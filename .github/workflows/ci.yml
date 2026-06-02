@@ -30,3 +30,6 @@ jobs:
 
       - name: Build library
         run: lake build
+
+      - name: Run tests
+        run: lake test

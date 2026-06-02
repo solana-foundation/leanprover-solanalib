@@ -1,0 +1,42 @@
+name: Update dependencies
+
+on:
+  schedule:
+    # First day of each month at 06:00 UTC
+    - cron: "0 6 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install elan (Lean toolchain manager)
+        run: |
+          set -euxo pipefail
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf \
+            | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Refresh dependency manifest
+        run: lake -Kenv=dev update
+
+      - name: Open PR if anything changed
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "chore(deps): refresh Lake manifest"
+          title: "chore(deps): refresh Lake manifest"
+          body: |
+            Automated monthly refresh of `lake-manifest.json` via `lake -Kenv=dev update`.
+
+            Review the diff for any breaking dep bumps (Lean toolchain pins, Mathlib version).
+            If the toolchain version changes, also bump `lean-toolchain` and the Mathlib `require`
+            rev in `lakefile.lean` to a matching tag, then re-run.
+          branch: chore/refresh-lake-manifest
+          delete-branch: true
+          labels: dependencies

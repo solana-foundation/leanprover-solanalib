@@ -15,6 +15,10 @@ setup:
 build:
     lake build
 
+# Run the regression tests in SolanalibTest/.
+test:
+    lake test
+
 # Build the documentation site to .lake/build/doc/.
 docs:
     lake -Kenv=dev build Solanalib:docs
