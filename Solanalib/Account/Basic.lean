@@ -62,13 +62,31 @@ so this operation can never silently underflow. -/
 def debit (a : Account) (amount : Lamports) (_h : amount ≤ a.lamports) : Account :=
   { a with lamports := a.lamports - amount }
 
-@[simp]
-theorem credit_lamports (a : Account) (amount : Lamports) :
-    (credit a amount).lamports = a.lamports + amount := rfl
+/-! Projection lemmas tagged `@[simp]` so `simp` can chain through any
+`.field` access on a credit/debit result. One per field per operation;
+the boilerplate is the price for fully automatic proofs downstream. -/
 
-@[simp]
-theorem debit_lamports (a : Account) (amount : Lamports) (h : amount ≤ a.lamports) :
-    (debit a amount h).lamports = a.lamports - amount := rfl
+@[simp] theorem credit_lamports (a : Account) (n : Lamports) :
+    (credit a n).lamports = a.lamports + n := rfl
+@[simp] theorem credit_owner (a : Account) (n : Lamports) :
+    (credit a n).owner = a.owner := rfl
+@[simp] theorem credit_data (a : Account) (n : Lamports) :
+    (credit a n).data = a.data := rfl
+@[simp] theorem credit_executable (a : Account) (n : Lamports) :
+    (credit a n).executable = a.executable := rfl
+@[simp] theorem credit_rentEpoch (a : Account) (n : Lamports) :
+    (credit a n).rentEpoch = a.rentEpoch := rfl
+
+@[simp] theorem debit_lamports (a : Account) (n : Lamports) (h : n ≤ a.lamports) :
+    (debit a n h).lamports = a.lamports - n := rfl
+@[simp] theorem debit_owner (a : Account) (n : Lamports) (h : n ≤ a.lamports) :
+    (debit a n h).owner = a.owner := rfl
+@[simp] theorem debit_data (a : Account) (n : Lamports) (h : n ≤ a.lamports) :
+    (debit a n h).data = a.data := rfl
+@[simp] theorem debit_executable (a : Account) (n : Lamports) (h : n ≤ a.lamports) :
+    (debit a n h).executable = a.executable := rfl
+@[simp] theorem debit_rentEpoch (a : Account) (n : Lamports) (h : n ≤ a.lamports) :
+    (debit a n h).rentEpoch = a.rentEpoch := rfl
 
 end Account
 end Solanalib

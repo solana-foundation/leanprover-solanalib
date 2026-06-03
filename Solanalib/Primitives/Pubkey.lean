@@ -35,9 +35,13 @@ deriving instance Repr for ByteArray
 namespace Solanalib
 
 /-- A Solana public key: a 32-byte identifier serving as an account
-address. Equality is byte-wise; `@[ext]` lets `ext` reduce a pubkey
-equation to a byte-array equation. -/
-@[ext]
+address.
+
+Intentionally **not** tagged `@[ext]`. Tagging it would cause the `ext`
+tactic on enclosing types (e.g. `Account`) to descend through the `owner`
+field into byte-array internals, generating goals about `ByteArray.data.size`
+that we don't want to discharge. If a future theorem genuinely needs
+byte-level pubkey extensionality, use `Pubkey.mk.injEq` directly. -/
 structure Pubkey where
   /-- The raw bytes of the pubkey. Conceptually length 32. -/
   bytes : ByteArray
