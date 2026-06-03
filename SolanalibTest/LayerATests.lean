@@ -9,10 +9,10 @@ import Solanalib.Instruction.Basic
 /-!
 # Layer A regression tests
 
-`example`-style assertions that pin the public API shape of Layer A
-(Pubkey, expanded Account, Instruction, AccountMeta). Each test
-passes iff it type-checks, so any breaking change to a public
-signature surfaces on the next CI build.
+`example`-style assertions pinning the public API of Layer A (Pubkey,
+expanded Account, Instruction, AccountMeta). Each test passes iff it
+type-checks, so any breaking change to a public signature surfaces on
+the next CI build.
 -/
 
 namespace SolanalibTest.LayerA
@@ -38,14 +38,19 @@ end Pubkey
 section Account
 
 /-- `credit` preserves the `owner` field. -/
-example (a : Account) (n : Lamports) : (Account.credit a n).owner = a.owner := rfl
+example (a : Account) (n : Lamports)
+    (h : a.lamports.toNat + n.toNat < UInt64.size) :
+    (Account.credit a n h).owner = a.owner := rfl
 
 /-- `credit` preserves the `data` field. -/
-example (a : Account) (n : Lamports) : (Account.credit a n).data = a.data := rfl
+example (a : Account) (n : Lamports)
+    (h : a.lamports.toNat + n.toNat < UInt64.size) :
+    (Account.credit a n h).data = a.data := rfl
 
 /-- `credit` preserves the `executable` field. -/
-example (a : Account) (n : Lamports) :
-    (Account.credit a n).executable = a.executable := rfl
+example (a : Account) (n : Lamports)
+    (h : a.lamports.toNat + n.toNat < UInt64.size) :
+    (Account.credit a n h).executable = a.executable := rfl
 
 /-- `debit` preserves the `owner` field. -/
 example (a : Account) (n : Lamports) (h : n ≤ a.lamports) :
