@@ -159,6 +159,21 @@ Key core lemmas to know (all in `Init.Data.UInt.Lemmas`):
 | `UInt64.toNat_lt` (`@[simp]`) | `n.toNat < 2 ^ 64` |
 | `Nat.mod_eq_of_lt` | `n < m → n % m = n` (used with `toNat_add` to drop the `%`) |
 
+### `.toNat` vs `.toBitVec` — which bridge?
+
+There are *two* possible bridges out of `UInt64`. Use the one that matches what you're proving:
+
+| Use | Bridge | Closer |
+|---|---|---|
+| Conservation / accounting / counting (Solanalib's core case) | `.toNat` | `omega` |
+| Wrap-aware arithmetic, ring algebra, explicit-overflow exploit proofs | `.toBitVec` | `bv_omega` |
+
+Mathlib's `Mathlib/Data/UInt` builds its `UInt64` algebra on `.toBitVec`, not `.toNat` — but it's scoped (`open scoped UInt64.CommRing`) precisely because the Mathlib authors flag that algebraic instances on `UInt64` *"interfere more with software-verification use-cases."*
+
+For Solanalib, `.toNat` is the default because **a conservation theorem stated at `.toNat` level needs fewer preconditions** than the equivalent UInt64-level statement: the natural sum doesn't need a "RHS-doesn't-overflow" side condition, since `Nat` is unbounded. Same trade as every comparable software-verification project (seL4, CompCert, Cardano Plutus).
+
+Don't pre-emptively `import Mathlib.Data.UInt` — it brings ~700 extra build jobs for the algebraic-instances chain we don't currently use. Import surgically when a specific theorem genuinely needs `bv_omega` or scoped ring tactics.
+
 ## Why not `abbrev`?
 
 The historical reason for using `notation` (over `abbrev`) was that **`omega` does not unfold `abbrev T : Type := Nat`.** Its preprocessor classifies hypotheses by their surface type and silently drops constraints over the alias, producing `omega could not prove the goal: No usable constraints found.`
