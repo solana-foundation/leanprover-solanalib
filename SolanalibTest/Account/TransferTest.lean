@@ -37,4 +37,27 @@ example (src dst : Account) (h : 100 ≤ src.lamports) :
       = src.lamports + dst.lamports :=
   transfer_preserves_total src dst 100 h
 
+/-- Crediting zero lamports leaves an account unchanged. -/
+theorem credit_zero (a : Account) : Account.credit a 0 = a := by
+  ext
+  simp
+
+/-- Debiting zero lamports leaves an account unchanged. -/
+theorem debit_zero (a : Account) (h : 0 ≤ a.lamports) : Account.debit a 0 h = a := by
+  ext
+  simp
+
+/-- Crediting then immediately debiting the same amount is a no-op. -/
+theorem credit_debit_cancel (a : Account) (m : Lamports)
+    (h : m ≤ (Account.credit a m).lamports) :
+    Account.debit (Account.credit a m) m h = a := by
+  ext
+  simp
+
+/-- After a transfer of `m` lamports, the source has exactly `m` fewer. -/
+theorem transfer_source_loses_m (src dst : Account) (m : Lamports) (h : m ≤ src.lamports) :
+    src.lamports - (transfer src dst m h).source.lamports = m := by
+  simp [transfer]
+  omega
+
 end SolanalibTest.Account
