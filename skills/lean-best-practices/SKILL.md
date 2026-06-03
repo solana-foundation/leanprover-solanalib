@@ -113,9 +113,55 @@ Inherited from Mathlib:
 
 Theorem-name pattern: `<conclusion>_of_<hypothesis>`. For projection-shape `@[simp]` lemmas, the form `<def>_<field>` is conventional (`credit_lamports`, `Account.mk_lamports`).
 
-## Type aliases: notation, not abbrev
+## Bounded types: bridging UInt64 to Nat for omega
 
-**`omega` in Lean 4.31.0-rc1 does not unfold `abbrev T : Type := Nat`.** Its preprocessor classifies hypotheses by their surface type and silently drops constraints over the alias, producing `omega could not prove the goal: No usable constraints found.`
+**`omega` in Lean 4.31.0-rc1 has very limited `UInt64` support.** Tests like `(a b : UInt64) (h : a ≤ b) : b - a + a = b := by omega` fail with `No usable constraints found`. The fix is to keep two parallel type-aliases and bridge between them with `.toNat`:
+
+```lean
+notation "Lamports"          => UInt64   -- strict on-chain shape
+notation "LamportsUnchecked" => Nat      -- for omega-style reasoning
+```
+
+The pattern in practice:
+
+```lean
+-- Define operations on UInt64 with explicit bounds proofs in the signature:
+def credit (a : Account) (amount : Lamports)
+    (h : a.lamports.toNat + amount.toNat < UInt64.size) : Account :=
+  { a with lamports := a.lamports + amount }
+
+-- Provide a `_toNat` bridge lemma that drops the result into Nat:
+theorem credit_lamports_toNat (a : Account) (n : Lamports)
+    (h : a.lamports.toNat + n.toNat < UInt64.size) :
+    (credit a n h).lamports.toNat = a.lamports.toNat + n.toNat := by
+  rw [credit_lamports, UInt64.toNat_add, Nat.mod_eq_of_lt h]
+```
+
+Then conservation-style proofs become:
+
+```lean
+theorem transfer_preserves_total ... :
+    (transfer ...).source.lamports.toNat + (transfer ...).destination.lamports.toNat
+      = src.lamports.toNat + dst.lamports.toNat := by
+  have h_under_nat := UInt64.le_iff_toNat_le.mp h_under   -- bridge UInt64 ≤ → Nat ≤
+  simp only [transfer]
+  rw [debit_lamports_toNat, credit_lamports_toNat]
+  omega                                                   -- now in Nat-land
+```
+
+Key core lemmas to know (all in `Init.Data.UInt.Lemmas`):
+
+| Lemma | What it gives |
+|---|---|
+| `UInt64.le_iff_toNat_le` | `a ≤ b ↔ a.toNat ≤ b.toNat` (proved by `rfl`) |
+| `UInt64.toNat_add` (`@[simp]`) | `(a + b).toNat = (a.toNat + b.toNat) % UInt64.size` |
+| `UInt64.toNat_sub_of_le` (`@[simp]`) | `b ≤ a → (a - b).toNat = a.toNat - b.toNat` |
+| `UInt64.toNat_lt` (`@[simp]`) | `n.toNat < 2 ^ 64` |
+| `Nat.mod_eq_of_lt` | `n < m → n % m = n` (used with `toNat_add` to drop the `%`) |
+
+## Why not `abbrev`?
+
+The historical reason for using `notation` (over `abbrev`) was that **`omega` does not unfold `abbrev T : Type := Nat`.** Its preprocessor classifies hypotheses by their surface type and silently drops constraints over the alias, producing `omega could not prove the goal: No usable constraints found.`
 
 Wrong:
 
