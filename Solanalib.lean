@@ -5,7 +5,9 @@ Authors: Solanalib Contributors
 -/
 import Solanalib.Account.Basic
 import Solanalib.Account.Transfer
+import Solanalib.Instruction.Basic
 import Solanalib.Primitives.Lamports
+import Solanalib.Primitives.Pubkey
 
 /-!
 # Solanalib

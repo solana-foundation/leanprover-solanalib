@@ -4,47 +4,61 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Solanalib Contributors
 -/
 import Solanalib.Primitives.Lamports
+import Solanalib.Primitives.Pubkey
 
 /-!
 # Accounts
 
-A minimal model of a Solana account. A real on-chain account also carries
-an owner program, a data blob, an executable flag, and a rent epoch; this
-initial model captures only the lamport balance so the first theorems can
-stay focused on value conservation. Richer fields will be added in
-subsequent modules without altering this signature.
+The Solana account model. An on-chain account carries five fields:
+its lamport balance, the program that owns it, an opaque data blob,
+an executable flag (true for programs, false for data accounts), and
+the rent epoch at which rent next comes due.
+
+This module models all five so downstream specs can reason about
+account ownership, data layout, and program-vs-data distinctions —
+not just balance arithmetic.
 
 ## Main definitions
 
-* `Solanalib.Account` — the account structure, currently a single `lamports` field.
-* `Solanalib.Account.credit` — add lamports to an account.
-* `Solanalib.Account.debit` — subtract lamports from an account, given a sufficiency proof.
+* `Solanalib.Account` — the five-field account record.
+* `Solanalib.Account.credit` / `Account.debit` — balance-only updates
+  that preserve every other field by construction.
 
 ## Main statements
 
-* `credit_lamports`, `debit_lamports` — `@[simp]` projection lemmas that expose
-  the lamports field after `credit`/`debit`, used by downstream proofs.
+* `credit_lamports`, `debit_lamports` — `@[simp]` projection lemmas.
+  Other-field projections (`credit_owner`, `credit_data`, …) reduce
+  to `rfl` automatically via Lean's structure-update semantics.
 -/
 
 namespace Solanalib
 
-/-- A simplified Solana account, tracking only its lamport balance. -/
+/-- A Solana account: lamport balance, owning program, data blob,
+executable flag, and rent epoch. -/
 @[ext]
 structure Account where
   /-- The number of lamports held by this account. -/
   lamports : Lamports
+  /-- The program that owns this account and is authorised to mutate it. -/
+  owner : Pubkey
+  /-- The opaque data the account holds. Interpretation is owner-specific. -/
+  data : ByteArray
+  /-- True if this account is a program (BPF binary), false for data. -/
+  executable : Bool
+  /-- Slot at which rent next becomes due. -/
+  rentEpoch : Nat
   deriving Repr, DecidableEq
 
 namespace Account
 
-/-- Credit `amount` lamports to an account, returning the updated account. -/
+/-- Credit `amount` lamports to an account; all other fields unchanged. -/
 def credit (a : Account) (amount : Lamports) : Account :=
   { a with lamports := a.lamports + amount }
 
-/-- Debit `amount` lamports from an account.
+/-- Debit `amount` lamports from an account; all other fields unchanged.
 
-Requires a proof `h` that the account holds at least `amount` lamports, so
-this operation can never silently underflow. -/
+Requires a proof `h` that the account holds at least `amount` lamports,
+so this operation can never silently underflow. -/
 def debit (a : Account) (amount : Lamports) (_h : amount ≤ a.lamports) : Account :=
   { a with lamports := a.lamports - amount }
 
