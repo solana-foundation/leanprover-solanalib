@@ -11,6 +11,8 @@ import SolanalibTest.Finance.LinearDecayTest
 import SolanalibTest.Finance.WithdrawalCapTest
 import SolanalibTest.LayerATests
 import SolanalibTest.Numeric.FractionTest
+import SolanalibTest.SBPF.DecoderTest
+import SolanalibTest.SBPF.MemoryTest
 import SolanalibTest.SBPF.SyntaxTest
 
 /-!
