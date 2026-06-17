@@ -47,7 +47,8 @@ Solanalib/
 ├── Init.lean              ← Mathlib linter activation (imports-only)
 ├── Primitives/            ← atomic on-chain types
 │   ├── Pubkey.lean             ByteArray wrapper, DecidableEq
-│   └── Lamports.lean           UInt64 (= Lamports) + Nat (= LamportsUnchecked)
+│   ├── Lamports.lean           UInt64 (= Lamports) + Nat (= LamportsUnchecked)
+│   └── Time.lean               UInt64 (= Timestamp) + Nat (= TimestampUnchecked)
 ├── Numeric/               ← fixed-point + arithmetic infrastructure
 │   └── Fraction.lean           Q68.60 (Nat-backed spec; Fraction128 future)
 ├── Account/               ← Solana account model
@@ -60,7 +61,8 @@ Solanalib/
     ├── Growth.lean                 GrowthCurve (windowed dual of WindowedDecay)
     ├── LinearDecay.lean            first concrete decay shape
     ├── MonotoneSequence.lean       unbounded monotone-up shape
-    └── CompoundInterest.lean       discrete compounding as a MonotoneSequence
+    ├── CompoundInterest.lean       discrete compounding as a MonotoneSequence
+    └── WithdrawalCap.lean          stateful sliding-window rate limiter
 ```
 
 The boundaries are deliberate:
@@ -164,7 +166,11 @@ Inventory of the verified surface as of this commit:
 | `Account.Transfer` | `TransferResult`, `transfer` | 1 (`transfer_preserves_total` — lamport conservation) |
 | `Instruction.Basic` | `Instruction`, `AccountMeta`, `Instruction.signers`, `.writables` | — |
 | `Finance.Decay` | `WindowedDecay`, `WindowedDecay.complementary` | 4 (inherited via composition) |
+| `Primitives.Time` | `Timestamp`, `TimestampUnchecked` | — |
 | `Finance.LinearDecay` | `LinearDecay.value`, `LinearDecay.toWindowedDecay` | 4 (P1–P3b: bounded, antitone, value-at-begin, value-at-end) |
+| `Finance.MonotoneSequence` | `MonotoneSequence` | 2 (`apply_zero_le`, `apply_le_of_le`) |
+| `Finance.CompoundInterest` | `balance`, `toMonotoneSequence` | 5 (boundary, unit-multiplier identity, one-step monotonicity, multi-step monotonicity, balance ≥ principal) |
+| `Finance.WithdrawalCap` | `WithdrawalCap`, `Invariant`, `IsElapsed`, `remaining`, `TryAdd`, `tryAdd` | 5 (`remaining_le_capacity`, `tryAdd_preserves_invariant`, `tryAdd_rejects_over_cap_midwindow` + `_at_reset`, `interval_reset_idempotent`) |
 | `Finance.Growth` | `GrowthCurve`, `WindowedDecay.toComplementaryGrowthCurve` | 4 (embedded; inherited at constructor time) |
 
 Coverage: **28 defs / 88 theorems = 3.14 thms/def**. See `scripts/coverage.sh`.
@@ -186,7 +192,8 @@ Listed roughly in order of how foundational they are; not all need to be done be
 
 ### Domain primitives
 
-- [ ] **`Finance.CompoundInterest`** — a windowed bounded model first (`CompoundedGrowth : GrowthCurve` instance), then the unbounded `MonotoneSequence`-style abstraction for open-ended accrual. The Taylor-series approximation used by lending protocols is the headline example.
+- [x] **`Finance.CompoundInterest`** — landed: discrete-compounding `balance` consuming a `Fraction` multiplier, bundled into a `MonotoneSequence`. Open follow-up: truncated-Taylor approximation matching Kamino's `approximate_compounded_interest`, plus an error-bound theorem connecting the approximation to the exact compounding modelled here.
+- [x] **`Finance.WithdrawalCap`** — landed: stateful sliding-window rate limiter; four theorems pin the bug classes auditors check for (saturation, invariant escape, off-by-one on the boundary, missed accumulator reset on interval rollover).
 - [ ] **`Finance.AMM`** — constant-product (`x · y = k`), then weighted pools, then concentrated liquidity. `IsAMM` becomes a `class` (this is one of the places where typeclass dispatch genuinely earns its keep — multiple instance types share an interface).
 - [ ] **`Finance.Lending`** — collateralisation-ratio invariants, liquidation conditions, interest accrual.
 - [ ] **`Primitives.Slot`, `Primitives.Epoch`** — `UInt64`-backed clock primitives.

@@ -10,10 +10,12 @@ import Solanalib.Finance.Decay
 import Solanalib.Finance.Growth
 import Solanalib.Finance.LinearDecay
 import Solanalib.Finance.MonotoneSequence
+import Solanalib.Finance.WithdrawalCap
 import Solanalib.Instruction.Basic
 import Solanalib.Numeric.Fraction
 import Solanalib.Primitives.Lamports
 import Solanalib.Primitives.Pubkey
+import Solanalib.Primitives.Time
 
 /-!
 # Solanalib

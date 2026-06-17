@@ -8,6 +8,7 @@ import SolanalibTest.Finance.CompoundInterestTest
 import SolanalibTest.Finance.DecayTest
 import SolanalibTest.Finance.GrowthTest
 import SolanalibTest.Finance.LinearDecayTest
+import SolanalibTest.Finance.WithdrawalCapTest
 import SolanalibTest.LayerATests
 import SolanalibTest.Numeric.FractionTest
 
