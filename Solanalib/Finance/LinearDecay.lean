@@ -3,7 +3,7 @@ Copyright (c) 2026 Solana Foundation. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Solanalib Contributors
 -/
-import Solanalib.Init
+import Solanalib.Finance.Decay
 
 /-!
 # Linear decay
@@ -129,4 +129,41 @@ theorem value_at_end (tBegin tEnd peak : Nat) :
   rename_i _ h_not_le
   exact absurd (Nat.le_refl tEnd) h_not_le
 
+/-! ## `Decay` instance
+
+`LinearDecay.Params` bundles the three configuration values of a linear
+decay (window bounds + peak) into a single record so it can carry a
+`Decay` typeclass instance. Every theorem proved generically about
+`[Decay T]` then applies to `LinearDecay.Params` — for free. -/
+
+/-- The configuration of a linear decay: window bounds and peak. -/
+structure Params where
+  /-- Start of the decay window. -/
+  tBegin : Nat
+  /-- End of the decay window (exclusive). -/
+  tEnd : Nat
+  /-- Peak value at the start of the window. -/
+  peak : Nat
+  deriving Repr, DecidableEq
+
 end Solanalib.Finance.LinearDecay
+
+namespace Solanalib.Finance
+
+/-- Linear decay realises the abstract `Decay` interface. Each method
+delegates to the corresponding `LinearDecay.value`-level theorem. -/
+instance : Decay LinearDecay.Params where
+  apply  := fun p t => LinearDecay.value p.tBegin t p.tEnd p.peak
+  tBegin := LinearDecay.Params.tBegin
+  tEnd   := LinearDecay.Params.tEnd
+  peak   := LinearDecay.Params.peak
+  bounded := fun p t =>
+    LinearDecay.value_le_peak p.tBegin t p.tEnd p.peak
+  at_begin := fun p h =>
+    LinearDecay.value_at_begin p.tBegin p.tEnd p.peak h
+  at_end := fun p =>
+    LinearDecay.value_at_end p.tBegin p.tEnd p.peak
+  antitone_in_window := fun p {_ _} h_begin h_order h_end =>
+    LinearDecay.value_antitone_in_window p.tBegin p.tEnd p.peak h_begin h_order h_end
+
+end Solanalib.Finance

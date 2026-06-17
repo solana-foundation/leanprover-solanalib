@@ -5,6 +5,7 @@ Authors: Solanalib Contributors
 -/
 import Solanalib.Account.Basic
 import Solanalib.Account.Transfer
+import Solanalib.Finance.Decay
 import Solanalib.Finance.LinearDecay
 import Solanalib.Instruction.Basic
 import Solanalib.Primitives.Lamports
