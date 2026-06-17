@@ -13,8 +13,10 @@ import SolanalibTest.LayerATests
 import SolanalibTest.Numeric.FractionTest
 import SolanalibTest.SBPF.DecoderTest
 import SolanalibTest.SBPF.InterpreterTest
+import SolanalibTest.SBPF.LiftTest
 import SolanalibTest.SBPF.MemoryTest
 import SolanalibTest.SBPF.SyntaxTest
+import SolanalibTest.SBPF.VerifierTest
 
 /-!
 # SolanalibTest

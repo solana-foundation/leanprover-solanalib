@@ -23,6 +23,7 @@ import Solanalib.SBPF.Memory
 import Solanalib.SBPF.State
 import Solanalib.SBPF.Syntax
 import Solanalib.SBPF.Value
+import Solanalib.SBPF.Verifier
 
 /-!
 # Solanalib
