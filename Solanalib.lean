@@ -16,6 +16,9 @@ import Solanalib.Numeric.Fraction
 import Solanalib.Primitives.Lamports
 import Solanalib.Primitives.Pubkey
 import Solanalib.Primitives.Time
+import Solanalib.SBPF.CommType
+import Solanalib.SBPF.Memory
+import Solanalib.SBPF.Syntax
 
 /-!
 # Solanalib
