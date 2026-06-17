@@ -12,6 +12,7 @@ import SolanalibTest.Finance.WithdrawalCapTest
 import SolanalibTest.LayerATests
 import SolanalibTest.Numeric.FractionTest
 import SolanalibTest.SBPF.DecoderTest
+import SolanalibTest.SBPF.InterpreterTest
 import SolanalibTest.SBPF.MemoryTest
 import SolanalibTest.SBPF.SyntaxTest
 

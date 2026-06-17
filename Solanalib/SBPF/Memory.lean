@@ -47,6 +47,15 @@ def vlongOfMemoryChunk : MemoryChunk → Val
   | .m32 => .vlong 32
   | .m64 => .vlong 64
 
+/-- Tag a 64-bit word as the value of the given access width, truncating to the
+width (`memory_chunk_value_of_u64`). -/
+def memoryChunkValueOfU64 (mc : MemoryChunk) (v : U64) : Val :=
+  match mc with
+  | .m8 => .vbyte (v.setWidth 8)
+  | .m16 => .vshort (v.setWidth 16)
+  | .m32 => .vint (v.setWidth 32)
+  | .m64 => .vlong v
+
 /-- Read a value of the given width at `addr`, little-endian. Yields `none` if
 any byte in the accessed range is unmapped. -/
 def loadv (mc : MemoryChunk) (m : Mem) (addr : U64) : Option Val :=

@@ -18,7 +18,9 @@ import Solanalib.Primitives.Pubkey
 import Solanalib.Primitives.Time
 import Solanalib.SBPF.CommType
 import Solanalib.SBPF.Decoder
+import Solanalib.SBPF.Interpreter
 import Solanalib.SBPF.Memory
+import Solanalib.SBPF.State
 import Solanalib.SBPF.Syntax
 import Solanalib.SBPF.Value
 
