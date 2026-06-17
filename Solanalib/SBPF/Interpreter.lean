@@ -291,7 +291,7 @@ def pushFrame (rs : RegMap) (ss : StackState) (isV1 : Bool) (pc : U64)
     (some { callDepth := depth', stackPointer := sp', callFrames := frames' },
      setReg rs .br10 sp')
 
-/-- Call the function whose address is in a register (`eval_call_reg`). -/
+/-- Call the function whose address is in a register (`eval_callReg`). -/
 def evalCallReg (src : BpfIReg) (imm : U32) (rs : RegMap) (ss : StackState)
     (isV1 : Bool) (pc : U64) (gaps : Bool) (programVmAddr : U64) :
     Option (U64 × RegMap × StackState) :=
@@ -306,7 +306,7 @@ def evalCallReg (src : BpfIReg) (imm : U32) (rs : RegMap) (ss : StackState)
         else some ((pc1 - programVmAddr) / BitVec.ofNat 64 insnSize, rs', ss')
 
 /-- Call the function identified by an immediate, via the registry when the
-source register is `BR0` (`eval_call_imm`). -/
+source register is `BR0` (`eval_callImm`). -/
 def evalCallImm (pc : U64) (src : BpfIReg) (imm : U32) (rs : RegMap)
     (ss : StackState) (isV1 : Bool) (fm : FuncMap) (gaps : Bool) :
     Option (U64 × RegMap × StackState) :=
@@ -357,15 +357,15 @@ def step (pc : U64) (ins : BpfInstruction) (rs : RegMap) (m : Mem) (ss : StackSt
   | .alu64 bop d sop => stepRegOutcome (evalAlu64 bop d sop rs isV1) pc m ss sv fm curCu remainCu
   | .le dst imm => stepRegOutcome (evalLe dst imm rs isV1) pc m ss sv fm curCu remainCu
   | .be dst imm => stepRegOutcome (evalBe dst imm rs isV1) pc m ss sv fm curCu remainCu
-  | .neg32_reg dst => stepRegOutcome (evalNeg32 dst rs isV1) pc m ss sv fm curCu remainCu
-  | .neg64_reg dst => stepRegOutcome (evalNeg64 dst rs isV1) pc m ss sv fm curCu remainCu
-  | .hor64_imm dst imm => stepRegOutcome (evalHor64 dst imm rs isV1) pc m ss sv fm curCu remainCu
+  | .neg32Reg dst => stepRegOutcome (evalNeg32 dst rs isV1) pc m ss sv fm curCu remainCu
+  | .neg64Reg dst => stepRegOutcome (evalNeg64 dst rs isV1) pc m ss sv fm curCu remainCu
+  | .hor64Imm dst imm => stepRegOutcome (evalHor64 dst imm rs isV1) pc m ss sv fm curCu remainCu
   | .pqr pop dst sop => stepRegOutcome (evalPqr32 pop dst sop rs isV1) pc m ss sv fm curCu remainCu
   | .pqr64 pop dst sop =>
       stepRegOutcome (evalPqr64 pop dst sop rs isV1) pc m ss sv fm curCu remainCu
   | .pqr2 pop dst sop =>
       stepRegOutcome (evalPqr64_2 pop dst sop rs isV1) pc m ss sv fm curCu remainCu
-  | .add_stk i =>
+  | .addStk i =>
       match evalAdd64ImmR10 i ss isV1 with
       | none => .err
       | some ss' => .ok (pc + 1) rs m ss' sv fm (curCu + 1) remainCu
@@ -377,18 +377,18 @@ def step (pc : U64) (ins : BpfInstruction) (rs : RegMap) (m : Mem) (ss : StackSt
       match evalStore chk dst sop off rs m with
       | none => .eflag
       | some m' => .ok (pc + 1) rs m' ss sv fm (curCu + 1) remainCu
-  | .ld_imm dst imm1 imm2 =>
+  | .ldImm dst imm1 imm2 =>
       .ok (pc + 2) (evalLoadImm dst imm1 imm2 rs) m ss sv fm (curCu + 1) remainCu
   | .ja off => .ok (pc + off.signExtend 64 + 1) rs m ss sv fm (curCu + 1) remainCu
   | .jump cond r sop off =>
       if evalJmp cond r sop rs then
         .ok (pc + off.signExtend 64 + 1) rs m ss sv fm (curCu + 1) remainCu
       else .ok (pc + 1) rs m ss sv fm (curCu + 1) remainCu
-  | .call_imm src imm =>
+  | .callImm src imm =>
       match evalCallImm pc src imm rs ss isV1 fm gaps with
       | none => .eflag
       | some (pc', rs', ss') => .ok pc' rs' m ss' sv fm (curCu + 1) remainCu
-  | .call_reg src imm =>
+  | .callReg src imm =>
       match evalCallReg src imm rs ss isV1 pc gaps programVmAddr with
       | none => .eflag
       | some (pc', rs', ss') => .ok pc' rs' m ss' sv fm (curCu + 1) remainCu

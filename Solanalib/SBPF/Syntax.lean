@@ -82,17 +82,17 @@ inductive SBPFV
 where the semantics requires it. -/
 inductive BpfInstruction
   /-- Load a 64-bit immediate (assembled from two 32-bit halves). -/
-  | ld_imm (dst : BpfIReg) (immLo immHi : U32)
+  | ldImm (dst : BpfIReg) (immLo immHi : U32)
   /-- Load from memory: `dst := mem[src + off]` at width `chunk`. -/
   | ldx (chunk : MemoryChunk) (dst src : BpfIReg) (off : U16)
   /-- Store to memory: `mem[dst + off] := src` at width `chunk`. -/
   | st (chunk : MemoryChunk) (dst : BpfIReg) (src : SndOp) (off : U16)
   /-- Add an immediate to the stack pointer. -/
-  | add_stk (imm : U32)
+  | addStk (imm : U32)
   /-- 32-bit ALU operation. -/
   | alu (op : Binop) (dst : BpfIReg) (src : SndOp)
   /-- 32-bit register negation. -/
-  | neg32_reg (dst : BpfIReg)
+  | neg32Reg (dst : BpfIReg)
   /-- Little-endian byte swap. -/
   | le (dst : BpfIReg) (imm : U32)
   /-- Big-endian byte swap. -/
@@ -100,9 +100,9 @@ inductive BpfInstruction
   /-- 64-bit ALU operation. -/
   | alu64 (op : Binop) (dst : BpfIReg) (src : SndOp)
   /-- 64-bit register negation. -/
-  | neg64_reg (dst : BpfIReg)
+  | neg64Reg (dst : BpfIReg)
   /-- OR a high-order 32-bit immediate into `dst` (`v2` only). -/
-  | hor64_imm (dst : BpfIReg) (imm : U32)
+  | hor64Imm (dst : BpfIReg) (imm : U32)
   /-- 32-bit product/quotient/remainder operation. -/
   | pqr (op : Pqrop) (dst : BpfIReg) (src : SndOp)
   /-- 64-bit product/quotient/remainder operation. -/
@@ -114,9 +114,9 @@ inductive BpfInstruction
   /-- Conditional jump by `off` when `cond` holds between `r` and `src`. -/
   | jump (cond : Condition) (r : BpfIReg) (src : SndOp) (off : U16)
   /-- Call the function whose address is held in register `src`. -/
-  | call_reg (src : BpfIReg) (imm : U32)
+  | callReg (src : BpfIReg) (imm : U32)
   /-- Call the function identified by immediate `imm`. -/
-  | call_imm (src : BpfIReg) (imm : U32)
+  | callImm (src : BpfIReg) (imm : U32)
   /-- Return from the current frame, or halt at call depth 0. -/
   | exit
   deriving DecidableEq, Repr

@@ -29,7 +29,7 @@ def insnSize : Nat := 8
 except the `0x07` stack-pointer form which uses the sentinel destination `11`. -/
 def decode (opc : U8) (dv sv : U4) (off : U16) (imm : U32) : Option BpfInstruction :=
   if opc = 0x07 then
-    if dv = 11 then some (.add_stk imm)
+    if dv = 11 then some (.addStk imm)
     else match BpfIReg.ofU4 dv with
       | none => none
       | some dst => some (.alu64 .add dst (.imm imm))
@@ -66,7 +66,7 @@ def decode (opc : U8) (dv sv : U4) (off : U16) (imm : U32) : Option BpfInstructi
       else if opc = 0x6c then some (.alu .lsh dst (.reg src))
       else if opc = 0x74 then some (.alu .rsh dst (.imm imm))
       else if opc = 0x7c then some (.alu .rsh dst (.reg src))
-      else if opc = 0x84 then some (.neg32_reg dst)
+      else if opc = 0x84 then some (.neg32Reg dst)
       else if opc = 0x94 then some (.alu .mod dst (.imm imm))
       else if opc = 0x9c then some (.alu .mod dst (.reg src))
       else if opc = 0xa4 then some (.alu .xor dst (.imm imm))
@@ -93,7 +93,7 @@ def decode (opc : U8) (dv sv : U4) (off : U16) (imm : U32) : Option BpfInstructi
       else if opc = 0x6f then some (.alu64 .lsh dst (.reg src))
       else if opc = 0x77 then some (.alu64 .rsh dst (.imm imm))
       else if opc = 0x7f then some (.alu64 .rsh dst (.reg src))
-      else if opc = 0x87 then some (.neg64_reg dst)
+      else if opc = 0x87 then some (.neg64Reg dst)
       else if opc = 0x97 then some (.alu64 .mod dst (.imm imm))
       else if opc = 0x9f then some (.alu64 .mod dst (.reg src))
       else if opc = 0xa7 then some (.alu64 .xor dst (.imm imm))
@@ -102,7 +102,7 @@ def decode (opc : U8) (dv sv : U4) (off : U16) (imm : U32) : Option BpfInstructi
       else if opc = 0xbf then some (.alu64 .mov dst (.reg src))
       else if opc = 0xc7 then some (.alu64 .arsh dst (.imm imm))
       else if opc = 0xcf then some (.alu64 .arsh dst (.reg src))
-      else if opc = 0xf7 then some (.hor64_imm dst imm)
+      else if opc = 0xf7 then some (.hor64Imm dst imm)
       -- Product / quotient / remainder
       else if opc = 0x86 then some (.pqr .lmul dst (.imm imm))
       else if opc = 0x8e then some (.pqr .lmul dst (.reg src))
@@ -153,8 +153,8 @@ def decode (opc : U8) (dv sv : U4) (off : U16) (imm : U32) : Option BpfInstructi
       else if opc = 0xd5 then some (.jump .sLe dst (.imm imm) off)
       else if opc = 0xdd then some (.jump .sLe dst (.reg src) off)
       -- Calls / exit
-      else if opc = 0x8d then some (.call_reg src imm)
-      else if opc = 0x85 then some (.call_imm src imm)
+      else if opc = 0x8d then some (.callReg src imm)
+      else if opc = 0x85 then some (.callImm src imm)
       else if opc = 0x95 then some .exit
       else none
     | _, _ => none
@@ -186,7 +186,7 @@ def findInstr (pc : Nat) (l : BpfBin) : Option BpfInstruction :=
       if l.length < npc + 16 then none
       else
         let imm2 := le32 l (npc + 12)
-        (BpfIReg.ofU4 dst).map fun dstR => .ld_imm dstR imm imm2
+        (BpfIReg.ofU4 dst).map fun dstR => .ldImm dstR imm imm2
     else decode op dst src off imm
 
 end Solanalib.SBPF

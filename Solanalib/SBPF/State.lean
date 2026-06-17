@@ -59,18 +59,26 @@ def initRegMap : RegMap := fun _ => 0
 
 /-- A saved call frame: the caller's scratch registers, frame pointer, and the
 program counter to return to (`vm_state.thy`'s `CallFrame`). -/
+@[ext]
 structure CallFrame where
+  /-- The caller-saved registers `BR6`–`BR9`, in order. -/
   callerSavedRegisters : List U64
+  /-- The caller's frame pointer (`BR10`). -/
   framePointer : U64
+  /-- The program counter to resume at on return. -/
   targetPc : U64
-  deriving Repr
+  deriving Repr, DecidableEq
 
 /-- The call-frame stack: current depth, stack pointer, and saved frames. -/
+@[ext]
 structure StackState where
+  /-- The current nesting depth of function calls. -/
   callDepth : U64
+  /-- The current stack pointer. -/
   stackPointer : U64
+  /-- The saved call frames, innermost last. -/
   callFrames : List CallFrame
-  deriving Repr
+  deriving Repr, DecidableEq
 
 /-- The initial stack: depth 0, stack pointer at the top of the region, and
 `maxCallDepth` default frames preallocated (`init_stack_state`). -/
