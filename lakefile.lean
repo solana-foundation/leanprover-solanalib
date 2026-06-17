@@ -24,7 +24,7 @@ package solanalib where
   ]
   testDriver := "SolanalibTest"
 
-require "leanprover-community" / "mathlib" @ git "v4.31.0-rc1"
+require "leanprover-community" / "mathlib" @ git "v4.31.0"
 
 meta if get_config? env = some "dev" then
 require «doc-gen4» from git
