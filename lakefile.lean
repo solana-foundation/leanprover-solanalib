@@ -34,3 +34,8 @@ require «doc-gen4» from git
 lean_lib Solanalib where
 
 lean_lib SolanalibTest where
+
+/-- Executable front end to the Lean sBPF semantics, used by the differential
+testing harness (`spinoza validate`). -/
+lean_exe «sbpf-oracle» where
+  root := `Oracle
