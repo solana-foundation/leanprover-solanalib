@@ -7,6 +7,7 @@ import SolanalibTest.Account.TransferTest
 import SolanalibTest.Finance.DecayTest
 import SolanalibTest.Finance.LinearDecayTest
 import SolanalibTest.LayerATests
+import SolanalibTest.Numeric.FractionTest
 
 /-!
 # SolanalibTest

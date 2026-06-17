@@ -8,6 +8,7 @@ import Solanalib.Account.Transfer
 import Solanalib.Finance.Decay
 import Solanalib.Finance.LinearDecay
 import Solanalib.Instruction.Basic
+import Solanalib.Numeric.Fraction
 import Solanalib.Primitives.Lamports
 import Solanalib.Primitives.Pubkey
 
