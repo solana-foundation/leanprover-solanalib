@@ -3,9 +3,9 @@
 [![CI](https://github.com/solana-foundation/leanprover-solanalib/actions/workflows/ci.yml/badge.svg)](https://github.com/solana-foundation/leanprover-solanalib/actions/workflows/ci.yml)
 [![Docs](https://github.com/solana-foundation/leanprover-solanalib/actions/workflows/docs.yml/badge.svg)](https://solana-foundation.github.io/leanprover-solanalib/)
 
-**A [Lean 4](https://lean-lang.org/) library of formal models and verified theorems for Solana programs.
+**A [Lean 4](https://lean-lang.org/) library of formal models and verified theorems for Solana programs.** 
 
-** Status: **purely experimental — exploring framework shape.**
+Status: **purely experimental — exploring framework shape.**
 
 The ambition is to be for Solana what [Mathlib](https://leanprover-community.github.io/mathlib4_docs/) is for mathematics — a shared, well-documented foundation that downstream verification work can build on without redefining the same primitives every time. Programs written in [Anchor](https://www.anchor-lang.com/), [Pinocchio](https://github.com/anza-xyz/pinocchio), or hand-rolled, are intended to be modelled against `Solanalib`'s formal primitives and proven correct.
 
@@ -55,10 +55,12 @@ Solanalib/
 │   └── Transfer.lean           Lamport transfer + conservation theorem
 ├── Instruction/           ← Solana instruction model
 │   └── Basic.lean              Instruction + AccountMeta + signers/writables
-└── Finance/               ← domain abstractions for DeFi shapes
-    ├── Decay.lean              WindowedDecay bundled structure
-    ├── Growth.lean             GrowthCurve (dual of WindowedDecay)
-    └── LinearDecay.lean        first concrete decay shape
+└── Finance/                  ← domain abstractions for DeFi shapes
+    ├── Decay.lean                  WindowedDecay bundled structure
+    ├── Growth.lean                 GrowthCurve (windowed dual of WindowedDecay)
+    ├── LinearDecay.lean            first concrete decay shape
+    ├── MonotoneSequence.lean       unbounded monotone-up shape
+    └── CompoundInterest.lean       discrete compounding as a MonotoneSequence
 ```
 
 The boundaries are deliberate:

@@ -4,6 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Solanalib Contributors
 -/
 import SolanalibTest.Account.TransferTest
+import SolanalibTest.Finance.CompoundInterestTest
 import SolanalibTest.Finance.DecayTest
 import SolanalibTest.Finance.GrowthTest
 import SolanalibTest.Finance.LinearDecayTest
