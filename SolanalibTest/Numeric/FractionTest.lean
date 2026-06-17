@@ -10,21 +10,21 @@ import Solanalib.Numeric.Fraction
 
 Pins the spec-layer behaviour of the Q68.60 fixed-point shape:
 constants, basic arithmetic, integer round-trip via `fromNat` /
-`toFloor`, and the five named monoid theorems.
+`toFloor`, the monoid theorems, ordering, and `sub`/`add` cancellation.
 -/
 
 namespace SolanalibTest.Numeric.Fraction
 
 open Solanalib
 
-/-- `zero` and `one` are distinct (the additive and multiplicative units
-are not the same). -/
+/-! ## Constants and conversions -/
+
+/-- `zero` and `one` are distinct. -/
 example : Fraction.zero ≠ Fraction.one := by decide
 
-/-- `fromNat 5 |>.toFloor = 5` — integers round-trip cleanly. -/
-example : (Fraction.fromNat 5).toFloor = 5 := by
-  unfold Fraction.fromNat Fraction.toFloor
-  exact Nat.mul_div_cancel _ Fraction.scale_pos
+/-- `fromNat n |>.toFloor = n` — integers round-trip cleanly. -/
+example (n : Nat) : (Fraction.fromNat n).toFloor = n :=
+  Fraction.toFloor_fromNat n
 
 /-- `fromNat 0 = zero`. -/
 example : Fraction.fromNat 0 = Fraction.zero := by
@@ -38,7 +38,8 @@ example : Fraction.fromNat 1 = Fraction.one := by
   show 1 * Fraction.scale = Fraction.scale
   exact Nat.one_mul _
 
-/-- The five monoid theorems instantiate concretely. -/
+/-! ## Monoid theorems -/
+
 example : Fraction.zero.add Fraction.one = Fraction.one :=
   Fraction.zero_add Fraction.one
 
@@ -53,5 +54,30 @@ example : Fraction.one.mul Fraction.one = Fraction.one :=
 
 example (a : Fraction) : Fraction.one.mul a = a :=
   Fraction.one_mul a
+
+/-! ## Ordering -/
+
+example (a : Fraction) : Fraction.zero ≤ a :=
+  Fraction.zero_le a
+
+example (a : Fraction) : a ≤ a := Fraction.le_refl a
+
+example {a b c : Fraction} (h₁ : a ≤ b) (h₂ : b ≤ c) : a ≤ c :=
+  Fraction.le_trans h₁ h₂
+
+example : Fraction.zero ≤ Fraction.one := by decide
+
+/-! ## Subtraction (with underflow precondition) -/
+
+/-- `(a - b) + b = a` whenever the subtraction is well-defined. -/
+example (a b : Fraction) (h : b.bits ≤ a.bits) : (a.sub b h).add b = a :=
+  Fraction.sub_add a b h
+
+/-- Concrete: `one − one = zero`. -/
+example :
+    Fraction.one.sub Fraction.one (Nat.le_refl _) = Fraction.zero := by
+  ext
+  show Fraction.scale - Fraction.scale = 0
+  exact Nat.sub_self _
 
 end SolanalibTest.Numeric.Fraction

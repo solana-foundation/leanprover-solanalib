@@ -129,41 +129,25 @@ theorem value_at_end (tBegin tEnd peak : Nat) :
   rename_i _ h_not_le
   exact absurd (Nat.le_refl tEnd) h_not_le
 
-/-! ## `Decay` instance
+/-! ## `WindowedDecay` constructor
 
-`LinearDecay.Params` bundles the three configuration values of a linear
-decay (window bounds + peak) into a single record so it can carry a
-`Decay` typeclass instance. Every theorem proved generically about
-`[Decay T]` then applies to `LinearDecay.Params` — for free. -/
+`LinearDecay.toWindowedDecay` bundles the `value` function with its
+four proof obligations into a `WindowedDecay` value. Every generic
+theorem about `WindowedDecay` (e.g. `WindowedDecay.complementary_*`)
+applies automatically to any value produced by this constructor. -/
 
-/-- The configuration of a linear decay: window bounds and peak. -/
-structure Params where
-  /-- Start of the decay window. -/
-  tBegin : Nat
-  /-- End of the decay window (exclusive). -/
-  tEnd : Nat
-  /-- Peak value at the start of the window. -/
-  peak : Nat
-  deriving Repr, DecidableEq
+/-- Construct the bundled `WindowedDecay` view of a linear decay. The
+function-side is `value`; the four proof obligations are discharged by
+the corresponding `value_*` theorems. -/
+def toWindowedDecay (tBegin tEnd peak : Nat) : WindowedDecay where
+  tBegin             := tBegin
+  tEnd               := tEnd
+  peak               := peak
+  apply              := fun t => value tBegin t tEnd peak
+  bounded            := fun t => value_le_peak tBegin t tEnd peak
+  at_begin           := fun h => value_at_begin tBegin tEnd peak h
+  at_end             := value_at_end tBegin tEnd peak
+  antitone_in_window := fun h_begin h_order h_end =>
+    value_antitone_in_window tBegin tEnd peak h_begin h_order h_end
 
 end Solanalib.Finance.LinearDecay
-
-namespace Solanalib.Finance
-
-/-- Linear decay realises the abstract `Decay` interface. Each method
-delegates to the corresponding `LinearDecay.value`-level theorem. -/
-instance : Decay LinearDecay.Params where
-  apply  := fun p t => LinearDecay.value p.tBegin t p.tEnd p.peak
-  tBegin := LinearDecay.Params.tBegin
-  tEnd   := LinearDecay.Params.tEnd
-  peak   := LinearDecay.Params.peak
-  bounded := fun p t =>
-    LinearDecay.value_le_peak p.tBegin t p.tEnd p.peak
-  at_begin := fun p h =>
-    LinearDecay.value_at_begin p.tBegin p.tEnd p.peak h
-  at_end := fun p =>
-    LinearDecay.value_at_end p.tBegin p.tEnd p.peak
-  antitone_in_window := fun p {_ _} h_begin h_order h_end =>
-    LinearDecay.value_antitone_in_window p.tBegin p.tEnd p.peak h_begin h_order h_end
-
-end Solanalib.Finance

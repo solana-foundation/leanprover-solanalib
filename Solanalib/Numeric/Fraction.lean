@@ -89,17 +89,43 @@ def toFloor (f : Fraction) : Nat := f.bits / scale
 because both operands share it. -/
 def add (a b : Fraction) : Fraction := ⟨a.bits + b.bits⟩
 
+/-- Subtraction with an explicit underflow precondition: `b ≤ a` (on
+the underlying bit encoding). Returns `⟨a.bits − b.bits⟩`. The
+precondition is mandatory: matches the dependent-type discipline used
+throughout Solanalib (compare `Account.debit`). -/
+def sub (a b : Fraction) (_h : b.bits ≤ a.bits) : Fraction :=
+  ⟨a.bits - b.bits⟩
+
 /-- Multiplication: `(a.bits * b.bits) / scale`. The division corrects
 the doubled scale that would otherwise result from `bits * bits`.
 This operation truncates — see the file docstring on associativity. -/
 def mul (a b : Fraction) : Fraction := ⟨a.bits * b.bits / scale⟩
 
+/-! ## Order
+
+`Fraction` inherits its order from the underlying `Nat` encoding:
+`a ≤ b ↔ a.bits ≤ b.bits`. Comparisons are decidable and `omega`-friendly
+once unfolded via the iff lemmas. -/
+
+instance : LE Fraction := ⟨fun a b => a.bits ≤ b.bits⟩
+instance : LT Fraction := ⟨fun a b => a.bits < b.bits⟩
+
+instance (a b : Fraction) : Decidable (a ≤ b) := Nat.decLe a.bits b.bits
+instance (a b : Fraction) : Decidable (a < b) := Nat.decLt a.bits b.bits
+
+@[simp] theorem le_iff_bits_le (a b : Fraction) : a ≤ b ↔ a.bits ≤ b.bits := Iff.rfl
+@[simp] theorem lt_iff_bits_lt (a b : Fraction) : a < b ↔ a.bits < b.bits := Iff.rfl
+
 /-! ## Theorems -/
 
 @[simp] theorem add_bits (a b : Fraction) : (a.add b).bits = a.bits + b.bits := rfl
+@[simp] theorem sub_bits (a b : Fraction) (h : b.bits ≤ a.bits) :
+    (a.sub b h).bits = a.bits - b.bits := rfl
 @[simp] theorem mul_bits (a b : Fraction) : (a.mul b).bits = a.bits * b.bits / scale := rfl
 @[simp] theorem zero_bits : zero.bits = 0 := rfl
 @[simp] theorem one_bits : one.bits = scale := rfl
+@[simp] theorem fromNat_bits (n : Nat) : (fromNat n).bits = n * scale := rfl
+@[simp] theorem toFloor_def (f : Fraction) : f.toFloor = f.bits / scale := rfl
 
 theorem add_zero (a : Fraction) : a.add zero = a := by
   ext; simp
@@ -119,6 +145,36 @@ theorem one_mul (a : Fraction) : one.mul a = a := by
   ext
   show one.bits * a.bits / scale = a.bits
   rw [one_bits, Nat.mul_comm, Nat.mul_div_cancel _ scale_pos]
+
+/-! ### Order theorems -/
+
+theorem zero_le (a : Fraction) : zero ≤ a := by
+  show 0 ≤ a.bits
+  exact Nat.zero_le _
+
+@[refl] theorem le_refl (a : Fraction) : a ≤ a := Nat.le_refl _
+
+theorem le_trans {a b c : Fraction} (h₁ : a ≤ b) (h₂ : b ≤ c) : a ≤ c :=
+  Nat.le_trans h₁ h₂
+
+theorem le_antisymm {a b : Fraction} (h₁ : a ≤ b) (h₂ : b ≤ a) : a = b := by
+  ext
+  exact Nat.le_antisymm h₁ h₂
+
+/-! ### Round-trip theorems -/
+
+/-- Integer round-trip: `fromNat n |>.toFloor = n`. The fixed-point
+encoding preserves integer values exactly. -/
+theorem toFloor_fromNat (n : Nat) : (fromNat n).toFloor = n := by
+  simp
+  exact Nat.mul_div_cancel _ scale_pos
+
+/-- `sub` followed by `add` cancels (within its precondition). -/
+theorem sub_add (a b : Fraction) (h : b.bits ≤ a.bits) :
+    (a.sub b h).add b = a := by
+  ext
+  simp
+  exact Nat.sub_add_cancel h
 
 end Fraction
 end Solanalib

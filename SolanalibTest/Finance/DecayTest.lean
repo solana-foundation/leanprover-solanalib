@@ -6,55 +6,47 @@ Authors: Solanalib Contributors
 import Solanalib.Finance.LinearDecay
 
 /-!
-# Regression tests for `Solanalib.Finance.Decay`
+# Regression tests for `Solanalib.Finance.WindowedDecay`
 
-The typeclass abstraction pays for itself the first time a generic
-`Decay` theorem applies to a concrete instance without re-proof. These
-tests pin that contract:
-
-* A `LinearDecay.Params` value carries a `Decay` instance.
-* The four generic `Decay.complementary_*` theorems instantiated on it
-  give the *correct* vesting-shape statements — without re-deriving
-  them from `LinearDecay`'s primitives.
+Pins the bundled-structure abstraction. The first time a generic
+`WindowedDecay.complementary_*` theorem applies to a value constructed
+via `LinearDecay.toWindowedDecay` *without re-proof* validates the
+architectural pattern.
 -/
 
 namespace SolanalibTest.Finance.Decay
 
 open Solanalib.Finance
 
-/-- A concrete linear-decay configuration. -/
-def example_params : LinearDecay.Params := ⟨0, 1000, 10000⟩
+/-- A concrete linear-decay bundle. -/
+def example_decay : WindowedDecay :=
+  LinearDecay.toWindowedDecay 0 1000 10000
 
-/-- The instance is found by typeclass resolution. -/
-example : Decay LinearDecay.Params := inferInstance
-
-/-- Generic `Decay.apply` reduces to `LinearDecay.value` on a `Params`. -/
-example : Decay.apply example_params 500 =
+/-- The bundled `apply` reduces to the underlying `LinearDecay.value`. -/
+example : example_decay.apply 500 =
     LinearDecay.value 0 500 1000 10000 := rfl
 
-/-- Generic `complementary` at the start of the window is zero. Caught
-by the inherited theorem; we don't redo the math. -/
-example : Decay.complementary example_params 0 = 0 :=
-  Decay.complementary_at_begin example_params (by decide)
+/-- Generic `complementary` at the start of the window is zero. The
+proof is the *inherited* `WindowedDecay.complementary_at_begin`,
+applied to our `example_decay`. No LinearDecay-specific reasoning. -/
+example : example_decay.complementary 0 = 0 :=
+  example_decay.complementary_at_begin (by decide)
 
-/-- Generic `complementary` at the end equals the peak. -/
-example : Decay.complementary example_params 1000 = 10000 :=
-  Decay.complementary_at_end example_params
+/-- At the end, complementary equals the peak. -/
+example : example_decay.complementary 1000 = 10000 :=
+  example_decay.complementary_at_end
 
-/-- Generic `complementary` is bounded by the peak. -/
-example (t : Nat) : Decay.complementary example_params t ≤ 10000 :=
-  Decay.complementary_le_peak example_params t
+/-- Bounded by peak — for any time `t`. -/
+example (t : Nat) : example_decay.complementary t ≤ 10000 :=
+  example_decay.complementary_le_peak t
 
-/-- Generic `complementary` is monotone (non-decreasing) inside the
-window. The proof is `Decay.complementary_monotone_in_window`, applied
-without any LinearDecay-specific lemma. -/
-example : Decay.complementary example_params 250
-            ≤ Decay.complementary example_params 750 :=
-  Decay.complementary_monotone_in_window example_params
+/-- Monotone non-decreasing inside the window. -/
+example : example_decay.complementary 250
+            ≤ example_decay.complementary 750 :=
+  example_decay.complementary_monotone_in_window
     (by decide) (by decide) (by decide)
 
-/-- Concrete: halfway through the window, the complementary value is
-half of peak — matching the underlying linear formula. -/
-example : Decay.complementary example_params 500 = 5000 := by decide
+/-- Halfway through the window, the complementary value is half of peak. -/
+example : example_decay.complementary 500 = 5000 := by decide
 
 end SolanalibTest.Finance.Decay

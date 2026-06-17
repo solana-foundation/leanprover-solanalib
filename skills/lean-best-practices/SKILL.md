@@ -200,6 +200,78 @@ notation "Lamports" => Nat
 
 **Escape hatch:** if/when strict typing is needed (e.g. to enforce `≤ 2^64 - 1` on a `u64`-like quantity), promote to a single-field `structure` with explicit conversion. Plan to migrate the call sites mechanically; the migration is breaking but tractable.
 
+## Bundled structures vs typeclasses
+
+When a domain concept has *several mathematical properties* that must
+hold together (e.g. "this is a function that decays from peak to zero
+in a window"), prefer a **bundled structure** with the function and
+proofs embedded, not a `class`-based typeclass.
+
+```lean
+-- ✓ Mathlib-aligned bundled-structure pattern (used by OrderHom, MulHom,
+--   LinearMap, RingHom, ...):
+structure WindowedDecay where
+  tBegin : Nat
+  tEnd : Nat
+  peak : Nat
+  apply : Nat → Nat
+  bounded : ∀ t, apply t ≤ peak
+  -- ... three more properties ...
+
+-- Concrete-shape providers expose a constructor:
+def LinearDecay.toWindowedDecay (tBegin tEnd peak : Nat) : WindowedDecay := { … }
+```
+
+Why bundled over typeclass:
+
+- **No instance-resolution surprises.** A `WindowedDecay` value is just
+  a value; you pass it explicitly. No implicit-argument elaboration
+  footguns (like the `fun p {_ _} h_begin …` workaround that
+  `class Decay` needed).
+- **Mathlib does it this way.** Their `OrderHom`, `MulHom`, `RingHom`,
+  `LinearMap`, etc. are all bundled structures, not classes.
+- **Composition is plain function-call syntax.** `d.complementary t`,
+  `d.apply t` — no typeclass magic.
+- **Generic theorems live as methods on the structure**, not as
+  separate generic functions over `[Decay T]`.
+
+When *to* reach for a `class`: when you have a true type-level
+interface (e.g. `Monoid α`, `AddCommGroup α`) where the typeclass
+system's instance resolution is doing useful work — finding the
+appropriate algebraic structure for `Nat`, `Int`, `Rat`, etc. For
+domain-specific finance shapes with concrete parameter values, bundled
+structures are usually the better tool.
+
+## Numeric layer: `Solanalib.Numeric`
+
+A dedicated folder for numeric infrastructure that domain modules
+build on. Currently houses `Fraction` (Q68.60 fixed-point, common in
+Solana DeFi). Future additions: `Fraction128` (the bounded
+`u128`-backed refinement of `Fraction`), `Q.96`, etc.
+
+The convention for spec-layer numeric types is:
+
+1. **`Nat` underneath, exposed through a `structure`** so domain code
+   can talk about "a Fraction" without exposing the encoding. `omega`
+   works directly on the underlying `Nat`.
+2. **Operations carry their preconditions in the type**
+   (`Fraction.sub (h : b.bits ≤ a.bits)`, like `Account.debit`).
+3. **`@[ext]` plus `@[simp]` projection lemmas for every field /
+   operation** so `ext; simp` proofs compose cleanly downstream.
+4. **`LE`/`LT` instances delegate to the underlying `Nat` order**;
+   provide `Decidable` instances explicitly — they don't come for
+   free from the `LE` instance, and `decide` will fail mysteriously
+   without them.
+
+```lean
+instance : LE Fraction := ⟨fun a b => a.bits ≤ b.bits⟩
+instance (a b : Fraction) : Decidable (a ≤ b) := Nat.decLe a.bits b.bits
+```
+
+Bounded `UIntN`-backed refinements live as separate types (e.g.
+`Fraction128`) with `.toNat`-style bridges to the unbounded spec
+version, mirroring the `Lamports` / `LamportsUnchecked` pattern.
+
 ## Attribute usage
 
 - **`@[ext]`** on every `structure`. Generates the extensionality lemma `Foo.ext : a.f₁ = b.f₁ → … → a = b`. Costs nothing now, saves writing it later.
