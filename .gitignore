@@ -5,3 +5,6 @@
 
 # Claude Code per-machine settings (skills under .claude/skills/ ARE committed)
 /.claude/settings.local.json
+
+# Personal Lean playground — never committed
+/scratch/
