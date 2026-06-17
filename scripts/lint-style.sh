@@ -41,8 +41,12 @@ check_file() {
   fi
 
   # ---- Line length: 100 char limit ----
+  # Lines containing a URL are exempt — long link refs are an editorial
+  # decision, not a style violation.
   awk -v file="$f" '
-    length > 100 { print file":"NR": line exceeds 100 chars ("length")" }
+    length > 100 && !/https?:\/\// {
+      print file":"NR": line exceeds 100 chars ("length")"
+    }
   ' "$f" | while IFS= read -r line; do fail "$line"; done
 
   # ---- Forbidden tokens ----

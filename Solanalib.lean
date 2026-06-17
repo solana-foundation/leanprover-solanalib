@@ -26,14 +26,22 @@ import Solanalib.SBPF.Value
 import Solanalib.SBPF.Verifier
 
 /-!
+![Solanalib][banner]
+
+[banner]: https://github.com/solana-foundation/leanprover-solanalib/raw/main/docs/assets/banner-github-light.png
+
 # Solanalib
 
 A library of formal models and verified results for Solana programs in Lean 4.
 
 Solanalib provides reusable type-level models of Solana primitives — lamports,
-accounts, instructions, programs — together with theorems about their behaviour.
-The intent is that downstream verification work on Anchor or Pinocchio programs
-can reuse these definitions rather than redefining them per project.
+accounts, instructions, programs — together with theorems about their
+behaviour. It also models the **sBPF instruction set** that deployed bytecode
+actually runs on, giving a single Lean library that spans both the high-level
+domain shapes and the machine those shapes ultimately compile down to.
+
+The intent is that downstream verification work on Anchor or Pinocchio
+programs can reuse these definitions rather than redefining them per project.
 
 ## Organisation
 
@@ -41,6 +49,10 @@ Modules are organised by Solana concept, not by framework. Framework-specific
 results (Anchor account validation, Pinocchio entrypoint patterns, …) layer on
 top of the core primitives and live in their own subdirectories.
 
-* `Solanalib.Primitives` — units and identifiers (`Lamports`, eventually `Pubkey`, `Slot`).
+* `Solanalib.Primitives` — atomic on-chain types (`Pubkey`, `Lamports`, `Timestamp`).
+* `Solanalib.Numeric`    — fixed-point arithmetic (`Fraction`, Q68.60).
 * `Solanalib.Account`    — the account model and operations over it.
+* `Solanalib.Instruction` — instruction + account-meta shapes.
+* `Solanalib.Finance`    — domain abstractions: decay, growth, compounding, caps.
+* `Solanalib.SBPF`       — the sBPF ISA semantics (machine layer).
 -/

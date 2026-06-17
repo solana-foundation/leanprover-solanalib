@@ -67,6 +67,9 @@ jobs:
       - name: Build documentation site
         run: lake -Kenv=dev build Solanalib:docs
 
+      - name: Patch landing page (banner + title + module nav)
+        run: python3 scripts/postprocess-docs.py
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3

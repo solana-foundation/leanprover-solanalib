@@ -22,6 +22,7 @@ test:
 # Build the documentation site to .lake/build/doc/.
 docs:
     lake -Kenv=dev build Solanalib:docs
+    python3 scripts/postprocess-docs.py
     @echo ""
     @echo "Docs written to .lake/build/doc/index.html"
 

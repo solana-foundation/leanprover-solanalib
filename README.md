@@ -1,7 +1,16 @@
-# Solanalib
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/solana-foundation/leanprover-solanalib/raw/main/docs/assets/banner-github-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/solana-foundation/leanprover-solanalib/raw/main/docs/assets/banner-github-light.png">
+    <img alt="Solanalib" width="100%" src="https://github.com/solana-foundation/leanprover-solanalib/raw/main/docs/assets/banner-github-light.png">
+  </picture>
+</div>
 
-[![CI](https://github.com/solana-foundation/leanprover-solanalib/actions/workflows/ci.yml/badge.svg)](https://github.com/solana-foundation/leanprover-solanalib/actions/workflows/ci.yml)
-[![Docs](https://github.com/solana-foundation/leanprover-solanalib/actions/workflows/docs.yml/badge.svg)](https://solana-foundation.github.io/leanprover-solanalib/)
+<p align="center">
+  <a href="https://github.com/solana-foundation/leanprover-solanalib/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/solana-foundation/leanprover-solanalib/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/solana-foundation/leanprover-solanalib/actions/workflows/docs.yml"><img alt="Docs" src="https://github.com/solana-foundation/leanprover-solanalib/actions/workflows/docs.yml/badge.svg"></a>
+  <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
+</p>
 
 **A [Lean 4](https://lean-lang.org/) library of formal models and verified theorems for Solana programs.** 
 
