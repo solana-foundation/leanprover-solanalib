@@ -5,6 +5,7 @@ Authors: Solanalib Contributors
 -/
 import SolanalibTest.Account.TransferTest
 import SolanalibTest.Finance.DecayTest
+import SolanalibTest.Finance.GrowthTest
 import SolanalibTest.Finance.LinearDecayTest
 import SolanalibTest.LayerATests
 import SolanalibTest.Numeric.FractionTest

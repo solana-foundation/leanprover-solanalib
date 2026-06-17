@@ -4,6 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Solanalib Contributors
 -/
 import Solanalib.Init
+import Solanalib.Primitives.Lamports
 
 /-!
 # Fraction: Q68.60 fixed-point numbers for Solana finance
@@ -101,6 +102,15 @@ the doubled scale that would otherwise result from `bits * bits`.
 This operation truncates — see the file docstring on associativity. -/
 def mul (a b : Fraction) : Fraction := ⟨a.bits * b.bits / scale⟩
 
+/-- Division with an explicit non-zero precondition on the divisor.
+Returns `⟨a.bits * scale / b.bits⟩` — the multiplication by `scale`
+corrects the lost-scale that would otherwise result from `bits / bits`.
+
+Like every truncating division in `Fraction`, this rounds *toward zero*.
+A rounded-up companion (`divCeil`) is a future refinement. -/
+def div (a b : Fraction) (_h : b.bits ≠ 0) : Fraction :=
+  ⟨a.bits * scale / b.bits⟩
+
 /-! ## Order
 
 `Fraction` inherits its order from the underlying `Nat` encoding:
@@ -122,10 +132,17 @@ instance (a b : Fraction) : Decidable (a < b) := Nat.decLt a.bits b.bits
 @[simp] theorem sub_bits (a b : Fraction) (h : b.bits ≤ a.bits) :
     (a.sub b h).bits = a.bits - b.bits := rfl
 @[simp] theorem mul_bits (a b : Fraction) : (a.mul b).bits = a.bits * b.bits / scale := rfl
+@[simp] theorem div_bits (a b : Fraction) (h : b.bits ≠ 0) :
+    (a.div b h).bits = a.bits * scale / b.bits := rfl
 @[simp] theorem zero_bits : zero.bits = 0 := rfl
 @[simp] theorem one_bits : one.bits = scale := rfl
 @[simp] theorem fromNat_bits (n : Nat) : (fromNat n).bits = n * scale := rfl
 @[simp] theorem toFloor_def (f : Fraction) : f.toFloor = f.bits / scale := rfl
+
+/-- `one.bits ≠ 0`: useful for discharging `div`'s precondition when the
+divisor is `one`. -/
+theorem one_bits_ne_zero : one.bits ≠ 0 := by
+  rw [one_bits]; exact Nat.pos_iff_ne_zero.mp scale_pos
 
 theorem add_zero (a : Fraction) : a.add zero = a := by
   ext; simp
@@ -175,6 +192,35 @@ theorem sub_add (a b : Fraction) (h : b.bits ≤ a.bits) :
   ext
   simp
   exact Nat.sub_add_cancel h
+
+/-- Division by `one` is identity. -/
+theorem div_one (a : Fraction) : a.div one one_bits_ne_zero = a := by
+  ext
+  show a.bits * scale / one.bits = a.bits
+  rw [one_bits, Nat.mul_div_cancel _ scale_pos]
+
+/-! ## Bridging to `Lamports`
+
+`Lamports` (= `UInt64`) and `Fraction` (= Q68.60) are the two numeric
+foundations Solana programs juggle: integer lamport counts and fractional
+ratios. The lift `ofLamports` is exact (no precision loss — Lamports fit
+comfortably in the 68 integer bits). The reverse projection
+`toLamports?` returns `Option` because the Fraction's integer floor can
+exceed `u64::MAX`. -/
+
+/-- Lift a `Lamports` (u64) to its exact `Fraction` encoding. -/
+def ofLamports (l : Lamports) : Fraction := fromNat l.toNat
+
+/-- Project a `Fraction` to `Lamports` by taking the integer floor.
+Returns `none` if the floor exceeds `u64::MAX`. -/
+def toLamports? (f : Fraction) : Option Lamports :=
+  let n := f.toFloor
+  if h : n < UInt64.size then some (UInt64.ofNatLT n h) else none
+
+/-- **Round-trip:** `(ofLamports l).toFloor = l.toNat`. The Q68.60 lift
+preserves the integer value exactly. -/
+theorem toFloor_ofLamports (l : Lamports) : (ofLamports l).toFloor = l.toNat :=
+  toFloor_fromNat _
 
 end Fraction
 end Solanalib

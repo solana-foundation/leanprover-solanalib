@@ -80,4 +80,16 @@ example :
   show Fraction.scale - Fraction.scale = 0
   exact Nat.sub_self _
 
+/-! ## Division -/
+
+/-- `div_one` returns the dividend unchanged. -/
+example (a : Fraction) : a.div Fraction.one Fraction.one_bits_ne_zero = a :=
+  Fraction.div_one a
+
+/-! ## Lamports ↔ Fraction bridge -/
+
+/-- Lamports → Fraction → Nat round-trip preserves the integer value. -/
+example (l : Lamports) : (Fraction.ofLamports l).toFloor = l.toNat :=
+  Fraction.toFloor_ofLamports l
+
 end SolanalibTest.Numeric.Fraction
