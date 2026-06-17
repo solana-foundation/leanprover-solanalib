@@ -25,22 +25,24 @@ The role this library plays in the stack:
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  ON-CHAIN: Rust/Anchor/Pinocchio programs (SBF bytecode)     │
-└────────────────────────────────┬─────────────────────────────┘
-                                 │ refinement / correspondence
-┌────────────────────────────────▼─────────────────────────────┐
-│  SPEC: Solanalib formal models in Lean 4                     │
-│         + protocol-specific theorems built on top            │
+│  ON-CHAIN: Rust/Anchor/Pinocchio → compiled sBPF bytecode     │
+└───────────────┬──────────────────────────────┬───────────────┘
+                │ source-level                  │ artifact-level
+┌───────────────▼──────────────────────────────▼───────────────┐
+│  SPEC: Solanalib formal models in Lean 4                      │
+│    · high-level layer  — accounts, instructions, finance …    │
+│    · Solanalib.SBPF    — the sBPF ISA semantics: the machine  │
+│                          the deployed bytecode actually runs  │
 └──────────────────────────────────────────────────────────────┘
 ```
 
-Solanalib lives entirely at the spec layer. It doesn't run on-chain; it never will. Programs are deployed as compiled SBF; Solanalib proves things *about* them via an explicit refinement step (today by hand; eventually with other tools for Rust→Lean translation).
+Solanalib lives entirely at the spec layer — it doesn't run on-chain. But it now models *both* ends of the refinement: the high-level shapes a protocol's logic is proven against, **and** the sBPF instruction-set semantics those programs compile down to. That lower anchor (`Solanalib.SBPF`) is a Lean port of the [OOPSLA 2025 Isabelle/HOL formalisation](https://dl.acm.org/doi/10.1145/3720414), validated against a reference VM (see [`spinoza`](https://github.com/lgalabru/spinoza), the companion harness). The eventual goal is an end-to-end chain from deployed bytecode up to protocol invariants.
 
 ---
 
 ## Architecture
 
-Five peer top-level folders, each a distinct layer:
+Six peer top-level folders, each a distinct layer:
 
 ```
 Solanalib/
@@ -56,13 +58,22 @@ Solanalib/
 │   └── Transfer.lean           Lamport transfer + conservation theorem
 ├── Instruction/           ← Solana instruction model
 │   └── Basic.lean              Instruction + AccountMeta + signers/writables
-└── Finance/                  ← domain abstractions for DeFi shapes
-    ├── Decay.lean                  WindowedDecay bundled structure
-    ├── Growth.lean                 GrowthCurve (windowed dual of WindowedDecay)
-    ├── LinearDecay.lean            first concrete decay shape
-    ├── MonotoneSequence.lean       unbounded monotone-up shape
-    ├── CompoundInterest.lean       discrete compounding as a MonotoneSequence
-    └── WithdrawalCap.lean          stateful sliding-window rate limiter
+├── Finance/               ← domain abstractions for DeFi shapes
+│   ├── Decay.lean                  WindowedDecay bundled structure
+│   ├── Growth.lean                 GrowthCurve (windowed dual of WindowedDecay)
+│   ├── LinearDecay.lean            first concrete decay shape
+│   ├── MonotoneSequence.lean       unbounded monotone-up shape
+│   ├── CompoundInterest.lean       discrete compounding as a MonotoneSequence
+│   └── WithdrawalCap.lean          stateful sliding-window rate limiter
+└── SBPF/                  ← the sBPF instruction-set semantics (machine layer)
+    ├── CommType.lean               BitVec machine words (U4 … U128) + byte (de)ser
+    ├── Syntax.lean                 BpfInstruction (22 forms) + registers/ops/version
+    ├── Value.lean                  CompCert-style memory value
+    ├── Memory.lean                 byte-addressable memory + loadv / storev
+    ├── Decoder.lean                bytecode → BpfInstruction (full opcode table)
+    ├── State.lean                  registers, call stack, BpfState result
+    ├── Interpreter.lean            step + fuel-bounded bpfInterp
+    └── Verifier.lean               verifyInstr + step-safety theorem (Lemma 6.4)
 ```
 
 The boundaries are deliberate:
@@ -71,8 +82,9 @@ The boundaries are deliberate:
 - **`Numeric/`** is the numeric backbone — every fixed-point or refined-int type belongs here, separate from domain code so it stays reusable.
 - **`Account/`**, **`Instruction/`** model the Solana runtime data shapes 1:1 with the real Rust crates (`solana-pubkey 4.2`, `solana-account 4.3`, `solana-instruction 3.4`).
 - **`Finance/`** is the first domain layer — financial shapes that recur across DeFi: decay curves, growth curves, and (future) AMM math, lending invariants, oracle aggregation.
+- **`SBPF/`** is the machine layer — a faithful Lean port of the [OOPSLA 2025](https://dl.acm.org/doi/10.1145/3720414) Isabelle/HOL sBPF semantics (all 22 instruction forms, the decoder, the small-step interpreter, and the verifier). Unlike the `Nat`-backed spec layers above, it models bit-precise machine words with `BitVec` (signed division, sign-extension, shifts), because the bytecode it describes is bit-precise. It is the concrete machine the high-level shapes ultimately refine down to.
 
-Each layer depends only on the ones above it (in the diagram) plus `Init.lean`. The result: replacing or refining a lower layer doesn't ripple — e.g. promoting `Fraction` to a bounded `Fraction128` won't force `Finance/Decay.lean` to change.
+The high-level layers depend only on the ones above them plus `Init.lean`; `SBPF/` is self-contained (it models the machine, not the protocol). The result: replacing or refining a lower layer doesn't ripple — e.g. promoting `Fraction` to a bounded `Fraction128` won't force `Finance/Decay.lean` to change.
 
 ---
 
@@ -172,10 +184,14 @@ Inventory of the verified surface as of this commit:
 | `Finance.CompoundInterest` | `balance`, `toMonotoneSequence` | 5 (boundary, unit-multiplier identity, one-step monotonicity, multi-step monotonicity, balance ≥ principal) |
 | `Finance.WithdrawalCap` | `WithdrawalCap`, `Invariant`, `IsElapsed`, `remaining`, `TryAdd`, `tryAdd` | 5 (`remaining_le_capacity`, `tryAdd_preserves_invariant`, `tryAdd_rejects_over_cap_midwindow` + `_at_reset`, `interval_reset_idempotent`) |
 | `Finance.Growth` | `GrowthCurve`, `WindowedDecay.toComplementaryGrowthCurve` | 4 (embedded; inherited at constructor time) |
+| `SBPF.{CommType,Syntax,Value,Memory}` | `BitVec` words, `BpfInstruction` (22 forms), `Val`, `loadv`/`storev` | data layer |
+| `SBPF.Decoder` | `decode`, `findInstr` (full opcode table) | round-trip tests |
+| `SBPF.Interpreter` | `step`, `bpfInterp` + per-class evaluators | differential testing (below) |
+| `SBPF.Verifier` | `verifyInstr`, `step_ne_err` (Lemma 6.4) | 9 |
 
-Coverage: **28 defs / 88 theorems = 3.14 thms/def**. See `scripts/coverage.sh`.
+Run `scripts/coverage.sh` for the live def/theorem tally.
 
-Theorem ratio is a coarse but useful signal: when it trends *up* with new commits, the library is gaining proven properties faster than raw surface; when it trends down, we're probably adding shape without enough discipline.
+The two layers are validated differently, on purpose. The **high-level / finance** shapes carry per-definition theorems — a high theorem-to-def ratio there is the signal that we're proving properties faster than we add surface. The **`SBPF/` machine layer** is mostly executable definitions (the interpreter is a faithful model, not a thing to prove theorems *about* per se); its correctness is established two ways instead: (1) the `step_ne_err` **safety theorem** — a verifier-accepted instruction never faults to the `err` state ([Lemma 6.4 of the paper](https://dl.acm.org/doi/10.1145/3720414)) — and (2) **differential testing** against a reference sBPF VM via [`spinoza`](https://github.com/lgalabru/spinoza), which has run tens of thousands of randomized programs through both this Lean interpreter and the VM with zero divergences.
 
 ---
 
@@ -209,8 +225,9 @@ Listed roughly in order of how foundational they are; not all need to be done be
 
 ### Bridges and verification
 
-- [ ] **Aeneas integration.** A vertical proof-of-concept: pick one pure-math Rust function (e.g. `kfarms::get_withdrawal_penalty_bps`), run `cargo charon --preset=aeneas`, run `aeneas -backend lean`, import the generated Lean, prove `theorem rust_impl_refines_spec`. If this works end-to-end on one realistic module, we have a defensible refinement story for the algorithmic core of Solana programs.
-- [ ] **SBF formal semantics in Lean.** [POPL 2025 has the Isabelle/HOL formalisation](https://dl.acm.org/doi/10.1145/3720414); a Lean port is the path to verifying compiled bytecode rather than source Rust. Multi-month investment; differentiated artifact.
+- [x] **sBPF semantics in Lean (`Solanalib.SBPF`).** Landed: a Lean port of the [OOPSLA 2025 Isabelle/HOL formalisation](https://dl.acm.org/doi/10.1145/3720414) — all 22 instruction forms, the decoder, the small-step interpreter, and the verifier with the `step_ne_err` safety theorem (Lemma 6.4). Validated against a reference VM through the [`spinoza`](https://github.com/lgalabru/spinoza) harness (`spinoza validate`), which differentially tests the Lean interpreter against an executable sBPF VM; `spinoza lift` emits a deployed program's `.text` as an importable `BpfBin` term.
+- [ ] **Refinement from `SBPF/` up to the spec layers.** The pieces exist at both ends; the open work is the connecting theorem — e.g. a lifted program's `bpfInterp` result preserves a `Finance.WithdrawalCap` invariant. Also outstanding from the port: the x86-64 JIT correspondence, and reconciling the PQR high-multiply edge case against a second oracle (agave `solana-sbpf`).
+- [ ] **Aeneas integration (source-level path).** The complement to the artifact-level sBPF route above: pick one pure-math Rust function (e.g. `kfarms::get_withdrawal_penalty_bps`), run `cargo charon --preset=aeneas`, run `aeneas -backend lean`, import the generated Lean, prove `theorem rust_impl_refines_spec`. If this works end-to-end on one realistic module, we have a defensible refinement story for the algorithmic core of Solana programs.
 
 ### Library hygiene
 
