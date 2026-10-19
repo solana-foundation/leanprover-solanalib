@@ -5,12 +5,14 @@ Authors: Solanalib Contributors
 -/
 import SolanalibTest.Account.TransferTest
 import SolanalibTest.Finance.CompoundInterestTest
+import SolanalibTest.Finance.ConcentratedLiquidityTest
 import SolanalibTest.Finance.DecayTest
 import SolanalibTest.Finance.GrowthTest
 import SolanalibTest.Finance.LinearDecayTest
 import SolanalibTest.Finance.WithdrawalCapTest
 import SolanalibTest.LayerATests
 import SolanalibTest.Numeric.FractionTest
+import SolanalibTest.Numeric.RoundingTest
 import SolanalibTest.SBPF.DecoderTest
 import SolanalibTest.SBPF.InterpreterTest
 import SolanalibTest.SBPF.LiftTest
