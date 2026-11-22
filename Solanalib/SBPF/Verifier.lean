@@ -112,9 +112,13 @@ theorem evalAlu32_ne_nok {bop : Binop} {dst : BpfIReg} {sop : SndOp} {rs : RegMa
 theorem evalAlu64_ne_nok {bop : Binop} {dst : BpfIReg} {sop : SndOp} {rs : RegMap}
     {isV1 : Bool} (h : verifyAlu bop sop isV1 = true) :
     evalAlu64 bop dst sop rs isV1 ≠ .nok := by
-  cases bop <;> cases sop <;>
-    simp_all [evalAlu64, verifyAlu, checkImmNonzero, bne_iff_ne] <;>
-    (repeat' split) <;> (first | bv_decide | simp_all)
+  cases bop <;> cases sop <;> cases isV1 <;>
+    delta evalAlu64 sndOp64 <;>
+    simp_all [verifyAlu, checkImmNonzero, bne_iff_ne] <;>
+    (repeat' split) <;>
+    first
+    | exact fun hz => h ((signExtend64_eq_zero _).mp hz)
+    | simp_all
 
 /-- The 32-bit PQR never faults to `err` on a verified instruction. -/
 theorem evalPqr32_ne_nok {pop : Pqrop} {dst : BpfIReg} {sop : SndOp} {rs : RegMap}
@@ -128,9 +132,13 @@ theorem evalPqr32_ne_nok {pop : Pqrop} {dst : BpfIReg} {sop : SndOp} {rs : RegMa
 theorem evalPqr64_ne_nok {pop : Pqrop} {dst : BpfIReg} {sop : SndOp} {rs : RegMap}
     {isV1 : Bool} (h : verifyPqr pop sop = true) :
     evalPqr64 pop dst sop rs isV1 ≠ .nok := by
-  cases pop <;> cases sop <;>
-    simp_all [evalPqr64, verifyPqr, checkImmNonzero, pqrDivResult, bne_iff_ne] <;>
-    (repeat' split) <;> (first | bv_decide | simp_all)
+  cases pop <;> cases sop <;> cases isV1 <;>
+    delta evalPqr64 sndOp64 <;>
+    simp_all [verifyPqr, checkImmNonzero, pqrDivResult, bne_iff_ne] <;>
+    (repeat' split) <;>
+    first
+    | exact fun hz => h ((signExtend64_eq_zero _).mp hz)
+    | simp_all
 
 /-! ## Safety -/
 

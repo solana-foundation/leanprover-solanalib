@@ -103,7 +103,7 @@ theorem value_antitone_in_window
   have h_t₂_not_after  : ¬ tEnd ≤ t₂  := Nat.not_le.mpr h_end
   unfold value
   simp only [h_t₁_not_before, h_t₁_not_after,
-             h_t₂_not_before, h_t₂_not_after, if_false]
+             h_t₂_not_before, h_t₂_not_after, ite_false]
   exact Nat.div_le_div_right
     (Nat.mul_le_mul_left peak (Nat.sub_le_sub_left h_order tEnd))
 
@@ -114,7 +114,7 @@ theorem value_at_begin (tBegin tEnd peak : Nat) (h : tBegin < tEnd) :
   unfold value
   have h_not_lt : ¬ tBegin < tBegin := Nat.lt_irrefl _
   have h_not_le : ¬ tEnd ≤ tBegin := Nat.not_le_of_lt h
-  simp only [h_not_lt, h_not_le, if_false]
+  simp only [h_not_lt, h_not_le, ite_false]
   exact Nat.mul_div_cancel peak (Nat.sub_pos_of_lt h)
 
 /-- **P3b — Value at end.** At or after the right boundary, the value
