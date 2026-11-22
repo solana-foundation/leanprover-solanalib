@@ -1,0 +1,133 @@
+{
+  "upstream_commit": "6c115ef1ef6a0cde8dbd6fd875b7dc87d60939ec",
+  "inherited_lines": {
+    ".github/workflows/ci.yml": [
+      "f2669fb40c9d475cc4dc68c045421fe2184c8a83636373c65110e61c7e620f29"
+    ],
+    ".github/workflows/docs.yml": [
+      "759533fafb9cb3f13146d34c130c86d3d39cba5d06450f5483a22e56b88b5184"
+    ],
+    "README.md": [
+      "21ffb910804a72ad43cbbba4463ec4b6f86a7421e425efa2e31938efc8f5d946",
+      "4412d6ec8cc80831f03cc8c10f61036e269dd24f0aa459328da23274eaa3fdbd",
+      "7123db8c535fec93f24aa1b9d0c003b275f1e290f8db0917da85abff0398f5da",
+      "7867fdbfb0bb284e67bff0d3aca9617345b90b1616e8d8b0a35ebafeac2f98f1",
+      "97266843cc442ecfeba4d6d739c0406ac4db22456c7a59e1c71aedc6349bdc94",
+      "c78162fbe7c26e6726cf6aa654023bb47be0feed76df6463c34376dc74ca614a",
+      "c8df95041d1a060e67d5acb2376944dedb7cdee097e7f0fb23f33677db85a9ed",
+      "e266db2aa17a813bda5656401265294690dbce4b01a2d21a6457b440d653e2f5",
+      "f403e50e94605ecab55453160a26499f5fc623edab0560218391af242332f7b4"
+    ],
+    "Solanalib/Account/Transfer.lean": [
+      "7d7a13fc2d9f55f986161b4c7a0d58f939e18a72660e811f2be12b399ca90390"
+    ],
+    "Solanalib/Finance/CompoundInterest.lean": [
+      "4260f71a5a143d64f2d92de33587e0e7d840b84d7d418e2c4f64fde444521151",
+      "b118b9b5c84f675706acccb802d3a78a02ecbcfbb08e39950c1c4138449b40c8",
+      "c3fb24f20b5643b3d2a5fe1f2ebfee211a62f7a4c20c6f5b8d0d30426c3ee3d6",
+      "d49bb4fdfe0d17b08b8946b3fd6e5df39504ab00c5e1cc1252e3281e6f49afbf"
+    ],
+    "Solanalib/Finance/Decay.lean": [
+      "36f646230015620e4bd74e7cf951e329519b22fe623e3d304187f8680c9d3e43"
+    ],
+    "Solanalib/Finance/Growth.lean": [
+      "af60eeb2da78f5ee85d9537a7beeae1c9efd76b13fb8c815e0d26219c24698e0"
+    ],
+    "Solanalib/Finance/LinearDecay.lean": [
+      "28a3a29a0f521b2ec39437d9db416566983a9245edc7841b02f1c67c1e9b23f7"
+    ],
+    "Solanalib/Finance/MonotoneSequence.lean": [
+      "147da90b30f1d013f0ddd9333cbd8d659b3a9c7e15a3baad453d68abeeb23d9e",
+      "15b38dc44f1dd5bd434841cd6d82051396e4ea9546524e50873805e0aa13daab"
+    ],
+    "Solanalib/Finance/WithdrawalCap.lean": [
+      "0f75c4e453c91832dc0cfb1531f8d0429201f0eb38fe1d1403f916f54e7bdd08",
+      "6c23353adb38ce9c82165521226a4c66388ed512071d94a41f1fa66ba0679036"
+    ],
+    "Solanalib/Init.lean": [
+      "87abef3a235f3096eade29a64d00bbae41272d3478dd8f268c77a12e2a8a85d1"
+    ],
+    "Solanalib/Instruction/Basic.lean": [
+      "b1f76df7e6cf2e6ef8acc8cf2377c12ca3eb79a662940fb6b0256dadabfeb037",
+      "c1e9f286592213ea09b5aeb3fdad17e52118ca70b35825999abf562fc628bde3",
+      "f8bf5410955a10a0bfb01a2f0e07beebd46bd8e0803a69f7897cdabb0496a749"
+    ],
+    "Solanalib/Numeric/Fraction.lean": [
+      "7ea2cddfcf4de0075e2c03c6fb1a6dc32faed3d8bfda55ecd70dac84853ed9c9",
+      "acbb1cbb9d001ca77c5c40fa5d40a49597f7bb7c6920cf03b268403648ee76d1",
+      "e360eeb49638ea7b868a964758f2f8e7272cf392c54f80106ab620e8b8393012"
+    ],
+    "Solanalib/Primitives/Lamports.lean": [
+      "7b548a529a58db8c9be907b8d5bf6a449b5e42f7b0b181203a0b9d51d4090f81",
+      "debf8d47418feed5403806496d615ecb0b0d30529a4f491d0542f3a5f1b0dbe3"
+    ],
+    "Solanalib/Primitives/Time.lean": [
+      "2a8535c393bb20d7e78b1ef40e402cdff36fe2468897364a10b3d6e4d8322772"
+    ],
+    "Solanalib/SBPF/Interpreter.lean": [
+      "097eb7fee06b1059a8257529a2c2f50944d19bc6885db1c87da6cbf70a6a669b",
+      "32c6afa374a7bb2c69396cc126c9c0f8ff80b5b025a899fc8c3460c965b4558f",
+      "533e7d130cc93a3fa606ddecd09575e724f20ba9226939e5eca22df0d6dba04c",
+      "95eece87367b73e3297253c2013ee86e84b06461328cfe1c241dd3a5e33739c3",
+      "a450820e9047715c3ed194527d7be0b07c79858cc12bddd2b5ba35b4f90764f3",
+      "a6081266d3da4fb9f17b10b28d799497d8e9808a24936ed183597918fd7c4b0d",
+      "cff78c8d318a10bba6bfd182fb58dd575abff64876627680e5ccd2e391eaf8c2"
+    ],
+    "Solanalib/SBPF/Memory.lean": [
+      "d25f0aa0aa29fda68839b6be5ba39cc1fab1dbeae5841c8730a19d96ac427de2",
+      "e06475422cf4e0b71b8ec899c38668f972a1c8b2ad36edf8dbd5c98b919e1548",
+      "ed2b48cfad82d3cf9795aeebb8e07cd801af7a307b99dd0dce304ddee9b75c72"
+    ],
+    "Solanalib/SBPF/State.lean": [
+      "63b9cfc65f50f055008ed25db4eac4ed173b3534c29c697283ae12551a57051e",
+      "8ad17c8c6438c0f03c95393c9704f63d1685ef831993ba5fd95482806b95bba5",
+      "ea3873c4fffbfb1ac4b3d967edaaed6cbcd4ed50cbeabd33d6e20a85cc0eb6f9",
+      "f4d94fd552659967afb8ebb8034e8b7931268da27379c7567e47a7ec599ea8b3"
+    ],
+    "Solanalib/SBPF/Syntax.lean": [
+      "6a5a8458d7a97347b718f52608b8ba6cd27ff2c9b5fe512e77e3415814606e90",
+      "80aff86d407809763c8c61c21257eb6ecd07b814c82f263d99b50135d69c1e94",
+      "83f429d1fd2e68e379e0fd7d7ccd49cbf13cea415ed77f8cd5aef208686bb1c6",
+      "9e5eb226bfac432670fec27f6ae9f27f6b0b8a79db8b6c4d161444cf093042b2"
+    ],
+    "Solanalib/SBPF/Value.lean": [
+      "96a207c7e49ab060b1950718c658c0353d6e7249d29046f99119a2ecfa238d2b",
+      "c18426b89b63f885aaaa719fab8a4a614f8f784bfd055fe9986610b5af9920f4"
+    ],
+    "SolanalibTest.lean": [
+      "a5d43f5db20bf931f9c407d862ec3152cb16b46bc93633560b05e5b9c774f30d"
+    ],
+    "SolanalibTest/Finance/CompoundInterestTest.lean": [
+      "796f721bdc8f195e0a91d309dc846c3bd3d735aa9b12a83c2e828dcb923d798c"
+    ],
+    "SolanalibTest/Finance/GrowthTest.lean": [
+      "5ec67e4666e7312154079b89c6aa44f165a312a8c7490427d706c6fbb4b5410e"
+    ],
+    "SolanalibTest/Finance/WithdrawalCapTest.lean": [
+      "9705c315150a5d82d8c3b564f05760099fa6b7f594cdf48005542265a0d344c8"
+    ],
+    "lakefile.lean": [
+      "dcbc26e243b21b68e6fade24b2f98a9b56ea9973c8fc75592e670f0b95d483ef"
+    ],
+    "scripts/lint-style.sh": [
+      "217cd1ef14ea6117ec10b380b7686f683961ddd8b8243af5a975b506df195459"
+    ],
+    "scripts/postprocess-docs.py": [
+      "7371aa50cd44fb8bc23600173db628b78d8d535de57906fd64423d69468ea281"
+    ],
+    "skills/lean-best-practices/SKILL.md": [
+      "17f2ee69c5099ebb4c7247ad89b38f09551a325b845fb440f96757f77920b8ad",
+      "4bc0bac27f95cba804f59d8c3c1ac2166440f94f7f4599ae28af59b3199aec80",
+      "6913941532a2273b477e2bb5290e0472e69eeb3aac7ece9b01f6b3b1be6c6ff6",
+      "745a4488b31f05e64ee36522fcc9210175d94f8de0439d8b80da9d9a41e2e1a5",
+      "8025e13c5cc891dd36fbb13eedab475ac266265292aa35c8d41bcc381fe39639",
+      "8a72225f691e474a21bf1f74fc77b20fc6f9aed1f6e5b8fc06eb07e6e1311c50",
+      "9fb74ffac03024917e0c127199c07beecb5310439c5dc2b5b4a8d8f8928f7c1d",
+      "a41540cc30c9779847e450236e93c79db6605b7e9a2074b20f244959ebb04266",
+      "d911b7fadbf824abe46107ac82e635768a023ec95ddf424a5025b859b31a840c",
+      "dfbc8b75e26d7b5adf76542acca4407bfa878503c70af1df3a70f121861a5822",
+      "f4729eb36877c1f4ac1ae8157d7bdd0f4ed4d69c009ec915e6e44244b3f8cf3b",
+      "f5dea9cd1e55b3a534dc36669a267dd72e76625ad43b05fcebb99f076d239d90"
+    ]
+  }
+}

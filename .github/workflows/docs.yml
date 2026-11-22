@@ -9,6 +9,10 @@ on:
     paths:
       - "Solanalib/**"
       - "Solanalib.lean"
+      - "packages/**"
+      - "tools/model-audit/**"
+      - "scripts/postprocess-docs.py"
+      - "scripts/build-docs.py"
       - "lakefile.lean"
       - "lake-manifest.json"
       - "lean-toolchain"
@@ -41,7 +45,8 @@ jobs:
           path: |
             ~/.elan
             .lake/packages
-          key: lake-docs-${{ runner.os }}-${{ hashFiles('lake-manifest.json', 'lean-toolchain') }}
+            .lake/build
+          key: lake-docs-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lakefile.lean', 'lake-manifest.json', 'lean-toolchain') }}
           restore-keys: |
             lake-docs-${{ runner.os }}-
             lake-${{ runner.os }}-
@@ -66,10 +71,7 @@ jobs:
         run: lake exe cache get
 
       - name: Build documentation site
-        run: lake -Kenv=dev build Solanalib:docs
-
-      - name: Patch landing page (banner + title + module nav)
-        run: python3 scripts/postprocess-docs.py
+        run: python3 scripts/build-docs.py
 
       - uses: actions/configure-pages@v5
 

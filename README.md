@@ -51,7 +51,9 @@ Solanalib lives entirely at the spec layer — it doesn't run on-chain. But it n
 
 ## Architecture
 
-Six peer top-level folders, each a distinct layer:
+The single `solanalib` Lake package uses Lean 4.34.0 and matching Mathlib. Its separately selectable [`Solanalib.Runtime`](packages/solanalib-runtime/README.md) library models the runtime. Every library under `Solanalib` or `SolanalibTest` shares the root artifact directory, so ordinary Lean imports work across the full library. New Solana developments use the runtime public-key, account and instruction representations; `Account.WF` records their numeric and data bounds.
+
+The root library has six domain folders:
 
 ```
 Solanalib/
@@ -89,7 +91,7 @@ The boundaries are deliberate:
 
 - **`Primitives/`** are atomic types (no operations beyond the obvious). When we add `Slot`, `Epoch`, `Hash`, they live here.
 - **`Numeric/`** is the numeric backbone — every fixed-point or refined-int type belongs here, separate from domain code so it stays reusable.
-- **`Account/`**, **`Instruction/`** model the Solana runtime data shapes 1:1 with the real Rust crates (`solana-pubkey 4.2`, `solana-account 4.3`, `solana-instruction 3.4`).
+- **`Account/`**, **`Instruction/`** retain the original convenient data shapes and APIs. These types do not enforce every runtime invariant: for example, the original public key accepts an arbitrary `ByteArray`. Use `Solanalib.Runtime` for new runtime models, and explicit checked conversions when crossing representations.
 - **`Finance/`** is the first domain layer — financial shapes that recur across DeFi: decay curves, growth curves, and (future) AMM math, lending invariants, oracle aggregation.
 - **`SBPF/`** is the machine layer — a faithful Lean port of the [OOPSLA 2025](https://dl.acm.org/doi/10.1145/3720414) Isabelle/HOL sBPF semantics (all 22 instruction forms, the decoder, the small-step interpreter, and the verifier). Unlike the `Nat`-backed spec layers above, it models bit-precise machine words with `BitVec` (signed division, sign-extension, shifts), because the bytecode it describes is bit-precise. It is the concrete machine the high-level shapes ultimately refine down to.
 
@@ -170,7 +172,7 @@ just test         # runs regression tests in SolanalibTest/
 just docs-open    # builds the docs site + opens .lake/build/doc/index.html
 ```
 
-CI runs the same `just build` + `just test` + `scripts/lint-style.sh` flow on every push. Warning gate fails any build that emits a `warning: Solanalib*/` line.
+CI builds the root and runtime libraries, runs their tests and audits, and replays the Agave recording. Lean builds use `--wfail`.
 
 ---
 
@@ -226,13 +228,13 @@ Listed roughly in order of how foundational they are; not all need to be done be
 
 ### Solana semantics
 
-- [ ] **`Pda`** — `find_program_address` + the determinism theorem. Hit by every Solana program.
-- [ ] **`Sysvar.Clock`, `Sysvar.Rent`** — read-only on-chain state most programs depend on.
-- [ ] **`ProgramResult`** — `Ok` / `Err` with the standard Solana error codes.
-- [ ] **`Transaction`** — list of instructions + signers + recent blockhash.
-- [ ] **`CPI`** — cross-program-invocation semantics; invariants spanning a CPI call.
+- [x] **PDA model** — [`Solanalib.Runtime.Prims`](packages/solanalib-runtime/Solanalib/Runtime/Prims.lean) defines address derivation and bump search. Cryptographic functions remain explicit parameters; this does not verify a concrete hash or curve implementation.
+- [x] **Sysvar model** — [`Solanalib.Runtime.Sysvar`](packages/solanalib-runtime/Solanalib/Runtime/Sysvar.lean) and [`Profile`](packages/solanalib-runtime/Solanalib/Runtime/Profile.lean) model the selected clock/rent and instructions-sysvar behavior. Bank values and profile correspondence remain assumptions.
+- [x] **Program-result model** — [`Solanalib.Runtime.Error`](packages/solanalib-runtime/Solanalib/Runtime/Error.lean) supplies instruction and transaction errors used by the `Except` outcomes of the model. Source ABI bindings are separate obligations.
+- [x] **Transaction model** — [`Solanalib.Runtime.Transaction`](packages/solanalib-runtime/Solanalib/Runtime/Transaction.lean) models admission, execution, fees, commit and rollback. The [trust boundary](packages/solanalib-runtime/TRUST.md) records bank-supplied checks and the remaining successful durable-nonce advancement gap.
+- [x] **CPI runtime model** — [`Solanalib.Runtime.Cpi`](packages/solanalib-runtime/Solanalib/Runtime/Cpi.lean) and [`Exec`](packages/solanalib-runtime/Solanalib/Runtime/Exec.lean) model preparation, account synchronization and invocation. Callee behavior stays opaque behind explicit contracts; a callee effect requires its own implementation proof.
 
-### Bridges and verification
+### Execution refinement and verification
 
 - [x] **sBPF semantics in Lean (`Solanalib.SBPF`).** Landed: a Lean port of the [OOPSLA 2025 Isabelle/HOL formalisation](https://dl.acm.org/doi/10.1145/3720414) — all 22 instruction forms, the decoder, the small-step interpreter, and the verifier with the `step_ne_err` safety theorem (Lemma 6.4). Validated against a reference VM through the [`spinoza`](https://github.com/lgalabru/spinoza) harness (`spinoza validate`), which differentially tests the Lean interpreter against an executable sBPF VM; `spinoza lift` emits a deployed program's `.text` as an importable `BpfBin` term.
 - [ ] **Refinement from `SBPF/` up to the spec layers.** The pieces exist at both ends; the open work is the connecting theorem — e.g. a lifted program's `bpfInterp` result preserves a `Finance.WithdrawalCap` invariant. Also outstanding from the port: the x86-64 JIT correspondence, and reconciling the PQR high-multiply edge case against a second oracle (agave `solana-sbpf`).
@@ -250,12 +252,14 @@ Listed roughly in order of how foundational they are; not all need to be done be
 
 The skill at [`skills/lean-best-practices/SKILL.md`](skills/lean-best-practices/SKILL.md) is the canonical guide — file template, naming conventions, the `abbrev` / `notation` / `UInt64` trade-offs, common errors, the bundled-structure pattern, and the numeric-bridge discipline. Read it before adding a new primitive.
 
+For runtime contributions, use `packages/solanalib-runtime/Solanalib/Runtime/` and keep its source imports within the runtime layer and Lean libraries; the containing `solanalib` package uses Mathlib. Put scenarios under `SolanalibTest.Runtime`, update source correspondence and run the [source and proof audits](packages/solanalib-runtime/source-map/README.md), then run the [recorded conformance replay and controls](tools/runtime-conformance/README.md). Use the runtime types for new Solana developments. Source-model proofs and differential tests do not themselves prove deployed Rust implementations correct.
+
 In short, the workflow for adding a new domain primitive looks like:
 
 1. Decide the file path under `Solanalib/<Concept>/`. New top-level concept ↔ new top-level folder.
 2. Write the file using the template in the skill (copyright header, then imports, then `/-! … -/` module docstring, then namespace).
 3. Add the file to `Solanalib.lean`.
-4. Run `just build` locally. **Always verify locally before pushing** — CI cycles are ~2 minutes vs ~10 seconds locally.
+4. Run `just build` locally and the checks for each changed package. CI timing depends on the package group and cache state.
 5. For load-bearing API, add a regression test under `SolanalibTest/<Concept>/<Aspect>Test.lean` and import it from `SolanalibTest.lean`.
 6. Run `just test` and `scripts/lint-style.sh`.
 
@@ -266,6 +270,9 @@ Conventions worth knowing before writing the first proof:
 - For bounded `UInt64` / `UInt128` reasoning, bridge to `Nat` via `.toNat` — `omega` doesn't reason about `UInt64` directly.
 - Bundled structures > type-classes for domain shapes with concrete parameters.
 - The first commit should follow the existing pattern (no AI-attribution trailer, copyright `(c) <YEAR> Solana Foundation`, `Authors: Solanalib Contributors`).
+- Sign your commits and describe the change and its purpose.
+
+Harmonic-authored files use `Copyright (c) 2026 Harmonic. All rights reserved.` with the same license and Authors lines.
 
 ---
 

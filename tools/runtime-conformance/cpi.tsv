@@ -1,0 +1,7 @@
+# id	entry_data	caller_data	callee_expected_data	callee_output_data	duplicate_meta	bad_data_pointer	caller_writable
+cpi_grow_then_shrink	9	0,0,0	0,0,0	7,8	1	0	1
+cpi_shrink_then_grow	1,2,3	0	0	7,8,9,10	1	0	1
+cpi_single_account	9	0	0	7	0	0	1
+cpi_bad_data_pointer	9	0,0,0	0,0,0	7,8	1	1	1
+cpi_privilege_escalation	9	0,0,0	0,0,0	7,8	1	0	0
+cpi_callee_rejects_data	9	0,0,0	1	7,8	1	0	1

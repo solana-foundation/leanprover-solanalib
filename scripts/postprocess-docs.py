@@ -6,7 +6,7 @@ doc-gen4's `DocGen4.Output.Index` hard-codes a generic
 Lean 4 ..."` footer. We replace that `<main>...</main>` block with a
 Solanalib-branded landing page (banner image + tagline + module nav).
 
-Run this after `lake -Kenv=dev build Solanalib:docs`, before publishing
+Called by `scripts/build-docs.py` after rendering all public modules, before publishing
 to GitHub Pages.
 """
 from __future__ import annotations
@@ -37,14 +37,18 @@ CUSTOM_MAIN = f"""<main>
   <p>Start at <a href="./Solanalib.html">the library overview</a>, or
   jump straight to a layer:</p>
   <ul>
-    <li><a href="./Solanalib/Primitives/Pubkey.html">Primitives</a>
+    <li><a href="./Solanalib/Runtime.html">Runtime</a>
+        — mathematical models of Agave runtime checks, transactions and CPI</li>
+    <li><a href="./Solanalib/Primitives/Lamports.html">Primitives</a>
         — atomic on-chain types (Pubkey, Lamports, Timestamp)</li>
     <li><a href="./Solanalib/Numeric/Fraction.html">Numeric</a>
         — Q68.60 fixed-point arithmetic</li>
-    <li><a href="./Solanalib/Account/Basic.html">Account</a>
-        — the five-field on-chain account model</li>
-    <li><a href="./Solanalib/Instruction/Basic.html">Instruction</a>
-        — instruction + AccountMeta</li>
+    <li><a href="./Solanalib/Runtime/Account.html">Account</a>
+        — runtime accounts, bounds and rent checks</li>
+    <li><a href="./Solanalib/Runtime/Syscall.html#Solanalib.Runtime.CpiInstruction">Instructions</a>
+        — runtime instruction values,
+        <a href="./Solanalib/Runtime/View.html#Solanalib.Runtime.AccountMeta">account metadata</a>
+        and <a href="./Solanalib/Runtime/Cpi.html">CPI checks</a></li>
     <li><a href="./Solanalib/Finance/Decay.html">Finance</a>
         — decay, growth, compounding, withdrawal caps</li>
     <li><a href="./Solanalib/SBPF/Syntax.html">SBPF</a>

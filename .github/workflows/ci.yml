@@ -18,6 +18,15 @@ jobs:
       - name: Textual style checks
         run: ./scripts/lint-style.sh
 
+      - name: Style controls
+        run: python3 -B -m unittest discover -s scripts -p 'test_lint_style.py'
+
+      - name: Prose checks
+        run: |
+          python3 scripts/check-prose.py
+          python3 -B -m unittest discover -s scripts -p 'test_prose.py'
+          python3 -B -m unittest discover -s scripts -p 'test_module_ownership.py'
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -34,7 +43,7 @@ jobs:
           path: |
             ~/.elan
             .lake/packages
-          key: lake-${{ runner.os }}-${{ hashFiles('lake-manifest.json', 'lean-toolchain') }}
+          key: lake-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lakefile.lean', 'lake-manifest.json', 'lean-toolchain') }}
           restore-keys: |
             lake-${{ runner.os }}-
 
@@ -57,20 +66,50 @@ jobs:
       - name: Fetch pre-built Mathlib oleans
         run: lake exe cache get
 
-      - name: Build library
-        run: |
-          set -o pipefail
-          lake build 2>&1 | tee build.log
+      - name: Build library, tests and oracle
+        run: lake --wfail build Solanalib SolanalibTest sbpf-oracle
 
-      - name: Fail on warnings in Solanalib source
+      - name: Check module ownership and package boundaries
         run: |
-          # Treat any Lean warning emitted for a Solanalib*/ source file as a
-          # build failure. External-library warnings (e.g. Mathlib's own
-          # deprecation messages) are ignored — they're not actionable here.
-          if grep -E '^warning: (Solanalib|SolanalibTest)/' build.log; then
-            echo "::error::lake build produced warnings on Solanalib source"
-            exit 1
-          fi
+          python3 scripts/check-module-ownership.py
+          python3 tools/model-audit/import_tiers.py
 
       - name: Run tests
-        run: lake test
+        run: lake --wfail test
+
+  runtime:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.elan
+            .lake/packages
+            .lake/build
+          key: runtime-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.lean', 'lake-manifest.json', 'packages/solanalib-runtime/**/*.lean') }}
+          restore-keys: |
+            runtime-${{ runner.os }}-${{ runner.arch }}-
+      - name: Install Lean manager
+        run: |
+          if ! test -x "$HOME/.elan/bin/elan"; then
+            curl --fail --location https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build runtime and scenarios in the root package
+        run: |
+          lake update
+          lake exe cache get Solanalib.lean SolanalibTest.lean
+          lake --wfail build Solanalib SolanalibTest Solanalib.Runtime SolanalibTest.Runtime SolanalibTest.Conformance.Runtime
+          python3 scripts/check-lean-loading.py
+      - name: Replay controls and authenticated native recording
+        run: |
+          python3 -B -m unittest discover -s tools/runtime-conformance -p 'test_*.py'
+          python3 -B tools/runtime-conformance/run.py --model-only --evidence-dir "$RUNNER_TEMP/runtime-replay"
+      - name: Runtime source correspondence and proof audits
+        run: |
+          python3 -B -m unittest discover -s tools/model-audit -p 'test_*.py'
+          python3 -B tools/model-audit/check_runtime.py

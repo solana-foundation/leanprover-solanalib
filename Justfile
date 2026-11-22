@@ -8,7 +8,7 @@ default:
 # Resolve dependencies and download cached Mathlib oleans.
 # Run this once after cloning, and again whenever lakefile.lean changes.
 setup:
-    lake -Kenv=dev update
+    lake -R -Kenv=dev update
     lake exe cache get
 
 # Type-check the library (no docs).
@@ -21,8 +21,7 @@ test:
 
 # Build the documentation site to .lake/build/doc/.
 docs:
-    lake -Kenv=dev build Solanalib:docs
-    python3 scripts/postprocess-docs.py
+    python3 scripts/build-docs.py
     @echo ""
     @echo "Docs written to .lake/build/doc/index.html"
 

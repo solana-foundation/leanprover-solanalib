@@ -1,0 +1,38 @@
+{
+  "cargo_lock_sha256": "d5ae4d5728e42e45637bee3ea3b9acbb3cc98df20f16e5b2c463f567006030f6",
+  "evidence_manifest_sha256": "cd008e126e7cbc31a736f8650d101c57f23109bb1d26a3c6cd178e876b425729",
+  "native_binary_sha256": "563e86c5b3116a49c6477561249295437e533decc587c2c759aba48dcbe48518",
+  "native_cpi_profile": {
+    "abi": "v1",
+    "enabled_svm_features": [
+      "syscall_parameter_address_restrictions"
+    ],
+    "memory_config": "L",
+    "other_svm_features": false,
+    "rent_lamports_per_byte": 5080,
+    "sbpf_memory_mapping_version": "V3",
+    "signer_seeds": [],
+    "vm_executed": false
+  },
+  "native_inputs_sha256": {
+    "accounts.tsv": "ff7820688863ad00290bea1d858131e025c7394d336fd2b4eb2849508a4c7cfd",
+    "agave_cases.rs": "4d489073c8414b1308840964c68c99ee61c6c9fc946a26fe70d087f455b690b2",
+    "cpi.tsv": "a03f4e1f2a30734cd198738b779a0b4e97fd30140855012f3f05021c797c7d54",
+    "cpi_cases.rs": "658d99751b2ac14030169d9d12ad0b1730b703d567a3ff3d94504bae6856b2bb",
+    "serialization.tsv": "85dac71b82f3269af7f678f5b3faeec9767beee4565c9f5f5ff1d7a99f17851b"
+  },
+  "native_output": {
+    "bytes": 1194581,
+    "cases": 79,
+    "file": "expected-native.tsv.gz",
+    "gzip_sha256": "c426b81395816ac69f68b17703be90aa9c7bfb6bd19325953ffa476a8b9aeed8",
+    "sha256": "18aa38b20764ab09c36869e25bfa3a23fefd8411c3adee24faf6e4cb8aac507b"
+  },
+  "recorded_utc": "2026-11-24T02:58:40.679820+00:00",
+  "revision": "a203300045b405f86c9c84308b2eae76af69ac3b",
+  "rust": "1.97.1",
+  "schema_version": 1,
+  "source_archive_sha256": "917912ac67fc0b6ffec94e33e1ce113db581e1f1706aa1ecbe4224b967b15f30",
+  "source_archive_url": "https://codeload.github.com/anza-xyz/agave/tar.gz/a203300045b405f86c9c84308b2eae76af69ac3b",
+  "target": "x86_64-unknown-linux-gnu"
+}
