@@ -1,0 +1,23 @@
+{
+  "schema_version": 3,
+  "runtime_reference": {
+    "release": "Agave 4.3.2",
+    "repository": "https://github.com/anza-xyz/agave",
+    "revision": "a203300045b405f86c9c84308b2eae76af69ac3b",
+    "review_date": "2026-11-03",
+    "method": "Imports the existing pure model definitions; this package adds no validator correspondence argument."
+  },
+  "analysis": "README.md",
+  "binding_boundary": "Mathematical models of the individually registered Solana SDK functions over reusable account, borrow, outcome, resource and callback infrastructure. The registry defines a supported subset of each library. Concrete Rust body, standard-library, target-memory and validator correspondence remain separate interpretation obligations.",
+  "implementation_boundary": "Mathematical library models only. Rust implementation correctness and executable Rust clients remain separate; no SDK Rust implementation is reported as verified.",
+  "applicability_scope": [
+    "Custom-allocator failure while constructing an error or diagnostic payload is outside the scope of this package; interpret those allocations as successful. Other errors, panics, ordinary allocation effects and callback outcomes retain their model contracts.",
+    "Applicability selects an existing mathematical model under its recorded conditions. It does not prove Rust implementation correctness or discharge generic-index, ownership, codec, provider or runtime interpretation obligations.",
+    "Declared compatible ranges assume that the registered operation and its relevant dependencies preserve the complete reference contract, at the used types and recorded build conditions, including implementation-specific diagnostics, effects and source identities. Reference releases and test lockfiles are evidence, not an exhaustive eligibility list. Known behavioral exceptions remain excluded; no Cargo resolution or Rust correspondence proof is inferred."
+  ],
+  "fragments": [
+    "source-map/foundation.json",
+    "source-map/libraries.json",
+    "source-map/applicability.json"
+  ]
+}

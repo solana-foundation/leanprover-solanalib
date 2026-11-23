@@ -1,0 +1,4 @@
+# Family runtime: host branches of solana-sysvar 3.1.1 and solana-msg 3.1.0.
+corpora = ["solana_sysvar_3_1_1_host", "solana_msg_3_1_0_host"]
+inputs = ["rust/runtime-common/host_stubs.rs", "rust/runtime-common/syscall_cases.rs"]
+host = true

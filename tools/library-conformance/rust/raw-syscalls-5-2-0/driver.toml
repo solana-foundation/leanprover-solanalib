@@ -1,0 +1,4 @@
+# SDK 5.2.0 declarations; Runtime supplies the shared syscall provider and checks.
+corpora = ["solana_define_syscall_5_2_0"]
+region = "none"
+inputs = ["rust/runtime-common/syscall_cases.rs"]

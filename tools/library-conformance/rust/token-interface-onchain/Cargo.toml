@@ -1,0 +1,26 @@
+[package]
+name = "conformance-token-interface-onchain"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records spl-token-2022 11.0.0 onchain::invoke_transfer_checked"
+
+# spl-token-2022 11.0.0 resolves to interface 3.0.0, hook 2.1.0,
+# tlv-account-resolution 0.11.1, type-length-value 0.9.1 and pod 0.7.3.
+# no-entrypoint prevents installation of the on-chain bump allocator.
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+spl-token-2022 = { version = "=11.0.0", features = ["no-entrypoint"] }
+solana-account-info = "=3.1.1"
+solana-address = "=2.6.0"
+solana-instruction = "=3.4.0"
+solana-program-error = "=3.0.1"
+solana-stable-layout = "=3.0.0"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

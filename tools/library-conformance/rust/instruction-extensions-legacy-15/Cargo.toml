@@ -1,0 +1,27 @@
+[package]
+name = "conformance-instruction-extensions-legacy-15"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Exact library and dependency selections retained from a reviewed source lock.
+# This native observation profile uses panic=unwind. A source binding that uses
+# panic=abort must justify that strategy and the selected Solana cfg separately.
+[features]
+default = ["seeded"]
+seeded = []
+prefund = []
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+serde = "=1.0.159"
+solana-program = "=1.15.2"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"
+
+[patch.crates-io]
+ahash = { version = "=0.7.6", path = "../prepared/ahash-0.7.6" }

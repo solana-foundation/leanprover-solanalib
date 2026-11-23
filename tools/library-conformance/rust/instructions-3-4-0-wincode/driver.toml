@@ -1,0 +1,4 @@
+# Family Instructions: solana-instruction 3.4.0 `new_with_wincode`, solana-system-interface 3.2.0
+# (wincode) and solana-instruction-view 1.0.0, at the pinned versions.
+corpora = ["solana_instruction_3_4_0_wincode", "solana_system_interface_3_2_0_wincode", "solana_instruction_view_1_0_0"]
+inputs = ["rust/instructions-common/instruction.rs", "rust/instructions-common/system.rs"]

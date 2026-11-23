@@ -1,0 +1,76 @@
+{
+  "corpora": {
+    "instruction_extensions_legacy_18.json": {
+      "crates": [
+        {
+          "name": "solana-program",
+          "version": "1.18.26"
+        }
+      ],
+      "records": 40,
+      "sha256": "1b4c056bb0d0766e7d5695386e41324f1a253aee58c5fb5cf210ef26a8c1fb08"
+    }
+  },
+  "driver": "instruction-extensions-legacy-18",
+  "inputs": {
+    "rust/instruction-extensions-common/allocator.rs": "dda3f1af0c59f604925d134e469eb4e0dd04a62888f2bedb63e49c1456452a60",
+    "rust/instruction-extensions-common/record.rs": "9edcfc15e0b72d8b47348bc79440d997a826cb77ac55e63d6d89a31dcdf7ae4e",
+    "rust/instruction-extensions-legacy-18/.cargo/config.toml": "eb75cb2bbc05ffcc804b1ed43a79043e074f9dddd2ec40d95c361c24bc5731a3",
+    "rust/instruction-extensions-legacy-18/Cargo.lock": "bd96b0161ac5e3cc65b8975b3438053dbc12da5ec03bfef066a1634b389caf4e",
+    "rust/instruction-extensions-legacy-18/Cargo.toml": "73b3ee14ff721c8574bcad76fe68e552cfcde8a6500bf4faba65c2ce493cd6a9",
+    "rust/instruction-extensions-legacy-18/driver.toml": "a91a27e9f2c6b839bb69f8ce8e7bcde2324e5635725cf41db632ef48800c0d39",
+    "rust/instruction-extensions-legacy-18/src/main.rs": "94bb078a19ef4754f33e08150b145809f7eb8b2130fc45a1607760e13fb72d0a",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a"
+  },
+  "locked": {
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "serde": [
+      {
+        "checksum": "0b9781016e935a97e8beecf0c933758c97a5520d32930e460142b4cd80c6338e",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.0.216"
+      }
+    ],
+    "solana-program": [
+      {
+        "checksum": "c10f4588cefd716b24a1a40dd32c278e43a560ab8ce4de6b5805c9d113afdfa1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.18.26"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:19:36+00:00",
+  "requirements": {
+    "conformance-recorder": "path ../recorder",
+    "serde": "=1.0.216",
+    "solana-program": "=1.18.26"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

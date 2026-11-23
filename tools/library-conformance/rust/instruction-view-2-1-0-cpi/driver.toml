@@ -1,0 +1,3 @@
+# Family Instructions: solana-instruction-view 2.1.0, pinocchio-system 0.6.0 and
+# pinocchio-associated-token-account 0.4.0.
+corpora = ["solana_instruction_view_2_1_0", "pinocchio_system_0_6_0", "pinocchio_associated_token_account_0_4_0"]

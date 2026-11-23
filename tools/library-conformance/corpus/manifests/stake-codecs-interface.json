@@ -1,0 +1,126 @@
+{
+  "corpora": {
+    "stake_codecs_interface.json": {
+      "crates": [
+        {
+          "name": "solana-address-lookup-table-interface",
+          "version": "2.2.2"
+        },
+        {
+          "name": "solana-borsh",
+          "version": "2.2.1"
+        },
+        {
+          "name": "borsh",
+          "version": "0.10.4"
+        },
+        {
+          "name": "bincode",
+          "version": "1.3.3"
+        }
+      ],
+      "records": 130,
+      "sha256": "5405940f2d4b0be6476b500acc65bd1bc5c3393dc3c05fd0988fa814cb6d86b0"
+    }
+  },
+  "driver": "stake-codecs-interface",
+  "inputs": {
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a",
+    "rust/shim/Cargo.toml": "dde2a4bec857a3d829670e53b302e449b2a1a839f63cee16e312466ea5073075",
+    "rust/shim/src/lib.rs": "687cac522416bdbb2f6b9311d3d19775c8596258cf8c33e63eccda6da9293399",
+    "rust/stake-codec-cases/alloc_trace.rs": "9f23b0400d9261cf5ee9a538372c066147f947a8344005ef4327442f01c840e0",
+    "rust/stake-codec-cases/lookup.rs": "5085c1d4259f538b54e5f240124ccfee94489153acc49cbc01b4322bfd9278a1",
+    "rust/stake-codec-cases/packed_len.rs": "6c614fd6560676721cdbe8b34a75e227be74afa174702c8fe0bfb96d0811c3a8",
+    "rust/stake-codecs-interface/.cargo/config.toml": "bc104dbd603393eab9a06cb86c3cd38b176ad908250c6f148f10210e9e63f848",
+    "rust/stake-codecs-interface/Cargo.lock": "3b386ba6c494a0d9b19bad9dc6b1825bd30ba7491c53abf1ec59b4f6f2de798d",
+    "rust/stake-codecs-interface/Cargo.toml": "0e1a163c6d4a22a5da10624789aae942d20b8dd701b9811e20cd4296e8f1a90e",
+    "rust/stake-codecs-interface/driver.toml": "d05b372860841dc0e352fd65e24c029a1da447f12547406fa58440a0d75eeb56",
+    "rust/stake-codecs-interface/src/main.rs": "b58657ae6b7a5ac89edbe166f264714afd09d3c02e8a47566aa9c5a246af69a9"
+  },
+  "locked": {
+    "bincode": [
+      {
+        "checksum": "b1f45e9417d87227c7a56d22e471c6206462cba514c7590c09aff4cf6d1ddcad",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.3.3"
+      }
+    ],
+    "borsh": [
+      {
+        "checksum": "115e54d64eb62cdebad391c19efc9dce4981c690c85a33a12199d99bb9546fee",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.10.4"
+      },
+      {
+        "checksum": "d1da5ab77c1437701eeff7c88d968729e7766172279eab0676857b3d63af7a6f",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.6.0"
+      }
+    ],
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "conformance-shim": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "solana-address-lookup-table-interface": [
+      {
+        "checksum": "d1673f67efe870b64a65cb39e6194be5b26527691ce5922909939961a6e6b395",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.2.2"
+      }
+    ],
+    "solana-borsh": [
+      {
+        "checksum": "718333bcd0a1a7aed6655aa66bef8d7fb047944922b2d3a18f49cbc13e73d004",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.2.1"
+      }
+    ],
+    "solana-pubkey": [
+      {
+        "checksum": "9b62adb9c3261a052ca1f999398c388f1daf558a1b492f60a6d9e64857db4ff1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.4.0"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:19:58+00:00",
+  "requirements": {
+    "bincode": "=1.3.3",
+    "borsh": "=0.10.4",
+    "conformance-recorder": "path ../recorder",
+    "conformance-shim": "path ../shim",
+    "solana-address-lookup-table-interface": "=2.2.2",
+    "solana-borsh": "=2.2.1",
+    "solana-pubkey": "=2.4.0"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

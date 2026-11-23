@@ -1,0 +1,2 @@
+corpora = ["pubkey_profiles_221"]
+inputs = ["rust/address-profiles-common/operations.rs", "rust/address-profiles-common/io.rs"]

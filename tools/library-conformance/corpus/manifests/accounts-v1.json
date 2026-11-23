@@ -1,0 +1,141 @@
+{
+  "corpora": {
+    "solana_account_info_3_1_1.json": {
+      "crates": [
+        {
+          "name": "solana-account-info",
+          "version": "3.1.1"
+        },
+        {
+          "name": "solana-program-entrypoint",
+          "version": "3.1.1"
+        }
+      ],
+      "records": 43,
+      "sha256": "b39a58dc9c9f4dda78c3573cb864093498a2ca9f6e6cef56ea2287985ddac81e"
+    },
+    "solana_account_view_1_0_0.json": {
+      "crates": [
+        {
+          "name": "solana-account-view",
+          "version": "1.0.0"
+        },
+        {
+          "name": "pinocchio",
+          "version": "0.10.2"
+        }
+      ],
+      "records": 166,
+      "sha256": "354a49e2aceeb3611e97f1f229384e371a6efff9ceb36d4da83926b0087361e7"
+    },
+    "solana_account_view_1_0_0_forged.json": {
+      "crates": [
+        {
+          "name": "solana-account-view",
+          "version": "1.0.0"
+        },
+        {
+          "name": "pinocchio",
+          "version": "0.10.2"
+        }
+      ],
+      "records": 15,
+      "sha256": "ddbb3feddd13fdd06d148e30b1f348f4aeae2f6ec0dcb61b0f8de8f50663bd3f"
+    }
+  },
+  "driver": "accounts-v1",
+  "inputs": {
+    "rust/accounts-v1/.cargo/config.toml": "eb75cb2bbc05ffcc804b1ed43a79043e074f9dddd2ec40d95c361c24bc5731a3",
+    "rust/accounts-v1/Cargo.lock": "a41e59d53fec60838ff2b9403103c6f00dbcd0907e75a507a21bb6bf6a2946dc",
+    "rust/accounts-v1/Cargo.toml": "2618462e8995af194ab0e73fb6a7e8b4bea23a6e1d6b5bf2e6d65f97e6bfe263",
+    "rust/accounts-v1/driver.toml": "e1c5b1073da96ba5ac954a3fa7b0a781f4f192def66e39b68f9226a8fe84e81b",
+    "rust/accounts-v1/src/info.rs": "d9225616e838bfab7189d8be61ca90a48c64dde311b01ca9687970aa672e3686",
+    "rust/accounts-v1/src/main.rs": "5096a458844c334695a6371b1e68d0691a4004be0000a3923990055e87f27444",
+    "rust/accounts-v1/src/region.rs": "a26d0f300b99471d36ea9f83a310ed17b13474789bd4ed83075b12007d5bfcd2",
+    "rust/accounts-v1/src/view.rs": "61dfaa85b3c7c1bdbbdfc19c95bee6a08cb0342c8143af2305f63a31f7fc5466",
+    "rust/accounts/Cargo.toml": "3e897705311d25bd5c1626bf10e5df3e16f9bee907469317771aba7292d794ee",
+    "rust/accounts/src/lib.rs": "606e12d3e1d6f742cc64c3d8a41e5c76d42f388ce9c69c4f8a5dbdd5de2fd8d5",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a"
+  },
+  "locked": {
+    "conformance-accounts": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "pinocchio": [
+      {
+        "checksum": "c06810dac15a4ef83d3dabdb4f2f22fb39c9adff669cd2781da4f716510a647c",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.10.2"
+      }
+    ],
+    "solana-account-info": [
+      {
+        "checksum": "a9cf16495d9eb53e3d04e72366a33bb1c20c24e78c171d8b8f5978357b63ae95",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "3.1.1"
+      }
+    ],
+    "solana-account-view": [
+      {
+        "checksum": "f37ca34c37f92ee341b73d5ce7c8ef5bb38e9a87955b4bd343c63fa18b149215",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.0.0"
+      }
+    ],
+    "solana-program-entrypoint": [
+      {
+        "checksum": "84c9b0a1ff494e05f503a08b3d51150b73aa639544631e510279d6375f290997",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "3.1.1"
+      }
+    ],
+    "solana-program-error": [
+      {
+        "checksum": "4f04fa578707b3612b095f0c8e19b66a1233f7c42ca8082fcb3b745afcc0add6",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "3.0.1"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:18:34+00:00",
+  "requirements": {
+    "conformance-accounts": "path ../accounts",
+    "conformance-recorder": "path ../recorder",
+    "pinocchio": "=0.10.2",
+    "solana-account-info": "=3.1.1",
+    "solana-account-view": "=1.0.0",
+    "solana-program-entrypoint": "=3.1.1",
+    "solana-program-error": "=3.0.1"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

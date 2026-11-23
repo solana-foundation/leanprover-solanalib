@@ -1,0 +1,111 @@
+{
+  "corpora": {
+    "stake_codecs_program.json": {
+      "crates": [
+        {
+          "name": "solana-program",
+          "version": "1.18.26"
+        },
+        {
+          "name": "bincode",
+          "version": "1.3.3"
+        },
+        {
+          "name": "borsh",
+          "version": "0.10.4"
+        }
+      ],
+      "records": 130,
+      "sha256": "a3b7798cdcf9ca2987cd6c2a8528433ebef40f50f551fea85af6fb52e802567c"
+    }
+  },
+  "driver": "stake-codecs-program",
+  "inputs": {
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a",
+    "rust/shim/Cargo.toml": "dde2a4bec857a3d829670e53b302e449b2a1a839f63cee16e312466ea5073075",
+    "rust/shim/src/lib.rs": "687cac522416bdbb2f6b9311d3d19775c8596258cf8c33e63eccda6da9293399",
+    "rust/stake-codec-cases/alloc_trace.rs": "9f23b0400d9261cf5ee9a538372c066147f947a8344005ef4327442f01c840e0",
+    "rust/stake-codec-cases/lookup.rs": "5085c1d4259f538b54e5f240124ccfee94489153acc49cbc01b4322bfd9278a1",
+    "rust/stake-codec-cases/packed_len.rs": "6c614fd6560676721cdbe8b34a75e227be74afa174702c8fe0bfb96d0811c3a8",
+    "rust/stake-codecs-program/.cargo/config.toml": "bc104dbd603393eab9a06cb86c3cd38b176ad908250c6f148f10210e9e63f848",
+    "rust/stake-codecs-program/Cargo.lock": "a70cfe61048c8af299a5c39065b0255141a8c0bfd47832376bf3dd80faeda90b",
+    "rust/stake-codecs-program/Cargo.toml": "ba1e00b474f43a6b462bfead29a4cd8ff119845d263a25e275a295bef24139d8",
+    "rust/stake-codecs-program/driver.toml": "b6327fb715a52b0983ccdf23177ec2a180ca5c60ee72d13bdc02f2825c6cf0c0",
+    "rust/stake-codecs-program/src/main.rs": "9e4f15ebc5d9f21b34f1d646faaebbe93ef640c836fee351b0db2d8d971209aa"
+  },
+  "locked": {
+    "bincode": [
+      {
+        "checksum": "b1f45e9417d87227c7a56d22e471c6206462cba514c7590c09aff4cf6d1ddcad",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.3.3"
+      }
+    ],
+    "borsh": [
+      {
+        "checksum": "15bf3650200d8bffa99015595e10f1fbd17de07abbc25bb067da79e769939bfa",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.9.3"
+      },
+      {
+        "checksum": "115e54d64eb62cdebad391c19efc9dce4981c690c85a33a12199d99bb9546fee",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.10.4"
+      },
+      {
+        "checksum": "ad8646f98db542e39fc66e68a20b2144f6a732636df7c2354e74645faaa433ce",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.5.7"
+      }
+    ],
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "conformance-shim": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "solana-program": [
+      {
+        "checksum": "c10f4588cefd716b24a1a40dd32c278e43a560ab8ce4de6b5805c9d113afdfa1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.18.26"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:20:04+00:00",
+  "requirements": {
+    "bincode": "=1.3.3",
+    "borsh": "=0.10.4",
+    "conformance-recorder": "path ../recorder",
+    "conformance-shim": "path ../shim",
+    "solana-program": "=1.18.26"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

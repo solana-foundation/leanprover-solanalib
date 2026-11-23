@@ -1,0 +1,137 @@
+{
+  "build_probe": {
+    "argument": "--build-config",
+    "observed": {
+      "debug_assertions": true,
+      "little_endian": true,
+      "panic": "unwind",
+      "pointer_width": 64,
+      "scope": "projected-wrapper",
+      "signature_check_enabled": false,
+      "solana_cfg": true
+    },
+    "profile_flags": [
+      "--profile",
+      "dev"
+    ]
+  },
+  "corpora": {
+    "anchor_spl_token_0_32_1.json": {
+      "crates": [
+        {
+          "name": "anchor-spl",
+          "version": "0.32.1"
+        }
+      ],
+      "records": 188,
+      "sha256": "d445ce58925bc9cccda8271f1fb61ac2968fd949db1314dbc89070f8e14b684d"
+    }
+  },
+  "driver": "anchor-spl-token-0-32-1",
+  "inputs": {
+    "project_wrappers.py": "ded477b526c205d11e21072e4bf499790e53c4528b472b462fdfc8a23f469f23",
+    "rust/anchor-spl-token-0-32-1/.cargo/config.toml": "eb75cb2bbc05ffcc804b1ed43a79043e074f9dddd2ec40d95c361c24bc5731a3",
+    "rust/anchor-spl-token-0-32-1/Cargo.lock": "aadf385d22b80d6469e6571f626b3171b4fefc309cd6ca228accfe2af1834d69",
+    "rust/anchor-spl-token-0-32-1/Cargo.toml": "ee85d819e20dba144b6d645bcee1cace9d1db58361a7152c496dd9dd73196cf5",
+    "rust/anchor-spl-token-0-32-1/driver.toml": "8745f54137aa46b09093f83b46fb3ab61406c5635f9ff0771686931f56575b15",
+    "rust/anchor-spl-token-0-32-1/projection.json": "d31000d938fd290177a6550a771f5bb1ab73c59853f5a711403a6dfd3c24b287",
+    "rust/anchor-spl-token-0-32-1/src/cases.rs": "df98c36758d6e99ce74f8bd52540a768d39abe7579da3b22fabeebc0b1ce9f94",
+    "rust/anchor-spl-token-0-32-1/src/main.rs": "1689113a94d8af04f78568ae307c0cf8ce920faeb295c172d1ad15d318954661",
+    "rust/anchor-spl-token-0-32-1/src/projected.rs": "ffe2014aa1a0e0163a5b67132bd974143b1198174ab921d9985cc65674c6f76a",
+    "rust/common/anchor_spl_token.rs": "ec4f3556fad354551cca7ffc3cf5e37097b9bbec17f70362d92c113ae5ba607e",
+    "rust/common/anchor_spl_token_track.rs": "8e1c619431c5228773c6035b89e0e5468d77ae8d3d5cbfe33829a2ee2be03eba",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a"
+  },
+  "locked": {
+    "anchor-lang": [
+      {
+        "checksum": "e67d85d5376578f12d840c29ff323190f6eecd65b00a0b5f2b2f232751d049cc",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.32.1"
+      }
+    ],
+    "anchor-spl": [
+      {
+        "checksum": "3397ab3fc5b198bbfe55d827ff58bd69f2a8d3f9f71c3732c23c2093fec4d3ef",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.32.1"
+      }
+    ],
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "solana-account-info": [
+      {
+        "checksum": "c8f5152a288ef1912300fc6efa6c2d1f9bb55d9398eb6c72326360b8063987da",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.3.0"
+      }
+    ],
+    "solana-program-error": [
+      {
+        "checksum": "9ee2e0217d642e2ea4bee237f37bd61bb02aec60da3647c48ff88f6556ade775",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.2.2"
+      }
+    ],
+    "solana-pubkey": [
+      {
+        "checksum": "40db1ff5a0f8aea2c158d78ab5f2cf897848964251d1df42fef78efd3c85b863",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.2.1"
+      }
+    ],
+    "spl-token": [
+      {
+        "checksum": "053067c6a82c705004f91dae058b11b4780407e9ccd6799dc9e7d0fab5f242da",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "8.0.0"
+      }
+    ],
+    "spl-token-2022": [
+      {
+        "checksum": "31f0dfbb079eebaee55e793e92ca5f433744f4b71ee04880bfd6beefba5973e5",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "8.0.1"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:19:12+00:00",
+  "requirements": {
+    "anchor-lang": "=0.32.1",
+    "anchor-spl": "=0.32.1",
+    "conformance-recorder": "path ../recorder",
+    "solana-account-info": "=2.3.0",
+    "solana-program-error": "=2.2.2",
+    "solana-pubkey": "=2.2.1",
+    "spl-token": "=8.0.0",
+    "spl-token-2022": "=8.0.1"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1",
+  "scope": "projected-wrapper"
+}

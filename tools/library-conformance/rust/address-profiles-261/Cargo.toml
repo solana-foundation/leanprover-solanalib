@@ -1,0 +1,28 @@
+[package]
+name = "conformance-address-profiles-261"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Cargo.lock fixes the complete dependency graph.
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-address = { version = "=2.6.1", default-features = false, features = ["syscalls", "borsh", "std"] }
+borsh-selected = { package = "borsh", version = "=1.6.0", features = ["std"] }
+solana-loader-v3-interface = "=6.1.1"
+spl-associated-token-account-interface = "=2.0.0"
+solana-pubkey-facade = { package = "solana-pubkey", version = "=3.0.0" }
+solana-pubkey-new = { package = "solana-pubkey", version = "=4.2.0" }
+solana-sdk-ids = "=3.1.0"
+
+[features]
+default = []
+seed = []
+legacy_io = []
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

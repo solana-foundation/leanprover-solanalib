@@ -1,0 +1,27 @@
+[package]
+name = "conformance-accounts-v1"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records solana-account-view 1.0.0 and solana-account-info 3.1.1 over loader-serialized input regions"
+
+# The exact dependencies create accounts through their deserialization paths:
+# pinocchio 0.10.2 entrypoint::deserialize uses AccountView::new_unchecked and
+# AccountView::clone for duplicates; solana-program-entrypoint 3.1.1 deserialize
+# uses AccountInfo::new and AccountInfo::clone for duplicates. solana-program-error
+# is pinned to name the corresponding errors.
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-accounts = { path = "../accounts" }
+solana-program-error = "=3.0.1"
+solana-account-view = "=1.0.0"
+solana-account-info = "=3.1.1"
+pinocchio = "=0.10.2"
+solana-program-entrypoint = "=3.1.1"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

@@ -1,0 +1,20 @@
+[package]
+name = "conformance-runtime-rent-3-0-0-wrapping"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records solana-rent 3.0.0 minimum_balance, built without overflow checks"
+
+# Overflow checks are disabled, as in a release arithmetic profile,
+# while panics still unwind.
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+solana-rent = "=3.0.0"
+
+[profile.dev]
+panic = "unwind"
+overflow-checks = false
+
+[profile.release]
+panic = "unwind"

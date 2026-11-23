@@ -1,0 +1,66 @@
+{
+  "corpora": {
+    "borsh_1_6_1_nostd_io.json": {
+      "crates": [
+        {
+          "name": "borsh",
+          "version": "1.6.1"
+        }
+      ],
+      "records": 26,
+      "sha256": "aa69beec9d75e4e51ee956f3428decbcb9adf088dbf3b37556d7f580e8525d62"
+    }
+  },
+  "driver": "borsh-1-6-1-nostd",
+  "inputs": {
+    "rust/borsh-1-6-1-nostd/.cargo/config.toml": "eb75cb2bbc05ffcc804b1ed43a79043e074f9dddd2ec40d95c361c24bc5731a3",
+    "rust/borsh-1-6-1-nostd/Cargo.lock": "9abe76d2a3a335f92bf1c7448841b7c16fdad648e85798f1afad01b72285b3ea",
+    "rust/borsh-1-6-1-nostd/Cargo.toml": "4987f5a361296a31cad469755946385612964a50911de6e5ac1671847ed0e612",
+    "rust/borsh-1-6-1-nostd/driver.toml": "ff2cfb697f9542439fe3f4ed8da7a0928b42c86f77e6b1754df7c9d1ce11ad77",
+    "rust/borsh-1-6-1-nostd/src/main.rs": "a8e2a7ce75b28bdc7e0fdde3e2cc884aa31e356d1be08f8fdb789aaf409ab30c",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a"
+  },
+  "locked": {
+    "borsh": [
+      {
+        "checksum": "cfd1e3f8955a5d7de9fab72fc8373fade9fb8a703968cb200ae3dc6cf08e185a",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.6.1"
+      }
+    ],
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:18:41+00:00",
+  "requirements": {
+    "borsh": "=1.6.1",
+    "conformance-recorder": "path ../recorder"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

@@ -1,0 +1,3 @@
+region = "none"
+corpora = ["anchor_spl_token_0_27_0"]
+inputs = ["rust/common/anchor_spl_token.rs", "rust/common/anchor_spl_token_track.rs", "rust/anchor-spl-token-0-27-0/projection.json", "project_wrappers.py"]

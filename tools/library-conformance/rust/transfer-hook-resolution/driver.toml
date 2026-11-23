@@ -1,0 +1,3 @@
+corpora = ["spl_transfer_hook_interface_0_9_0"]
+inputs = []
+region = "none"

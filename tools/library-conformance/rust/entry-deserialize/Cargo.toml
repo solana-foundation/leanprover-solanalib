@@ -1,0 +1,19 @@
+[package]
+name = "conformance-entry-deserialize"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records the exact aligned entrypoint deserializers and their alias/layout effects"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-accounts = { path = "../accounts" }
+solana-program-entrypoint = "=2.3.0"
+solana-account-info = "=2.3.0"
+pinocchio = "=0.9.2"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

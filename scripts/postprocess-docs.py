@@ -39,8 +39,12 @@ CUSTOM_MAIN = f"""<main>
   <ul>
     <li><a href="./Solanalib/Runtime.html">Runtime</a>
         — mathematical models of Agave runtime checks, transactions and CPI</li>
+    <li><a href="./Solanalib/Contracts.html">Contracts</a>
+        — shared contract, reference, family and capability vocabulary</li>
+    <li><a href="./Solanalib/Specs/Core.html">SDK models</a>
+        — shared Solana operations and registered crate-specific models</li>
     <li><a href="./Solanalib/Primitives/Lamports.html">Primitives</a>
-        — atomic on-chain types (Pubkey, Lamports, Timestamp)</li>
+        — lamport and time notations</li>
     <li><a href="./Solanalib/Numeric/Fraction.html">Numeric</a>
         — Q68.60 fixed-point arithmetic</li>
     <li><a href="./Solanalib/Runtime/Account.html">Account</a>

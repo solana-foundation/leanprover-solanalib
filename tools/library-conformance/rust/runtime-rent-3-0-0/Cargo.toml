@@ -1,0 +1,21 @@
+[package]
+name = "conformance-runtime-rent-3-0-0"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records the pinned runtime helpers: solana-rent 3.0.0 minimum_balance and solana-sysvar 3.1.1 Clock/Rent getters"
+
+# solana-sysvar 3.1.1 uses solana-rent 3.0.0, matching the model profile.
+# Syscalls reach the shared shim (../shim).
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-rent = "=3.0.0"
+solana-sysvar = "=3.1.1"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

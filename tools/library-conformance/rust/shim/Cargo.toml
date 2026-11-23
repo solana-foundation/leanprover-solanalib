@@ -1,0 +1,12 @@
+[package]
+name = "conformance-shim"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Test definitions of the Solana sol_* syscalls: request log, scripted replies, terminal exits"
+
+# Only the recorder: the shim must not change the dependency graph of the
+# library under test. The C library functions it uses (fork, pipe, ...) come
+# from the platform libc that std links anyway.
+[dependencies]
+conformance-recorder = { path = "../recorder" }

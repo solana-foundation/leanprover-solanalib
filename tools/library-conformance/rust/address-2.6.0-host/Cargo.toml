@@ -1,0 +1,21 @@
+[package]
+name = "conformance-address-2-6-0-host"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records solana-address 2.6.0 on the plain host branch (feature curve25519), for the pure PDA and curve observations"
+
+# sha2 0.10.9 and curve25519-dalek 4.1.3 supply the direct cryptographic
+# reference calls, at the same versions selected by the library host branch.
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+solana-address = { version = "=2.6.0", default-features = false, features = ["curve25519"] }
+sha2 = "=0.10.9"
+curve25519-dalek = "=4.1.3"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

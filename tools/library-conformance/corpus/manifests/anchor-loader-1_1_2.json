@@ -1,0 +1,110 @@
+{
+  "corpora": {
+    "anchor_loader_1_1_2.json": {
+      "crates": [
+        {
+          "name": "anchor-lang",
+          "version": "1.1.2"
+        }
+      ],
+      "records": 54,
+      "sha256": "50073060afb7644a9eb05f4c54f7528af3979fd8f06fab4369424fd5ce81ba8a"
+    }
+  },
+  "driver": "anchor-loader-1_1_2",
+  "inputs": {
+    "rust/accounts/Cargo.toml": "3e897705311d25bd5c1626bf10e5df3e16f9bee907469317771aba7292d794ee",
+    "rust/accounts/src/lib.rs": "606e12d3e1d6f742cc64c3d8a41e5c76d42f388ce9c69c4f8a5dbdd5de2fd8d5",
+    "rust/anchor-account-world/world.rs": "894434777d11a5fbdd5d243780512df9f9ea73af12047bff453b318b832d2764",
+    "rust/anchor-loader-1_1_2/.cargo/config.toml": "09997c2fead4e36923122dbf7378aebd48729d45ddd6c7a1543d6509be18e6e2",
+    "rust/anchor-loader-1_1_2/Cargo.lock": "5b66d82c50d219821b86e860441d0b8ed1383601c61cfbb669a13a0856dccf63",
+    "rust/anchor-loader-1_1_2/Cargo.toml": "5e6c0e13ebbe92861a256378bc2c736c9b48cdcd045ffc86cacb44039f44a7ec",
+    "rust/anchor-loader-1_1_2/driver.toml": "1389d05912a3eb02cab7843af1aadc3c361b1586ba6a4bf87aa1209cbbeabf20",
+    "rust/anchor-loader-1_1_2/src/main.rs": "d53ba2b06b1f846611a754f5391e8d0d8d7f656b215a75574d277dd5ae704053",
+    "rust/anchor-loader-shared/cases.rs": "8481ceec90553acb7fc2ea6f6521571e990911c99e9c2bff9d27f3b5cadf50c2",
+    "rust/anchor-loader-shared/enc.rs": "1810f706b08a9b9ea029669b4e16973d73e95cbdfbd261ecc71c510e036a6812",
+    "rust/anchor-loader-shared/script.rs": "2090c9101cd7bfe1f1a27db41e58e144725558fb5ccf34358358255693f41782",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a",
+    "rust/shim/Cargo.toml": "dde2a4bec857a3d829670e53b302e449b2a1a839f63cee16e312466ea5073075",
+    "rust/shim/src/lib.rs": "687cac522416bdbb2f6b9311d3d19775c8596258cf8c33e63eccda6da9293399"
+  },
+  "locked": {
+    "anchor-lang": [
+      {
+        "checksum": "aa6708f356398752b8d7a08fb701c9c17395e103786fb1b33615a7267a6f4774",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.1.2"
+      }
+    ],
+    "bytemuck": [
+      {
+        "checksum": "95832e849adfb21180ccb6826a99da14e5d266ae5c2e668e1602cf234f153797",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.25.2"
+      }
+    ],
+    "conformance-accounts": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "conformance-shim": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "solana-account-info": [
+      {
+        "checksum": "a9cf16495d9eb53e3d04e72366a33bb1c20c24e78c171d8b8f5978357b63ae95",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "3.1.1"
+      }
+    ],
+    "solana-program-error": [
+      {
+        "checksum": "4f04fa578707b3612b095f0c8e19b66a1233f7c42ca8082fcb3b745afcc0add6",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "3.0.1"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:18:56+00:00",
+  "requirements": {
+    "anchor-lang": "=1.1.2",
+    "bytemuck": "=1.25.2",
+    "conformance-accounts": "path ../accounts",
+    "conformance-recorder": "path ../recorder",
+    "conformance-shim": "path ../shim",
+    "solana-account-info": "=3.1.1",
+    "solana-program-error": "=3.0.1"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

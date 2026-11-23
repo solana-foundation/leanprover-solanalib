@@ -1,0 +1,155 @@
+name: Native reproduction and cold builds
+
+on:
+  schedule:
+    - cron: '17 4 2 * *'
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  LEAN_NUM_THREADS: '4'
+  CARGO_BUILD_JOBS: '4'
+  MATHLIB_NO_CACHE_ON_UPDATE: '1'
+
+jobs:
+  cold-lean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: ./.github/actions/setup-lean
+      - name: Build all owned Lean from source, with only the public Mathlib cache
+        run: |
+          lake update
+          lake exe cache get Solanalib.lean SolanalibTest.lean Oracle.lean
+          lake --wfail build Solanalib SolanalibTest sbpf-oracle
+          lake --wfail test
+          lake --wfail build Solanalib.Runtime SolanalibTest.Runtime SolanalibTest.Conformance.Runtime
+          lake --wfail build Solanalib.Contracts
+          python3 scripts/ci-sdk-groups.py --build all
+          python3 tools/library-conformance/run.py --model-only --registered-checkers --control-jobs 4 --evidence-dir "$RUNNER_TEMP/cold-library-replay"
+          python3 scripts/check-module-ownership.py
+          python3 scripts/check-lean-loading.py
+          python3 tools/runtime-conformance/run.py --model-only --evidence-dir "$RUNNER_TEMP/cold-runtime-replay"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cold-library-replay
+          path: ${{ runner.temp }}/cold-library-replay
+
+  native-runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: ./.github/actions/setup-lean
+      - name: Install the frozen runtime compiler and native prerequisites
+        run: |
+          rustup toolchain install 1.97.1 --profile minimal
+          sudo apt-get update
+          sudo apt-get install -y clang cmake libudev-dev libssl-dev pkg-config protobuf-compiler
+      - name: Reproduce pinned Agave observations and compare with Lean
+        run: |
+          curl --fail --location https://codeload.github.com/anza-xyz/agave/tar.gz/a203300045b405f86c9c84308b2eae76af69ac3b --output "$RUNNER_TEMP/agave.tar.gz"
+          python3 tools/runtime-conformance/run.py --source-archive "$RUNNER_TEMP/agave.tar.gz" --evidence-dir "$RUNNER_TEMP/native-runtime" --jobs 4 --timeout 3600
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-runtime
+          path: |
+            ${{ runner.temp }}/native-runtime/*.json
+            ${{ runner.temp }}/native-runtime/*.log
+            ${{ runner.temp }}/native-runtime/*.out
+            ${{ runner.temp }}/native-runtime/*.tsv
+            ${{ runner.temp }}/native-runtime/*.md
+
+  library-groups:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      matrix: ${{ steps.groups.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - id: groups
+        name: Partition every discovered native driver into bounded batches
+        run: |
+          python3 - <<'PY'
+          import json, os, sys
+          sys.path.insert(0, 'tools/library-conformance')
+          import run
+          drivers = sorted(run.discover_drivers())
+          assert drivers
+          batches = [drivers[start:start + 10] for start in range(0, len(drivers), 10)]
+          assert [driver for batch in batches for driver in batch] == drivers
+          matrix = {'include': [{'batch': number, 'drivers': batch} for number, batch in enumerate(batches)]}
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              print('matrix=' + json.dumps(matrix), file=output)
+          print(f'{len(drivers)} pinned drivers in {len(batches)} batches')
+          PY
+
+  native-library:
+    needs: library-groups
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: ${{ fromJSON(needs.library-groups.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the separate frozen compiler of the library oracle
+        run: rustup toolchain install nightly-2026-05-01 --profile minimal
+      - name: Record every selected driver twice and compare complete corpus bytes
+        env:
+          NATIVE_DRIVERS: ${{ toJSON(matrix.drivers) }}
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib, subprocess, sys
+          sys.path.insert(0, 'tools/library-conformance')
+          import run
+          evidence = pathlib.Path(os.environ['RUNNER_TEMP']) / 'native-library'
+          selected = json.loads(os.environ['NATIVE_DRIVERS'])
+          drivers = run.discover_drivers()
+          assert selected and len(selected) == len(set(selected)) and set(selected) <= drivers.keys()
+          command = [sys.executable, str(run.ROOT / 'run.py'), '--record', '--twice', '--no-write-corpus', '--evidence-dir', str(evidence)]
+          for driver in selected:
+              command += ['--driver', driver]
+          subprocess.run(command, check=True)
+          compared = 0
+          for driver in selected:
+              outputs = [directory for directory in evidence.glob('corpus-' + driver + '-*')
+                         if (directory / (driver + '.manifest.json')).is_file()]
+              assert len(outputs) == 1, (driver, outputs)
+              manifest = json.loads((outputs[0] / (driver + '.manifest.json')).read_text())
+              assert manifest['driver'] == driver
+              for name in drivers[driver]['corpora']:
+                  fresh = outputs[0] / (name + '.json')
+                  committed = run.CORPUS / fresh.name
+                  assert fresh.read_bytes() == committed.read_bytes(), f'Native observations changed: {name}'
+                  compared += 1
+          (evidence / 'committed-comparison.json').write_text(json.dumps({'drivers': selected, 'corpora': compared, 'complete_bytes_equal': True}, indent=2) + '\n')
+          print(f'{compared} fresh native corpora equal the authenticated recordings replayed in PR CI')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-library-${{ matrix.batch }}
+          path: |
+            ${{ runner.temp }}/native-library/**
+            !${{ runner.temp }}/native-library/target/**

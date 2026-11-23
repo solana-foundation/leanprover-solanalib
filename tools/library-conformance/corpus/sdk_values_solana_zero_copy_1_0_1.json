@@ -1,0 +1,10 @@
+{"schema":"solana-library-conformance/corpus/v1","corpus":"sdk_values_solana_zero_copy_1_0_1","crates":[{"name":"solana-zero-copy","version":"1.0.1"}],"records":[
+{"id":"into_u16/0","function":"solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U16> for u16>::from","generics":{},"state":null,"args":{"value":"0000"},"outcome":{"exit":"returned","result":0,"state":null}},
+{"id":"into_u16/1","function":"solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U16> for u16>::from","generics":{},"state":null,"args":{"value":"ffff"},"outcome":{"exit":"returned","result":65535,"state":null}},
+{"id":"into_u16/2","function":"solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U16> for u16>::from","generics":{},"state":null,"args":{"value":"0100"},"outcome":{"exit":"returned","result":1,"state":null}},
+{"id":"into_u16/3","function":"solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U16> for u16>::from","generics":{},"state":null,"args":{"value":"0001"},"outcome":{"exit":"returned","result":256,"state":null}},
+{"id":"into_u16/4","function":"solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U16> for u16>::from","generics":{},"state":null,"args":{"value":"0080"},"outcome":{"exit":"returned","result":32768,"state":null}},
+{"id":"into_u16/5","function":"solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U16> for u16>::from","generics":{},"state":null,"args":{"value":"ff7f"},"outcome":{"exit":"returned","result":32767,"state":null}},
+{"id":"into_u16/6","function":"solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U16> for u16>::from","generics":{},"state":null,"args":{"value":"1234"},"outcome":{"exit":"returned","result":13330,"state":null}},
+{"id":"into_u16/7","function":"solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U16> for u16>::from","generics":{},"state":null,"args":{"value":"ff00"},"outcome":{"exit":"returned","result":255,"state":null}}
+]}

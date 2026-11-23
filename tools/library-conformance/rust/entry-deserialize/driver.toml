@@ -1,0 +1,2 @@
+corpora = ["solana_program_entrypoint_2_3_0_deserialize", "pinocchio_0_9_2_deserialize"]
+inputs = []

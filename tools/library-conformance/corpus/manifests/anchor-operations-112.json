@@ -1,0 +1,101 @@
+{
+  "corpora": {
+    "anchor_operations_1_1_2.json": {
+      "crates": [
+        {
+          "name": "anchor-lang",
+          "version": "1.1.2"
+        },
+        {
+          "name": "anchor-lang-error",
+          "version": "1.1.2"
+        }
+      ],
+      "records": 211,
+      "sha256": "d94c81a7b0361a572349297e9d22138872e845a703155fcdcf97ec8aacfaed6b"
+    }
+  },
+  "driver": "anchor-operations-112",
+  "inputs": {
+    "rust/anchor-operations-112/.cargo/config.toml": "eb75cb2bbc05ffcc804b1ed43a79043e074f9dddd2ec40d95c361c24bc5731a3",
+    "rust/anchor-operations-112/Cargo.lock": "973f49cf1d41c38a11eea3e19ea0a4cc1df592be1256851a7a980257b282163b",
+    "rust/anchor-operations-112/Cargo.toml": "8983b4981ebed77a9e68d435b36115f1ec6cf2fba6accc578ace1ee10ead9a2f",
+    "rust/anchor-operations-112/driver.toml": "2341d82af2c6d703bbfe722cb118cb00f5727c7f1b77d7d74d5bc4c5913557c0",
+    "rust/anchor-operations-112/src/codes.rs": "7d3d3abf6826179bc6c51ec71f55110463cb80c25f4addc5b1e8da0ab8c80da9",
+    "rust/anchor-operations-112/src/identities.rs": "4c99341e0da1eafb0c9141e2e09a4ff3ace25e7ca18799b52b54db48f4b1e9ca",
+    "rust/anchor-operations-112/src/main.rs": "41d61ef7dab08fb97e38487ab18ead03b98da77dcc399c5148bdd12dec85a6d9",
+    "rust/anchor-operations-common/codecs.rs": "b9bd0b1cfae21d67710a8ed1baa13eba08cb8d04525f80be7352038aed9ed0a7",
+    "rust/anchor-operations-common/contexts.rs": "90aa4a713d229ae16c669a9c2f02c1d81f33b711f994104189abcb52c0cea553",
+    "rust/anchor-operations-common/enc.rs": "ef7f2f4d7ce31dc49ed6da4cc8695d2e6f29515dcc484024979b38abcca57160",
+    "rust/anchor-operations-common/errors.rs": "8cfd0478f3663ae427a366cef6281c90df26fd60755420346ff2f4a2a42071e3",
+    "rust/anchor/src/track.rs": "f753a31988e0054fc24f318b535e7a427b5901d9d0b1dff9263f28dad8d073a0",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a",
+    "rust/shim/Cargo.toml": "dde2a4bec857a3d829670e53b302e449b2a1a839f63cee16e312466ea5073075",
+    "rust/shim/src/lib.rs": "687cac522416bdbb2f6b9311d3d19775c8596258cf8c33e63eccda6da9293399"
+  },
+  "locked": {
+    "anchor-lang": [
+      {
+        "checksum": "aa6708f356398752b8d7a08fb701c9c17395e103786fb1b33615a7267a6f4774",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.1.2"
+      }
+    ],
+    "anchor-lang-error": [
+      {
+        "checksum": "20760a8d5b7ddd1aea7a347c43c702ea4e962ccb7b9908c952e4b372b2d9e1f7",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.1.2"
+      }
+    ],
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "conformance-shim": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "solana-program-error": [
+      {
+        "checksum": "4f04fa578707b3612b095f0c8e19b66a1233f7c42ca8082fcb3b745afcc0add6",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "3.0.1"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:19:05+00:00",
+  "requirements": {
+    "anchor-lang": "=1.1.2",
+    "anchor-lang-error": "=1.1.2",
+    "conformance-recorder": "path ../recorder",
+    "conformance-shim": "path ../shim",
+    "solana-program-error": "=3.0.1"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

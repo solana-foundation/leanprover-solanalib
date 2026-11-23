@@ -1,0 +1,8 @@
+corpora = ["cpi_raw_define_2_3_0"]
+inputs = ["rust/common/cpi_raw_mocks.rs"]
+region = "none"
+scope = "whole-signature-mock"
+[build_probe]
+argument = "--build-config"
+profile = "dev"
+panic = "abort"

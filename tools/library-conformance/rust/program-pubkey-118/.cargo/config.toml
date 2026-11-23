@@ -1,0 +1,10 @@
+# Host build that selects the Solana branches of the libraries under test:
+# `--cfg target_os="solana"` adds to the host cfg set (target_os then holds
+# both "linux" and "solana"); the refusal of rustc is the
+# `explicit_builtin_cfgs_in_flags` lint, allowed here. The explicit target
+# keeps build scripts and proc macros on the plain host configuration.
+[build]
+target = "x86_64-unknown-linux-gnu"
+
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-A", "explicit_builtin_cfgs_in_flags", "--cfg", 'target_os="solana"']

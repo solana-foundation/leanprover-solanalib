@@ -1,0 +1,19 @@
+[package]
+name = "conformance-address-2-6-1"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records solana-address 2.6.1 on the selected Solana branch (host build, --cfg target_os=\"solana\")"
+
+# The library and every transitive dependency are fixed by Cargo.lock.
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-address = { version = "=2.6.1", default-features = false, features = ["syscalls"] }
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

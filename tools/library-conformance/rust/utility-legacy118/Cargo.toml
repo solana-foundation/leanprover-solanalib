@@ -1,0 +1,17 @@
+[package]
+name = "conformance-utility-legacy118"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Exact releases and transitive versions are fixed by Cargo.lock.
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-program = "=1.18.26"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

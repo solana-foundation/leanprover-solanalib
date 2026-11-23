@@ -1,0 +1,10 @@
+# Decided models whose precondition (`requires`) does not reduce to `True` and is not decided by every
+# checker of the model (`decidesRequires`), with why every record satisfies it or what is open.
+# `run.py --model-only` fails unless each such model is decided this way or listed here, and fails on a
+# listing that is no longer needed. The open-preconditions table of REFERENCE.md is generated from this file
+# by `run.py --generate-registry`. `detail` is the deciding family.
+
+[[model]]
+id = "spl-token-2022::onchain::invoke_transfer_checked"
+detail = "TokenInterface"
+reason = "Open. At the closed index of the record `OnchainIndex.Index env` the `requires` of the family is `∃ protocol, Admission.Admitted ∧ Admission.ResourceReady ∧ Admission.BorrowReady`: an existential over collection protocols of conditions quantified over every finite primitive exit, which is not decidable. A proof at the closed index would adapt the `Witness*Admission` proofs and the resource and borrow admission proofs of the registered sample to the record-driven index. The checker decides the registered reference itself on every record (`OnchainAllocatedRun.invoke_fn`), and decides the precondition of the value observation `PreparationReady` on the same records."

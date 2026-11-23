@@ -1,0 +1,3 @@
+corpora = ["utility_instructions4"]
+inputs = ["rust/utility-common/instructions.rs", "rust/anchor/src/track.rs", "rust/runtime-common/rent_cases.rs", "rust/runtime-common/syscall_cases.rs"]
+region = "none"

@@ -1,0 +1,27 @@
+[package]
+name = "conformance-anchor-lifecycle"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# The lockfile fixes the transitive dependency closure.
+# The host build selects the Solana cfg; it is a separate native observation profile.
+[features]
+default = ["account-info-2", "legacy-program-error"]
+legacy-anchor = []
+account-info-2 = []
+legacy-program-error = []
+split-sysvar = []
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+conformance-accounts = { path = "../accounts" }
+anchor-lang = "=0.29.0"
+serde = { version = "=1.0.216", features = ["derive"] }
+solana-program = "=1.18.26"
+
+[profile.dev]
+panic = "unwind"
+[profile.release]
+panic = "unwind"

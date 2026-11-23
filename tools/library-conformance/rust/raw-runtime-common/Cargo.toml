@@ -1,0 +1,8 @@
+[package]
+name = "conformance-raw-runtime-common"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }

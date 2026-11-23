@@ -1,0 +1,75 @@
+{
+  "corpora": {
+    "raw_runtime_pinocchio_log_0_5_1.json": {
+      "crates": [
+        {
+          "name": "pinocchio-log",
+          "version": "0.5.1"
+        }
+      ],
+      "records": 6,
+      "sha256": "8d4dc3ad3c6dd851470c8e71ede12854dbebe6a72e7682b55226fc6088bcf0e7"
+    }
+  },
+  "driver": "raw-runtime-pinlog",
+  "inputs": {
+    "rust/raw-runtime-common/Cargo.toml": "0a56d1103cac3be7487c951761363c20dc26e12dc99fbe3662fcd8568c23ec71",
+    "rust/raw-runtime-common/src/lib.rs": "69eeb728a9fef82ed18e2538ccd417ad51e66a66019d8b07674b0f0f26a42f01",
+    "rust/raw-runtime-common/src/provider.rs": "9f09dce68d77409c265bf2e1f2e9e475ad409d27c56be872e9261d1a78119699",
+    "rust/raw-runtime-pinlog/.cargo/config.toml": "5b23ef498ea9fcb73248def7346d71fbe37f5990921c302c2332230dd22a28ec",
+    "rust/raw-runtime-pinlog/Cargo.lock": "a2fd9f7bd91f3db0e0fd8b30823918e1e240df1e043ba8a90e8e50f2d658a0c6",
+    "rust/raw-runtime-pinlog/Cargo.toml": "3051281654247131041ccfb9721ea4f23efd6538ffb47550667ba9eb3ed9cfe6",
+    "rust/raw-runtime-pinlog/driver.toml": "8bcbff4d6a83ffc2be0a681b22e2659b440faff2d9546894d4ddd6ffbf857c03",
+    "rust/raw-runtime-pinlog/src/main.rs": "28c819aef88189bc4f9fdbac2a80d5aeb2e08eb00af21a942e3432cdc3ab205b",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a"
+  },
+  "locked": {
+    "conformance-raw-runtime-common": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "pinocchio-log": [
+      {
+        "checksum": "cd11022408f312e6179ece321c1f7dc0d1b2aa7765fddd39b2a7378d65a899e8",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.5.1"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:19:06+00:00",
+  "requirements": {
+    "conformance-raw-runtime-common": "path ../raw-runtime-common",
+    "conformance-recorder": "path ../recorder",
+    "pinocchio-log": "=0.5.1"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

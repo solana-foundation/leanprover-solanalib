@@ -1,0 +1,26 @@
+[package]
+name = "conformance-instruction-view-2-1-0-cpi"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records solana-instruction-view 2.1.0, pinocchio-system 0.6.0 and pinocchio-associated-token-account 0.4.0"
+
+# pinocchio 0.11.1 enables cpi, copy and account-resize; all versions are locked.
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+conformance-accounts = { path = "../accounts" }
+solana-instruction-view = { version = "=2.1.0", features = ["cpi"] }
+solana-account-view = "=2.0.0"
+solana-address = "=2.6.0"
+pinocchio = { version = "=0.11.1", features = ["cpi", "copy", "account-resize"] }
+pinocchio-system = "=0.6.0"
+pinocchio-associated-token-account = "=0.4.0"
+solana-program-error = "=3.0.1"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

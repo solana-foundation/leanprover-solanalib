@@ -1,0 +1,7 @@
+/.lake/
+/rust/*/target/
+# Path dependencies have no lockfile of their own (cargo test creates one).
+/rust/recorder/Cargo.lock
+/rust/shim/Cargo.lock
+/rust/accounts/Cargo.lock
+__pycache__/

@@ -1,0 +1,68 @@
+{
+  "corpora": {
+    "sdk_values_solana_program_1_15_2.json": {
+      "crates": [
+        {
+          "name": "solana-program",
+          "version": "1.15.2"
+        }
+      ],
+      "records": 21,
+      "sha256": "578aa646573bec59ecf72279d19973e4253fdf4ebcab2884b7b84e59b44d913f"
+    }
+  },
+  "driver": "sdk-values-legacy-115",
+  "inputs": {
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a",
+    "rust/sdk-values-common/options.rs": "cc0592ed618caacb2b6f4d45f828162c8b42cecd668a0fd1e6f065e5e671dbd9",
+    "rust/sdk-values-common/support.rs": "00299f826f9a206fba885b72fa32fe5d2260ca831c1be5db8a47279e59d35fe4",
+    "rust/sdk-values-legacy-115/.cargo/config.toml": "752646ec78ecf5278d064b6fbc93e4941431e3a323d1eb94859b654ae3e88f55",
+    "rust/sdk-values-legacy-115/Cargo.lock": "0d8f83a33552ed6f494b7f86ead77a89ad16255e3e7c925ca16e63fb72dc9724",
+    "rust/sdk-values-legacy-115/Cargo.toml": "d40d31ffb56a055cc518df76d59a56e7687dded4949e02e39cbbfad404264cf4",
+    "rust/sdk-values-legacy-115/driver.toml": "d47b456472a39299ea53efadba53476ea99e3211323246e56e6c9db8460e06ba",
+    "rust/sdk-values-legacy-115/src/main.rs": "bf4f61e46cfd7a5396a73f38008e4340a317f23d36491a17b290d50449997cd7"
+  },
+  "locked": {
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "solana-program": [
+      {
+        "checksum": "1ae9f0fa7db3a4e90fa0df2723ac8cbc042e579cf109cd0380bc5a8c88bed924",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.15.2"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:19:53+00:00",
+  "requirements": {
+    "conformance-recorder": "path ../recorder",
+    "solana-program": "=1.15.2"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

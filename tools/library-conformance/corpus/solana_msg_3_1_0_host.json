@@ -1,0 +1,6 @@
+{"schema":"solana-library-conformance/corpus/v1","corpus":"solana_msg_3_1_0_host","crates":[{"name":"solana-msg","version":"3.1.0"}],"records":[
+{"id":"sol_log/empty","function":"solana_msg::sol_log","generics":{},"state":{"stubs":{"replies":[],"log":[]},"stdout":""},"args":{"message":""},"outcome":{"exit":"returned","result":null,"state":{"stubs":{"replies":[],"log":[]},"stdout":"0a"}}},
+{"id":"sol_log/ascii","function":"solana_msg::sol_log","generics":{},"state":{"stubs":{"replies":[],"log":[]},"stdout":""},"args":{"message":"68656c6c6f"},"outcome":{"exit":"returned","result":null,"state":{"stubs":{"replies":[],"log":[]},"stdout":"68656c6c6f0a"}}},
+{"id":"sol_log/unicode","function":"solana_msg::sol_log","generics":{},"state":{"stubs":{"replies":[],"log":[]},"stdout":""},"args":{"message":"68c3a96c6c6f20e29c9320f09fa680"},"outcome":{"exit":"returned","result":null,"state":{"stubs":{"replies":[],"log":[]},"stdout":"68c3a96c6c6f20e29c9320f09fa6800a"}}},
+{"id":"sol_log/newline","function":"solana_msg::sol_log","generics":{},"state":{"stubs":{"replies":[],"log":[]},"stdout":""},"args":{"message":"610a62"},"outcome":{"exit":"returned","result":null,"state":{"stubs":{"replies":[],"log":[]},"stdout":"610a620a"}}}
+]}

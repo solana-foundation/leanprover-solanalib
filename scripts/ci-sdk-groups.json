@@ -1,0 +1,68 @@
+{
+  "core": [
+    "Core"
+  ],
+  "framework": [
+    "AnchorLang",
+    "AnchorLangError",
+    "AnchorSpl"
+  ],
+  "codecs-oracles": [
+    "Borsh",
+    "Bytemuck",
+    "PythnetSdk",
+    "PythSolanaReceiverSdk",
+    "SwitchboardOnDemand"
+  ],
+  "pinocchio": [
+    "Pinocchio",
+    "PinocchioAssociatedTokenAccount",
+    "PinocchioSystem",
+    "PinocchioToken",
+    "PinocchioToken2022",
+    "PinocchioLog"
+  ],
+  "solana": [
+    "SolanaAccountInfo",
+    "SolanaAccountView",
+    "SolanaAddress",
+    "SolanaAddressLookupTableInterface",
+    "SolanaBorsh",
+    "SolanaCurve25519",
+    "SolanaDefineSyscall",
+    "SolanaEpochSchedule",
+    "SolanaCpi",
+    "SolanaHash",
+    "SolanaInstruction",
+    "SolanaInstructionView",
+    "SolanaInvoke",
+    "SolanaMsg",
+    "SolanaNullable",
+    "SolanaProgram",
+    "SolanaProgramError",
+    "SolanaProgramOption",
+    "SolanaPubkey",
+    "SolanaRent",
+    "SolanaSdkIds",
+    "SolanaSha256Hasher",
+    "SolanaStakeInterface",
+    "SolanaSystemInterface",
+    "SolanaSysvar",
+    "SolanaZeroCopy",
+    "SolanaProgramEntrypoint",
+    "SolanaInstructionsSysvar",
+    "SolanaLoaderV3Interface"
+  ],
+  "spl": [
+    "SplToken2022",
+    "SplToken2022Interface",
+    "SplTokenInterface",
+    "SplAssociatedTokenAccountClient",
+    "SplMemo",
+    "SplTokenMetadataInterface",
+    "SplPod",
+    "SplToken",
+    "SplTransferHookInterface",
+    "SplAssociatedTokenAccountInterface"
+  ]
+}

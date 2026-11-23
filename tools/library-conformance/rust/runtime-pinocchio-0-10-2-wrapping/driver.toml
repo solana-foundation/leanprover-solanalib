@@ -1,0 +1,3 @@
+# Family runtime: pinocchio 0.10.2 without overflow checks.
+corpora = ["pinocchio_0_10_2_wrapping"]
+inputs = ["rust/runtime-common/rent_cases.rs", "rust/runtime-common/rent_pinocchio_0_10_2.rs"]

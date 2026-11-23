@@ -1,0 +1,100 @@
+{
+  "corpora": {
+    "instruction_extensions_legacy_15.json": {
+      "crates": [
+        {
+          "name": "solana-program",
+          "version": "1.15.2"
+        }
+      ],
+      "records": 22,
+      "sha256": "51a6a606cb7c6929d9ca129a9f53d1cdae1fe29aa99c42527f94b389ad3f9586"
+    }
+  },
+  "driver": "instruction-extensions-legacy-15",
+  "inputs": {
+    "rust/instruction-extensions-common/allocator.rs": "dda3f1af0c59f604925d134e469eb4e0dd04a62888f2bedb63e49c1456452a60",
+    "rust/instruction-extensions-common/record.rs": "9edcfc15e0b72d8b47348bc79440d997a826cb77ac55e63d6d89a31dcdf7ae4e",
+    "rust/instruction-extensions-legacy-15/.cargo/config.toml": "eb75cb2bbc05ffcc804b1ed43a79043e074f9dddd2ec40d95c361c24bc5731a3",
+    "rust/instruction-extensions-legacy-15/Cargo.lock": "204ed1fb14e53dc2f304fc7a0052d4d9c56911114866d5925c7b44041c23de8b",
+    "rust/instruction-extensions-legacy-15/Cargo.toml": "d294e767dcd9f3885ebb5e129216456bb4d8ff6224c7ad9e496eca8085116b90",
+    "rust/instruction-extensions-legacy-15/driver.toml": "91fd62743486f7e06b952db9f2dad1ae02288fc535c073af0208fb381bc98c29",
+    "rust/instruction-extensions-legacy-15/src/main.rs": "fa8745178a0e2f45bdf42748026e1425395dc6a970f7283c5513a75a61ebf4f3",
+    "rust/prepared/ahash-0.7.6/.cargo_vcs_info.json": "eaa9814166fe31f5851b18c78aa4266d6fe54f2b5c42b593d05241c8cd814c94",
+    "rust/prepared/ahash-0.7.6/.github/workflows/rust.yml": "d0e4222971bd7e9385180c29b49593fa85f0f7c2b74f3a42c6aaa21b7c72eef2",
+    "rust/prepared/ahash-0.7.6/.gitignore": "4a59e617f7716cf2af51dbbd620c4a11f3ae00106cab84be3e2ce7b4128f5464",
+    "rust/prepared/ahash-0.7.6/Cargo.toml": "31399b9babab52fabfe71f52ffe38fef0d3d894fdd5829f84a4e69b031f463c9",
+    "rust/prepared/ahash-0.7.6/Cargo.toml.orig": "8e28dc914a9b6d422b4ccdfa07efa7f1a6919eb0b7cd7840a87b0dbf18aa3137",
+    "rust/prepared/ahash-0.7.6/FAQ.md": "9eb41898523ee209a0a937f9bcb78afe45ad55ca0556f8a4d4063558098f6d1e",
+    "rust/prepared/ahash-0.7.6/LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+    "rust/prepared/ahash-0.7.6/LICENSE-MIT": "ff8f68cb076caf8cefe7a6430d4ac086ce6af2ca8ce2c4e5a2004d4552ef52a2",
+    "rust/prepared/ahash-0.7.6/README.md": "72185284f100e149998fe5301f70489e617cc4415b51cc77e967c63c6e970a67",
+    "rust/prepared/ahash-0.7.6/build.rs": "123b322034273b5aa1b4934d84c277fef279afd533ecfb44831a3715e9887fcd",
+    "rust/prepared/ahash-0.7.6/rustfmt.toml": "e090969e99df9360705680cc0097cfaddae10c22dc2e01470592cf3b9787fd36",
+    "rust/prepared/ahash-0.7.6/src/aes_hash.rs": "04483498a0d86e3ab099e22f734ea6fcac384b92f349bd310456856bf6a9a5e2",
+    "rust/prepared/ahash-0.7.6/src/convert.rs": "f0e78840046493d0679a9ec077c8164cf57cf30d5e852b11bfadfdd996d29bd1",
+    "rust/prepared/ahash-0.7.6/src/fallback_hash.rs": "ec00691bd555c69f7446afe893b6631cb84207cb7b512260dec8ef488e1905f3",
+    "rust/prepared/ahash-0.7.6/src/hash_map.rs": "ed0c79c41c2218ad9591a585670a2b9b983807c9725880b780138a44c126cbfd",
+    "rust/prepared/ahash-0.7.6/src/hash_quality_test.rs": "6c1fea90a38dc7b2ac5b2fa6e44a565e0c3385c72df6e87231401f920912d053",
+    "rust/prepared/ahash-0.7.6/src/hash_set.rs": "dc3d33e290aad62457ab1f5e64d3e33eb79e28c9468bfc8686339f0bbd8b19aa",
+    "rust/prepared/ahash-0.7.6/src/lib.rs": "a2acb005b36896d001f67cb33c5ba19618f46be94bb0c2d70f5ee5c6ea3f4427",
+    "rust/prepared/ahash-0.7.6/src/operations.rs": "10772e65b8b7106f195428c5eb8dbf6cbd49dd5a2165ac750e54af5995210f88",
+    "rust/prepared/ahash-0.7.6/src/random_state.rs": "b7981967ec5ecbff04d166b5e05c59c386062b4de3b36816f3c98ef284372f63",
+    "rust/prepared/ahash-0.7.6/src/specialize.rs": "38d3b56ef4f264d564f48dbcb8ac137928babf90635090c9771c1a62140d1f30",
+    "rust/prepared/ahash-0.7.6/tests/bench.rs": "0851dffebaffd7a437f6f9946ed5e03a957e9a6eb0da7911451af58778c411ec",
+    "rust/prepared/ahash-0.7.6/tests/map_tests.rs": "e0f155f964dd965740b072ee1da110a8c6ef34491c95219f7c89064112c7840f",
+    "rust/prepared/ahash-0.7.6/tests/nopanic.rs": "3363675c4c1a197b86604a0aebbe958fb5ec7c01a414fbfd70e9eb8a29707400",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a"
+  },
+  "locked": {
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "serde": [
+      {
+        "checksum": "3c04e8343c3daeec41f58990b9d77068df31209f2af111e059e9fe9646693065",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.0.159"
+      }
+    ],
+    "solana-program": [
+      {
+        "checksum": "1ae9f0fa7db3a4e90fa0df2723ac8cbc042e579cf109cd0380bc5a8c88bed924",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.15.2"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:19:34+00:00",
+  "requirements": {
+    "conformance-recorder": "path ../recorder",
+    "serde": "=1.0.159",
+    "solana-program": "=1.15.2"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

@@ -1,0 +1,10 @@
+[package]
+name = "conformance-recorder"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Deterministic call recorder shared by the Solana library conformance drivers"
+
+# No dependencies: the recorder must not change the dependency graph of the
+# library under test.
+[dependencies]

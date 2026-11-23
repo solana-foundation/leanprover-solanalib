@@ -1,0 +1,14 @@
+[package]
+name = "conformance-cpi-raw-define-3-0-0"
+version = "0.1.0"
+edition = "2021"
+[workspace]
+[dependencies]
+solana-define-syscall = "=3.0.0"
+conformance-recorder = { path = "../recorder" }
+[features]
+signature-check = []
+[profile.dev]
+panic = "abort"
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }

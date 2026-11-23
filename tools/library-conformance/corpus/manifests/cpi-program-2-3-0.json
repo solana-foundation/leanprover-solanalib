@@ -1,0 +1,124 @@
+{
+  "build_probe": {
+    "argument": "--build-config",
+    "observed": {
+      "debug_assertions": true,
+      "little_endian": true,
+      "panic": "abort",
+      "pointer_width": 64,
+      "scope": "whole-signature-mock",
+      "signature_check_enabled": false,
+      "solana_cfg": true
+    },
+    "profile_flags": [
+      "--profile",
+      "dev"
+    ]
+  },
+  "corpora": {
+    "cpi_program_2_3_0.json": {
+      "crates": [
+        {
+          "name": "solana-program",
+          "version": "2.3.0"
+        }
+      ],
+      "records": 7,
+      "sha256": "0daecb96c11fa7d7d4b4d492a37c98f700c194d0e73c3131d0d9310f70e5cb09"
+    }
+  },
+  "driver": "cpi-program-2-3-0",
+  "inputs": {
+    "rust/common/cpi_signature_mocks.rs": "614cda925721eb5df477b4ddbe9b68596259396710906cf206719176a893ac2e",
+    "rust/cpi-program-2-3-0/.cargo/config.toml": "bc104dbd603393eab9a06cb86c3cd38b176ad908250c6f148f10210e9e63f848",
+    "rust/cpi-program-2-3-0/Cargo.lock": "7bca8de205220aa7d7defdfb92896b87be585629adea0944f45b226709e2a72e",
+    "rust/cpi-program-2-3-0/Cargo.toml": "f11bba8be5b106c88c79adc4101f848bf559896e1354ed553c299bad1a683a28",
+    "rust/cpi-program-2-3-0/driver.toml": "f968abfeaf2c6bc8fa0da7bbe6c9cb73d008d76f61886cb592797b15f9caa539",
+    "rust/cpi-program-2-3-0/src/main.rs": "465da86b255ab8b535ed16cea1c17fd80be30bb8e162f64e46ef05181e7f1277",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a"
+  },
+  "locked": {
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "solana-account-info": [
+      {
+        "checksum": "c8f5152a288ef1912300fc6efa6c2d1f9bb55d9398eb6c72326360b8063987da",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.3.0"
+      }
+    ],
+    "solana-cpi": [
+      {
+        "checksum": "8dc71126edddc2ba014622fc32d0f5e2e78ec6c5a1e0eb511b85618c09e9ea11",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.2.1"
+      }
+    ],
+    "solana-instruction": [
+      {
+        "checksum": "bab5682934bd1f65f8d2c16f21cb532526fcc1a09f796e2cacdb091eee5774ad",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.3.3"
+      }
+    ],
+    "solana-program": [
+      {
+        "checksum": "98eca145bd3545e2fbb07166e895370576e47a00a7d824e325390d33bf467210",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.3.0"
+      }
+    ],
+    "solana-program-error": [
+      {
+        "checksum": "9ee2e0217d642e2ea4bee237f37bd61bb02aec60da3647c48ff88f6556ade775",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.2.2"
+      }
+    ],
+    "solana-stable-layout": [
+      {
+        "checksum": "9f14f7d02af8f2bc1b5efeeae71bc1c2b7f0f65cd75bcc7d8180f2c762a57f54",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.2.1"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:18:54+00:00",
+  "requirements": {
+    "conformance-recorder": "path ../recorder",
+    "solana-account-info": "=2.3.0",
+    "solana-cpi": "=2.2.1",
+    "solana-instruction": "=2.3.3",
+    "solana-program": "=2.3.0",
+    "solana-program-error": "=2.2.2",
+    "solana-stable-layout": "=2.2.1"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "abort",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1",
+  "scope": "whole-signature-mock"
+}

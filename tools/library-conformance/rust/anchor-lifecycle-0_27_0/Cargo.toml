@@ -1,0 +1,31 @@
+[package]
+name = "conformance-anchor-lifecycle"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# The lockfile fixes the transitive dependency closure.
+# The host build selects the Solana cfg; it is a separate native observation profile.
+[features]
+default = ["legacy-anchor", "account-info-2", "legacy-program-error"]
+legacy-anchor = []
+account-info-2 = []
+legacy-program-error = []
+split-sysvar = []
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+conformance-accounts = { path = "../accounts" }
+anchor-lang = "=0.27.0"
+serde = { version = "=1.0.159", features = ["derive"] }
+solana-program = "=1.15.2"
+
+# Preserve the existing ahash 0.7.6 compatibility recipe of this dependency graph.
+[patch.crates-io]
+ahash = { version = "=0.7.6", path = "../prepared/ahash-0.7.6" }
+
+[profile.dev]
+panic = "unwind"
+[profile.release]
+panic = "unwind"

@@ -1,0 +1,20 @@
+[package]
+name = "conformance-utility-split222"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Exact releases and transitive versions are fixed by Cargo.lock.
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-sysvar = { version = "=2.2.2", features = ["bincode"] }
+solana-rent = "=2.2.1"
+solana-sha256-hasher = "=2.3.0"
+solana-msg = "=2.2.1"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

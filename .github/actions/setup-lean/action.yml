@@ -1,0 +1,13 @@
+name: Set up the pinned Lean toolchain
+description: Install elan if needed and use the lean-toolchain of the checkout.
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        if ! test -x "$HOME/.elan/bin/elan"; then
+          curl --fail --location https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+        fi
+        echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+    - shell: bash
+      run: lean --version

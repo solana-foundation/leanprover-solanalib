@@ -1,0 +1,2 @@
+corpora = ["anchor_lifecycle_1_0_2"]
+inputs = ["rust/anchor-account-world/world.rs", "rust/anchor/src/track.rs", "rust/anchor-lifecycle-shared/enc.rs", "rust/anchor-lifecycle-shared/script.rs", "rust/anchor-lifecycle-shared/cases.rs"]

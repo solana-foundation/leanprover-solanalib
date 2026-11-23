@@ -1,0 +1,9 @@
+corpora = ["sdk_values_address_2_6_1"]
+inputs = ["rust/sdk-values-common/support.rs"]
+region = "none"
+scope = "linked-source"
+
+[build_probe]
+argument = "--build-config"
+profile = "dev"
+panic = "abort"

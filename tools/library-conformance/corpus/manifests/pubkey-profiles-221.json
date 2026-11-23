@@ -1,0 +1,93 @@
+{
+  "corpora": {
+    "pubkey_profiles_221.json": {
+      "crates": [
+        {
+          "name": "solana-pubkey",
+          "version": "2.2.1"
+        },
+        {
+          "name": "borsh",
+          "version": "0.10.4"
+        },
+        {
+          "name": "spl-associated-token-account-client",
+          "version": "2.0.0"
+        }
+      ],
+      "records": 140,
+      "sha256": "111b046234f708e4861a187e496529a7d25257260b7c9a06340883a7667193d9"
+    }
+  },
+  "driver": "pubkey-profiles-221",
+  "inputs": {
+    "rust/address-profiles-common/io.rs": "076d7a4efe38a7175e2ac3da22c5e222be811e520eaea1eee85a2628c87dc718",
+    "rust/address-profiles-common/operations.rs": "284e4c12c9214b21af6f51e238df7576a367b0f903ff6c21a6b5304095dbc5d7",
+    "rust/pubkey-profiles-221/.cargo/config.toml": "eb75cb2bbc05ffcc804b1ed43a79043e074f9dddd2ec40d95c361c24bc5731a3",
+    "rust/pubkey-profiles-221/Cargo.lock": "b1969e80b8e333140468ade3bd2e5346cc088d3b3ec397867ec9fdacda4f4f45",
+    "rust/pubkey-profiles-221/Cargo.toml": "d96c2a56e5ab3fc333021e3c4afeff0a27bc9ffd58e61570cd36422d89894aa9",
+    "rust/pubkey-profiles-221/driver.toml": "c5c08c44f1d659379ce579b2873ba1933ad37a5b522ed2f3ede446d2a1fe1e36",
+    "rust/pubkey-profiles-221/src/main.rs": "ddda461c5e9713aecf371af2aa82e5e58a695dffc5c17e2c1261d45df3facec0",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a",
+    "rust/shim/Cargo.toml": "dde2a4bec857a3d829670e53b302e449b2a1a839f63cee16e312466ea5073075",
+    "rust/shim/src/lib.rs": "687cac522416bdbb2f6b9311d3d19775c8596258cf8c33e63eccda6da9293399"
+  },
+  "locked": {
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "conformance-shim": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "solana-pubkey": [
+      {
+        "checksum": "40db1ff5a0f8aea2c158d78ab5f2cf897848964251d1df42fef78efd3c85b863",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.2.1"
+      }
+    ],
+    "spl-associated-token-account-client": [
+      {
+        "checksum": "d6f8349dbcbe575f354f9a533a21f272f3eb3808a49e2fdc1c34393b88ba76cb",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.0.0"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:18:45+00:00",
+  "requirements": {
+    "borsh-selected": "=0.10.4",
+    "conformance-recorder": "path ../recorder",
+    "conformance-shim": "path ../shim",
+    "solana-pubkey": "=2.2.1",
+    "spl-associated-token-account-client": "=2.0.0"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

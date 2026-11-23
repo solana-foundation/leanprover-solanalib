@@ -1,0 +1,102 @@
+{
+  "corpora": {
+    "pyth_solana_receiver_sdk_2_0_0.json": {
+      "crates": [
+        {
+          "name": "pyth-solana-receiver-sdk",
+          "version": "2.0.0"
+        },
+        {
+          "name": "pythnet-sdk",
+          "version": "3.0.0"
+        },
+        {
+          "name": "borsh",
+          "version": "1.6.1"
+        }
+      ],
+      "records": 324,
+      "sha256": "77c2cee294db99032c5cc5f7b3128af05b1fa64459cf40e84baab2e88ec4bb76"
+    },
+    "pythnet_sdk_3_0_0.json": {
+      "crates": [
+        {
+          "name": "pythnet-sdk",
+          "version": "3.0.0"
+        },
+        {
+          "name": "borsh",
+          "version": "1.6.1"
+        }
+      ],
+      "records": 26,
+      "sha256": "e6666c3c72d0ce37fa8aa8be7d8f961123a85e5085ba81598933756b370d69c5"
+    }
+  },
+  "driver": "pyth",
+  "inputs": {
+    "rust/common/borsh_de.rs": "5c9c324d386883a7bcb00fe53158fa26fde8324dbf384b57f62fa521e77dd4b1",
+    "rust/pyth/.cargo/config.toml": "eb75cb2bbc05ffcc804b1ed43a79043e074f9dddd2ec40d95c361c24bc5731a3",
+    "rust/pyth/Cargo.lock": "18d955c5dbc3848c547253dfa7e5f2c490ab600f11188783204f3c892d04671a",
+    "rust/pyth/Cargo.toml": "de4f589bfdec515696c6461d1359501524b8256417972498d519a33fc532f38d",
+    "rust/pyth/driver.toml": "4fb32f674579f05022a285d191f4ec71682081f2b68049260204655c976430a7",
+    "rust/pyth/src/main.rs": "f898123c88393b16c0c4eba59b2f8096d92786884de7af6656431ca992047cde",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a"
+  },
+  "locked": {
+    "borsh": [
+      {
+        "checksum": "15bf3650200d8bffa99015595e10f1fbd17de07abbc25bb067da79e769939bfa",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.9.3"
+      },
+      {
+        "checksum": "cfd1e3f8955a5d7de9fab72fc8373fade9fb8a703968cb200ae3dc6cf08e185a",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.6.1"
+      }
+    ],
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "pyth-solana-receiver-sdk": [
+      {
+        "checksum": "245b1b03dd2177402018b6072fcbb7bea5b3d280427b1954796bf1dc189be48b",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.0.0"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:18:44+00:00",
+  "requirements": {
+    "borsh": "=1.6.1",
+    "conformance-recorder": "path ../recorder",
+    "pyth-solana-receiver-sdk": "=2.0.0"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

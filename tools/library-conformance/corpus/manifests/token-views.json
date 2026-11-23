@@ -1,0 +1,136 @@
+{
+  "corpora": {
+    "pinocchio_token_0_6_0.json": {
+      "crates": [
+        {
+          "name": "pinocchio-token",
+          "version": "0.6.0"
+        }
+      ],
+      "records": 87,
+      "sha256": "e7a45aa33e3ab09af4170054296e543c4ad3ed2160f4a4e79fc30ef72eb5bd0a"
+    },
+    "pinocchio_token_2022_0_3_1.json": {
+      "crates": [
+        {
+          "name": "pinocchio-token-2022",
+          "version": "0.3.1"
+        }
+      ],
+      "records": 86,
+      "sha256": "8f64a6d84c20eb0d2a6a9e16b49a9fe83c5eeacdd35ef5f11c9486fcaede21b7"
+    }
+  },
+  "driver": "token-views",
+  "inputs": {
+    "rust/accounts/Cargo.toml": "3e897705311d25bd5c1626bf10e5df3e16f9bee907469317771aba7292d794ee",
+    "rust/accounts/src/lib.rs": "606e12d3e1d6f742cc64c3d8a41e5c76d42f388ce9c69c4f8a5dbdd5de2fd8d5",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a",
+    "rust/shim/Cargo.toml": "dde2a4bec857a3d829670e53b302e449b2a1a839f63cee16e312466ea5073075",
+    "rust/shim/src/lib.rs": "687cac522416bdbb2f6b9311d3d19775c8596258cf8c33e63eccda6da9293399",
+    "rust/token-views/.cargo/config.toml": "eb75cb2bbc05ffcc804b1ed43a79043e074f9dddd2ec40d95c361c24bc5731a3",
+    "rust/token-views/Cargo.lock": "0e1d887b57a86cb7c049f6083bb8411f438826f72424329c7679cf97714920ad",
+    "rust/token-views/Cargo.toml": "ab308578f1182e4d1206a29df48c9d719f7cf6eae8de182f5ac95250a6b97402",
+    "rust/token-views/driver.toml": "1af36b753f06e1d052f385ef5cf3126fdfe9290fcb3b3e3a52189bdd5e0f94e9",
+    "rust/token-views/src/batch.rs": "00316dafabe5231e1a5d7bc469a3c2a6973fe3522f7fdd3d0412895ab0974b95",
+    "rust/token-views/src/common.rs": "894f5b13b524b8f778fb6304cb056a1372c8524284af86f744e8c491eae32c09",
+    "rust/token-views/src/main.rs": "0936cf4e46b01bc80ce7573e5cc158172dd4d3f7e8c1efcf791662e0d7c20130",
+    "rust/token-views/src/request.rs": "434b69f964eecb73ca925efb3442d9454aa6c49018ad7d377975281ddb702761",
+    "rust/token-views/src/state.rs": "e9e368b5cf1e83eb1b2f9391e42c47658c55dafa82d379da3ccde60ca087a3b8"
+  },
+  "locked": {
+    "conformance-accounts": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "conformance-shim": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "pinocchio-token": [
+      {
+        "checksum": "825f59c8348e5c2d3fd56432ef927f5819542b3b05fae4f5b6869801113e775e",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.6.0"
+      }
+    ],
+    "pinocchio-token-2022": [
+      {
+        "checksum": "57dbab5718ab6ae446b2217c47598fabd29173a09bd32b05344f031739db92b8",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.3.1"
+      }
+    ],
+    "solana-account-view": [
+      {
+        "checksum": "fc141b940560430425ebaadb7645496c45f6a10fad9911d719bd03eab7f4d422",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.0.0"
+      }
+    ],
+    "solana-address": [
+      {
+        "checksum": "f1384b52c435a750cc9c538760fc7bb472fd78e65a9900a2d07312c5bb335b72",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.6.0"
+      }
+    ],
+    "solana-instruction-view": [
+      {
+        "checksum": "6ab7a27d0c4214b9f7389c3dd00b68c93093a67f1dcc5b7893aebe299bbcbb47",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.1.0"
+      }
+    ],
+    "solana-program-error": [
+      {
+        "checksum": "4f04fa578707b3612b095f0c8e19b66a1233f7c42ca8082fcb3b745afcc0add6",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "3.0.1"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:18:49+00:00",
+  "requirements": {
+    "conformance-accounts": "path ../accounts",
+    "conformance-recorder": "path ../recorder",
+    "conformance-shim": "path ../shim",
+    "pinocchio-token": "=0.6.0",
+    "pinocchio-token-2022": "=0.3.1",
+    "solana-account-view": "=2.0.0",
+    "solana-address": "=2.6.0",
+    "solana-instruction-view": "=2.1.0",
+    "solana-program-error": "=3.0.1"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

@@ -1,0 +1,108 @@
+{
+  "corpora": {
+    "error_nullable_program_error_3_0_1.json": {
+      "crates": [
+        {
+          "name": "solana-program-error",
+          "version": "3.0.1"
+        }
+      ],
+      "records": 86,
+      "sha256": "c732c5c765788a2d14446accb7443cdd887943973f50e91cd1146921010985ab"
+    },
+    "nullable_address_2_6_1.json": {
+      "crates": [
+        {
+          "name": "solana-nullable",
+          "version": "1.3.0"
+        },
+        {
+          "name": "solana-address",
+          "version": "2.6.1"
+        },
+        {
+          "name": "pinocchio",
+          "version": "0.10.2"
+        }
+      ],
+      "records": 34,
+      "sha256": "f7df5c17a822a1508ab18560a88b4335d89f5a449a3ad1efe9928302e70d3dab"
+    }
+  },
+  "driver": "error-nullable",
+  "inputs": {
+    "rust/error-nullable/.cargo/config.toml": "bc104dbd603393eab9a06cb86c3cd38b176ad908250c6f148f10210e9e63f848",
+    "rust/error-nullable/Cargo.lock": "27ad266ec070bd73a1518f4c1b884d3691f5b682d080526b4c66071259f03a38",
+    "rust/error-nullable/Cargo.toml": "9801aa6c9bf25d1ad866d61a3bd9d0469ccf3c65b25ecb3e3b7f5c0e33f79dc3",
+    "rust/error-nullable/driver.toml": "cbb0ba2033b280eab8c039361d50ef3b936c9e02e3b2f9b688dda604cc95b561",
+    "rust/error-nullable/src/main.rs": "a64671f4d7867e72c3e9b79d0d2afe82fa099efbfc105c91a5cdd6e03f95729e",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a"
+  },
+  "locked": {
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "pinocchio": [
+      {
+        "checksum": "c06810dac15a4ef83d3dabdb4f2f22fb39c9adff669cd2781da4f716510a647c",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.10.2"
+      }
+    ],
+    "solana-address": [
+      {
+        "checksum": "39c93e262f671bf402e1040e4a7e40b05d81da5956c7681948c975a0997517bb",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.6.1"
+      }
+    ],
+    "solana-nullable": [
+      {
+        "checksum": "889194d8c5faec648f2f6fadddb60566249921ebb074e2707e7095458d5864e2",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.3.0"
+      }
+    ],
+    "solana-program-error": [
+      {
+        "checksum": "4f04fa578707b3612b095f0c8e19b66a1233f7c42ca8082fcb3b745afcc0add6",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "3.0.1"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:18:59+00:00",
+  "requirements": {
+    "conformance-recorder": "path ../recorder",
+    "pinocchio": "=0.10.2",
+    "solana-address": "=2.6.1",
+    "solana-nullable": "=1.3.0",
+    "solana-program-error": "=3.0.1"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

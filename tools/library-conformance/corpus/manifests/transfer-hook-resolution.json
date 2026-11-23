@@ -1,0 +1,146 @@
+{
+  "corpora": {
+    "spl_transfer_hook_interface_0_9_0.json": {
+      "crates": [
+        {
+          "name": "spl-transfer-hook-interface",
+          "version": "0.9.0"
+        }
+      ],
+      "records": 43,
+      "sha256": "bd289cf1886f9b582a7ac8a002d06dcd9e38e60995411c3971df6c2d22c42958"
+    }
+  },
+  "driver": "transfer-hook-resolution",
+  "inputs": {
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a",
+    "rust/shim/Cargo.toml": "dde2a4bec857a3d829670e53b302e449b2a1a839f63cee16e312466ea5073075",
+    "rust/shim/src/lib.rs": "687cac522416bdbb2f6b9311d3d19775c8596258cf8c33e63eccda6da9293399",
+    "rust/transfer-hook-resolution/.cargo/config.toml": "eb75cb2bbc05ffcc804b1ed43a79043e074f9dddd2ec40d95c361c24bc5731a3",
+    "rust/transfer-hook-resolution/Cargo.lock": "def7bab4e98ab4a65aecb091f0c648f6b02c771fd5c84843e4ef774d86e886a8",
+    "rust/transfer-hook-resolution/Cargo.toml": "546cd654b471b1712e69de459dbf7d1584108f4451bbbda96181a57cf5c77474",
+    "rust/transfer-hook-resolution/driver.toml": "9265725c4c99069b367ca24ab3feac32c3bf51a13bdf44567e3a5d4a62a4286f",
+    "rust/transfer-hook-resolution/src/main.rs": "ee79cdbece4992a69a144dc3d4eaf112131f47f711a6cb0539b9e27c0fe96588"
+  },
+  "locked": {
+    "bytemuck": [
+      {
+        "checksum": "b6b1fc10dbac614ebc03540c9dbd60e83887fda27794998c6528f1782047d540",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.22.0"
+      }
+    ],
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "conformance-shim": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "solana-account-info": [
+      {
+        "checksum": "c8f5152a288ef1912300fc6efa6c2d1f9bb55d9398eb6c72326360b8063987da",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.3.0"
+      }
+    ],
+    "solana-instruction": [
+      {
+        "checksum": "9ce496a475e5062ba5de97215ab39d9c358f9c9df4bb7f3a45a1f1a8bd9065ed",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.2.1"
+      }
+    ],
+    "solana-program-error": [
+      {
+        "checksum": "9ee2e0217d642e2ea4bee237f37bd61bb02aec60da3647c48ff88f6556ade775",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.2.2"
+      }
+    ],
+    "solana-pubkey": [
+      {
+        "checksum": "40db1ff5a0f8aea2c158d78ab5f2cf897848964251d1df42fef78efd3c85b863",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.2.1"
+      }
+    ],
+    "spl-discriminator": [
+      {
+        "checksum": "a7398da23554a31660f17718164e31d31900956054f54f52d5ec1be51cb4f4b3",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.4.1"
+      }
+    ],
+    "spl-pod": [
+      {
+        "checksum": "d994afaf86b779104b4a95ba9ca75b8ced3fdb17ee934e38cb69e72afbe17799",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.5.1"
+      }
+    ],
+    "spl-tlv-account-resolution": [
+      {
+        "checksum": "cd99ff1e9ed2ab86e3fd582850d47a739fec1be9f4661cba1782d3a0f26805f3",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.9.0"
+      }
+    ],
+    "spl-transfer-hook-interface": [
+      {
+        "checksum": "4aa7503d52107c33c88e845e1351565050362c2314036ddf19a36cd25137c043",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.9.0"
+      }
+    ],
+    "spl-type-length-value": [
+      {
+        "checksum": "ba70ef09b13af616a4c987797870122863cba03acc4284f226a4473b043923f9",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.7.0"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:20:13+00:00",
+  "requirements": {
+    "bytemuck": "=1.22.0",
+    "conformance-recorder": "path ../recorder",
+    "conformance-shim": "path ../shim",
+    "solana-account-info": "=2.3.0",
+    "solana-instruction": "=2.2.1",
+    "solana-program-error": "=2.2.2",
+    "solana-pubkey": "=2.2.1",
+    "spl-discriminator": "=0.4.1",
+    "spl-pod": "=0.5.1",
+    "spl-tlv-account-resolution": "=0.9.0",
+    "spl-transfer-hook-interface": "=0.9.0",
+    "spl-type-length-value": "=0.7.0"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

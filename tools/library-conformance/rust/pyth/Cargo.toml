@@ -1,0 +1,17 @@
+[package]
+name = "conformance-pyth"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records pyth-solana-receiver-sdk 2.0.0 PriceUpdateV2 decoding from crates.io with dependencies pinned in Cargo.lock"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+borsh = "=1.6.1"
+pyth-solana-receiver-sdk = "=2.0.0"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

@@ -1,0 +1,15 @@
+[package]
+name = "conformance-versions-solana-hash-4-3-0"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+solana-hash = { version = "=4.3.0", default-features = false }
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

@@ -1,0 +1,5 @@
+# Family Address: solana-address 2.6.1 on the plain host branch (pure observations).
+corpora = ["solana_address_2_6_1_host"]
+inputs = ["rust/address-common/host.rs"]
+# Records the host branch: .cargo/config.toml has empty rustflags (checked by run.py).
+host = true

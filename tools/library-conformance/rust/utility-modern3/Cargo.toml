@@ -1,0 +1,20 @@
+[package]
+name = "conformance-utility-modern3"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Exact releases and transitive versions are fixed by Cargo.lock.
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-rent = "=3.0.0"
+solana-sysvar = "=3.1.1"
+solana-epoch-schedule = "=3.0.0"
+solana-sha256-hasher = "=3.1.0"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

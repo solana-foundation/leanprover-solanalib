@@ -1,0 +1,28 @@
+[package]
+name = "conformance-anchor-spl-support-v102"
+version = "0.1.0"
+edition = "2021"
+publish = false
+# Cargo.lock fixes the complete dependency graph.
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+anchor-lang = "=1.0.2"
+anchor-spl = { version = "=1.0.2", default-features = false, features = ["associated_token", "token", "token_2022"] }
+
+[features]
+default = ["v102", "associated", "token", "interface"]
+v027 = []
+v029 = []
+v0321 = []
+v102 = []
+v112 = []
+legacy = []
+memo = []
+metadata = []
+associated = []
+token = []
+interface = []
+
+[profile.dev]
+panic = "unwind"

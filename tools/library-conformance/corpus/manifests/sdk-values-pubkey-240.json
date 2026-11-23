@@ -1,0 +1,88 @@
+{
+  "build_probe": {
+    "argument": "--build-config",
+    "observed": {
+      "debug_assertions": true,
+      "little_endian": true,
+      "panic": "abort",
+      "pointer_width": 64,
+      "scope": "linked-source",
+      "signature_check_enabled": false,
+      "solana_cfg": true
+    },
+    "profile_flags": [
+      "--profile",
+      "dev"
+    ]
+  },
+  "corpora": {
+    "sdk_values_pubkey_2_4_0.json": {
+      "crates": [
+        {
+          "name": "solana-program-option",
+          "version": "2.2.1"
+        },
+        {
+          "name": "solana-pubkey",
+          "version": "2.4.0"
+        }
+      ],
+      "records": 18,
+      "sha256": "87799a2f6f3547ad3379ec82a7812599bd55604ef66df0f6ecc3adf4616f5385"
+    }
+  },
+  "driver": "sdk-values-pubkey-240",
+  "inputs": {
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a",
+    "rust/sdk-values-pubkey-240/.cargo/config.toml": "752646ec78ecf5278d064b6fbc93e4941431e3a323d1eb94859b654ae3e88f55",
+    "rust/sdk-values-pubkey-240/Cargo.lock": "111244cf6c483cf5090124365a3c861fd9353c11be572fba430e7f04b936ceea",
+    "rust/sdk-values-pubkey-240/Cargo.toml": "bb2438b7bad3f4bfb476d36756021d46db87e45bdf17e9a6df91123eda1d4208",
+    "rust/sdk-values-pubkey-240/driver.toml": "377977c2a2a7b4d4794047d90fc614377bcfb450e686be05bd4c97b31f1f236f",
+    "rust/sdk-values-pubkey-240/src/main.rs": "3b69d3327e177f515c0dd974fa052323d30aa352086cfc750fd1e85900924409"
+  },
+  "locked": {
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "solana-pubkey": [
+      {
+        "checksum": "9b62adb9c3261a052ca1f999398c388f1daf558a1b492f60a6d9e64857db4ff1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.4.0"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:19:12+00:00",
+  "requirements": {
+    "conformance-recorder": "path ../recorder",
+    "option-v2": "=2.2.1",
+    "solana-pubkey": "=2.4.0"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "abort",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1",
+  "scope": "linked-source"
+}

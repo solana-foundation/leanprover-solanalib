@@ -1,0 +1,26 @@
+[package]
+name = "conformance-instruction-extensions-v2-2"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Exact library and dependency selections retained from a reviewed source lock.
+# This native observation profile uses panic=unwind. A source binding that uses
+# panic=abort must justify that strategy and the selected Solana cfg separately.
+[features]
+default = ["seeded"]
+seeded = []
+prefund = []
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+serde = "=1.0.228"
+solana-instruction = { version = "=2.2.1", features = ["bincode"] }
+solana-system-interface = { version = "=1.0.0", features = ["bincode"] }
+solana-pubkey = "=2.2.1"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

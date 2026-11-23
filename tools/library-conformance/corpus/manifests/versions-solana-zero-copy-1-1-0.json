@@ -1,0 +1,67 @@
+{
+  "corpora": {
+    "solana_zero_copy_1_1_0.json": {
+      "crates": [
+        {
+          "name": "solana-zero-copy",
+          "version": "1.1.0"
+        }
+      ],
+      "records": 15,
+      "sha256": "2a1e204236713f9ff12d96d6fddd0a9fbb902be56bbb2fb3c274ac6da3014dda"
+    }
+  },
+  "driver": "versions-solana-zero-copy-1-1-0",
+  "inputs": {
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a",
+    "rust/version-copies/unaligned.rs": "300a5d7e31cc3fd603e35a474961d78b9a422644ccb42ba6a27e5e43fd094629",
+    "rust/versions-solana-zero-copy-1-1-0/.cargo/config.toml": "bc104dbd603393eab9a06cb86c3cd38b176ad908250c6f148f10210e9e63f848",
+    "rust/versions-solana-zero-copy-1-1-0/Cargo.lock": "1014a3fdc6ef3c5d4d7192f9198668a59c6505af148153c4ed377871e665877a",
+    "rust/versions-solana-zero-copy-1-1-0/Cargo.toml": "f45d9dbd892611f29adf7b90770eb39729753e839d979d88631bb3994e2b70f6",
+    "rust/versions-solana-zero-copy-1-1-0/driver.toml": "cb53b8bbc3749f0247ec860631007a28b361e2ff437b21974c193f157dce890f",
+    "rust/versions-solana-zero-copy-1-1-0/src/main.rs": "a97acbb9c13ce05dcbc73c1e7dac9786ca3484754c595737c01ca9fcc1deb447"
+  },
+  "locked": {
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "solana-zero-copy": [
+      {
+        "checksum": "07616ca3aa7789d40da7b5ec5708394acdb24656cf0968b9027a98f9666322bb",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.1.0"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:19:16+00:00",
+  "requirements": {
+    "conformance-recorder": "path ../recorder",
+    "solana-zero-copy": "=1.1.0"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

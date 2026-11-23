@@ -1,0 +1,19 @@
+[package]
+name = "conformance-stake-codecs-program"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# The lockfile fixes the reviewed transitive versions.
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-program = "=1.18.26"
+bincode = "=1.3.3"
+borsh = "=0.10.4"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

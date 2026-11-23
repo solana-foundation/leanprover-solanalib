@@ -1,0 +1,28 @@
+[package]
+name = "conformance-anchor-spl-token-1-0-2"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Exact projected Anchor SPL 1.0.2 token wrappers with whole-signature CPI providers"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+anchor-lang = "=1.0.2"
+anchor-spl = { version = "=1.0.2", default-features = false, features = ["token", "token_2022"] }
+spl-token-2022-interface = "=2.1.0"
+solana-account-info = "=3.1.1"
+solana-program-error = "=3.0.1"
+solana-pubkey = "=3.0.0"
+
+[features]
+default = ["v102", "modern-context"]
+v0270 = []
+v0290 = []
+v0321 = []
+v102 = []
+v112 = []
+modern-context = []
+inline-error = []
+
+[profile.dev]
+panic = "unwind"

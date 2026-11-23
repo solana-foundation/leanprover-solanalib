@@ -1,0 +1,2 @@
+corpora = ["anchor_loader_0_32_1"]
+inputs = ["rust/anchor-loader-shared/enc.rs", "rust/anchor-account-world/world.rs", "rust/anchor-loader-shared/script.rs", "rust/anchor-loader-shared/cases.rs"]

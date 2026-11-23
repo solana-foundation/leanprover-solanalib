@@ -53,6 +53,16 @@ Solanalib lives entirely at the spec layer — it doesn't run on-chain. But it n
 
 The single `solanalib` Lake package uses Lean 4.34.0 and matching Mathlib. Its separately selectable [`Solanalib.Runtime`](packages/solanalib-runtime/README.md) library models the runtime. Every library under `Solanalib` or `SolanalibTest` shares the root artifact directory, so ordinary Lean imports work across the full library. New Solana developments use the runtime public-key, account and instruction representations; `Account.WF` records their numeric and data bounds.
 
+The shared [`Solanalib.Contracts`](packages/solanalib-contracts/README.md) library defines `Solanalib.Contracts.Model`. The [SDK libraries](packages/solanalib-specs/README.md) add 53 SDK and framework crate roots plus a shared core, each with a separate scenario library. Their Lean imports use the contracts and runtime vocabulary. All are selectable targets in the root package; the directories under `packages/` organize their sources. Import the required root explicitly, for example:
+
+```lean
+import Solanalib.Runtime
+import Solanalib.Contracts
+import Solanalib.Specs.PinocchioToken
+```
+
+The [library catalog](packages/solanalib-specs/LIBRARIES.md) records each modeled subset and its tests. Closed model proofs and native differential recordings support their stated scope; Rust implementation proofs and compiler bindings remain separate work.
+
 The root library has six domain folders:
 
 ```
@@ -172,7 +182,7 @@ just test         # runs regression tests in SolanalibTest/
 just docs-open    # builds the docs site + opens .lake/build/doc/index.html
 ```
 
-CI builds the root and runtime libraries, runs their tests and audits, and replays the Agave recording. Lean builds use `--wfail`.
+CI checks the existing library, runtime, contracts, all 108 SDK production and scenario libraries, generated evidence, source audits and both recorded conformance suites on pull requests and pushes to main. Lean builds use `--wfail`. The [CI guide](docs/ci.md) describes the jobs and configured timeouts.
 
 ---
 
@@ -258,10 +268,10 @@ In short, the workflow for adding a new domain primitive looks like:
 
 1. Decide the file path under `Solanalib/<Concept>/`. New top-level concept ↔ new top-level folder.
 2. Write the file using the template in the skill (copyright header, then imports, then `/-! … -/` module docstring, then namespace).
-3. Add the file to `Solanalib.lean`.
-4. Run `just build` locally and the checks for each changed package. CI timing depends on the package group and cache state.
-5. For load-bearing API, add a regression test under `SolanalibTest/<Concept>/<Aspect>Test.lean` and import it from `SolanalibTest.lean`.
-6. Run `just test` and `scripts/lint-style.sh`.
+3. Add the file to `Solanalib.lean`. Register any new top-level branch in the explicit `globs` of that library in `lakefile.lean`.
+4. Run `just build` locally and the checks for each affected library. CI timing depends on the library group and cache state.
+5. For load-bearing API, add a regression test under `SolanalibTest/<Concept>/<Aspect>Test.lean`, import it from `SolanalibTest.lean`, and register a new test branch in the `globs` of its library.
+6. Run `just test`, `scripts/lint-style.sh` and `python3.12 scripts/check-module-ownership.py`.
 
 Conventions worth knowing before writing the first proof:
 

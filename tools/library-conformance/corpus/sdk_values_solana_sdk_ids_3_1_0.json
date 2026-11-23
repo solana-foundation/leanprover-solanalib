@@ -1,0 +1,6 @@
+{"schema":"solana-library-conformance/corpus/v1","corpus":"sdk_values_solana_sdk_ids_3_1_0","crates":[{"name":"solana-sdk-ids","version":"3.1.0"}],"records":[
+{"id":"solana_sdk_ids::bpf_loader_upgradeable::id","function":"solana_sdk_ids::bpf_loader_upgradeable::id","generics":{},"state":null,"args":null,"outcome":{"exit":"returned","result":"02a8f6914e88a1b0e210153ef763ae2b00c2b93d16c124d2c0537a1004800000","state":null}},
+{"id":"solana_sdk_ids::ed25519_program::id","function":"solana_sdk_ids::ed25519_program::id","generics":{},"state":null,"args":null,"outcome":{"exit":"returned","result":"037d46d67c93fbbe12f9428f838d40ff0570744927f48a64fcca704480000000","state":null}},
+{"id":"solana_sdk_ids::sysvar::instructions::id","function":"solana_sdk_ids::sysvar::instructions::id","generics":{},"state":null,"args":null,"outcome":{"exit":"returned","result":"06a7d517187bd16635dad40455fdc2c0c124c68f215675a5dbbacb5f08000000","state":null}},
+{"id":"solana_sdk_ids::vote::id","function":"solana_sdk_ids::vote::id","generics":{},"state":null,"args":null,"outcome":{"exit":"returned","result":"0761481d357474bb7c4d7624ebd3bdb3d8355e73d11043fc0da3538000000000","state":null}}
+]}

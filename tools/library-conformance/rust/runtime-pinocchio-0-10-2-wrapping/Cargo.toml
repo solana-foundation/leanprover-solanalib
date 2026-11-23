@@ -1,0 +1,20 @@
+[package]
+name = "conformance-runtime-pinocchio-0-10-2-wrapping"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records pinocchio 0.10.2 Rent arithmetic, built without overflow checks"
+
+# pinocchio enables cpi. Overflow checks are disabled, as in a release
+# arithmetic profile, while panics still unwind.
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+pinocchio = { version = "=0.10.2", features = ["cpi"] }
+
+[profile.dev]
+panic = "unwind"
+overflow-checks = false
+
+[profile.release]
+panic = "unwind"

@@ -1,0 +1,3 @@
+# This vendored oracle input is authenticated by the frozen corpus manifests.
+# Preserve its exact source bytes, including the upstream whitespace.
+/tools/library-conformance/rust/prepared/ahash-0.7.6/** -whitespace

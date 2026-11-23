@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "kind": "projected-wrapper",
+  "package": "anchor-spl",
+  "version": "1.1.2",
+  "preamble": "use crate::anchor_lang;\nuse crate::solana_program;\nuse crate::anchor_lang::{context::CpiContext, prelude::Pubkey, Result};\nuse anchor_spl::token_2022::{BurnChecked};\nuse anchor_spl::token_2022::{MintToChecked};\nuse anchor_spl::token_2022::{SetAuthority};\nuse anchor_spl::token_2022::{TransferChecked};\nuse spl_token_2022_interface as spl_token_2022;\nuse spl_token_2022_interface::instruction::AuthorityType;",
+  "sources": [
+    {
+      "id": "token_2022",
+      "path": "anchor-spl-1.1.2/src/token_2022.rs",
+      "sha256": "6c68539fa552c5c3e2d2eed1da72bf0206e7654529699bc62e23b3a80bf31810"
+    }
+  ],
+  "functions": [
+    {
+      "source": "token_2022",
+      "name": "burn_checked",
+      "sha256": "498d1fd3be1359d1c450cb7d188a79cb702338ab0193ca4c597f0d29a23439be"
+    },
+    {
+      "source": "token_2022",
+      "name": "mint_to_checked",
+      "sha256": "080e3bf1d4c30984d1383313ff0544832e238e6810595891f4efd03f844660d1"
+    },
+    {
+      "source": "token_2022",
+      "name": "set_authority",
+      "sha256": "26cbd5dcbe95885435cf7a01ff131979aa7b6431ec196d8bb622c723cc9ba4ac"
+    },
+    {
+      "source": "token_2022",
+      "name": "transfer_checked",
+      "sha256": "50831b3c3d032a0503bec5498af2dbded16be1c48a6f1e4b30c45d0c33588203"
+    }
+  ]
+}

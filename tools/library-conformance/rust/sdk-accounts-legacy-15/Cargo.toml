@@ -1,0 +1,23 @@
+[package]
+name = "conformance-sdk-accounts-legacy-15"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[features]
+default = ["realloc-api"]
+resize-api = []
+realloc-api = []
+unused-field = []
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-accounts = { path = "../accounts" }
+solana-program = "=1.15.2"
+
+[profile.dev]
+panic = "unwind"
+
+# Frozen compiler compatibility profile; all function bodies are unchanged.
+[patch.crates-io]
+ahash = { version = "=0.7.6", path = "../prepared/ahash-0.7.6" }

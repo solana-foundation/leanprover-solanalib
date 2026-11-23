@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "kind": "projected-wrapper",
+  "package": "anchor-lang",
+  "version": "1.0.2",
+  "preamble": "use anchor_lang::{context::CpiContext, prelude::Pubkey, Result};\nuse anchor_lang::system_program::{Allocate, Assign, CreateAccount, Transfer};",
+  "sources": [
+    {
+      "id": "system",
+      "path": "anchor-lang-1.0.2/src/system_program.rs",
+      "sha256": "3a64e9868c1248484128887ee4b8e229071d77e0e28166c47b8da661b2d54388"
+    }
+  ],
+  "functions": [
+    {
+      "source": "system",
+      "name": "allocate",
+      "sha256": "072cee3bb4ac34f08fee3b8fe1266602b91b4616eac5f360ebda86acd16f4cc6"
+    },
+    {
+      "source": "system",
+      "name": "assign",
+      "sha256": "9f1b36277f9dfeec9ae8f61b61896302a5804ef06a8c7d72eb5ed9748a9c1134"
+    },
+    {
+      "source": "system",
+      "name": "create_account",
+      "sha256": "55f56a024e65a844d91d97f8d9c18c1a792ce6a0cb0cf7ef938269fd8f6ce8cd"
+    },
+    {
+      "source": "system",
+      "name": "transfer",
+      "sha256": "11a247bad14265fbc22a8124730638c55b792e5f1bce6d68e889406954b51620"
+    }
+  ]
+}

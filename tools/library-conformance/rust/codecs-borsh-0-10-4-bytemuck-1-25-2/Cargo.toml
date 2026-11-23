@@ -1,0 +1,17 @@
+[package]
+name = "conformance-codecs-borsh-0-10-4-bytemuck-1-25-2"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records borsh 0.10.4 and bytemuck 1.25.2"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+borsh = "=0.10.4"
+bytemuck = "=1.25.2"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

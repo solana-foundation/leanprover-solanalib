@@ -1,0 +1,22 @@
+[package]
+name = "conformance-anchor"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records anchor-lang 1.0.2 and anchor-spl 1.0.2"
+
+
+# The exact anchor-lang and anchor-spl versions and feature sets are listed below.
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+conformance-accounts = { path = "../accounts" }
+anchor-lang = "=1.0.2"
+anchor-spl = { version = "=1.0.2", default-features = false, features = ["associated_token", "token", "token_2022"] }
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

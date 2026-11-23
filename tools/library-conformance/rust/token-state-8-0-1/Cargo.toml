@@ -1,0 +1,26 @@
+[package]
+name = "conformance-token-state-8-0-1"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Native state and extension API records for spl-token-2022 8.0.1"
+
+# Cargo.lock fixes the complete dependency graph of this fixture.
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+token-api = { package = "spl-token-2022", features = ["no-entrypoint"], version = "=8.0.1" }
+solana-program-pack = "=2.2.1"
+solana-program-error = "=2.2.2"
+bytemuck = "=1.22.0"
+tlv-api = { package = "spl-type-length-value", version = "=0.8.0" }
+metadata-api = { package = "spl-token-metadata-interface", version = "=0.7.0", optional = true }
+
+[features]
+default = ["metadata"]
+metadata = ["dep:metadata-api"]
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

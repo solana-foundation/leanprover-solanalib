@@ -1,0 +1,69 @@
+{
+  "corpora": {
+    "raw_runtime_solana_define_syscall_5_1_0.json": {
+      "crates": [
+        {
+          "name": "solana-define-syscall",
+          "version": "5.1.0"
+        }
+      ],
+      "records": 48,
+      "sha256": "c06cbcf3c127e5ce78f85880961f2313d24358fa1e91cbeb3d25c86932925f40"
+    }
+  },
+  "driver": "raw-runtime",
+  "inputs": {
+    "rust/raw-runtime-common/Cargo.toml": "0a56d1103cac3be7487c951761363c20dc26e12dc99fbe3662fcd8568c23ec71",
+    "rust/raw-runtime-common/src/lib.rs": "69eeb728a9fef82ed18e2538ccd417ad51e66a66019d8b07674b0f0f26a42f01",
+    "rust/raw-runtime-common/src/provider.rs": "9f09dce68d77409c265bf2e1f2e9e475ad409d27c56be872e9261d1a78119699",
+    "rust/raw-runtime/.cargo/config.toml": "5b23ef498ea9fcb73248def7346d71fbe37f5990921c302c2332230dd22a28ec",
+    "rust/raw-runtime/Cargo.lock": "92479570c4e23fa13a7bddbe01f40732cc5b365b855f51187781ab65b7c8ce9a",
+    "rust/raw-runtime/Cargo.toml": "7ca7fb36cdd61fb2a40f2fcb66b1b6ed9a0af79c4fd1ccf82158ee593618f2ae",
+    "rust/raw-runtime/driver.toml": "0ba43e7ebf4d54db4ded896c559a1b9c6e447f5eb7e7d096deb381da5904a5cc",
+    "rust/raw-runtime/src/main.rs": "b57b407dc70cd643ed6f7938a97179304df5bf9e7652b836763a51bdf8f2e497",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a"
+  },
+  "locked": {
+    "conformance-raw-runtime-common": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "solana-define-syscall": [
+      {
+        "checksum": "21e14a4f604117f379840956a8fc8695e4c84f5b0ebed192f31f60d9b85d581d",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "5.1.0"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:19:10+00:00",
+  "requirements": {
+    "conformance-raw-runtime-common": "path ../raw-runtime-common",
+    "solana-define-syscall": "=5.1.0"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "live_source_census": {
+    "checked_on": "2026-11-22",
+    "sources_checked": 56,
+    "registry_sources_checked": 53,
+    "non_registry_sources": 3,
+    "result": "new unrecorded releases detected",
+    "findings": [
+      {
+        "source": "pinocchio-system",
+        "package": "pinocchio-system",
+        "status": "needs review",
+        "error": "Source census needs review: pinocchio-system; unrecorded ['0.7.1'], missing []"
+      },
+      {
+        "source": "pinocchio-token-2022",
+        "package": "pinocchio-token-2022",
+        "status": "needs review",
+        "error": "Source census needs review: pinocchio-token-2022; unrecorded ['0.5.1'], missing []"
+      }
+    ],
+    "effect": "This census records pending release reviews; it neither reviews the new releases nor changes any profile or compatibility range."
+  }
+}

@@ -1,0 +1,1064 @@
+# Kernel-checked theorems about decided preconditions (`decidesRequires`) that no parseable record can break.
+#
+# [[theorem]]: negative evidence. Its statement is `¬ P` or `b = false`, about the precondition of the model
+# (`requires` of its contract, a predicate that `requires` unfolds to, or the Boolean of a decider), and it uses
+# a decider of that precondition in the checker: a declaration of the code of the checker that mentions
+# `requires` and the contract of the model, or a family declaration such a decider uses directly.
+#
+# [[trivial]]: the precondition is trivial at the decided index. Its statement is `requires … ↔ True` (or
+# `requires …` under binders) at exactly the index the checker uses, and it uses the decider of the checker.
+#
+# `run.py --model-only` requires every model whose non-trivial precondition a checker decides to have a
+# family precondition control, a [[theorem]] or a [[trivial]] entry, and rejects an entry of the wrong
+# shape. The table of REFERENCE.md is generated from this file by `run.py --generate-registry`. `detail` is the
+# deciding family.
+
+[[theorem]]
+model = "anchor-lang::accounts::account_loader::AccountLoader::load"
+theorem = "SolanalibTest.Conformance.Library.Families.Anchor.RequiresCheck.load_rejects_illTyped"
+detail = "Anchor"
+reason = "The parser types every cell; the theorem shows the decided admission rejects a data handle that holds lamports."
+
+[[theorem]]
+model = "anchor-lang::accounts::account_loader::AccountLoader::load_mut"
+theorem = "SolanalibTest.Conformance.Library.Families.Anchor.RequiresCheck.load_mut_rejects_illTyped"
+detail = "Anchor"
+reason = "The parser types every cell; the theorem shows the decided admission rejects a data handle that holds lamports."
+
+[[theorem]]
+model = "anchor-lang::accounts::account_loader::AccountLoader::load_mut_observation"
+theorem = "SolanalibTest.Conformance.Library.Families.Anchor.RequiresCheck.load_mut_observation_rejects_illTyped"
+detail = "Anchor"
+reason = "The parser types every cell; the theorem shows the decided `LoadReady` rejects a data handle that holds lamports."
+
+[[theorem]]
+model = "anchor-lang::accounts::account_loader::AccountLoader::load_observation"
+theorem = "SolanalibTest.Conformance.Library.Families.Anchor.RequiresCheck.load_observation_rejects_illTyped"
+detail = "Anchor"
+reason = "The parser types every cell; the theorem shows the decided `LoadReady` rejects a data handle that holds lamports."
+
+[[theorem]]
+model = "anchor-lang::accounts::account_loader::AccountLoader::try_from_observation"
+theorem = "SolanalibTest.Conformance.Library.Families.Anchor.RequiresCheck.loader_observation_rejects_illTyped"
+detail = "Anchor"
+reason = "The parser types every cell; the theorem shows the decided precondition rejects an ill-typed data cell."
+
+[[theorem]]
+model = "anchor-lang::context::CpiContext::new_with_signer"
+theorem = "SolanalibTest.Conformance.Library.Families.Anchor.RequiresCheck.new_with_signer_decider_rejects"
+detail = "Anchor"
+reason = "Every recorded ledger is empty; the theorem shows the decider rejects a non-empty vector ledger."
+
+[[theorem]]
+model = "anchor-spl::token::accessor::amount"
+theorem = "SolanalibTest.Conformance.Library.Families.Anchor.RequiresCheck.amount_rejects_illTyped"
+detail = "Anchor"
+reason = "The parser types every cell; the theorem shows the decided `DataBorrow.Ready` rejects a data handle that holds lamports."
+
+[[theorem]]
+model = "anchor-spl::token::accessor::amount_observation"
+theorem = "SolanalibTest.Conformance.Library.Families.Anchor.RequiresCheck.amount_observation_rejects_illTyped"
+detail = "Anchor"
+reason = "The parser types every cell; the theorem shows the decided `DataBorrow.Ready` rejects a data handle that holds lamports."
+
+[[theorem]]
+model = "switchboard-on-demand::on_demand::accounts::pull_feed::PullFeedAccountData::parse"
+theorem = "SolanalibTest.Conformance.Library.Families.Instructions.Switchboard.requires_rejects_free"
+detail = "Instructions"
+reason = "The theorem shows the decided precondition rejects a free (unleased) cell for every byte string."
+
+[[theorem]]
+model = "spl-token-2022::onchain::invoke_transfer_checked_value"
+theorem = "SolanalibTest.Conformance.Library.Families.TokenInterface.Onchain.illTyped_not_ready"
+detail = "TokenInterface"
+reason = "Every recorded world has two typed cells per account; the theorem shows the decided `PreparationReady` rejects a data handle that holds lamports."
+
+[[theorem]]
+model = "solana-account-view::AccountView::Pool::close_header"
+theorem = "SolanalibTest.Conformance.Library.Families.AccountsV2.close_pre_rejects_missing"
+detail = "AccountsV2"
+reason = "The reader makes every handle a parsed account; the theorem shows the decided `isBorrowed = false → HasAccount` rejects an unborrowed missing account."
+
+[[theorem]]
+model = "solana-account-view::AccountView::Pool::data_len"
+theorem = "SolanalibTest.Conformance.Library.Families.AccountsV2.data_len_pre_rejects_missing"
+detail = "AccountsV2"
+reason = "The reader makes every handle a parsed account; the theorem shows the decided `HasAccount` rejects a missing account."
+
+[[theorem]]
+model = "solana-account-view::AccountView::Pool::is_signer"
+theorem = "SolanalibTest.Conformance.Library.Families.AccountsV2.is_signer_pre_rejects_missing"
+detail = "AccountsV2"
+reason = "The reader makes every handle a parsed account; the theorem shows the decided `HasAccount` rejects a missing account."
+
+[[theorem]]
+model = "solana-account-view::AccountView::Pool::lamports"
+theorem = "SolanalibTest.Conformance.Library.Families.AccountsV2.lamports_pre_rejects_missing"
+detail = "AccountsV2"
+reason = "The reader makes every handle a parsed account; the theorem shows the decided `HasAccount` rejects a missing account."
+
+[[theorem]]
+model = "solana-account-view::AccountView::Pool::owned_by"
+theorem = "SolanalibTest.Conformance.Library.Families.AccountsV2.owned_by_pre_rejects_missing"
+detail = "AccountsV2"
+reason = "The reader makes every handle a parsed account; the theorem shows the decided `HasAccount` rejects a missing account."
+
+[[theorem]]
+model = "solana-account-view::AccountView::Pool::set_lamports"
+theorem = "SolanalibTest.Conformance.Library.Families.AccountsV2.set_lamports_pre_rejects_missing"
+detail = "AccountsV2"
+reason = "The reader makes every handle a parsed account; the theorem shows the decided `HasAccount` rejects a missing account."
+
+[[theorem]]
+model = "solana-account-view::AccountView::Observation::set_lamports"
+theorem = "SolanalibTest.Conformance.Library.Families.AccountsV2.obs_set_lamports_pre_rejects_2_64"
+detail = "AccountsV2"
+reason = "The reader rejects values of 2^64 and more; the theorem shows the decided `value < U64_LIMIT` rejects 2^64."
+
+[[theorem]]
+model = "pinocchio-token::instructions::batch::Batch::invoke_signed"
+theorem = "SolanalibTest.Conformance.Library.Families.TokenViews.Batch.invokeRequires_rejects_hole"
+detail = "TokenViews"
+reason = "Recorded buffers are fully initialized, so no record can hold an uninitialized committed slot; the theorem shows the decider of the checker (`invokeRequiresDec`) rejects one. A committed length past its buffer is exercised by a control."
+
+[[theorem]]
+model = "solana-sysvar::clock::Clock::get"
+theorem = "SolanalibTest.Conformance.Library.Families.Runtime.Syscalls.sdk_clock_decider_rejects"
+detail = "Runtime"
+reason = "The destination of the typed getter starts as `Default`, so `GetterReady` holds in every recorded state (`typed_getter_ready`); the theorem shows the decision of the checkers (`getterReadyDec`) rejects a successful reply that leaves the destination uninitialized."
+
+[[theorem]]
+model = "solana-sysvar::rent::Rent::get"
+theorem = "SolanalibTest.Conformance.Library.Families.Runtime.Syscalls.sdk_rent_decider_rejects"
+detail = "Runtime"
+reason = "The destination of the typed getter starts as `Default`, so `GetterReady` holds in every recorded state (`typed_getter_ready`); the theorem shows the decision of the checkers (`getterReadyDec`) rejects a successful reply that leaves the destination uninitialized."
+
+[[theorem]]
+model = "pinocchio::sysvars::instructions::Instructions::try_from"
+theorem = "SolanalibTest.Conformance.Library.Families.Runtime.Accounts.overlong_rejected"
+detail = "Runtime"
+reason = "The AccountsV2 parser requires `data_len <= backing.length`, so no record can break `constructorReady`; the theorem shows the decision of the checker rejects an Instructions account whose length exceeds its backing."
+
+[[theorem]]
+model = "pinocchio-token::instructions::batch::Batch::invoke_signed"
+theorem = "SolanalibTest.Conformance.Library.Families.TokenViews.Batch.invokeRequires_rejects_long_prefix"
+detail = "TokenViews"
+reason = "The theorem shows the decider of the checker (`invokeRequiresDec`) rejects a committed length beyond its buffer; a control exercises the same case on a record."
+
+[[theorem]]
+model = "anchor-spl::token::transfer"
+theorem = "SolanalibTest.Conformance.Library.Families.Anchor.RequiresCheck.transfer_decider_rejects"
+detail = "Anchor"
+reason = "The checker fixes the builder state (empty vector ledgers), where every built instruction is readable (`Sample.build_ready`), so no record leaves the precondition; the theorem shows the decider `buildReadyWithB` answers false for a build whose instruction its liveness test rejects."
+
+[[trivial]]
+model = "spl-token-2022-interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee_live"
+theorem = "SolanalibTest.Conformance.Library.Families.TokenInterface.Fees.live_requires_iff"
+detail = "TokenInterface"
+reason = "At the decided index `getEpochFeeLiveSample` the state is the configuration itself and its parent is always live, so no input lies outside the precondition; the theorem is the equivalence through which the checker decides `requires` (it holds in every state)."
+
+[[theorem]]
+model = "solana-sysvar::clock::Clock::string_error::get"
+theorem = "SolanalibTest.Conformance.Library.Families.Utilities.Syscalls.splitClock_decider_rejects"
+detail = "Utilities"
+reason = "Native typed destinations start initialized. The exact registered precondition decider rejects a successful abstract provider reply that fails to initialize its destination."
+
+[[theorem]]
+model = "solana-sysvar::rent::Rent::string_error::get"
+theorem = "SolanalibTest.Conformance.Library.Families.Utilities.Syscalls.splitRent_decider_rejects"
+detail = "Utilities"
+reason = "Native typed destinations start initialized. The exact registered precondition decider rejects a successful abstract provider reply that fails to initialize its destination."
+
+[[trivial]]
+model = "anchor-spl::token_interface::TokenAccount::deref"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v0_32_1_token_interface_TokenAccount_deref_ready"
+detail = "AnchorSplSupport"
+reason = "The native deref transport starts from an existing shared wrapper. The same checker lemma proves admission for every parsed complete pointee; missing/expired parents remain separately rejected by the general model controls."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::clone_borrowed_info"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorViews.cloneReadyBorrowed_missing"
+detail = "AnchorViews"
+reason = "Rejects a missing wrapper owner or source loan. Rust fixture inputs cannot construct such references."
+
+[[theorem]]
+model = "anchor-lang::accounts::borrowed_info_ref"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorViews.infoReadyBorrowed_missing"
+detail = "AnchorViews"
+reason = "Rejects a missing wrapper owner or source loan. Rust fixture inputs cannot construct such references."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::deref_mut"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorViews.mutableReady_shared"
+detail = "AnchorViews"
+reason = "Rejects a shared parent loan for the exclusive field operation."
+
+[[theorem]]
+model = "anchor-lang::accounts::wrapper_key"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorViews.keyReady_missing"
+detail = "AnchorViews"
+reason = "Rejects a missing wrapper owner or source loan. Rust fixture inputs cannot construct such references."
+
+[[trivial]]
+model = "solana-instruction::AccountMeta::clone"
+theorem = "SolanalibTest.Conformance.Library.Families.InstructionExtensions.metadata_requires_at_recorded_index"
+detail = "InstructionExtensions"
+reason = "Every native record is made under the original live shared Rust borrow; the checked unit-reference index always has the parsed current metadata. Generic expired-reference rejection is separately kernel-tested."
+
+[[theorem]]
+model = "anchor-lang::context::CpiContext::AccountInfoProgram::new_with_signer"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorOperations.Contexts.empty_ready_rejects_reused"
+detail = "AnchorOperations"
+reason = "The selected vector primitive always satisfies readiness; the same generic decider rejects reusing an already-live empty Vec owner."
+[[theorem]]
+model = "anchor-lang::context::CpiContext::AccountInfoProgram::new_with_signer"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorOperations.Contexts.empty_ready_rejects_nonempty"
+detail = "AnchorOperations"
+reason = "The selected vector primitive always satisfies readiness; the same generic decider rejects a fresh but nonempty Vec result."
+[[theorem]]
+model = "anchor-lang::context::CpiContext::AccountInfoProgram::new"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorOperations.Contexts.empty_ready_rejects_reused"
+detail = "AnchorOperations"
+reason = "The selected vector primitive always satisfies readiness; the same generic decider rejects reusing an already-live empty Vec owner."
+[[theorem]]
+model = "anchor-lang::context::CpiContext::AccountInfoProgram::new"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorOperations.Contexts.empty_ready_rejects_nonempty"
+detail = "AnchorOperations"
+reason = "The selected vector primitive always satisfies readiness; the same generic decider rejects a fresh but nonempty Vec result."
+
+
+# Admission and source-name checks for selected library operations.
+
+[[trivial]]
+model = "anchor-lang::system_program::allocate"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSystem.boxedLegacy_allocate_requires"
+detail = "AnchorSystem"
+reason = "The fixed constructor resource interpretation always produces readable current vectors; this theorem uses the actual precondition decider at the same opaque-provider index."
+
+[[trivial]]
+model = "anchor-lang::system_program::assign"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSystem.boxedLegacy_assign_requires"
+detail = "AnchorSystem"
+reason = "The fixed constructor resource interpretation always produces readable current vectors; this theorem uses the actual precondition decider at the same opaque-provider index."
+
+[[trivial]]
+model = "anchor-lang::system_program::create_account"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSystem.boxedLegacy_create_account_requires"
+detail = "AnchorSystem"
+reason = "The fixed constructor resource interpretation always produces readable current vectors; this theorem uses the actual precondition decider at the same opaque-provider index."
+
+[[trivial]]
+model = "anchor-lang::system_program::transfer"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSystem.boxedLegacy_transfer_requires"
+detail = "AnchorSystem"
+reason = "The fixed constructor resource interpretation always produces readable current vectors; this theorem uses the actual precondition decider at the same opaque-provider index."
+
+[[theorem]]
+model = "anchor-spl::token_2022::transfer_checked"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022TransferChecked0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.account_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::close"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.account_close_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::exit"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.account_exit_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::try_from_unchecked"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.account_try_from_unchecked_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::boxed::Box::close"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.boxed_close_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::boxed::Box::exit"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.boxed_exit_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[trivial]]
+model = "anchor-lang::accounts::program::Program::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.program_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::signer::Signer::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.signer_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::account_info::AccountInfo::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.account_info_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::interface::Interface::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.interface_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[theorem]]
+model = "anchor-lang::accounts::interface_account::InterfaceAccount::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.interface_account_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::interface_account::InterfaceAccount::exit"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.interface_account_exit_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[trivial]]
+model = "anchor-lang::accounts::sysvar::Sysvar::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.sysvar_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::unchecked_account::UncheckedAccount::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.unchecked_account_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::reload"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.account_reload_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::interface_account::InterfaceAccount::reload"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_32_1.interface_account_reload_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::account_loader::AccountLoader::load_init"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLoader.Requires.init_rejects_illTyped"
+detail = "AnchorLoader"
+reason = "The native reader types each data cell; the actual selected admission rejects a lamports cell used as data."
+
+[[theorem]]
+model = "anchor-lang::accounts::account_loader::AccountLoader::load_init_observation"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLoader.Requires.init_observation_rejects_illTyped"
+detail = "AnchorLoader"
+reason = "The supporting selected-data decision rejects a wrong-content data handle."
+
+[[theorem]]
+model = "anchor-lang::accounts::account_loader::AccountLoader::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLoader.Requires.accounts_rejects_illTyped"
+detail = "AnchorLoader"
+reason = "The popped head must satisfy checked-loader admission; its same executable decision rejects a wrong-content data handle."
+
+[[theorem]]
+model = "anchor-lang::accounts::account_loader::AccountLoader::exit"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLoader.Requires.exit_rejects_illTyped"
+detail = "AnchorLoader"
+reason = "The actual matching-owner, not-closed exit branch rejects an unreadable data handle."
+
+[[theorem]]
+model = "anchor-lang::accounts::account_loader::AccountLoader::try_from_unchecked"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLoader.Requires.unchecked_diagnostic_loss_rejected"
+detail = "AnchorLoader"
+reason = "The native Owner script preserves the error heap. The exact inner second-Owner decision rejects an actual callback result whose state lost the diagnostic Box."
+
+[[theorem]]
+model = "anchor-spl::token::transfer_with_program_owner"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.tokenTransfer0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022::burn"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022Burn0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022::close_account"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022CloseAccount0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022::get_account_data_size"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022GetAccountDataSize0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022::initialize_account3"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022InitializeAccount30321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022::initialize_immutable_owner"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022InitializeImmutableOwner0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022::initialize_mint2"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022InitializeMint20321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022::mint_to"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022MintTo0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022::set_authority"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022SetAuthority0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022_extensions::group_member_pointer::group_member_pointer_initialize"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.groupMemberPointer0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022_extensions::group_pointer::group_pointer_initialize"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.groupPointer0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022_extensions::metadata_pointer::metadata_pointer_initialize"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.metadataPointer0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022_extensions::mint_close_authority::mint_close_authority_initialize"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.mintCloseAuthority0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022_extensions::non_transferable::non_transferable_mint_initialize"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.nonTransferableMint0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022_extensions::permanent_delegate::permanent_delegate_initialize"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.permanentDelegate0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022_extensions::transfer_hook::transfer_hook_initialize"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.transferHook0321_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[trivial]]
+model = "anchor-spl::metadata::create_metadata_accounts_v3"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v0_32_1_metadata_create_metadata_accounts_v3_ready"
+detail = "AnchorSplSupport"
+reason = "The checker fixes the input fixture and script before evaluating outcomes. Its own source-prefix admission lemma covers every script/custodian choice at this exact index; arbitrary providers/stores are not declared admissible."
+
+[[trivial]]
+model = "anchor-spl::associated_token::create"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v0_32_1_associated_token_create_ready"
+detail = "AnchorSplSupport"
+reason = "The checker fixes the input fixture and script before evaluating outcomes. Its own source-prefix admission lemma covers every script/custodian choice at this exact index; arbitrary providers/stores are not declared admissible."
+
+[[trivial]]
+model = "anchor-spl::token::TokenAccount::deref"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v0_32_1_token_TokenAccount_deref_ready"
+detail = "AnchorSplSupport"
+reason = "The native deref transport starts from an existing shared wrapper. The same checker lemma proves admission for every parsed complete pointee; missing/expired parents remain separately rejected by the general model controls."
+
+[[theorem]]
+model = "anchor-lang::accounts::clone_borrowed_info"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorViews.infoCloneReadyBorrowed_missing"
+detail = "AnchorViews"
+reason = "Rejects a missing wrapper owner or source loan. Rust fixture inputs cannot construct such references."
+
+[[trivial]]
+model = "anchor-spl::memo::build_memo"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v0_32_1_memo_build_memo_ready"
+detail = "AnchorSplSupport"
+reason = "The checker fixes the input fixture and script before evaluating outcomes. Its own source-prefix admission lemma covers every script/custodian choice at this exact index; arbitrary providers/stores are not declared admissible."
+
+[[theorem]]
+model = "anchor-lang::Lamports::get_lamports"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorViews.lamportsReady_wrong_cell"
+detail = "AnchorViews"
+reason = "Rejects a mistyped lamports cell reached after AsRef."
+
+[[theorem]]
+model = "pinocchio::account_info::AccountInfo::lamports"
+theorem = "SolanalibTest.Conformance.Library.Families.Pinocchio09.Accounts.lamports_pre_rejects_missing"
+detail = "Pinocchio09"
+reason = "Every parsed loader account has a balance cell; the same registered precondition decider rejects a missing balance cell in the kernel-checked control."
+
+[[trivial]]
+model = "spl-token-2022::extension::transfer_fee::TransferFeeConfig::get_epoch_fee"
+theorem = "SolanalibTest.Conformance.Library.Families.TokenStateVersions.Values.selectedFee_requires"
+detail = "TokenExtensionVersions"
+reason = "The exact recorded index keeps the configuration itself as its live parent, so every parsed configuration satisfies the decided precondition. The checker uses this equivalence."
+
+[[theorem]]
+model = "anchor-spl::token_2022::burn_checked"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022BurnChecked112_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022::mint_to_checked"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022MintToChecked112_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022::set_authority_program_id"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022SetAuthority112_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022::transfer_checked_program_id"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022TransferChecked112_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[trivial]]
+model = "anchor-spl::associated_token::create_program_id"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v1_1_2_associated_token_create_ready"
+detail = "AnchorSplSupport"
+reason = "The checker fixes the input fixture and script before evaluating outcomes. Its own source-prefix admission lemma covers every script/custodian choice at this exact index; arbitrary providers/stores are not declared admissible."
+
+[[trivial]]
+model = "anchor-spl::token_interface::TokenAccount::deref"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v1_1_2_token_interface_TokenAccount_deref_ready"
+detail = "AnchorSplSupport"
+reason = "The native deref transport starts from an existing shared wrapper. The same checker lemma proves admission for every parsed complete pointee; missing/expired parents remain separately rejected by the general model controls."
+
+[[trivial]]
+model = "anchor-spl::associated_token::create_idempotent"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v1_1_2_associated_token_create_idempotent_ready"
+detail = "AnchorSplSupport"
+reason = "The checker fixes the input fixture and script before evaluating outcomes. Its own source-prefix admission lemma covers every script/custodian choice at this exact index; arbitrary providers/stores are not declared admissible."
+
+[[trivial]]
+model = "anchor-lang::system_program::allocate_unit_borsh"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSystem.boxedModern_allocate_requires"
+detail = "AnchorSystem"
+reason = "The fixed constructor resource interpretation always produces readable current vectors; this theorem uses the actual precondition decider at the same opaque-provider index."
+
+[[trivial]]
+model = "anchor-lang::system_program::assign_unit_borsh"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSystem.boxedModern_assign_requires"
+detail = "AnchorSystem"
+reason = "The fixed constructor resource interpretation always produces readable current vectors; this theorem uses the actual precondition decider at the same opaque-provider index."
+
+[[trivial]]
+model = "anchor-lang::system_program::create_account_unit_borsh"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSystem.boxedModern_create_account_requires"
+detail = "AnchorSystem"
+reason = "The fixed constructor resource interpretation always produces readable current vectors; this theorem uses the actual precondition decider at the same opaque-provider index."
+
+[[trivial]]
+model = "anchor-lang::system_program::transfer_unit_borsh"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSystem.boxedModern_transfer_requires"
+detail = "AnchorSystem"
+reason = "The fixed constructor resource interpretation always produces readable current vectors; this theorem uses the actual precondition decider at the same opaque-provider index."
+
+[[theorem]]
+model = "solana-instructions-sysvar::load_current_index_checked"
+theorem = "SolanalibTest.Conformance.Library.Families.Utilities.Checked.current_missing_cell_rejected"
+detail = "Utilities"
+reason = "Native AccountInfo supplies a real data cell. The checker uses the registered Ready admission; its exact decider rejects a missing reached cell at the correct sysvar ID."
+
+[[theorem]]
+model = "solana-instructions-sysvar::load_instruction_at_checked"
+theorem = "SolanalibTest.Conformance.Library.Families.Utilities.Checked.missing_cell_rejected"
+detail = "Utilities"
+reason = "Native AccountInfo supplies a real data cell. The checker uses the registered Ready admission; its exact decider rejects a missing reached cell at the correct sysvar ID."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_1_2.account_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::close_checked"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_1_2.account_close_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::exit"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_1_2.account_exit_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[trivial]]
+model = "anchor-lang::accounts::interface::Interface::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_1_2.interface_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[theorem]]
+model = "anchor-lang::accounts::interface_account::InterfaceAccount::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_1_2.interface_account_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::interface_account::InterfaceAccount::exit"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_1_2.interface_account_exit_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[trivial]]
+model = "anchor-lang::accounts::program::Program::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_1_2.program_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::signer::Signer::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_1_2.signer_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::unchecked_account::UncheckedAccount::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_1_2.unchecked_account_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::try_from_unchecked"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_1_2.account_try_from_unchecked_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::boxed::Box::exit"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_1_2.boxed_exit_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::interface_account::InterfaceAccount::reload_released_guard"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_1_2.interface_account_reload_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::interface_account::InterfaceAccount::try_from_unchecked"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_1_2.interface_account_try_from_unchecked_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[trivial]]
+model = "anchor-lang::accounts::interface::Interface::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_0_2.interface_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[theorem]]
+model = "anchor-lang::accounts::interface_account::InterfaceAccount::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_0_2.interface_account_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::interface_account::InterfaceAccount::exit"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_0_2.interface_account_exit_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[trivial]]
+model = "anchor-lang::accounts::program::Program::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_0_2.program_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::signer::Signer::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_0_2.signer_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::system_account::SystemAccount::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_0_2.system_account_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::sysvar::Sysvar::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_0_2.sysvar_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::unchecked_account::UncheckedAccount::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_0_2.unchecked_account_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[theorem]]
+model = "anchor-lang::accounts::boxed::Box::exit"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_0_2.boxed_exit_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::interface_account::InterfaceAccount::try_from_unchecked"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls1_0_2.interface_account_try_from_unchecked_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-spl::token_2022::initialize_account3_program_id"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022InitializeAccount3102_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token_2022::transfer_checked_program_id_interface"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022TransferChecked102_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[trivial]]
+model = "anchor-spl::token_interface::TokenAccount::deref"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v1_0_2_token_interface_TokenAccount_deref_ready"
+detail = "AnchorSplSupport"
+reason = "The native deref transport starts from an existing shared wrapper. The same checker lemma proves admission for every parsed complete pointee; missing/expired parents remain separately rejected by the general model controls."
+
+[[trivial]]
+model = "anchor-spl::associated_token::create_idempotent"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v1_0_2_associated_token_create_idempotent_ready"
+detail = "AnchorSplSupport"
+reason = "The checker fixes the input fixture and script before evaluating outcomes. Its own source-prefix admission lemma covers every script/custodian choice at this exact index; arbitrary providers/stores are not declared admissible."
+
+[[trivial]]
+model = "anchor-spl::token::TokenAccount::deref"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v1_0_2_token_TokenAccount_deref_ready"
+detail = "AnchorSplSupport"
+reason = "The native deref transport starts from an existing shared wrapper. The same checker lemma proves admission for every parsed complete pointee; missing/expired parents remain separately rejected by the general model controls."
+
+[[theorem]]
+model = "solana-sysvar::epoch_schedule::EpochSchedule::get"
+theorem = "SolanalibTest.Conformance.Library.Families.Utilities.Syscalls.epoch_decider_rejects"
+detail = "Utilities"
+reason = "Native typed destinations start initialized. The exact registered precondition decider rejects a successful abstract provider reply that fails to initialize its destination."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_29_0.account_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::close"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_29_0.account_close_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::exit_cloned_info"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_29_0.account_exit_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::interface_account::InterfaceAccount::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_29_0.interface_account_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::interface_account::InterfaceAccount::exit_cloned_info"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_29_0.interface_account_exit_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[trivial]]
+model = "anchor-lang::accounts::program::Program::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_29_0.program_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::program::Program::try_from"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_29_0.program_try_from_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::signer::Signer::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_29_0.signer_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::try_from_unchecked"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_29_0.account_try_from_unchecked_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[trivial]]
+model = "anchor-lang::accounts::account_info::AccountInfo::try_accounts"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_29_0.account_info_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[theorem]]
+model = "anchor-lang::accounts::boxed::Box::close"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_29_0.boxed_close_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::boxed::Box::exit"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_29_0.boxed_exit_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-spl::token_2022::transfer_checked_legacy_interface"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.token2022TransferChecked029_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[trivial]]
+model = "anchor-spl::token_interface::TokenAccount::deref"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v0_29_0_token_interface_TokenAccount_deref_ready"
+detail = "AnchorSplSupport"
+reason = "The native deref transport starts from an existing shared wrapper. The same checker lemma proves admission for every parsed complete pointee; missing/expired parents remain separately rejected by the general model controls."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::into_inner"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorViews.moveReadyBorrowed_missing"
+detail = "AnchorViews"
+reason = "Rejects a missing wrapper owner or source loan. Rust fixture inputs cannot construct such references."
+
+[[theorem]]
+model = "solana-program::sysvar::clock::Clock::get"
+theorem = "SolanalibTest.Conformance.Library.Families.Utilities.Syscalls.legacy118Clock_decider_rejects"
+detail = "Utilities"
+reason = "Native typed destinations start initialized. The exact registered precondition decider rejects a successful abstract provider reply that fails to initialize its destination."
+
+[[theorem]]
+model = "solana-program::sysvar::rent::Rent::get"
+theorem = "SolanalibTest.Conformance.Library.Families.Utilities.Syscalls.legacy118Rent_decider_rejects"
+detail = "Utilities"
+reason = "Native typed destinations start initialized. The exact registered precondition decider rejects a successful abstract provider reply that fails to initialize its destination."
+
+[[trivial]]
+model = "solana-program::instruction::AccountMeta::clone"
+theorem = "SolanalibTest.Conformance.Library.Families.InstructionExtensions.Program.metadata_requires_at_recorded_index"
+detail = "InstructionExtensions"
+reason = "Every native record is made under the original live shared Rust borrow; the checked unit-reference index always has the parsed current metadata. Generic expired-reference rejection is separately kernel-tested."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::try_accounts_inline_error"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_27_0.account_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::close_inline_error"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_27_0.account_close_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::exit_inline_error"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_27_0.account_exit_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[trivial]]
+model = "anchor-lang::accounts::program::Program::try_accounts_inline_error"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_27_0.program_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::signer::Signer::try_accounts_inline_error"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_27_0.signer_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::system_account::SystemAccount::try_accounts_inline_error"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_27_0.system_account_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::sysvar::Sysvar::try_accounts_inline_error"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_27_0.sysvar_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[trivial]]
+model = "anchor-lang::accounts::unchecked_account::UncheckedAccount::try_accounts_inline_error"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_27_0.unchecked_account_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::reload_inline_error"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_27_0.account_reload_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::try_from_inline_error"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_27_0.account_try_from_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::try_from_unchecked_inline_error"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_27_0.account_try_from_unchecked_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[trivial]]
+model = "anchor-lang::accounts::account_info::AccountInfo::try_accounts_inline_error"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_27_0.account_info_try_accounts_admission"
+detail = "AnchorLifecycle"
+reason = "The exact provider retains diagnostic resources; the theorem validates every input at the same index through the checker decision."
+
+[[theorem]]
+model = "anchor-lang::accounts::boxed::Box::exit"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorLifecycle.Controls0_27_0.boxed_exit_admission"
+detail = "AnchorLifecycle"
+reason = "The parser constructs correctly typed cells and a live Box. The exact contract and its decision reject the exhibited malformed resource."
+
+[[theorem]]
+model = "anchor-spl::token::burn"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.tokenBurn027_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token::mint_to"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.tokenMintTo027_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[theorem]]
+model = "anchor-spl::token::transfer_inline_error"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplTokenOperations.tokenTransfer027_rejects_missing_metas"
+detail = "AnchorSplTokenOperations"
+reason = "Native constructors produce current vectors; the same decision bridge rejects missing metadata after an actual successful constructor and account-preparation prefix."
+
+[[trivial]]
+model = "anchor-spl::stake::withdraw"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v0_27_0_stake_withdraw_ready"
+detail = "AnchorSplSupport"
+reason = "The checker fixes the input fixture and script before evaluating outcomes. Its own source-prefix admission lemma covers every script/custodian choice at this exact index; arbitrary providers/stores are not declared admissible."
+
+[[trivial]]
+model = "anchor-spl::stake::StakeAccount::deref"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v0_27_0_stake_StakeAccount_deref_ready"
+detail = "AnchorSplSupport"
+reason = "The native deref transport starts from an existing shared wrapper. The same checker lemma proves admission for every parsed complete pointee; missing/expired parents remain separately rejected by the general model controls."
+
+[[trivial]]
+model = "anchor-spl::token::TokenAccount::deref"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v0_27_0_token_TokenAccount_deref_ready"
+detail = "AnchorSplSupport"
+reason = "The native deref transport starts from an existing shared wrapper. The same checker lemma proves admission for every parsed complete pointee; missing/expired parents remain separately rejected by the general model controls."
+
+[[trivial]]
+model = "anchor-spl::stake::deactivate_stake"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSplSupport.Requires.v0_27_0_stake_deactivate_stake_ready"
+detail = "AnchorSplSupport"
+reason = "The checker fixes the input fixture and script before evaluating outcomes. Its own source-prefix admission lemma covers every script/custodian choice at this exact index; arbitrary providers/stores are not declared admissible."
+
+[[trivial]]
+model = "anchor-lang::system_program::allocate_inline_borsh"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSystem.inlineLegacy_allocate_requires"
+detail = "AnchorSystem"
+reason = "The fixed constructor resource interpretation always produces readable current vectors; this theorem uses the actual precondition decider at the same opaque-provider index."
+
+[[trivial]]
+model = "anchor-lang::system_program::assign_inline_borsh"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSystem.inlineLegacy_assign_requires"
+detail = "AnchorSystem"
+reason = "The fixed constructor resource interpretation always produces readable current vectors; this theorem uses the actual precondition decider at the same opaque-provider index."
+
+[[trivial]]
+model = "anchor-lang::system_program::create_account_inline_borsh"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSystem.inlineLegacy_create_account_requires"
+detail = "AnchorSystem"
+reason = "The fixed constructor resource interpretation always produces readable current vectors; this theorem uses the actual precondition decider at the same opaque-provider index."
+
+[[trivial]]
+model = "anchor-lang::system_program::transfer_inline_borsh"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorSystem.inlineLegacy_transfer_requires"
+detail = "AnchorSystem"
+reason = "The fixed constructor resource interpretation always produces readable current vectors; this theorem uses the actual precondition decider at the same opaque-provider index."
+
+[[theorem]]
+model = "anchor-lang::accounts::owned_info_ref"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorViews.infoReadyOwned_missing"
+detail = "AnchorViews"
+reason = "Rejects a missing wrapper owner or source loan. Rust fixture inputs cannot construct such references."
+
+[[theorem]]
+model = "anchor-lang::accounts::sysvar::Sysvar::deref"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorViews.payloadReady_missing"
+detail = "AnchorViews"
+reason = "Rejects a missing wrapper owner or source loan. Rust fixture inputs cannot construct such references."
+
+[[theorem]]
+model = "anchor-lang::accounts::account::Account::set_inner"
+theorem = "SolanalibTest.Conformance.Library.Families.AnchorViews.setReady_shared"
+detail = "AnchorViews"
+reason = "Rejects a shared parent loan for the exclusive field operation."
+
+[[trivial]]
+model = "solana-program::instruction::Instruction::clone"
+theorem = "SolanalibTest.Conformance.Library.Families.InstructionExtensions.clone_requires_at_recorded_index"
+detail = "InstructionExtensions"
+reason = "Every native record supplies the live original instruction and both input vector slots; this is the exact checked index, including allocator-failure records. The generic family separately rejects expired references."
+
+[[theorem]]
+model = "solana-program::sysvar::rent::Rent::get_legacy_error_table"
+theorem = "SolanalibTest.Conformance.Library.Families.Utilities.Syscalls.legacy115Rent_decider_rejects"
+detail = "Utilities"
+reason = "Native typed destinations start initialized. The exact registered precondition decider rejects a successful abstract provider reply that fails to initialize its destination."

@@ -1,0 +1,6 @@
+{
+  "scope": "projected-wrapper conformance; the whole invocation is a typed mock",
+  "profile": "v0321-interface",
+  "items": [],
+  "projection_sha256": "73b153cb065efb53ab0de15d3c9400395b5dc33faa4e9dfa00af1b77624c295b"
+}

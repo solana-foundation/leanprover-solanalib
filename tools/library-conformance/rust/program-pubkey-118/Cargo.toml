@@ -1,0 +1,23 @@
+[package]
+name = "conformance-program-pubkey-118"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Cargo.lock fixes the complete dependency graph.
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-program = "=1.18.26"
+borsh-selected = { package = "borsh", version = "=0.10.4", features = ["std"] }
+
+[features]
+default = ["seed"]
+seed = []
+legacy_io = []
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

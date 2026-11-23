@@ -1,0 +1,13 @@
+[package]
+name = "conformance-raw-runtime-cpi2"
+version = "0.1.0"
+edition = "2021"
+publish = false
+[dependencies]
+conformance-raw-runtime-common = { path = "../raw-runtime-common" }
+solana-cpi = { version = "=2.2.1", default-features = false }
+solana-define-syscall = { version = "=2.3.0", default-features = false }
+[profile.dev]
+panic = "unwind"
+[profile.release]
+panic = "unwind"

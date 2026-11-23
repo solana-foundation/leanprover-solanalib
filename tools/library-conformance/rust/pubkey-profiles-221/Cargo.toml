@@ -1,0 +1,24 @@
+[package]
+name = "conformance-pubkey-profiles-221"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Cargo.lock fixes the complete dependency graph.
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-pubkey = { version = "=2.2.1", features = ["borsh", "curve25519"] }
+borsh-selected = { package = "borsh", version = "=0.10.4", features = ["std"] }
+spl-associated-token-account-client = "=2.0.0"
+
+[features]
+default = ["seed"]
+seed = []
+legacy_io = []
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

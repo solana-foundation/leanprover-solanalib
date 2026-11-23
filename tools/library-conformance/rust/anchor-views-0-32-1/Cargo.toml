@@ -1,0 +1,25 @@
+# Frozen resolved versions retained from the selected source profile.
+[package]
+name = "conformance-anchor-views"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[dependencies]
+anchor-lang = "=0.32.1"
+serde = { version = "=1.0.228", features = ["derive"] }
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+
+[features]
+default = ["legacy-info", "old-error", "lamports"]
+legacy-info = []
+owned-info = []
+old-error = []
+lamports = []
+debug = ["anchor-lang/anchor-debug"]
+
+[profile.dev]
+panic = "unwind"

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check model import boundaries using the pinned Lean header parser.
+"""Check source import boundaries using the pinned Lean header parser.
 
 The parser recognizes Lean module headers without interpreting comments or strings as imports.
 """
@@ -133,6 +133,30 @@ def allowed_imports(path):
         if not tests and not (name == "Solanalib.Runtime" or name.startswith("Solanalib.Runtime.")):
             raise ValueError("unregistered runtime module: " + path)
         return ["Init", "Std", "Lean", "Solanalib.Runtime", *(["SolanalibTest.Runtime"] if tests else [])]
+    contracts = "packages/solanalib-contracts/"
+    if path.startswith(contracts):
+        name = path[len(contracts):].removesuffix(".lean").replace("/", ".")
+        if not has_prefix(tuple(name.split('.')), "Solanalib.Contracts"):
+            raise ValueError("unregistered contract module: " + path)
+        return ["Init", "Std", "Lean", "Solanalib.Contracts"]
+    specs = "packages/solanalib-specs/"
+    if path.startswith(specs):
+        from solana_specs_config import (
+            COMMON_ROOT, COMMON_TEST_ROOT, PRODUCTION_ROOTS, TEST_ROOTS,
+            SDK_DEPENDENCIES, module_root,
+        )
+        name = path[len(specs):].removesuffix(".lean").replace("/", ".")
+        root = module_root(name)
+        if root not in (*PRODUCTION_ROOTS, *TEST_ROOTS):
+            raise ValueError("unregistered specification module: " + path)
+        allowed = ["Init", "Std", "Lean", "Solanalib.Runtime", "Solanalib.Contracts", COMMON_ROOT]
+        if root == COMMON_TEST_ROOT:
+            return [*allowed, *PRODUCTION_ROOTS, COMMON_TEST_ROOT]
+        production = root.replace("SolanalibTest.Specs.", "Solanalib.Specs.", 1)
+        allowed += [production, *SDK_DEPENDENCIES.get(production, ())]
+        if root in TEST_ROOTS:
+            allowed += [root, COMMON_TEST_ROOT]
+        return allowed
     if path.startswith("Solanalib/") or path == "Solanalib.lean":
         return ["Init", "Std", "Lean", "Mathlib", "Solanalib"]
     if path.startswith("SolanalibTest/") or path == "SolanalibTest.lean":
@@ -168,9 +192,10 @@ def source_files():
 def main():
     paths = source_files()
     errors = check({str(p.relative_to(ROOT)): p.read_text() for p in paths})
-    for component in (ROOT / "packages/solanalib-runtime",):
+    for component in (ROOT / "packages/solanalib-runtime", ROOT / "packages/solanalib-contracts",
+                      ROOT / "packages/solanalib-specs", ROOT / "tools/library-conformance"):
         if any((component / name).exists() for name in ("lakefile.lean", "lakefile.toml")):
-            errors.append(f"{component}: model sources must belong to the root package")
+            errors.append(f"{component}: all model libraries must belong to the root package")
     if errors:
         raise SystemExit("\n".join(errors))
     print(f"Import boundaries: {len(paths)} modules; one root package")

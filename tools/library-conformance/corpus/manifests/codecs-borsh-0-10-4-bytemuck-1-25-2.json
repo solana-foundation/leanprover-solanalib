@@ -1,0 +1,88 @@
+{
+  "corpora": {
+    "borsh_0_10_4.json": {
+      "crates": [
+        {
+          "name": "borsh",
+          "version": "0.10.4"
+        }
+      ],
+      "records": 1118,
+      "sha256": "4c4a32413621dfa3efb2421e18c154fcdc3db1b0218e29fd9139e937b02e2f0f"
+    },
+    "bytemuck_1_25_2.json": {
+      "crates": [
+        {
+          "name": "bytemuck",
+          "version": "1.25.2"
+        }
+      ],
+      "records": 150,
+      "sha256": "dad334cd6e46759d9dc613943e10a86cea144fa0c690ea3446e1f1c3aeb1f060"
+    }
+  },
+  "driver": "codecs-borsh-0-10-4-bytemuck-1-25-2",
+  "inputs": {
+    "rust/codecs-borsh-0-10-4-bytemuck-1-25-2/.cargo/config.toml": "eb75cb2bbc05ffcc804b1ed43a79043e074f9dddd2ec40d95c361c24bc5731a3",
+    "rust/codecs-borsh-0-10-4-bytemuck-1-25-2/Cargo.lock": "c343987696d69913db6722d9c311146760e2d069e48c215de3ae05c2caccb1ea",
+    "rust/codecs-borsh-0-10-4-bytemuck-1-25-2/Cargo.toml": "91e6198a94121b90e97d6903f040163337c815ce4fe0a83a0a5bc1dc4f3298d4",
+    "rust/codecs-borsh-0-10-4-bytemuck-1-25-2/driver.toml": "2644e91e6819e7eb27208ca3cf9bfb1b009c421a3e6b57a4315229e444c64072",
+    "rust/codecs-borsh-0-10-4-bytemuck-1-25-2/src/heap.rs": "3624d5ce1020f1cf272bc8f18b7b961087fcf42a09ce06628f2492ac178328be",
+    "rust/codecs-borsh-0-10-4-bytemuck-1-25-2/src/main.rs": "756b679929b6f67aa3f1de5175b3fefe31e85dcdb73c6ae5bf679b6f45feb677",
+    "rust/codecs-borsh-0-10-4-bytemuck-1-25-2/src/vec_heap.rs": "02caad521a9da2da25db31d31a1d134eeab81331f867db988159a90dfb340020",
+    "rust/common/borsh_de.rs": "5c9c324d386883a7bcb00fe53158fa26fde8324dbf384b57f62fa521e77dd4b1",
+    "rust/common/bytemuck_cases.rs": "a8131f86597b6ad7f228692105afb10a2eb3945b4e0adcffb7f41df472629bfa",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a"
+  },
+  "locked": {
+    "borsh": [
+      {
+        "checksum": "115e54d64eb62cdebad391c19efc9dce4981c690c85a33a12199d99bb9546fee",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.10.4"
+      }
+    ],
+    "bytemuck": [
+      {
+        "checksum": "95832e849adfb21180ccb6826a99da14e5d266ae5c2e668e1602cf234f153797",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.25.2"
+      }
+    ],
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:18:41+00:00",
+  "requirements": {
+    "borsh": "=0.10.4",
+    "bytemuck": "=1.25.2",
+    "conformance-recorder": "path ../recorder"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

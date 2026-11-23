@@ -1,0 +1,21 @@
+[package]
+name = "conformance-stake-codecs-legacy"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# The lockfile fixes the reviewed transitive versions.
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-program = "=1.15.2"
+bincode = "=1.3.3"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"
+
+[patch.crates-io]
+ahash = { version = "=0.7.6", path = "../prepared/ahash-0.7.6" }

@@ -1,0 +1,23 @@
+[package]
+name = "conformance-sdk-values-modern"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# The lockfile fixes the transitive dependencies for this SDK generation.
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+solana-program-option = "=3.1.0"
+solana-program-error = "=3.0.1"
+solana-nullable = "=1.3.0"
+solana-sdk-ids = "=3.1.0"
+solana-zero-copy = "=1.1.1"
+solana-pubkey = "=3.0.0"
+solana-address = "=2.6.0"
+spl-pod = "=0.7.3"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

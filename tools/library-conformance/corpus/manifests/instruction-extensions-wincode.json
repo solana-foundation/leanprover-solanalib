@@ -1,0 +1,96 @@
+{
+  "corpora": {
+    "instruction_extensions_wincode.json": {
+      "crates": [
+        {
+          "name": "solana-instruction",
+          "version": "3.4.0"
+        },
+        {
+          "name": "solana-system-interface",
+          "version": "3.2.0"
+        }
+      ],
+      "records": 43,
+      "sha256": "2e6890d62ff6c32cfb168a496db3287ee4fc1ea5b6738b959d8f3c1fa9e55a88"
+    }
+  },
+  "driver": "instruction-extensions-wincode",
+  "inputs": {
+    "rust/instruction-extensions-common/allocator.rs": "dda3f1af0c59f604925d134e469eb4e0dd04a62888f2bedb63e49c1456452a60",
+    "rust/instruction-extensions-common/record.rs": "9edcfc15e0b72d8b47348bc79440d997a826cb77ac55e63d6d89a31dcdf7ae4e",
+    "rust/instruction-extensions-wincode/.cargo/config.toml": "eb75cb2bbc05ffcc804b1ed43a79043e074f9dddd2ec40d95c361c24bc5731a3",
+    "rust/instruction-extensions-wincode/Cargo.lock": "cb8825d6dbbf7a14b4f1ed75f613d8e6326f80225c9a73661cce1c41329742fe",
+    "rust/instruction-extensions-wincode/Cargo.toml": "90896de8ad9badaf0da27810405225ac6373418380c177cf58f399ecf59abb25",
+    "rust/instruction-extensions-wincode/driver.toml": "a5f90442507f751803f23353dfaf3b082c71f4fbc22349dd2647aa13dcada9f1",
+    "rust/instruction-extensions-wincode/src/main.rs": "8ea29d9f847b3ce131c6df6f9f5f11cd1623d32329abeb8e82f3b0fcef7f9dc0",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a"
+  },
+  "locked": {
+    "conformance-recorder": [
+      {
+        "version": "0.1.0"
+      }
+    ],
+    "serde": [
+      {
+        "checksum": "9a8e94ea7f378bd32cbbd37198a4a91436180c5bb472411e48b5ec2e2124ae9e",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.0.228"
+      }
+    ],
+    "solana-address": [
+      {
+        "checksum": "39c93e262f671bf402e1040e4a7e40b05d81da5956c7681948c975a0997517bb",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "2.6.1"
+      }
+    ],
+    "solana-instruction": [
+      {
+        "checksum": "37ebb0ffd19263051bc3f683fcc086134b8ff23af894dcb63f7563c7137b42f1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "3.4.0"
+      }
+    ],
+    "solana-system-interface": [
+      {
+        "checksum": "55b54965bf0b76fa8e2b35376583efddd4d916618cfe595bf48c7d7b55a9e628",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "3.2.0"
+      }
+    ]
+  },
+  "recorded_utc": "2026-11-24T05:19:40+00:00",
+  "requirements": {
+    "conformance-recorder": "path ../recorder",
+    "serde": "=1.0.228",
+    "solana-address": "=2.6.1",
+    "solana-instruction": "=3.4.0",
+    "solana-system-interface": "=3.2.0"
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v1"
+}

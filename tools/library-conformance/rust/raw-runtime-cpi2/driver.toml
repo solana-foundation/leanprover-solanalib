@@ -1,0 +1,2 @@
+corpora = ["raw_runtime_solana_cpi_2_2_1"]
+region = "none"

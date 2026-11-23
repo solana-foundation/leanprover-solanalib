@@ -1,0 +1,3 @@
+corpora = ["anchor_spl_support_v0321_interface"]
+inputs = ["rust/anchor-spl-support-common/main.rs", "rust/anchor-spl-support-v0321-interface/projection.json", "project_anchor_spl_support.py"]
+region = "none"

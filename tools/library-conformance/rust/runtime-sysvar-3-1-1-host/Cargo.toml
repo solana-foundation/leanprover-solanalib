@@ -1,0 +1,22 @@
+[package]
+name = "conformance-runtime-sysvar-3-1-1-host"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records the host branches of solana-sysvar 3.1.1 Clock/Rent getters (program stubs) and solana-msg 3.1.0 sol_log (standard output)"
+
+# solana-sysvar 3.1.1 uses solana-rent 3.0.0. Built without the Solana cfg
+# (see .cargo/config.toml); the shim is used only for its forked case runner.
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-sysvar = "=3.1.1"
+solana-rent = "=3.0.0"
+solana-msg = "=3.1.0"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release]
+panic = "unwind"

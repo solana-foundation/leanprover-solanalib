@@ -1,0 +1,25 @@
+[package]
+name = "conformance-anchor-operations-027"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[features]
+default = ["v027", "legacy"]
+v027 = []
+v029 = []
+v032 = []
+v102 = []
+v112 = []
+legacy = []
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+anchor-lang = "=0.27.0"
+solana-program = "=1.15.2"
+
+[profile.dev]
+panic = "unwind"
+[profile.release]
+panic = "unwind"

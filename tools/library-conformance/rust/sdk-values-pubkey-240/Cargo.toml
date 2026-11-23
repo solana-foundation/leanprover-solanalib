@@ -1,0 +1,16 @@
+[package]
+name = "conformance-sdk-values-pubkey-240"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+option-v2 = { package = "solana-program-option", version = "=2.2.1" }
+solana-pubkey = "=2.4.0"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"

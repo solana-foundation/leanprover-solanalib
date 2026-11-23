@@ -1,0 +1,4 @@
+# Family runtime: host branches of solana-program 4.0.0.
+corpora = ["solana_program_4_0_0_host"]
+inputs = ["rust/runtime-common/host_stubs.rs", "rust/runtime-common/syscall_cases.rs"]
+host = true

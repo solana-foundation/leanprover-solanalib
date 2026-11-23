@@ -1,0 +1,22 @@
+[package]
+name = "conformance-sdk-accounts-3"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[features]
+default = ["resize-api", "unused-field"]
+resize-api = []
+realloc-api = []
+unused-field = []
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-accounts = { path = "../accounts" }
+solana-account-info = "=3.1.1"
+solana-program-entrypoint = "=3.1.1"
+solana-program-error = "=3.0.1"
+solana-address = "=2.6.1"
+
+[profile.dev]
+panic = "unwind"

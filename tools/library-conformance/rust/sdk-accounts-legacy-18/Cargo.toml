@@ -1,0 +1,19 @@
+[package]
+name = "conformance-sdk-accounts-legacy-18"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[features]
+default = ["realloc-api"]
+resize-api = []
+realloc-api = []
+unused-field = []
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-accounts = { path = "../accounts" }
+solana-program = "=1.18.26"
+
+[profile.dev]
+panic = "unwind"

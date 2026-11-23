@@ -1,0 +1,23 @@
+[package]
+name = "conformance-anchor-system-1-1-2"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Source-projected Anchor 1.1.2 System wrappers with an opaque invocation provider"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+anchor-lang = "=1.1.2"
+bincode = "=1.3.3"
+solana-system-interface = "=2.0.0"
+solana-program-error = "=3.0.1"
+solana-pubkey = "=3.0.0"
+
+[features]
+default = ["modern-context"]
+inline-error = []
+modern-context = []
+system-id = []
+
+[profile.dev]
+panic = "unwind"

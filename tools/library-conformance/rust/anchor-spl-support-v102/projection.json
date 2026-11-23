@@ -1,0 +1,19 @@
+{
+  "scope": "projected-wrapper conformance; the whole invocation is a typed mock",
+  "profile": "v102",
+  "items": [
+    {
+      "crate": "anchor-spl",
+      "version": "1.0.2",
+      "path": "src/associated_token.rs",
+      "file_sha256": "335f1e68020e8dc36c853d61d7e7ae4726387b26146becc934d36229ff66182e",
+      "selector": "pub fn create_idempotent",
+      "item_sha256": "96c91a3bf3d8b103f0ee6ae7dde0fec02361cad0a0943928773f4bc966fb8183",
+      "callee": "anchor_lang::solana_program::program::invoke_signed",
+      "replacement": "crate::whole_signature::invoke_signed",
+      "replacement_count": 1,
+      "projected_item_sha256": "921b1a6e6eed193b0794c0bbb7f7ba625b3b431aaca19aef9fd1b261ec38633f"
+    }
+  ],
+  "projection_sha256": "fb20c8a1528d73f07a2f18fe4f1ed8aef96a045f70e025bb2b01a14787b12f76"
+}
