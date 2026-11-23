@@ -5,7 +5,7 @@
 Run the correspondence and proof-dependency audit from the repository root with Python 3.12:
 
 ```sh
-uv run --no-project --python 3.12 python tools/model-audit/check_runtime.py
+just audit-runtime
 ```
 
 The audit obtains the complete runtime module inventory from Lake, checks the descriptions and source arguments, elaborates every runtime module, and checks all declarations, including private proofs, for dependencies outside `propext`, `Classical.choice` and `Quot.sound`. Source references and model hashes must agree with the registry. The checks do not prove semantic equivalence with the Rust implementations.
@@ -20,3 +20,5 @@ uv run --no-project --python 3.12 python tools/model-audit/check_runtime.py \
 ```
 
 The audit checks the content hash of each selected file and its exact line anchor. Git-pinned Cargo entries also check the revision and repository-relative path in `.cargo_vcs_info.json`. Archive-pinned entries record the exact crates.io URL and checksum; authenticate that archive before supplying its unpacked sources. Without the local upstream copies, the result records zero checked source anchors. `--require-source-checks` rejects missing or partial source copies.
+
+After reviewing a changed module against its sources, use `just refresh-runtime-seal CORRESPONDENCE_ID` to refresh only that row. A new hash records the reviewed bytes; it does not discharge the stated assumptions or turn the source argument into a refinement proof.

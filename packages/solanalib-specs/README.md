@@ -66,7 +66,7 @@ The runtime has its own [Agave comparisons](../../tools/runtime-conformance/READ
 
 ## Build and audit
 
-Use the recorded Lean toolchain and Python 3.11 or newer. From the repository root:
+Use the recorded Lean toolchain and Python 3.12. From the repository root:
 
 ```sh
 python3.12 packages/solanalib-specs/tools/generate_capabilities.py --check
@@ -86,7 +86,7 @@ compares the frozen source census against the live registry and reports new
 releases for review; it does not admit them or extend any compatibility range.
 Pending release reviews are tracked in the [gap index](../../docs/model-gaps.md), separately from reviewed model coverage.
 
-The [registry guide](source-map/README.md) and [contribution instructions](../../README.md#contributing) describe Rust identities, registration and review obligations.
+The [registry guide](source-map/README.md) and [contribution instructions](../../CONTRIBUTING.md) describe the Rust identities, registration and review obligations.
 Justify model changes with the pinned library sources, mathematical proofs and conformance tests.
 
 ## Package consumption

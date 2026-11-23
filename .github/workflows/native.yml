@@ -29,7 +29,7 @@ jobs:
         run: |
           lake update
           lake exe cache get Mathlib.Tactic.Linter.Style Mathlib.Tactic.Linter.Header
-          lake --wfail build Solanalib SolanalibTest sbpf-oracle
+          lake --wfail build Solanalib SolanalibTest SolanalibTest.Examples sbpf-oracle
           lake --wfail test
           lake --wfail build Solanalib.Runtime SolanalibTest.Runtime SolanalibTest.Conformance.Runtime
           lake --wfail build Solanalib.Contracts

@@ -14,7 +14,7 @@ EXCLUDED = {'.lake', '.git', '__pycache__', 'rust', 'corpus'}
 def main():
     checked = 0
     errors = []
-    for base in [ROOT / 'README.md', ROOT / 'docs', ROOT / 'packages',
+    for base in [ROOT / 'README.md', ROOT / 'CONTRIBUTING.md', ROOT / 'docs', ROOT / 'packages',
                  ROOT / 'tools/runtime-conformance', ROOT / 'tools/library-conformance']:
         files = [base] if base.is_file() else sorted(base.rglob('*.md'))
         for source in files:

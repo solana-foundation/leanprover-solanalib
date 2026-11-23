@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def lean_files(root=ROOT):
-    packages = [root, *sorted((root / 'packages').glob('*'))]
+    packages = [root, root / 'examples', *sorted((root / 'packages').glob('*'))]
     packages += sorted((root / 'tools').glob('*conformance'))
     for package in packages:
         for name in ('Solanalib', 'SolanalibTest'):

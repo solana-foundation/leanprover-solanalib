@@ -5,14 +5,14 @@ The [regular workflow](../.github/workflows/ci.yml) runs on pull requests, pushe
 | Job | Checks | Configured timeout |
 | --- | --- | ---: |
 | Lint | Lean style, prose, source-layer imports, documentation links, upstream references, generated test/gap indexes and their controls. | 10 minutes |
-| Root library | Root library, tests, sBPF oracle, module roots and unique Lake ownership. | 25 minutes |
+| Root library | Root library, tutorial, tests, sBPF oracle, module roots and unique Lake ownership. | 25 minutes |
 | Runtime | Runtime and scenario builds, authenticated Agave replay, comparator controls, source-correspondence hashes and complete proof dependencies. Local upstream source copies are not supplied, so this job does not check their bytes. | 15 minutes |
 | Contracts | Shared contract vocabulary. | 10 minutes |
 | SDK groups | Six disjoint groups cover all 108 production and scenario libraries, with their complete import closures. | 25 minutes per group |
 | SDK audit | All SDK libraries, compiled negative controls, generated catalogs and applicability, complete proof dependencies and fetched source bytes. | 30 minutes |
-| Library replay | All 115 libraries, ordinary and dynamic Lean loading, checker registry, authenticated observations, negative controls and compiled selection controls. Exact omissions are recorded separately. | 45 minutes |
+| Library replay | All 116 libraries, ordinary and dynamic Lean loading, checker registry, authenticated observations, negative controls and compiled selection controls. Exact omissions are recorded separately. | 45 minutes |
 
-These are workflow settings, not measured hosted-CI runtimes. Hosted setup time, cache transfer, disk performance and peak aggregate memory have not been measured for this branch. The jobs configure four Lean threads; the library replay uses four workers for independent negative controls.
+These are workflow settings, not measured hosted-CI runtimes. Hosted setup time, cache transfer, disk performance and peak aggregate memory have not been measured for this branch. The jobs configure four Lean threads; the library replay uses four workers for independent negative controls. Local `just` recipes use the available processors for those controls, with `SOLANALIB_CONTROL_JOBS` as an optional override.
 
 The library runner is serial by default. `--control-jobs` runs independent mutations concurrently. It retains every selected record, mutation and failure assertion, with separate input copies and outputs, synchronized command receipts and deterministic result ordering. Omitted records receive no conformance credit.
 
@@ -30,4 +30,4 @@ The [native workflow](../.github/workflows/native.yml) runs monthly, on publishe
 
 The configured native-job timeouts are 60 minutes for cold Lean, 90 minutes for Agave and 120 minutes per library batch. Native reproduction uploads its evidence as workflow artifacts. The ordinary runtime and library replay jobs do not upload theirs. Native reproduction is separate from the mathematical proofs and from replaying a recording.
 
-The [tool guide](../tools/README.md) lists the complete local check sequence. Fresh native reproduction uses the commands in the conformance guides.
+Run `just check-all` for the complete regular local suite, including production documentation. Fresh native reproduction uses the separate recipes in the [extension guide](extending.md).

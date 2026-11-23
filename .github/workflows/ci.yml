@@ -38,8 +38,10 @@ jobs:
           python3 scripts/check-upstream-references.py
           python3 -B -m unittest discover -s scripts -p 'test_upstream_references.py'
           python3 scripts/check-doc-links.py
+          python3 scripts/generate-test-index.py --check
           python3 tools/model-audit/generate_gap_index.py --check
           python3 -B -m unittest discover -s tools/model-audit -p 'test_gap_index.py'
+          python3 -B -m unittest discover -s tools/model-audit -p 'test_review_seals.py'
 
   build:
     runs-on: ubuntu-latest
@@ -55,7 +57,7 @@ jobs:
             ~/.elan
             .lake/packages
             .lake/build
-          key: root-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.lean', 'lake-manifest.json') }}-${{ hashFiles('Solanalib/**/*.lean', 'SolanalibTest/**/*.lean', '*.lean', 'packages/solanalib-runtime/**/*.lean') }}
+          key: root-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.lean', 'lake-manifest.json') }}-${{ hashFiles('Solanalib/**/*.lean', 'SolanalibTest/**/*.lean', '*.lean', 'examples/**/*.lean', 'packages/**/*.lean') }}
           restore-keys: |
             root-${{ runner.os }}-${{ runner.arch }}-
       - uses: ./.github/actions/setup-lean
@@ -63,9 +65,9 @@ jobs:
         run: |
           lake update
           lake exe cache get Mathlib.Tactic.Linter.Style Mathlib.Tactic.Linter.Header
-      - name: Build the existing library, tests and oracle
+      - name: Build the root library, tests and oracle
         run: |
-          lake --wfail build Solanalib SolanalibTest sbpf-oracle
+          lake --wfail build Solanalib SolanalibTest SolanalibTest.Examples sbpf-oracle
           lake --wfail test
           python3 scripts/check-module-ownership.py
           python3 scripts/ci-sdk-groups.py
@@ -194,14 +196,14 @@ jobs:
             ~/.elan
             .lake/packages
             .lake/build
-          key: library-replay-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.lean', 'lake-manifest.json') }}-${{ hashFiles('Solanalib/**/*.lean', 'SolanalibTest/**/*.lean', '*.lean', 'packages/**/*.lean', 'tools/*-conformance/**/*.lean') }}
+          key: library-replay-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.lean', 'lake-manifest.json') }}-${{ hashFiles('Solanalib/**/*.lean', 'SolanalibTest/**/*.lean', '*.lean', 'examples/**/*.lean', 'packages/**/*.lean', 'tools/*-conformance/**/*.lean') }}
           restore-keys: |
             library-replay-${{ runner.os }}-${{ runner.arch }}-
       - uses: ./.github/actions/setup-lean
       - name: Build all libraries and check ordinary Lean loading from one artifact directory
         run: |
           lake exe cache get Mathlib.Tactic.Linter.Style Mathlib.Tactic.Linter.Header
-          lake --wfail build Solanalib SolanalibTest sbpf-oracle Solanalib.Runtime SolanalibTest.Runtime SolanalibTest.Conformance.Runtime Solanalib.Contracts
+          lake --wfail build Solanalib SolanalibTest SolanalibTest.Examples sbpf-oracle Solanalib.Runtime SolanalibTest.Runtime SolanalibTest.Conformance.Runtime Solanalib.Contracts
           python3 scripts/ci-sdk-groups.py --build all
           lake --wfail build SolanalibTest.Conformance.Library solanalib-library-conformance solanalib-selection-control
           python3 scripts/check-lean-loading.py

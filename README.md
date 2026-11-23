@@ -163,24 +163,24 @@ Lets `ext; simp` close most structural-equality proofs uniformly. Skim any test 
 
 ## Quick-start
 
-You'll need:
-
-- [`elan`](https://github.com/leanprover/elan), the Lean toolchain manager (rustup-equivalent). Install once:
-  ```sh
-  curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh
-  ```
-- [`just`](https://github.com/casey/just) as the command runner: `brew install just`.
-
-Then, in this directory:
+Install [`elan`](https://github.com/leanprover/elan), [`just`](https://github.com/casey/just) and [`uv`](https://docs.astral.sh/uv/getting-started/installation/), then run commands from this directory. The [getting-started guide](docs/getting-started.md) walks through a checked System-transfer proof using the runtime and an SDK contract.
 
 ```sh
-just setup        # ~5 min: fetches Mathlib + downloads cached oleans
-just build        # ~10 s warm: type-checks the library + all theorems
-just test         # runs regression tests in SolanalibTest/
-just docs-open    # builds the docs site + opens .lake/build/doc/index.html
+just setup             # fetch committed dependencies, Mathlib cache and Python tools
+just build             # root library and sBPF oracle
+just test              # root regressions and System transfer conservation
+just test-examples     # the worked tutorial, with warnings as errors
+just test-runtime      # all thirteen runtime scenarios and offline controls
+just test-specs        # contracts and every SDK production/scenario library
+just test-conformance  # both authenticated recordings, replay and negative controls
+just audit             # proof, source, generator, ownership and loading checks
+just docs              # the complete production documentation site
+just check-all         # every regular suite above
 ```
 
-CI checks the existing library, runtime, contracts, all 108 SDK production and scenario libraries, generated evidence, source audits and both recorded conformance suites on pull requests and pushes to main. Lean builds use `--wfail`. The [CI guide](docs/ci.md) describes the jobs and configured timeouts.
+The [complete test index](docs/tests.md) lists every scenario, checker, Python control suite and native driver. Fresh native reproduction has separate `test-native-runtime` and `test-native-library` recipes; the [extension walkthroughs](docs/extending.md) give their archive, compiler and evidence arguments. Use `just --list` for all targets.
+
+CI checks the root library, tutorial, runtime, contracts, all 108 SDK production and scenario libraries, generated evidence, source audits and both recorded conformance suites on pull requests and pushes to main. Lean builds use `--wfail`. The [CI guide](docs/ci.md) describes the jobs, cache inputs and configured timeouts.
 
 ---
 
@@ -259,31 +259,7 @@ Listed roughly in order of how foundational they are; not all need to be done be
 
 ## Contributing
 
-The skill at [`skills/lean-best-practices/SKILL.md`](skills/lean-best-practices/SKILL.md) is the canonical guide — file template, naming conventions, the `abbrev` / `notation` / `UInt64` trade-offs, common errors, the bundled-structure pattern, and the numeric-bridge discipline. Read it before adding a new primitive.
-
-For runtime contributions, use `packages/solanalib-runtime/Solanalib/Runtime/` and keep its source imports within the runtime layer and Lean libraries; the containing `solanalib` package uses Mathlib. Put scenarios under `SolanalibTest.Runtime`, update source correspondence and run the [source and proof audits](packages/solanalib-runtime/source-map/README.md), then run the [recorded conformance replay and controls](tools/runtime-conformance/README.md). Use the shared runtime types for Solana developments. Source-model proofs and differential tests do not themselves prove deployed Rust implementations correct.
-
-Runtime and SDK changes follow the [model, test and gap standard](docs/model-standard.md). Update the authoritative source/test records and their generated evidence in the same change; preserve the exact source/build and toolchain pins unless the change explicitly updates them.
-
-In short, the workflow for adding a new domain primitive looks like:
-
-1. Decide the file path under `Solanalib/<Concept>/`. New top-level concept ↔ new top-level folder.
-2. Write the file using the template in the skill (copyright header, then imports, then `/-! … -/` module docstring, then namespace).
-3. Add the file to `Solanalib.lean`. Register any new top-level branch in the explicit `globs` of that library in `lakefile.lean`.
-4. Run `just build` locally and the checks for each affected library. CI timing depends on the library group and cache state.
-5. For load-bearing API, add a regression test under `SolanalibTest/<Concept>/<Aspect>Test.lean`, import it from `SolanalibTest.lean`, and register a new test branch in the `globs` of its library.
-6. Run `just test`, `scripts/lint-style.sh` and `python3.12 scripts/check-module-ownership.py`.
-
-Conventions worth knowing before writing the first proof:
-
-- Use `notation` over `abbrev` for type synonyms over `Nat` / `Int` (`omega` doesn't unfold `abbrev`).
-- Tag every `structure` with `@[ext]`, every projection lemma with `@[simp]`.
-- For bounded `UInt64` / `UInt128` reasoning, bridge to `Nat` via `.toNat` — `omega` doesn't reason about `UInt64` directly.
-- Bundled structures > type-classes for domain shapes with concrete parameters.
-- The first commit should follow the existing pattern (no AI-attribution trailer, copyright `(c) <YEAR> Solana Foundation`, `Authors: Solanalib Contributors`).
-- Sign your commits and describe the change and its purpose.
-
-Harmonic-authored files use `Copyright (c) 2026 Harmonic. All rights reserved.` with the same license and Authors lines.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) for model boundaries, source review, witnesses, style, copyright and signed commits. Follow [Extending Solanalib](docs/extending.md) for complete runtime and SDK contribution walkthroughs, including generated evidence, native replay and gap records.
 
 ---
 

@@ -53,6 +53,11 @@ lean_lib SolanalibTest where
     .one `SolanalibTest.TransferTest
   ]
 
+-- The getting-started example is checked like a scenario, not exported as a model.
+lean_lib SolanalibTest.Examples where
+  srcDir := "examples"
+  roots := #[`SolanalibTest.Examples.CheckedTransfer]
+
 -- These libraries share one package output directory because Lean resolves modules
 -- by their top-level root. Source directories remain separate for navigation.
 lean_lib Solanalib.Runtime where
