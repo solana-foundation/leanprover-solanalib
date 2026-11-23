@@ -6,13 +6,19 @@ Authors: Solanalib Contributors
 import Solanalib.Account.Basic
 import Solanalib.Account.Transfer
 import Solanalib.Finance.CompoundInterest
+import Solanalib.Finance.CompoundInterestApprox
+import Solanalib.Finance.ConcentratedLiquidity
 import Solanalib.Finance.Decay
 import Solanalib.Finance.Growth
 import Solanalib.Finance.LinearDecay
 import Solanalib.Finance.MonotoneSequence
 import Solanalib.Finance.WithdrawalCap
 import Solanalib.Instruction.Basic
+import Solanalib.Numeric.BasisPoints
+import Solanalib.Numeric.Checked
 import Solanalib.Numeric.Fraction
+import Solanalib.Numeric.Limbs
+import Solanalib.Numeric.Rounding
 import Solanalib.Primitives.Lamports
 import Solanalib.Primitives.Pubkey
 import Solanalib.Primitives.Time
@@ -50,9 +56,11 @@ results (Anchor account validation, Pinocchio entrypoint patterns, …) layer on
 top of the core primitives and live in their own subdirectories.
 
 * `Solanalib.Primitives` — atomic on-chain types (`Pubkey`, `Lamports`, `Timestamp`).
-* `Solanalib.Numeric`    — fixed-point arithmetic (`Fraction`, Q68.60).
+* `Solanalib.Numeric`    — fixed-point arithmetic (`Fraction`, Q68.60), rounding,
+  Rust checked/saturating integer semantics, basis points, `u64` limbs.
 * `Solanalib.Account`    — the account model and operations over it.
 * `Solanalib.Instruction` — instruction + account-meta shapes.
-* `Solanalib.Finance`    — domain abstractions: decay, growth, compounding, caps.
+* `Solanalib.Finance`    — domain abstractions: decay, growth, compounding, caps,
+  concentrated-liquidity token amounts.
 * `Solanalib.SBPF`       — the sBPF ISA semantics (machine layer).
 -/
