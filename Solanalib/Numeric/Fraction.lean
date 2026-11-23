@@ -4,6 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Solanalib Contributors
 -/
 import Solanalib.Init
+import Solanalib.Numeric.Rounding
 import Solanalib.Primitives.Lamports
 
 /-!
@@ -30,6 +31,7 @@ abstract model, refine to the bounded representation separately.
 * `Fraction.zero`, `Fraction.one` — the additive and multiplicative units.
 * `Fraction.fromNat` / `Fraction.toFloor` — integer/fraction conversions.
 * `Fraction.add`, `Fraction.mul` — arithmetic at the fixed-point scale.
+* `Fraction.mulCeil`, `Fraction.divCeil`, `Fraction.toCeil` — rounded-up companions.
 
 ## Main statements (this commit)
 
@@ -106,10 +108,27 @@ def mul (a b : Fraction) : Fraction := ⟨a.bits * b.bits / scale⟩
 Returns `⟨a.bits * scale / b.bits⟩` — the multiplication by `scale`
 corrects the lost-scale that would otherwise result from `bits / bits`.
 
-Like every truncating division in `Fraction`, this rounds *toward zero*.
-A rounded-up companion (`divCeil`) is a future refinement. -/
+Like every truncating division in `Fraction`, this rounds *toward zero*;
+`divCeil` is the rounded-up companion. -/
 def div (a b : Fraction) (_h : b.bits ≠ 0) : Fraction :=
   ⟨a.bits * scale / b.bits⟩
+
+/-! ## Rounding up
+
+Amounts a protocol *charges* (debt, fees, collateral requirements) must
+round against the user, so each truncating operation has a rounded-up
+companion computed with `Numeric.ceilDiv`. -/
+
+/-- Project a fraction to its integer ceiling: `⌈bits / 2^60⌉`. -/
+def toCeil (f : Fraction) : Nat := Numeric.ceilDiv f.bits scale
+
+/-- Multiplication rounding up: `⌈a.bits * b.bits / scale⌉`. -/
+def mulCeil (a b : Fraction) : Fraction := ⟨Numeric.ceilDiv (a.bits * b.bits) scale⟩
+
+/-- Division rounding up, with an explicit non-zero precondition on the
+divisor: `⌈a.bits * scale / b.bits⌉`. -/
+def divCeil (a b : Fraction) (_h : b.bits ≠ 0) : Fraction :=
+  ⟨Numeric.ceilDiv (a.bits * scale) b.bits⟩
 
 /-! ## Order
 
@@ -162,6 +181,48 @@ theorem one_mul (a : Fraction) : one.mul a = a := by
   ext
   show one.bits * a.bits / scale = a.bits
   rw [one_bits, Nat.mul_comm, Nat.mul_div_cancel _ scale_pos]
+
+/-! ### Rounded-up operations -/
+
+@[simp] theorem mulCeil_bits (a b : Fraction) :
+    (a.mulCeil b).bits = Numeric.ceilDiv (a.bits * b.bits) scale := rfl
+@[simp] theorem divCeil_bits (a b : Fraction) (h : b.bits ≠ 0) :
+    (a.divCeil b h).bits = Numeric.ceilDiv (a.bits * scale) b.bits := rfl
+@[simp] theorem toCeil_def (f : Fraction) : f.toCeil = Numeric.ceilDiv f.bits scale := rfl
+
+/-- Rounding up never yields less than truncating. -/
+theorem mul_le_mulCeil (a b : Fraction) : a.mul b ≤ a.mulCeil b :=
+  Numeric.div_le_ceilDiv _ _
+
+/-- Rounding up exceeds truncating by at most one ULP. -/
+theorem mulCeil_bits_le_mul_bits_add_one (a b : Fraction) :
+    (a.mulCeil b).bits ≤ (a.mul b).bits + 1 :=
+  Numeric.ceilDiv_le_div_add_one _ _
+
+theorem div_le_divCeil (a b : Fraction) (h : b.bits ≠ 0) : a.div b h ≤ a.divCeil b h :=
+  Numeric.div_le_ceilDiv _ _
+
+theorem divCeil_bits_le_div_bits_add_one (a b : Fraction) (h : b.bits ≠ 0) :
+    (a.divCeil b h).bits ≤ (a.div b h).bits + 1 :=
+  Numeric.ceilDiv_le_div_add_one _ _
+
+theorem toFloor_le_toCeil (f : Fraction) : f.toFloor ≤ f.toCeil :=
+  Numeric.div_le_ceilDiv _ _
+
+theorem mulCeil_one (a : Fraction) : a.mulCeil one = a := by
+  ext
+  rw [mulCeil_bits, one_bits, Numeric.ceilDiv_eq_div_of_dvd (Nat.dvd_mul_left _ _),
+    Nat.mul_div_cancel _ scale_pos]
+
+theorem divCeil_one (a : Fraction) : a.divCeil one one_bits_ne_zero = a := by
+  ext
+  rw [divCeil_bits, one_bits, Numeric.ceilDiv_eq_div_of_dvd (Nat.dvd_mul_left _ _),
+    Nat.mul_div_cancel _ scale_pos]
+
+/-- Integers have equal floor and ceiling. -/
+theorem toCeil_fromNat (n : Nat) : (fromNat n).toCeil = n := by
+  rw [toCeil_def, fromNat_bits, Numeric.ceilDiv_eq_div_of_dvd (Nat.dvd_mul_left _ _),
+    Nat.mul_div_cancel _ scale_pos]
 
 /-! ### Order theorems -/
 
