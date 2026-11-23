@@ -61,7 +61,11 @@ Solanalib/
 │   ├── Lamports.lean           UInt64 (= Lamports) + Nat (= LamportsUnchecked)
 │   └── Time.lean               UInt64 (= Timestamp) + Nat (= TimestampUnchecked)
 ├── Numeric/               ← fixed-point + arithmetic infrastructure
-│   └── Fraction.lean           Q68.60 (Nat-backed spec; Fraction128 future)
+│   ├── Fraction.lean           Q68.60 (Nat-backed spec; Fraction128 future)
+│   ├── Rounding.lean           ceilDiv / roundedDiv / overflow-free split mul-div
+│   ├── Checked.lean            Rust checked_* / saturating_* / wrapping_* by bit width
+│   ├── BasisPoints.lean        bps shares, rounded down / up, exact fee splits
+│   └── Limbs.lean              little-endian u64 limbs ([u64; 4] = U256)
 ├── Account/               ← Solana account model
 │   ├── Basic.lean              5-field on-chain Account + credit/debit
 │   └── Transfer.lean           Lamport transfer + conservation theorem
@@ -73,6 +77,8 @@ Solanalib/
 │   ├── LinearDecay.lean            first concrete decay shape
 │   ├── MonotoneSequence.lean       unbounded monotone-up shape
 │   ├── CompoundInterest.lean       discrete compounding as a MonotoneSequence
+│   ├── CompoundInterestApprox.lean cubic binomial approximation of (1 + t)^n
+│   ├── ConcentratedLiquidity.lean  Q64.64 sqrt-price token amounts + fee growth
 │   └── WithdrawalCap.lean          stateful sliding-window rate limiter
 └── SBPF/                  ← the sBPF instruction-set semantics (machine layer)
     ├── CommType.lean               BitVec machine words (U4 … U128) + byte (de)ser
@@ -182,7 +188,11 @@ Inventory of the verified surface as of this commit:
 |---|---|---|
 | `Primitives.Lamports` | `Lamports`, `LamportsUnchecked`, `Lamports.perSol` | — |
 | `Primitives.Pubkey` | `Pubkey` | — |
-| `Numeric.Fraction` | `Fraction`, `scale`, `zero`, `one`, `fromNat`, `toFloor`, `add`, `sub`, `mul`, `div`, `ofLamports`, `toLamports?`, order instances | 14 (monoid, ordering, round-trip, sub/add cancel, div_one) |
+| `Numeric.Fraction` | `Fraction`, `scale`, `zero`, `one`, `fromNat`, `toFloor`, `toCeil`, `add`, `sub`, `mul`, `mulCeil`, `div`, `divCeil`, `ofLamports`, `toLamports?`, order instances | 14 + 11 (monoid, ordering, round-trip, sub/add cancel, div_one; rounded-up bounds) |
+| `Numeric.Rounding` | `ceilDiv`, `roundedDiv`, `splitMulDiv`, `splitMulDivCeil` | 18 (bridge to Mathlib `⌈/⌉`, floor ≤ ceil ≤ floor + 1, subadditivity, split idioms exact) |
+| `Numeric.Checked` | `UnsignedFits`, `SignedFits`, `checked{Add,Sub,Mul,Div}`, `saturating{Add,Sub,Mul}`, `wrapping{Add,Mul}`, `signedMin/Max`, `saturate`, signed `checked*` | 28 (exact failure conditions, saturation in range, `UInt64` bridges) |
+| `Numeric.BasisPoints` | `bpsDenominator`, `bpsShare`, `bpsShareCeil`, `bpsRemainder` | 10 (share ≤ amount, exact split, monotonicity) |
+| `Numeric.Limbs` | `limbsValue`, `toLimbs`, `u256Value` | 9 (bounds, append, encode/decode round trip, four-limb formula) |
 | `Account.Basic` | `Account`, `credit`, `debit` | 12 (10 `@[simp]` projection + 2 `.toNat` bridge) |
 | `Account.Transfer` | `TransferResult`, `transfer` | 1 (`transfer_preserves_total` — lamport conservation) |
 | `Instruction.Basic` | `Instruction`, `AccountMeta`, `Instruction.signers`, `.writables` | — |
@@ -192,6 +202,8 @@ Inventory of the verified surface as of this commit:
 | `Finance.MonotoneSequence` | `MonotoneSequence` | 2 (`apply_zero_le`, `apply_le_of_le`) |
 | `Finance.CompoundInterest` | `balance`, `toMonotoneSequence` | 5 (boundary, unit-multiplier identity, one-step monotonicity, multi-step monotonicity, balance ≥ principal) |
 | `Finance.WithdrawalCap` | `WithdrawalCap`, `Invariant`, `IsElapsed`, `remaining`, `TryAdd`, `tryAdd` | 5 (`remaining_le_capacity`, `tryAdd_preserves_invariant`, `tryAdd_rejects_over_cap_midwindow` + `_at_reset`, `interval_reset_idempotent`) |
+| `Finance.CompoundInterestApprox` | `cubicCompoundApprox` | 4 (binomial truncation, exact for n ≤ 3, ≤ exact compounding, ≥ simple interest) |
+| `Finance.ConcentratedLiquidity` | `q64`, `sqrtPriceDistance`, `amountADelta`, `amountBDelta`, `inputAmount`, `outputAmount`, `feeGrowthIncrement` | 26 (symmetry, rounding direction, monotonicity, step-splitting never favours the trader, fee-growth conservation) |
 | `Finance.Growth` | `GrowthCurve`, `WindowedDecay.toComplementaryGrowthCurve` | 4 (embedded; inherited at constructor time) |
 | `SBPF.{CommType,Syntax,Value,Memory}` | `BitVec` words, `BpfInstruction` (22 forms), `Val`, `loadv`/`storev` | data layer |
 | `SBPF.Decoder` | `decode`, `findInstr` (full opcode table) | round-trip tests |
@@ -212,7 +224,7 @@ Listed roughly in order of how foundational they are; not all need to be done be
 
 - [ ] **`Fraction.mul_assoc` error bound.** Truncating `bits / scale` after each multiplication introduces ≤ 1 ULP of error; left-associative and right-associative multiplications can differ by `(a + c) / scale` in the worst case. The theorem statement is straightforward; the proof needs careful `Nat` lemmas about double-truncation.
 - [ ] **`Fraction128` bounded refinement.** Mirror of the `Lamports` / `LamportsUnchecked` story: a `UInt128`-backed `Fraction128` plus `.toNat` bridge. Lean 4 doesn't have native `UInt128`; modelled as `Fin (2^128)` or a `(lo, hi)` `UInt64` pair.
-- [ ] **`Fraction.divCeil`** — round-up variant for slippage / collateralisation calculations.
+- [x] **`Fraction.divCeil`** — landed together with `mulCeil` / `toCeil`, on top of `Numeric.Rounding`.
 - [ ] **Pow / `Real.exp` correspondence** — for compound interest, we'll want a theorem bounding `pow_fraction r n` against the mathematical `e^(r·n)`. Requires importing more of Mathlib.
 
 ### Domain primitives
