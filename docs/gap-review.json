@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-24",
+  "scope": "Review of model limitations, the release census, test records, links and classifications, including runtime types and transfer conservation; the pinned source reviews provide the per-model arguments.",
+  "inputs": {
+    "Solanalib/SBPF/Interpreter.lean": "7975fb8162575ef25e9a4d035db315cf33d4fa5fba63242ee91bf760119de33e",
+    "Solanalib/Transfer.lean": "316f76831223ca33d57296322462655d0e61d80ea1f6d7180d70921a47411b3c",
+    "docs/release-census.json": "f0ec356362f782e064a9a05712a08a3f4d34e246106c86c9e8a2931647872ae5",
+    "packages/solanalib-runtime/Solanalib/Runtime/Exec.lean": "0e4ca653257dc9590331f6538898cfd564ba4ae428746848cc29f570bac23d9b",
+    "packages/solanalib-runtime/source-map/sources.json": "d2f03a57021997ebb108c316cec48554ac3b43b4c4a6d360c9ae7a110afb5d29",
+    "packages/solanalib-specs/BINDINGS.md": "6a91255bcd5ecca30cdbdc6680807d69c93df2bdd8de4f832640bebf1cf929ce",
+    "packages/solanalib-specs/source-map/applicability.json": "45fa415b106159b0550ce5938800d40546f840e7c89ad8c1d99b1bff9c009b8b",
+    "packages/solanalib-specs/source-map/foundation.json": "0fab0e2a45f1055cbeb41d18a7c84c2720af776ed1156224b4537a0c1ab23c63",
+    "packages/solanalib-specs/source-map/libraries.json": "940ff4a9b84b67cc3877f75e7ad15f9ba363e14d4d378fbe0cc8f87406b54566",
+    "packages/solanalib-specs/source-map.json": "6e263f941c8922a83ec30249ded73753f6970189e367d8c63cf4fafb545f2445",
+    "tools/library-conformance/checker_selection.py": "d701677d2da1e5460aa5c92fc55bc6ce0703716f12d84792ed52ee8a1443c5f8",
+    "tools/library-conformance/not-tested.toml": "37f2d4579715c263f2c8bb9b4a6a4801d1f8a365f1cefe3ee29e1dc95b9f2d9b",
+    "tools/library-conformance/requires-open.toml": "cc9ec2370935f22735b25c0f487c4a73f024a7ba4a1124a0c7a0bbf9fc503988"
+  },
+  "policies": {
+    "runtime": {
+      "affected_claims": "Runtime theorems concern the modeled functions under their stated premises. The source arguments retain the listed projections, differences and interpretation conditions.",
+      "resolution": "Establish the missing correspondence for the exact source/build and observables, or retain the explicit boundary. A mathematical theorem alone does not discharge a source interpretation."
+    },
+    "sdk-model": {
+      "affected_claims": "The canonical model role, omitted behavior and remaining requirements limit the mathematical contract. An observation or supporting facet does not replace its primary operational model.",
+      "resolution": "Address the canonical model_gaps and remaining_requirements with substantive scoped results and tests before changing the registered role or claim. Preserve existing behavior and keep separate source bindings open until proved."
+    },
+    "sdk-binding": {
+      "affected_claims": "Closed reference-correctness, satisfiability and execution witnesses establish mathematical model facts. They do not establish correctness of the registered Rust bodies or their bindings.",
+      "resolution": "Prove the source implementation and representation/dependency bindings for the exact selected functions and builds, retaining the explicit boundary of any external call."
+    },
+    "native-test": {
+      "affected_claims": "The named helper has mathematical scenarios and no standalone native entry point. Its exception does not give native conformance credit.",
+      "resolution": "Retain the justified exception and its scenarios. If a real source-facing entry is introduced, add its exact deciding checker and controls before removing the exception."
+    },
+    "precondition-test": {
+      "affected_claims": "The checker decides the registered reference on recorded inputs; the separate operational precondition at each actual record index remains unproved as recorded.",
+      "resolution": "Prove or decide the precondition at the actual recorded index, then remove the exception only when the complete replay verifies that the entry is no longer needed."
+    },
+    "checker-omission": {
+      "affected_claims": "Authenticated native observations without a selected checker, and controls targeting them, earn no conformance credit. The replay records exact selected and omitted identities.",
+      "resolution": "Add the exact versioned function/instantiation checker and relevant controls; remove its exception when complete replay succeeds without that omission. Keep the original authenticated observation."
+    },
+    "cross-layer": {
+      "affected_claims": "Runtime and SDK models share Solana value types. The System transfer theorem proves conservation for successful runtime transfers; no sBPF-to-runtime execution interpretation is established.",
+      "resolution": "Supply a scoped simulation relating machine memory, syscalls, outcomes and compute effects to the runtime program relation, with matching premises and boundary tests."
+    },
+    "release-review": {
+      "affected_claims": "The 22 November 2026 census found these stable releases outside the recorded source histories. Their release-specific applicability remains unreviewed; this finding neither changes exact reviewed releases or assumed compatible ranges nor supplies source-proof or native-test credit.",
+      "resolution": "Authenticate each release archive, review the reached functions, representations, dependencies and build conditions, and record its applicability or exclusion in the authoritative source registry with matching generated artifacts and relevant tests. Retain the original census evidence and explicitly review the gap presentation before closing the pending record."
+    }
+  },
+  "cross_layer": [
+    {
+      "id": "execution:sbpf-runtime",
+      "declarations": [
+        "Solanalib.SBPF.bpfInterp",
+        "Solanalib.Runtime.Program",
+        "Solanalib.Runtime.Exec"
+      ],
+      "sources": [
+        "Solanalib/SBPF/Interpreter.lean",
+        "packages/solanalib-runtime/Solanalib/Runtime/Exec.lean",
+        "Solanalib/Transfer.lean"
+      ],
+      "behavior": [
+        "The existing machine interpreter has no proved interpretation into the runtime abstract program/execution relation."
+      ],
+      "build_conditions": {
+        "toolchain": "leanprover/lean4:v4.34.0",
+        "scope": "The exact selected source revision; memory, syscall, outcome and compute correspondence remain explicit."
+      },
+      "tests": [
+        "SolanalibTest/SBPF/VerifierTest.lean",
+        "tools/runtime-conformance/README.md"
+      ],
+      "test_scope": "These tests cover the separate layers; they do not validate the missing execution connection."
+    }
+  ]
+}

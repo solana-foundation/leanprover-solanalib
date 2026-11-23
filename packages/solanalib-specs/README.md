@@ -10,6 +10,8 @@ The [source registry](source-map.json) defines the individual contracts,
 references, witnesses and source identities. A library root covers only its
 registered functions.
 
+The [model and test standard](../../docs/model-standard.md) describes how to register contracts, record their scope and validate their claims. The [gap index](../../docs/model-gaps.md) is generated from the existing registries and conformance policies.
+
 ## Use the models
 
 Import the library root, such as `Solanalib.Specs.SolanaHash`, and use the declaration for the
@@ -82,7 +84,7 @@ catalogs, applicability data or tables manually.
 For release-census maintenance, add `--fetch-index` to the version check. This
 compares the frozen source census against the live registry and reports new
 releases for review; it does not admit them or extend any compatibility range.
-Pending release reviews are tracked in the [release census](../../docs/release-census.json), separately from reviewed model coverage.
+Pending release reviews are tracked in the [gap index](../../docs/model-gaps.md), separately from reviewed model coverage.
 
 The [registry guide](source-map/README.md) and [contribution instructions](../../README.md#contributing) describe Rust identities, registration and review obligations.
 Justify model changes with the pinned library sources, mathematical proofs and conformance tests.

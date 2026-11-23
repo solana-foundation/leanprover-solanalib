@@ -63,6 +63,8 @@ import Solanalib.Specs.PinocchioToken
 
 The [library catalog](packages/solanalib-specs/LIBRARIES.md) records each modeled subset and its tests. Closed model proofs and native differential recordings support their stated scope; Rust implementation proofs and compiler bindings remain separate work.
 
+The [authoring standard](docs/model-standard.md) and [generated gap index](docs/model-gaps.md) describe how to maintain their claims and tests. Require an immutable Git revision to use the models with their recorded dependency pins.
+
 The root library combines arithmetic and finance developments, the sBPF machine model, and a conservation theorem for the checked System transfer:
 
 ```
@@ -260,6 +262,8 @@ Listed roughly in order of how foundational they are; not all need to be done be
 The skill at [`skills/lean-best-practices/SKILL.md`](skills/lean-best-practices/SKILL.md) is the canonical guide — file template, naming conventions, the `abbrev` / `notation` / `UInt64` trade-offs, common errors, the bundled-structure pattern, and the numeric-bridge discipline. Read it before adding a new primitive.
 
 For runtime contributions, use `packages/solanalib-runtime/Solanalib/Runtime/` and keep its source imports within the runtime layer and Lean libraries; the containing `solanalib` package uses Mathlib. Put scenarios under `SolanalibTest.Runtime`, update source correspondence and run the [source and proof audits](packages/solanalib-runtime/source-map/README.md), then run the [recorded conformance replay and controls](tools/runtime-conformance/README.md). Use the shared runtime types for Solana developments. Source-model proofs and differential tests do not themselves prove deployed Rust implementations correct.
+
+Runtime and SDK changes follow the [model, test and gap standard](docs/model-standard.md). Update the authoritative source/test records and their generated evidence in the same change; preserve the exact source/build and toolchain pins unless the change explicitly updates them.
 
 In short, the workflow for adding a new domain primitive looks like:
 

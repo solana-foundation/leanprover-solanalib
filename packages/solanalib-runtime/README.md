@@ -9,6 +9,8 @@ The reference runtime is Agave 4.3.2. [TRUST.md](TRUST.md) records the selected
 profile and external assumptions; [source notes](source-notes/README.md)
 explain the correspondence with the runtime sources.
 
+The [model and test standard](../../docs/model-standard.md) explains how to document source correspondence, test runtime changes and record open obligations. The [gap index](../../docs/model-gaps.md) follows the source-correspondence records.
+
 ## Use the model
 
 Import `Solanalib.Runtime`, or a specific module such as `Solanalib.Runtime.Transaction`,
