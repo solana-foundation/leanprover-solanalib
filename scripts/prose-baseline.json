@@ -18,9 +18,6 @@
       "e266db2aa17a813bda5656401265294690dbce4b01a2d21a6457b440d653e2f5",
       "f403e50e94605ecab55453160a26499f5fc623edab0560218391af242332f7b4"
     ],
-    "Solanalib/Account/Transfer.lean": [
-      "7d7a13fc2d9f55f986161b4c7a0d58f939e18a72660e811f2be12b399ca90390"
-    ],
     "Solanalib/Finance/CompoundInterest.lean": [
       "4260f71a5a143d64f2d92de33587e0e7d840b84d7d418e2c4f64fde444521151",
       "b118b9b5c84f675706acccb802d3a78a02ecbcfbb08e39950c1c4138449b40c8",
@@ -46,11 +43,6 @@
     ],
     "Solanalib/Init.lean": [
       "87abef3a235f3096eade29a64d00bbae41272d3478dd8f268c77a12e2a8a85d1"
-    ],
-    "Solanalib/Instruction/Basic.lean": [
-      "b1f76df7e6cf2e6ef8acc8cf2377c12ca3eb79a662940fb6b0256dadabfeb037",
-      "c1e9f286592213ea09b5aeb3fdad17e52118ca70b35825999abf562fc628bde3",
-      "f8bf5410955a10a0bfb01a2f0e07beebd46bd8e0803a69f7897cdabb0496a749"
     ],
     "Solanalib/Numeric/Fraction.lean": [
       "7ea2cddfcf4de0075e2c03c6fb1a6dc32faed3d8bfda55ecd70dac84853ed9c9",

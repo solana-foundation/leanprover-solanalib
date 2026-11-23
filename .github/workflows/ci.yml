@@ -53,14 +53,14 @@ jobs:
             ~/.elan
             .lake/packages
             .lake/build
-          key: root-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.lean', 'lake-manifest.json') }}-${{ hashFiles('Solanalib/**/*.lean', 'SolanalibTest/**/*.lean', '*.lean') }}
+          key: root-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.lean', 'lake-manifest.json') }}-${{ hashFiles('Solanalib/**/*.lean', 'SolanalibTest/**/*.lean', '*.lean', 'packages/solanalib-runtime/**/*.lean') }}
           restore-keys: |
             root-${{ runner.os }}-${{ runner.arch }}-
       - uses: ./.github/actions/setup-lean
       - name: Resolve the pinned dependencies and public Mathlib cache
         run: |
           lake update
-          lake exe cache get Solanalib.lean SolanalibTest.lean Oracle.lean
+          lake exe cache get Mathlib.Tactic.Linter.Style Mathlib.Tactic.Linter.Header
       - name: Build the existing library, tests and oracle
         run: |
           lake --wfail build Solanalib SolanalibTest sbpf-oracle
@@ -198,7 +198,7 @@ jobs:
       - uses: ./.github/actions/setup-lean
       - name: Build all libraries and check ordinary Lean loading from one artifact directory
         run: |
-          lake exe cache get Solanalib.lean SolanalibTest.lean Oracle.lean
+          lake exe cache get Mathlib.Tactic.Linter.Style Mathlib.Tactic.Linter.Header
           lake --wfail build Solanalib SolanalibTest sbpf-oracle Solanalib.Runtime SolanalibTest.Runtime SolanalibTest.Conformance.Runtime Solanalib.Contracts
           python3 scripts/ci-sdk-groups.py --build all
           lake --wfail build SolanalibTest.Conformance.Library solanalib-library-conformance solanalib-selection-control

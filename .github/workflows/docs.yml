@@ -69,7 +69,7 @@ jobs:
 
       # Downloads pre-built Mathlib oleans so we don't compile Mathlib from scratch.
       - name: Fetch pre-built Mathlib oleans
-        run: lake exe cache get Solanalib.lean
+        run: lake exe cache get Mathlib.Tactic.Linter.Style Mathlib.Tactic.Linter.Header
 
       - name: Build documentation site
         run: python3 scripts/build-docs.py

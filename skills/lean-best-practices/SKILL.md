@@ -255,7 +255,7 @@ The convention for spec-layer numeric types is:
    can talk about "a Fraction" without exposing the encoding. `omega`
    works directly on the underlying `Nat`.
 2. **Operations carry their preconditions in the type**
-   (`Fraction.sub (h : b.bits ≤ a.bits)`, like `Account.debit`).
+   (`Fraction.sub (h : b.bits ≤ a.bits)`).
 3. **`@[ext]` plus `@[simp]` projection lemmas for every field /
    operation** so `ext; simp` proofs compose cleanly downstream.
 4. **`LE`/`LT` instances delegate to the underlying `Nat` order**;
@@ -298,30 +298,32 @@ version, mirroring the `Lamports` / `LamportsUnchecked` pattern.
 - **`λ` is forbidden** — use `fun x ↦ y` (mapsto, not `=>`). Mathlib's linter rejects `λ`.
 - **`$` is forbidden** — use `<|` for left-pipe or `|>` for right-pipe.
 
-Canonical proof shape:
+The System transfer theorem follows the actual runtime path:
 
 ```lean
-theorem transfer_preserves_total
-    (src dst : Account) (amount : Lamports) (h : amount ≤ src.lamports) :
-    (transfer src dst amount h).source.lamports
-      + (transfer src dst amount h).destination.lamports
-      = src.lamports + dst.lamports := by
-  simp [transfer]
-  omega
+open Solanalib.Runtime
+
+example {context : SysCtx} {before after : TxState} {source destination amount : Nat}
+    (transferred : sysTransfer context before source destination amount = .ok after) :
+    after.lamportSum = before.lamportSum := by
+  unfold sysTransfer at transferred
+  split at transferred
+  · cases transferred
+  · exact sysTransferVerified_preserves_total transferred
 ```
 
-`simp [transfer]` unfolds the definition; `@[simp]` projection lemmas (e.g. `credit_lamports`, `debit_lamports`) then expose the field accesses; `omega` closes the resulting `Nat` arithmetic given `h`.
+The success premise rules out signature failure. The remaining result follows from conservation for the checked debit and credit. See [the full proof](../../Solanalib/Transfer.lean) and [its scenarios](../../SolanalibTest/TransferTest.lean).
 
 ## Composition
 
 Theorems compose via `have`-binding inside larger proofs:
 
 ```lean
-example (src dst extra : Account) (amount : Lamports) (h : amount ≤ src.lamports) :
-    let r := Account.transfer src dst amount h
-    r.source.lamports + r.destination.lamports + extra.lamports
-      = src.lamports + dst.lamports + extra.lamports := by
-  have := Account.transfer_preserves_total src dst amount h
+example {context : SysCtx} {before after : TxState} {source destination amount : Nat}
+    (extra : Account)
+    (transferred : sysTransfer context before source destination amount = .ok after) :
+    after.lamportSum + extra.lamports = before.lamportSum + extra.lamports := by
+  have conserved := transfer_preserves_total transferred
   omega
 ```
 

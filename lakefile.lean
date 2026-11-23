@@ -36,23 +36,21 @@ lean_lib Solanalib where
   globs := #[
     .one `Solanalib,
     .one `Solanalib.Init,
-    .submodules `Solanalib.Account,
     .submodules `Solanalib.Finance,
-    .submodules `Solanalib.Instruction,
     .submodules `Solanalib.Numeric,
     .submodules `Solanalib.Primitives,
-    .submodules `Solanalib.SBPF
+    .submodules `Solanalib.SBPF,
+    .one `Solanalib.Transfer
   ]
 
 lean_lib SolanalibTest where
   roots := #[]
   globs := #[
     .one `SolanalibTest,
-    .one `SolanalibTest.LayerATests,
-    .submodules `SolanalibTest.Account,
     .submodules `SolanalibTest.Finance,
     .submodules `SolanalibTest.Numeric,
-    .submodules `SolanalibTest.SBPF
+    .submodules `SolanalibTest.SBPF,
+    .one `SolanalibTest.TransferTest
   ]
 
 -- These libraries share one package output directory because Lean resolves modules

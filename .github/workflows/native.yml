@@ -28,7 +28,7 @@ jobs:
       - name: Build all owned Lean from source, with only the public Mathlib cache
         run: |
           lake update
-          lake exe cache get Solanalib.lean SolanalibTest.lean Oracle.lean
+          lake exe cache get Mathlib.Tactic.Linter.Style Mathlib.Tactic.Linter.Header
           lake --wfail build Solanalib SolanalibTest sbpf-oracle
           lake --wfail test
           lake --wfail build Solanalib.Runtime SolanalibTest.Runtime SolanalibTest.Conformance.Runtime
