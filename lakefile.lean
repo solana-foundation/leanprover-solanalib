@@ -36,21 +36,14 @@ lean_lib Solanalib where
   globs := #[
     .one `Solanalib,
     .one `Solanalib.Init,
-    .submodules `Solanalib.Finance,
-    .submodules `Solanalib.Numeric,
-    .submodules `Solanalib.Primitives,
-    .submodules `Solanalib.SBPF,
-    .one `Solanalib.Transfer
+    .submodules `Solanalib.SBPF
   ]
 
 lean_lib SolanalibTest where
   roots := #[]
   globs := #[
     .one `SolanalibTest,
-    .submodules `SolanalibTest.Finance,
-    .submodules `SolanalibTest.Numeric,
-    .submodules `SolanalibTest.SBPF,
-    .one `SolanalibTest.TransferTest
+    .submodules `SolanalibTest.SBPF
   ]
 
 -- The getting-started example is checked like a scenario, not exported as a model.

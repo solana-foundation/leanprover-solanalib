@@ -3,15 +3,6 @@ Copyright (c) 2026 Solana Foundation. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Solanalib Contributors
 -/
-import Solanalib.Finance.CompoundInterest
-import Solanalib.Finance.Decay
-import Solanalib.Finance.Growth
-import Solanalib.Finance.LinearDecay
-import Solanalib.Finance.MonotoneSequence
-import Solanalib.Finance.WithdrawalCap
-import Solanalib.Numeric.Fraction
-import Solanalib.Primitives.Lamports
-import Solanalib.Primitives.Time
 import Solanalib.SBPF.CommType
 import Solanalib.SBPF.Decoder
 import Solanalib.SBPF.Interpreter
@@ -20,7 +11,6 @@ import Solanalib.SBPF.State
 import Solanalib.SBPF.Syntax
 import Solanalib.SBPF.Value
 import Solanalib.SBPF.Verifier
-import Solanalib.Transfer
 
 /-!
 ![Solanalib][banner]
@@ -31,11 +21,11 @@ import Solanalib.Transfer
 
 A library of formal models and verified results for Solana programs in Lean 4.
 
-Solanalib provides reusable type-level models of Solana primitives — lamports,
-accounts, instructions, programs — together with theorems about their
-behaviour. It also models the **sBPF instruction set** that deployed bytecode
-actually runs on, giving a single Lean library that spans both the high-level
-domain shapes and the machine those shapes ultimately compile down to.
+Solanalib provides reusable models of the Solana runtime and of the Rust crates
+Solana programs are built on, together with theorems about their behaviour.
+This root library holds the model of the **sBPF instruction set** that deployed
+bytecode runs on; the runtime, contract and crate models are separate libraries
+of the same package.
 
 The intent is that downstream verification work on Anchor or Pinocchio
 programs can reuse these definitions rather than redefining them per project.
@@ -46,10 +36,9 @@ Modules are organised by Solana concept, not by framework. Framework-specific
 results (Anchor account validation, Pinocchio entrypoint patterns, …) layer on
 top of the core primitives and live in their own subdirectories.
 
-* `Solanalib.Runtime`    — Solana public keys, accounts, instructions and execution.
-* `Solanalib.Transfer`   — conservation for the checked System transfer path.
-* `Solanalib.Primitives` — lamport and time notations for arithmetic developments.
-* `Solanalib.Numeric`    — fixed-point arithmetic (`Fraction`, Q68.60).
-* `Solanalib.Finance`    — domain abstractions: decay, growth, compounding, caps.
+* `Solanalib.Runtime`    — Solana public keys, accounts, instructions and execution,
+  including conservation for the checked System transfer path.
+* `Solanalib.Contracts`  — the shared contract vocabulary.
+* `Solanalib.Specs`      — contracts for SDK and framework crates.
 * `Solanalib.SBPF`       — the sBPF ISA semantics (machine layer).
 -/

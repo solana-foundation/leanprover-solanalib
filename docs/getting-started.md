@@ -21,7 +21,7 @@ All libraries belong to one Lake package, `solanalib`, and share one build direc
 | Contract and outcome vocabulary | `Solanalib.Contracts` | `Solanalib.Contracts` |
 | System instruction constructors | `Solanalib.Specs.SolanaSystemInterface` | `Solanalib.Specs.SolanaSystemInterface` |
 | Pinocchio token operations | `Solanalib.Specs.PinocchioToken` | `Solanalib.Specs.PinocchioToken` |
-| Transfer conservation, finance and machine models | `Solanalib` | `Solanalib` |
+| The sBPF machine model | `Solanalib` | `Solanalib` |
 
 For example, build the System interface and its scenarios:
 
@@ -29,7 +29,7 @@ For example, build the System interface and its scenarios:
 lake --wfail build Solanalib.Specs.SolanaSystemInterface SolanalibTest.Specs.SolanaSystemInterface
 ```
 
-The [library catalog](../packages/solanalib-specs/LIBRARIES.md) describes each modeled subset. A crate root does not claim to model every function in that crate. For a separate project, use the [root Git dependency instructions](../packages/solanalib-specs/README.md#package-consumption) with an available immutable commit. Use the shared `Solanalib.Runtime.Pubkey`, `Account` and `CpiInstruction` types throughout. Runtime balances are `Nat` values; `Account.WF` supplies their `u64` bound, the account data limit and the rent-epoch bound. The lamport and time notations in `Solanalib.Primitives` remain available for arithmetic and finance.
+The [library catalog](../packages/solanalib-specs/LIBRARIES.md) describes each modeled subset. A crate root does not claim to model every function in that crate. For a separate project, use the [root Git dependency instructions](../packages/solanalib-specs/README.md#package-consumption) with an available immutable commit. Use the shared `Solanalib.Runtime.Pubkey`, `Account` and `CpiInstruction` types throughout. Runtime balances are `Nat` values; `Account.WF` supplies their `u64` bound, the account data limit and the rent-epoch bound.
 
 ## Follow the transfer proof
 
@@ -57,7 +57,7 @@ lake env lean -DwarningAsError=true examples/SolanalibTest/Examples/CheckedTrans
 
 ## Understand the boundary
 
-This worked example proves one modeled instruction in a fixed account context. The general theorem [`Solanalib.Runtime.transfer_preserves_total`](../Solanalib/Transfer.lean) separately proves conservation for every successful `sysTransfer`, including aliased transaction account indices. Its success premise includes the signature, data, ownership, writability, account-index and arithmetic checks. The [transfer regressions](../SolanalibTest/TransferTest.lean) exercise that theorem and these rejection conditions; `just test` runs them. The SDK premise uses the **returned-value observation** contract. The separate [operational constructor family](../packages/solanalib-specs/Solanalib/Specs/SolanaSystemInterface/Operational.lean) also models allocation, serialization, cleanup and non-returning outcomes. The observation alone does not establish that a Rust constructor returns successfully.
+This worked example proves one modeled instruction in a fixed account context. The general theorem [`Solanalib.Runtime.transfer_preserves_total`](../packages/solanalib-runtime/Solanalib/Runtime/Transfer.lean) separately proves conservation for every successful `sysTransfer`, including aliased transaction account indices. Its success premise includes the signature, data, ownership, writability, account-index and arithmetic checks. The [transfer scenarios](../packages/solanalib-runtime/SolanalibTest/Runtime/Transfer.lean) exercise that theorem and these rejection conditions; `just test-runtime` runs them. The SDK premise uses the **returned-value observation** contract. The separate [operational constructor family](../packages/solanalib-specs/Solanalib/Specs/SolanaSystemInterface/Operational.lean) also models allocation, serialization, cleanup and non-returning outcomes. The observation alone does not establish that a Rust constructor returns successfully.
 
 The example does not cover transaction admission, fees, account loading, commit or rollback. It does not prove Rust bodies, compiler bindings, deployed sBPF execution or a general instruction-to-frame translation. See the runtime [trust boundary](../packages/solanalib-runtime/TRUST.md), SDK [binding obligations](../packages/solanalib-specs/BINDINGS.md), and [gap index](model-gaps.md). The existing [transaction success scenario](../packages/solanalib-runtime/SolanalibTest/Runtime/TransactionSuccess.lean) shows how the wider modeled transaction pipeline fits together.
 

@@ -22,6 +22,12 @@ from import_tiers import header_imports
 CORE = {'Init', 'Std', 'Lean', 'Lake'}
 
 
+def unpublished(name):
+    # The sBPF machine model is not presented on the site yet. The root aggregate
+    # and its linter module import it, so they stay out of the rendered closure too.
+    return name in {'Solanalib', 'Solanalib.Init'} or name.startswith('Solanalib.SBPF.')
+
+
 def public_sources():
     modules = {}
     for package in [ROOT, *sorted((ROOT / 'packages').glob('*'))]:
@@ -30,6 +36,8 @@ def public_sources():
             paths.append(package / 'Solanalib.lean')
         for path in paths:
             name = '.'.join(path.relative_to(package).with_suffix('').parts)
+            if unpublished(name):
+                continue
             if name in modules:
                 raise ValueError('Duplicate production source: ' + name)
             modules[name] = path

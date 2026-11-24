@@ -10,6 +10,7 @@ public import SolanalibTest.Runtime.Regression
 public import SolanalibTest.Runtime.CpiOrdering
 public import SolanalibTest.Runtime.NonceAdmission
 public import SolanalibTest.Runtime.SiblingOutputs
+public import SolanalibTest.Runtime.Transfer
 public import SolanalibTest.Runtime.TransactionSuccess
 public import SolanalibTest.Runtime.TransactionRollback
 public import SolanalibTest.Runtime.CpiSuccess

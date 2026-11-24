@@ -22,7 +22,7 @@ EXTRA_INPUTS = [RUNTIME, CONFORMANCE / 'not-tested.toml', CONFORMANCE / 'require
                 CONFORMANCE / 'checker_selection.py', SDK / 'BINDINGS.md',
                 Path('Solanalib/SBPF/Interpreter.lean'),
                 Path('packages/solanalib-runtime/Solanalib/Runtime/Exec.lean'),
-                Path('Solanalib/Transfer.lean'), CENSUS]
+                Path('packages/solanalib-runtime/Solanalib/Runtime/Transfer.lean'), CENSUS]
 STATUS = {'runtime': 'recorded model scope',
           'sdk-model': 'recorded scope or remaining requirement', 'sdk-binding': 'open',
           'release-review': 'applicability review pending',

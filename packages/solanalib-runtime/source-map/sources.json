@@ -2424,7 +2424,8 @@
         "Solanalib.Runtime.ReadonlyFrame",
         "Solanalib.Runtime.WritesLegal",
         "Solanalib.Runtime.Theorems",
-        "Solanalib.Runtime.FlagConsistency"
+        "Solanalib.Runtime.FlagConsistency",
+        "Solanalib.Runtime.Transfer"
       ],
       "declarations": [
         "Solanalib.Runtime.ProcInstr.frame",
@@ -2441,12 +2442,14 @@
         "Solanalib.Runtime.calleeAccounts_flagsConsistent",
         "Solanalib.Runtime.prepareCallee_flagsConsistent",
         "Solanalib.Runtime.flagsConsistent_queries",
-        "Solanalib.Runtime.checkPrivileges_first"
+        "Solanalib.Runtime.checkPrivileges_first",
+        "Solanalib.Runtime.sysTransferVerified_preserves_total",
+        "Solanalib.Runtime.transfer_preserves_total"
       ],
       "source_ids": [],
       "treatment": "derived",
       "section": "library-state-and-derived-proofs",
-      "argument": "These are kernel-checked consequences of the actual Lean transitions, proved by local lemmas, composition and induction. They inherit the source scope of those transitions. General construction lemmas establish flag consistency for message and prepared CPI frames. Under caller consistency, optional first-index lookup and first-occurrence privilege checking agree exactly with the modeled flag queries.",
+      "argument": "These are kernel-checked consequences of the actual Lean transitions, proved by local lemmas, composition and induction. They inherit the source scope of those transitions. General construction lemmas establish flag consistency for message and prepared CPI frames. Under caller consistency, optional first-index lookup and first-occurrence privilege checking agree exactly with the modeled flag queries. Every successful modeled System transfer preserves the total lamports of the transaction, including aliased account indices.",
       "assumptions": [
         "Every theorem premise, including active indices, distinct layouts, actual writable flags and the Instructions-sysvar exception."
       ],
@@ -2462,7 +2465,8 @@
         "Solanalib.Runtime.ReadonlyFrame": "0f45bd9a50cae166e3476ee1f35008b1ee59de28fc0b40bf0fe3b7736abcb7af",
         "Solanalib.Runtime.WritesLegal": "9b2b251394fddcdb296527f819c57b299a54c43923da6d882d8015c30e936c8c",
         "Solanalib.Runtime.Theorems": "6b95f824bf59686b233c11b59fa52a72471d2083b67e83b04b9600ab5e32643f",
-        "Solanalib.Runtime.FlagConsistency": "79c1d38c7e2a32b629d14120fb83bc55742ec63bb53c3b6b00c5588dacee906c"
+        "Solanalib.Runtime.FlagConsistency": "79c1d38c7e2a32b629d14120fb83bc55742ec63bb53c3b6b00c5588dacee906c",
+        "Solanalib.Runtime.Transfer": "b8c9ed7a1981ba3bddd79f246dd9b7b61deb1379df370c5ccd9840daae12046e"
       }
     },
     {

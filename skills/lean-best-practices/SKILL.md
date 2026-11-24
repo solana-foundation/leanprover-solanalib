@@ -109,7 +109,7 @@ Inherited from Mathlib:
 | Defs, functions, fields | `lowerCamelCase` | `credit`, `lamportsPerSol`, `source` |
 | Theorems, lemmas, propositions | `snake_case` | `transfer_preserves_total`, `credit_lamports` |
 | Files | `UpperCamelCase.lean` | `Transfer.lean` |
-| Folders | `UpperCamelCase` | `Account/`, `Primitives/` |
+| Folders | `UpperCamelCase` | `Runtime/`, `SBPF/` |
 
 Theorem-name pattern: `<conclusion>_of_<hypothesis>`. For projection-shape `@[simp]` lemmas, the form `<def>_<field>` is conventional (`credit_lamports`, `Account.mk_lamports`).
 
@@ -242,36 +242,6 @@ appropriate algebraic structure for `Nat`, `Int`, `Rat`, etc. For
 domain-specific finance shapes with concrete parameter values, bundled
 structures are usually the better tool.
 
-## Numeric layer: `Solanalib.Numeric`
-
-A dedicated folder for numeric infrastructure that domain modules
-build on. Currently houses `Fraction` (Q68.60 fixed-point, common in
-Solana DeFi). Future additions: `Fraction128` (the bounded
-`u128`-backed refinement of `Fraction`), `Q.96`, etc.
-
-The convention for spec-layer numeric types is:
-
-1. **`Nat` underneath, exposed through a `structure`** so domain code
-   can talk about "a Fraction" without exposing the encoding. `omega`
-   works directly on the underlying `Nat`.
-2. **Operations carry their preconditions in the type**
-   (`Fraction.sub (h : b.bits ≤ a.bits)`).
-3. **`@[ext]` plus `@[simp]` projection lemmas for every field /
-   operation** so `ext; simp` proofs compose cleanly downstream.
-4. **`LE`/`LT` instances delegate to the underlying `Nat` order**;
-   provide `Decidable` instances explicitly — they don't come for
-   free from the `LE` instance, and `decide` will fail mysteriously
-   without them.
-
-```lean
-instance : LE Fraction := ⟨fun a b => a.bits ≤ b.bits⟩
-instance (a b : Fraction) : Decidable (a ≤ b) := Nat.decLe a.bits b.bits
-```
-
-Bounded `UIntN`-backed refinements live as separate types (e.g.
-`Fraction128`) with `.toNat`-style bridges to the unbounded spec
-version, mirroring the `Lamports` / `LamportsUnchecked` pattern.
-
 ## Attribute usage
 
 - **`@[ext]`** on every `structure`. Generates the extensionality lemma `Foo.ext : a.f₁ = b.f₁ → … → a = b`. Costs nothing now, saves writing it later.
@@ -312,7 +282,7 @@ example {context : SysCtx} {before after : TxState} {source destination amount :
   · exact sysTransferVerified_preserves_total transferred
 ```
 
-The success premise rules out signature failure. The remaining result follows from conservation for the checked debit and credit. See [the full proof](../../Solanalib/Transfer.lean) and [its scenarios](../../SolanalibTest/TransferTest.lean).
+The success premise rules out signature failure. The remaining result follows from conservation for the checked debit and credit. See [the full proof](../../packages/solanalib-runtime/Solanalib/Runtime/Transfer.lean) and [its scenarios](../../packages/solanalib-runtime/SolanalibTest/Runtime/Transfer.lean).
 
 ## Composition
 

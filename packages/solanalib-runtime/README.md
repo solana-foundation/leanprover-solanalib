@@ -39,12 +39,13 @@ The [Agave suite](../../tools/runtime-conformance/README.md) checks account
 operations, serialization/read-back and nonempty CPI calls against pinned native
 results. Its guide gives the archive, toolchain and command to reproduce them.
 
-The [scenario-test root](SolanalibTest/Runtime.lean) includes all thirteen files:
+The [scenario-test root](SolanalibTest/Runtime.lean) includes all fourteen files:
 
 | Test | Behavior |
 | --- | --- |
 | [Examples](SolanalibTest/Runtime/Examples.lean) | Evaluated examples of runtime definitions and checked operations. |
 | [Regression](SolanalibTest/Runtime/Regression.lean) | Borrow limits, resize error order, touched accounts and no-ops, nonce handling and transaction storage regressions. |
+| [Transfer](SolanalibTest/Runtime/Transfer.lean) | System transfer conservation, zero and draining transfers, aliased accounts, and the signature, data, ownership, writability, index and arithmetic rejections. |
 | [TransactionSuccess](SolanalibTest/Runtime/TransactionSuccess.lean) | Complete checked System transfer, including admission, fees, loading and commit. |
 | [TransactionRollback](SolanalibTest/Runtime/TransactionRollback.lean) | A successful transfer followed by failure rolls back the transfer and retains the fee. |
 | [CpiSuccess](SolanalibTest/Runtime/CpiSuccess.lean) | Caller synchronization, checked callee execution and a continuation observing the returned state. |
