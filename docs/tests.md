@@ -9,7 +9,7 @@ Run commands from the repository root after [setup](getting-started.md). `just c
 | Worked example | `just test-examples` | 1 |
 | Runtime scenarios | `just test-runtime` | 15 |
 | SDK scenarios | `just test-specs` | 218 |
-| sBPF exploration | `just test-sbpf` | 8 |
+| sBPF exploration | `just test-sbpf` | 9 |
 | Runtime replay harness | `just test-conformance` | 1 |
 | SDK checkers and replay harness | `just test-conformance` | 217 |
 
@@ -266,6 +266,7 @@ Command: `just test-specs`.
 
 Command: `just test-sbpf`.
 
+- [packages/solanalib-sbpf/SolanalibTest/SBPF/AxiomAudit.lean](../packages/solanalib-sbpf/SolanalibTest/SBPF/AxiomAudit.lean)
 - [packages/solanalib-sbpf/SolanalibTest/SBPF/DecoderTest.lean](../packages/solanalib-sbpf/SolanalibTest/SBPF/DecoderTest.lean)
 - [packages/solanalib-sbpf/SolanalibTest/SBPF/InterpreterTest.lean](../packages/solanalib-sbpf/SolanalibTest/SBPF/InterpreterTest.lean)
 - [packages/solanalib-sbpf/SolanalibTest/SBPF/LiftTest.lean](../packages/solanalib-sbpf/SolanalibTest/SBPF/LiftTest.lean)

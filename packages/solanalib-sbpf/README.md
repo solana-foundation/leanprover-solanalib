@@ -5,8 +5,8 @@ This package is an exploration. It is a Lean port of the Isabelle/HOL formalisat
 Treat it as a starting point for work on deployed bytecode, not as a reviewed model:
 
 - No theorem connects `Solanalib.SBPF` to `Solanalib.Runtime`. The [gap index](../../docs/model-gaps.md) records this as `execution:sbpf-runtime`.
-- It has no source-correspondence registry, no recorded native observations and no axiom audit. The standards in [CONTRIBUTING.md](../../CONTRIBUTING.md) for the model packages do not yet apply here.
-- The interpreter and lifting regressions evaluate with `native_decide`, so they trust the Lean compiler. The other libraries of this repository do not.
+- It has no source-correspondence registry and no recorded native observations. The standards in [CONTRIBUTING.md](../../CONTRIBUTING.md) for the model packages do not yet apply here.
+- Its declarations depend only on `propext`, `Classical.choice` and `Quot.sound`, which the [axiom audit](SolanalibTest/SBPF/AxiomAudit.lean) checks when `just test-sbpf` builds it. The audit also rejects `implemented_by`, `extern`, `partial`, `unsafe` and `opaque` in the model, so `sbpf-oracle` runs the interpreter the theorems describe. The interpreter and lifting regressions evaluate with `decide +kernel`, so they do not trust the Lean compiler.
 - The x86-64 JIT of the paper is not ported.
 - Names, layout and statements may change, and the package is left out of the generated documentation site.
 
