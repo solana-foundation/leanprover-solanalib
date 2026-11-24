@@ -2,7 +2,7 @@
 
 This note covers `system_program::{allocate, assign, create_account, transfer}`
 using the 0.32.1 reference family. The
-[source registry](../source-map/libraries.json) records inspected Anchor Lang
+[source registry](../source-map/anchor-lang.json) records inspected Anchor Lang
 0.32.0–0.32.3 and declares `>=0.32.0, <0.33.0` under the per-function
 constructor, serialization, AccountInfo, Pubkey and legacy ProgramError
 assumptions.

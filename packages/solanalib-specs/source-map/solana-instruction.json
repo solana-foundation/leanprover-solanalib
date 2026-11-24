@@ -1,0 +1,757 @@
+{
+  "abstractions": {
+    "library::solana_instruction": {
+      "order": 139,
+      "modules": {
+        "Solanalib.Specs.SolanaInstruction": "434cffd2504f97b162616337f82ff8bd8d20aa38eb83d04db643c2dec5a9061c",
+        "Solanalib.Specs.SolanaInstruction.Capabilities": "9f3d6543ddacd91be7ffecb84ca938ccd6df3ef75ff00706f25107de59e269f7",
+        "Solanalib.Specs.SolanaInstruction.Instruction": "a7b30da964aa944fd5d0d8f9f3d54e801f70d6ac2b888d8bdd58de87064dfd35",
+        "Solanalib.Specs.SolanaInstruction.Serialization": "28837065cdd798ea261e51bd4cb9abf6f6d3970622c88ea7682edd772f7a7a41",
+        "Solanalib.Specs.SolanaInstruction.AccountMetaGeneric": "d56209af65346ef92d303de9cee00d824a8d9535857ad14c591809820383fb96"
+      },
+      "source_ids": [
+        "value-request::solana-instruction-3.4.0::src/account_meta.rs",
+        "value-request::solana-instruction-3.4.0::src/lib.rs",
+        "instruction-extensions::solana-instruction-2.2.1::src/lib.rs",
+        "instruction-extensions::solana-instruction-2.2.1::src/account_meta.rs",
+        "instruction-extensions::solana-instruction-2.3.3::src/lib.rs",
+        "instruction-extensions::solana-instruction-2.3.3::src/account_meta.rs",
+        "instruction-extensions::solana-instruction-3.4.0::src/lib.rs",
+        "instruction-extensions::solana-instruction-3.4.0::src/account_meta.rs",
+        "instruction-extensions::solana-system-interface-1.0.0::src/instruction.rs",
+        "instruction-extensions::solana-system-interface-1.0.0::src/lib.rs",
+        "instruction-extensions::solana-system-interface-3.2.0::src/instruction.rs",
+        "instruction-extensions::solana-system-interface-3.2.0::src/lib.rs",
+        "instruction-extensions::solana-program-1.15.2::src/instruction.rs",
+        "instruction-extensions::solana-program-1.15.2::src/system_instruction.rs",
+        "instruction-extensions::solana-program-1.15.2::src/system_program.rs",
+        "instruction-extensions::solana-program-1.15.2::src/pubkey.rs",
+        "instruction-extensions::solana-program-1.18.26::src/instruction.rs",
+        "instruction-extensions::solana-program-1.18.26::src/system_instruction.rs",
+        "instruction-extensions::solana-program-1.18.26::src/system_program.rs",
+        "instruction-extensions::solana-program-1.18.26::src/pubkey.rs"
+      ],
+      "argument": "@review:source-notes/value-request-instruction.md#review-25c5fd7b30614d71",
+      "limitations": "@shared:limitations-c37289e6313c960d"
+    }
+  },
+  "packages": {
+    "solana-instruction-3.4.0": {
+      "order": 46,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "1d4d322b9eac89e6c8069464e0c184d72584106c",
+      "path_prefix": "instruction/"
+    },
+    "solana-instruction-2.2.1": {
+      "order": 89,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+      "path_prefix": "instruction/"
+    },
+    "solana-instruction-2.3.3": {
+      "order": 90,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "f6cd41ac1e4a45d4a94f62d6abcaecb202c51cfa",
+      "path_prefix": "instruction/"
+    }
+  },
+  "interfaces": {
+    "value-request::solana-instruction-3.4.0::src/account_meta.rs": {
+      "order": 147,
+      "crate": "solana-instruction-3.4.0",
+      "path": "src/account_meta.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "98ffc824e24ac479c320bb09b86d88f1009de2aa318a85971fb3e9037a8e89a8"
+    },
+    "value-request::solana-instruction-3.4.0::src/lib.rs": {
+      "order": 148,
+      "crate": "solana-instruction-3.4.0",
+      "path": "src/lib.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "8689008445cc8fc25767394d2f94474cb8c1a5bd823684a94974305102a71902"
+    },
+    "instruction-extensions::solana-instruction-2.2.1::src/account_meta.rs": {
+      "order": 254,
+      "crate": "solana-instruction-2.2.1",
+      "path": "src/account_meta.rs",
+      "sha256": "d836901820e60395cdb0a26955e1a47bce2b54fec4cda2f0e3fb2c586c1cc147",
+      "review_scope": "AccountMeta field-copy/constructors, Instruction field-order clone/serialization dependency, or local System constructor data/ownership. No invoked program body is included."
+    },
+    "instruction-extensions::solana-instruction-2.2.1::src/lib.rs": {
+      "order": 255,
+      "crate": "solana-instruction-2.2.1",
+      "path": "src/lib.rs",
+      "sha256": "e455dc8f63afb7457de127c501071df749b9d1cada7c51c08dc92fba79ecde37",
+      "review_scope": "AccountMeta field-copy/constructors, Instruction field-order clone/serialization dependency, or local System constructor data/ownership. No invoked program body is included."
+    },
+    "instruction-extensions::solana-instruction-2.3.3::src/account_meta.rs": {
+      "order": 256,
+      "crate": "solana-instruction-2.3.3",
+      "path": "src/account_meta.rs",
+      "sha256": "d836901820e60395cdb0a26955e1a47bce2b54fec4cda2f0e3fb2c586c1cc147",
+      "review_scope": "AccountMeta field-copy/constructors, Instruction field-order clone/serialization dependency, or local System constructor data/ownership. No invoked program body is included."
+    },
+    "instruction-extensions::solana-instruction-2.3.3::src/lib.rs": {
+      "order": 257,
+      "crate": "solana-instruction-2.3.3",
+      "path": "src/lib.rs",
+      "sha256": "02d269c6235c1ad0ae335fde6d57064321703c8590139b798863e9babb53e5a7",
+      "review_scope": "AccountMeta field-copy/constructors, Instruction field-order clone/serialization dependency, or local System constructor data/ownership. No invoked program body is included."
+    },
+    "instruction-extensions::solana-instruction-3.4.0::src/account_meta.rs": {
+      "order": 258,
+      "crate": "solana-instruction-3.4.0",
+      "path": "src/account_meta.rs",
+      "sha256": "98ffc824e24ac479c320bb09b86d88f1009de2aa318a85971fb3e9037a8e89a8",
+      "review_scope": "AccountMeta field-copy/constructors, Instruction field-order clone/serialization dependency, or local System constructor data/ownership. No invoked program body is included."
+    },
+    "instruction-extensions::solana-instruction-3.4.0::src/lib.rs": {
+      "order": 259,
+      "crate": "solana-instruction-3.4.0",
+      "path": "src/lib.rs",
+      "sha256": "8689008445cc8fc25767394d2f94474cb8c1a5bd823684a94974305102a71902",
+      "review_scope": "AccountMeta field-copy/constructors, Instruction field-order clone/serialization dependency, or local System constructor data/ownership. No invoked program body is included."
+    },
+    "cpi-signatures::solana-instruction-2.2.1::src/account_meta.rs": {
+      "order": 381,
+      "crate": "solana-instruction-2.2.1",
+      "path": "src/account_meta.rs",
+      "sha256": "d836901820e60395cdb0a26955e1a47bce2b54fec4cda2f0e3fb2c586c1cc147",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-instruction-2.2.1::src/lib.rs": {
+      "order": 382,
+      "crate": "solana-instruction-2.2.1",
+      "path": "src/lib.rs",
+      "sha256": "e455dc8f63afb7457de127c501071df749b9d1cada7c51c08dc92fba79ecde37",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-instruction-2.3.3::src/account_meta.rs": {
+      "order": 383,
+      "crate": "solana-instruction-2.3.3",
+      "path": "src/account_meta.rs",
+      "sha256": "d836901820e60395cdb0a26955e1a47bce2b54fec4cda2f0e3fb2c586c1cc147",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-instruction-2.3.3::src/lib.rs": {
+      "order": 384,
+      "crate": "solana-instruction-2.3.3",
+      "path": "src/lib.rs",
+      "sha256": "02d269c6235c1ad0ae335fde6d57064321703c8590139b798863e9babb53e5a7",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-instruction-3.4.0::src/account_meta.rs": {
+      "order": 385,
+      "crate": "solana-instruction-3.4.0",
+      "path": "src/account_meta.rs",
+      "sha256": "98ffc824e24ac479c320bb09b86d88f1009de2aa318a85971fb3e9037a8e89a8",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-instruction-3.4.0::src/lib.rs": {
+      "order": 386,
+      "crate": "solana-instruction-3.4.0",
+      "path": "src/lib.rs",
+      "sha256": "8689008445cc8fc25767394d2f94474cb8c1a5bd823684a94974305102a71902",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "transfer-hook-resolution::solana-instruction-2.2.1::src/account_meta.rs": {
+      "order": 566,
+      "crate": "solana-instruction-2.2.1",
+      "path": "src/account_meta.rs",
+      "sha256": "d836901820e60395cdb0a26955e1a47bce2b54fec4cda2f0e3fb2c586c1cc147",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed."
+    },
+    "transfer-hook-resolution::solana-instruction-2.2.1::src/lib.rs": {
+      "order": 567,
+      "crate": "solana-instruction-2.2.1",
+      "path": "src/lib.rs",
+      "sha256": "e455dc8f63afb7457de127c501071df749b9d1cada7c51c08dc92fba79ecde37",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed."
+    }
+  },
+  "models": {
+    "solana-instruction::AccountMeta::new": {
+      "order": 181,
+      "contract": "Solanalib.Specs.SolanaInstruction.AccountMeta.new_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "full",
+      "reference": "Solanalib.Specs.SolanaInstruction.AccountMeta.new_model",
+      "assumptions": ["@text:a06dcbdbdc91897e"]
+    },
+    "solana-instruction::AccountMeta::new_readonly": {
+      "order": 182,
+      "contract": "Solanalib.Specs.SolanaInstruction.AccountMeta.new_readonly_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "full",
+      "reference": "Solanalib.Specs.SolanaInstruction.AccountMeta.new_readonly_model",
+      "assumptions": ["@text:a06dcbdbdc91897e"]
+    },
+    "solana-instruction::Instruction::new_with_bincode": {
+      "order": 183,
+      "contract": "Solanalib.Specs.SolanaInstruction.Instruction.new_with_bincode_contract",
+      "witness_kind": "FamilyReference",
+      "kind": "supporting",
+      "assumptions": "@shared:assumptions-f6129439c2d182d5"
+    },
+    "solana-instruction::Instruction::new_with_wincode": {
+      "order": 184,
+      "contract": "Solanalib.Specs.SolanaInstruction.Instruction.new_with_wincode_contract",
+      "witness_kind": "FamilyReference",
+      "kind": "supporting",
+      "assumptions": "@shared:assumptions-f6129439c2d182d5"
+    },
+    "solana-instruction::AccountMeta::clone": {
+      "order": 257,
+      "contract": "Solanalib.Specs.SolanaInstruction.AccountMeta.clone_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-ffe98f22e65341bc"
+    }
+  },
+  "api": {
+    "solana-instruction@3.4.0::AccountMeta::new": {
+      "order": 162,
+      "anchor_text": "pub fn new(pubkey: Pubkey, is_signer: bool) -> Self {",
+      "line": 62,
+      "scope": "@text:0a54a1b84461b7a9",
+      "source_id": "value-request::solana-instruction-3.4.0::src/account_meta.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaInstruction.writable_non_signer_constructor",
+        "SolanalibTest.Specs.SolanaInstruction.construction_keeps_duplicates_flags_and_data"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.accountMeta", "Solanalib.Specs.Core.Instruction.make"],
+      "rust_names": ["solana_instruction::account_meta::AccountMeta::new"],
+      "models": ["solana-instruction::AccountMeta::new"]
+    },
+    "solana-instruction@3.4.0::AccountMeta::new_readonly": {
+      "order": 163,
+      "anchor_text": "pub fn new_readonly(pubkey: Pubkey, is_signer: bool) -> Self {",
+      "line": 98,
+      "scope": "@text:65ab624654b641e4",
+      "source_id": "value-request::solana-instruction-3.4.0::src/account_meta.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaInstruction.readonly_signer_constructor",
+        "SolanalibTest.Specs.SolanaInstruction.construction_keeps_duplicates_flags_and_data"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.accountMeta", "Solanalib.Specs.Core.Instruction.make"],
+      "rust_names": ["solana_instruction::account_meta::AccountMeta::new_readonly"],
+      "models": ["solana-instruction::AccountMeta::new_readonly"]
+    },
+    "solana-instruction@3.4.0::Instruction::new_with_bincode": {
+      "order": 164,
+      "anchor_text": "pub fn new_with_bincode<T: serde::Serialize>(",
+      "binding_obligations": "@shared:binding-obligations-93dcd5ff377fd0eb",
+      "line": 198,
+      "scope": "@text:ea1b4acd8706221e",
+      "source_id": "value-request::solana-instruction-3.4.0::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaInstruction.bincode_success_moves_both_resources",
+        "SolanalibTest.Specs.SolanaInstruction.wincode_success_observes_current_vectors",
+        "SolanalibTest.Specs.SolanaInstruction.serializer_error_unwraps_then_drops_accounts",
+        "SolanalibTest.Specs.SolanaInstruction.serializer_error_cannot_return_instruction",
+        "SolanalibTest.Specs.SolanaInstruction.unwind_cleanup_receives_serializer_state",
+        "SolanalibTest.Specs.SolanaInstruction.terminal_serializer_skips_retained_drop",
+        "SolanalibTest.Specs.SolanaInstruction.terminal_unwrap_uses_error_state_and_skips_drop",
+        "SolanalibTest.Specs.SolanaInstruction.cleanup_double_unwind_uses_actual_drop_state"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.InstructionBuilder.run",
+        "Solanalib.Specs.Core.InstructionBuilder.observe_of_current",
+        "Solanalib.Specs.Core.Instruction.OwnedValue",
+        "Solanalib.Specs.Core.Owned.protect"
+      ],
+      "rust_names": [],
+      "models": ["solana-instruction::Instruction::new_with_bincode"]
+    },
+    "solana-instruction@3.4.0::Instruction::new_with_wincode": {
+      "order": 165,
+      "anchor_text": "pub fn new_with_wincode<T: wincode::Serialize<Src = T>>(",
+      "binding_obligations": "@shared:binding-obligations-93dcd5ff377fd0eb",
+      "line": 249,
+      "scope": "@text:ea1b4acd8706221e",
+      "source_id": "value-request::solana-instruction-3.4.0::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaInstruction.bincode_success_moves_both_resources",
+        "SolanalibTest.Specs.SolanaInstruction.wincode_success_observes_current_vectors",
+        "SolanalibTest.Specs.SolanaInstruction.serializer_error_unwraps_then_drops_accounts",
+        "SolanalibTest.Specs.SolanaInstruction.serializer_error_cannot_return_instruction",
+        "SolanalibTest.Specs.SolanaInstruction.unwind_cleanup_receives_serializer_state",
+        "SolanalibTest.Specs.SolanaInstruction.terminal_serializer_skips_retained_drop",
+        "SolanalibTest.Specs.SolanaInstruction.terminal_unwrap_uses_error_state_and_skips_drop",
+        "SolanalibTest.Specs.SolanaInstruction.cleanup_double_unwind_uses_actual_drop_state"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.InstructionBuilder.run",
+        "Solanalib.Specs.Core.InstructionBuilder.observe_of_current",
+        "Solanalib.Specs.Core.Instruction.OwnedValue",
+        "Solanalib.Specs.Core.Owned.protect"
+      ],
+      "rust_names": [],
+      "models": ["solana-instruction::Instruction::new_with_wincode"]
+    },
+    "solana-instruction@2.3.3::AccountMeta::new_readonly": {
+      "order": 244,
+      "anchor_text": "pub fn new_readonly(pubkey: Pubkey, is_signer: bool) -> Self {",
+      "line": 97,
+      "scope": "@text:19cdd9c43828fb22",
+      "source_id": "instruction-extensions::solana-instruction-2.3.3::src/account_meta.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaInstruction.readonly_signer_constructor",
+        "SolanalibTest.Specs.SolanaInstruction.construction_keeps_duplicates_flags_and_data"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.accountMeta", "Solanalib.Specs.Core.Instruction.make"],
+      "rust_names": ["solana_instruction::account_meta::AccountMeta::new_readonly"],
+      "models": ["solana-instruction::AccountMeta::new_readonly"]
+    },
+    "solana-instruction@2.3.3::AccountMeta::new": {
+      "order": 246,
+      "anchor_text": "pub fn new(pubkey: Pubkey, is_signer: bool) -> Self {",
+      "line": 61,
+      "scope": "@text:19cdd9c43828fb22",
+      "source_id": "instruction-extensions::solana-instruction-2.3.3::src/account_meta.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaInstruction.writable_non_signer_constructor",
+        "SolanalibTest.Specs.SolanaInstruction.construction_keeps_duplicates_flags_and_data"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.accountMeta", "Solanalib.Specs.Core.Instruction.make"],
+      "rust_names": ["solana_instruction::account_meta::AccountMeta::new"],
+      "models": ["solana-instruction::AccountMeta::new"]
+    },
+    "solana-instruction@2.3.3::AccountMeta::clone": {
+      "order": 247,
+      "source_id": "instruction-extensions::solana-instruction-2.3.3::src/account_meta.rs",
+      "line": 25,
+      "anchor_text": "pub struct AccountMeta {",
+      "models": ["solana-instruction::AccountMeta::clone"],
+      "rust_names": ["<solana_instruction::account_meta::AccountMeta as core::clone::Clone>::clone"],
+      "scope": "@text:76277bf2d9116b83",
+      "clients": [
+        "SolanalibTest.Specs.SolanaInstruction.Clone.metadata_current_read_preserves_all_fields",
+        "SolanalibTest.Specs.SolanaInstruction.Clone.expired_reference_not_admitted"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.InstructionMeta.family"],
+      "binding_obligations": ["@binding:34997fb89ae90ad6", "@binding:6c0671bb94c95d48"],
+      "binding_defaults": false
+    }
+  },
+  "applicability_sources": {
+    "solana-instruction": {
+      "order": 19,
+      "package": "solana-instruction",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-0.0.1.crate",
+          "sha256": "9ba016402149c6a575c69ea5a96437d7607a04c2e309f5b2b857bc63949e4568"
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-0.0.2.crate",
+          "sha256": "f8d203d56dbd167e5c557b59ec4a1d457a237235890d698ff3f79c4aabecbc1b",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.0.3": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-0.0.3.crate",
+          "sha256": "8b7367d79fa4c21a0fcd40a40de83cd206109033d16fb64e3904deea5552ad16",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.0.crate",
+          "sha256": "bfef689e06e5c7cb6206d4dc61ac77733de4f72d754e0d531393206abc27dbe4",
+          "revision": "c1080de464cfb578c301e975f498964b5d5313db",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.1.crate",
+          "sha256": "c7398f745301e979ae0b7c9b54927f6fa471d063d4d65d49c3b392778f575692",
+          "revision": "adeac02216dae627b90d7498a26e04276e88ed29",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.2.crate",
+          "sha256": "19ece5fc0c0a4a12ec8b505dffbc5e48ab7897e2dec9b335c977456223e94963",
+          "revision": "cefd3f13a2b8c1f3f8332ebeea3d7bf44d547a9a",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.4.crate",
+          "sha256": "aac2ccec24c601f939880ec3e9aa4824c689dafb8a3289987f3af6fdfb579f69",
+          "revision": "024d047eedba22768099cc6509414202400c6231",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.5.crate",
+          "sha256": "1538578b25d17016fed279b3c3a714cce37c82ccbdc0c0b3926029e689a38d02",
+          "revision": "4da190bd01724d1433cff65782100978aefd4c00",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.6.crate",
+          "sha256": "94ed5710c998efd09ffb596cf5e7266c11cd56e3a136c8a1f940e8525fd5be6e",
+          "revision": "c15e6692b1eb2e9196a5d51af5ee8cb57ab7e689",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.7.crate",
+          "sha256": "7dbf607aff88e4f17079a33d34517b7f379d752dfa0496a94cea798a91e6f6ee",
+          "revision": "c79c3c9e67274594ed4f43ed8386e9ddc60a99e9",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.8.crate",
+          "sha256": "35fc69f7f75df0b11e99c03393b24a7443aec0430518054de14715c59cfa716d",
+          "revision": "6ea38fce866595908486a01c7d6b7182988f3b2d",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.9.crate",
+          "sha256": "211353fe5133e13d0772520b410311d52b68de0482c7e8643095b90174df3f57",
+          "revision": "fdb6acc0a634fd0f1fd060d13aa4142c2e4601de",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.10.crate",
+          "sha256": "af795f16bef3ae76e97978e35724ea88d2b9eba67a9e233adf48ccefeaa6e6b8",
+          "revision": "33ab693d94c787e64686e7b2d2f49492eae63885",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.11.crate",
+          "sha256": "eab8c46b6f76857222ee1adeb7031b8eb0eb5134920614e9fd1bd710052b96a9",
+          "revision": "134be7c14066ea00c9791187d6bbc4795dd92f0e",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.12.crate",
+          "sha256": "34de1bf4e8abcc182bf90888b84b9656eee5fef7a252a44a20fed7c778abfbda",
+          "revision": "00cfd3ee36e9f2af78465731e87a063504753385",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.13.crate",
+          "sha256": "d7a99a1276782510f3f9d8dac058b9fccadfc62ff4fd5b7c6d462dbf46632181",
+          "revision": "67412607f511ded3770031280b6aaf10607713fc",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.14.crate",
+          "sha256": "78fbd2140d76f3fa460fee4a361ade24cca8d8b0a4f30b9f88554aaf291e09b6",
+          "revision": "3ad46824358db6337072ad2b5d50ebcab6e1f113",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.15": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.15.crate",
+          "sha256": "238e42af5a85eaa5277ea8bd98639d1b0e10ed056cf30041b67ed7d3c7c1ae98",
+          "revision": "535456856619786b7ac47b5b50b0a730e571365d",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.16": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.16.crate",
+          "sha256": "ca42085649eedfb88f8344523d365ccb4fcae128f63da4ec245375afc68c48f4",
+          "revision": "5002c63047230994282abd24207414126cb57e22",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.17": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.17.crate",
+          "sha256": "e8bf9ce2cd568f4d97fc0a9d35c0c7ec92b8e94fe82d3aeed1eb4af5030b8f3c",
+          "revision": "4adcd0f2f9075d9a2c08e3e12a694ced58f2af29",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.18": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.18.crate",
+          "sha256": "2e57737bf7bc959b4365a8496b70fd96ddd3c0aef1824ae83bc04a540df44351",
+          "revision": "f91c2fcac24eee5a40f10606540ef6e08d1b6655",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.20": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.20.crate",
+          "sha256": "59baf8834fc97718ccad69f49b09a859c2aebc7368a6da683bcdb55e144ae8f6",
+          "revision": "89985de3c6a8643f90af5dcb14bed23382bee088",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.1.21": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.1.21.crate",
+          "sha256": "6cfdcaf08849c1828899c5f9ac8da6077bd3b339e2b0648b2d99d3fd780c3c6f",
+          "revision": "8a085eebcb901b6846d1f82f4636667742146545",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.2.0.crate",
+          "sha256": "203a473c569413392fcbae76e7c0cc316384f2231d22314a0e45f8bf49fdf33b",
+          "revision": "1baa4033e0d2d4175373f07b73ddda2f3cc0a8d6",
+          "path_prefix": "sdk/instruction/"
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.2.1.crate",
+          "sha256": "9ce496a475e5062ba5de97215ab39d9c358f9c9df4bb7f3a45a1f1a8bd9065ed",
+          "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+          "path_prefix": "instruction/",
+          "repository": "https://github.com/anza-xyz/solana-sdk"
+        },
+        "2.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.3.0.crate",
+          "sha256": "47298e2ce82876b64f71e9d13a46bc4b9056194e7f9937ad3084385befa50885",
+          "revision": "e71c9035c34a41aace947ad462146faa13a8b42f",
+          "path_prefix": "instruction/"
+        },
+        "2.3.1": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.3.1.crate",
+          "sha256": "c54769c7e58fc7653658c49b39b935ff6673260cba4ae033b21580a79ca73c90",
+          "revision": "22ea7be29da34ce64807a16a5dd87b2ad23aa291",
+          "path_prefix": "instruction/"
+        },
+        "2.3.2": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.3.2.crate",
+          "sha256": "507e62b9c6891c7e0f5cb0594da10646ec5ea09bfdf5e3498253f07f8a6c6c04",
+          "revision": "c1b3193c9df3d77b0fb4ad3586153f40ee7e4de1",
+          "path_prefix": "instruction/",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "2.3.3": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-2.3.3.crate",
+          "sha256": "bab5682934bd1f65f8d2c16f21cb532526fcc1a09f796e2cacdb091eee5774ad",
+          "revision": "f6cd41ac1e4a45d4a94f62d6abcaecb202c51cfa",
+          "path_prefix": "instruction/"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-3.0.0.crate",
+          "sha256": "8df4e8fcba01d7efa647ed20a081c234475df5e11a93acb4393cc2c9a7b99bab",
+          "revision": "3f9ec63fc1108daaa3c364ad3edc475b9a35bb83",
+          "path_prefix": "instruction/"
+        },
+        "3.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-3.1.0.crate",
+          "sha256": "ee1b699a2c1518028a9982e255e0eca10c44d90006542d9d7f9f40dbce3f7c78",
+          "revision": "0b565a14ec9e1cc08d73345316628f6163d4a9ec",
+          "path_prefix": "instruction/"
+        },
+        "3.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-3.2.0.crate",
+          "sha256": "c6a6d22d0a6fdf345be294bb9afdcd40c296cdc095e64e7ceaa3bb3c2f608c1c",
+          "revision": "d794cc3dcdcc599d94b145802dbb6bff0a91f158",
+          "path_prefix": "instruction/"
+        },
+        "3.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-3.3.0.crate",
+          "sha256": "a97881335fc698deb46c6571945969aae6d93a14e2fff792a368b4fac872f116",
+          "revision": "17ca02da0b56f1af27c2172b2c7d85b99e21ec2a",
+          "path_prefix": "instruction/"
+        },
+        "3.4.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-3.4.0.crate",
+          "sha256": "37ebb0ffd19263051bc3f683fcc086134b8ff23af894dcb63f7563c7137b42f1",
+          "revision": "1d4d322b9eac89e6c8069464e0c184d72584106c",
+          "path_prefix": "instruction/"
+        },
+        "3.4.1": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-3.4.1.crate",
+          "sha256": "a3957ca1d31107efd9a6bb88b25c348ca5e3b4b6683e3d08adb86d3d17aa01f1",
+          "revision": "0548b4aa1c67925c85ec6ae88c66b83d22bfb825",
+          "path_prefix": "instruction/"
+        },
+        "3.5.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-3.5.0.crate",
+          "sha256": "d70cf6ece1070a66d25e68274f338f29664794669c175223940a298645ef3495",
+          "revision": "f3654d315431caf717ee36dec4ff2352a2be096d",
+          "path_prefix": "instruction/"
+        },
+        "3.5.1": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-3.5.1.crate",
+          "sha256": "6d8f113d1312870e2d8698033e9d153d3329c520e1065f05145a55a889e21c91",
+          "revision": "5a1f232d8a8d30b570831f5ca766459db6dc339a",
+          "path_prefix": "instruction/"
+        },
+        "4.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction/solana-instruction-4.0.0.crate",
+          "sha256": "1ea8442b67a58dd54d5497bfc6cd3106b00f9fe6f6877d33c271c3ec4672eedc",
+          "revision": "57327aa7761549c7851c736a80dd9cb4562c27ed",
+          "path_prefix": "instruction/"
+        }
+      },
+      "evidence": ["@text:cd80efd0bd4bda25"]
+    }
+  },
+  "applicability": {
+    "solana-instruction::AccountMeta::new": {
+      "order": 181,
+      "profiles": [
+        {
+          "id": "solana-instruction-reviewed-direct",
+          "source": "solana-instruction",
+          "conditions": ["@text:420d340fc42ad614", "@text:39e9993744c19467"],
+          "argument": "@review:source-notes/value-request-instruction.md#review-368a351053a95def",
+          "evidence": ["@text:6f917069aecbc5c4", "@text:614648a837ee27bb"],
+          "items": [
+            {
+              "item": "solana_instruction::account_meta::AccountMeta::new",
+              "implementation": "solana_instruction::account_meta::AccountMeta::new",
+              "releases": "@shared:releases-5342c0499366afcf",
+              "compatible_ranges": "@shared:compatible-ranges-4b636976fff31f04"
+            }
+          ],
+          "releases": "@shared:releases-5342c0499366afcf"
+        },
+        {
+          "id": "solana-instruction-reviewed-facade-v4",
+          "source": "solana-instruction",
+          "conditions": ["@text:420d340fc42ad614", "@text:39e9993744c19467"],
+          "argument": "@review:source-notes/value-request-instruction.md#review-368a351053a95def",
+          "evidence": ["@text:6f917069aecbc5c4", "@text:614648a837ee27bb"],
+          "identity_dependency": "solana-instruction",
+          "dependencies": "@shared:dependencies-760bc77e9e156f43",
+          "items": [
+            {
+              "item": "solana_instruction::account_meta::AccountMeta::new",
+              "implementation": "solana_instruction::account_meta::AccountMeta::new",
+              "releases": ["3.5.1"],
+              "compatible_ranges": [{"lower": "3.5.1", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.5.1"]
+        }
+      ]
+    },
+    "solana-instruction::AccountMeta::new_readonly": {
+      "order": 182,
+      "profiles": [
+        {
+          "id": "solana-instruction-reviewed-direct",
+          "source": "solana-instruction",
+          "conditions": ["@text:420d340fc42ad614", "@text:39e9993744c19467"],
+          "argument": "@review:source-notes/value-request-instruction.md#review-69e9e25daa077bb4",
+          "evidence": ["@text:6f917069aecbc5c4", "@text:614648a837ee27bb"],
+          "items": [
+            {
+              "item": "solana_instruction::account_meta::AccountMeta::new_readonly",
+              "implementation": "solana_instruction::account_meta::AccountMeta::new_readonly",
+              "releases": "@shared:releases-5342c0499366afcf",
+              "compatible_ranges": "@shared:compatible-ranges-4b636976fff31f04"
+            }
+          ],
+          "releases": "@shared:releases-5342c0499366afcf"
+        },
+        {
+          "id": "solana-instruction-reviewed-facade-v4",
+          "source": "solana-instruction",
+          "conditions": ["@text:420d340fc42ad614", "@text:39e9993744c19467"],
+          "argument": "@review:source-notes/value-request-instruction.md#review-69e9e25daa077bb4",
+          "evidence": ["@text:6f917069aecbc5c4", "@text:614648a837ee27bb"],
+          "identity_dependency": "solana-instruction",
+          "dependencies": "@shared:dependencies-760bc77e9e156f43",
+          "items": [
+            {
+              "item": "solana_instruction::account_meta::AccountMeta::new_readonly",
+              "implementation": "solana_instruction::account_meta::AccountMeta::new_readonly",
+              "releases": ["3.5.1"],
+              "compatible_ranges": [{"lower": "3.5.1", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.5.1"]
+        }
+      ]
+    },
+    "solana-instruction::Instruction::new_with_bincode": {
+      "order": 183,
+      "profiles": [
+        {
+          "id": "solana-instruction-reviewed-direct",
+          "source": "solana-instruction",
+          "conditions": "@shared:conditions-eb95887542419769",
+          "argument": "@review:source-notes/value-request-instruction.md#review-2fb770428902189d",
+          "evidence": ["@text:6f917069aecbc5c4", "@text:614648a837ee27bb"],
+          "features": {"reason": "@text:1c069532942f5254", "all": ["bincode"]},
+          "items": [
+            {
+              "item": "solana_instruction::Instruction::new_with_bincode",
+              "implementation": "solana_instruction::Instruction::new_with_bincode",
+              "releases": "@shared:releases-5342c0499366afcf",
+              "compatible_ranges": "@shared:compatible-ranges-4b636976fff31f04"
+            }
+          ],
+          "releases": "@shared:releases-5342c0499366afcf"
+        },
+        {
+          "id": "solana-instruction-reviewed-facade-v4",
+          "source": "solana-instruction",
+          "conditions": "@shared:conditions-eb95887542419769",
+          "argument": "@review:source-notes/value-request-instruction.md#review-2fb770428902189d",
+          "evidence": ["@text:6f917069aecbc5c4", "@text:614648a837ee27bb"],
+          "features": {"reason": "@text:1c069532942f5254", "all": ["bincode"]},
+          "identity_dependency": "solana-instruction",
+          "dependencies": "@shared:dependencies-760bc77e9e156f43",
+          "items": [
+            {
+              "item": "solana_instruction::Instruction::new_with_bincode",
+              "implementation": "solana_instruction::Instruction::new_with_bincode",
+              "releases": ["3.5.1"],
+              "compatible_ranges": [{"lower": "3.5.1", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.5.1"]
+        }
+      ]
+    },
+    "solana-instruction::Instruction::new_with_wincode": {
+      "order": 184,
+      "profiles": [
+        {
+          "id": "solana-instruction-reviewed-direct",
+          "source": "solana-instruction",
+          "conditions": "@shared:conditions-eb95887542419769",
+          "argument": "@review:source-notes/value-request-instruction.md#review-634c69b9e5eb1999",
+          "evidence": ["@text:e0a69fd82c54bf46", "@text:614648a837ee27bb"],
+          "features": {"reason": "@text:1c069532942f5254", "all": ["wincode"]},
+          "items": [
+            {
+              "item": "solana_instruction::Instruction::new_with_wincode",
+              "implementation": "solana_instruction::Instruction::new_with_wincode",
+              "releases": ["3.2.0", "3.3.0", "3.4.0", "3.4.1", "3.5.0", "4.0.0"],
+              "compatible_ranges": [{"lower": "3.2.0", "upper": "3.5.1"}, {"lower": "4.0.0", "upper": "5.0.0"}]
+            }
+          ],
+          "releases": ["3.2.0", "3.3.0", "3.4.0", "3.4.1", "3.5.0", "4.0.0"]
+        },
+        {
+          "id": "solana-instruction-reviewed-facade-v4",
+          "source": "solana-instruction",
+          "conditions": "@shared:conditions-eb95887542419769",
+          "argument": "@review:source-notes/value-request-instruction.md#review-634c69b9e5eb1999",
+          "evidence": ["@text:e0a69fd82c54bf46", "@text:614648a837ee27bb"],
+          "features": {"reason": "@text:1c069532942f5254", "all": ["wincode"]},
+          "identity_dependency": "solana-instruction",
+          "dependencies": "@shared:dependencies-760bc77e9e156f43",
+          "items": [
+            {
+              "item": "solana_instruction::Instruction::new_with_wincode",
+              "implementation": "solana_instruction::Instruction::new_with_wincode",
+              "releases": ["3.5.1"],
+              "compatible_ranges": [{"lower": "3.5.1", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.5.1"]
+        }
+      ]
+    },
+    "solana-instruction::AccountMeta::clone": {
+      "order": 257,
+      "profiles": [
+        {
+          "id": "solana-instruction-2.3.3-3.4.0",
+          "source": "solana-instruction",
+          "releases": ["2.3.3"],
+          "items": [
+            {
+              "releases": ["2.3.3"],
+              "item": "core::clone::Clone::clone",
+              "implementation": "<solana_instruction::account_meta::AccountMeta as core::clone::Clone>::clone",
+              "compatible_ranges": [{"lower": "2.3.3", "upper": "3.0.0"}]
+            }
+          ],
+          "argument": "@review:source-notes/value-request-instruction.md#review-42ae8b05e4f83a04",
+          "conditions": ["@binding:34997fb89ae90ad6", "@binding:6c0671bb94c95d48"],
+          "evidence": ["@text:18b9a95c3affe93d", "@text:8aec453c913c771e"]
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:328106abb4b8d9fb", "@binding:5190a32e6baa1ea3"]
+}

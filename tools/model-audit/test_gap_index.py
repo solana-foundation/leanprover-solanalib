@@ -7,6 +7,8 @@ import tempfile
 import unittest
 
 import generate_gap_index as gaps
+from registry_data import identifier as text_id, record_file
+from solana_source_map import read_json, load_source_map
 
 
 class GapIndexControls(unittest.TestCase):
@@ -26,18 +28,23 @@ class GapIndexControls(unittest.TestCase):
         path.write_text(json.dumps(review))
 
     def test_stale_source_record_requires_review(self):
-        path = self.root / gaps.SDK / 'source-map/foundation.json'
+        path = self.root / gaps.SDK / 'source-map/core.json'
         path.write_text(path.read_text() + '\n')
         with self.assertRaisesRegex(ValueError, 'review inputs changed'):
             gaps.records(self.root)
 
     def test_new_registered_limitation_is_not_hidden(self):
-        path = self.root / gaps.SDK / 'source-map/libraries.json'
-        data = json.loads(path.read_text())
-        identifier = next(name for name, row in data['models'].items()
-                          if row.get('kind') == 'supporting'
+        package = self.root / gaps.SDK
+        models = load_source_map(package)['models']
+        identifier = next(row['id'] for row in models if row.get('kind') == 'supporting'
                           and not row.get('model_gaps') and not row.get('remaining_requirements'))
-        data['models'][identifier]['model_gaps'] = ['Control: a newly recorded limitation.']
+        path, data = record_file(package, 'models', identifier, read_json)
+        text = 'Control: a newly recorded limitation.'
+        texts_path = package / 'source-map/texts.json'
+        texts = read_json(texts_path)
+        texts[text_id(text)] = text
+        texts_path.write_text(json.dumps(texts))
+        data['models'][identifier]['model_gaps'] = ['@text:' + text_id(text)]
         path.write_text(json.dumps(data))
         self.reviewed_change()
         _, rows = gaps.records(self.root)
@@ -124,7 +131,7 @@ class GapIndexControls(unittest.TestCase):
             gaps.records(self.root)
 
     def test_recording_release_does_not_silently_close_pending_review(self):
-        path = self.root / gaps.SDK / 'source-map/applicability.json'
+        path = self.root / gaps.SDK / 'source-map/pinocchio-system.json'
         data = json.loads(path.read_text())
         releases = data['applicability_sources']['pinocchio-system']['releases']
         releases['0.7.1'] = copy.deepcopy(releases['0.7.0'])

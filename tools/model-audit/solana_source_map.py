@@ -1,9 +1,7 @@
-"""Load the reviewable SDK source map without storing expanded audit tables.
+"""Load SDK source identities, contracts and review clauses for the source and coverage checks.
 
-Schema 3 separates incremental review layers, records each crate pin once, and
-uses explicit defaults for routine witness names and empty scope fields. Its
-expansion retains the API/model shape of schema 2 for the source and coverage checks.
-The source-map README documents the defaults; none supplies a Rust proof.
+The registry names each crate pin and prose clause once. Its expansion preserves
+explicit applicability, witness names and binding obligations; no default supplies a Rust proof.
 """
 
 from copy import deepcopy
@@ -13,12 +11,14 @@ from pathlib import Path
 import re
 
 from solana_source_archives import archive_pin, archive_source
+from registry_data import registry_files, expand_sections
 
 
 SECTIONS = ("packages", "interfaces", "abstractions", "models", "api", "compatibility",
             "applicability_sources", "applicability")
 HEADER_FIELDS = {"schema_version", "runtime_reference", "analysis", "binding_boundary",
                  "excluded_sources", "implementation_boundary", "fragments", "applicability_scope"}
+NORMALIZED_FIELDS = {"texts", "shared", "prose"}
 
 
 def read_json(path):
@@ -47,6 +47,10 @@ def source_map_files(package):
         raise ValueError("Source map must be a JSON object")
     if document.get("schema_version") == 2:
         return [index]
+    if document.get("schema_version") == 4:
+        if set(document) - HEADER_FIELDS - NORMALIZED_FIELDS:
+            raise ValueError(f"Unknown source-map index fields: {sorted(set(document) - HEADER_FIELDS - NORMALIZED_FIELDS)}")
+        return registry_files(package, document)
     if document.get("schema_version") != 3:
         raise ValueError("Source map requires schema_version 2 or 3 with a complete models inventory")
     if set(document) - HEADER_FIELDS:
@@ -263,17 +267,20 @@ def load_source_map(package):
         if "_module_reviews" in document:
             raise ValueError("Whole-module reviews require source-map schema 3")
         return document
-    sections = {name: {} for name in SECTIONS}
-    for path in paths[1:]:
-        fragment = read_json(path)
-        if not isinstance(fragment, dict):
-            raise ValueError(f"Source-map fragment must be an object: {path.name}")
-        fields(fragment, SECTIONS, f"fragment {path.name}")
-        for section in SECTIONS:
-            for identifier, row in mapping(fragment.get(section, {}), section).items():
-                if identifier in sections[section]:
-                    raise ValueError(f"Duplicate {section} identity across source-map fragments: {identifier}")
-                sections[section][identifier] = deepcopy(row)
+    if document["schema_version"] == 4:
+        sections = expand_sections(package, document, read_json)
+    else:
+        sections = {name: {} for name in SECTIONS}
+        for path in paths[1:]:
+            fragment = read_json(path)
+            if not isinstance(fragment, dict):
+                raise ValueError(f"Source-map fragment must be an object: {path.name}")
+            fields(fragment, SECTIONS, f"fragment {path.name}")
+            for section in SECTIONS:
+                for identifier, row in mapping(fragment.get(section, {}), section).items():
+                    if identifier in sections[section]:
+                        raise ValueError(f"Duplicate {section} identity across source-map fragments: {identifier}")
+                    sections[section][identifier] = deepcopy(row)
     packages = sections["packages"]
     for crate, pin in packages.items():
         fields(pin, {"repository", "revision", "path_prefix", "source_archive"}, f"crate pin {crate}")
@@ -317,7 +324,8 @@ def load_source_map(package):
         if not isinstance(hashes, dict):
             raise ValueError(f"Missing reviewed module hashes: {identifier}")
         abstractions.append({**row, "id": identifier, "modules": list(hashes), "model_sha256": hashes})
-    result = {key: deepcopy(value) for key, value in document.items() if key != "fragments"}
+    result = {key: deepcopy(value) for key, value in document.items()
+              if key != "fragments" and key not in NORMALIZED_FIELDS}
     result.update({"schema_version": 2, "_module_reviews": True,
                    "interfaces": list(interfaces.values()), "abstractions": abstractions,
                    "models": [expand_model(identifier, row) for identifier, row in sections["models"].items()],

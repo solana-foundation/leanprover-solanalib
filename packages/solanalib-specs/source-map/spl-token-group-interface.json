@@ -1,0 +1,58 @@
+{
+  "packages": {
+    "spl-token-group-interface-0.7.2": {
+      "order": 36,
+      "repository": "https://github.com/solana-program/token-group",
+      "revision": "2645064953937118572735993ed0ac1d07db5f14",
+      "path_prefix": "interface/"
+    }
+  },
+  "interfaces": {
+    "spl-token-group-interface-0.7.2-state": {
+      "order": 112,
+      "anchor_text": "#[repr(C)]",
+      "cargo_package_checksum": "841cbd6f2322d02719be4da1affedbe6495b1048b7b985ec9796032564026e22",
+      "checked_layout_declarations": [
+        {
+          "fields": [
+            {
+              "alignment": 1,
+              "bytes": 32,
+              "line": 19,
+              "name": "update_authority",
+              "type": "MaybeNull<Address>"
+            },
+            {"alignment": 1, "bytes": 32, "line": 22, "name": "mint", "type": "Address"},
+            {"alignment": 1, "bytes": 8, "line": 24, "name": "size", "type": "U64"},
+            {"alignment": 1, "bytes": 8, "line": 26, "name": "max_size", "type": "U64"}
+          ],
+          "line": 17,
+          "repr": "#[repr(C)]",
+          "repr_line": 14,
+          "source_id": "spl-token-group-interface-0.7.2-state",
+          "type": "TokenGroup"
+        },
+        {
+          "fields": [
+            {"alignment": 1, "bytes": 32, "line": 71, "name": "mint", "type": "Address"},
+            {"alignment": 1, "bytes": 32, "line": 73, "name": "group", "type": "Address"},
+            {"alignment": 1, "bytes": 8, "line": 75, "name": "member_number", "type": "U64"}
+          ],
+          "line": 68,
+          "repr": "#[repr(C)]",
+          "repr_line": 65,
+          "source_id": "spl-token-group-interface-0.7.2-state",
+          "type": "TokenGroupMember"
+        }
+      ],
+      "crate": "spl-token-group-interface-0.7.2",
+      "line": 14,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "65b4a3ed69aa2d822c6fd13395e82912ed2f0a3f80c34b780056e428119b9566",
+        "cargo_vcs_info_sha256": "7c7da2929f5133b2bbe1f7ef7b222d119227af5e61227d9e78bf72c4881e65ba"
+      },
+      "path": "src/state.rs",
+      "sha256": "ed26b19a923ea9193b2e95c9316b41c90dc9d5ab67dbe50a268780a81e1e2340"
+    }
+  }
+}

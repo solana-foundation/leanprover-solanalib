@@ -1,0 +1,465 @@
+{
+  "abstractions": {
+    "library::solana_invoke": {
+      "order": 159,
+      "modules": {
+        "Solanalib.Specs.SolanaInvoke": "735b4dfd51652f7657edb8d2954f0edd3db9ba95cb9fd5385e2a4cb819061026",
+        "Solanalib.Specs.SolanaInvoke.Capabilities": "1ceeaa437856d7208f32db6633a90c5c5b181f4403c13e14c175f2a6fe60dfb5",
+        "Solanalib.Specs.SolanaInvoke.Cpi": "5855f31d7866151143232e8b7af382ccd1889bd13f2e661d30fce71b4dfff391"
+      },
+      "source_ids": [
+        "cpi-signatures::solana-invoke-0.4.0::src/lib.rs",
+        "cpi-signatures::solana-invoke-0.4.0::src/stable_instruction_borrowed.rs",
+        "cpi-signatures::solana-invoke-0.5.0::src/lib.rs",
+        "cpi-signatures::solana-invoke-0.5.0::src/stable_instruction_borrowed.rs",
+        "cpi-signatures::solana-program-1.15.2::src/program.rs",
+        "cpi-signatures::solana-program-1.15.2::src/account_info.rs",
+        "cpi-signatures::solana-program-1.15.2::src/instruction.rs",
+        "cpi-signatures::solana-program-1.15.2::src/program_error.rs",
+        "cpi-signatures::solana-program-1.15.2::src/syscalls/definitions.rs",
+        "cpi-signatures::solana-program-1.18.26::src/program.rs",
+        "cpi-signatures::solana-program-1.18.26::src/account_info.rs",
+        "cpi-signatures::solana-program-1.18.26::src/instruction.rs",
+        "cpi-signatures::solana-program-1.18.26::src/program_error.rs",
+        "cpi-signatures::solana-program-1.18.26::src/syscalls/definitions.rs",
+        "cpi-signatures::solana-program-1.18.26::src/stable_layout/stable_instruction.rs",
+        "cpi-signatures::solana-program-1.18.26::src/stable_layout/stable_vec.rs",
+        "cpi-signatures::solana-program-2.2.1::src/program.rs",
+        "cpi-signatures::solana-program-2.3.0::src/program.rs",
+        "cpi-signatures::pinocchio-0.9.2::src/cpi.rs",
+        "cpi-signatures::pinocchio-0.9.2::src/syscalls.rs",
+        "cpi-signatures::pinocchio-0.9.2::src/instruction.rs",
+        "cpi-signatures::solana-define-syscall-2.3.0::src/lib.rs",
+        "cpi-signatures::solana-define-syscall-2.3.0::src/definitions.rs",
+        "cpi-signatures::solana-define-syscall-3.0.0::src/lib.rs",
+        "cpi-signatures::solana-define-syscall-3.0.0::src/definitions.rs",
+        "cpi-signatures::solana-define-syscall-5.1.0::src/lib.rs",
+        "cpi-signatures::solana-define-syscall-5.1.0::src/definitions.rs",
+        "cpi-signatures::solana-cpi-2.2.1::src/lib.rs",
+        "cpi-signatures::solana-account-info-2.3.0::src/lib.rs",
+        "cpi-signatures::solana-account-info-3.1.1::src/lib.rs",
+        "cpi-signatures::solana-instruction-2.2.1::src/lib.rs",
+        "cpi-signatures::solana-instruction-2.2.1::src/account_meta.rs",
+        "cpi-signatures::solana-instruction-2.3.3::src/lib.rs",
+        "cpi-signatures::solana-instruction-2.3.3::src/account_meta.rs",
+        "cpi-signatures::solana-instruction-3.4.0::src/lib.rs",
+        "cpi-signatures::solana-instruction-3.4.0::src/account_meta.rs",
+        "cpi-signatures::solana-program-error-2.2.2::src/lib.rs",
+        "cpi-signatures::solana-program-error-3.0.1::src/lib.rs",
+        "cpi-signatures::solana-stable-layout-2.2.1::src/stable_instruction.rs",
+        "cpi-signatures::solana-stable-layout-2.2.1::src/stable_vec.rs",
+        "cpi-signatures::solana-stable-layout-3.0.0::src/stable_instruction.rs",
+        "cpi-signatures::solana-stable-layout-3.0.0::src/stable_vec.rs",
+        "cpi-signatures::solana-stable-layout-3.0.1::src/stable_instruction.rs",
+        "cpi-signatures::solana-stable-layout-3.0.1::src/stable_vec.rs",
+        "cpi-signatures::solana-program-entrypoint-2.3.0::src/lib.rs",
+        "cpi-signatures::solana-program-entrypoint-3.1.1::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/raw-syscalls.md#review-5094f94ba0affada",
+      "limitations": ["@text:9222eed7cf79bfc3", "@text:1990fc5cba945d0e"]
+    }
+  },
+  "packages": {
+    "solana-invoke-0.4.0": {
+      "order": 107,
+      "repository": "https://github.com/solana-foundation/solana-invoke",
+      "revision": "58a25e3f28c31e36843a3d16ba5de25b343c06db",
+      "path_prefix": "invoke/"
+    },
+    "solana-invoke-0.5.0": {
+      "order": 108,
+      "repository": "https://github.com/solana-foundation/solana-invoke",
+      "revision": "e0bf92597fa591e6d50c0dbe4a750364e782ad9f",
+      "path_prefix": "invoke/"
+    }
+  },
+  "interfaces": {
+    "cpi-signatures::solana-invoke-0.4.0::src/lib.rs": {
+      "order": 387,
+      "crate": "solana-invoke-0.4.0",
+      "path": "src/lib.rs",
+      "sha256": "ef3e8f1119f134110621c494000b41a517713e2ad319dca313ed757094fa4f52",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-invoke-0.4.0::src/stable_instruction_borrowed.rs": {
+      "order": 388,
+      "crate": "solana-invoke-0.4.0",
+      "path": "src/stable_instruction_borrowed.rs",
+      "sha256": "64cad370023d227d43b830350d8e2cfa3077aefbcd942d88b365f9360c1c1ce6",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-invoke-0.5.0::src/lib.rs": {
+      "order": 389,
+      "crate": "solana-invoke-0.5.0",
+      "path": "src/lib.rs",
+      "sha256": "ef3e8f1119f134110621c494000b41a517713e2ad319dca313ed757094fa4f52",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-invoke-0.5.0::src/stable_instruction_borrowed.rs": {
+      "order": 390,
+      "crate": "solana-invoke-0.5.0",
+      "path": "src/stable_instruction_borrowed.rs",
+      "sha256": "64cad370023d227d43b830350d8e2cfa3077aefbcd942d88b365f9360c1c1ce6",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    }
+  },
+  "models": {
+    "solana-invoke::invoke_signed": {
+      "order": 268,
+      "contract": "Solanalib.Specs.SolanaInvoke.invoke_signed_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-c417a05e74f87325"
+    },
+    "solana-invoke::invoke": {
+      "order": 342,
+      "contract": "Solanalib.Specs.SolanaInvoke.invoke_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-c417a05e74f87325"
+    }
+  },
+  "api": {
+    "solana-invoke@0.4.0::invoke_signed": {
+      "order": 266,
+      "source_id": "cpi-signatures::solana-invoke-0.4.0::src/lib.rs",
+      "line": 18,
+      "anchor_text": "pub fn invoke_signed(",
+      "scope": "@text:432e1e5f6f0d3d99",
+      "binding_obligations": "@shared:binding-obligations-c417a05e74f87325",
+      "rust_names": ["solana_invoke::invoke_signed"],
+      "clients": [
+        "SolanalibTest.Specs.Core.OpaqueCpi.first_match_cannot_bypass_borrow",
+        "SolanalibTest.Specs.Core.OpaqueCpi.lamports_before_data",
+        "SolanalibTest.Specs.Core.OpaqueCpi.duplicate_checks_retained",
+        "SolanalibTest.Specs.Core.OpaqueCpi.local_error_before_runtime",
+        "SolanalibTest.Specs.Core.OpaqueCpi.nested_seeds_preserved"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.OpaqueCpi.Index",
+        "Solanalib.Specs.Core.OpaqueCpi.Success",
+        "Solanalib.Specs.Core.OpaqueCpi.Failure",
+        "Solanalib.Specs.Core.CpiRequest.Request"
+      ],
+      "models": ["solana-invoke::invoke_signed"]
+    },
+    "solana-invoke@0.4.0::invoke": {
+      "order": 342,
+      "source_id": "cpi-signatures::solana-invoke-0.4.0::src/lib.rs",
+      "line": 10,
+      "anchor_text": "pub fn invoke(instruction: &Instruction, account_infos: &[AccountInfo]) -> ProgramResult {",
+      "scope": "@text:432e1e5f6f0d3d99",
+      "binding_obligations": "@shared:binding-obligations-c417a05e74f87325",
+      "rust_names": ["solana_invoke::invoke"],
+      "clients": [
+        "SolanalibTest.Specs.Core.OpaqueCpi.first_match_cannot_bypass_borrow",
+        "SolanalibTest.Specs.Core.OpaqueCpi.lamports_before_data",
+        "SolanalibTest.Specs.Core.OpaqueCpi.duplicate_checks_retained",
+        "SolanalibTest.Specs.Core.OpaqueCpi.local_error_before_runtime",
+        "SolanalibTest.Specs.Core.OpaqueCpi.nested_seeds_preserved"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.OpaqueCpi.Index",
+        "Solanalib.Specs.Core.OpaqueCpi.Success",
+        "Solanalib.Specs.Core.OpaqueCpi.Failure",
+        "Solanalib.Specs.Core.CpiRequest.Request"
+      ],
+      "models": ["solana-invoke::invoke"]
+    },
+    "solana-invoke@0.5.0::invoke_signed": {
+      "order": 440,
+      "source_id": "cpi-signatures::solana-invoke-0.5.0::src/lib.rs",
+      "line": 18,
+      "anchor_text": "pub fn invoke_signed(",
+      "scope": "@text:432e1e5f6f0d3d99",
+      "binding_obligations": "@shared:binding-obligations-71f0e714ad31a130",
+      "rust_names": ["solana_invoke::invoke_signed"],
+      "clients": [
+        "SolanalibTest.Specs.Core.OpaqueCpi.first_match_cannot_bypass_borrow",
+        "SolanalibTest.Specs.Core.OpaqueCpi.lamports_before_data",
+        "SolanalibTest.Specs.Core.OpaqueCpi.duplicate_checks_retained",
+        "SolanalibTest.Specs.Core.OpaqueCpi.local_error_before_runtime",
+        "SolanalibTest.Specs.Core.OpaqueCpi.nested_seeds_preserved"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.OpaqueCpi.Index",
+        "Solanalib.Specs.Core.OpaqueCpi.Success",
+        "Solanalib.Specs.Core.OpaqueCpi.Failure",
+        "Solanalib.Specs.Core.CpiRequest.Request"
+      ],
+      "models": ["solana-invoke::invoke_signed"]
+    },
+    "solana-invoke@0.5.0::invoke": {
+      "order": 578,
+      "source_id": "cpi-signatures::solana-invoke-0.5.0::src/lib.rs",
+      "line": 10,
+      "anchor_text": "pub fn invoke(instruction: &Instruction, account_infos: &[AccountInfo]) -> ProgramResult {",
+      "scope": "@text:432e1e5f6f0d3d99",
+      "binding_obligations": "@shared:binding-obligations-71f0e714ad31a130",
+      "rust_names": ["solana_invoke::invoke"],
+      "clients": [
+        "SolanalibTest.Specs.Core.OpaqueCpi.first_match_cannot_bypass_borrow",
+        "SolanalibTest.Specs.Core.OpaqueCpi.lamports_before_data",
+        "SolanalibTest.Specs.Core.OpaqueCpi.duplicate_checks_retained",
+        "SolanalibTest.Specs.Core.OpaqueCpi.local_error_before_runtime",
+        "SolanalibTest.Specs.Core.OpaqueCpi.nested_seeds_preserved"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.OpaqueCpi.Index",
+        "Solanalib.Specs.Core.OpaqueCpi.Success",
+        "Solanalib.Specs.Core.OpaqueCpi.Failure",
+        "Solanalib.Specs.Core.CpiRequest.Request"
+      ],
+      "models": ["solana-invoke::invoke"]
+    }
+  },
+  "applicability_sources": {
+    "solana-invoke": {
+      "order": 39,
+      "package": "solana-invoke",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-13",
+      "releases": {
+        "0.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-invoke/solana-invoke-0.1.0.crate",
+          "sha256": "ca2c69ba8e4618f866917f0a23437aab9a43f5713536a5f5c6fe0f1135cd2458",
+          "yanked": false
+        },
+        "0.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-invoke/solana-invoke-0.2.0.crate",
+          "sha256": "fa261b38140f228b972b3f3a1d3f6c279ea1bd165300107f99c1d6aa82631d78",
+          "yanked": false
+        },
+        "0.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-invoke/solana-invoke-0.3.0.crate",
+          "sha256": "378396dbef543f77dd56dd66673a7d8880a64a5619a35f576c5c2c199733130e",
+          "yanked": false
+        },
+        "0.4.0": {
+          "archive_url": "https://static.crates.io/crates/solana-invoke/solana-invoke-0.4.0.crate",
+          "sha256": "58f5693c6de226b3626658377168b0184e94e8292ff16e3d31d4766e65627565",
+          "revision": "58a25e3f28c31e36843a3d16ba5de25b343c06db",
+          "path_prefix": "invoke/"
+        },
+        "0.5.0": {
+          "archive_url": "https://static.crates.io/crates/solana-invoke/solana-invoke-0.5.0.crate",
+          "sha256": "4065031f5c7dd29ef5f5003c1a353011eeabbafa6c5a5033da0cedbfca824b94",
+          "revision": "e0bf92597fa591e6d50c0dbe4a750364e782ad9f",
+          "path_prefix": "invoke/"
+        },
+        "0.5.1": {
+          "archive_url": "https://static.crates.io/crates/solana-invoke/solana-invoke-0.5.1.crate",
+          "sha256": "84737807e1a4d6d9bbad8358c442ba8a7eb5a260b0f20a20edb98d6b9845b07e",
+          "yanked": false
+        }
+      },
+      "evidence": ["@text:464de181e4af4acf", "@text:50d833b8d14d1d16", "@text:c0625aba15dc28df"]
+    }
+  },
+  "applicability": {
+    "solana-invoke::invoke_signed": {
+      "order": 268,
+      "profiles": [
+        {
+          "id": "invoke-0.4.0-borrowed-invoke_signed",
+          "source": "solana-invoke",
+          "releases": ["0.4.0"],
+          "items": [
+            {
+              "releases": ["0.4.0"],
+              "item": "solana_invoke::invoke_signed",
+              "implementation": "solana_invoke::invoke_signed",
+              "compatible_ranges": [{"lower": "0.4.0", "upper": "0.5.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-c417a05e74f87325",
+          "argument": "@review:source-notes/raw-syscalls.md#review-efbb080f20f656a4",
+          "evidence": ["@text:e20664f433cd7870"],
+          "target": "@shared:target-406ed975e9921226",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:12e6443bfc10e6ea"},
+          "dependencies": [
+            "@shared:dependencies-3bf1d4597dfcb44a",
+            {
+              "package": "solana-instruction",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.2.1", "2.3.3"],
+              "reason": "@text:db3a1fdc5ce1ca82",
+              "compatible_ranges": [{"lower": "2.2.1", "upper": "3.0.0"}]
+            },
+            {
+              "package": "solana-stable-layout",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.2.1"],
+              "reason": "@text:7c0a09020fab061e",
+              "compatible_ranges": [{"lower": "2.2.1", "upper": "3.0.0"}]
+            },
+            "@shared:dependencies-bd694f2cd46ee511",
+            {
+              "package": "solana-program-entrypoint",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.3.0"],
+              "reason": "@text:c6e967630246d88d",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            },
+            {
+              "package": "solana-define-syscall",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.3.0"],
+              "reason": "@text:24645c5eef762524",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ]
+        },
+        {
+          "id": "invoke-0.5.0-borrowed-invoke_signed",
+          "source": "solana-invoke",
+          "releases": ["0.5.0"],
+          "items": [
+            {
+              "releases": ["0.5.0"],
+              "item": "solana_invoke::invoke_signed",
+              "implementation": "solana_invoke::invoke_signed",
+              "compatible_ranges": [{"lower": "0.5.0", "upper": "0.6.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-c417a05e74f87325",
+          "argument": "@review:source-notes/raw-syscalls.md#review-9a90674563821f55",
+          "evidence": ["@text:a78b31f8ce1d67db"],
+          "target": "@shared:target-406ed975e9921226",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:12e6443bfc10e6ea"},
+          "dependencies": [
+            "@shared:dependencies-27664df9cf5b83f5",
+            "@shared:dependencies-149c8b9ff3effdcb",
+            {
+              "package": "solana-stable-layout",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["3.0.0", "3.0.1"],
+              "reason": "@text:10a1817bf22d44eb",
+              "compatible_ranges": [{"lower": "3.0.0", "upper": "4.0.0"}]
+            },
+            "@shared:dependencies-58b25057dafdeefd",
+            {
+              "package": "solana-program-entrypoint",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["3.1.1"],
+              "reason": "@text:6241e4f490404d5a",
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}]
+            },
+            {
+              "package": "solana-define-syscall",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["3.0.0"],
+              "reason": "@text:c122fd1a1a577364",
+              "compatible_ranges": [{"lower": "3.0.0", "upper": "4.0.0"}]
+            }
+          ]
+        }
+      ]
+    },
+    "solana-invoke::invoke": {
+      "order": 342,
+      "profiles": [
+        {
+          "id": "invoke-0.4.0-borrowed-invoke",
+          "source": "solana-invoke",
+          "releases": ["0.4.0"],
+          "items": [
+            {
+              "releases": ["0.4.0"],
+              "item": "solana_invoke::invoke",
+              "implementation": "solana_invoke::invoke",
+              "compatible_ranges": [{"lower": "0.4.0", "upper": "0.5.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-c417a05e74f87325",
+          "argument": "@review:source-notes/raw-syscalls.md#review-c5cf90c6e5262f9a",
+          "evidence": ["@text:e20664f433cd7870"],
+          "target": "@shared:target-406ed975e9921226",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:12e6443bfc10e6ea"},
+          "dependencies": [
+            "@shared:dependencies-6f94459fb36f5348",
+            {
+              "package": "solana-instruction",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.2.1", "2.3.3"],
+              "reason": "@text:48c3101d1a371f9d"
+            },
+            {
+              "package": "solana-stable-layout",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.2.1"],
+              "reason": "@text:5e570dd27c243c8e"
+            },
+            "@shared:dependencies-96bec55689b6df95",
+            {
+              "package": "solana-program-entrypoint",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.3.0"],
+              "reason": "@text:00af8a59bafe49ab"
+            },
+            {
+              "package": "solana-define-syscall",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.3.0"],
+              "reason": "@text:5c31a9e35fd7212f"
+            }
+          ]
+        },
+        {
+          "argument": "@review:source-notes/raw-syscalls.md#review-ff9e9b188968fdf5",
+          "conditions": "@shared:conditions-c417a05e74f87325",
+          "dependencies": [
+            {
+              "package": "solana-account-info",
+              "reason": "@text:5e197ee24b27756a",
+              "releases": ["3.1.1"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            },
+            {
+              "package": "solana-instruction",
+              "reason": "@text:601fd628fa4ad7fb",
+              "releases": ["3.4.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            },
+            {
+              "package": "solana-stable-layout",
+              "reason": "@text:82d555359bf26189",
+              "releases": ["3.0.0", "3.0.1"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            },
+            {
+              "package": "solana-program-error",
+              "reason": "@text:abfb428883ce56d9",
+              "releases": ["3.0.1"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            },
+            {
+              "package": "solana-program-entrypoint",
+              "reason": "@text:00af8a59bafe49ab",
+              "releases": ["3.1.1"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            },
+            {
+              "package": "solana-define-syscall",
+              "reason": "@text:5c31a9e35fd7212f",
+              "releases": ["3.0.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            }
+          ],
+          "evidence": ["@text:a78b31f8ce1d67db"],
+          "id": "invoke-0.5.0-borrowed-invoke",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "0.5.0", "upper": "0.6.0"}],
+              "implementation": "solana_invoke::invoke",
+              "item": "solana_invoke::invoke",
+              "releases": ["0.5.0"]
+            }
+          ],
+          "releases": ["0.5.0"],
+          "source": "solana-invoke",
+          "target": "@shared:target-406ed975e9921226",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:12e6443bfc10e6ea"}
+        }
+      ]
+    }
+  }
+}

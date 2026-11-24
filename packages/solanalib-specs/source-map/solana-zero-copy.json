@@ -1,0 +1,384 @@
+{
+  "abstractions": {
+    "library::solana_zero_copy": {
+      "order": 150,
+      "modules": {
+        "Solanalib.Specs.SolanaZeroCopy": "9e152ebcfd72cf26b2ceaefbc2f2a8eab8d45615e26da4796bfdde8968e13758",
+        "Solanalib.Specs.SolanaZeroCopy.Capabilities": "3d0e354f8bbd41231fe7e94076a1ebde086e21a69bf6941053ea2a671efcf38c",
+        "Solanalib.Specs.SolanaZeroCopy.Unaligned": "3760b43a3cc64d519f1ae4277ea4575aea87826cc0ddd756d73dae6fe2ab80b9",
+        "Solanalib.Specs.SolanaZeroCopy.U16": "d5d34332c802e61a6c459be537ee086f85ad16b8937049710ac8c1f9ecfc64c6"
+      },
+      "source_ids": [
+        "root-extra::solana-zero-copy-1.2.0::src/unaligned.rs",
+        "versions::solana-zero-copy-1.0.1::src/unaligned.rs",
+        "versions::solana-zero-copy-1.1.0::src/unaligned.rs",
+        "versions::solana-zero-copy-1.1.1::src/unaligned.rs",
+        "sdk-values::solana-zero-copy-1.1.1::src/unaligned.rs",
+        "sdk-values::solana-zero-copy-1.0.1::src/unaligned.rs"
+      ],
+      "argument": "@review:source-notes/other-sdk-functions.md#review-e2728ac84eea4607",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:27ff7dfa299cd3f3",
+        "@binding:16af5e6b4a95e14a",
+        "@text:da0d819ff81c3f79"
+      ]
+    }
+  },
+  "packages": {
+    "solana-zero-copy-1.0.1": {
+      "order": 28,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "14eab072129d77f6376b33dbabb8b62c86b53655",
+      "path_prefix": "zero-copy/"
+    },
+    "solana-zero-copy-1.2.0": {
+      "order": 29,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "5d3cfe493b77f916cb6f73cf034558065cae554f",
+      "path_prefix": "zero-copy/"
+    },
+    "solana-zero-copy-1.1.0": {
+      "order": 58,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "ecf94c5afcfb97ea738bf893ddec2de7986a4dbd",
+      "path_prefix": "zero-copy/"
+    },
+    "solana-zero-copy-1.1.1": {
+      "order": 59,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "00741a96043225919cc03561de834fbe2287ccf2",
+      "path_prefix": "zero-copy/"
+    }
+  },
+  "interfaces": {
+    "fee-unaligned-1.2.0": {
+      "order": 57,
+      "anchor_text": "#[repr(transparent)]",
+      "cargo_package_checksum": "bd3183a7934dd7e6490ae86732616cd70361f5ab9401b9a375ab62f7fa17b112",
+      "checked_layout_declarations": [
+        {
+          "fields": [{"line": 28, "name": "0", "type": "u8"}],
+          "line": 28,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 27,
+          "source_id": "fee-unaligned-1.2.0",
+          "type": "Bool"
+        },
+        {
+          "fields": [{"line": 408, "name": "0", "type": "[u8; 2]"}],
+          "line": 408,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 407,
+          "source_id": "fee-unaligned-1.2.0",
+          "type": "U16"
+        },
+        {
+          "fields": [{"line": 419, "name": "0", "type": "[u8; 2]"}],
+          "line": 419,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 418,
+          "source_id": "fee-unaligned-1.2.0",
+          "type": "I16"
+        },
+        {
+          "fields": [{"line": 449, "name": "0", "type": "[u8; 8]"}],
+          "line": 449,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 448,
+          "source_id": "fee-unaligned-1.2.0",
+          "type": "U64"
+        },
+        {
+          "fields": [{"line": 460, "name": "0", "type": "[u8; 8]"}],
+          "line": 460,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 459,
+          "source_id": "fee-unaligned-1.2.0",
+          "type": "I64"
+        }
+      ],
+      "crate": "solana-zero-copy-1.2.0",
+      "line": 27,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "023eac203a5d85227b826ea8b9999ed2dae7b045dcf6e4abecd11ddf5edcbb97",
+        "cargo_vcs_info_sha256": "52c4014e64f84620d7236775a2ed1b1399d2f61c43533171161c8202c40a0ffa"
+      },
+      "path": "src/unaligned.rs",
+      "sha256": "257b6f006f5355082aff3da7ba1113dbf0c38c10b6eee3d74feeaeb004e5f7e4"
+    },
+    "solana-zero-copy-1.0.1-unaligned": {
+      "order": 66,
+      "crate": "solana-zero-copy-1.0.1",
+      "path": "src/unaligned.rs",
+      "sha256": "80d35f1c4ce5199026768c3332f8e27bf926b001ac3d64dd787285d344958d5c"
+    },
+    "root-extra::solana-zero-copy-1.2.0::src/unaligned.rs": {
+      "order": 132,
+      "crate": "solana-zero-copy-1.2.0",
+      "path": "src/unaligned.rs",
+      "sha256": "257b6f006f5355082aff3da7ba1113dbf0c38c10b6eee3d74feeaeb004e5f7e4"
+    },
+    "versions::solana-zero-copy-1.0.1::src/unaligned.rs": {
+      "order": 169,
+      "crate": "solana-zero-copy-1.0.1",
+      "path": "src/unaligned.rs",
+      "sha256": "80d35f1c4ce5199026768c3332f8e27bf926b001ac3d64dd787285d344958d5c"
+    },
+    "versions::solana-zero-copy-1.1.0::src/unaligned.rs": {
+      "order": 170,
+      "crate": "solana-zero-copy-1.1.0",
+      "path": "src/unaligned.rs",
+      "sha256": "3d46b807c902e46caaa3e6f5eda479a1edb4dbff94edd36e4a4be1b9ad0d38a0"
+    },
+    "versions::solana-zero-copy-1.1.1::src/unaligned.rs": {
+      "order": 171,
+      "crate": "solana-zero-copy-1.1.1",
+      "path": "src/unaligned.rs",
+      "sha256": "257b6f006f5355082aff3da7ba1113dbf0c38c10b6eee3d74feeaeb004e5f7e4"
+    },
+    "sdk-values::solana-zero-copy-1.0.1::src/unaligned.rs": {
+      "order": 560,
+      "crate": "solana-zero-copy-1.0.1",
+      "path": "src/unaligned.rs",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/sdk-values.md. No whole-crate model is claimed.",
+      "sha256": "80d35f1c4ce5199026768c3332f8e27bf926b001ac3d64dd787285d344958d5c"
+    },
+    "sdk-values::solana-zero-copy-1.1.1::src/unaligned.rs": {
+      "order": 561,
+      "crate": "solana-zero-copy-1.1.1",
+      "path": "src/unaligned.rs",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/sdk-values.md. No whole-crate model is claimed.",
+      "sha256": "257b6f006f5355082aff3da7ba1113dbf0c38c10b6eee3d74feeaeb004e5f7e4"
+    }
+  },
+  "models": {
+    "solana-zero-copy::unaligned::U64::into_u64": {
+      "order": 199,
+      "contract": "Solanalib.Specs.SolanaZeroCopy.unaligned.U64.into_u64_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaZeroCopy.unaligned.U64.into_u64_model",
+      "assumptions": ["@binding:27ff7dfa299cd3f3"]
+    },
+    "solana-zero-copy::unaligned::U16::into_u16": {
+      "order": 428,
+      "contract": "Solanalib.Specs.SolanaZeroCopy.unaligned.U16.into_u16_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaZeroCopy.unaligned.U16.into_u16_model"
+    }
+  },
+  "api": {
+    "solana-zero-copy@1.0.1::unaligned.U64.into_u64": {
+      "order": 170,
+      "anchor_text": "fn from(unaligned: $P) -> Self {",
+      "line": 78,
+      "scope": "@review:source-notes/owned-dependencies.md#review-b5729012462188fa",
+      "source_id": "versions::solana-zero-copy-1.0.1::src/unaligned.rs",
+      "clients": ["SolanalibTest.Specs.SolanaZeroCopy.registered_release_1_0_1"],
+      "model_dependencies": ["Solanalib.Specs.Core.Unaligned.toUInt64", "Solanalib.Specs.Core.Unaligned.ofUInt64"],
+      "rust_names": [
+        "solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U64> for u64>::from"
+      ],
+      "models": ["solana-zero-copy::unaligned::U64::into_u64"]
+    },
+    "solana-zero-copy@1.1.0::unaligned.U64.into_u64": {
+      "order": 171,
+      "anchor_text": "fn from(unaligned: $P) -> Self {",
+      "line": 150,
+      "scope": "@review:source-notes/owned-dependencies.md#review-b5729012462188fa",
+      "source_id": "versions::solana-zero-copy-1.1.0::src/unaligned.rs",
+      "clients": ["SolanalibTest.Specs.SolanaZeroCopy.registered_release_1_1_0"],
+      "model_dependencies": ["Solanalib.Specs.Core.Unaligned.toUInt64", "Solanalib.Specs.Core.Unaligned.ofUInt64"],
+      "rust_names": [
+        "solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U64> for u64>::from"
+      ],
+      "models": ["solana-zero-copy::unaligned::U64::into_u64"]
+    },
+    "solana-zero-copy@1.1.1::unaligned.U64.into_u64": {
+      "order": 172,
+      "anchor_text": "fn from(unaligned: $P) -> Self {",
+      "line": 150,
+      "scope": "@review:source-notes/owned-dependencies.md#review-b5729012462188fa",
+      "source_id": "versions::solana-zero-copy-1.1.1::src/unaligned.rs",
+      "clients": ["SolanalibTest.Specs.SolanaZeroCopy.registered_release_1_1_1"],
+      "model_dependencies": ["Solanalib.Specs.Core.Unaligned.toUInt64", "Solanalib.Specs.Core.Unaligned.ofUInt64"],
+      "rust_names": [
+        "solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U64> for u64>::from"
+      ],
+      "models": ["solana-zero-copy::unaligned::U64::into_u64"]
+    },
+    "solana-zero-copy@1.2.0::unaligned.U64.into_u64": {
+      "order": 173,
+      "anchor_text": "fn from(unaligned: $P) -> Self {",
+      "line": 150,
+      "scope": "@review:source-notes/owned-dependencies.md#review-b5729012462188fa",
+      "source_id": "root-extra::solana-zero-copy-1.2.0::src/unaligned.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaZeroCopy.little_endian_not_native_alignment",
+        "SolanalibTest.Specs.SolanaZeroCopy.maximum_value",
+        "SolanalibTest.Specs.SolanaZeroCopy.round_trip_all_values"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Unaligned.toUInt64", "Solanalib.Specs.Core.Unaligned.ofUInt64"],
+      "rust_names": [
+        "solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U64> for u64>::from"
+      ],
+      "models": ["solana-zero-copy::unaligned::U64::into_u64"]
+    },
+    "solana-zero-copy@1.1.1::unaligned.U16.into_u16": {
+      "order": 507,
+      "source_id": "sdk-values::solana-zero-copy-1.1.1::src/unaligned.rs",
+      "line": 409,
+      "anchor_text": "impl_int_conversion!(U16, u16);",
+      "scope": "@text:ffaf530383eefdfb",
+      "binding_obligations": ["@binding:d6e262b172cb3892"],
+      "rust_names": [
+        "solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U16> for u16>::from"
+      ],
+      "clients": [
+        "SolanalibTest.Specs.SolanaZeroCopy.U16.little_endian",
+        "SolanalibTest.Specs.Core.SdkValues.u16_rejects_big_endian",
+        "SolanalibTest.Specs.Core.SdkValues.u16_max_roundtrip"
+      ],
+      "models": ["solana-zero-copy::unaligned::U16::into_u16"],
+      "binding_defaults": false
+    },
+    "solana-zero-copy@1.0.1::unaligned.U16.into_u16": {
+      "order": 585,
+      "source_id": "sdk-values::solana-zero-copy-1.0.1::src/unaligned.rs",
+      "line": 94,
+      "anchor_text": "impl_int_conversion!(U16, u16);",
+      "scope": "@text:ffaf530383eefdfb",
+      "binding_obligations": ["@binding:d6e262b172cb3892"],
+      "rust_names": [
+        "solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U16> for u16>::from"
+      ],
+      "clients": [
+        "SolanalibTest.Specs.Core.SdkValues.u16_little_endian",
+        "SolanalibTest.Specs.Core.SdkValues.u16_rejects_big_endian",
+        "SolanalibTest.Specs.Core.SdkValues.u16_max_roundtrip"
+      ],
+      "models": ["solana-zero-copy::unaligned::U16::into_u16"],
+      "binding_defaults": false
+    }
+  },
+  "compatibility": {
+    "unaligned-u64-into-u64": {
+      "order": 1,
+      "models": ["solana-zero-copy::unaligned::U64::into_u64"],
+      "releases": ["1.0.1", "1.1.0", "1.1.1", "1.2.0"],
+      "reviewed_on": "2026-11-09",
+      "argument": "@review:source-notes/other-sdk-functions.md#review-15f03ca788d4712c"
+    }
+  },
+  "applicability_sources": {
+    "solana-zero-copy": {
+      "order": 30,
+      "package": "solana-zero-copy",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-zero-copy/solana-zero-copy-1.0.0.crate",
+          "sha256": "94f52dd8f733a13f6a18e55de83cf97c4c3f5fdf27ea3830bcff0b35313efcc2",
+          "revision": "0ed2ce913a729d91a23915c82d6079a7b8601403",
+          "path_prefix": "zero-copy/"
+        },
+        "1.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-zero-copy/solana-zero-copy-1.0.1.crate",
+          "sha256": "c5a91404c7de468dd80658cdb5d894ec803d1092ea6e2bfdf84eee6f07559c0d",
+          "revision": "14eab072129d77f6376b33dbabb8b62c86b53655",
+          "path_prefix": "zero-copy/"
+        },
+        "1.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-zero-copy/solana-zero-copy-1.1.0.crate",
+          "sha256": "07616ca3aa7789d40da7b5ec5708394acdb24656cf0968b9027a98f9666322bb",
+          "revision": "ecf94c5afcfb97ea738bf893ddec2de7986a4dbd",
+          "path_prefix": "zero-copy/",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-zero-copy/solana-zero-copy-1.1.1.crate",
+          "sha256": "8ea15126ebdc7e270c50d43884369af9f51d2308156d46a18e351522a164844d",
+          "revision": "00741a96043225919cc03561de834fbe2287ccf2",
+          "path_prefix": "zero-copy/"
+        },
+        "1.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-zero-copy/solana-zero-copy-1.2.0.crate",
+          "sha256": "bd3183a7934dd7e6490ae86732616cd70361f5ab9401b9a375ab62f7fa17b112",
+          "revision": "5d3cfe493b77f916cb6f73cf034558065cae554f",
+          "path_prefix": "zero-copy/"
+        },
+        "1.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-zero-copy/solana-zero-copy-1.3.0.crate",
+          "sha256": "369c96063ef15bc310508155ad57bc527c64d814e46ac02d9ebb751a41eb8ea1",
+          "revision": "904937c429c48ab04b68ef85e204561f858dec32",
+          "path_prefix": "zero-copy/"
+        }
+      },
+      "evidence": ["@text:4794d5ce5ca9f384"]
+    }
+  },
+  "applicability": {
+    "solana-zero-copy::unaligned::U64::into_u64": {
+      "order": 199,
+      "profiles": [
+        {
+          "id": "solana-zero-copy-reviewed",
+          "source": "solana-zero-copy",
+          "conditions": ["@text:ced0e5fc15db888c"],
+          "argument": "@review:source-notes/other-sdk-functions.md#review-d97b65f4ae11d782",
+          "evidence": ["@text:d4b889afc15acfec", "@text:c45b40fbf55205a0"],
+          "items": [
+            {
+              "item": "core::convert::From::from",
+              "implementation": "solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U64> for u64>::from",
+              "releases": ["1.0.0", "1.0.1", "1.1.0", "1.1.1", "1.2.0", "1.3.0"],
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.0.0", "1.0.1", "1.1.0", "1.1.1", "1.2.0", "1.3.0"]
+        }
+      ]
+    },
+    "solana-zero-copy::unaligned::U16::into_u16": {
+      "order": 428,
+      "profiles": [
+        {
+          "id": "reviewed-1-1-1",
+          "source": "solana-zero-copy",
+          "releases": ["1.1.1"],
+          "items": [
+            {
+              "releases": ["1.1.1"],
+              "item": "core::convert::From::from",
+              "implementation": "solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U16> for u16>::from",
+              "compatible_ranges": [{"lower": "1.1.1", "upper": "2.0.0"}]
+            }
+          ],
+          "conditions": [],
+          "argument": "@review:source-notes/other-sdk-functions.md#review-d635aa0cd598fa81",
+          "evidence": ["@text:37b80b2028cf4f2b"]
+        },
+        {
+          "argument": "@review:source-notes/other-sdk-functions.md#review-a2d067cf51f89b01",
+          "conditions": [],
+          "evidence": ["@text:19a01282158d9d59"],
+          "id": "reviewed-1-0-1",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "1.0.1", "upper": "2.0.0"}],
+              "implementation": "solana_zero_copy::unaligned::<impl core::convert::From<solana_zero_copy::unaligned::U16> for u16>::from",
+              "item": "core::convert::From::from",
+              "releases": ["1.0.1"]
+            }
+          ],
+          "releases": ["1.0.1"],
+          "source": "solana-zero-copy"
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:27ff7dfa299cd3f3", "@binding:16af5e6b4a95e14a"]
+}

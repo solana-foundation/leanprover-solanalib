@@ -63,3 +63,47 @@ partial serializer effects, terminal exits with impossible drop callbacks, and
 double unwind. A negative control excludes a returned instruction after a
 serializer error. Rust storage, dependency-provider, feature, compiler and
 implementation correspondence remain open.
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:25c5fd7b30614d71 -->
+<a id="review-25c5fd7b30614d71"></a>
+
+Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact test lockfile into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
+
+Exact versioned mathematical API with closed reference, precondition and (where relation-based) execution witnesses. Source anchors support the value/request interpretation; they do not establish a Rust body or ABI proof.
+
+Manual archive review of the derived Clone fields and reached canonical key clone: pubkey/Address bytes and both Boolean fields are copied without allocation, mutation, validation or guard acquisition. Legacy repr(C) and modern layouts require separate ABI interpretations; the value/lifetime contract is shared.
+<!-- /registry -->
+
+<!-- registry:review:368a351053a95def -->
+<a id="review-368a351053a95def"></a>
+
+0.0.1 is a placeholder without the API. Every direct implementation from 0.0.2 through 4.0.0 has byte-identical relevant AccountMeta fields and constructor body: preserve pubkey and is_signer, set is_writable to true. 3.5.1 reexports solana-instruction-v4 ^4.0; its only published target 4.0.0 was reviewed and natively executed. Renamed key wrappers/reexports preserve the canonical value observation. No deduplication, address validation or allocation occurs.
+<!-- /registry -->
+
+<!-- registry:review:69e9e25daa077bb4 -->
+<a id="review-69e9e25daa077bb4"></a>
+
+0.0.1 is a placeholder without the API. Every direct implementation from 0.0.2 through 4.0.0 has byte-identical relevant AccountMeta fields and constructor body: preserve pubkey and is_signer, set is_writable to false. 3.5.1 reexports solana-instruction-v4 ^4.0; its only published target 4.0.0 was reviewed and natively executed. Renamed key wrappers/reexports preserve the canonical value observation. No deduplication, address validation or allocation occurs.
+<!-- /registry -->
+
+<!-- registry:review:2fb770428902189d -->
+<a id="review-2fb770428902189d"></a>
+
+Only placeholder 0.0.1 lacks the API. All direct implementations with the API have identical Instruction fields, generic bounds and body: call the selected serializer on &T, unwrap, then move program_id, the supplied accounts Vec and returned data Vec into Instruction. Serializer error therefore unwinds through unwrap rather than becoming an ordinary Result error; the retained accounts Vec is dropped at the actual reached state. Internal partial-data cleanup belongs to the serializer dependency, and terminal exits skip subsequent cleanup. 3.5.1 forwards the feature and public item to reviewed 4.0.0. Generic stateful/panicking serializers remain in scope; tests include them.
+<!-- /registry -->
+
+<!-- registry:review:634c69b9e5eb1999 -->
+<a id="review-634c69b9e5eb1999"></a>
+
+The API first appears in 3.2.0; every earlier stable release lacks it. All direct implementations with the API have identical Instruction fields, generic bounds and body: call the selected serializer on &T, unwrap, then move program_id, the supplied accounts Vec and returned data Vec into Instruction. Serializer error therefore unwinds through unwrap rather than becoming an ordinary Result error; the retained accounts Vec is dropped at the actual reached state. Internal partial-data cleanup belongs to the serializer dependency, and terminal exits skip subsequent cleanup. 3.5.1 forwards the feature and public item to reviewed 4.0.0. Generic stateful/panicking serializers remain in scope; tests include them.
+<!-- /registry -->
+
+<!-- registry:review:42ae8b05e4f83a04 -->
+<a id="review-42ae8b05e4f83a04"></a>
+
+Reference: solana-instruction 2.3.3. Compatibility in [2.3.3, 3.0.0) assumes that the defining operation and its reached dependencies preserve this behavior: Preserve derived field cloning and the reached canonical key clone: copy all key bytes and both Boolean fields from the live current shared borrow, preserve the existing source state and borrow, and add no allocation, mutation, validation or borrow guard. Bind the selected release to its actual legal source representation separately; the frozen 2.3.3 physical clone/ABI fixture is not generalized by a catalog range.
+<!-- /registry -->

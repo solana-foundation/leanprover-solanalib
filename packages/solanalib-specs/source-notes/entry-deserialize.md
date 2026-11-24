@@ -94,3 +94,21 @@ capacity. The exact const argument of the output array is part of the source ABI
 so a different capacity is not a substitute for a selected source binding. The existing
 `EntryDeserialize` conformance family and mathematical tests check both paths
 without inferring loader or sBPF correctness from the shared byte parser.
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:12e1da0b0036ec30 -->
+<a id="review-12e1da0b0036ec30"></a>
+
+Aligned loader deserialization with exact account offsets, original-length writes, allocation ordering and terminal behavior, shared Rc/owner aliases, realloc reserve, rent epoch and instruction/program views. The registered reference is the graph of the byte parser and source-ordered state transformation. Closed witnesses and native fixture replay are separate from the concrete source assumption. The shape and origin lemmas derive every newly allocated cell, owner reference and vector element from the parsed unique records; they do not assume a supplied post-state graph.
+
+Import-only roots expose the selected versioned modules. Generated typed catalogs collect their exact registered contracts, source identities, profiles and closed reference witnesses. The generator check derives every catalog from the source registry without changing any model body.
+<!-- /registry -->
+
+<!-- registry:review:8c1dc6baa23283e5 -->
+<a id="review-8c1dc6baa23283e5"></a>
+
+The inspected 2.2.1/2.3.0 parser and account/instruction helpers are identical. The declared range assumes vector reservation, lamports Rc allocation, original-length write then data Rc allocation, exact duplicate aliases, reserve/padding and rent epoch. Loader admission, actual allocation effects and terminal exits remain explicit; 3.0.0 changes the reached allocation and metadata protocol.
+<!-- /registry -->

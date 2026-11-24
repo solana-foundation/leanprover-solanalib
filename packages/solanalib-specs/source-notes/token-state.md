@@ -118,3 +118,69 @@ multisig/type rejection, nonzero mint padding, malformed state panic, and the
 different Pack/Pod admission rules. A model consumer derives the amount from
 the versioned contract alone. These are mathematical model controls, not
 compiled Rust clients, native executions or token-program proofs.
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:0a10af57146136f1 -->
+<a id="review-0a10af57146136f1"></a>
+
+Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact test lockfile into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
+
+The versioned ID is the declared legacy key. InitializeAccount3 and Transfer instantiate the common owned builder with the actual legacy-only program check, exact tags/data/metadata order and source capacity arguments. Value and operational contracts have precondition True; representable Rust scalars and capacity arithmetic remain source interpretation obligations. Separate _value_contract declarations observe the constructor result without allocation effects. Closed references, satisfiability and operational execution witnesses name the exact contracts and samples.
+
+Import-only versioned roots collect the separately reviewed leaf modules. The listed module hashes seal their exact imports; each leaf retains its own source-facing contract and interpretation obligations.
+<!-- /registry -->
+
+<!-- registry:review:74c71ad71e0b68cd -->
+<a id="review-74c71ad71e0b68cd"></a>
+
+Import-only roots expose the selected versioned modules. Generated typed catalogs collect their exact registered contracts, source identities, profiles and closed reference witnesses. The generator check derives every catalog from the source registry without changing any model body.
+
+Exact Base58 literals were decoded to 32-byte constants and compared with direct native id/check_id calls. Each mathematical function is a state-preserving constant copy or full equality; no allocation, hashing or syscall is introduced.
+
+These complete families select the source-specific program check, enum domain and ordered plan. All native callback/state/resource indices remain explicit, and each family has a closed real execution at the two-ledger sample. Three unchanged Token-2022 constructors use the pre-existing complete families via explicit applicability profiles, with their own released source layout index.
+<!-- /registry -->
+
+<!-- registry:review:81c8fb73aa93f345 -->
+<a id="review-81c8fb73aa93f345"></a>
+
+Every API-bearing spl-token-interface release first rejects nonlegacy program IDs, packs tag 3 with one byte push and one eight-byte little-endian amount extension, then reserves 3 + signer count metadata entries and pushes source/destination/authority/signers in order. Authority signs exactly for the empty signer list; duplicates and lists beyond the multisig limit are retained. There is no execution-balance/signature validation. The selected body and pack arm are identical; unrelated new enum variants in 3.0.0 do not change this arm and enumSize remains an explicit layout parameter. Full allocation/unwind/terminal cleanup sequencing is preserved. The 0.0.0 builder is absent.
+<!-- /registry -->
+
+<!-- registry:review:91f5b81744dcf3e0 -->
+<a id="review-91f5b81744dcf3e0"></a>
+
+Every API-bearing spl-token-interface release first rejects nonlegacy program IDs, packs tag 3 with one byte push and one eight-byte little-endian amount extension, then reserves 3 + signer count metadata entries and pushes source/destination/authority/signers in order. Authority signs exactly for the empty signer list; duplicates and lists beyond the multisig limit are retained. There is no execution-balance/signature validation. The selected body and pack arm are identical; unrelated new enum variants in 3.0.0 do not change this arm and enumSize remains an explicit layout parameter. Full allocation/unwind/terminal cleanup sequencing is preserved. The 0.0.0 builder is absent. This entry is only the existing value observation; compatible releases share admission and returned values, while allocation, owned-resource lifecycle and abnormal exits remain covered by the separately registered full family.
+<!-- /registry -->
+
+<!-- registry:review:e749f1b22a7ddaa6 -->
+<a id="review-e749f1b22a7ddaa6"></a>
+
+The inspected 8.0.0 operation and reached helpers agree. The declared 8.x range assumes tag 9 and source/destination/authority/signers in order, checking the legacy token ID before allocation, preserving actual enum-size reservation, duplicates/signers, owned vectors and allocation/cleanup order. Every finite primitive failure and partial state remains; native references are unchanged.
+<!-- /registry -->
+
+<!-- registry:review:b8d9f75af270a939 -->
+<a id="review-b8d9f75af270a939"></a>
+
+The inspected 8.0.0 operation and reached helpers agree. The declared 8.x range assumes tag 7, little-endian amount and mint/destination/authority/signers in order, checking the legacy token ID before allocation, preserving actual enum-size reservation, duplicates/signers, owned vectors and allocation/cleanup order. Every finite primitive failure and partial state remains; native references are unchanged.
+<!-- /registry -->
+
+<!-- registry:review:b5e0bae5488e0e7c -->
+<a id="review-b5e0bae5488e0e7c"></a>
+
+The inspected 8.0.0 operation and reached helpers agree. The declared 8.x range assumes tag 15, amount and decimals bytes, source/mint/authority/signers in order, checking the legacy token ID before allocation, preserving actual enum-size reservation, duplicates/signers, owned vectors and allocation/cleanup order. Every finite primitive failure and partial state remains; native references are unchanged.
+<!-- /registry -->
+
+<!-- registry:review:26ac1cc24492af4f -->
+<a id="review-26ac1cc24492af4f"></a>
+
+The inspected 8.0.0 operation and reached helpers agree. The declared 8.x range assumes tag 6, the exact authority enum byte and optional key, 3 + N reserved but 2 + N initialized metadata slots, checking the legacy token ID before allocation, preserving actual enum-size reservation, duplicates/signers, owned vectors and allocation/cleanup order, including four authority variants and distinct None/Some(zero). Every finite primitive failure and partial state remains; native references are unchanged.
+<!-- /registry -->
+
+<!-- registry:review:cb8636f2f700a696 -->
+<a id="review-cb8636f2f700a696"></a>
+
+The inspected 8.0.0 operation and reached helpers agree. The declared 8.x range assumes comparison of every key byte with the fixed legacy native-mint ID, without allocation or state change. Source layout and any reached provider assumptions remain separate.
+<!-- /registry -->

@@ -1,0 +1,229 @@
+{
+  "abstractions": {
+    "library::pythnet_sdk": {
+      "order": 131,
+      "modules": {
+        "Solanalib.Specs.PythnetSdk": "1ea5a2ccddc3e5377f1a5d1f11200d23a1f9a9606ba0c0039b6f55f42b01c754",
+        "Solanalib.Specs.PythnetSdk.Capabilities": "f672ef59148353c894961dca11a26b9c9e002d8d637e251f5a562080970b53f3",
+        "Solanalib.Specs.PythnetSdk.Messages": "45e1b12c9636285c020763de017d67654f3cb3235ae76d34dd7726380622820f"
+      },
+      "source_ids": ["root-extra::pythnet-sdk-3.0.0::src/messages.rs", "codecs::borsh-1.6.1::src/de/mod.rs"],
+      "argument": "@review:source-notes/other-sdk-functions.md#review-7af989a61b051e6d",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@text:90df4aeb03940fef",
+        "@text:53925267739cbe27"
+      ]
+    }
+  },
+  "packages": {
+    "pythnet-sdk-3.0.0": {
+      "order": 19,
+      "repository": "https://github.com/pyth-network/pyth-crosschain",
+      "revision": "4099cb15d0943e603bdc6ad12aecbd2b6eb0f2c0",
+      "path_prefix": "pythnet/pythnet_sdk/"
+    }
+  },
+  "interfaces": {
+    "root-extra::pythnet-sdk-3.0.0::src/messages.rs": {
+      "order": 62,
+      "crate": "pythnet-sdk-3.0.0",
+      "path": "src/messages.rs",
+      "sha256": "859f315c9474e694dc5ddb04d1900c5bae8b115a347c4e59746123245cbabc2a"
+    }
+  },
+  "models": {
+    "pythnet-sdk::messages::PriceFeedMessage::deserialize_reader": {
+      "order": 109,
+      "contract": "Solanalib.Specs.PythnetSdk.messages.PriceFeedMessage.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.PythnetSdk.messages.PriceFeedMessage.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6"]
+    }
+  },
+  "api": {
+    "pythnet-sdk@3.0.0::messages.PriceFeedMessage.deserialize_reader": {
+      "order": 86,
+      "anchor_text": "#[cfg_attr(feature = \"solana-program\", derive(AnchorSerialize, AnchorDeserialize))]",
+      "line": 86,
+      "source_id": "root-extra::pythnet-sdk-3.0.0::src/messages.rs",
+      "scope": "@text:37a229d946a9f343",
+      "binding_obligations": ["@binding:17a03b289e0ff9cd", "@binding:65023296818b9f48", "@binding:5190a32e6baa1ea3"],
+      "clients": [
+        "SolanalibTest.Specs.PythnetSdk.encoded_length",
+        "SolanalibTest.Specs.PythnetSdk.negative_exponent_is_i32",
+        "SolanalibTest.Specs.PythnetSdk.decode_sample",
+        "SolanalibTest.Specs.PythnetSdk.trailing_left",
+        "SolanalibTest.Specs.PythnetSdk.truncated_in_last_field",
+        "SolanalibTest.Specs.PythnetSdk.truncated_in_feed_id",
+        "SolanalibTest.Specs.PythnetSdk.truncated_in_exponent",
+        "SolanalibTest.Specs.PythnetSdk.every_proper_prefix_rejected",
+        "SolanalibTest.Specs.PythnetSdk.field_order_observable",
+        "SolanalibTest.Specs.PythnetSdk.contract_rejects_other_value",
+        "SolanalibTest.Specs.PythnetSdk.contract_allows_any_slice_after_error"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.PythnetSdk.messages.PriceFeedMessage.decoder",
+        "Solanalib.Specs.Borsh.invalid_data_profile",
+        "Solanalib.Specs.Core.Borsh.decodeByteArray",
+        "Solanalib.Specs.Core.Borsh.decodeI64",
+        "Solanalib.Specs.Core.Borsh.decodeU64",
+        "Solanalib.Specs.Core.Borsh.decodeI32",
+        "Solanalib.Specs.Core.Oracle.Pyth.PriceFeedMessage"
+      ],
+      "rust_names": ["<pythnet_sdk::messages::PriceFeedMessage as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "models": ["pythnet-sdk::messages::PriceFeedMessage::deserialize_reader"]
+    }
+  },
+  "applicability_sources": {
+    "pythnet-sdk": {
+      "order": 11,
+      "package": "pythnet-sdk",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "2.0.0": {
+          "archive_url": "https://static.crates.io/crates/pythnet-sdk/pythnet-sdk-2.0.0.crate",
+          "sha256": "3f246dc1ea2966f811d894590014f9163942b33255fc7560fe629726a721aad1",
+          "revision": "495a2e96b84292aeda35f424bed14eeaf29cc0f8",
+          "path_prefix": "pythnet/pythnet_sdk/",
+          "repository": "https://github.com/pyth-network/pyth-crosschain"
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/pythnet-sdk/pythnet-sdk-2.1.0.crate",
+          "sha256": "3bbbc0456f9f27c9ad16b6c3bf1b2a7fea61eebf900f4d024a0468b9a84fe0c1",
+          "revision": "344f8a9e4772a4ab1500bd67c386887fc8574ce5",
+          "path_prefix": "pythnet/pythnet_sdk/",
+          "repository": "https://github.com/pyth-network/pyth-crosschain"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/pythnet-sdk/pythnet-sdk-2.2.0.crate",
+          "sha256": "b4f81d23a693463366640d1ba14c612841b5b07adc56ee20bbf9acaca2ad86b5",
+          "revision": "ff2d6a0bc40eba7528e3d4a0e6d8141a3acc4206",
+          "path_prefix": "pythnet/pythnet_sdk/",
+          "repository": "https://github.com/pyth-network/pyth-crosschain"
+        },
+        "2.3.0": {
+          "archive_url": "https://static.crates.io/crates/pythnet-sdk/pythnet-sdk-2.3.0.crate",
+          "sha256": "d674382ba4798254178b47c8a4cdd9ace09cb8d1554a6de180f8ab326c4d5c41",
+          "revision": "02d0adc4609167ab377cb6f288ddbf6503267d12",
+          "path_prefix": "pythnet/pythnet_sdk/",
+          "repository": "https://github.com/pyth-network/pyth-crosschain"
+        },
+        "2.3.1": {
+          "archive_url": "https://static.crates.io/crates/pythnet-sdk/pythnet-sdk-2.3.1.crate",
+          "sha256": "498d20fd330277697aaee92f341bdabdb4695b10e05f054157a18ad8b7746a17",
+          "revision": "9a36898901f18cde82f9ec732560bfe1c99aaec4",
+          "path_prefix": "pythnet/pythnet_sdk/",
+          "repository": "https://github.com/pyth-network/pyth-crosschain"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/pythnet-sdk/pythnet-sdk-3.0.0.crate",
+          "sha256": "b8047bd7b366b37c3a24408e6677f0aa4dfe3cc7018374fab5b6ab9f2ac2f1ae",
+          "revision": "4099cb15d0943e603bdc6ad12aecbd2b6eb0f2c0",
+          "path_prefix": "pythnet/pythnet_sdk/",
+          "repository": "https://github.com/pyth-network/pyth-crosschain"
+        }
+      },
+      "evidence": [
+        "@text:8d1444fce3931c01",
+        "@text:a300af7af5d7b0c8",
+        "@text:414e1dacc988e885",
+        "@text:2215992c73afdc7c",
+        "@text:fd5591ee2d207caa"
+      ]
+    }
+  },
+  "applicability": {
+    "pythnet-sdk::messages::PriceFeedMessage::deserialize_reader": {
+      "order": 109,
+      "profiles": [
+        {
+          "id": "pythnet-2.3.0-solana-anchor-1.0.2",
+          "source": "pythnet-sdk",
+          "conditions": "@shared:conditions-352ca6ac894c0aab",
+          "argument": "@review:source-notes/other-sdk-functions.md#review-dce2d2cc949e6cf7",
+          "evidence": ["@text:c34ab9e5cdd7f4d7"],
+          "features": {"reason": "@text:960c0076f439bba8", "all": ["solana-program"]},
+          "dependencies": "@shared:dependencies-22f93ca5bacd0e0f",
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<pythnet_sdk::messages::PriceFeedMessage as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["2.3.0"],
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "2.3.1"}]
+            }
+          ],
+          "releases": ["2.3.0"]
+        },
+        {
+          "id": "pythnet-2.3.1-solana-anchor-1.0.2",
+          "source": "pythnet-sdk",
+          "conditions": "@shared:conditions-352ca6ac894c0aab",
+          "argument": "@review:source-notes/other-sdk-functions.md#review-dce2d2cc949e6cf7",
+          "evidence": ["@text:d5e13eb97f045ccf"],
+          "features": {"reason": "@text:960c0076f439bba8", "all": ["solana-program"]},
+          "dependencies": "@shared:dependencies-22f93ca5bacd0e0f",
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<pythnet_sdk::messages::PriceFeedMessage as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["2.3.1"],
+              "compatible_ranges": [{"lower": "2.3.1", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": ["2.3.1"]
+        },
+        {
+          "id": "pythnet-3.x-direct",
+          "source": "pythnet-sdk",
+          "conditions": "@shared:conditions-352ca6ac894c0aab",
+          "argument": "@review:source-notes/other-sdk-functions.md#review-32c21966f5d1da6e",
+          "evidence": ["@text:6bc48542d1bf9d98"],
+          "features": {"reason": "@text:0d81ca6f6adc1d44", "none": ["solana-program"]},
+          "dependencies": ["@shared:dependencies-b0170ed96fe363c6", "@shared:dependencies-76819729154736ae"],
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<pythnet_sdk::messages::PriceFeedMessage as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["3.0.0"],
+              "compatible_ranges": [{"lower": "3.0.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.0.0"]
+        },
+        {
+          "id": "pythnet-3.x-solana-anchor-1.x",
+          "source": "pythnet-sdk",
+          "conditions": "@shared:conditions-352ca6ac894c0aab",
+          "argument": "@review:source-notes/other-sdk-functions.md#review-2a2cef78c5b5051e",
+          "evidence": ["@text:6bc48542d1bf9d98"],
+          "features": {"reason": "@text:960c0076f439bba8", "all": ["solana-program"]},
+          "dependencies": [
+            {
+              "package": "anchor-derive-serde",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["1.0.2", "1.2.2"],
+              "reason": "@text:2e76de35c8347273",
+              "compatible_ranges": [{"lower": "1.0.2", "upper": "2.0.0"}]
+            },
+            "@shared:dependencies-3ffa1ac5f215350d",
+            "@shared:dependencies-b0170ed96fe363c6",
+            "@shared:dependencies-76819729154736ae"
+          ],
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<pythnet_sdk::messages::PriceFeedMessage as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["3.0.0"],
+              "compatible_ranges": [{"lower": "3.0.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.0.0"]
+        }
+      ]
+    }
+  }
+}

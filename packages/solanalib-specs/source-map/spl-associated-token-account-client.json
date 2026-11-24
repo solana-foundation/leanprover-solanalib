@@ -1,0 +1,164 @@
+{
+  "abstractions": {
+    "library::spl_associated_token_account_client": {
+      "order": 160,
+      "modules": {
+        "Solanalib.Specs.SplAssociatedTokenAccountClient.address": "5f80a940d1bfd0d1c98e635c451700b62361f71b4fe96ab86d129cb5a813c04f",
+        "Solanalib.Specs.SplAssociatedTokenAccountClient": "912ef796894635ca7783291fcc92816bb3830c595d1756b8c9ad6fab33118dc6",
+        "Solanalib.Specs.SplAssociatedTokenAccountClient.Capabilities": "8996fc70a6cf4e04f5670682afdc549ec0ab8fa3f46ac2404333892a7fe65630"
+      },
+      "source_ids": [
+        "addresses::solana-pubkey-2.2.1::src/lib.rs",
+        "addresses::solana-pubkey-2.2.1::Cargo.toml.orig",
+        "addresses::solana-pubkey-2.4.0::src/lib.rs",
+        "addresses::solana-pubkey-2.4.0::Cargo.toml.orig",
+        "addresses::solana-program-1.15.2::src/pubkey.rs",
+        "addresses::solana-program-1.18.26::src/pubkey.rs",
+        "addresses::solana-loader-v3-interface-6.1.1::src/lib.rs",
+        "addresses::spl-associated-token-account-client-2.0.0::src/address.rs",
+        "addresses::spl-associated-token-account-client-2.0.0::src/lib.rs",
+        "addresses::spl-associated-token-account-interface-2.0.0::src/address.rs",
+        "addresses::spl-associated-token-account-interface-2.0.0::src/lib.rs",
+        "addresses::borsh-0.9.3::src/de/mod.rs",
+        "addresses::borsh-0.9.3::src/ser/mod.rs",
+        "addresses::borsh-1.6.0::src/de/mod.rs",
+        "addresses::borsh-1.6.0::src/ser/mod.rs",
+        "addresses::borsh-derive-1.6.0::src/internals/deserialize/structs/mod.rs",
+        "addresses::borsh-derive-1.6.0::src/internals/serialize/structs/mod.rs",
+        "addresses::borsh-derive-internal-0.9.3::src/struct_de.rs",
+        "addresses::borsh-derive-internal-0.9.3::src/struct_ser.rs",
+        "addresses::borsh-0.10.4::src/ser/mod.rs",
+        "addresses::solana-address-2.6.0::src/error.rs",
+        "addresses::solana-address-2.6.1::src/error.rs",
+        "addresses::solana-pubkey-3.0.0::src/lib.rs",
+        "addresses::solana-pubkey-4.2.0::src/lib.rs",
+        "addresses::solana-address-1.1.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/syscalls.rs",
+        "fee-address-2.6.1",
+        "value-request::solana-address-2.6.1::src/syscalls.rs",
+        "codecs::borsh-0.10.4::src/de/mod.rs"
+      ],
+      "argument": "@review:source-notes/value-request-ata.md#review-87cfbc9f0a7c2c53",
+      "limitations": [
+        "@binding:bd9bae7aff33eed6",
+        "@binding:5e39aac10a122ac0",
+        "@binding:784d07d7dda8727b",
+        "@binding:b792c49c5b1e749b",
+        "@text:a59033a3f7b014d2",
+        "@text:f428bee2a0798d8f"
+      ]
+    }
+  },
+  "packages": {
+    "spl-associated-token-account-client-2.0.0": {
+      "order": 87,
+      "repository": "https://github.com/solana-labs/solana-program-library",
+      "revision": "72bb80d76de5628749e9f06ed1a36d3986dab2a2",
+      "path_prefix": "associated-token-account/client/"
+    }
+  },
+  "interfaces": {
+    "addresses::spl-associated-token-account-client-2.0.0::src/address.rs": {
+      "order": 249,
+      "crate": "spl-associated-token-account-client-2.0.0",
+      "path": "src/address.rs",
+      "sha256": "b3a86ce5683f5b09327602fef8139f8896863c98505d6410b2de5e22461b5959",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "addresses::spl-associated-token-account-client-2.0.0::src/lib.rs": {
+      "order": 250,
+      "crate": "spl-associated-token-account-client-2.0.0",
+      "path": "src/lib.rs",
+      "sha256": "c459c7ce80d2438327b551a15ddd488fcc12098bd915892fe7918943516796e0",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "anchor-spl-support::spl-associated-token-account-client-2.0.0::src/address.rs": {
+      "order": 364,
+      "crate": "spl-associated-token-account-client-2.0.0",
+      "path": "src/address.rs",
+      "sha256": "b3a86ce5683f5b09327602fef8139f8896863c98505d6410b2de5e22461b5959"
+    },
+    "anchor-spl-support::spl-associated-token-account-client-2.0.0::src/instruction.rs": {
+      "order": 365,
+      "crate": "spl-associated-token-account-client-2.0.0",
+      "path": "src/instruction.rs",
+      "sha256": "378e5f36faa796835a1842425e6385afba9f08b5bab91a15a98fb0e6362fb683"
+    }
+  },
+  "models": {
+    "spl-associated-token-account-client::address::get_associated_token_address_with_program_id": {
+      "order": 305,
+      "contract": "Solanalib.Specs.SplAssociatedTokenAccountClient.address.get_associated_token_address_with_program_id_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:784d07d7dda8727b"]
+    }
+  },
+  "api": {
+    "addresses::spl-associated-token-account-client-2.0.0::get_associated_token_address_with_program_id": {
+      "order": 298,
+      "source_id": "addresses::spl-associated-token-account-client-2.0.0::src/address.rs",
+      "line": 40,
+      "anchor_text": "pub fn get_associated_token_address_with_program_id(",
+      "rust_names": ["spl_associated_token_account_client::address::get_associated_token_address_with_program_id"],
+      "models": ["spl-associated-token-account-client::address::get_associated_token_address_with_program_id"],
+      "scope": "@text:c1cf725803784346",
+      "binding_obligations": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+      "bindings": {
+        "spl_associated_token_account_client::address::get_associated_token_address_with_program_id": "spl_associated_token_account_client::address::get_associated_token_address_with_program_id"
+      }
+    }
+  },
+  "applicability_sources": {
+    "addresses-spl-associated-token-account-client": {
+      "order": 40,
+      "package": "spl-associated-token-account-client",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-11",
+      "releases": {
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-associated-token-account-client/spl-associated-token-account-client-1.0.0.crate",
+          "sha256": "0c5c1e2d53941ea7ebc4be3f86302a3c6c5178baa932bbc038468429e6900d36"
+        },
+        "2.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-associated-token-account-client/spl-associated-token-account-client-2.0.0.crate",
+          "sha256": "d6f8349dbcbe575f354f9a533a21f272f3eb3808a49e2fdc1c34393b88ba76cb",
+          "revision": "72bb80d76de5628749e9f06ed1a36d3986dab2a2"
+        }
+      },
+      "evidence": ["@text:84f93d5515b5fbc3", "@text:3f88c50cc4ba3af9"]
+    }
+  },
+  "applicability": {
+    "spl-associated-token-account-client::address::get_associated_token_address_with_program_id": {
+      "order": 305,
+      "profiles": [
+        {
+          "id": "spl-associated-token-account-client-2.0.0-get_associated_token_address_with_program_id",
+          "source": "addresses-spl-associated-token-account-client",
+          "releases": ["2.0.0"],
+          "items": [
+            {
+              "releases": ["2.0.0"],
+              "item": "spl_associated_token_account_client::address::get_associated_token_address_with_program_id",
+              "implementation": "spl_associated_token_account_client::address::get_associated_token_address_with_program_id",
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+          "argument": "@review:source-notes/value-request-ata.md#review-f568791c6e6e856d",
+          "evidence": ["@text:7a7ee571de2c5ae8"],
+          "target": "@shared:target-86e77ec323a176ad",
+          "dependencies": [
+            {
+              "package": "solana-pubkey",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.2.1", "2.4.0"],
+              "reason": "@text:71947ec3c43fe6bc"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

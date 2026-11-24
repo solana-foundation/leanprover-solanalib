@@ -1,0 +1,30 @@
+{
+  "packages": {
+    "solana-serialize-utils-3.1.1": {
+      "order": 141,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "1903e8e43b7278b1ab4d96cccdaeefe6049c2688",
+      "path_prefix": "serialize-utils/"
+    },
+    "solana-serialize-utils-3.1.2": {
+      "order": 142,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "262f1f5f08beec7707f69db3e579ff526d6e1cdc",
+      "path_prefix": "serialize-utils/"
+    }
+  },
+  "interfaces": {
+    "sdk-utilities::solana-serialize-utils-3.1.1::src/lib.rs": {
+      "order": 589,
+      "crate": "solana-serialize-utils-3.1.1",
+      "path": "src/lib.rs",
+      "sha256": "09402488d2b289686b840f46eee84fc3f45f2f99d1871474c13b7073db3cc617"
+    },
+    "sdk-utilities::solana-serialize-utils-3.1.2::src/lib.rs": {
+      "order": 590,
+      "crate": "solana-serialize-utils-3.1.2",
+      "path": "src/lib.rs",
+      "sha256": "bfe5dc99802e43aa35c626a949db79e12944202c26b736434fb1c5e28115171d"
+    }
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "abstractions": {
+    "library::spl_token_interface": {
+      "order": 153,
+      "modules": {
+        "Solanalib.Specs.SplTokenInterface": "4f488a64f1eb297bc2e8f4ef015d5b78199884b08de9feb1b620703b7c784e81",
+        "Solanalib.Specs.SplTokenInterface.Capabilities": "ee13c6bf998362c1c40c84856c8b2a1fc8096dd5cdfeb89d28fa775d4e6fb6f2",
+        "Solanalib.Specs.SplTokenInterface.Instructions": "50b4b127d0457d48eeea51e243db70b6ee255914cbdbea244150ead137ee4e75"
+      },
+      "source_ids": ["spl-token-interface-2.0.0-lib", "spl-token-interface-2.0.0-instruction"],
+      "argument": "@review:source-notes/token-state.md#review-0a10af57146136f1",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:73cfb3cbae7ec412",
+        "@binding:157f977863257615",
+        "@text:0810dde14cb63cff",
+        "@text:a1e5249cc90dc726",
+        "@text:62fea2a4f9859692"
+      ]
+    }
+  },
+  "packages": {
+    "spl-token-interface-2.0.0": {
+      "order": 37,
+      "repository": "https://github.com/solana-program/token",
+      "revision": "beeb441b449555311a6a88fffe7aa6499a2f6266",
+      "path_prefix": "interface/"
+    }
+  },
+  "interfaces": {
+    "spl-token-interface-2.0.0-instruction": {
+      "order": 113,
+      "crate": "spl-token-interface-2.0.0",
+      "path": "src/instruction.rs",
+      "sha256": "7f6f247b549e11d07c83059bad918bb2d0a78824867f961a10b239a9880a1a15"
+    },
+    "spl-token-interface-2.0.0-lib": {
+      "order": 141,
+      "crate": "spl-token-interface-2.0.0",
+      "path": "src/lib.rs",
+      "sha256": "897b5652c8261da299a7b512fd39744916da84a9fc937650ac6c1853aa482ee4"
+    }
+  },
+  "models": {
+    "spl-token-interface::id": {
+      "order": 224,
+      "contract": "Solanalib.Specs.SplTokenInterface.id_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SplTokenInterface.id_reference",
+      "witness": "Solanalib.Specs.SplTokenInterface.id_reference_realizes",
+      "assumptions": ["@text:7103319198c0875f"]
+    },
+    "spl-token-interface::instruction::initialize_account3": {
+      "order": 225,
+      "contract": "Solanalib.Specs.SplTokenInterface.instruction.initialize_account3_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SplTokenInterface.instruction.initialize_account3_reference",
+      "witness": "Solanalib.Specs.SplTokenInterface.instruction.initialize_account3_reference_holds",
+      "assumptions": "@shared:assumptions-f9e999c8503605f2"
+    },
+    "spl-token-interface::instruction::initialize_account3_value": {
+      "order": 226,
+      "contract": "Solanalib.Specs.SplTokenInterface.instruction.initialize_account3_value_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": "Solanalib.Specs.SplTokenInterface.instruction.initialize_account3_value_reference",
+      "witness": "Solanalib.Specs.SplTokenInterface.instruction.initialize_account3_value_reference_realizes",
+      "assumptions": ["@text:48f74ce41a5c5f80"],
+      "model_gaps": ["@text:d8935bd03431a060"],
+      "remaining_requirements": ["@text:58546ff81e156a00"]
+    },
+    "spl-token-interface::instruction::transfer": {
+      "order": 227,
+      "contract": "Solanalib.Specs.SplTokenInterface.instruction.transfer_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SplTokenInterface.instruction.transfer_reference",
+      "witness": "Solanalib.Specs.SplTokenInterface.instruction.transfer_reference_holds",
+      "assumptions": "@shared:assumptions-f9e999c8503605f2"
+    },
+    "spl-token-interface::instruction::transfer_value": {
+      "order": 228,
+      "contract": "Solanalib.Specs.SplTokenInterface.instruction.transfer_value_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": "Solanalib.Specs.SplTokenInterface.instruction.transfer_value_reference",
+      "witness": "Solanalib.Specs.SplTokenInterface.instruction.transfer_value_reference_realizes",
+      "assumptions": ["@text:48f74ce41a5c5f80"],
+      "model_gaps": ["@text:d8935bd03431a060"],
+      "remaining_requirements": ["@text:58546ff81e156a00"]
+    }
+  },
+  "api": {
+    "spl-token-interface@2.0.0::id": {
+      "order": 190,
+      "anchor_text": "solana_pubkey::declare_id!(\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\");",
+      "binding_obligations": ["@binding:73cfb3cbae7ec412"],
+      "line": 17,
+      "scope": "@text:6f51a9a5df4ec4d6",
+      "source_id": "spl-token-interface-2.0.0-lib",
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.Instruction.valueContract",
+        "Solanalib.Specs.Core.Token.Instruction.checkProgram"
+      ],
+      "rust_names": ["spl_token_interface::id"],
+      "models": ["spl-token-interface::id"]
+    },
+    "spl-token-interface@2.0.0::instruction.initialize_account3": {
+      "order": 191,
+      "anchor_text": "pub fn initialize_account3(",
+      "binding_obligations": "@shared:binding-obligations-4172992c4529805d",
+      "line": 880,
+      "scope": "@text:432ad9dc443db10d",
+      "source_id": "spl-token-interface-2.0.0-instruction",
+      "clients": [
+        "SolanalibTest.Specs.SplTokenInterface.Instructions.initialize_owner_and_order",
+        "SolanalibTest.Specs.SplTokenInterface.Instructions.legacy_rejects_token2022"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.InstructionAllocated.family",
+        "Solanalib.Specs.Core.Token.InstructionAllocated.run",
+        "Solanalib.Specs.SplTokenInterface.instruction.initialize_account3_value_contract"
+      ],
+      "rust_names": ["spl_token_interface::instruction::initialize_account3"],
+      "models": ["spl-token-interface::instruction::initialize_account3"]
+    },
+    "spl-token-interface@2.0.0::instruction.transfer": {
+      "order": 192,
+      "anchor_text": "pub fn transfer(",
+      "binding_obligations": "@shared:binding-obligations-4172992c4529805d",
+      "line": 964,
+      "scope": "@text:432ad9dc443db10d",
+      "source_id": "spl-token-interface-2.0.0-instruction",
+      "clients": [
+        "SolanalibTest.Specs.SplTokenInterface.Instructions.transfer_duplicates_and_flags",
+        "SolanalibTest.Specs.SplTokenInterface.Instructions.transfer_little_endian",
+        "SolanalibTest.Specs.SplTokenInterface.Instructions.transfer_has_no_constructor_multisig_limit",
+        "SolanalibTest.Specs.SplTokenInterface.Instructions.Allocation.successful_ownership_and_value",
+        "SolanalibTest.Specs.SplTokenInterface.Instructions.Allocation.rejected_program_precedes_allocator",
+        "SolanalibTest.Specs.SplTokenInterface.Instructions.Allocation.first_allocation_failure",
+        "SolanalibTest.Specs.SplTokenInterface.Instructions.Allocation.metadata_failure_drops_constructed_data"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.InstructionAllocated.family",
+        "Solanalib.Specs.Core.Token.InstructionAllocated.run",
+        "Solanalib.Specs.SplTokenInterface.instruction.transfer_value_contract"
+      ],
+      "rust_names": ["spl_token_interface::instruction::transfer"],
+      "models": ["spl-token-interface::instruction::transfer"]
+    }
+  },
+  "applicability_sources": {
+    "spl-token-interface": {
+      "order": 33,
+      "package": "spl-token-interface",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-interface/spl-token-interface-0.0.0.crate",
+          "sha256": "43cd6d48606a0d7cbd6207a3c123ae32297001633d26277516014ba2ca82da49",
+          "revision": "345f62fde1b7e7584afa3ad6425c61cf070a40a2",
+          "path_prefix": "interface/"
+        },
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-interface/spl-token-interface-1.0.0.crate",
+          "sha256": "06e0c2d4e38ef5834cf7fb1b592b8a8c6eab8485f5ac7a04a151b502c63a0aaa",
+          "revision": "e1400276bbc590df1aaff6470c43e37a1e40c5cd",
+          "path_prefix": "interface/"
+        },
+        "2.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-interface/spl-token-interface-2.0.0.crate",
+          "sha256": "8c564ac05a7c8d8b12e988a37d82695b5ba4db376d07ea98bc4882c81f96c7f3",
+          "revision": "beeb441b449555311a6a88fffe7aa6499a2f6266",
+          "path_prefix": "interface/"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-interface/spl-token-interface-3.0.0.crate",
+          "sha256": "7143c4e676984047a400e2fbd7ac29a1659f2b1b52b897cfde19316b562e4589",
+          "revision": "46eaacd2c13629eb3436354ed650a8df8b202bc4",
+          "path_prefix": "interface/"
+        }
+      },
+      "evidence": ["@text:53d3b5db9d82a0c7"]
+    }
+  },
+  "applicability": {
+    "spl-token-interface::id": {
+      "order": 224,
+      "profiles": [
+        {
+          "id": "spl-token-interface-reviewed",
+          "source": "spl-token-interface",
+          "conditions": ["@text:7103319198c0875f", "@text:0e29a81fef4f76df"],
+          "argument": "@review:source-notes/token-extensions.md#review-7e2afbfd5094ed77",
+          "evidence": ["@text:d08f2a08fab2e62f", "@text:beb4b05b968e9d83"],
+          "items": [
+            {
+              "item": "spl_token_interface::id",
+              "implementation": "spl_token_interface::id",
+              "releases": ["1.0.0", "2.0.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "3.0.0"]
+        }
+      ]
+    },
+    "spl-token-interface::instruction::initialize_account3": {
+      "order": 225,
+      "profiles": [
+        {
+          "id": "spl-token-interface-reviewed",
+          "source": "spl-token-interface",
+          "conditions": "@shared:conditions-84fa63463dfc16a0",
+          "argument": "@review:source-notes/token-extensions.md#review-12548e5b65371c7e",
+          "evidence": ["@text:d08f2a08fab2e62f", "@text:beb4b05b968e9d83"],
+          "items": [
+            {
+              "item": "spl_token_interface::instruction::initialize_account3",
+              "implementation": "spl_token_interface::instruction::initialize_account3",
+              "releases": ["1.0.0", "2.0.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "3.0.0"]
+        }
+      ]
+    },
+    "spl-token-interface::instruction::initialize_account3_value": {
+      "order": 226,
+      "profiles": [
+        {
+          "id": "spl-token-interface-reviewed",
+          "source": "spl-token-interface",
+          "conditions": "@shared:conditions-1eafd55e98585bda",
+          "argument": "@review:source-notes/token-extensions.md#review-356fa700da31921e",
+          "evidence": ["@text:d08f2a08fab2e62f", "@text:beb4b05b968e9d83"],
+          "items": [
+            {
+              "item": "spl_token_interface::instruction::initialize_account3",
+              "implementation": "spl_token_interface::instruction::initialize_account3",
+              "releases": ["1.0.0", "2.0.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "3.0.0"]
+        }
+      ]
+    },
+    "spl-token-interface::instruction::transfer": {
+      "order": 227,
+      "profiles": [
+        {
+          "id": "spl-token-interface-reviewed",
+          "source": "spl-token-interface",
+          "conditions": "@shared:conditions-84fa63463dfc16a0",
+          "argument": "@review:source-notes/token-state.md#review-81c8fb73aa93f345",
+          "evidence": ["@text:d08f2a08fab2e62f", "@text:beb4b05b968e9d83"],
+          "items": [
+            {
+              "item": "spl_token_interface::instruction::transfer",
+              "implementation": "spl_token_interface::instruction::transfer",
+              "releases": ["1.0.0", "2.0.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "3.0.0"]
+        }
+      ]
+    },
+    "spl-token-interface::instruction::transfer_value": {
+      "order": 228,
+      "profiles": [
+        {
+          "id": "spl-token-interface-reviewed",
+          "source": "spl-token-interface",
+          "conditions": "@shared:conditions-1eafd55e98585bda",
+          "argument": "@review:source-notes/token-state.md#review-91f5b81744dcf3e0",
+          "evidence": ["@text:d08f2a08fab2e62f", "@text:beb4b05b968e9d83"],
+          "items": [
+            {
+              "item": "spl_token_interface::instruction::transfer",
+              "implementation": "spl_token_interface::instruction::transfer",
+              "releases": ["1.0.0", "2.0.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "3.0.0"]
+        }
+      ]
+    }
+  }
+}

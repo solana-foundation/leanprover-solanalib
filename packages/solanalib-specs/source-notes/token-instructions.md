@@ -386,3 +386,115 @@ cleanup under the admitted source-provider and input premises. They do not
 establish arbitrary initial representation, allocation success or opaque
 callback termination. Those facts do not follow from the relational reference
 theorem or its one closed sample.
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:6e7fd6d28e34a9e1 -->
+<a id="review-6e7fd6d28e34a9e1"></a>
+
+Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact test lockfile into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
+
+The models retain both AsRef passes, source error order, partial buffer writes and final-only counters. InvocationReady requires exactly three bounded, fully initialized committed prefixes. request_domain proves this is precisely request the domain of the construction; initializedPrefix_exact and request_exact preserve the order of every slot and committed length. Admitted requests retain every actual finite provider exit, without a termination assumption. Rust private-state invariants, source widths, retained-reference validity and buffer separation remain separate bindings, as described in source-notes/token-batch.md.
+
+Thin exact-version instantiations of the common owner/length/borrow/layout policies and live reference getter contracts, with separately named closed reference/nonvacuity witnesses.
+
+Import-only versioned roots collect the separately reviewed leaf modules. The listed module hashes seal their exact imports; each leaf retains its own source-facing contract and interpretation obligations.
+<!-- /registry -->
+
+<!-- registry:review:3b70a7c946979705 -->
+<a id="review-3b70a7c946979705"></a>
+
+Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact test lockfile into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
+
+The allocation-free CloseAccount and TransferChecked wrappers construct exact fixed arrays and data from current pool keys, retaining the supplied program, repeated handles, flags and nested signer order. Unsigned transfer supplies empty signers. Their cardinality proofs discharge the checked v2 array bound; source-local writable borrow checks run before the unit-returning unchecked invocation. Only normal unit completion becomes Ok(()), while actual unwind and terminal effects survive. HeaderTypes carries mandatory exact raw header bytes, not a canonical-byte restriction.
+
+Thin exact-version instantiations of the common owner/length/borrow/layout policies and live reference getter contracts, with separately named closed reference/nonvacuity witnesses.
+
+Import-only versioned roots collect the separately reviewed leaf modules. The listed module hashes seal their exact imports; each leaf retains its own source-facing contract and interpretation obligations.
+<!-- /registry -->
+
+<!-- registry:review:15248e4612e34a8a -->
+<a id="review-15248e4612e34a8a"></a>
+
+0.3.0 and 0.3.1 have byte-identical local wrapper files and the same InstructionView ^2.1 dependency. Close constructs three ordered metas with byte 9; transfer constructs four ordered metas with byte 12, little-endian u64 amount and u8 decimals. Unsigned transfer delegates with an empty signer list. All retain the caller-selected token_program address. DirectV2 checks writable borrow flags, retains readonly exclusive borrows, initializes exact raw four-byte headers, preserves account multiplicity and forwards the complete request to the opaque unit boundary. 0.1.0 reaches Pinocchio ^0.9 AccountInfo preparation with separate seven-reference borrow categories and normalized CPI fields; 0.2.0 reaches InstructionView 1.0, whose readonly borrow checks and normalized three flag bytes differ, while fourth-byte padding is uninitialized. 0.4.0/0.5.0 replace local structs by TokenProgram-generic implementations reexported from pinocchio-token 0.7.0/0.8.0 as Token2022Program aliases, with multisig fields and no runtime token_program field. Their default-ID empty-multisig paths pass 22 native cases each, but the full former arbitrary-program API contract cannot be assigned to those methods. The 0.0.0 placeholder has no API.
+<!-- /registry -->
+
+<!-- registry:review:e41e1332385fe3b7 -->
+<a id="review-e41e1332385fe3b7"></a>
+
+The payload bytes 64..72 are read without changing storage, borrow state, or guard identity. Token 0.1.0 uses an owned pointer wrapper; 0.2.0–0.3.0 use repr(C) raw views but still read a native-endian unaligned u64. On the intended little-endian Solana target these match the existing little-endian amount projection; big-endian behavior is not admitted for those releases. Token 0.4.0 onward uses u64::from_le_bytes. Token-2022 uses u64::from_le_bytes in every non-placeholder release. A valid pointer/guard-to-payload interpretation remains separate from the mathematical value result; the broken direct checked cast in Token 0.1.0 is not evidence for such a binding.
+<!-- /registry -->
+
+<!-- registry:review:7d16f4f0c9434b3f -->
+<a id="review-7d16f4f0c9434b3f"></a>
+
+The complete extensible parser checks fixed Token-2022 ownership, acquires a shared guard, then validates layout: exact 165-byte base, or length > 165 excluding 355 with type byte 2 at offset 165. Layout failure releases the temporary guard; success maps it. Existing unrelated guards and all bytes are preserved. No initialization, option-tag, padding or TLV validation is added. 0.2.0 TokenAccount instead checks minimum length before owner/borrow and accepts arbitrary tails without type or multisig validation. 0.3.0 introduces the modeled layout/order; 0.4.0 leaves this closure unchanged. 0.5.0 changes wrong-owner error to IncorrectProgramId. 0.1.0 only has the AccountInfo receiver predecessor; 0.0.0 is empty.
+<!-- /registry -->
+
+<!-- registry:review:b6b7a827293762e1 -->
+<a id="review-b6b7a827293762e1"></a>
+
+The complete contract returns a borrowed field descriptor at offset 0, retaining the parent guard and all state. Token 0.1.0 returns an owned Pubkey copy and is incompatible. Token 0.2.0 onward and every non-placeholder Token-2022 release return &Pubkey / &Address into the original payload; changing the name TokenAccount to Account and changing [u8; 32] to transparent Address do not change the borrowed range, lifetime dependency or allocation behavior.
+<!-- /registry -->
+
+<!-- registry:review:1a9fd693392646d6 -->
+<a id="review-1a9fd693392646d6"></a>
+
+The complete contract returns a borrowed field descriptor at offset 32, retaining the parent guard and all state. The predecessor Token 0.1.0 method is named authority and returns an owned Pubkey; it is incompatible with this descriptor contract. Token 0.2.0 onward and every non-placeholder Token-2022 release return &Pubkey / &Address into the current original payload. The explicit predecessor names are recorded separately from exact callable bindings.
+<!-- /registry -->
+
+<!-- registry:review:2f9a6710ed3062dd -->
+<a id="review-2f9a6710ed3062dd"></a>
+
+Token 0.2.0–0.7.0 and Token-2022 0.1.0–0.3.1 use the same From<u8> match: 0/1/2 return enum values; every other byte panics with the byte in its diagnostic. The existing arbitrary target panic provider retains every finite unwind/terminal effect and has no normal result. Token 0.1.0 instead loads AccountState directly through a pointer, with no repr(u8) declaration and undefined behavior for invalid enum bytes; the model admits those raw bytes and demands a panic, so it does not apply. Token 0.8.0 and Token-2022 0.4.0/0.5.0 change the return type to Result and return InvalidAccountData on invalid bytes. Restricting to valid enum bytes would not preserve the complete existing contract.
+<!-- /registry -->
+
+<!-- registry:review:399a45958c2ff606 -->
+<a id="review-399a45958c2ff606"></a>
+
+The current payload byte at offset 44 is returned without validation, allocation or mutation. Every non-placeholder release has this projection. Token 0.1.0 stores a pointer rather than a direct 82-byte repr(C) view; correspondence requires that its pointer denote the same live guarded payload under the existing source representation obligation. It does not justify the 0.1.0 checked parser, which casts the data bytes to the pointer wrapper. Token 0.2.0 onward and all Token-2022 releases use direct alignment-1 82-byte raw mint fields.
+<!-- /registry -->
+
+<!-- registry:review:09d8ea98bb4f48e4 -->
+<a id="review-09d8ea98bb4f48e4"></a>
+
+The full mint parser checks fixed Token-2022 owner (InvalidAccountOwner), acquires a shared guard, then accepts exact 82 bytes or the extensible account layout (length > 165, not 355, type byte 1 at offset 165). Invalid layout drops only the temporary guard. Nonzero mint padding and arbitrary tails remain admitted. 0.2.0 uses minimum-length/owner/borrow checks and no extension-type validation. 0.3.0 adds layout validation but omits the owner check entirely and rejects short data before borrowing. 0.3.1 replaces that early length check with the modeled owner check; 0.4.0 preserves it. 0.5.0 changes wrong-owner error to IncorrectProgramId. Earlier AccountInfo APIs and the empty 0.0.0 placeholder are distinct.
+<!-- /registry -->
+
+<!-- registry:review:0b08ae694a6d99d1 -->
+<a id="review-0b08ae694a6d99d1"></a>
+
+0.6.0 forwards the fixed legacy Token ID, exactly the three committed prefixes in order/multiplicity and the complete nested signer tree to the opaque unit-returning invoke_signed_unchecked. Ordinary completion becomes Ok(()); provider unwind/terminal effects are preserved and no ProgramError can be injected by normal unit completion. 0.7.0 forwards through invoke_signed_with_unverified_program with Program::ID; its public alias fixes that ID to legacy Token, preserving the complete existing contract at that instance. Its newly public push does not discharge InvocationReady. 0.8.0 removes invoke_signed and exposes unsafe invoke_signed_unchecked with an explicit no-outstanding-borrows safety obligation; that distinct successor is documented, not registered or silently admitted.
+<!-- /registry -->
+
+<!-- registry:review:a5e134a2cf66a49a -->
+<a id="review-a5e134a2cf66a49a"></a>
+
+All three releases reject an empty data buffer with InvalidArgument before mutation. Otherwise only data[0] becomes 255 and returned committed lengths are (1,0,0), retaining all three buffers and suffixes. 0.7.0 introduces a zero-sized Program phantom and moves constants; neither affects the full constructor observation. The public Batch alias selects TokenProgram. Allocation-enabled BatchState constructors are not this method.
+<!-- /registry -->
+
+<!-- registry:review:2f940ec0181d7f35 -->
+<a id="review-2f940ec0181d7f35"></a>
+
+0.6.0/0.7.0 have the same full write closure: check two-byte header room, write the ten-byte payload, check CPI capacity then source/destination borrow flags, initialize fixed and signer descriptors in one callback pass, then check metadata capacity and initialize metadata in a separate callback pass. Every earlier write and actual callback effect survives later failure/unwind. Lengths and the two u8 header casts commit only after full success; aliases and duplicate signers are retained. The mint, authority and signer borrows are not checked. 0.7.0 only introduces Program phantom/contextual aliases here. 0.8.0 adds an early multisig length > 11 rejection, before all writes/callbacks. The existing model intentionally admits 12/255/256 signers and wraps only the header byte; the four new failing limit controls demonstrate the incompatible outcomes. The trait becomes unsafe in 0.8.0 as an additional source-interface change.
+<!-- /registry -->
+
+<!-- registry:review:ab8e2b1dcd43e32a -->
+<a id="review-ab8e2b1dcd43e32a"></a>
+
+The specialized constructor delegates to with_multisig_signers with an empty slice and retains the four account references, u64 amount and u8 decimals without reading account state or allocating. 0.7.0/0.8.0 add a Program phantom; the public alias selects TokenProgram, and no verifier/callback is invoked by this constructor. The earlier releases expose struct fields and invoke methods but no new constructor.
+<!-- /registry -->
+
+<!-- registry:review:9ac46a1fb1763b5d -->
+<a id="review-9ac46a1fb1763b5d"></a>
+
+The complete legacy parser checks exact base length first, then the fixed legacy token owner, then shared borrow; success maps the same lease to the base range. Wrong length is InvalidAccountData; wrong owner is InvalidAccountData. TokenAccount was renamed Account in 0.6.0. AccountView dependencies 1.0 and 2.x preserve the reached owner/length/borrow/map behavior; offset-4 resize-delta versus padding is untouched. In 0.8.0 the owner failure becomes IncorrectProgramId. Before 0.5.0 the from_account_view API is absent: the different from_account_info predecessor uses Pinocchio AccountInfo and separate seven-reference data/lamports borrow accounting; this report does not silently substitute that receiver protocol.
+<!-- /registry -->
+
+<!-- registry:review:479fe83689102fcf -->
+<a id="review-479fe83689102fcf"></a>
+
+The complete legacy parser checks exact base length first, then the fixed legacy token owner, then shared borrow; success maps the same lease to the base range. Wrong length is InvalidAccountData; wrong owner is InvalidAccountOwner. TokenAccount was renamed Account in 0.6.0. AccountView dependencies 1.0 and 2.x preserve the reached owner/length/borrow/map behavior; offset-4 resize-delta versus padding is untouched. In 0.8.0 the owner failure becomes IncorrectProgramId. Before 0.5.0 the from_account_view API is absent: the different from_account_info predecessor uses Pinocchio AccountInfo and separate seven-reference data/lamports borrow accounting; this report does not silently substitute that receiver protocol.
+<!-- /registry -->

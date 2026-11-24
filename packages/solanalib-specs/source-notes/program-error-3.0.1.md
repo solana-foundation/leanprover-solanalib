@@ -17,3 +17,19 @@ versions require explicit source comparison before reuse. The module asserts
 no enum layout, status-policy equivalence or Rust body correctness. Selected
 contracts and their closed witnesses live in versioned SDK roots; this module
 supplies value vocabulary and two concrete encoding facts.
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:908fb58c44828f09 -->
+<a id="review-908fb58c44828f09"></a>
+
+Reference 3.0.1 encodes builtin tags 2 through 26 in the upper word and uses 2^32 for Custom(0); other custom u32 values are unchanged. BorshIoError is payloadless. The declared compatible range assumes preservation of the complete 26-variant domain, this exact conversion table, and the allocation-free, state-preserving operation. Runtime success policy is separate.
+<!-- /registry -->
+
+<!-- registry:review:d3a5b1bca026581a -->
+<a id="review-d3a5b1bca026581a"></a>
+
+Reference 3.0.1 recognizes complete builtin status words with tags 2 through 26 and the custom-zero sentinel 2^32. Other u64 values are truncated to Custom(error as u32), including raw zero; a nonzero low word prevents a builtin match. The declared compatible range assumes preservation of the complete payloadless-Borsh error domain, this conversion table and the allocation-free, state-preserving operation. Runtime success policy is separate.
+<!-- /registry -->

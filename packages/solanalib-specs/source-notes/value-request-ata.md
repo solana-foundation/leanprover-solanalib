@@ -52,3 +52,41 @@ mathematical executions; legal source handles, `AsRef`, Rust implementation,
 byte storage and representation correspondence remain open bindings. The raw
 header observation must agree with the actual source bytes and their Boolean
 getters at each legal current handle.
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:4626f6ec58659e66 -->
+<a id="review-4626f6ec58659e66"></a>
+
+Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact test lockfile into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
+
+CreateIdempotent constructs the exact six-account request from current pool keys, retaining flags, aliases and supplied program identities. Its proved fixed cardinality fits InstructionView 2.1.0; checked directV2 preparation runs before the actual opaque unit-returning invocation.
+<!-- /registry -->
+
+<!-- registry:review:87cfbc9f0a7c2c53 -->
+<a id="review-87cfbc9f0a7c2c53"></a>
+
+The shared families preserve exact value bytes, source guard and seed order, destination initialization, profile-specific error conversion, and actual callback state and exits. Version wrappers retain their complete family and source-dependent reader error kind. The source review is detailed in source-notes/address-profiles.md.
+
+Import-only roots expose the selected versioned modules. Generated typed catalogs collect their exact registered contracts, source identities, profiles and closed reference witnesses. The generator check derives every catalog from the source registry without changing any model body.
+<!-- /registry -->
+
+<!-- registry:review:3f1548ef8a8836c7 -->
+<a id="review-3f1548ef8a8836c7"></a>
+
+CreateIdempotent::invoke delegates with an empty signer tree; preserves the six ordered funding/account/wallet/mint/System/Token identities including aliases; uses writable signer/writable/readonly/readonly/readonly/readonly metadata, the associated-token program ID and data [1]. Supplied System/Token account keys are used directly, without replacement or validation. Only the first two positions are borrow checked. The wrapper file is byte-identical in 0.4.0 and 0.5.0. The latter changes AccountView ^2.0 / InstructionView ^2.1 to AccountView ^3.0 / InstructionView ^3.0. InstructionView 2.1.0 and 3.0.0 cpi.rs and lib.rs are byte-identical; the AccountView 3 owner() return-by-value change is bypassed by direct raw-header/owner-field-pointer initialization. The named wrapper exists in every release. Releases 0.1.0/0.1.1/0.2.0 reach old Pinocchio AccountInfo helpers, and 0.3.0 reaches InstructionView 1.0.0. They normalize descriptor flags and reject readonly exclusive borrows. Both differences violate the existing full v2 relation; no extra canonical-header or no-borrow premise is added.
+<!-- /registry -->
+
+<!-- registry:review:f568791c6e6e856d -->
+<a id="review-f568791c6e6e856d"></a>
+
+The 2.0.0 reference searches the fixed ATA program with wallet, token-program and mint byte seeds in that order, then discards only the bump. Compatibility within 2.x assumes this seed order, zero-initialized Pubkey search output and all reached failure effects remain unchanged under the selected dependency profile.
+<!-- /registry -->
+
+<!-- registry:review:e4575ab7dc5f1d40 -->
+<a id="review-e4575ab7dc5f1d40"></a>
+
+The declared compatible range assumes ordered wallet/token-program/mint seeds, the fixed ATA ID, the actual dependency PDA search and discarding only its returned bump. The selected facade reaches MaybeUninit Address search; a zero-initialized output profile is not interchangeable.
+<!-- /registry -->

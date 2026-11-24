@@ -153,3 +153,21 @@ and check its forced request without a synthetic post-state. Shared seed-view
 controls retain current referenced data across callbacks. Successful nonempty
 seed vectors and arbitrary allocator/destructor schedules remain generic model
 cases, rather than native coverage of this fixture.
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:1f14e27e10408d0d -->
+<a id="review-1f14e27e10408d0d"></a>
+
+Model the whole local helper: validation PDA before first program lookup; optional first validation lookup; ordered Execute instruction and five owned infos; actual shared validation Ref and per-record collect of every current info Ref; whole-region TLV validation, first Execute range, PodSlice layout errors then count-capacity panic; fixed/key-data/ordered-seed resolution; 0.9 privilege union and first-match account lookup; clone-before-push; temporary cleanup; extras/validation/program copyback in source order. The source frame is not transactional: metadata extension precedes info extension, so later unwind retains actual partial mutation. Pubkey 2.2.1 supplies a zeroed destination and bump 255. No CPI body or result oracle is part of the family. See source-notes/transfer-hook-resolution-0.9.0.md for reached dependency comparisons and source admission.
+
+Import-only roots expose the selected versioned modules. Generated typed catalogs collect their exact registered contracts, source identities, profiles and closed reference witnesses. The generator check derives every catalog from the source registry without changing any model body.
+<!-- /registry -->
+
+<!-- registry:review:ac3d6123b8712718 -->
+<a id="review-ac3d6123b8712718"></a>
+
+The 0.9.0 helper and locked dependency chain are the inspected reference. The declared 0.9 range assumes validation PDA before program lookup, whole-region TLV/POD validation, every-current-info borrowing, fresh signer preservation and alias privilege union, ordered first-match resolution/clone-before-push and cleanup. Copyback remains metadata before infos, retaining partial mutation on unwind; the zeroed PDA provider and resource frames remain explicit. This helper performs no CPI.
+<!-- /registry -->

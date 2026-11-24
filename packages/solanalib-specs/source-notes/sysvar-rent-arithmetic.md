@@ -81,3 +81,31 @@ These models have closed reference and satisfiability witnesses. Outcome
 references additionally have closed executions. None of those witnesses asserts
 that a Rust body, account representation or target arithmetic implementation
 has been verified.
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:6d91c0da724dafba -->
+<a id="review-6d91c0da724dafba"></a>
+
+Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact test lockfile into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
+
+Versioned public aggregate of the reviewed mathematical models.
+
+Instantiate the shared mathematical operations for this exact SDK version; keep closed reference, precondition and execution witnesses in the public version namespace.
+
+The reviewed sources retain overhead 128, u64 rate, f64 threshold and ignored burn_percent. minimum_balance adds the u64 length to overhead, multiplies the integer rate, rounds that integer to binary64, multiplies the arbitrary threshold and saturating-casts to u64. is_exempt calls that computation first and compares balance >= the returned minimum; integer failures occur before comparison. Arbitrary public fields, nonfinite values and both overflow profiles remain admitted.
+<!-- /registry -->
+
+<!-- registry:review:35e58ab2dc0ec082 -->
+<a id="review-35e58ab2dc0ec082"></a>
+
+All 25 real releases through 3.1.0 have the same expression, u64 rate, f64 threshold and overhead 128. The source first casts data_len to u64, adds overhead, multiplies the integer rate, casts that result to f64, multiplies the arbitrary f64 threshold, and casts to u64. Checked overflow and wrapping overflow remain different profiles; arbitrary thresholds, NaN, infinities, signed zero, rounding and saturating casts remain in scope. burn_percent is ignored. All seven 4.x releases rename the rate field, replace the f64 field by little-endian bytes, change Default to rate 6960 and threshold 1.0, route through try_minimum_balance().expect(), reject lengths above 10 MiB and excessive rates, and use integer shortcuts for thresholds 1.0 and 2.0. Other thresholds retain a host floating calculation and panic on the BPF branch. 4.0.0 makes the byte threshold and burn fields private; 4.1.0 and later make them public and deprecated. The new guards already refute complete-contract correspondence, even under a numerical embedding of the new fields. Native 4.0.0 and 4.5.0 counterexamples distinguish those guards from mere representation changes.
+<!-- /registry -->
+
+<!-- registry:review:cbe188c592f94753 -->
+<a id="review-cbe188c592f94753"></a>
+
+The reviewed sources retain overhead 128, u64 rate, f64 threshold and ignored burn_percent. minimum_balance adds the u64 length to overhead, multiplies the integer rate, rounds that integer to binary64, multiplies the arbitrary threshold and saturating-casts to u64. is_exempt calls that computation first and compares balance >= the returned minimum; integer failures occur before comparison. Arbitrary public fields, nonfinite values and both overflow profiles remain admitted. The declared compatible range assumes preservation of this complete calculation, integer overflow behavior, binary64 rounding and casts, and failure-before-comparison order for all public field values. The 3.0.0 and 3.1.0 references preserve the threshold arithmetic and overflow behavior. Compatibility in 3.x assumes that protocol is unchanged. Version 4.0.0 replaces the public f64 threshold with private bytes and adds size/rate validation plus specialized arithmetic; it is excluded.
+<!-- /registry -->

@@ -1,0 +1,3428 @@
+{
+  "abstractions": {
+    "library::anchor_spl": {
+      "order": 122,
+      "modules": {
+        "Solanalib.Specs.AnchorSpl": "a9d0b286bb725995d645b16b1865ed95ee64f1a90a45ab1ba0acef42e5628c02",
+        "Solanalib.Specs.AnchorSpl.Capabilities": "00ac3aa4e3a0100234f3d9b5d4093a7fe4515dac11dab9c36b05fffb9dc56363",
+        "Solanalib.Specs.AnchorSpl.Token": "fa758e5fed9609c1c0bd4b9e499680db84437f9f16e03ea38bd206a1da6262e7",
+        "Solanalib.Specs.AnchorSpl.Support": "c412db67b78ece25ad9c3b11e723c851908441a11de49cec26ec90aa3b95b6b1",
+        "Solanalib.Specs.AnchorSpl.token_2022": "bc016ed5adb9b422c6d13de97ac8d93e21442711929ee9db40254ee9a0507dd3"
+      },
+      "source_ids": [
+        "solana-account-info-3.1.1::src/lib.rs",
+        "anchor-lang-1.0.2::src/accounts/account.rs",
+        "anchor-lang-1.0.2::src/accounts/interface_account.rs",
+        "anchor-lang-1.0.2::src/accounts/interface.rs",
+        "anchor-lang-1.0.2::src/accounts/account_loader.rs",
+        "anchor-lang-1.0.2::src/accounts/signer.rs",
+        "anchor-lang-1.0.2::src/accounts/account_info.rs",
+        "anchor-lang-1.0.2::src/lib.rs",
+        "anchor-spl-1.0.2::src/token.rs",
+        "anchor-spl-1.0.2::src/token_interface.rs",
+        "anchor-error-values-1.0.2",
+        "anchor-context-1.0.2",
+        "solana-program-error-3.0.1::src/lib.rs",
+        "anchor-syn-1.0.2::src/codegen/error.rs",
+        "anchor-spl-1.0.2::Cargo.toml",
+        "anchor-spl-support::anchor-spl-0.27.0::src/stake.rs",
+        "anchor-spl-support::anchor-spl-1.1.2::src/associated_token.rs",
+        "anchor-spl-support::anchor-spl-1.0.2::src/token_interface.rs",
+        "anchor-spl-support::anchor-spl-1.0.2::src/associated_token.rs",
+        "anchor-spl-support::anchor-spl-0.32.1::src/token_interface.rs",
+        "anchor-spl-support::anchor-spl-1.1.2::src/token_interface.rs",
+        "anchor-spl-support::anchor-spl-0.32.1::src/memo.rs",
+        "anchor-spl-support::anchor-spl-0.29.0::src/token_interface.rs",
+        "anchor-spl-support::anchor-spl-1.0.2::src/token.rs",
+        "anchor-spl-support::anchor-spl-0.27.0::src/token.rs",
+        "anchor-spl-support::anchor-spl-0.32.1::src/metadata.rs",
+        "anchor-spl-support::anchor-spl-0.32.1::src/associated_token.rs",
+        "anchor-spl-support::anchor-spl-1.0.2::src/token_2022.rs",
+        "anchor-spl-support::anchor-spl-0.32.1::src/token.rs",
+        "anchor-spl-support::solana-program-1.15.2::src/stake/instruction.rs",
+        "anchor-spl-support::spl-memo-6.0.0::src/lib.rs",
+        "anchor-spl-support::spl-associated-token-account-client-2.0.0::src/instruction.rs",
+        "anchor-spl-support::spl-associated-token-account-client-2.0.0::src/address.rs",
+        "anchor-spl-support::spl-associated-token-account-interface-2.0.0::src/instruction.rs",
+        "anchor-spl-support::spl-associated-token-account-interface-2.0.0::src/address.rs",
+        "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/instructions/create_metadata_account_v3.rs",
+        "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/data_v2.rs",
+        "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/creator.rs",
+        "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/collection_details.rs",
+        "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/collection.rs",
+        "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/uses.rs",
+        "anchor-spl-0.27.0::src/token.rs",
+        "anchor-spl-0.27.0::Cargo.toml.orig",
+        "anchor-spl-0.29.0::src/token_2022.rs",
+        "anchor-spl-0.29.0::Cargo.toml.orig",
+        "anchor-spl-0.32.1::src/token.rs",
+        "anchor-spl-0.32.1::src/token_2022.rs",
+        "anchor-spl-0.32.1::src/token_2022_extensions/group_member_pointer.rs",
+        "anchor-spl-0.32.1::src/token_2022_extensions/group_pointer.rs",
+        "anchor-spl-0.32.1::src/token_2022_extensions/metadata_pointer.rs",
+        "anchor-spl-0.32.1::src/token_2022_extensions/mint_close_authority.rs",
+        "anchor-spl-0.32.1::src/token_2022_extensions/non_transferable.rs",
+        "anchor-spl-0.32.1::src/token_2022_extensions/permanent_delegate.rs",
+        "anchor-spl-0.32.1::src/token_2022_extensions/transfer_hook.rs",
+        "anchor-spl-0.32.1::Cargo.toml.orig",
+        "anchor-spl-1.0.2::src/token_2022.rs",
+        "anchor-spl-1.0.2::Cargo.toml.orig",
+        "anchor-spl-1.1.2::src/token_2022.rs",
+        "anchor-spl-1.1.2::Cargo.toml.orig",
+        "spl-token-3.5.0::src/instruction.rs",
+        "spl-token-2022-0.9.0::src/instruction.rs",
+        "spl-token-8.0.0::src/instruction.rs",
+        "spl-token-2022-8.0.1::src/instruction.rs",
+        "spl-token-2022-interface-2.1.0::src/instruction.rs",
+        "spl-token-2022-8.0.1::src/extension/group_member_pointer/instruction.rs",
+        "spl-token-2022-8.0.1::src/extension/group_pointer/instruction.rs",
+        "spl-token-2022-8.0.1::src/extension/metadata_pointer/instruction.rs",
+        "spl-token-2022-8.0.1::src/extension/transfer_hook/instruction.rs",
+        "anchor-lang-0.27.0::src/context.rs",
+        "anchor-lang-0.27.0::src/error.rs",
+        "anchor-lang-0.29.0::src/context.rs",
+        "anchor-lang-0.29.0::src/error.rs",
+        "anchor-lang-0.32.1::src/context.rs",
+        "anchor-lang-0.32.1::src/error.rs",
+        "anchor-lang-1.1.2::src/context.rs",
+        "anchor-lang-error-1.1.2::src/lib.rs",
+        "solana-program-1.15.2::src/program_error.rs",
+        "solana-program-1.18.26::src/program_error.rs",
+        "solana-program-error-2.2.2::src/lib.rs",
+        "token-instructions::spl-token-2022-8.0.1::src/extension/metadata_pointer/instruction.rs",
+        "token-instructions::spl-token-2022-8.0.1::src/instruction.rs",
+        "token-instructions::spl-token-2022-8.0.1::src/lib.rs",
+        "token-instructions::spl-token-8.0.0::src/instruction.rs"
+      ],
+      "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-4d1479e6a4ae5597",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@text:82acfbaaf707bc65",
+        "@text:cfcf69334da190e5",
+        "@text:4b89796d0fbdad1b",
+        "@text:0729e0191b5277d8",
+        "@text:0b44bf49befc47fc",
+        "@text:c4a375b27071ba18",
+        "@text:3c57c8b72be18600",
+        "@text:3f01dd8837b14bb1",
+        "@text:aec3f92d025a3912",
+        "@text:f621b86787b9e0ac",
+        "@text:a59033a3f7b014d2",
+        "@text:f428bee2a0798d8f"
+      ]
+    }
+  },
+  "packages": {
+    "anchor-spl-1.0.2": {
+      "order": 14,
+      "repository": "https://github.com/solana-foundation/anchor",
+      "revision": "1314a6b83b16e6a31947b372d57988fd0e81559c",
+      "path_prefix": "spl/"
+    },
+    "anchor-spl-0.27.0": {
+      "order": 100,
+      "repository": "https://github.com/coral-xyz/anchor",
+      "revision": "d456168d82e2725eaefd2306b516ee201e990820",
+      "path_prefix": "spl/"
+    },
+    "anchor-spl-0.29.0": {
+      "order": 101,
+      "repository": "https://github.com/coral-xyz/anchor",
+      "revision": "fc9fd6d24b9be84abb2f40e47ed3faf7b11864ae",
+      "path_prefix": "spl/"
+    },
+    "anchor-spl-0.32.1": {
+      "order": 102,
+      "repository": "https://github.com/coral-xyz/anchor",
+      "revision": "1ebbe58158d089a2a40b5e35ebead5a10db9090d",
+      "path_prefix": "spl/"
+    },
+    "anchor-spl-1.1.2": {
+      "order": 103,
+      "repository": "https://github.com/otter-sec/anchor",
+      "revision": "24035e2b0035c87e321acc1c05f97793829a87f1",
+      "path_prefix": "spl/"
+    }
+  },
+  "interfaces": {
+    "anchor-spl-1.0.2::Cargo.toml": {
+      "order": 48,
+      "crate": "anchor-spl-1.0.2",
+      "path": "Cargo.toml",
+      "sha256": "e28a186307aae36ab6aec29d7b1fe0edefa9f6225feb695ff1b441e7783662a3",
+      "review_scope": "Line 7 selects Rust edition 2021 explicitly; this pins the cleanup scope of the transfer tail-expression temporary."
+    },
+    "anchor-spl-1.0.2::src/token.rs": {
+      "order": 49,
+      "crate": "anchor-spl-1.0.2",
+      "path": "src/token.rs",
+      "sha256": "7c709e2368c483768ef9ac9d38b5e25106cb69e28fcba4d4066b5fc013ea913e"
+    },
+    "anchor-spl-1.0.2::src/token_interface.rs": {
+      "order": 50,
+      "crate": "anchor-spl-1.0.2",
+      "path": "src/token_interface.rs",
+      "sha256": "edc5a84f5c48f3bad56c3e288e348711dbb6d3e09497788f9d30dd9c45380419"
+    },
+    "anchor-spl-support::anchor-spl-0.27.0::src/stake.rs": {
+      "order": 343,
+      "crate": "anchor-spl-0.27.0",
+      "path": "src/stake.rs",
+      "sha256": "f08da91c59d61045c43a14286082aaaa678828f2ada942db135263413bd3f54b"
+    },
+    "anchor-spl-support::anchor-spl-0.27.0::src/token.rs": {
+      "order": 344,
+      "crate": "anchor-spl-0.27.0",
+      "path": "src/token.rs",
+      "sha256": "714f4be86d72226740c451cbb05db8833688b357b4532bd305d509c53a1bd2ea"
+    },
+    "anchor-spl-support::anchor-spl-0.29.0::src/token_interface.rs": {
+      "order": 345,
+      "crate": "anchor-spl-0.29.0",
+      "path": "src/token_interface.rs",
+      "sha256": "6b42455db8cf9668c483bdb15083c9a2dd7cdf175fa202bc3bb6f73657517fb8"
+    },
+    "anchor-spl-support::anchor-spl-0.32.1::src/associated_token.rs": {
+      "order": 346,
+      "crate": "anchor-spl-0.32.1",
+      "path": "src/associated_token.rs",
+      "sha256": "d1632f813c253fb223c05cd863d524b9db883b1198f7f9a66f6e2b600324c644"
+    },
+    "anchor-spl-support::anchor-spl-0.32.1::src/memo.rs": {
+      "order": 347,
+      "crate": "anchor-spl-0.32.1",
+      "path": "src/memo.rs",
+      "sha256": "52b271a4651f163a7e9140a1d398fb88d65757129b0c66ed8d44a960696b250c"
+    },
+    "anchor-spl-support::anchor-spl-0.32.1::src/metadata.rs": {
+      "order": 348,
+      "crate": "anchor-spl-0.32.1",
+      "path": "src/metadata.rs",
+      "sha256": "8084f9d006703289b33f65164b2387747e89ae75d985ff007cde5aa693d6c03a"
+    },
+    "anchor-spl-support::anchor-spl-0.32.1::src/token.rs": {
+      "order": 349,
+      "crate": "anchor-spl-0.32.1",
+      "path": "src/token.rs",
+      "sha256": "6ecdab595b6cd77694ebe013ff4b8ff7ac7a7bac72ea96fd52a4f9d139205ff9"
+    },
+    "anchor-spl-support::anchor-spl-0.32.1::src/token_interface.rs": {
+      "order": 350,
+      "crate": "anchor-spl-0.32.1",
+      "path": "src/token_interface.rs",
+      "sha256": "787054c96ef90a1d05ffd8a909bddc3d8a19827222cc8c80f8b202716152cc61"
+    },
+    "anchor-spl-support::anchor-spl-1.0.2::src/associated_token.rs": {
+      "order": 351,
+      "crate": "anchor-spl-1.0.2",
+      "path": "src/associated_token.rs",
+      "sha256": "335f1e68020e8dc36c853d61d7e7ae4726387b26146becc934d36229ff66182e"
+    },
+    "anchor-spl-support::anchor-spl-1.0.2::src/token.rs": {
+      "order": 352,
+      "crate": "anchor-spl-1.0.2",
+      "path": "src/token.rs",
+      "sha256": "7c709e2368c483768ef9ac9d38b5e25106cb69e28fcba4d4066b5fc013ea913e"
+    },
+    "anchor-spl-support::anchor-spl-1.0.2::src/token_2022.rs": {
+      "order": 353,
+      "crate": "anchor-spl-1.0.2",
+      "path": "src/token_2022.rs",
+      "sha256": "6c68539fa552c5c3e2d2eed1da72bf0206e7654529699bc62e23b3a80bf31810"
+    },
+    "anchor-spl-support::anchor-spl-1.0.2::src/token_interface.rs": {
+      "order": 354,
+      "crate": "anchor-spl-1.0.2",
+      "path": "src/token_interface.rs",
+      "sha256": "edc5a84f5c48f3bad56c3e288e348711dbb6d3e09497788f9d30dd9c45380419"
+    },
+    "anchor-spl-support::anchor-spl-1.1.2::src/associated_token.rs": {
+      "order": 355,
+      "crate": "anchor-spl-1.1.2",
+      "path": "src/associated_token.rs",
+      "sha256": "335f1e68020e8dc36c853d61d7e7ae4726387b26146becc934d36229ff66182e"
+    },
+    "anchor-spl-support::anchor-spl-1.1.2::src/token_interface.rs": {
+      "order": 356,
+      "crate": "anchor-spl-1.1.2",
+      "path": "src/token_interface.rs",
+      "sha256": "edc5a84f5c48f3bad56c3e288e348711dbb6d3e09497788f9d30dd9c45380419"
+    },
+    "anchor-spl-0.27.0::Cargo.toml.orig": {
+      "order": 465,
+      "crate": "anchor-spl-0.27.0",
+      "path": "Cargo.toml.orig",
+      "sha256": "f367fe76fa0638ccb8364b1f81a9affb8aa4c62e524246e9a75161eee34a0cf1",
+      "path_in_repository": "spl/Cargo.toml",
+      "review_scope": "Edition 2021 and containing token/token_2022/token_2022_extensions feature gates; no invocation implementation review."
+    },
+    "anchor-spl-0.27.0::src/token.rs": {
+      "order": 466,
+      "crate": "anchor-spl-0.27.0",
+      "path": "src/token.rs",
+      "sha256": "714f4be86d72226740c451cbb05db8833688b357b4532bd305d509c53a1bd2ea"
+    },
+    "anchor-spl-0.29.0::Cargo.toml.orig": {
+      "order": 467,
+      "crate": "anchor-spl-0.29.0",
+      "path": "Cargo.toml.orig",
+      "sha256": "e6a2a3ae9d1ec379a47ed9e2d11777027bc63bb6af953b344d007418c9076aa0",
+      "path_in_repository": "spl/Cargo.toml",
+      "review_scope": "Edition 2021 and containing token/token_2022/token_2022_extensions feature gates; no invocation implementation review."
+    },
+    "anchor-spl-0.29.0::src/token_2022.rs": {
+      "order": 468,
+      "crate": "anchor-spl-0.29.0",
+      "path": "src/token_2022.rs",
+      "sha256": "e7f4504534215db037ee640dbd449b4b410d8b0f93f80375a02dd121cf0c3b18"
+    },
+    "anchor-spl-0.32.1::Cargo.toml.orig": {
+      "order": 469,
+      "crate": "anchor-spl-0.32.1",
+      "path": "Cargo.toml.orig",
+      "sha256": "6808abf8770017c23d1baf9407256101f92a7ae4928116aad80f041e439a0adf",
+      "path_in_repository": "spl/Cargo.toml",
+      "review_scope": "Edition 2021 and containing token/token_2022/token_2022_extensions feature gates; no invocation implementation review."
+    },
+    "anchor-spl-0.32.1::src/token.rs": {
+      "order": 470,
+      "crate": "anchor-spl-0.32.1",
+      "path": "src/token.rs",
+      "sha256": "6ecdab595b6cd77694ebe013ff4b8ff7ac7a7bac72ea96fd52a4f9d139205ff9"
+    },
+    "anchor-spl-0.32.1::src/token_2022.rs": {
+      "order": 471,
+      "crate": "anchor-spl-0.32.1",
+      "path": "src/token_2022.rs",
+      "sha256": "6e60f28661f2f7c4544287b7a74f2c5f462338d85e1e82ef95b32d7d7647d422"
+    },
+    "anchor-spl-0.32.1::src/token_2022_extensions/group_member_pointer.rs": {
+      "order": 472,
+      "crate": "anchor-spl-0.32.1",
+      "path": "src/token_2022_extensions/group_member_pointer.rs",
+      "sha256": "867911ea2c7ce036152917e5035308ec6cad1901737c6dc9ddb646ff3666075a"
+    },
+    "anchor-spl-0.32.1::src/token_2022_extensions/group_pointer.rs": {
+      "order": 473,
+      "crate": "anchor-spl-0.32.1",
+      "path": "src/token_2022_extensions/group_pointer.rs",
+      "sha256": "f662a9445e56d369a473a465fe18a2568be61fd9fa71f0b2cf2e8323957e7865"
+    },
+    "anchor-spl-0.32.1::src/token_2022_extensions/metadata_pointer.rs": {
+      "order": 474,
+      "crate": "anchor-spl-0.32.1",
+      "path": "src/token_2022_extensions/metadata_pointer.rs",
+      "sha256": "641e231b39843d2c263762e560a2604e32850e54e9d52b8b1d12a17eead736ba"
+    },
+    "anchor-spl-0.32.1::src/token_2022_extensions/mint_close_authority.rs": {
+      "order": 475,
+      "crate": "anchor-spl-0.32.1",
+      "path": "src/token_2022_extensions/mint_close_authority.rs",
+      "sha256": "321ed29c194b15924640ab72b718fa8e89f5af845cb58c474647848b64bbfd10"
+    },
+    "anchor-spl-0.32.1::src/token_2022_extensions/non_transferable.rs": {
+      "order": 476,
+      "crate": "anchor-spl-0.32.1",
+      "path": "src/token_2022_extensions/non_transferable.rs",
+      "sha256": "cae553122a22ac11033795d3af31396bdb2e04b2690abba69439928488ac49ed"
+    },
+    "anchor-spl-0.32.1::src/token_2022_extensions/permanent_delegate.rs": {
+      "order": 477,
+      "crate": "anchor-spl-0.32.1",
+      "path": "src/token_2022_extensions/permanent_delegate.rs",
+      "sha256": "e442f6faa83e099e0942a875dd827aa43171fbdb4179550183e173eec3bb9243"
+    },
+    "anchor-spl-0.32.1::src/token_2022_extensions/transfer_hook.rs": {
+      "order": 478,
+      "crate": "anchor-spl-0.32.1",
+      "path": "src/token_2022_extensions/transfer_hook.rs",
+      "sha256": "256e74573495e5a4d798947c710c12c8ee0575321a956470c574fa5940ba62e0"
+    },
+    "anchor-spl-1.0.2::Cargo.toml.orig": {
+      "order": 479,
+      "crate": "anchor-spl-1.0.2",
+      "path": "Cargo.toml.orig",
+      "sha256": "e28a186307aae36ab6aec29d7b1fe0edefa9f6225feb695ff1b441e7783662a3",
+      "path_in_repository": "spl/Cargo.toml",
+      "review_scope": "Edition 2021 and containing token/token_2022/token_2022_extensions feature gates; no invocation implementation review."
+    },
+    "anchor-spl-1.0.2::src/token_2022.rs": {
+      "order": 480,
+      "crate": "anchor-spl-1.0.2",
+      "path": "src/token_2022.rs",
+      "sha256": "6c68539fa552c5c3e2d2eed1da72bf0206e7654529699bc62e23b3a80bf31810"
+    },
+    "anchor-spl-1.1.2::Cargo.toml.orig": {
+      "order": 481,
+      "crate": "anchor-spl-1.1.2",
+      "path": "Cargo.toml.orig",
+      "sha256": "2112bf8e0bb74ea8d1962ad3c96fa6f54031e2c2223a60c30afaa9276df19614",
+      "path_in_repository": "spl/Cargo.toml",
+      "review_scope": "Edition 2021 and containing token/token_2022/token_2022_extensions feature gates; no invocation implementation review."
+    },
+    "anchor-spl-1.1.2::src/token_2022.rs": {
+      "order": 482,
+      "crate": "anchor-spl-1.1.2",
+      "path": "src/token_2022.rs",
+      "sha256": "6c68539fa552c5c3e2d2eed1da72bf0206e7654529699bc62e23b3a80bf31810"
+    }
+  },
+  "models": {
+    "anchor-spl::token::Mint::deref": {
+      "order": 27,
+      "contract": "Solanalib.Specs.AnchorSpl.token.Mint.deref_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:dc0f7b4297946370"]
+    },
+    "anchor-spl::token::accessor::amount": {
+      "order": 28,
+      "contract": "Solanalib.Specs.AnchorSpl.token.accessor.amount_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:6f280571909d7252", "@binding:40d8a3ff30ef5912"]
+    },
+    "anchor-spl::token::accessor::amount_observation": {
+      "order": 29,
+      "contract": "Solanalib.Specs.AnchorSpl.token.accessor.amount_observation_contract",
+      "witness_kind": "Holds",
+      "kind": "partial",
+      "assumptions": ["@text:ca19463345d2d7ec"],
+      "model_gaps": ["@text:4237ccb1fa10ea70"],
+      "remaining_requirements": ["@text:4237ccb1fa10ea70"]
+    },
+    "anchor-spl::token::transfer": {
+      "order": 30,
+      "contract": "Solanalib.Specs.AnchorSpl.token.transfer_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": [
+        "@binding:ae0c03b89cc57426",
+        "@binding:da3bc674a1a68c4b",
+        "@binding:daf69c9b1a706e33",
+        "@binding:05ae94e8a0aab82d"
+      ]
+    },
+    "anchor-spl::token::transfer_observation": {
+      "order": 31,
+      "contract": "Solanalib.Specs.AnchorSpl.token.transfer_observation_contract",
+      "witness_kind": "FamilyReference",
+      "kind": "partial",
+      "assumptions": ["@text:a890c93081552324", "@text:cadc72e89e5cf776"],
+      "model_gaps": ["@text:4237ccb1fa10ea70"],
+      "remaining_requirements": ["@text:4237ccb1fa10ea70"]
+    },
+    "anchor-spl::token_interface::Mint::deref": {
+      "order": 32,
+      "contract": "Solanalib.Specs.AnchorSpl.token_interface.Mint.deref_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:dc0f7b4297946370"]
+    },
+    "anchor-spl::token_interface::TokenAccount::deref": {
+      "order": 266,
+      "contract": "Solanalib.Specs.AnchorSpl.token_interface.TokenAccount.deref_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:76e1f0b5a6c2ddb6"]
+    },
+    "anchor-spl::token_2022::transfer_checked": {
+      "order": 290,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.transfer_checked_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::associated_token::create": {
+      "order": 321,
+      "contract": "Solanalib.Specs.AnchorSpl.associated_token.create_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:3e36dc5ce0fbd225", "@binding:402fd412934b25f9"]
+    },
+    "anchor-spl::metadata::create_metadata_accounts_v3": {
+      "order": 322,
+      "contract": "Solanalib.Specs.AnchorSpl.metadata.create_metadata_accounts_v3_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:3e36dc5ce0fbd225", "@binding:402fd412934b25f9"]
+    },
+    "anchor-spl::token::Token::id": {
+      "order": 323,
+      "contract": "Solanalib.Specs.AnchorSpl.token.Token.id_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": []
+    },
+    "anchor-spl::token::TokenAccount::deref": {
+      "order": 324,
+      "contract": "Solanalib.Specs.AnchorSpl.token.TokenAccount.deref_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:76e1f0b5a6c2ddb6"]
+    },
+    "anchor-spl::token::transfer_with_program_owner": {
+      "order": 325,
+      "contract": "Solanalib.Specs.AnchorSpl.token.transfer_with_program_owner_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022::burn": {
+      "order": 326,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.burn_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022::close_account": {
+      "order": 327,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.close_account_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022::get_account_data_size": {
+      "order": 328,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.get_account_data_size_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": [
+        "@binding:e7201e629bb160d4",
+        "@binding:7b66a53dd366f823",
+        "@binding:878dfd6fedb5efd2",
+        "@binding:fed0ddcfeaff0f89",
+        "@binding:5ea795acd8ef5611"
+      ]
+    },
+    "anchor-spl::token_2022::initialize_account3": {
+      "order": 329,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.initialize_account3_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022::initialize_immutable_owner": {
+      "order": 330,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.initialize_immutable_owner_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022::initialize_mint2": {
+      "order": 331,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.initialize_mint2_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022::mint_to": {
+      "order": 332,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.mint_to_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022::set_authority": {
+      "order": 333,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.set_authority_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022_extensions::group_member_pointer::group_member_pointer_initialize": {
+      "order": 334,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022_extensions.group_member_pointer.group_member_pointer_initialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022_extensions::group_pointer::group_pointer_initialize": {
+      "order": 335,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022_extensions.group_pointer.group_pointer_initialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022_extensions::metadata_pointer::metadata_pointer_initialize": {
+      "order": 336,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022_extensions.metadata_pointer.metadata_pointer_initialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022_extensions::mint_close_authority::mint_close_authority_initialize": {
+      "order": 337,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022_extensions.mint_close_authority.mint_close_authority_initialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022_extensions::non_transferable::non_transferable_mint_initialize": {
+      "order": 338,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022_extensions.non_transferable.non_transferable_mint_initialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022_extensions::permanent_delegate::permanent_delegate_initialize": {
+      "order": 339,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022_extensions.permanent_delegate.permanent_delegate_initialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022_extensions::transfer_hook::transfer_hook_initialize": {
+      "order": 340,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022_extensions.transfer_hook.transfer_hook_initialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::memo::build_memo": {
+      "order": 365,
+      "contract": "Solanalib.Specs.AnchorSpl.memo.build_memo_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:3e36dc5ce0fbd225", "@binding:402fd412934b25f9"]
+    },
+    "anchor-spl::token_2022::set_authority_program_id": {
+      "order": 429,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.set_authority_program_id_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::associated_token::create_idempotent": {
+      "order": 441,
+      "contract": "Solanalib.Specs.AnchorSpl.associated_token.create_idempotent_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:3e36dc5ce0fbd225", "@binding:402fd412934b25f9"]
+    },
+    "anchor-spl::associated_token::create_program_id": {
+      "order": 442,
+      "contract": "Solanalib.Specs.AnchorSpl.associated_token.create_program_id_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:3e36dc5ce0fbd225", "@binding:402fd412934b25f9"]
+    },
+    "anchor-spl::token_2022::mint_to_checked": {
+      "order": 445,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.mint_to_checked_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022::burn_checked": {
+      "order": 448,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.burn_checked_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022::transfer_checked_program_id": {
+      "order": 460,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.transfer_checked_program_id_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022::initialize_account3_program_id": {
+      "order": 470,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.initialize_account3_program_id_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022::Token2022::id": {
+      "order": 471,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.Token2022.id_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": []
+    },
+    "anchor-spl::token_2022::transfer_checked_program_id_interface": {
+      "order": 486,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.transfer_checked_program_id_interface_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_2022::transfer_checked_legacy_interface": {
+      "order": 504,
+      "contract": "Solanalib.Specs.AnchorSpl.token_2022.transfer_checked_legacy_interface_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token_interface::TokenInterface::ids": {
+      "order": 505,
+      "contract": "Solanalib.Specs.AnchorSpl.token_interface.TokenInterface.ids_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": []
+    },
+    "anchor-spl::stake::StakeAccount::deref": {
+      "order": 571,
+      "contract": "Solanalib.Specs.AnchorSpl.stake.StakeAccount.deref_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:76e1f0b5a6c2ddb6"]
+    },
+    "anchor-spl::stake::deactivate_stake": {
+      "order": 572,
+      "contract": "Solanalib.Specs.AnchorSpl.stake.deactivate_stake_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:3e36dc5ce0fbd225", "@binding:402fd412934b25f9"]
+    },
+    "anchor-spl::stake::withdraw": {
+      "order": 573,
+      "contract": "Solanalib.Specs.AnchorSpl.stake.withdraw_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:3e36dc5ce0fbd225", "@binding:402fd412934b25f9"]
+    },
+    "anchor-spl::token::burn": {
+      "order": 574,
+      "contract": "Solanalib.Specs.AnchorSpl.token.burn_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token::mint_to": {
+      "order": 575,
+      "contract": "Solanalib.Specs.AnchorSpl.token.mint_to_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    },
+    "anchor-spl::token::transfer_inline_error": {
+      "order": 576,
+      "contract": "Solanalib.Specs.AnchorSpl.token.transfer_inline_error_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-761b423532526926"
+    }
+  },
+  "api": {
+    "anchor_spl_1_0_2.token.Mint.deref": {
+      "order": 17,
+      "anchor_text": "fn deref(&self) -> &Self::Target {",
+      "binding_obligations": "@shared:binding-obligations-b4fd0b1668c52c72",
+      "line": 500,
+      "scope": "@text:aed6dd8fe3a79cfb",
+      "source_id": "anchor-spl-1.0.2::src/token.rs",
+      "clients": ["SolanalibTest.Specs.AnchorSpl.Token.account_then_mint_deref"],
+      "model_dependencies": ["Solanalib.Specs.Core.AnchorAccount.projectionFamily"],
+      "rust_names": ["<anchor_spl::token::Mint as core::ops::deref::Deref>::deref"],
+      "models": ["anchor-spl::token::Mint::deref"],
+      "binding_defaults": false
+    },
+    "anchor_spl_1_0_2.token.accessor.amount": {
+      "order": 18,
+      "anchor_text": "pub fn amount(account: &AccountInfo) -> Result<u64> {",
+      "binding_obligations": [
+        "@binding:6365458673055eb5",
+        "@binding:1b225f24050e4109",
+        "@binding:6f280571909d7252",
+        "@binding:40d8a3ff30ef5912"
+      ],
+      "line": 519,
+      "scope": "@text:cd61f7590c671e3a",
+      "source_id": "anchor-spl-1.0.2::src/token.rs",
+      "clients": [
+        "SolanalibTest.Specs.AnchorSpl.Token.short_amount_panics",
+        "SolanalibTest.Specs.AnchorSpl.Token.short_amount_aborts",
+        "SolanalibTest.Specs.AnchorSpl.Token.amount_borrow_error",
+        "SolanalibTest.Specs.AnchorSpl.Token.amount_reads_without_owner_or_full_state_check",
+        "SolanalibTest.Specs.AnchorSpl.OwnedAmount.checked_error_preserves_existing_guard",
+        "SolanalibTest.Specs.AnchorSpl.OwnedAmount.checked_error_box_terminal",
+        "SolanalibTest.Specs.AnchorSpl.OwnedAmount.abstract_width_retains_amount_and_cleanup",
+        "SolanalibTest.Specs.AnchorSpl.Token.wrong_content_rejected",
+        "SolanalibTest.Specs.AnchorSpl.Token.wrong_content_conflict_is_admitted",
+        "SolanalibTest.Specs.AnchorSpl.Token.missing_handle_is_admitted",
+        "SolanalibTest.Specs.AnchorSpl.Token.read_preserves_previous_shared_guard",
+        "SolanalibTest.Specs.AnchorSpl.OwnedAmount.wrong_content_not_admitted",
+        "SolanalibTest.Specs.AnchorSpl.OwnedAmount.wrong_content_has_no_outcome",
+        "SolanalibTest.Specs.AnchorSpl.OwnedAmount.wrong_content_conflict_retains_error",
+        "SolanalibTest.Specs.AnchorSpl.OwnedAmount.short_slice_unwinds_with_cleanup",
+        "SolanalibTest.Specs.AnchorSpl.OwnedAmount.short_slice_aborts"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplAmountOwned.run",
+        "Solanalib.Specs.Core.AnchorErrorOwned.fromProgram",
+        "Solanalib.Specs.AnchorSpl.token.accessor.amount_observation_contract",
+        "Solanalib.Specs.Core.AccountInfo.DataBorrow.Ready",
+        "Solanalib.Specs.Core.AccountInfo.DataBorrow.ready_current",
+        "Solanalib.Specs.Core.AnchorSpl.amount_release",
+        "Solanalib.Specs.Core.AnchorSpl.amount_read",
+        "Solanalib.Specs.Core.AnchorSpl.amount_after_borrow",
+        "Solanalib.Specs.Core.AnchorSpl.amount_progress",
+        "Solanalib.Specs.Core.AnchorSplAmountOwned.run_borrow_error",
+        "Solanalib.Specs.Core.AnchorSplAmountOwned.run_read",
+        "Solanalib.Specs.Core.AnchorSplAmountOwned.run_after_borrow"
+      ],
+      "rust_names": ["anchor_spl::token::accessor::amount"],
+      "models": ["anchor-spl::token::accessor::amount"],
+      "binding_defaults": false
+    },
+    "anchor_spl_1_0_2.token.transfer": {
+      "order": 19,
+      "anchor_text": "pub fn transfer<'info>(",
+      "binding_obligations": [
+        "@binding:6365458673055eb5",
+        "@binding:1b225f24050e4109",
+        "@binding:ae0c03b89cc57426",
+        "@binding:da3bc674a1a68c4b",
+        "@binding:daf69c9b1a706e33",
+        "@binding:05ae94e8a0aab82d"
+      ],
+      "line": 13,
+      "scope": "@text:1e20ad49957d56a3",
+      "source_id": "anchor-spl-1.0.2::src/token.rs",
+      "clients": [
+        "SolanalibTest.Specs.AnchorSpl.Token.context_then_transfer_request",
+        "SolanalibTest.Specs.AnchorSpl.Token.ordered_transfer_metas",
+        "SolanalibTest.Specs.AnchorSpl.Token.context_unused_fields",
+        "SolanalibTest.Specs.AnchorSpl.Token.invocation_error_keeps_state",
+        "SolanalibTest.Specs.AnchorSpl.Token.invocation_unwind_keeps_state",
+        "SolanalibTest.Specs.AnchorSpl.Token.invocation_terminal",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.returned_error_contract",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.actual_request_order",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.invocation_unwind_cleanup",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.cpi_error_box_terminal",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.before_move_dependency_unwind",
+        "SolanalibTest.Specs.AnchorSpl.OwnedContextTransfer.constructor_then_transfer",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.Edition2021.premature_array_drop_is_terminal",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.Edition2021.instruction_drops_before_array",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.Edition2021.cleanup_order_preserves_error",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.absent_remaining_retains_builder_terminal",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.DropCapabilities.remaining_drop_really_unwinds",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.DropCapabilities.raw_family_retains_drop_unwind",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.DropCapabilities.unwinding_provider_excluded_by_drop_premise",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.DropCapabilities.pending_error_cannot_unwind",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.RequestAdmission.missing_current_after_real_build_rejected",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.RequestAdmission.one_good_build_does_not_hide_unreadable_success",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.RequestAdmission.readiness_does_not_require_cpi_execution",
+        "SolanalibTest.Specs.AnchorSpl.OwnedTransfer.RequestAdmission.admitted_build_continues_through_error_cleanup",
+        "SolanalibTest.Specs.AnchorSpl.OwnedContextTransfer.constructed_context_transfer_admitted"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.InstructionAllocated.run",
+        "Solanalib.Specs.Core.AnchorSplTransfer.run",
+        "Solanalib.Specs.Core.Owned.cleanup",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.AnchorSpl.token.transfer_observation_contract",
+        "Solanalib.Specs.Core.AnchorSplTransfer.invocationDrops",
+        "Solanalib.Specs.Core.AnchorSplTransfer.ConstructedReadable",
+        "Solanalib.Specs.Core.AnchorSplTransfer.BuildReady",
+        "Solanalib.Specs.Core.AnchorSplTransfer.request_hasResult_iff",
+        "Solanalib.Specs.Core.AnchorSplTransfer.buildReady_iff_requests",
+        "Solanalib.Specs.Core.AnchorSplTransfer.BuildReady.after_build",
+        "Solanalib.Specs.Core.AnchorSplTransfer.BuildReady.builder_continuation"
+      ],
+      "rust_names": ["anchor_spl::token::transfer"],
+      "models": ["anchor-spl::token::transfer"],
+      "binding_defaults": false
+    },
+    "anchor_spl_1_0_2.token_interface.Mint.deref": {
+      "order": 20,
+      "anchor_text": "fn deref(&self) -> &Self::Target {",
+      "binding_obligations": "@shared:binding-obligations-b4fd0b1668c52c72",
+      "line": 68,
+      "scope": "@text:aed6dd8fe3a79cfb",
+      "source_id": "anchor-spl-1.0.2::src/token_interface.rs",
+      "clients": ["SolanalibTest.Specs.AnchorSpl.Token.interface_then_mint_deref"],
+      "model_dependencies": ["Solanalib.Specs.Core.AnchorAccount.projectionFamily"],
+      "rust_names": ["<anchor_spl::token_interface::Mint as core::ops::deref::Deref>::deref"],
+      "models": ["anchor-spl::token_interface::Mint::deref"],
+      "binding_defaults": false
+    },
+    "anchor_spl_0_32_1.token_interface.TokenAccount.deref": {
+      "order": 259,
+      "source_id": "anchor-spl-support::anchor-spl-0.32.1::src/token_interface.rs",
+      "line": 35,
+      "anchor_text": "impl Deref for TokenAccount {",
+      "rust_names": ["<anchor_spl::token_interface::TokenAccount as core::ops::deref::Deref>::deref"],
+      "scope": "@text:2e74be485052eb17",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::token_interface::TokenAccount::deref"],
+      "binding_defaults": false
+    },
+    "anchor_spl_0_32_1.token_2022.transfer_checked": {
+      "order": 283,
+      "source_id": "anchor-spl-0.32.1::src/token_2022.rs",
+      "line": 34,
+      "anchor_text": "pub fn transfer_checked<'info>(",
+      "bindings": {"sdk-5bbe650eeae2f87a7689": "anchor_spl::token_2022::transfer_checked"},
+      "scope": "@text:74c1e19bd7c0b936",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::transfer_checked"],
+      "models": ["anchor-spl::token_2022::transfer_checked"]
+    },
+    "anchor_spl_0_32_1.associated_token.create": {
+      "order": 320,
+      "source_id": "anchor-spl-support::anchor-spl-0.32.1::src/associated_token.rs",
+      "line": 11,
+      "anchor_text": "pub fn create<'info>(ctx: CpiContext<'_, '_, '_, 'info, Create<'info>>) -> Result<()> {",
+      "rust_names": ["anchor_spl::associated_token::create"],
+      "scope": "@text:659c24b80168ee59",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::associated_token::create"],
+      "binding_defaults": false
+    },
+    "anchor_spl_0_32_1.metadata.create_metadata_accounts_v3": {
+      "order": 321,
+      "source_id": "anchor-spl-support::anchor-spl-0.32.1::src/metadata.rs",
+      "line": 120,
+      "anchor_text": "pub fn create_metadata_accounts_v3<'info>(",
+      "rust_names": ["anchor_spl::metadata::create_metadata_accounts_v3"],
+      "scope": "@text:28fabf8b3ae26ba1",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::metadata::create_metadata_accounts_v3"],
+      "binding_defaults": false
+    },
+    "anchor_spl_0_32_1.token.Token.id": {
+      "order": 322,
+      "source_id": "anchor-spl-support::anchor-spl-0.32.1::src/token.rs",
+      "line": 506,
+      "anchor_text": "impl anchor_lang::Id for Token {",
+      "rust_names": ["<anchor_spl::token::Token as anchor_lang::Id>::id"],
+      "scope": "@text:6a76da3a741098a2",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::token::Token::id"],
+      "binding_defaults": false
+    },
+    "anchor_spl_0_32_1.token.TokenAccount.deref": {
+      "order": 323,
+      "source_id": "anchor-spl-support::anchor-spl-0.32.1::src/token.rs",
+      "line": 464,
+      "anchor_text": "impl Deref for TokenAccount {",
+      "rust_names": ["<anchor_spl::token::TokenAccount as core::ops::deref::Deref>::deref"],
+      "scope": "@text:2e74be485052eb17",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::token::TokenAccount::deref"],
+      "binding_defaults": false
+    },
+    "anchor_spl_0_32_1.token.transfer": {
+      "order": 324,
+      "source_id": "anchor-spl-0.32.1::src/token.rs",
+      "line": 11,
+      "anchor_text": "pub fn transfer<'info>(",
+      "bindings": {"sdk-8338fec38013a7bc0748": "anchor_spl::token::transfer"},
+      "scope": "@text:3a7b6b9daee1ce0c",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token::transfer"],
+      "models": ["anchor-spl::token::transfer_with_program_owner"]
+    },
+    "anchor_spl_0_32_1.token_2022.burn": {
+      "order": 325,
+      "source_id": "anchor-spl-0.32.1::src/token_2022.rs",
+      "line": 104,
+      "anchor_text": "pub fn burn<'info>(ctx: CpiContext<'_, '_, '_, 'info, Burn<'info>>, amount: u64) -> Result<()> {",
+      "bindings": {"sdk-38732773bd006d88101a": "anchor_spl::token_2022::burn"},
+      "scope": "@text:f085ec3d065b4718",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::burn"],
+      "models": ["anchor-spl::token_2022::burn"]
+    },
+    "anchor_spl_0_32_1.token_2022.close_account": {
+      "order": 326,
+      "source_id": "anchor-spl-0.32.1::src/token_2022.rs",
+      "line": 244,
+      "anchor_text": "pub fn close_account<'info>(ctx: CpiContext<'_, '_, '_, 'info, CloseAccount<'info>>) -> Result<()> {",
+      "bindings": {"sdk-0593c2797128424298e8": "anchor_spl::token_2022::close_account"},
+      "scope": "@text:6ee76eb47ef64d9b",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::close_account"],
+      "models": ["anchor-spl::token_2022::close_account"]
+    },
+    "anchor_spl_0_32_1.token_2022.get_account_data_size": {
+      "order": 327,
+      "source_id": "anchor-spl-0.32.1::src/token_2022.rs",
+      "line": 365,
+      "anchor_text": "pub fn get_account_data_size<'info>(",
+      "bindings": {"sdk-d51742a88b53e7088e13": "anchor_spl::token_2022::get_account_data_size"},
+      "scope": "@text:18de1c57b0a179eb",
+      "clients": [
+        "SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution",
+        "SolanalibTest.Specs.Core.AnchorSplTokenOperations.getter_observes_statement_cleanup",
+        "SolanalibTest.Specs.Core.AnchorSplTokenOperations.size_wrong_key_precedes_length",
+        "SolanalibTest.Specs.Core.AnchorSplTokenAdmission.MissingReturnBytes.registered_family_rejects_bad_reply"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89", "@binding:5ea795acd8ef5611"],
+      "rust_names": ["anchor_spl::token_2022::get_account_data_size"],
+      "models": ["anchor-spl::token_2022::get_account_data_size"]
+    },
+    "anchor_spl_0_32_1.token_2022.initialize_account3": {
+      "order": 328,
+      "source_id": "anchor-spl-0.32.1::src/token_2022.rs",
+      "line": 231,
+      "anchor_text": "pub fn initialize_account3<'info>(",
+      "bindings": {"sdk-cd49a5aab6d9fc04265c": "anchor_spl::token_2022::initialize_account3"},
+      "scope": "@text:7cc6c2423fbda24c",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::initialize_account3"],
+      "models": ["anchor-spl::token_2022::initialize_account3"]
+    },
+    "anchor_spl_0_32_1.token_2022.initialize_immutable_owner": {
+      "order": 329,
+      "source_id": "anchor-spl-0.32.1::src/token_2022.rs",
+      "line": 401,
+      "anchor_text": "pub fn initialize_immutable_owner<'info>(",
+      "bindings": {"sdk-498172e53db3d061d96e": "anchor_spl::token_2022::initialize_immutable_owner"},
+      "scope": "@text:86a848660df215b3",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::initialize_immutable_owner"],
+      "models": ["anchor-spl::token_2022::initialize_immutable_owner"]
+    },
+    "anchor_spl_0_32_1.token_2022.initialize_mint2": {
+      "order": 330,
+      "source_id": "anchor-spl-0.32.1::src/token_2022.rs",
+      "line": 323,
+      "anchor_text": "pub fn initialize_mint2<'info>(",
+      "bindings": {"sdk-040b655a64d255821bd6": "anchor_spl::token_2022::initialize_mint2"},
+      "scope": "@text:a9f8b5ebed84e5a7",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::initialize_mint2"],
+      "models": ["anchor-spl::token_2022::initialize_mint2"]
+    },
+    "anchor_spl_0_32_1.token_2022.mint_to": {
+      "order": 331,
+      "source_id": "anchor-spl-0.32.1::src/token_2022.rs",
+      "line": 62,
+      "anchor_text": "pub fn mint_to<'info>(",
+      "bindings": {"sdk-9a39fa67f028b9b8b638": "anchor_spl::token_2022::mint_to"},
+      "scope": "@text:2e941b4d15502ac4",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::mint_to"],
+      "models": ["anchor-spl::token_2022::mint_to"]
+    },
+    "anchor_spl_0_32_1.token_2022.set_authority": {
+      "order": 332,
+      "source_id": "anchor-spl-0.32.1::src/token_2022.rs",
+      "line": 339,
+      "anchor_text": "pub fn set_authority<'info>(",
+      "bindings": {"sdk-92e7306cd8d800da7506": "anchor_spl::token_2022::set_authority"},
+      "scope": "@text:ec3ea86fe5f1aa41",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::set_authority"],
+      "models": ["anchor-spl::token_2022::set_authority"]
+    },
+    "anchor_spl_0_32_1.token_2022_extensions.group_member_pointer.group_member_pointer_initialize": {
+      "order": 333,
+      "source_id": "anchor-spl-0.32.1::src/token_2022_extensions/group_member_pointer.rs",
+      "line": 6,
+      "anchor_text": "pub fn group_member_pointer_initialize<'info>(",
+      "bindings": {
+        "sdk-e6fe60dbff7416925fdc": "anchor_spl::token_2022_extensions::group_member_pointer::group_member_pointer_initialize"
+      },
+      "scope": "@text:d0b6d549fd8e1026",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022_extensions::group_member_pointer::group_member_pointer_initialize"],
+      "models": ["anchor-spl::token_2022_extensions::group_member_pointer::group_member_pointer_initialize"]
+    },
+    "anchor_spl_0_32_1.token_2022_extensions.group_pointer.group_pointer_initialize": {
+      "order": 334,
+      "source_id": "anchor-spl-0.32.1::src/token_2022_extensions/group_pointer.rs",
+      "line": 6,
+      "anchor_text": "pub fn group_pointer_initialize<'info>(",
+      "bindings": {
+        "sdk-d8f059ffe6cef172ad0a": "anchor_spl::token_2022_extensions::group_pointer::group_pointer_initialize"
+      },
+      "scope": "@text:cc0d36d4dfc0f272",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022_extensions::group_pointer::group_pointer_initialize"],
+      "models": ["anchor-spl::token_2022_extensions::group_pointer::group_pointer_initialize"]
+    },
+    "anchor_spl_0_32_1.token_2022_extensions.metadata_pointer.metadata_pointer_initialize": {
+      "order": 335,
+      "source_id": "anchor-spl-0.32.1::src/token_2022_extensions/metadata_pointer.rs",
+      "line": 6,
+      "anchor_text": "pub fn metadata_pointer_initialize<'info>(",
+      "bindings": {
+        "sdk-4206ef113cd2d4c76bcf": "anchor_spl::token_2022_extensions::metadata_pointer::metadata_pointer_initialize"
+      },
+      "scope": "@text:367e66a614eaaf69",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022_extensions::metadata_pointer::metadata_pointer_initialize"],
+      "models": ["anchor-spl::token_2022_extensions::metadata_pointer::metadata_pointer_initialize"]
+    },
+    "anchor_spl_0_32_1.token_2022_extensions.mint_close_authority.mint_close_authority_initialize": {
+      "order": 336,
+      "source_id": "anchor-spl-0.32.1::src/token_2022_extensions/mint_close_authority.rs",
+      "line": 6,
+      "anchor_text": "pub fn mint_close_authority_initialize<'info>(",
+      "bindings": {
+        "sdk-134482827661f398aed5": "anchor_spl::token_2022_extensions::mint_close_authority::mint_close_authority_initialize"
+      },
+      "scope": "@text:1343dd2afb606a73",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022_extensions::mint_close_authority::mint_close_authority_initialize"],
+      "models": ["anchor-spl::token_2022_extensions::mint_close_authority::mint_close_authority_initialize"]
+    },
+    "anchor_spl_0_32_1.token_2022_extensions.non_transferable.non_transferable_mint_initialize": {
+      "order": 337,
+      "source_id": "anchor-spl-0.32.1::src/token_2022_extensions/non_transferable.rs",
+      "line": 6,
+      "anchor_text": "pub fn non_transferable_mint_initialize<'info>(",
+      "bindings": {
+        "sdk-19f761c900cfcc3fd746": "anchor_spl::token_2022_extensions::non_transferable::non_transferable_mint_initialize"
+      },
+      "scope": "@text:7b75dae0703f6f08",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022_extensions::non_transferable::non_transferable_mint_initialize"],
+      "models": ["anchor-spl::token_2022_extensions::non_transferable::non_transferable_mint_initialize"]
+    },
+    "anchor_spl_0_32_1.token_2022_extensions.permanent_delegate.permanent_delegate_initialize": {
+      "order": 338,
+      "source_id": "anchor-spl-0.32.1::src/token_2022_extensions/permanent_delegate.rs",
+      "line": 6,
+      "anchor_text": "pub fn permanent_delegate_initialize<'info>(",
+      "bindings": {
+        "sdk-246e3d4e67ca25110e5a": "anchor_spl::token_2022_extensions::permanent_delegate::permanent_delegate_initialize"
+      },
+      "scope": "@text:46e830c5cddcdffd",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022_extensions::permanent_delegate::permanent_delegate_initialize"],
+      "models": ["anchor-spl::token_2022_extensions::permanent_delegate::permanent_delegate_initialize"]
+    },
+    "anchor_spl_0_32_1.token_2022_extensions.transfer_hook.transfer_hook_initialize": {
+      "order": 339,
+      "source_id": "anchor-spl-0.32.1::src/token_2022_extensions/transfer_hook.rs",
+      "line": 6,
+      "anchor_text": "pub fn transfer_hook_initialize<'info>(",
+      "bindings": {
+        "sdk-48a05c31b085ee450d6d": "anchor_spl::token_2022_extensions::transfer_hook::transfer_hook_initialize"
+      },
+      "scope": "@text:7e853e8066e14641",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022_extensions::transfer_hook::transfer_hook_initialize"],
+      "models": ["anchor-spl::token_2022_extensions::transfer_hook::transfer_hook_initialize"]
+    },
+    "anchor_spl_0_32_1.memo.build_memo": {
+      "order": 372,
+      "source_id": "anchor-spl-support::anchor-spl-0.32.1::src/memo.rs",
+      "line": 8,
+      "anchor_text": "pub fn build_memo<'info>(ctx: CpiContext<'_, '_, '_, 'info, BuildMemo>, memo: &[u8]) -> Result<()> {",
+      "rust_names": ["anchor_spl::memo::build_memo"],
+      "scope": "@text:d68b116aca545959",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::memo::build_memo"],
+      "binding_defaults": false
+    },
+    "anchor_spl_1_1_2.token_2022.burn_checked": {
+      "order": 448,
+      "source_id": "anchor-spl-1.1.2::src/token_2022.rs",
+      "line": 122,
+      "anchor_text": "pub fn burn_checked<'info>(",
+      "bindings": {"sdk-9cdc6aa890ce738906bb": "anchor_spl::token_2022::burn_checked"},
+      "scope": "@text:38e994feb39afbc6",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::burn_checked"],
+      "models": ["anchor-spl::token_2022::burn_checked"]
+    },
+    "anchor_spl_1_1_2.token_2022.mint_to_checked": {
+      "order": 462,
+      "source_id": "anchor-spl-1.1.2::src/token_2022.rs",
+      "line": 83,
+      "anchor_text": "pub fn mint_to_checked<'info>(",
+      "bindings": {"sdk-523071d4667b77310991": "anchor_spl::token_2022::mint_to_checked"},
+      "scope": "@text:af426d6309d2d314",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::mint_to_checked"],
+      "models": ["anchor-spl::token_2022::mint_to_checked"]
+    },
+    "anchor_spl_1_1_2.associated_token.create": {
+      "order": 475,
+      "source_id": "anchor-spl-support::anchor-spl-1.1.2::src/associated_token.rs",
+      "line": 14,
+      "anchor_text": "pub fn create<'info>(ctx: CpiContext<'_, '_, '_, 'info, Create<'info>>) -> Result<()> {",
+      "rust_names": ["anchor_spl::associated_token::create"],
+      "scope": "@text:659c24b80168ee59",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::associated_token::create_program_id"],
+      "binding_defaults": false
+    },
+    "anchor_spl_1_1_2.token_2022.transfer_checked": {
+      "order": 480,
+      "source_id": "anchor-spl-1.1.2::src/token_2022.rs",
+      "line": 35,
+      "anchor_text": "pub fn transfer_checked<'info>(",
+      "bindings": {"sdk-43605b1d6fa2289261c2": "anchor_spl::token_2022::transfer_checked"},
+      "scope": "@text:74c1e19bd7c0b936",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::transfer_checked"],
+      "models": ["anchor-spl::token_2022::transfer_checked_program_id"]
+    },
+    "anchor_spl_1_1_2.token_interface.TokenAccount.deref": {
+      "order": 481,
+      "source_id": "anchor-spl-support::anchor-spl-1.1.2::src/token_interface.rs",
+      "line": 38,
+      "anchor_text": "impl Deref for TokenAccount {",
+      "rust_names": ["<anchor_spl::token_interface::TokenAccount as core::ops::deref::Deref>::deref"],
+      "scope": "@text:2e74be485052eb17",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::token_interface::TokenAccount::deref"],
+      "binding_defaults": false
+    },
+    "anchor_spl_1_1_2.token_2022.set_authority": {
+      "order": 492,
+      "source_id": "anchor-spl-1.1.2::src/token_2022.rs",
+      "line": 340,
+      "anchor_text": "pub fn set_authority<'info>(",
+      "bindings": {"sdk-d7c260c5d976e7f267d7": "anchor_spl::token_2022::set_authority"},
+      "scope": "@text:ec3ea86fe5f1aa41",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::set_authority"],
+      "models": ["anchor-spl::token_2022::set_authority_program_id"]
+    },
+    "anchor_spl_1_1_2.associated_token.create_idempotent": {
+      "order": 501,
+      "source_id": "anchor-spl-support::anchor-spl-1.1.2::src/associated_token.rs",
+      "line": 36,
+      "anchor_text": "pub fn create_idempotent<'info>(",
+      "rust_names": ["anchor_spl::associated_token::create_idempotent"],
+      "scope": "@text:659c24b80168ee59",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::associated_token::create_idempotent"],
+      "binding_defaults": false
+    },
+    "anchor_spl_1_0_2.token_2022.initialize_account3": {
+      "order": 553,
+      "source_id": "anchor-spl-1.0.2::src/token_2022.rs",
+      "line": 232,
+      "anchor_text": "pub fn initialize_account3<'info>(",
+      "bindings": {"sdk-31b0e323e257a02178c4": "anchor_spl::token_2022::initialize_account3"},
+      "scope": "@text:7cc6c2423fbda24c",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::initialize_account3"],
+      "models": ["anchor-spl::token_2022::initialize_account3_program_id"]
+    },
+    "anchor_spl_1_0_2.token_2022.transfer_checked": {
+      "order": 554,
+      "source_id": "anchor-spl-1.0.2::src/token_2022.rs",
+      "line": 35,
+      "anchor_text": "pub fn transfer_checked<'info>(",
+      "bindings": {"sdk-be328497871812fb8891": "anchor_spl::token_2022::transfer_checked"},
+      "scope": "@text:74c1e19bd7c0b936",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::transfer_checked"],
+      "models": ["anchor-spl::token_2022::transfer_checked_program_id_interface"]
+    },
+    "anchor_spl_1_0_2.token_interface.TokenAccount.deref": {
+      "order": 555,
+      "source_id": "anchor-spl-support::anchor-spl-1.0.2::src/token_interface.rs",
+      "line": 38,
+      "anchor_text": "impl Deref for TokenAccount {",
+      "rust_names": ["<anchor_spl::token_interface::TokenAccount as core::ops::deref::Deref>::deref"],
+      "scope": "@text:2e74be485052eb17",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::token_interface::TokenAccount::deref"],
+      "binding_defaults": false
+    },
+    "anchor_spl_1_0_2.associated_token.create_idempotent": {
+      "order": 556,
+      "source_id": "anchor-spl-support::anchor-spl-1.0.2::src/associated_token.rs",
+      "line": 36,
+      "anchor_text": "pub fn create_idempotent<'info>(",
+      "rust_names": ["anchor_spl::associated_token::create_idempotent"],
+      "scope": "@text:659c24b80168ee59",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::associated_token::create_idempotent"],
+      "binding_defaults": false
+    },
+    "anchor_spl_1_0_2.token.TokenAccount.deref": {
+      "order": 557,
+      "source_id": "anchor-spl-support::anchor-spl-1.0.2::src/token.rs",
+      "line": 466,
+      "anchor_text": "impl Deref for TokenAccount {",
+      "rust_names": ["<anchor_spl::token::TokenAccount as core::ops::deref::Deref>::deref"],
+      "scope": "@text:2e74be485052eb17",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::token::TokenAccount::deref"],
+      "binding_defaults": false
+    },
+    "anchor_spl_1_0_2.token_2022.Token2022.id": {
+      "order": 558,
+      "source_id": "anchor-spl-support::anchor-spl-1.0.2::src/token_2022.rs",
+      "line": 610,
+      "anchor_text": "impl anchor_lang::Id for Token2022 {",
+      "rust_names": ["<anchor_spl::token_2022::Token2022 as anchor_lang::Id>::id"],
+      "scope": "@text:6a76da3a741098a2",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::token_2022::Token2022::id"],
+      "binding_defaults": false
+    },
+    "anchor_spl_1_0_2.token.Token.id": {
+      "order": 559,
+      "source_id": "anchor-spl-support::anchor-spl-1.0.2::src/token.rs",
+      "line": 508,
+      "anchor_text": "impl anchor_lang::Id for Token {",
+      "rust_names": ["<anchor_spl::token::Token as anchor_lang::Id>::id"],
+      "scope": "@text:6a76da3a741098a2",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::token::Token::id"],
+      "binding_defaults": false
+    },
+    "anchor_spl_0_29_0.token_2022.transfer_checked": {
+      "order": 633,
+      "source_id": "anchor-spl-0.29.0::src/token_2022.rs",
+      "line": 35,
+      "anchor_text": "pub fn transfer_checked<'info>(",
+      "bindings": {"sdk-95138fac15cf40c84cee": "anchor_spl::token_2022::transfer_checked"},
+      "scope": "@text:74c1e19bd7c0b936",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token_2022::transfer_checked"],
+      "models": ["anchor-spl::token_2022::transfer_checked_legacy_interface"]
+    },
+    "anchor_spl_0_29_0.token_interface.TokenAccount.deref": {
+      "order": 634,
+      "source_id": "anchor-spl-support::anchor-spl-0.29.0::src/token_interface.rs",
+      "line": 27,
+      "anchor_text": "impl Deref for TokenAccount {",
+      "rust_names": ["<anchor_spl::token_interface::TokenAccount as core::ops::deref::Deref>::deref"],
+      "scope": "@text:2e74be485052eb17",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::token_interface::TokenAccount::deref"],
+      "binding_defaults": false
+    },
+    "anchor_spl_0_29_0.token_interface.TokenInterface.ids": {
+      "order": 635,
+      "source_id": "anchor-spl-support::anchor-spl-0.29.0::src/token_interface.rs",
+      "line": 71,
+      "anchor_text": "impl anchor_lang::Ids for TokenInterface {",
+      "rust_names": ["<anchor_spl::token_interface::TokenInterface as anchor_lang::Ids>::ids"],
+      "scope": "@text:b273db66ba6ef121",
+      "binding_obligations": ["@binding:885b1f50e60bedcb"],
+      "models": ["anchor-spl::token_interface::TokenInterface::ids"],
+      "binding_defaults": false
+    },
+    "anchor_spl_0_27_0.stake.StakeAccount.deref": {
+      "order": 743,
+      "source_id": "anchor-spl-support::anchor-spl-0.27.0::src/stake.rs",
+      "line": 151,
+      "anchor_text": "impl Deref for StakeAccount {",
+      "rust_names": ["<anchor_spl::stake::StakeAccount as core::ops::deref::Deref>::deref"],
+      "scope": "@text:2e74be485052eb17",
+      "binding_obligations": ["@binding:885b1f50e60bedcb", "@binding:76e1f0b5a6c2ddb6"],
+      "models": ["anchor-spl::stake::StakeAccount::deref"],
+      "binding_defaults": false
+    },
+    "anchor_spl_0_27_0.stake.deactivate_stake": {
+      "order": 744,
+      "source_id": "anchor-spl-support::anchor-spl-0.27.0::src/stake.rs",
+      "line": 69,
+      "anchor_text": "pub fn deactivate_stake<'info>(",
+      "rust_names": ["anchor_spl::stake::deactivate_stake"],
+      "scope": "@text:17676f59eacc89b5",
+      "binding_obligations": "@shared:binding-obligations-528bbf94d6836476",
+      "models": ["anchor-spl::stake::deactivate_stake"],
+      "binding_defaults": false
+    },
+    "anchor_spl_0_27_0.stake.withdraw": {
+      "order": 745,
+      "source_id": "anchor-spl-support::anchor-spl-0.27.0::src/stake.rs",
+      "line": 43,
+      "anchor_text": "pub fn withdraw<'info>(",
+      "rust_names": ["anchor_spl::stake::withdraw"],
+      "scope": "@text:17676f59eacc89b5",
+      "binding_obligations": "@shared:binding-obligations-528bbf94d6836476",
+      "models": ["anchor-spl::stake::withdraw"],
+      "binding_defaults": false
+    },
+    "anchor_spl_0_27_0.token.TokenAccount.deref": {
+      "order": 746,
+      "source_id": "anchor-spl-support::anchor-spl-0.27.0::src/token.rs",
+      "line": 481,
+      "anchor_text": "impl Deref for TokenAccount {",
+      "rust_names": ["<anchor_spl::token::TokenAccount as core::ops::deref::Deref>::deref"],
+      "scope": "@text:2e74be485052eb17",
+      "binding_obligations": ["@binding:885b1f50e60bedcb", "@binding:76e1f0b5a6c2ddb6"],
+      "models": ["anchor-spl::token::TokenAccount::deref"],
+      "binding_defaults": false
+    },
+    "anchor_spl_0_27_0.token.burn": {
+      "order": 747,
+      "source_id": "anchor-spl-0.27.0::src/token.rs",
+      "line": 88,
+      "anchor_text": "pub fn burn<'info>(ctx: CpiContext<'_, '_, '_, 'info, Burn<'info>>, amount: u64) -> Result<()> {",
+      "bindings": {"sdk-32e4c2a9c294c019703b": "anchor_spl::token::burn"},
+      "scope": "@text:ba0e22ae203d92af",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token::burn"],
+      "models": ["anchor-spl::token::burn"]
+    },
+    "anchor_spl_0_27_0.token.mint_to": {
+      "order": 748,
+      "source_id": "anchor-spl-0.27.0::src/token.rs",
+      "line": 64,
+      "anchor_text": "pub fn mint_to<'info>(",
+      "bindings": {"sdk-b744a5001cb337c382ad": "anchor_spl::token::mint_to"},
+      "scope": "@text:cd6df8c62cdcc6a1",
+      "clients": ["SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token::mint_to"],
+      "models": ["anchor-spl::token::mint_to"]
+    },
+    "anchor_spl_0_27_0.token.transfer": {
+      "order": 749,
+      "source_id": "anchor-spl-0.27.0::src/token.rs",
+      "line": 12,
+      "anchor_text": "pub fn transfer<'info>(",
+      "bindings": {"sdk-259f17c0463cd3aa7030": "anchor_spl::token::transfer"},
+      "scope": "@text:3a7b6b9daee1ce0c",
+      "clients": [
+        "SolanalibTest.Specs.Core.AnchorSplTokenOperations.every_binding_has_execution",
+        "SolanalibTest.Specs.Core.AnchorSplTokenAdmission.MissingRequestBytes.one_good_path_does_not_hide_bad_request",
+        "SolanalibTest.Specs.Core.AnchorSplTokenAdmission.MissingRequestBytes.mixed_provider_keeps_actual_success"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.run",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Ready",
+        "Solanalib.Specs.Core.CpiRequest.Invocation",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "binding_obligations": ["@binding:878dfd6fedb5efd2", "@binding:fed0ddcfeaff0f89"],
+      "rust_names": ["anchor_spl::token::transfer"],
+      "models": ["anchor-spl::token::transfer_inline_error"]
+    }
+  },
+  "applicability_sources": {
+    "anchor-spl": {
+      "order": 2,
+      "package": "anchor-spl",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.1.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.1.0.crate",
+          "sha256": "36ec3b53391014068490fdc45b4e0cf59c04916e8be0f6116c87d7b64fbfc8bd",
+          "revision": "72bf55db2b877bd0fd64e891aea06ed7b750041c",
+          "repository": "https://github.com/solana-foundation/anchor"
+        },
+        "0.2.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.2.0.crate",
+          "sha256": "7ea892d7f803b279eb981f196f338f362b7e41d696cbc56df059e8ac15acfff4"
+        },
+        "0.2.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.2.1.crate",
+          "sha256": "ffff655dabfb01706289c2d31f89ba670a6a6f01d2c01de4fcfceff9a3f98a49",
+          "revision": "d3daddcca06973ff1bb1c1a72042fc4f6c5c29e7",
+          "repository": "https://github.com/solana-foundation/anchor"
+        },
+        "0.3.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.3.0.crate",
+          "sha256": "e10cb97554d28243b2a0ad495762fc5f58ee8b3dac879ab8ddcef829f9e2b3ff",
+          "revision": "97027d9abcc0dba6ac69cdec1ec9889c996a09fa",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.4.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.4.0.crate",
+          "sha256": "c203c72de39aeeaae241e1cc44df514d577c26689488037a7864597237e8525b",
+          "revision": "52c974cc8461a0208bccb16a35d8e80cc762e827",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.4.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.4.1.crate",
+          "sha256": "441768ee5bdbe592ac3446a886b99bf870f493caa2df9ad942dfd4aa0af88c2b",
+          "revision": "841fa10edf588aa7c43494d04d5a7a0c6b1fc589",
+          "repository": "https://github.com/solana-foundation/anchor"
+        },
+        "0.4.2": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.4.2.crate",
+          "sha256": "2c309bb58fc9877866e3c2a0111c87488cc5001a3629186ac043aa505573aa8d",
+          "revision": "5c5ce4872133c483faab929cf3cebf4590825ec2",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.4.3": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.4.3.crate",
+          "sha256": "3587f3d7a649316424af1f2b0ffc4907097cbca2a24a11be0bc0e8b01e25ad2f",
+          "revision": "be273bc98447539392adff6938e93119a5d802c4",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.4.4": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.4.4.crate",
+          "sha256": "19fb214ae2f64e3e71989b0c6b345a8a6f919af4b5ca76de6de9034d37195a25",
+          "revision": "2dc42bdcf5aa4c4e30720cec68dcf97eb2144b4d",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.4.5": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.4.5.crate",
+          "sha256": "3e23e56970600fc71f346ec42c5e5943f36f936272a4717ca55368e189ece9c4",
+          "revision": "8ec8c8daca89050e78a52040d6325ecbb19f699c",
+          "repository": "https://github.com/solana-foundation/anchor"
+        },
+        "0.5.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.5.0.crate",
+          "sha256": "dbdd87247c3b485691e04f3778361b92a25d3e32ecf7c0e43785743cc606c94e",
+          "revision": "1c157003eea26f19b83f56202c58bd68f421af30",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.6.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.6.0.crate",
+          "sha256": "aeaee3c5b0771f7eb91399b50b838cb138f3b06502069bd6436ab5a8efe9c73e",
+          "revision": "8a73c76191af821e6fdab3298150e105da2f9f3b",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.7.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.7.0.crate",
+          "sha256": "dc7645f58767121a6e04681a444af5358c5780d211cffb2793b4e6c3d1de3c72",
+          "revision": "8749bb416aafbb53ecccbb3b74812accb041cfb2",
+          "repository": "https://github.com/solana-foundation/anchor"
+        },
+        "0.8.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.8.0.crate",
+          "sha256": "bbacce33c7dce64b41c9c70b5c05b8d1c5a014d3af99254063ef19a39416da48",
+          "revision": "6d8eb68cdbbdfcf22e1b56b024894cc5ebd1748c",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.9.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.9.0.crate",
+          "sha256": "c97177591843cf707b2efcc9e1b05a23c17bba3356315ef2373af3c3a5165fb0",
+          "revision": "fa738f280d5ceabb271220525609469fd027063c",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.10.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.10.0.crate",
+          "sha256": "2cb1ba3f80d8d964c7fc2a7c00f681dffe9e28bd4086608f2f7878718a7dd824",
+          "revision": "c0a75991e8cb079286c307a4a98156c85a9a2b54",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.11.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.11.0.crate",
+          "sha256": "a577125232d39da9799cb16cba00b90aae6ba0f1a7831028a8b2422acd0c2cfa",
+          "revision": "2c9477935de2cb0a39d9a9bf64fa5e62b6174506",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.11.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.11.1.crate",
+          "sha256": "60ed4d25c0b4e8ea873411e4ad36a1cfdb937f73187ae0a8454311ed945dfdd8",
+          "revision": "d9bbe564492a86339df6ef3880502c05714de641",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.12.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.12.0.crate",
+          "sha256": "f68aead67169687e9ba797948b4234db148b36a8632bfffb461e0ff063145503",
+          "revision": "4d73b5a18533d588c1e1d50ba932d309e93a7e79",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.13.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.13.0.crate",
+          "sha256": "e16fc45391a7539ac6912232ade523b415b3be2c5d066a6ddcf81fce2145f575",
+          "revision": "efb9aaf216de84cbd34f3265aa98ce32bde9734a",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.13.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.13.1.crate",
+          "sha256": "0f5c4e64f7d3e96a2db4746068bf5d7b0f247eb8d801102e79cf8b73747b860d",
+          "revision": "bf319b4f7360c36b6db6eaa63266b42bd878503e",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.13.2": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.13.2.crate",
+          "sha256": "3faeabe726b366ad273f4c47a76a79302e69eab889e3f50cd1c736a01a34d7f7",
+          "revision": "3687bc2d27d14cde9ff05146e7d2b02000630438",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.14.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.14.0.crate",
+          "sha256": "719e411e8d19b7293ee225f0e427793ec519ece34283a21da544bd4bf4001753",
+          "revision": "48a880ecf88355a3df3110987cc666c25a13ae23",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.15.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.15.0.crate",
+          "sha256": "2e69e46b46697642a80e4c2eb8ef10ff58be1a5c4b05a42979bf99167bcf1144",
+          "revision": "ab8992c20ae2be3b3b99fa24dab7928746db07f8",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.16.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.16.0.crate",
+          "sha256": "06769d79977c89980fb639aef1e364a601f18927f7a2d193d0cd15ea3104360f",
+          "revision": "beb4aeb03eca858f68fff95b4034a087b319cb0e",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.16.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.16.1.crate",
+          "sha256": "9f34afdc6678b3c2563403f6ca2a6d59b2407cd3334757e2761c4776e0339764",
+          "revision": "82bdf91722dda0d316ef6040f12af70573061993",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.16.2": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.16.2.crate",
+          "sha256": "53789b75c63dfaa4380c725b6891dab5115a55d2e0cdcf409d487b1119130504",
+          "revision": "01665f2691ae113bebaf2ea4e6982df8b743f449",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.17.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.17.0.crate",
+          "sha256": "b49dfaf04f0794ecbdafa1f5dda93d47fc042ae70478fc079194c6c7cd265e94",
+          "revision": "d36a84a26c736db234f846d93237b6f640086659",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.18.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.18.0.crate",
+          "sha256": "c995dfac730f6ead86280aa32636e0abd6ec3189dd42e37cc3be4df380cc7008",
+          "revision": "bd55b9b4a5115fbba0a83b2552590429ad41aeac",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.18.2": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.18.2.crate",
+          "sha256": "a6d6c8fbc834319618581a4e19807a30e76326b9981abd069addb55acf0647db",
+          "revision": "b0ac87ad640134537993ed4c168a23897112b6ff",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.19.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.19.0.crate",
+          "sha256": "362427b7620190bae716daee6aaf2a12022b289c7b87673ad124a3c83bee85ac",
+          "revision": "08174e84a6db0e945e93a91bb1f2770365f68f4c",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.20.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.20.0.crate",
+          "sha256": "1a68ac42913103bddda27c674945a9d0e1ee96c181ea243ddca0ab1e2612b771",
+          "revision": "e427b72086f18c922bceecdc3657279d782c9a63",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.20.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.20.1.crate",
+          "sha256": "9ea94b04fc9a0aaae4d4473b0595fb5f55b6c9b38e0d6f596df8c8060f95f096",
+          "revision": "4b30fe10a3df2d61a452a42b9cc1e7507347e0f2",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.21.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.21.0.crate",
+          "sha256": "cc245f1d18992ad44236dc15717a9875e1184a164b931c506ba9dc7a2258804f",
+          "revision": "7e78518f279eb9ac27a1626820df6f62eafb122e",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.22.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.22.0.crate",
+          "sha256": "e49a20ac8743546bc76a247ff0a81ceb0cee7653b087ccb330bf3553d907d522",
+          "revision": "65672a6678a1aa9d1625001f4d493f6d94a25609",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.22.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.22.1.crate",
+          "sha256": "bcdf03d76450451f6c587098fa0d9775dc7eabf9173c89bd1bb17dd72b49e748",
+          "revision": "9a93571543927edabe70b3354487daef61e851bf",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.23.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.23.0.crate",
+          "sha256": "302c7285127b097d90e188eb9a7488ea9099550cceb86f27177d51d67df609b5",
+          "revision": "9f74a288bc3ed40534199571c368c276367e3615",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.24.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.24.0.crate",
+          "sha256": "78e6ee0c68905c8f503f8ec72e7896f0caeafb457dd0cdc8b196cc7b1b44b3c5",
+          "revision": "456669f585737657653d74f6e7f078f036ccedcd",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.24.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.24.1.crate",
+          "sha256": "383035b6eed94be902577947cb1ffc305786a55c965503143f2306554942b3c1",
+          "revision": "e8a1704e7a0bbea974c6fe9b0d5b61e14c24a2ae",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.24.2": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.24.2.crate",
+          "sha256": "0188c33b4a3c124c4e593f2b440415aaea70a7650fac6ba0772395385d71c003",
+          "revision": "3ceba021e1eb95453f69370e6d8065c6883aecfa",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/project-serum/anchor"
+        },
+        "0.25.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.25.0.crate",
+          "sha256": "d65904c3106851f6d1bb87d504044764819d69c51d2b4346d59d399d8afa7d18",
+          "revision": "260214814f3ad2bcdfa9776f26c4e69f1f7af9a1",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/coral-xyz/anchor"
+        },
+        "0.26.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.26.0.crate",
+          "sha256": "f32390ce8356f54c0f0245ea156f8190717e37285b8bf4f406a613dc4b954cde",
+          "revision": "e1e932c2b60d793b26b9e5886f00bb93bddad008",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/coral-xyz/anchor"
+        },
+        "0.27.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.27.0.crate",
+          "sha256": "75cc8066fbd45e0e03edf48342c79265aa34ca76cefeace48ef6c402b6946665",
+          "revision": "d456168d82e2725eaefd2306b516ee201e990820",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/coral-xyz/anchor"
+        },
+        "0.28.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.28.0.crate",
+          "sha256": "78f860599da1c2354e7234c768783049eb42e2f54509ecfc942d2e0076a2da7b",
+          "revision": "e1afcbf71e0f2e10fae14525934a6a68479167b9",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/coral-xyz/anchor"
+        },
+        "0.29.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.29.0.crate",
+          "sha256": "6c4fd6e43b2ca6220d2ef1641539e678bfc31b6cc393cf892b373b5997b6a39a",
+          "revision": "fc9fd6d24b9be84abb2f40e47ed3faf7b11864ae",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/coral-xyz/anchor"
+        },
+        "0.30.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.30.0.crate",
+          "sha256": "0dcee54a30b27ea8317ca647759b5d9701a8c7caaaa0c922c6d3c306a7278a7a",
+          "revision": "f0b2911101c12f18a8b184aebcde75daa9405196",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/coral-xyz/anchor"
+        },
+        "0.30.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.30.1.crate",
+          "sha256": "04bd077c34449319a1e4e0bc21cea572960c9ae0d0fefda0dd7c52fcc3c647a3",
+          "revision": "c029437a7a3f2ed6d366a02374059dcd2370f160",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/coral-xyz/anchor"
+        },
+        "0.30.3": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.30.3.crate",
+          "sha256": "9b3b0c54f0854f06064ec5f36f2c18d261f750ea805f69d43aaab919daab9536",
+          "revision": "f6d69a70b62b115611c47d4ae75832db8df5faf5",
+          "path_prefix": "spl/"
+        },
+        "0.31.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.31.0.crate",
+          "sha256": "e9d989ebc64e6c1a9828d3a6f7b8e7a4d63cc8a4f667dcb191bd9067a3375c20",
+          "revision": "0e5285aecdf410fa0779b7cd09a47f235882c156",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/coral-xyz/anchor"
+        },
+        "0.31.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.31.1.crate",
+          "sha256": "3c08cb5d762c0694f74bd02c9a5b04ea53cefc496e2c27b3234acffca5cd076b",
+          "revision": "47284f8f0b9844c6b83234aa90f556bad00e12ed",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/coral-xyz/anchor"
+        },
+        "0.31.2": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.31.2.crate",
+          "sha256": "89276ee9ee7a4aecc3cab264189ea5e1d07f99cd96e6b3a3c318f2d65613a69a",
+          "revision": "6f152a48f266eb187b2a3cc22f1cc7d1ae5bdbd3",
+          "path_prefix": "spl/"
+        },
+        "0.31.3": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.31.3.crate",
+          "sha256": "eaeb332bf97f9825d90dd580d868c47f0e34652e1886411346803fcba64c98fc",
+          "revision": "23fbc4c6aacc3c726da89fe4342e43db05bb7d95",
+          "path_prefix": "spl/"
+        },
+        "0.32.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate",
+          "sha256": "e8435f15f4b61d23aa71e72c14fe0a759413b97c252683fd694cfd29fe48fd6e",
+          "revision": "d4502a6ad4e59cd29369ec7c0974a854f99164c0",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/coral-xyz/anchor"
+        },
+        "0.32.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate",
+          "sha256": "3397ab3fc5b198bbfe55d827ff58bd69f2a8d3f9f71c3732c23c2093fec4d3ef",
+          "revision": "1ebbe58158d089a2a40b5e35ebead5a10db9090d",
+          "path_prefix": "spl/",
+          "repository": "https://github.com/coral-xyz/anchor"
+        },
+        "0.32.2": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate",
+          "sha256": "ec9436d0ba1c4784fc040ee1e50e7d76f02399f3f976ba0c5b843ff9c17a6d35",
+          "revision": "058956213d64e436836bd49c4111242bfd82912f",
+          "path_prefix": "spl/"
+        },
+        "0.32.3": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
+          "sha256": "fcc3a5a235e3369c067f533057a847fe0b79f7a59f8fdc6c0511c15741680531",
+          "revision": "0e115d4bd34b7a9f61cbe6ade144dae2d5d12c66",
+          "path_prefix": "spl/"
+        },
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.0.crate",
+          "sha256": "300e2e8058e674e8d6ea7c72dfb8be4349609dd9c3760ce729fc6406199624fe",
+          "revision": "25be6d502ec6957d34d436bc2a6170040fc64153",
+          "path_prefix": "spl/"
+        },
+        "1.0.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.1.crate",
+          "sha256": "88df28fe8db92ea6a67e4654d4f48c29f9daf4fc17f548d4a6e33a153f2b84eb",
+          "revision": "4c10bd6915788b396ba67d2f4054afac0b9f6d6c",
+          "path_prefix": "spl/"
+        },
+        "1.0.2": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.2.crate",
+          "sha256": "0b8005eef3a48a9a8cb21b126ae3bb252647e353afe6ef7f19e545177801c841",
+          "revision": "1314a6b83b16e6a31947b372d57988fd0e81559c",
+          "path_prefix": "spl/"
+        },
+        "1.0.3": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.3.crate",
+          "sha256": "33e8fc8c00f3cd3a9c4ba90c7b0e481bccee9ff7f06af242a12b159f0fc52fcf",
+          "revision": "9bd4f2f41b0407545da1af7348b0419725ce3ce8",
+          "path_prefix": "spl/"
+        },
+        "1.1.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-1.1.1.crate",
+          "sha256": "a8aa6078920084e8cdf672aefee6aeedb0abf08beae8857ea548b29035d0f14a",
+          "revision": "208c0b78a748700a5ab89b641b8d73e267bcfdb3",
+          "path_prefix": "spl/"
+        },
+        "1.1.2": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-1.1.2.crate",
+          "sha256": "2f698a45d424351ff695df413adcb3fa603f2c791a0b4a937ebcd2e93a052c77",
+          "revision": "24035e2b0035c87e321acc1c05f97793829a87f1",
+          "path_prefix": "spl/"
+        },
+        "1.2.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-1.2.0.crate",
+          "sha256": "85f6d2ad797b45d3e4b3364b433e78e4e95729ae2a187fe7032b976f54b5a2fb",
+          "revision": "84a63f9f7112b23581816436fbcf3f6c515779f9",
+          "path_prefix": "spl/"
+        },
+        "1.2.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-1.2.1.crate",
+          "sha256": "9c3557c0a140ddcd5641bfe66bbb0c563b9576100a1226ad54316c791849c3e9",
+          "revision": "f1d20a94e8857d66e39810039aa5b5eee9ff733e",
+          "path_prefix": "spl/"
+        },
+        "1.2.2": {
+          "archive_url": "https://static.crates.io/crates/anchor-spl/anchor-spl-1.2.2.crate",
+          "sha256": "0026a28b86a248dfd046b3e9ac726c5f9c07840b3f66446287c4c8edc13b6224",
+          "revision": "8d9d1488d9b8af41b266d7513eea2e668adf15a2",
+          "path_prefix": "spl/"
+        }
+      },
+      "evidence": ["@text:031f3448f631b109", "@text:21b75b11e531b68b"]
+    }
+  },
+  "applicability": {
+    "anchor-spl::token::Mint::deref": {
+      "order": 27,
+      "profiles": [
+        {
+          "id": "anchor-spl-reviewed-direct",
+          "source": "anchor-spl",
+          "conditions": "@shared:conditions-d09a114deb6a9a20",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-ba3c90b0837e2dfc",
+          "evidence": ["@text:2220a85e5c33c7fc", "@text:22c715516278ee7f"],
+          "items": [
+            {
+              "item": "core::ops::deref::Deref::deref",
+              "implementation": "<anchor_spl::token::Mint as core::ops::deref::Deref>::deref",
+              "releases": "@shared:releases-a604ecdd86af3116",
+              "compatible_ranges": [
+                {"lower": "0.1.0", "upper": "0.2.0"},
+                {"lower": "0.2.0", "upper": "0.3.0"},
+                {"lower": "0.3.0", "upper": "0.4.0"},
+                {"lower": "0.4.0", "upper": "0.5.0"},
+                {"lower": "0.5.0", "upper": "0.6.0"},
+                {"lower": "0.6.0", "upper": "0.7.0"},
+                {"lower": "0.7.0", "upper": "0.8.0"},
+                {"lower": "0.8.0", "upper": "0.9.0"},
+                {"lower": "0.9.0", "upper": "0.10.0"},
+                {"lower": "0.10.0", "upper": "0.11.0"},
+                {"lower": "0.11.0", "upper": "0.12.0"},
+                {"lower": "0.12.0", "upper": "0.13.0"},
+                {"lower": "0.13.0", "upper": "0.14.0"},
+                {"lower": "0.14.0", "upper": "0.15.0"},
+                {"lower": "0.15.0", "upper": "0.16.0"},
+                {"lower": "0.16.0", "upper": "0.17.0"},
+                {"lower": "0.17.0", "upper": "0.18.0"},
+                {"lower": "0.18.0", "upper": "0.18.2"}
+              ]
+            }
+          ],
+          "releases": "@shared:releases-a604ecdd86af3116"
+        },
+        {
+          "id": "anchor-spl-reviewed-token",
+          "source": "anchor-spl",
+          "conditions": "@shared:conditions-d09a114deb6a9a20",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-ba3c90b0837e2dfc",
+          "evidence": ["@text:2220a85e5c33c7fc", "@text:22c715516278ee7f"],
+          "features": {"reason": "@text:e5f8dd3725b2a9a5", "all": ["token"]},
+          "items": [
+            {
+              "item": "core::ops::deref::Deref::deref",
+              "implementation": "<anchor_spl::token::Mint as core::ops::deref::Deref>::deref",
+              "releases": "@shared:releases-64960ca11d1082fb",
+              "compatible_ranges": "@shared:compatible-ranges-7b818cc094d21043"
+            }
+          ],
+          "releases": "@shared:releases-64960ca11d1082fb"
+        }
+      ]
+    },
+    "anchor-spl::token::accessor::amount": {
+      "order": 28,
+      "profiles": [
+        {
+          "id": "anchor-spl-reviewed-token",
+          "source": "anchor-spl",
+          "conditions": "@shared:conditions-c4bd366bfb10fd69",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-ab6664cc18e379fc",
+          "evidence": ["@text:ec5d12a1364bb44b", "@text:22c715516278ee7f"],
+          "features": {"reason": "@text:e5f8dd3725b2a9a5", "all": ["token"]},
+          "items": [
+            {
+              "item": "anchor_spl::token::accessor::amount",
+              "implementation": "anchor_spl::token::accessor::amount",
+              "releases": "@shared:releases-f38d277121658629",
+              "compatible_ranges": "@shared:compatible-ranges-6170031e09491019"
+            }
+          ],
+          "releases": "@shared:releases-f38d277121658629"
+        }
+      ]
+    },
+    "anchor-spl::token::accessor::amount_observation": {
+      "order": 29,
+      "profiles": [
+        {
+          "id": "anchor-spl-reviewed-direct",
+          "source": "anchor-spl",
+          "conditions": "@shared:conditions-c4bd366bfb10fd69",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-acde494991844340",
+          "evidence": ["@text:90e7e768489e9f1b", "@text:22c715516278ee7f"],
+          "items": [
+            {
+              "item": "anchor_spl::token::accessor::amount",
+              "implementation": "anchor_spl::token::accessor::amount",
+              "releases": "@shared:releases-88376848998c7dd8",
+              "compatible_ranges": [
+                {"lower": "0.4.5", "upper": "0.5.0"},
+                {"lower": "0.5.0", "upper": "0.6.0"},
+                {"lower": "0.6.0", "upper": "0.7.0"},
+                {"lower": "0.7.0", "upper": "0.8.0"},
+                {"lower": "0.8.0", "upper": "0.9.0"},
+                {"lower": "0.9.0", "upper": "0.10.0"},
+                {"lower": "0.10.0", "upper": "0.11.0"},
+                {"lower": "0.11.0", "upper": "0.12.0"},
+                {"lower": "0.12.0", "upper": "0.13.0"},
+                {"lower": "0.13.0", "upper": "0.14.0"},
+                {"lower": "0.14.0", "upper": "0.15.0"},
+                {"lower": "0.15.0", "upper": "0.16.0"},
+                {"lower": "0.16.0", "upper": "0.17.0"},
+                {"lower": "0.17.0", "upper": "0.18.0"},
+                {"lower": "0.18.0", "upper": "0.18.2"}
+              ]
+            }
+          ],
+          "releases": "@shared:releases-88376848998c7dd8"
+        },
+        {
+          "id": "anchor-spl-reviewed-token",
+          "source": "anchor-spl",
+          "conditions": "@shared:conditions-c4bd366bfb10fd69",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-acde494991844340",
+          "evidence": ["@text:90e7e768489e9f1b", "@text:22c715516278ee7f"],
+          "features": {"reason": "@text:e5f8dd3725b2a9a5", "all": ["token"]},
+          "items": [
+            {
+              "item": "anchor_spl::token::accessor::amount",
+              "implementation": "anchor_spl::token::accessor::amount",
+              "releases": "@shared:releases-64960ca11d1082fb",
+              "compatible_ranges": "@shared:compatible-ranges-7b818cc094d21043"
+            }
+          ],
+          "releases": "@shared:releases-64960ca11d1082fb"
+        }
+      ]
+    },
+    "anchor-spl::token::transfer": {
+      "order": 30,
+      "profiles": [
+        {
+          "id": "anchor-spl-reviewed-token",
+          "source": "anchor-spl",
+          "conditions": "@shared:conditions-c3dc37676aad681b",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-7721120ba0170608",
+          "evidence": ["@text:967dbd35e99ce8f3", "@text:22c715516278ee7f"],
+          "features": {"reason": "@text:e5f8dd3725b2a9a5", "all": ["token"]},
+          "items": [
+            {
+              "item": "anchor_spl::token::transfer",
+              "implementation": "anchor_spl::token::transfer",
+              "releases": "@shared:releases-d01c9048559d5eb1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-d01c9048559d5eb1"
+        }
+      ]
+    },
+    "anchor-spl::token::transfer_observation": {
+      "order": 31,
+      "profiles": [
+        {
+          "id": "anchor-spl-reviewed-token",
+          "source": "anchor-spl",
+          "conditions": "@shared:conditions-c3dc37676aad681b",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-96b8488d62e90601",
+          "evidence": ["@text:967dbd35e99ce8f3", "@text:22c715516278ee7f"],
+          "features": {"reason": "@text:e5f8dd3725b2a9a5", "all": ["token"]},
+          "items": [
+            {
+              "item": "anchor_spl::token::transfer",
+              "implementation": "anchor_spl::token::transfer",
+              "releases": "@shared:releases-d01c9048559d5eb1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-d01c9048559d5eb1"
+        }
+      ]
+    },
+    "anchor-spl::token_interface::Mint::deref": {
+      "order": 32,
+      "profiles": [
+        {
+          "id": "anchor-spl-reviewed-token_2022",
+          "source": "anchor-spl",
+          "conditions": [
+            "@text:eceedeff9243d86e",
+            "@text:72b1b189dec46743",
+            "@text:0a736d2e24f3f6b1",
+            "@text:fca0cdcff92e79a5"
+          ],
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-36c7d83ee85684fd",
+          "evidence": ["@text:d59b967e799f1411", "@text:22c715516278ee7f"],
+          "features": {"reason": "@text:e5f8dd3725b2a9a5", "all": ["token_2022"]},
+          "items": [
+            {
+              "item": "core::ops::deref::Deref::deref",
+              "implementation": "<anchor_spl::token_interface::Mint as core::ops::deref::Deref>::deref",
+              "releases": "@shared:releases-2f93c60d3ff64b93",
+              "compatible_ranges": "@shared:compatible-ranges-d0d69ea9ddb36fdd"
+            }
+          ],
+          "releases": "@shared:releases-2f93c60d3ff64b93"
+        }
+      ]
+    },
+    "anchor-spl::token_interface::TokenAccount::deref": {
+      "order": 266,
+      "profiles": [
+        {
+          "id": "anchor-spl-support-0.32.1-token_interface-TokenAccount-deref",
+          "source": "anchor-spl",
+          "releases": ["0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.1", "0.32.2", "0.32.3"],
+              "item": "core::ops::deref::Deref::deref",
+              "implementation": "<anchor_spl::token_interface::TokenAccount as core::ops::deref::Deref>::deref",
+              "compatible_ranges": [{"lower": "0.32.1", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:667eece4f3d0e7e0"},
+          "dependencies": [
+            {
+              "package": "spl-token-2022",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["8.0.1"],
+              "reason": "@text:d183dc8749fa6ee1",
+              "compatible_ranges": [{"lower": "8.0.1", "upper": "9.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:885b1f50e60bedcb"],
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-732a33d3ba53373a",
+          "evidence": [
+            "@text:63238c05b7ccfed1",
+            "@text:0cbb030499c7f87b",
+            "@text:d04ce9b8ece63b87",
+            "@text:0deaf2fc8e2d20fb"
+          ]
+        },
+        {
+          "id": "anchor-spl-support-1.1.2-token_interface-TokenAccount-deref",
+          "source": "anchor-spl",
+          "releases": ["1.1.2"],
+          "items": [
+            {
+              "releases": ["1.1.2"],
+              "item": "core::ops::deref::Deref::deref",
+              "implementation": "<anchor_spl::token_interface::TokenAccount as core::ops::deref::Deref>::deref",
+              "compatible_ranges": [{"lower": "1.1.2", "upper": "1.2.1"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:667eece4f3d0e7e0"},
+          "dependencies": [
+            {
+              "package": "spl-token-2022-interface",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.1.0"],
+              "reason": "@text:57444869bca28bf1",
+              "compatible_ranges": [{"lower": "2.1.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:885b1f50e60bedcb"],
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-205cceaae6b2ea12",
+          "evidence": ["@text:b8b680d3b5e7360d", "@text:0cbb030499c7f87b"]
+        },
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-817e4eed1b706f75",
+          "conditions": ["@binding:885b1f50e60bedcb"],
+          "dependencies": [
+            {
+              "package": "spl-token-2022-interface",
+              "reason": "@text:2c1fd99cfcf2976e",
+              "releases": ["2.1.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            }
+          ],
+          "evidence": "@shared:evidence-644033988ff46171",
+          "features": {"all": ["token_2022"], "reason": "@text:667eece4f3d0e7e0"},
+          "id": "anchor-spl-support-1.0.2-token_interface-TokenAccount-deref",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "1.1.0"}],
+              "implementation": "<anchor_spl::token_interface::TokenAccount as core::ops::deref::Deref>::deref",
+              "item": "core::ops::deref::Deref::deref",
+              "releases": ["1.0.0", "1.0.1", "1.0.2", "1.0.3"]
+            }
+          ],
+          "releases": ["1.0.0", "1.0.1", "1.0.2", "1.0.3"],
+          "source": "anchor-spl"
+        },
+        {
+          "id": "anchor-spl-support-0.29.0-token_interface-TokenAccount-deref",
+          "source": "anchor-spl",
+          "releases": ["0.29.0"],
+          "items": [
+            {
+              "releases": ["0.29.0"],
+              "item": "core::ops::deref::Deref::deref",
+              "implementation": "<anchor_spl::token_interface::TokenAccount as core::ops::deref::Deref>::deref",
+              "compatible_ranges": [{"lower": "0.29.0", "upper": "0.30.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:667eece4f3d0e7e0"},
+          "dependencies": [
+            {
+              "package": "spl-token-2022",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["0.9.0"],
+              "reason": "@text:6cc47ce9b14ccc24",
+              "compatible_ranges": [{"lower": "0.9.0", "upper": "0.10.0"}]
+            }
+          ],
+          "conditions": ["@binding:885b1f50e60bedcb"],
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-b8251492ec5a8d00",
+          "evidence": ["@text:ec5d12a1364bb44b", "@text:0cbb030499c7f87b"]
+        }
+      ]
+    },
+    "anchor-spl::token_2022::transfer_checked": {
+      "order": 290,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-token2022TransferChecked0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022::transfer_checked",
+              "implementation": "anchor_spl::token_2022::transfer_checked",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": [
+            {
+              "package": "anchor-lang",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "reason": "@text:c838c23f4c712b0b",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            },
+            {
+              "package": "spl-token-2022",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["8.0.0", "8.0.1"],
+              "reason": "@text:d76e15affc1f27b3",
+              "compatible_ranges": [{"lower": "8.0.0", "upper": "9.0.0"}]
+            },
+            "@shared:dependencies-ea51da14bdb8ad13",
+            "@shared:dependencies-201aee2d377ea977"
+          ],
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-87fb1552e573872f",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::associated_token::create": {
+      "order": 321,
+      "profiles": [
+        {
+          "id": "anchor-spl-support-0.32.1-associated_token-create",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::associated_token::create",
+              "implementation": "anchor_spl::associated_token::create",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["associated_token"], "reason": "@text:667eece4f3d0e7e0"},
+          "dependencies": [
+            "@shared:dependencies-a721a16df2894f37",
+            {
+              "package": "spl-associated-token-account",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["7.0.0"],
+              "reason": "@text:fdfbba4b53b678ba"
+            },
+            {
+              "package": "spl-associated-token-account-client",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.0.0"],
+              "reason": "@text:0c8e851c24a94ce4"
+            },
+            {
+              "package": "solana-pubkey",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.2.1", "2.4.0"],
+              "reason": "@text:c6adda9f3c47222b"
+            }
+          ],
+          "conditions": "@shared:conditions-528bbf94d6836476",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-ed2d056ef1cff831",
+          "evidence": "@shared:evidence-75c5751e91280082",
+          "target": "@shared:target-7fd96c035dcca2c5"
+        }
+      ]
+    },
+    "anchor-spl::metadata::create_metadata_accounts_v3": {
+      "order": 322,
+      "profiles": [
+        {
+          "id": "anchor-spl-support-0.32.1-metadata-create_metadata_accounts_v3",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::metadata::create_metadata_accounts_v3",
+              "implementation": "anchor_spl::metadata::create_metadata_accounts_v3",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["metadata"], "reason": "@text:667eece4f3d0e7e0"},
+          "dependencies": [
+            "@shared:dependencies-a721a16df2894f37",
+            {
+              "package": "mpl-token-metadata",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["5.1.1"],
+              "reason": "@text:d5685585916fc695"
+            }
+          ],
+          "conditions": "@shared:conditions-528bbf94d6836476",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-952845662a115197",
+          "evidence": "@shared:evidence-75c5751e91280082",
+          "target": "@shared:target-7fd96c035dcca2c5"
+        }
+      ]
+    },
+    "anchor-spl::token::Token::id": {
+      "order": 323,
+      "profiles": [
+        {
+          "id": "anchor-spl-support-0.32.1-token-Token-id",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_lang::Id::id",
+              "implementation": "<anchor_spl::token::Token as anchor_lang::Id>::id",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token"], "reason": "@text:667eece4f3d0e7e0"},
+          "dependencies": [
+            {
+              "package": "spl-token",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["8.0.0"],
+              "reason": "@text:bdf3ebdbe212d651"
+            }
+          ],
+          "conditions": ["@binding:885b1f50e60bedcb"],
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-757a338bb37d1598",
+          "evidence": "@shared:evidence-75c5751e91280082"
+        },
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-4d58ef06dbc0354e",
+          "conditions": ["@binding:885b1f50e60bedcb"],
+          "dependencies": [
+            {
+              "package": "spl-token-interface",
+              "reason": "@text:bdf3ebdbe212d651",
+              "releases": ["2.0.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            }
+          ],
+          "evidence": "@shared:evidence-644033988ff46171",
+          "features": {"all": ["token"], "reason": "@text:667eece4f3d0e7e0"},
+          "id": "anchor-spl-support-1.0.2-token-Token-id",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "1.1.0"}],
+              "implementation": "<anchor_spl::token::Token as anchor_lang::Id>::id",
+              "item": "anchor_lang::Id::id",
+              "releases": ["1.0.0", "1.0.1", "1.0.2", "1.0.3"]
+            }
+          ],
+          "releases": ["1.0.0", "1.0.1", "1.0.2", "1.0.3"],
+          "source": "anchor-spl"
+        }
+      ]
+    },
+    "anchor-spl::token::TokenAccount::deref": {
+      "order": 324,
+      "profiles": [
+        {
+          "id": "anchor-spl-support-0.32.1-token-TokenAccount-deref",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "core::ops::deref::Deref::deref",
+              "implementation": "<anchor_spl::token::TokenAccount as core::ops::deref::Deref>::deref",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token"], "reason": "@text:667eece4f3d0e7e0"},
+          "dependencies": [
+            {
+              "package": "spl-token",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["8.0.0"],
+              "reason": "@text:edfd372ba9ced658"
+            }
+          ],
+          "conditions": ["@binding:885b1f50e60bedcb"],
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-267c79dcbbc59a25",
+          "evidence": "@shared:evidence-75c5751e91280082"
+        },
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-817e4eed1b706f75",
+          "conditions": ["@binding:885b1f50e60bedcb"],
+          "dependencies": [
+            {
+              "package": "spl-token-interface",
+              "reason": "@text:2c1fd99cfcf2976e",
+              "releases": ["2.0.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            }
+          ],
+          "evidence": "@shared:evidence-644033988ff46171",
+          "features": {"all": ["token"], "reason": "@text:667eece4f3d0e7e0"},
+          "id": "anchor-spl-support-1.0.2-token-TokenAccount-deref",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "1.1.0"}],
+              "implementation": "<anchor_spl::token::TokenAccount as core::ops::deref::Deref>::deref",
+              "item": "core::ops::deref::Deref::deref",
+              "releases": ["1.0.0", "1.0.1", "1.0.2", "1.0.3"]
+            }
+          ],
+          "releases": ["1.0.0", "1.0.1", "1.0.2", "1.0.3"],
+          "source": "anchor-spl"
+        },
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-628466cda7c3879e",
+          "conditions": ["@binding:885b1f50e60bedcb"],
+          "dependencies": [
+            {
+              "package": "spl-token",
+              "reason": "@text:36839086b0250432",
+              "releases": ["3.5.0"],
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""}
+            }
+          ],
+          "evidence": ["@text:d59b967e799f1411", "@text:0cbb030499c7f87b"],
+          "features": {"all": ["token"], "reason": "@text:667eece4f3d0e7e0"},
+          "id": "anchor-spl-support-0.27.0-token-TokenAccount-deref",
+          "items": [
+            {
+              "implementation": "<anchor_spl::token::TokenAccount as core::ops::deref::Deref>::deref",
+              "item": "core::ops::deref::Deref::deref",
+              "releases": ["0.27.0"],
+              "compatible_ranges": [{"lower": "0.27.0", "upper": "0.28.0"}]
+            }
+          ],
+          "releases": ["0.27.0"],
+          "source": "anchor-spl"
+        }
+      ]
+    },
+    "anchor-spl::token::transfer_with_program_owner": {
+      "order": 325,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-tokenTransfer0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token::transfer",
+              "implementation": "anchor_spl::token::transfer",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": [
+            "@shared:dependencies-a721a16df2894f37",
+            {
+              "package": "spl-token",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["8.0.0"],
+              "reason": "@text:f2a1701bc8e14a76"
+            },
+            "@shared:dependencies-6f94459fb36f5348",
+            "@shared:dependencies-96bec55689b6df95"
+          ],
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-f6e50aa67b5356cf",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022::burn": {
+      "order": 326,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-token2022Burn0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022::burn",
+              "implementation": "anchor_spl::token_2022::burn",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-f0b0a62a74c11fa5",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022::close_account": {
+      "order": 327,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-token2022CloseAccount0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022::close_account",
+              "implementation": "anchor_spl::token_2022::close_account",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-3648a7a68b55a85c",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022::get_account_data_size": {
+      "order": 328,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-token2022GetAccountDataSize0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022::get_account_data_size",
+              "implementation": "anchor_spl::token_2022::get_account_data_size",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": [
+            "@binding:e7201e629bb160d4",
+            "@binding:7b66a53dd366f823",
+            "@binding:878dfd6fedb5efd2",
+            "@binding:fed0ddcfeaff0f89",
+            "@binding:5ea795acd8ef5611"
+          ],
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-e23df75a52f42bf1",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022::initialize_account3": {
+      "order": 329,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-token2022InitializeAccount30321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022::initialize_account3",
+              "implementation": "anchor_spl::token_2022::initialize_account3",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-2406828602ea7870",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022::initialize_immutable_owner": {
+      "order": 330,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-token2022InitializeImmutableOwner0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022::initialize_immutable_owner",
+              "implementation": "anchor_spl::token_2022::initialize_immutable_owner",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-7ec258f45e63460d",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022::initialize_mint2": {
+      "order": 331,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-token2022InitializeMint20321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022::initialize_mint2",
+              "implementation": "anchor_spl::token_2022::initialize_mint2",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-c5bd5919759f8a9e",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022::mint_to": {
+      "order": 332,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-token2022MintTo0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022::mint_to",
+              "implementation": "anchor_spl::token_2022::mint_to",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-a78a90af2f95adc3",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022::set_authority": {
+      "order": 333,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-token2022SetAuthority0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022::set_authority",
+              "implementation": "anchor_spl::token_2022::set_authority",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-2dd3e8e3a92c3efe",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022_extensions::group_member_pointer::group_member_pointer_initialize": {
+      "order": 334,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-groupMemberPointer0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022_extensions::group_member_pointer::group_member_pointer_initialize",
+              "implementation": "anchor_spl::token_2022_extensions::group_member_pointer::group_member_pointer_initialize",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022_extensions"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-10866dbbfdc49abf",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022_extensions::group_pointer::group_pointer_initialize": {
+      "order": 335,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-groupPointer0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022_extensions::group_pointer::group_pointer_initialize",
+              "implementation": "anchor_spl::token_2022_extensions::group_pointer::group_pointer_initialize",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022_extensions"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-0ae5950402ba8980",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022_extensions::metadata_pointer::metadata_pointer_initialize": {
+      "order": 336,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-metadataPointer0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022_extensions::metadata_pointer::metadata_pointer_initialize",
+              "implementation": "anchor_spl::token_2022_extensions::metadata_pointer::metadata_pointer_initialize",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022_extensions"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-793c6c457df396b0",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022_extensions::mint_close_authority::mint_close_authority_initialize": {
+      "order": 337,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-mintCloseAuthority0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022_extensions::mint_close_authority::mint_close_authority_initialize",
+              "implementation": "anchor_spl::token_2022_extensions::mint_close_authority::mint_close_authority_initialize",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022_extensions"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-1d34d08644d4e9cd",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022_extensions::non_transferable::non_transferable_mint_initialize": {
+      "order": 338,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-nonTransferableMint0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022_extensions::non_transferable::non_transferable_mint_initialize",
+              "implementation": "anchor_spl::token_2022_extensions::non_transferable::non_transferable_mint_initialize",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022_extensions"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-c39a0492489a1c3b",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022_extensions::permanent_delegate::permanent_delegate_initialize": {
+      "order": 339,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-permanentDelegate0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022_extensions::permanent_delegate::permanent_delegate_initialize",
+              "implementation": "anchor_spl::token_2022_extensions::permanent_delegate::permanent_delegate_initialize",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022_extensions"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-05d9b4d4d82c940d",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::token_2022_extensions::transfer_hook::transfer_hook_initialize": {
+      "order": 340,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-32-1-transferHook0321",
+          "source": "anchor-spl",
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "items": [
+            {
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "item": "anchor_spl::token_2022_extensions::transfer_hook::transfer_hook_initialize",
+              "implementation": "anchor_spl::token_2022_extensions::transfer_hook::transfer_hook_initialize",
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022_extensions"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-82cb1dbf24e18c5f",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-50f55e09916a521c",
+          "evidence": "@shared:evidence-17998460cfd36509"
+        }
+      ]
+    },
+    "anchor-spl::memo::build_memo": {
+      "order": 365,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-ced2c98c7355d922",
+          "conditions": "@shared:conditions-528bbf94d6836476",
+          "dependencies": [
+            {
+              "package": "anchor-lang",
+              "reason": "@text:abf038ebc7792a50",
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"},
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            },
+            {
+              "package": "spl-memo",
+              "reason": "@text:b1c23d7cb7abb2a8",
+              "releases": ["6.0.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"},
+              "compatible_ranges": [{"lower": "6.0.0", "upper": "7.0.0"}]
+            }
+          ],
+          "evidence": "@shared:evidence-75c5751e91280082",
+          "features": {"all": ["memo"], "reason": "@text:667eece4f3d0e7e0"},
+          "id": "anchor-spl-support-0.32.1-memo-build_memo",
+          "items": [
+            {
+              "implementation": "anchor_spl::memo::build_memo",
+              "item": "anchor_spl::memo::build_memo",
+              "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+              "compatible_ranges": [{"lower": "0.32.0", "upper": "0.33.0"}]
+            }
+          ],
+          "releases": ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
+          "source": "anchor-spl",
+          "target": "@shared:target-7fd96c035dcca2c5"
+        }
+      ]
+    },
+    "anchor-spl::token_2022::set_authority_program_id": {
+      "order": 429,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-1-1-2-token2022SetAuthority112",
+          "source": "anchor-spl",
+          "releases": ["1.1.2"],
+          "items": [
+            {
+              "releases": ["1.1.2"],
+              "item": "anchor_spl::token_2022::set_authority",
+              "implementation": "anchor_spl::token_2022::set_authority",
+              "compatible_ranges": [{"lower": "1.1.2", "upper": "1.2.1"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-e06785a7b29d8e88",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-888d6248f086bfab",
+          "evidence": ["@text:b8b680d3b5e7360d", "@text:d535cd9c977a8ddd"]
+        }
+      ]
+    },
+    "anchor-spl::associated_token::create_idempotent": {
+      "order": 441,
+      "profiles": [
+        {
+          "id": "anchor-spl-support-1.1.2-associated_token-create_idempotent",
+          "source": "anchor-spl",
+          "releases": ["1.1.2"],
+          "items": [
+            {
+              "releases": ["1.1.2"],
+              "item": "anchor_spl::associated_token::create_idempotent",
+              "implementation": "anchor_spl::associated_token::create_idempotent",
+              "compatible_ranges": [{"lower": "1.1.2", "upper": "1.2.1"}]
+            }
+          ],
+          "features": {"all": ["associated_token"], "reason": "@text:667eece4f3d0e7e0"},
+          "dependencies": "@shared:dependencies-e00d5cd6cecd9e6b",
+          "conditions": "@shared:conditions-528bbf94d6836476",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-bd5e8b3bd31efc45",
+          "evidence": ["@text:b8b680d3b5e7360d", "@text:0cbb030499c7f87b"],
+          "target": "@shared:target-7fd96c035dcca2c5"
+        },
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-65590fe59d8cdd02",
+          "conditions": "@shared:conditions-528bbf94d6836476",
+          "dependencies": [
+            {
+              "package": "anchor-lang",
+              "reason": "@text:0308f69572be319f",
+              "releases": ["1.0.2"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            },
+            {
+              "package": "spl-associated-token-account-interface",
+              "reason": "@text:dae8f420a36e404b",
+              "releases": ["2.0.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            },
+            {
+              "package": "solana-pubkey",
+              "reason": "@text:8fe2c400f6aae501",
+              "releases": ["3.0.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            },
+            {
+              "package": "solana-address",
+              "reason": "@text:3406dffbc2f4358b",
+              "releases": ["2.6.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            }
+          ],
+          "evidence": "@shared:evidence-644033988ff46171",
+          "features": {"all": ["associated_token"], "reason": "@text:667eece4f3d0e7e0"},
+          "id": "anchor-spl-support-1.0.2-associated_token-create_idempotent",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "1.1.0"}],
+              "implementation": "anchor_spl::associated_token::create_idempotent",
+              "item": "anchor_spl::associated_token::create_idempotent",
+              "releases": ["1.0.0", "1.0.1", "1.0.2", "1.0.3"]
+            }
+          ],
+          "releases": ["1.0.0", "1.0.1", "1.0.2", "1.0.3"],
+          "source": "anchor-spl",
+          "target": "@shared:target-7fd96c035dcca2c5"
+        }
+      ]
+    },
+    "anchor-spl::associated_token::create_program_id": {
+      "order": 442,
+      "profiles": [
+        {
+          "id": "anchor-spl-support-1.1.2-associated_token-create",
+          "source": "anchor-spl",
+          "releases": ["1.1.2"],
+          "items": [
+            {
+              "releases": ["1.1.2"],
+              "item": "anchor_spl::associated_token::create",
+              "implementation": "anchor_spl::associated_token::create",
+              "compatible_ranges": [{"lower": "1.1.2", "upper": "1.2.1"}]
+            }
+          ],
+          "features": {"all": ["associated_token"], "reason": "@text:667eece4f3d0e7e0"},
+          "dependencies": "@shared:dependencies-e00d5cd6cecd9e6b",
+          "conditions": "@shared:conditions-528bbf94d6836476",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-14120ae73018a9e4",
+          "evidence": ["@text:b8b680d3b5e7360d", "@text:0cbb030499c7f87b"],
+          "target": "@shared:target-7fd96c035dcca2c5"
+        }
+      ]
+    },
+    "anchor-spl::token_2022::mint_to_checked": {
+      "order": 445,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-1-1-2-token2022MintToChecked112",
+          "source": "anchor-spl",
+          "releases": ["1.1.2"],
+          "items": [
+            {
+              "releases": ["1.1.2"],
+              "item": "anchor_spl::token_2022::mint_to_checked",
+              "implementation": "anchor_spl::token_2022::mint_to_checked",
+              "compatible_ranges": [{"lower": "1.1.2", "upper": "1.2.1"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-e06785a7b29d8e88",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-4fab62d037533498",
+          "evidence": ["@text:b8b680d3b5e7360d", "@text:d535cd9c977a8ddd"]
+        }
+      ]
+    },
+    "anchor-spl::token_2022::burn_checked": {
+      "order": 448,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-1-1-2-token2022BurnChecked112",
+          "source": "anchor-spl",
+          "releases": ["1.1.2"],
+          "items": [
+            {
+              "releases": ["1.1.2"],
+              "item": "anchor_spl::token_2022::burn_checked",
+              "implementation": "anchor_spl::token_2022::burn_checked",
+              "compatible_ranges": [{"lower": "1.1.2", "upper": "1.2.1"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-e06785a7b29d8e88",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-22486f5b3260472b",
+          "evidence": ["@text:b8b680d3b5e7360d", "@text:d535cd9c977a8ddd"]
+        }
+      ]
+    },
+    "anchor-spl::token_2022::transfer_checked_program_id": {
+      "order": 460,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-1-1-2-token2022TransferChecked112",
+          "source": "anchor-spl",
+          "releases": ["1.1.2"],
+          "items": [
+            {
+              "releases": ["1.1.2"],
+              "item": "anchor_spl::token_2022::transfer_checked",
+              "implementation": "anchor_spl::token_2022::transfer_checked",
+              "compatible_ranges": [{"lower": "1.1.2", "upper": "1.2.1"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": "@shared:dependencies-e06785a7b29d8e88",
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-64341c00d460e705",
+          "evidence": ["@text:b8b680d3b5e7360d", "@text:d535cd9c977a8ddd"]
+        }
+      ]
+    },
+    "anchor-spl::token_2022::Token2022::id": {
+      "order": 472,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-29a47a3a325442ac",
+          "conditions": ["@binding:885b1f50e60bedcb"],
+          "dependencies": [
+            {
+              "package": "spl-token-2022-interface",
+              "reason": "@text:bdf3ebdbe212d651",
+              "releases": ["2.1.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            }
+          ],
+          "evidence": "@shared:evidence-644033988ff46171",
+          "features": {"all": ["token_2022"], "reason": "@text:667eece4f3d0e7e0"},
+          "id": "anchor-spl-support-1.0.2-token_2022-Token2022-id",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "1.1.0"}],
+              "implementation": "<anchor_spl::token_2022::Token2022 as anchor_lang::Id>::id",
+              "item": "anchor_lang::Id::id",
+              "releases": ["1.0.0", "1.0.1", "1.0.2", "1.0.3"]
+            }
+          ],
+          "releases": ["1.0.0", "1.0.1", "1.0.2", "1.0.3"],
+          "source": "anchor-spl"
+        }
+      ]
+    },
+    "anchor-spl::token_2022::initialize_account3_program_id": {
+      "order": 473,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-29a47a3a325442ac",
+          "conditions": "@shared:conditions-761b423532526926",
+          "dependencies": "@shared:dependencies-95e524872b0efa32",
+          "evidence": "@shared:evidence-85b3df1e0abfc608",
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "id": "anchor-spl-token-1-0-2-token2022InitializeAccount3102",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "1.1.0"}],
+              "implementation": "anchor_spl::token_2022::initialize_account3",
+              "item": "anchor_spl::token_2022::initialize_account3",
+              "releases": ["1.0.0", "1.0.1", "1.0.2", "1.0.3"]
+            }
+          ],
+          "releases": ["1.0.0", "1.0.1", "1.0.2", "1.0.3"],
+          "source": "anchor-spl"
+        }
+      ]
+    },
+    "anchor-spl::token_2022::transfer_checked_program_id_interface": {
+      "order": 474,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-29a47a3a325442ac",
+          "conditions": "@shared:conditions-761b423532526926",
+          "dependencies": "@shared:dependencies-95e524872b0efa32",
+          "evidence": "@shared:evidence-85b3df1e0abfc608",
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "id": "anchor-spl-token-1-0-2-token2022TransferChecked102",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "1.1.0"}],
+              "implementation": "anchor_spl::token_2022::transfer_checked",
+              "item": "anchor_spl::token_2022::transfer_checked",
+              "releases": ["1.0.0", "1.0.1", "1.0.2", "1.0.3"]
+            }
+          ],
+          "releases": ["1.0.0", "1.0.1", "1.0.2", "1.0.3"],
+          "source": "anchor-spl"
+        }
+      ]
+    },
+    "anchor-spl::token_2022::transfer_checked_legacy_interface": {
+      "order": 495,
+      "profiles": [
+        {
+          "id": "anchor-spl-token-0-29-0-token2022TransferChecked029",
+          "source": "anchor-spl",
+          "releases": ["0.29.0"],
+          "items": [
+            {
+              "releases": ["0.29.0"],
+              "item": "anchor_spl::token_2022::transfer_checked",
+              "implementation": "anchor_spl::token_2022::transfer_checked",
+              "compatible_ranges": [{"lower": "0.29.0", "upper": "0.30.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:6841e9b121d6d4d2"},
+          "dependencies": [
+            {
+              "package": "anchor-lang",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["0.29.0"],
+              "reason": "@text:311d09b91f211f3c",
+              "compatible_ranges": [{"lower": "0.29.0", "upper": "0.30.0"}]
+            },
+            {
+              "package": "spl-token-2022",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["0.9.0"],
+              "reason": "@text:be5aa64bd11609bc",
+              "compatible_ranges": [{"lower": "0.9.0", "upper": "0.10.0"}]
+            },
+            {
+              "package": "solana-program",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["1.18.26"],
+              "reason": "@text:0758f0f43cd5c9a1",
+              "compatible_ranges": [{"lower": "1.18.26", "upper": "2.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-761b423532526926",
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-857d5ab2e3ed8cae",
+          "evidence": ["@text:ec5d12a1364bb44b", "@text:d535cd9c977a8ddd"]
+        }
+      ]
+    },
+    "anchor-spl::token_interface::TokenInterface::ids": {
+      "order": 496,
+      "profiles": [
+        {
+          "id": "anchor-spl-support-0.29.0-token_interface-TokenInterface-ids",
+          "source": "anchor-spl",
+          "releases": ["0.29.0"],
+          "items": [
+            {
+              "releases": ["0.29.0"],
+              "item": "anchor_lang::Ids::ids",
+              "implementation": "<anchor_spl::token_interface::TokenInterface as anchor_lang::Ids>::ids",
+              "compatible_ranges": [{"lower": "0.29.0", "upper": "0.30.0"}]
+            }
+          ],
+          "features": {"all": ["token_2022"], "reason": "@text:667eece4f3d0e7e0"},
+          "dependencies": [
+            {
+              "package": "spl-token",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["4.0.0"],
+              "reason": "@text:92a019b7a2567ffe",
+              "compatible_ranges": [{"lower": "4.0.0", "upper": "5.0.0"}]
+            },
+            {
+              "package": "spl-token-2022",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["0.9.0"],
+              "reason": "@text:9ff47313bcbd8313",
+              "compatible_ranges": [{"lower": "0.9.0", "upper": "0.10.0"}]
+            }
+          ],
+          "conditions": ["@binding:885b1f50e60bedcb"],
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-79921c60f2695a89",
+          "evidence": ["@text:ec5d12a1364bb44b", "@text:0cbb030499c7f87b"]
+        }
+      ]
+    },
+    "anchor-spl::stake::StakeAccount::deref": {
+      "order": 570,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-628466cda7c3879e",
+          "conditions": ["@binding:885b1f50e60bedcb"],
+          "dependencies": "@shared:dependencies-d0640f245dd753db",
+          "evidence": ["@text:d59b967e799f1411", "@text:0cbb030499c7f87b"],
+          "features": {"all": ["stake"], "reason": "@text:667eece4f3d0e7e0"},
+          "id": "anchor-spl-support-0.27.0-stake-StakeAccount-deref",
+          "items": [
+            {
+              "implementation": "<anchor_spl::stake::StakeAccount as core::ops::deref::Deref>::deref",
+              "item": "core::ops::deref::Deref::deref",
+              "releases": ["0.27.0"],
+              "compatible_ranges": [{"lower": "0.27.0", "upper": "0.28.0"}]
+            }
+          ],
+          "releases": ["0.27.0"],
+          "source": "anchor-spl"
+        }
+      ]
+    },
+    "anchor-spl::stake::deactivate_stake": {
+      "order": 571,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-6e818e4681d4656b",
+          "conditions": "@shared:conditions-528bbf94d6836476",
+          "dependencies": "@shared:dependencies-c1a4ff0bd666322d",
+          "evidence": ["@text:d59b967e799f1411", "@text:0cbb030499c7f87b"],
+          "features": {"all": ["stake"], "reason": "@text:667eece4f3d0e7e0"},
+          "id": "anchor-spl-support-0.27.0-stake-deactivate_stake",
+          "items": [
+            {
+              "implementation": "anchor_spl::stake::deactivate_stake",
+              "item": "anchor_spl::stake::deactivate_stake",
+              "releases": ["0.27.0"],
+              "compatible_ranges": [{"lower": "0.27.0", "upper": "0.28.0"}]
+            }
+          ],
+          "releases": ["0.27.0"],
+          "source": "anchor-spl",
+          "target": "@shared:target-7fd96c035dcca2c5"
+        }
+      ]
+    },
+    "anchor-spl::stake::withdraw": {
+      "order": 572,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-6e818e4681d4656b",
+          "conditions": "@shared:conditions-528bbf94d6836476",
+          "dependencies": "@shared:dependencies-c1a4ff0bd666322d",
+          "evidence": ["@text:d59b967e799f1411", "@text:0cbb030499c7f87b"],
+          "features": {"all": ["stake"], "reason": "@text:667eece4f3d0e7e0"},
+          "id": "anchor-spl-support-0.27.0-stake-withdraw",
+          "items": [
+            {
+              "implementation": "anchor_spl::stake::withdraw",
+              "item": "anchor_spl::stake::withdraw",
+              "releases": ["0.27.0"],
+              "compatible_ranges": [{"lower": "0.27.0", "upper": "0.28.0"}]
+            }
+          ],
+          "releases": ["0.27.0"],
+          "source": "anchor-spl",
+          "target": "@shared:target-7fd96c035dcca2c5"
+        }
+      ]
+    },
+    "anchor-spl::token::burn": {
+      "order": 573,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-61e539634a9f9b24",
+          "conditions": "@shared:conditions-761b423532526926",
+          "dependencies": "@shared:dependencies-eb566ec48e856240",
+          "evidence": ["@text:d59b967e799f1411", "@text:d535cd9c977a8ddd"],
+          "features": {"all": ["token"], "reason": "@text:6841e9b121d6d4d2"},
+          "id": "anchor-spl-token-0-27-0-tokenBurn027",
+          "items": [
+            {
+              "implementation": "anchor_spl::token::burn",
+              "item": "anchor_spl::token::burn",
+              "releases": ["0.27.0"],
+              "compatible_ranges": [{"lower": "0.27.0", "upper": "0.28.0"}]
+            }
+          ],
+          "releases": ["0.27.0"],
+          "source": "anchor-spl"
+        }
+      ]
+    },
+    "anchor-spl::token::mint_to": {
+      "order": 574,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-61e539634a9f9b24",
+          "conditions": "@shared:conditions-761b423532526926",
+          "dependencies": "@shared:dependencies-eb566ec48e856240",
+          "evidence": ["@text:d59b967e799f1411", "@text:d535cd9c977a8ddd"],
+          "features": {"all": ["token"], "reason": "@text:6841e9b121d6d4d2"},
+          "id": "anchor-spl-token-0-27-0-tokenMintTo027",
+          "items": [
+            {
+              "implementation": "anchor_spl::token::mint_to",
+              "item": "anchor_spl::token::mint_to",
+              "releases": ["0.27.0"],
+              "compatible_ranges": [{"lower": "0.27.0", "upper": "0.28.0"}]
+            }
+          ],
+          "releases": ["0.27.0"],
+          "source": "anchor-spl"
+        }
+      ]
+    },
+    "anchor-spl::token::transfer_inline_error": {
+      "order": 575,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-61e539634a9f9b24",
+          "conditions": "@shared:conditions-761b423532526926",
+          "dependencies": "@shared:dependencies-eb566ec48e856240",
+          "evidence": ["@text:d59b967e799f1411", "@text:d535cd9c977a8ddd"],
+          "features": {"all": ["token"], "reason": "@text:6841e9b121d6d4d2"},
+          "id": "anchor-spl-token-0-27-0-tokenTransfer027",
+          "items": [
+            {
+              "implementation": "anchor_spl::token::transfer",
+              "item": "anchor_spl::token::transfer",
+              "releases": ["0.27.0"],
+              "compatible_ranges": [{"lower": "0.27.0", "upper": "0.28.0"}]
+            }
+          ],
+          "releases": ["0.27.0"],
+          "source": "anchor-spl"
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:e7201e629bb160d4", "@binding:7b66a53dd366f823"]
+}

@@ -1,6 +1,6 @@
 # Anchor wrapper references and ownership
 
-The [source registry](../source-map/libraries.json) binds the following
+The [source registry](../source-map/anchor-lang.json) binds the following
 methods to the shared view families. The inherited view profiles use inspected Anchor Lang
 references 0.32.1, 0.32.2 and 0.32.3 and declare compatible range
 `[0.32.1, 0.33.0)` under the recorded operation and provider assumptions.

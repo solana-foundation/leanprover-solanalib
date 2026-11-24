@@ -1,0 +1,147 @@
+{
+  "abstractions": {
+    "library::pinocchio_associated_token_account": {
+      "order": 126,
+      "modules": {
+        "Solanalib.Specs.PinocchioAssociatedTokenAccount": "e9c6329e2c6dfc21029df4578c2af09ab7dcbf54f28ec13a004bff04b47caedd",
+        "Solanalib.Specs.PinocchioAssociatedTokenAccount.Capabilities": "3e6b5f3057a36b7b9cb6a2c6aab7a28cc619f96d0e6e4b4c6437580a35edf926",
+        "Solanalib.Specs.PinocchioAssociatedTokenAccount.Request": "55600a67b639e694fcfb9e8286fa153d2505a0ef4841cb5e33a03b253253d716"
+      },
+      "source_ids": [
+        "value-request::pinocchio-associated-token-account-0.4.0::src/lib.rs",
+        "value-request::pinocchio-associated-token-account-0.4.0::src/instructions/create_idempotent.rs",
+        "value-request::solana-instruction-view-2.1.0::src/cpi.rs"
+      ],
+      "argument": "@review:source-notes/value-request-ata.md#review-4626f6ec58659e66",
+      "limitations": "@shared:limitations-fb64b3dbaf139ef9"
+    }
+  },
+  "packages": {
+    "pinocchio-associated-token-account-0.4.0": {
+      "order": 2,
+      "repository": "https://github.com/anza-xyz/pinocchio",
+      "revision": "3a3a1a65984ffd0b6debe460276c0a6ebb685dcb",
+      "path_prefix": "programs/associated-token-account/"
+    }
+  },
+  "interfaces": {
+    "value-request::pinocchio-associated-token-account-0.4.0::src/instructions/create_idempotent.rs": {
+      "order": 29,
+      "crate": "pinocchio-associated-token-account-0.4.0",
+      "path": "src/instructions/create_idempotent.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "097ae2bdfb5d407cdaa4ba5cbe002101529d3fcb23aaa70a30639178b74deae6"
+    },
+    "value-request::pinocchio-associated-token-account-0.4.0::src/lib.rs": {
+      "order": 30,
+      "crate": "pinocchio-associated-token-account-0.4.0",
+      "path": "src/lib.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "0062010aa66a2e3df219fa2804be5871aefc90192491d2ef9571598e70e054c8"
+    }
+  },
+  "models": {
+    "pinocchio-associated-token-account::instructions::create_idempotent::CreateIdempotent::invoke": {
+      "order": 67,
+      "contract": "Solanalib.Specs.PinocchioAssociatedTokenAccount.instructions.create_idempotent.CreateIdempotent.invoke_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-bec6b274aaf1ebf3"
+    }
+  },
+  "api": {
+    "pinocchio-associated-token-account@0.4.0::instructions::create_idempotent::CreateIdempotent::invoke": {
+      "order": 58,
+      "anchor_text": "pub fn invoke(&self) -> ProgramResult {",
+      "binding_obligations": ["@binding:328106abb4b8d9fb", "@binding:5190a32e6baa1ea3", "@binding:df7a30e351ddaf98"],
+      "line": 38,
+      "scope": "@text:b3945d11823554e4",
+      "source_id": "value-request::pinocchio-associated-token-account-0.4.0::src/instructions/create_idempotent.rs",
+      "clients": [
+        "SolanalibTest.Specs.PinocchioAssociatedTokenAccount.exact_account_order_retains_alias",
+        "SolanalibTest.Specs.PinocchioAssociatedTokenAccount.exact_flags_data_and_empty_signers",
+        "SolanalibTest.Specs.PinocchioAssociatedTokenAccount.supplied_program_addresses_are_preserved",
+        "SolanalibTest.Specs.PinocchioAssociatedTokenAccount.normal_completion_retains_provider_state",
+        "SolanalibTest.Specs.PinocchioAssociatedTokenAccount.unwind_retains_provider_state",
+        "SolanalibTest.Specs.PinocchioAssociatedTokenAccount.associated_borrow_rejects_before_invocation",
+        "SolanalibTest.Specs.PinocchioAssociatedTokenAccount.readonly_exclusive_lease_reaches_invocation"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Instruction.associatedTokenCreateIdempotent",
+        "Solanalib.Specs.Core.CpiRequest.Checked.directV2",
+        "Solanalib.Specs.Core.CpiRequest.Checked.Syscall"
+      ],
+      "rust_names": ["pinocchio_associated_token_account::instructions::create_idempotent::CreateIdempotent::<'_>::invoke"],
+      "models": ["pinocchio-associated-token-account::instructions::create_idempotent::CreateIdempotent::invoke"]
+    }
+  },
+  "applicability_sources": {
+    "pinocchio-associated-token-account": {
+      "order": 6,
+      "package": "pinocchio-associated-token-account",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.1.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-associated-token-account/pinocchio-associated-token-account-0.1.0.crate",
+          "sha256": "d998f46875eb2144e63a9dd3f70df3a4132885497b25c4bedbfab7d14c0628e8",
+          "revision": "10b259d034b5ceaa91bbb30e9120d037df5d27b0",
+          "path_prefix": "programs/associated-token-account/"
+        },
+        "0.1.1": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-associated-token-account/pinocchio-associated-token-account-0.1.1.crate",
+          "sha256": "b45fffdec0a1d05199b0f67b6b802be32ffc30a5fe29d222d7653865ca57401c",
+          "revision": "38a610a4b6711fe0edabf6ead8e616a0fee5ba54",
+          "path_prefix": "programs/associated-token-account/"
+        },
+        "0.2.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-associated-token-account/pinocchio-associated-token-account-0.2.0.crate",
+          "sha256": "d67472f0743a13e87da3acf259e23dc711066236a1118d885ea20a264bf7954b",
+          "revision": "4cbf07929f6e18d9f89d53b520d19d2815b7d7be",
+          "path_prefix": "programs/associated-token-account/"
+        },
+        "0.3.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-associated-token-account/pinocchio-associated-token-account-0.3.0.crate",
+          "sha256": "0bd92823a97fb327d7509dfd7cbfa3ead56e9fc0e131972bc0e28ab7036be31a",
+          "revision": "f66073a5c88f9d72b27dd47cc2168f5b753fab8e",
+          "path_prefix": "programs/associated-token-account/"
+        },
+        "0.4.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-associated-token-account/pinocchio-associated-token-account-0.4.0.crate",
+          "sha256": "c552da2a965b33511ac54494e434e69be0ae12da1619a72594b76703c3dca211",
+          "revision": "3a3a1a65984ffd0b6debe460276c0a6ebb685dcb",
+          "path_prefix": "programs/associated-token-account/"
+        },
+        "0.5.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-associated-token-account/pinocchio-associated-token-account-0.5.0.crate",
+          "sha256": "79166e06610ec0acb75ac5f9f05c38518020a6ec5bd3f2eb325c2ae771d8fb71",
+          "revision": "8911aba8c772397b40c356890a2fe9935f7a99e6",
+          "path_prefix": "programs/associated-token-account/"
+        }
+      },
+      "evidence": ["@text:a4aa00b3c87c29a6"]
+    }
+  },
+  "applicability": {
+    "pinocchio-associated-token-account::instructions::create_idempotent::CreateIdempotent::invoke": {
+      "order": 67,
+      "profiles": [
+        {
+          "id": "pinocchio-associated-token-account-reviewed",
+          "source": "pinocchio-associated-token-account",
+          "conditions": "@shared:conditions-bdf6c6bdc5769825",
+          "argument": "@review:source-notes/value-request-ata.md#review-3f1548ef8a8836c7",
+          "evidence": ["@text:a6fe56483f7b41fe", "@text:77281be74fb07487"],
+          "items": [
+            {
+              "item": "pinocchio_associated_token_account::instructions::create_idempotent::CreateIdempotent::<'_>::invoke",
+              "implementation": "pinocchio_associated_token_account::instructions::create_idempotent::CreateIdempotent::<'_>::invoke",
+              "releases": ["0.4.0", "0.5.0"],
+              "compatible_ranges": "@shared:compatible-ranges-e1b1ce8ac25bab93"
+            }
+          ],
+          "releases": ["0.4.0", "0.5.0"]
+        }
+      ]
+    }
+  }
+}

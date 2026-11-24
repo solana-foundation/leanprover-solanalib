@@ -21,8 +21,12 @@ def module_digest(root, module, prefix):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def write_json(path, data):
-    content = json.dumps(data, indent=2, ensure_ascii=False) + '\n'
+def write_json(path, data, *, compact=False):
+    if compact:
+        from registry_data import compact_json
+        content = compact_json(data) + '\n'
+    else:
+        content = json.dumps(data, indent=2, ensure_ascii=False) + '\n'
     with tempfile.NamedTemporaryFile(mode='w', dir=path.parent, delete=False) as temporary:
         staging = Path(temporary.name)
         temporary.write(content)

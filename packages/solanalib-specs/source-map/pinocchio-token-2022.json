@@ -1,0 +1,676 @@
+{
+  "abstractions": {
+    "library::pinocchio_token_2022": {
+      "order": 129,
+      "modules": {
+        "Solanalib.Specs.PinocchioToken2022": "a221419fe2d6294df73ef4b13f79c489424ef600cf6ab215fe4088cd6b32ca4f",
+        "Solanalib.Specs.PinocchioToken2022.Capabilities": "1b7ef84a6c3636dc7778794994057e434bdceeb285ad819a2da01bc586c44fdb",
+        "Solanalib.Specs.PinocchioToken2022.Instructions": "14f8b0e504c71f8836a49ff5b5df2ba96ec68ec3dfbc61697f2234946093a556",
+        "Solanalib.Specs.PinocchioToken2022.State": "f6834b312acba0b80a9558cae84c359d8a950f16f57ce23d135c080ff56af29d"
+      },
+      "source_ids": [
+        "pinocchio-token-2022-0.3.1-lib",
+        "pinocchio-token-2022-0.3.1-instructions-close-account",
+        "pinocchio-token-2022-0.3.1-instructions-transfer-checked",
+        "value-request::solana-instruction-view-2.1.0::src/cpi.rs",
+        "pinocchio-token-2022-0.3.1-state-account",
+        "pinocchio-token-2022-0.3.1-state-mint",
+        "pinocchio-token-2022-0.3.1-state-account-state",
+        "pinocchio-token-2022-0.3.1-state-mod"
+      ],
+      "argument": "@review:source-notes/token-instructions.md#review-3b70a7c946979705",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@text:d97f913a465a4ea1",
+        "@text:0d8214400a53b569",
+        "@text:0a8bca42d5153e95",
+        "@text:f7e03fe662626265",
+        "@text:8921c2611124cc06",
+        "@text:00ef38ebb3561555",
+        "@text:0810dde14cb63cff",
+        "@text:a1e5249cc90dc726",
+        "@text:62fea2a4f9859692"
+      ]
+    }
+  },
+  "packages": {
+    "pinocchio-token-2022-0.3.1": {
+      "order": 5,
+      "repository": "https://github.com/anza-xyz/pinocchio",
+      "revision": "d713b2d0baf9bb406eea34cd020c963078b8c56a",
+      "path_prefix": "programs/token-2022/"
+    }
+  },
+  "interfaces": {
+    "pinocchio-token-2022-0.3.1-instructions-close-account": {
+      "order": 10,
+      "crate": "pinocchio-token-2022-0.3.1",
+      "path": "src/instructions/close_account.rs",
+      "sha256": "f01fef5405d2738db550dbaf1212ea312b18ce6bdc0b6e2056241f1d79ce5e03"
+    },
+    "pinocchio-token-2022-0.3.1-instructions-transfer-checked": {
+      "order": 11,
+      "crate": "pinocchio-token-2022-0.3.1",
+      "path": "src/instructions/transfer_checked.rs",
+      "sha256": "ce32386dc97ad3a8904d471ddcfb231b2c2951556af0e837b94540e5c2443a15"
+    },
+    "pinocchio-token-2022-0.3.1-lib": {
+      "order": 12,
+      "crate": "pinocchio-token-2022-0.3.1",
+      "path": "src/lib.rs",
+      "sha256": "5b24beecaa348d44ad364153049ac015815c78bc19ae533bcddf3ccb74d94ec8"
+    },
+    "pinocchio-token-2022-0.3.1-state-account": {
+      "order": 13,
+      "crate": "pinocchio-token-2022-0.3.1",
+      "path": "src/state/account.rs",
+      "sha256": "c4641d173cf2d8f81af8beb45271a70971db69b4040401b87c4da41e7fd1fbaf"
+    },
+    "pinocchio-token-2022-0.3.1-state-account-state": {
+      "order": 14,
+      "crate": "pinocchio-token-2022-0.3.1",
+      "path": "src/state/account_state.rs",
+      "sha256": "4f1f5bff4e853e9f41ca9f6c8cd7e573c8f45a6c2168e921c4cf61350a263da2"
+    },
+    "pinocchio-token-2022-0.3.1-state-mint": {
+      "order": 15,
+      "crate": "pinocchio-token-2022-0.3.1",
+      "path": "src/state/mint.rs",
+      "sha256": "6b27e1e3859f07d5d69bd6cdb22b22bca6b0c6a293a8f8421f95eb79fbf0bad6"
+    },
+    "pinocchio-token-2022-0.3.1-state-mod": {
+      "order": 16,
+      "crate": "pinocchio-token-2022-0.3.1",
+      "path": "src/state/mod.rs",
+      "sha256": "caf569420044617c4e3724b383dc7538d3293d6d3f6f4c97e45f1a2b6f71f108"
+    }
+  },
+  "models": {
+    "pinocchio-token-2022::instructions::close_account::CloseAccount::invoke_signed": {
+      "order": 71,
+      "contract": "Solanalib.Specs.PinocchioToken2022.instructions.close_account.CloseAccount.invoke_signed_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.PinocchioToken2022.instructions.close_account.CloseAccount.invoke_signed_reference",
+      "witness": "Solanalib.Specs.PinocchioToken2022.instructions.close_account.CloseAccount.invoke_signed_reference_holds",
+      "sample": "Solanalib.Specs.Core.Token.Request.sampleTypes",
+      "assumptions": "@shared:assumptions-bec6b274aaf1ebf3"
+    },
+    "pinocchio-token-2022::instructions::transfer_checked::TransferChecked::invoke": {
+      "order": 72,
+      "contract": "Solanalib.Specs.PinocchioToken2022.instructions.transfer_checked.TransferChecked.invoke_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.PinocchioToken2022.instructions.transfer_checked.TransferChecked.invoke_reference",
+      "witness": "Solanalib.Specs.PinocchioToken2022.instructions.transfer_checked.TransferChecked.invoke_reference_holds",
+      "sample": "Solanalib.Specs.Core.Token.Request.sampleTypes",
+      "assumptions": "@shared:assumptions-d841f56273977465"
+    },
+    "pinocchio-token-2022::instructions::transfer_checked::TransferChecked::invoke_signed": {
+      "order": 73,
+      "contract": "Solanalib.Specs.PinocchioToken2022.instructions.transfer_checked.TransferChecked.invoke_signed_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.PinocchioToken2022.instructions.transfer_checked.TransferChecked.invoke_signed_reference",
+      "witness": "Solanalib.Specs.PinocchioToken2022.instructions.transfer_checked.TransferChecked.invoke_signed_reference_holds",
+      "sample": "Solanalib.Specs.Core.Token.Request.sampleTypes",
+      "assumptions": "@shared:assumptions-d841f56273977465"
+    },
+    "pinocchio-token-2022::state::account::Account::amount": {
+      "order": 74,
+      "contract": "Solanalib.Specs.PinocchioToken2022.state.account.Account.amount_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.PinocchioToken2022.state.account.Account.amount_reference",
+      "witness": "Solanalib.Specs.PinocchioToken2022.state.account.Account.amount_reference_realizes",
+      "assumptions": ["@text:0b054d8b91b7dc89"]
+    },
+    "pinocchio-token-2022::state::account::Account::from_account_view": {
+      "order": 75,
+      "contract": "Solanalib.Specs.PinocchioToken2022.state.account.Account.from_account_view_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.PinocchioToken2022.state.account.Account.from_account_view_reference",
+      "witness": "Solanalib.Specs.PinocchioToken2022.state.account.Account.from_account_view_reference_realizes",
+      "assumptions": ["@text:97cc6b9aaef1d12b"]
+    },
+    "pinocchio-token-2022::state::account::Account::mint": {
+      "order": 76,
+      "contract": "Solanalib.Specs.PinocchioToken2022.state.account.Account.mint_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.PinocchioToken2022.state.account.Account.mint_reference",
+      "witness": "Solanalib.Specs.PinocchioToken2022.state.account.Account.mint_reference_realizes",
+      "assumptions": ["@text:3b102d163e751c6f"]
+    },
+    "pinocchio-token-2022::state::account::Account::owner": {
+      "order": 77,
+      "contract": "Solanalib.Specs.PinocchioToken2022.state.account.Account.owner_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.PinocchioToken2022.state.account.Account.owner_reference",
+      "witness": "Solanalib.Specs.PinocchioToken2022.state.account.Account.owner_reference_realizes",
+      "assumptions": ["@text:3b102d163e751c6f"]
+    },
+    "pinocchio-token-2022::state::account::Account::state": {
+      "order": 78,
+      "contract": "Solanalib.Specs.PinocchioToken2022.state.account.Account.state_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.PinocchioToken2022.state.account.Account.state_reference",
+      "witness": "Solanalib.Specs.PinocchioToken2022.state.account.Account.state_reference_holds",
+      "execution": "Solanalib.Specs.PinocchioToken2022.state.account.Account.state_execution",
+      "assumptions": ["@text:cd48356a3a6c5f85", "@text:6d30f9b8242edd8d"]
+    },
+    "pinocchio-token-2022::state::mint::Mint::decimals": {
+      "order": 79,
+      "contract": "Solanalib.Specs.PinocchioToken2022.state.mint.Mint.decimals_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.PinocchioToken2022.state.mint.Mint.decimals_reference",
+      "witness": "Solanalib.Specs.PinocchioToken2022.state.mint.Mint.decimals_reference_realizes",
+      "assumptions": ["@text:0b054d8b91b7dc89"]
+    },
+    "pinocchio-token-2022::state::mint::Mint::from_account_view": {
+      "order": 80,
+      "contract": "Solanalib.Specs.PinocchioToken2022.state.mint.Mint.from_account_view_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.PinocchioToken2022.state.mint.Mint.from_account_view_reference",
+      "witness": "Solanalib.Specs.PinocchioToken2022.state.mint.Mint.from_account_view_reference_realizes",
+      "assumptions": ["@text:97cc6b9aaef1d12b"]
+    }
+  },
+  "api": {
+    "pinocchio-token-2022@0.3.1::instructions.close_account.CloseAccount.invoke_signed": {
+      "order": 62,
+      "anchor_text": "pub fn invoke_signed(&self, signers: &[Signer]) -> ProgramResult {",
+      "binding_obligations": ["@binding:73cfb3cbae7ec412"],
+      "line": 35,
+      "scope": "@text:35ad2bdec7befb8c",
+      "source_id": "pinocchio-token-2022-0.3.1-instructions-close-account",
+      "clients": [
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.arbitrary_program_is_passed",
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.repeated_account_values_are_retained",
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.close_destination_borrow_rejects"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.Request.signedCloseFamily",
+        "Solanalib.Specs.Core.CpiRequest.Checked.directV2",
+        "Solanalib.Specs.Core.CpiRequest.Checked.Syscall"
+      ],
+      "rust_names": ["pinocchio_token_2022::instructions::close_account::CloseAccount::<'_, '_>::invoke_signed"],
+      "models": ["pinocchio-token-2022::instructions::close_account::CloseAccount::invoke_signed"],
+      "binding_defaults": false
+    },
+    "pinocchio-token-2022@0.3.1::instructions.transfer_checked.TransferChecked.invoke": {
+      "order": 63,
+      "anchor_text": "pub fn invoke(&self) -> ProgramResult {",
+      "binding_obligations": ["@binding:73cfb3cbae7ec412"],
+      "line": 42,
+      "scope": "@text:35ad2bdec7befb8c",
+      "source_id": "pinocchio-token-2022-0.3.1-instructions-transfer-checked",
+      "clients": [
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.unsigned_has_no_signer_seeds",
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.readonly_exclusive_leases_reach_invocation",
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.normal_invocation_cannot_inject_sdk_error",
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.wide_transfer_encoding",
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.wide_unsigned_transfer_borrow_error"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.Request.unsignedTransferFamily",
+        "Solanalib.Specs.Core.CpiRequest.Checked.directV2",
+        "Solanalib.Specs.Core.CpiRequest.Checked.Syscall"
+      ],
+      "rust_names": ["pinocchio_token_2022::instructions::transfer_checked::TransferChecked::<'_, '_>::invoke"],
+      "models": ["pinocchio-token-2022::instructions::transfer_checked::TransferChecked::invoke"],
+      "binding_defaults": false
+    },
+    "pinocchio-token-2022@0.3.1::instructions.transfer_checked.TransferChecked.invoke_signed": {
+      "order": 64,
+      "anchor_text": "pub fn invoke_signed(&self, signers: &[Signer]) -> ProgramResult {",
+      "binding_obligations": ["@binding:73cfb3cbae7ec412"],
+      "line": 47,
+      "scope": "@text:35ad2bdec7befb8c",
+      "source_id": "pinocchio-token-2022-0.3.1-instructions-transfer-checked",
+      "clients": [
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.transfer_wire_and_flags",
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.signed_seed_tree_preserved",
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.invocation_normal_completion_effects",
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.invocation_unwind_effects",
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.invocation_terminal",
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.transfer_source_borrow_rejects",
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.initialized_descriptors_record_current_accounts",
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.wide_transfer_encoding",
+        "SolanalibTest.Specs.PinocchioToken2022.Instructions.wide_signed_transfer_borrow_error"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.Request.signedTransferFamily",
+        "Solanalib.Specs.Core.CpiRequest.Checked.directV2",
+        "Solanalib.Specs.Core.CpiRequest.Checked.Syscall"
+      ],
+      "rust_names": ["pinocchio_token_2022::instructions::transfer_checked::TransferChecked::<'_, '_>::invoke_signed"],
+      "models": ["pinocchio-token-2022::instructions::transfer_checked::TransferChecked::invoke_signed"],
+      "binding_defaults": false
+    },
+    "pinocchio-token-2022@0.3.1::state.account.Account.amount": {
+      "order": 65,
+      "anchor_text": "pub fn amount(&self) -> u64 {",
+      "line": 119,
+      "scope": "@text:4d0a9d146427598e",
+      "source_id": "pinocchio-token-2022-0.3.1-state-account",
+      "clients": ["SolanalibTest.Specs.PinocchioToken2022.State.extended_account_getters"],
+      "model_dependencies": ["Solanalib.Specs.Core.Token.amountReference"],
+      "rust_names": ["pinocchio_token_2022::state::account::Account::amount"],
+      "models": ["pinocchio-token-2022::state::account::Account::amount"]
+    },
+    "pinocchio-token-2022@0.3.1::state.account.Account.from_account_view": {
+      "order": 66,
+      "anchor_text": "pub fn from_account_view(account_view: &AccountView) -> Result<Ref<'_, Account>, ProgramError> {",
+      "line": 61,
+      "scope": "@text:8c55c621a1db5b5d",
+      "source_id": "pinocchio-token-2022-0.3.1-state-account",
+      "clients": [
+        "SolanalibTest.Specs.PinocchioToken2022.State.extended_account_success",
+        "SolanalibTest.Specs.PinocchioToken2022.State.borrow_before_layout",
+        "SolanalibTest.Specs.PinocchioToken2022.State.layout_error_releases",
+        "SolanalibTest.Specs.PinocchioToken2022.State.failed_parse_preserves_prior_guard",
+        "SolanalibTest.Specs.PinocchioToken2022.State.missing_cell_parser_errors"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Token.fromAccountView"],
+      "rust_names": ["pinocchio_token_2022::state::account::Account::from_account_view"],
+      "models": ["pinocchio-token-2022::state::account::Account::from_account_view"]
+    },
+    "pinocchio-token-2022@0.3.1::state.account.Account.mint": {
+      "order": 67,
+      "anchor_text": "pub fn mint(&self) -> &Address {",
+      "line": 111,
+      "scope": "@text:e6c3e3380d12ebe1",
+      "source_id": "pinocchio-token-2022-0.3.1-state-account",
+      "clients": ["SolanalibTest.Specs.PinocchioToken2022.State.extended_account_getters"],
+      "model_dependencies": ["Solanalib.Specs.Core.Token.mintReference"],
+      "rust_names": ["pinocchio_token_2022::state::account::Account::mint"],
+      "models": ["pinocchio-token-2022::state::account::Account::mint"]
+    },
+    "pinocchio-token-2022@0.3.1::state.account.Account.owner": {
+      "order": 68,
+      "anchor_text": "pub fn owner(&self) -> &Address {",
+      "line": 115,
+      "scope": "@text:6160dec6d02ab52a",
+      "source_id": "pinocchio-token-2022-0.3.1-state-account",
+      "clients": ["SolanalibTest.Specs.PinocchioToken2022.State.extended_account_getters"],
+      "model_dependencies": ["Solanalib.Specs.Core.Token.ownerReference"],
+      "rust_names": ["pinocchio_token_2022::state::account::Account::owner"],
+      "models": ["pinocchio-token-2022::state::account::Account::owner"]
+    },
+    "pinocchio-token-2022@0.3.1::state.account.Account.state": {
+      "order": 69,
+      "anchor_text": "pub fn state(&self) -> AccountState {",
+      "binding_obligations": ["@binding:08c2dff6463367ba"],
+      "line": 144,
+      "scope": "@text:88e706659c469180",
+      "source_id": "pinocchio-token-2022-0.3.1-state-account",
+      "clients": ["SolanalibTest.Specs.PinocchioToken2022.State.extended_account_getters"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.stateRun",
+        "Solanalib.Specs.Core.Token.AccountReadable",
+        "Solanalib.Specs.Core.Token.stateFamily_continues"
+      ],
+      "rust_names": ["pinocchio_token_2022::state::account::Account::state"],
+      "models": ["pinocchio-token-2022::state::account::Account::state"]
+    },
+    "pinocchio-token-2022@0.3.1::state.mint.Mint.decimals": {
+      "order": 70,
+      "anchor_text": "pub fn decimals(&self) -> u8 {",
+      "line": 123,
+      "scope": "@text:ac1e631935ee416d",
+      "source_id": "pinocchio-token-2022-0.3.1-state-mint",
+      "clients": ["SolanalibTest.Specs.PinocchioToken2022.State.padded_mint_success"],
+      "model_dependencies": ["Solanalib.Specs.Core.Token.decimalsReference"],
+      "rust_names": ["pinocchio_token_2022::state::mint::Mint::decimals"],
+      "models": ["pinocchio-token-2022::state::mint::Mint::decimals"]
+    },
+    "pinocchio-token-2022@0.3.1::state.mint.Mint.from_account_view": {
+      "order": 71,
+      "anchor_text": "pub fn from_account_view(account_view: &AccountView) -> Result<Ref<'_, Mint>, ProgramError> {",
+      "line": 48,
+      "scope": "@text:8c55c621a1db5b5d",
+      "source_id": "pinocchio-token-2022-0.3.1-state-mint",
+      "clients": [
+        "SolanalibTest.Specs.PinocchioToken2022.State.padded_mint_success",
+        "SolanalibTest.Specs.PinocchioToken2022.State.marker_at_82_rejected",
+        "SolanalibTest.Specs.PinocchioToken2022.State.raw_mint_flags_admitted",
+        "SolanalibTest.Specs.PinocchioToken2022.State.missing_cell_parser_errors"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Token.fromAccountView"],
+      "rust_names": ["pinocchio_token_2022::state::mint::Mint::from_account_view"],
+      "models": ["pinocchio-token-2022::state::mint::Mint::from_account_view"]
+    }
+  },
+  "applicability_sources": {
+    "pinocchio-token-2022": {
+      "order": 9,
+      "package": "pinocchio-token-2022",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.0.0.crate",
+          "sha256": "a9efbf4787d9b1c975d778954128efa964c761081bc665af8751b07341949d51"
+        },
+        "0.1.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.1.0.crate",
+          "sha256": "0aec08d3b6eddafdacc17bd5b7842050394b0199062a3cc20428f1c40c9dbe7d",
+          "revision": "d60dc122717d6a67ba29f4605e1779d9a95f12c9",
+          "path_prefix": "programs/token-2022/"
+        },
+        "0.2.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.2.0.crate",
+          "sha256": "fbe4f1997ce2443f99333d8ae2ee1075f9c94ed13ff941178663ae3601ad99ad",
+          "revision": "812497aad89f426d46fb2853112ae943c417c996",
+          "path_prefix": "programs/token-2022/"
+        },
+        "0.3.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.3.0.crate",
+          "sha256": "44809ffde8c2aa2ca81b339ce510b77ffb87ec90ea2d35b2b6608cef8f79345c",
+          "revision": "2a0c858f27e2706984e52ca28fa0a4553feb7fdd",
+          "path_prefix": "programs/token-2022/"
+        },
+        "0.3.1": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.3.1.crate",
+          "sha256": "57dbab5718ab6ae446b2217c47598fabd29173a09bd32b05344f031739db92b8",
+          "revision": "d713b2d0baf9bb406eea34cd020c963078b8c56a",
+          "path_prefix": "programs/token-2022/"
+        },
+        "0.4.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.4.0.crate",
+          "sha256": "3a3c164973916f044bebff3c8cb4467088bafb13cbdb818522b9ca8782940d06",
+          "revision": "adbd48d12229ffa30d6fb3d3a8ff777fdb053b80",
+          "path_prefix": "programs/token-2022/"
+        },
+        "0.5.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.5.0.crate",
+          "sha256": "81270f2cbbdaf774e4081943e280b25c5830943c1486b05f97a001cdc619427e",
+          "revision": "38a4ee4c6cfbc70c0f53f18fcfb6a88005fefd8b",
+          "path_prefix": "programs/token-2022/"
+        }
+      },
+      "evidence": ["@text:287b43da603ae393"]
+    }
+  },
+  "applicability": {
+    "pinocchio-token-2022::instructions::close_account::CloseAccount::invoke_signed": {
+      "order": 71,
+      "profiles": [
+        {
+          "id": "pinocchio-token-2022-reviewed",
+          "source": "pinocchio-token-2022",
+          "conditions": "@shared:conditions-d27e8a47ca8a1ef6",
+          "argument": "@review:source-notes/token-instructions.md#review-15248e4612e34a8a",
+          "evidence": ["@text:3b595d5879798927", "@text:b03f22377266014b"],
+          "items": [
+            {
+              "item": "pinocchio_token_2022::instructions::close_account::CloseAccount::<'_, '_>::invoke_signed",
+              "implementation": "pinocchio_token_2022::instructions::close_account::CloseAccount::<'_, '_>::invoke_signed",
+              "releases": ["0.3.0", "0.3.1"],
+              "compatible_ranges": [{"lower": "0.3.0", "upper": "0.4.0"}]
+            }
+          ],
+          "releases": ["0.3.0", "0.3.1"]
+        }
+      ]
+    },
+    "pinocchio-token-2022::instructions::transfer_checked::TransferChecked::invoke": {
+      "order": 72,
+      "profiles": [
+        {
+          "id": "pinocchio-token-2022-reviewed",
+          "source": "pinocchio-token-2022",
+          "conditions": "@shared:conditions-d27e8a47ca8a1ef6",
+          "argument": "@review:source-notes/token-instructions.md#review-15248e4612e34a8a",
+          "evidence": ["@text:3b595d5879798927", "@text:b03f22377266014b"],
+          "items": [
+            {
+              "item": "pinocchio_token_2022::instructions::transfer_checked::TransferChecked::<'_, '_>::invoke",
+              "implementation": "pinocchio_token_2022::instructions::transfer_checked::TransferChecked::<'_, '_>::invoke",
+              "releases": ["0.3.0", "0.3.1"],
+              "compatible_ranges": [{"lower": "0.3.0", "upper": "0.4.0"}]
+            }
+          ],
+          "releases": ["0.3.0", "0.3.1"]
+        }
+      ]
+    },
+    "pinocchio-token-2022::instructions::transfer_checked::TransferChecked::invoke_signed": {
+      "order": 73,
+      "profiles": [
+        {
+          "id": "pinocchio-token-2022-reviewed",
+          "source": "pinocchio-token-2022",
+          "conditions": "@shared:conditions-d27e8a47ca8a1ef6",
+          "argument": "@review:source-notes/token-instructions.md#review-15248e4612e34a8a",
+          "evidence": ["@text:3b595d5879798927", "@text:b03f22377266014b"],
+          "items": [
+            {
+              "item": "pinocchio_token_2022::instructions::transfer_checked::TransferChecked::<'_, '_>::invoke_signed",
+              "implementation": "pinocchio_token_2022::instructions::transfer_checked::TransferChecked::<'_, '_>::invoke_signed",
+              "releases": ["0.3.0", "0.3.1"],
+              "compatible_ranges": [{"lower": "0.3.0", "upper": "0.4.0"}]
+            }
+          ],
+          "releases": ["0.3.0", "0.3.1"]
+        }
+      ]
+    },
+    "pinocchio-token-2022::state::account::Account::amount": {
+      "order": 74,
+      "profiles": [
+        {
+          "id": "pinocchio-token-2022-reviewed",
+          "source": "pinocchio-token-2022",
+          "conditions": "@shared:conditions-79d249b38376884c",
+          "argument": "@review:source-notes/token-instructions.md#review-e41e1332385fe3b7",
+          "evidence": ["@text:024956fc9ea547c7", "@text:f3fa465056ade8ac"],
+          "items": [
+            {
+              "item": "pinocchio_token_2022::state::token::TokenAccount::amount",
+              "implementation": "pinocchio_token_2022::state::token::TokenAccount::amount",
+              "releases": ["0.1.0", "0.2.0"],
+              "compatible_ranges": "@shared:compatible-ranges-77e8f37d0117311a"
+            }
+          ],
+          "releases": ["0.1.0", "0.2.0"]
+        },
+        {
+          "id": "pinocchio-token-2022-reviewed-2",
+          "source": "pinocchio-token-2022",
+          "conditions": "@shared:conditions-79d249b38376884c",
+          "argument": "@review:source-notes/token-instructions.md#review-e41e1332385fe3b7",
+          "evidence": ["@text:024956fc9ea547c7", "@text:f3fa465056ade8ac"],
+          "items": [
+            {
+              "item": "pinocchio_token_2022::state::account::Account::amount",
+              "implementation": "pinocchio_token_2022::state::account::Account::amount",
+              "releases": ["0.3.0", "0.3.1", "0.4.0", "0.5.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6f6501b9038c00f1"
+            }
+          ],
+          "releases": ["0.3.0", "0.3.1", "0.4.0", "0.5.0"]
+        }
+      ]
+    },
+    "pinocchio-token-2022::state::account::Account::from_account_view": {
+      "order": 75,
+      "profiles": [
+        {
+          "id": "pinocchio-token-2022-reviewed",
+          "source": "pinocchio-token-2022",
+          "conditions": "@shared:conditions-3fed72639c0e6997",
+          "argument": "@review:source-notes/token-instructions.md#review-7d16f4f0c9434b3f",
+          "evidence": ["@text:3b595d5879798927", "@text:ff37388b55eafcf3"],
+          "items": [
+            {
+              "item": "pinocchio_token_2022::state::account::Account::from_account_view",
+              "implementation": "pinocchio_token_2022::state::account::Account::from_account_view",
+              "releases": ["0.3.0", "0.3.1", "0.4.0"],
+              "compatible_ranges": [{"lower": "0.3.0", "upper": "0.4.0"}, {"lower": "0.4.0", "upper": "0.5.0"}]
+            }
+          ],
+          "releases": ["0.3.0", "0.3.1", "0.4.0"]
+        }
+      ]
+    },
+    "pinocchio-token-2022::state::account::Account::mint": {
+      "order": 76,
+      "profiles": [
+        {
+          "id": "pinocchio-token-2022-reviewed",
+          "source": "pinocchio-token-2022",
+          "conditions": "@shared:conditions-97cf188144f14866",
+          "argument": "@review:source-notes/token-instructions.md#review-b6b7a827293762e1",
+          "evidence": ["@text:024956fc9ea547c7", "@text:f3fa465056ade8ac"],
+          "items": [
+            {
+              "item": "pinocchio_token_2022::state::token::TokenAccount::mint",
+              "implementation": "pinocchio_token_2022::state::token::TokenAccount::mint",
+              "releases": ["0.1.0", "0.2.0"],
+              "compatible_ranges": "@shared:compatible-ranges-77e8f37d0117311a"
+            }
+          ],
+          "releases": ["0.1.0", "0.2.0"]
+        },
+        {
+          "id": "pinocchio-token-2022-reviewed-2",
+          "source": "pinocchio-token-2022",
+          "conditions": "@shared:conditions-97cf188144f14866",
+          "argument": "@review:source-notes/token-instructions.md#review-b6b7a827293762e1",
+          "evidence": ["@text:024956fc9ea547c7", "@text:f3fa465056ade8ac"],
+          "items": [
+            {
+              "item": "pinocchio_token_2022::state::account::Account::mint",
+              "implementation": "pinocchio_token_2022::state::account::Account::mint",
+              "releases": ["0.3.0", "0.3.1", "0.4.0", "0.5.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6f6501b9038c00f1"
+            }
+          ],
+          "releases": ["0.3.0", "0.3.1", "0.4.0", "0.5.0"]
+        }
+      ]
+    },
+    "pinocchio-token-2022::state::account::Account::owner": {
+      "order": 77,
+      "profiles": [
+        {
+          "id": "pinocchio-token-2022-reviewed",
+          "source": "pinocchio-token-2022",
+          "conditions": "@shared:conditions-97cf188144f14866",
+          "argument": "@review:source-notes/token-instructions.md#review-1a9fd693392646d6",
+          "evidence": ["@text:024956fc9ea547c7", "@text:f3fa465056ade8ac"],
+          "items": [
+            {
+              "item": "pinocchio_token_2022::state::token::TokenAccount::owner",
+              "implementation": "pinocchio_token_2022::state::token::TokenAccount::owner",
+              "releases": ["0.1.0", "0.2.0"],
+              "compatible_ranges": "@shared:compatible-ranges-77e8f37d0117311a"
+            }
+          ],
+          "releases": ["0.1.0", "0.2.0"]
+        },
+        {
+          "id": "pinocchio-token-2022-reviewed-2",
+          "source": "pinocchio-token-2022",
+          "conditions": "@shared:conditions-97cf188144f14866",
+          "argument": "@review:source-notes/token-instructions.md#review-1a9fd693392646d6",
+          "evidence": ["@text:024956fc9ea547c7", "@text:f3fa465056ade8ac"],
+          "items": [
+            {
+              "item": "pinocchio_token_2022::state::account::Account::owner",
+              "implementation": "pinocchio_token_2022::state::account::Account::owner",
+              "releases": ["0.3.0", "0.3.1", "0.4.0", "0.5.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6f6501b9038c00f1"
+            }
+          ],
+          "releases": ["0.3.0", "0.3.1", "0.4.0", "0.5.0"]
+        }
+      ]
+    },
+    "pinocchio-token-2022::state::account::Account::state": {
+      "order": 78,
+      "profiles": [
+        {
+          "id": "pinocchio-token-2022-reviewed",
+          "source": "pinocchio-token-2022",
+          "conditions": "@shared:conditions-79d249b38376884c",
+          "argument": "@review:source-notes/token-instructions.md#review-2f9a6710ed3062dd",
+          "evidence": ["@text:024956fc9ea547c7", "@text:b03f22377266014b"],
+          "items": [
+            {
+              "item": "pinocchio_token_2022::state::token::TokenAccount::state",
+              "implementation": "pinocchio_token_2022::state::token::TokenAccount::state",
+              "releases": ["0.1.0", "0.2.0"],
+              "compatible_ranges": "@shared:compatible-ranges-77e8f37d0117311a"
+            }
+          ],
+          "releases": ["0.1.0", "0.2.0"]
+        },
+        {
+          "id": "pinocchio-token-2022-reviewed-2",
+          "source": "pinocchio-token-2022",
+          "conditions": "@shared:conditions-79d249b38376884c",
+          "argument": "@review:source-notes/token-instructions.md#review-2f9a6710ed3062dd",
+          "evidence": ["@text:024956fc9ea547c7", "@text:b03f22377266014b"],
+          "items": [
+            {
+              "item": "pinocchio_token_2022::state::account::Account::state",
+              "implementation": "pinocchio_token_2022::state::account::Account::state",
+              "releases": ["0.3.0", "0.3.1"],
+              "compatible_ranges": [{"lower": "0.3.0", "upper": "0.4.0"}]
+            }
+          ],
+          "releases": ["0.3.0", "0.3.1"]
+        }
+      ]
+    },
+    "pinocchio-token-2022::state::mint::Mint::decimals": {
+      "order": 79,
+      "profiles": [
+        {
+          "id": "pinocchio-token-2022-reviewed",
+          "source": "pinocchio-token-2022",
+          "conditions": "@shared:conditions-79d249b38376884c",
+          "argument": "@review:source-notes/token-instructions.md#review-399a45958c2ff606",
+          "evidence": ["@text:024956fc9ea547c7", "@text:f3fa465056ade8ac"],
+          "items": [
+            {
+              "item": "pinocchio_token_2022::state::mint::Mint::decimals",
+              "implementation": "pinocchio_token_2022::state::mint::Mint::decimals",
+              "releases": ["0.1.0", "0.2.0", "0.3.0", "0.3.1", "0.4.0", "0.5.0"],
+              "compatible_ranges": [
+                {"lower": "0.1.0", "upper": "0.2.0"},
+                {"lower": "0.2.0", "upper": "0.3.0"},
+                {"lower": "0.3.0", "upper": "0.4.0"},
+                {"lower": "0.4.0", "upper": "0.5.0"},
+                {"lower": "0.5.0", "upper": "0.6.0"}
+              ]
+            }
+          ],
+          "releases": ["0.1.0", "0.2.0", "0.3.0", "0.3.1", "0.4.0", "0.5.0"]
+        }
+      ]
+    },
+    "pinocchio-token-2022::state::mint::Mint::from_account_view": {
+      "order": 80,
+      "profiles": [
+        {
+          "id": "pinocchio-token-2022-reviewed",
+          "source": "pinocchio-token-2022",
+          "conditions": "@shared:conditions-3fed72639c0e6997",
+          "argument": "@review:source-notes/token-instructions.md#review-09d8ea98bb4f48e4",
+          "evidence": ["@text:b03f22377266014b", "@text:ff37388b55eafcf3"],
+          "items": [
+            {
+              "item": "pinocchio_token_2022::state::mint::Mint::from_account_view",
+              "implementation": "pinocchio_token_2022::state::mint::Mint::from_account_view",
+              "releases": ["0.3.1", "0.4.0"],
+              "compatible_ranges": [{"lower": "0.3.1", "upper": "0.4.0"}, {"lower": "0.4.0", "upper": "0.5.0"}]
+            }
+          ],
+          "releases": ["0.3.1", "0.4.0"]
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:a65f2b8ba6347d52", "@binding:a1ae3bded4c69f65"]
+}

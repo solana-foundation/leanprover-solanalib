@@ -1,0 +1,578 @@
+{
+  "abstractions": {
+    "library::solana_sysvar": {
+      "order": 149,
+      "modules": {
+        "Solanalib.Specs.SolanaSysvar": "bc118d36acf0a7439e3b85a8b13e4136afaf1b8bba9e8c2528debb622560148a",
+        "Solanalib.Specs.SolanaSysvar.Capabilities": "d0bc8404fb98ba4b9d99b4e621411ebefee07cf0671c7095695429a8167867f7",
+        "Solanalib.Specs.SolanaSysvar.Get": "ff861549f9341d85a62e675ed43c1f0a94322ff4a40255528135bafe7601ff97",
+        "Solanalib.Specs.SolanaSysvar.GetStringError": "aae9e342c017e10d205f1c3ebaa520b7e1ab8e5d73ed49ae13e5a4e9de43f802",
+        "Solanalib.Specs.SolanaSysvar.EpochSchedule": "125bbc3ebf918d0dbfe2cd88eca65bff41410669fe37676ea7d01c5430d76afb"
+      },
+      "source_ids": [
+        "sysvars::solana-sysvar-3.1.1::src/lib.rs",
+        "sysvars::solana-sysvar-3.1.1::src/clock.rs",
+        "sysvars::solana-sysvar-3.1.1::src/rent.rs",
+        "sdk-utilities::solana-sysvar-2.2.2::src/lib.rs",
+        "sdk-utilities::solana-sysvar-2.2.2::src/clock.rs",
+        "sdk-utilities::solana-sysvar-2.2.2::src/rent.rs",
+        "sdk-utilities::solana-sysvar-2.3.0::src/lib.rs",
+        "sdk-utilities::solana-sysvar-2.3.0::src/clock.rs",
+        "sdk-utilities::solana-sysvar-2.3.0::src/rent.rs",
+        "sdk-utilities::solana-program-1.15.2::src/sysvar/mod.rs",
+        "sdk-utilities::solana-program-1.15.2::src/sysvar/rent.rs",
+        "sdk-utilities::solana-program-1.15.2::src/program_error.rs",
+        "sdk-utilities::solana-program-1.15.2::src/rent.rs",
+        "sdk-utilities::solana-program-1.15.2::src/clock.rs",
+        "sdk-utilities::solana-program-1.15.2::src/program_stubs.rs",
+        "sdk-utilities::solana-program-1.18.26::src/sysvar/mod.rs",
+        "sdk-utilities::solana-program-1.18.26::src/sysvar/rent.rs",
+        "sdk-utilities::solana-program-1.18.26::src/program_error.rs",
+        "sdk-utilities::solana-program-1.18.26::src/rent.rs",
+        "sdk-utilities::solana-program-1.18.26::src/clock.rs",
+        "sdk-utilities::solana-program-1.18.26::src/program_stubs.rs",
+        "sdk-utilities::solana-program-1.18.26::src/sysvar/clock.rs",
+        "sdk-utilities::solana-program-error-2.2.2::src/lib.rs",
+        "sdk-utilities::solana-clock-2.2.2::src/lib.rs",
+        "sdk-utilities::solana-sysvar-3.1.1::src/epoch_schedule.rs",
+        "sdk-utilities::solana-epoch-schedule-3.0.0::src/lib.rs",
+        "sdk-utilities::solana-epoch-schedule-3.2.0::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/sysvar-getters.md#review-6d548314f765b20d",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:2bdd10cfed4f63a1",
+        "@binding:b5fa051f6f3ee7b5",
+        "@text:637dfd12e71b9ba7",
+        "@binding:f8fdb012bb5e313a",
+        "@binding:57a174b603247af7"
+      ]
+    }
+  },
+  "packages": {
+    "solana-sysvar-3.1.1": {
+      "order": 27,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "a5ecbeb813096b11c63cca476acf9b4d49e27475",
+      "path_prefix": "sysvar/"
+    },
+    "solana-sysvar-2.2.2": {
+      "order": 74,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "004604e34e7bd24957ba85743f85184cbc0ea4a5",
+      "path_prefix": "sysvar/"
+    },
+    "solana-sysvar-2.3.0": {
+      "order": 75,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "b0b040323c365c6a948b2fc78acc74b43012aaed",
+      "path_prefix": "sysvar/"
+    }
+  },
+  "interfaces": {
+    "sysvars::solana-sysvar-3.1.1::src/clock.rs": {
+      "order": 126,
+      "crate": "solana-sysvar-3.1.1",
+      "path": "src/clock.rs",
+      "sha256": "599d737e41bfa37f0d3221bf6b237b6869e740678525ac5a0cea5549020c0ab1"
+    },
+    "sysvars::solana-sysvar-3.1.1::src/lib.rs": {
+      "order": 127,
+      "crate": "solana-sysvar-3.1.1",
+      "path": "src/lib.rs",
+      "sha256": "0560913c4824362ce6048fb47391cb7ed1306960275c491bca856591f9e448f9"
+    },
+    "sysvars::solana-sysvar-3.1.1::src/rent.rs": {
+      "order": 128,
+      "crate": "solana-sysvar-3.1.1",
+      "path": "src/rent.rs",
+      "sha256": "4e9df99a55f23938633c5ff777b41a2ccce3035b047290bd30aee112dc4ccd72"
+    },
+    "sdk-utilities::solana-sysvar-2.2.2::src/clock.rs": {
+      "order": 222,
+      "crate": "solana-sysvar-2.2.2",
+      "path": "src/clock.rs",
+      "sha256": "70107f18f9a00e240a919d84c9245cae10765b271020bcc8ea593fbb2638ca5f"
+    },
+    "sdk-utilities::solana-sysvar-2.2.2::src/lib.rs": {
+      "order": 223,
+      "crate": "solana-sysvar-2.2.2",
+      "path": "src/lib.rs",
+      "sha256": "9eb307123c03399c2d841478a7e522dc57f4bcad1187ebcc04ffede93c550bdf"
+    },
+    "sdk-utilities::solana-sysvar-2.2.2::src/rent.rs": {
+      "order": 224,
+      "crate": "solana-sysvar-2.2.2",
+      "path": "src/rent.rs",
+      "sha256": "00b747010edd05d5c9c9c9bedd7434760aad6d6629a0d0fdeb0327600871f03e"
+    },
+    "sdk-utilities::solana-sysvar-2.3.0::src/clock.rs": {
+      "order": 225,
+      "crate": "solana-sysvar-2.3.0",
+      "path": "src/clock.rs",
+      "sha256": "70107f18f9a00e240a919d84c9245cae10765b271020bcc8ea593fbb2638ca5f"
+    },
+    "sdk-utilities::solana-sysvar-2.3.0::src/lib.rs": {
+      "order": 226,
+      "crate": "solana-sysvar-2.3.0",
+      "path": "src/lib.rs",
+      "sha256": "9eb307123c03399c2d841478a7e522dc57f4bcad1187ebcc04ffede93c550bdf"
+    },
+    "sdk-utilities::solana-sysvar-2.3.0::src/rent.rs": {
+      "order": 227,
+      "crate": "solana-sysvar-2.3.0",
+      "path": "src/rent.rs",
+      "sha256": "00b747010edd05d5c9c9c9bedd7434760aad6d6629a0d0fdeb0327600871f03e"
+    },
+    "sdk-utilities::solana-sysvar-3.1.1::src/epoch_schedule.rs": {
+      "order": 592,
+      "crate": "solana-sysvar-3.1.1",
+      "path": "src/epoch_schedule.rs",
+      "sha256": "9dbb711425c6f75eccdc656f97f6c144e8844720a8674eb131342c4885ec0b43"
+    }
+  },
+  "models": {
+    "solana-sysvar::clock::Clock::get": {
+      "order": 197,
+      "contract": "Solanalib.Specs.SolanaSysvar.clock.Clock.get_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.SolanaSysvar.clock.Clock.get_hasExecution",
+      "assumptions": "@shared:assumptions-3f228817c8c19d71"
+    },
+    "solana-sysvar::rent::Rent::get": {
+      "order": 198,
+      "contract": "Solanalib.Specs.SolanaSysvar.rent.Rent.get_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.SolanaSysvar.rent.Rent.get_hasExecution",
+      "assumptions": "@shared:assumptions-3f228817c8c19d71"
+    },
+    "solana-sysvar::clock::Clock::string_error::get": {
+      "order": 241,
+      "contract": "Solanalib.Specs.SolanaSysvar.clock.Clock.string_error.get_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.SolanaSysvar.clock.Clock.string_error.get_hasExecution",
+      "assumptions": "@shared:assumptions-e479e6b4ab8fc021"
+    },
+    "solana-sysvar::rent::Rent::string_error::get": {
+      "order": 246,
+      "contract": "Solanalib.Specs.SolanaSysvar.rent.Rent.string_error.get_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.SolanaSysvar.rent.Rent.string_error.get_hasExecution",
+      "assumptions": "@shared:assumptions-e479e6b4ab8fc021"
+    },
+    "solana-sysvar::epoch_schedule::EpochSchedule::get": {
+      "order": 478,
+      "contract": "Solanalib.Specs.SolanaSysvar.epoch_schedule.EpochSchedule.get_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.SolanaSysvar.epoch_schedule.EpochSchedule.get_hasExecution",
+      "assumptions": ["@binding:f8fdb012bb5e313a", "@text:27794b527ca1abf9"]
+    }
+  },
+  "api": {
+    "sysvars::solana-sysvar-3.1.1::Clock::get": {
+      "order": 209,
+      "anchor_text": "fn get() -> Result<Self, $crate::__private::ProgramError> {",
+      "binding_obligations": "@shared:binding-obligations-94259e5244c5f793",
+      "line": 165,
+      "scope": "@text:75f1bc424ccd0e03",
+      "source_id": "sysvars::solana-sysvar-3.1.1::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.Core.Sysvar.typed_get_folds_same_status_to_unsupported",
+        "SolanalibTest.Specs.Core.Sysvar.uninitialized_success_violates_success_law",
+        "SolanalibTest.Specs.SolanaSysvar.typed_clock_error_preserves_actual_callback_state",
+        "SolanalibTest.Specs.Core.Sysvar.invalid_initialized_value_has_raw_execution",
+        "SolanalibTest.Specs.Core.Sysvar.mixed_success_provider_is_rejected",
+        "SolanalibTest.Specs.Core.Sysvar.initialized_success_reaches_stateful_continuation"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Sysvar.GetterReady",
+        "Solanalib.Specs.Core.Sysvar.get",
+        "Solanalib.Specs.Core.Sysvar.GetterValid",
+        "Solanalib.Specs.Core.Sysvar.get_retains",
+        "Solanalib.Specs.Core.Sysvar.get_hasOutcome_iff",
+        "Solanalib.Specs.Core.Sysvar.get_success_valid"
+      ],
+      "rust_names": ["solana_sysvar::clock::<impl solana_sysvar::Sysvar for solana_clock::Clock>::get"],
+      "models": ["solana-sysvar::clock::Clock::get"],
+      "binding_defaults": false
+    },
+    "sysvars::solana-sysvar-3.1.1::Rent::get": {
+      "order": 210,
+      "anchor_text": "fn get() -> Result<Self, $crate::__private::ProgramError> {",
+      "binding_obligations": "@shared:binding-obligations-94259e5244c5f793",
+      "line": 165,
+      "scope": "@text:f0feaeb369865443",
+      "source_id": "sysvars::solana-sysvar-3.1.1::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.Core.Sysvar.typed_get_folds_same_status_to_unsupported",
+        "SolanalibTest.Specs.Core.Sysvar.uninitialized_success_violates_success_law",
+        "SolanalibTest.Specs.SolanaSysvar.rent_starts_from_default_without_integerizing_threshold",
+        "SolanalibTest.Specs.Core.Sysvar.invalid_initialized_value_has_raw_execution",
+        "SolanalibTest.Specs.Core.Sysvar.mixed_success_provider_is_rejected",
+        "SolanalibTest.Specs.Core.Sysvar.initialized_success_reaches_stateful_continuation"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Sysvar.GetterReady",
+        "Solanalib.Specs.Core.Sysvar.get",
+        "Solanalib.Specs.Core.Sysvar.GetterValid",
+        "Solanalib.Specs.Core.Sysvar.get_retains",
+        "Solanalib.Specs.Core.Sysvar.get_hasOutcome_iff",
+        "Solanalib.Specs.Core.Sysvar.get_success_valid"
+      ],
+      "rust_names": ["solana_sysvar::rent::<impl solana_sysvar::Sysvar for solana_rent::Rent>::get"],
+      "models": ["solana-sysvar::rent::Rent::get"],
+      "binding_defaults": false
+    },
+    "sdk-utilities::solana-sysvar-2.3.0::Rent::get": {
+      "order": 231,
+      "source_id": "sdk-utilities::solana-sysvar-2.3.0::src/lib.rs",
+      "line": 197,
+      "anchor_text": "fn get() -> Result<Self, $crate::__private::ProgramError> {",
+      "scope": "@text:a96e937628b5611d",
+      "binding_obligations": ["@binding:57a174b603247af7"],
+      "rust_names": ["solana_sysvar::rent::<impl solana_sysvar::Sysvar for solana_rent::Rent>::get"],
+      "models": ["solana-sysvar::rent::Rent::string_error::get"]
+    },
+    "sdk-utilities::solana-sysvar-2.3.0::Clock::get": {
+      "order": 232,
+      "source_id": "sdk-utilities::solana-sysvar-2.3.0::src/lib.rs",
+      "line": 197,
+      "anchor_text": "fn get() -> Result<Self, $crate::__private::ProgramError> {",
+      "scope": "@text:a96e937628b5611d",
+      "binding_obligations": ["@binding:57a174b603247af7"],
+      "rust_names": ["solana_sysvar::clock::<impl solana_sysvar::Sysvar for solana_clock::Clock>::get"],
+      "models": ["solana-sysvar::clock::Clock::string_error::get"]
+    },
+    "sdk-utilities::solana-sysvar-2.2.2::Rent::get": {
+      "order": 412,
+      "source_id": "sdk-utilities::solana-sysvar-2.2.2::src/lib.rs",
+      "line": 197,
+      "anchor_text": "fn get() -> Result<Self, $crate::__private::ProgramError> {",
+      "scope": "@text:a96e937628b5611d",
+      "binding_obligations": ["@binding:57a174b603247af7"],
+      "rust_names": ["solana_sysvar::rent::<impl solana_sysvar::Sysvar for solana_rent::Rent>::get"],
+      "models": ["solana-sysvar::rent::Rent::string_error::get"]
+    },
+    "sdk-utilities::solana-sysvar-2.2.2::Clock::get": {
+      "order": 413,
+      "source_id": "sdk-utilities::solana-sysvar-2.2.2::src/lib.rs",
+      "line": 197,
+      "anchor_text": "fn get() -> Result<Self, $crate::__private::ProgramError> {",
+      "scope": "@text:a96e937628b5611d",
+      "binding_obligations": ["@binding:57a174b603247af7"],
+      "rust_names": ["solana_sysvar::clock::<impl solana_sysvar::Sysvar for solana_clock::Clock>::get"],
+      "models": ["solana-sysvar::clock::Clock::string_error::get"]
+    },
+    "sdk-utilities::solana-sysvar-3.1.1::EpochSchedule::get": {
+      "order": 587,
+      "source_id": "sysvars::solana-sysvar-3.1.1::src/lib.rs",
+      "line": 165,
+      "anchor_text": "fn get() -> Result<Self, $crate::__private::ProgramError> {",
+      "scope": "@text:a0b9625f8ef7f06f",
+      "rust_names": [
+        "solana_sysvar::epoch_schedule::<impl solana_sysvar::Sysvar for solana_epoch_schedule::EpochSchedule>::get"
+      ],
+      "models": ["solana-sysvar::epoch_schedule::EpochSchedule::get"]
+    }
+  },
+  "applicability_sources": {
+    "solana-sysvar": {
+      "order": 29,
+      "package": "solana-sysvar",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-sysvar/solana-sysvar-0.0.1.crate",
+          "sha256": "9fe0a979f487dd2864871d6ac2a001b7c981c9dba2cc10ec6595cb3be971710d",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-sysvar/solana-sysvar-0.0.2.crate",
+          "sha256": "67b6a271c2124d2ca23acf67e651d3d72b75c6bd6c443c69fc7509aec33c8188",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sysvar/solana-sysvar-2.2.0.crate",
+          "sha256": "e68c122b502fd9c5a0584af938d62f2cbfbdd60f22d3ecf40d3c8a23da5e563c"
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-sysvar/solana-sysvar-2.2.1.crate",
+          "sha256": "bf6b44740d7f0c9f375d045c165bc0aab4a90658f92d6835aeb0649afaeaff9a",
+          "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+          "path_prefix": "sysvar/",
+          "repository": "https://github.com/anza-xyz/solana-sdk"
+        },
+        "2.2.2": {
+          "archive_url": "https://static.crates.io/crates/solana-sysvar/solana-sysvar-2.2.2.crate",
+          "sha256": "d50c92bc019c590f5e42c61939676e18d14809ed00b2a59695dd5c67ae72c097",
+          "revision": "004604e34e7bd24957ba85743f85184cbc0ea4a5",
+          "path_prefix": "sysvar/"
+        },
+        "2.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sysvar/solana-sysvar-2.3.0.crate",
+          "sha256": "b8c3595f95069f3d90f275bb9bd235a1973c4d059028b0a7f81baca2703815db",
+          "revision": "b0b040323c365c6a948b2fc78acc74b43012aaed",
+          "path_prefix": "sysvar/"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sysvar/solana-sysvar-3.0.0.crate",
+          "sha256": "63205e68d680bcc315337dec311b616ab32fea0a612db3b883ce4de02e0953f9",
+          "revision": "06bab38918e44a98b00d42140542b8f23491804f",
+          "path_prefix": "sysvar/"
+        },
+        "3.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sysvar/solana-sysvar-3.1.0.crate",
+          "sha256": "3205cc7db64a0f1a20b7eb2405773fa64e45f7fe0fc7a73e50e90eca6b2b0be7",
+          "revision": "9c5609a62b342bc993cc40eb069ea94439dc563c",
+          "path_prefix": "sysvar/"
+        },
+        "3.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-sysvar/solana-sysvar-3.1.1.crate",
+          "sha256": "6690d3dd88f15c21edff68eb391ef8800df7a1f5cec84ee3e8d1abf05affdf74",
+          "revision": "a5ecbeb813096b11c63cca476acf9b4d49e27475",
+          "path_prefix": "sysvar/"
+        },
+        "4.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sysvar/solana-sysvar-4.0.0.crate",
+          "sha256": "1632b69b4f72489db5949a10e8308c229dfa003f99ecaa7477b376807c7b81f4",
+          "revision": "f6528428c9b8be4718c9f6d7369691a54dbac4f3",
+          "path_prefix": "sysvar/"
+        },
+        "4.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sysvar/solana-sysvar-4.1.0.crate",
+          "sha256": "ada7045bbfdd802af08fbc9c7e2b56ddabb20599d22e4c3840fcef5e7afb8324",
+          "revision": "f24d0887f1a2aa00c9ed306b79e35864cc53650e",
+          "path_prefix": "sysvar/"
+        },
+        "4.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sysvar/solana-sysvar-4.2.0.crate",
+          "sha256": "0214d668b0aab7a64b49e43b7947307985fca4e03d3ef880cd8ee43f52f13a34"
+        },
+        "4.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sysvar/solana-sysvar-4.3.0.crate",
+          "sha256": "552f9d54ec9597f5a17469df500a1ac345c262e5a9859938ef5e5541844fdac5",
+          "revision": "ef2fe1b4e401d6959115d39b210daf03e3968ad7",
+          "path_prefix": "sysvar/"
+        },
+        "5.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sysvar/solana-sysvar-5.0.0.crate",
+          "sha256": "bcfc1dead2b328974e09500feb2e413fc2be82bb3ffebc87132804cdce87d31b",
+          "revision": "e2cd0daa8a121a86cac7a8965063b539745c97b6",
+          "path_prefix": "sysvar/"
+        }
+      },
+      "evidence": ["@text:05350428c7dbc13c"]
+    }
+  },
+  "applicability": {
+    "solana-sysvar::clock::Clock::get": {
+      "order": 197,
+      "profiles": [
+        {
+          "id": "solana-sysvar-reviewed",
+          "source": "solana-sysvar",
+          "conditions": "@shared:conditions-f142ec86f90b4f82",
+          "argument": "@review:source-notes/sysvar-getters.md#review-dfa3fc92cc252bde",
+          "evidence": ["@text:79fa649e20d00afb", "@text:654175bf44e5d575"],
+          "items": [
+            {
+              "item": "solana_sysvar::Sysvar::get",
+              "implementation": "solana_sysvar::clock::<impl solana_sysvar::Sysvar for solana_clock::Clock>::get",
+              "releases": ["3.0.0", "3.1.1"],
+              "compatible_ranges": "@shared:compatible-ranges-fa6cdb228d7958a8"
+            }
+          ],
+          "releases": ["3.0.0", "3.1.1"]
+        }
+      ]
+    },
+    "solana-sysvar::rent::Rent::get": {
+      "order": 198,
+      "profiles": [
+        {
+          "id": "solana-sysvar-reviewed",
+          "source": "solana-sysvar",
+          "conditions": "@shared:conditions-f142ec86f90b4f82",
+          "argument": "@review:source-notes/sysvar-getters.md#review-6e17e39c3f9a7ac0",
+          "evidence": ["@text:79fa649e20d00afb", "@text:654175bf44e5d575"],
+          "items": [
+            {
+              "item": "solana_sysvar::Sysvar::get",
+              "implementation": "solana_sysvar::rent::<impl solana_sysvar::Sysvar for solana_rent::Rent>::get",
+              "releases": ["3.0.0", "3.1.1"],
+              "compatible_ranges": "@shared:compatible-ranges-fa6cdb228d7958a8"
+            }
+          ],
+          "releases": ["3.0.0", "3.1.1"]
+        }
+      ]
+    },
+    "solana-sysvar::clock::Clock::string_error::get": {
+      "order": 241,
+      "profiles": [
+        {
+          "id": "typed-clock-2.3.0",
+          "source": "solana-sysvar",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_sysvar::Sysvar::get",
+              "implementation": "solana_sysvar::clock::<impl solana_sysvar::Sysvar for solana_clock::Clock>::get",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:f8fdb012bb5e313a", "@binding:57a174b603247af7"],
+          "argument": "@review:source-notes/sysvar-getters.md#review-2319f09990511059",
+          "evidence": ["@text:0bbd577b10cb8a9d"],
+          "dependencies": [
+            "@shared:dependencies-5bd5dd9da631c2b8",
+            "@shared:dependencies-c8cd3902161e400b",
+            {
+              "package": "solana-clock",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.2.2"],
+              "reason": "@text:f9df7c59e23f1ad9",
+              "compatible_ranges": [{"lower": "2.2.2", "upper": "3.0.0"}]
+            }
+          ],
+          "features": {"all": ["bincode"], "reason": "@text:aa09f4513e4a530a"}
+        },
+        {
+          "argument": "@review:source-notes/sysvar-getters.md#review-27503edfbc5ee6f4",
+          "conditions": ["@binding:f8fdb012bb5e313a", "@binding:57a174b603247af7"],
+          "dependencies": [
+            "@shared:dependencies-be69daf8bcac1c90",
+            "@shared:dependencies-d06f932ced12a6fb",
+            {
+              "package": "solana-clock",
+              "reason": "@text:7a55b5ed08567192",
+              "releases": ["2.2.2"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"},
+              "compatible_ranges": [{"lower": "2.2.2", "upper": "3.0.0"}]
+            }
+          ],
+          "evidence": ["@text:008f4bda83d5fded"],
+          "features": {"all": ["bincode"], "reason": "@text:aa09f4513e4a530a"},
+          "id": "typed-clock-2.2.2",
+          "items": [
+            {
+              "implementation": "solana_sysvar::clock::<impl solana_sysvar::Sysvar for solana_clock::Clock>::get",
+              "item": "solana_sysvar::Sysvar::get",
+              "releases": ["2.2.2"],
+              "compatible_ranges": [{"lower": "2.2.2", "upper": "2.3.0"}]
+            }
+          ],
+          "releases": ["2.2.2"],
+          "source": "solana-sysvar"
+        }
+      ]
+    },
+    "solana-sysvar::rent::Rent::string_error::get": {
+      "order": 246,
+      "profiles": [
+        {
+          "id": "typed-rent-2.3.0",
+          "source": "solana-sysvar",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_sysvar::Sysvar::get",
+              "implementation": "solana_sysvar::rent::<impl solana_sysvar::Sysvar for solana_rent::Rent>::get",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:f8fdb012bb5e313a", "@binding:57a174b603247af7"],
+          "argument": "@review:source-notes/sysvar-getters.md#review-2319f09990511059",
+          "evidence": ["@text:0bbd577b10cb8a9d"],
+          "dependencies": [
+            "@shared:dependencies-5bd5dd9da631c2b8",
+            "@shared:dependencies-c8cd3902161e400b",
+            {
+              "package": "solana-rent",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.2.1"],
+              "reason": "@text:9a14ee8ef202e16b",
+              "compatible_ranges": [{"lower": "2.2.1", "upper": "3.0.0"}]
+            }
+          ],
+          "features": {"all": ["bincode"], "reason": "@text:aa09f4513e4a530a"}
+        },
+        {
+          "argument": "@review:source-notes/sysvar-getters.md#review-27503edfbc5ee6f4",
+          "conditions": ["@binding:f8fdb012bb5e313a", "@binding:57a174b603247af7"],
+          "dependencies": [
+            "@shared:dependencies-be69daf8bcac1c90",
+            "@shared:dependencies-d06f932ced12a6fb",
+            {
+              "package": "solana-rent",
+              "reason": "@text:da3886ffd29aafea",
+              "releases": ["2.2.1"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"},
+              "compatible_ranges": [{"lower": "2.2.1", "upper": "3.0.0"}]
+            }
+          ],
+          "evidence": ["@text:008f4bda83d5fded"],
+          "features": {"all": ["bincode"], "reason": "@text:aa09f4513e4a530a"},
+          "id": "typed-rent-2.2.2",
+          "items": [
+            {
+              "implementation": "solana_sysvar::rent::<impl solana_sysvar::Sysvar for solana_rent::Rent>::get",
+              "item": "solana_sysvar::Sysvar::get",
+              "releases": ["2.2.2"],
+              "compatible_ranges": [{"lower": "2.2.2", "upper": "2.3.0"}]
+            }
+          ],
+          "releases": ["2.2.2"],
+          "source": "solana-sysvar"
+        }
+      ]
+    },
+    "solana-sysvar::epoch_schedule::EpochSchedule::get": {
+      "order": 481,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/sysvar-getters.md#review-af86c4ba96d8bec1",
+          "conditions": ["@binding:f8fdb012bb5e313a"],
+          "dependencies": [
+            {
+              "package": "solana-epoch-schedule",
+              "reason": "@text:f301113bb13149cd",
+              "releases": ["3.0.0", "3.2.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            },
+            {
+              "package": "solana-program-error",
+              "reason": "@text:f7375a2f823485fa",
+              "releases": ["3.0.1"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            },
+            {
+              "package": "solana-program-entrypoint",
+              "reason": "@text:750b55c3c158a7a7",
+              "releases": ["3.1.1"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            }
+          ],
+          "evidence": ["@text:654175bf44e5d575"],
+          "id": "typed-epoch-3.1.1",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}],
+              "implementation": "solana_sysvar::epoch_schedule::<impl solana_sysvar::Sysvar for solana_epoch_schedule::EpochSchedule>::get",
+              "item": "solana_sysvar::Sysvar::get",
+              "releases": ["3.1.1"]
+            }
+          ],
+          "releases": ["3.1.1"],
+          "source": "solana-sysvar"
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:b5fa051f6f3ee7b5", "@binding:f8fdb012bb5e313a"]
+}

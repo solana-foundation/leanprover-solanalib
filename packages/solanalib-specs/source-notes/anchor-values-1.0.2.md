@@ -165,3 +165,41 @@ These are mathematical models, not Rust body proofs, heap/layout interpretation,
 implementation semantics or program logic proofs, executable Rust clients or canonical implementation specifications. All
 Rust proof statuses remain open. The reviewed SDK files can be found under
 [lang/src](https://github.com/solana-foundation/anchor/tree/1314a6b83b16e6a31947b372d57988fd0e81559c/lang/src).
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:ef22c2ac2931f2c5 -->
+<a id="review-ef22c2ac2931f2c5"></a>
+
+Import-only roots expose the selected versioned modules. Generated typed catalogs collect their exact registered contracts, source identities, profiles and closed reference witnesses. The generator check derives every catalog from the source registry without changing any model body.
+
+The selected function models compose explicit primitive operations at actual current states. Context constructors/mutators preserve fields, references and Vec owners; old program AccountInfo and modern copied Pubkey are distinct interpretations. Error callbacks retain unwind, terminal outcomes and source cleanup; log temporaries are cleaned on host unwind. Exact finite code tables select each released macro expansion. Codec bodies retain partial write/cursor mutations and diagnostic resources. Families with True mathematical preconditions still require the separate Rust binding to establish initialized current resources and representations; no source-output premise is inferred from finite witnesses.
+
+The source-owned Error.with_account_name family preserves the entire boxed generic name contract and reference. Only the new anchor-lang-error 1.1.2 source API and exact profile select it; the inherited Anchor family remains separate.
+<!-- /registry -->
+
+<!-- registry:review:bcbc36df6003741f -->
+<a id="review-bcbc36df6003741f"></a>
+
+The declared compatible range assumes the complete 1.1.2 ErrorCode table, with exact number, name and Display message, evaluated as name allocation, message allocation and boxed AnchorError construction in that order. The two variants introduced in 1.2.0 require a different complete table.
+<!-- /registry -->
+
+<!-- registry:review:3354de9fb955a929 -->
+<a id="review-3354de9fb955a929"></a>
+
+The declared compatible range assumes the boxed modern ProgramError representation, origin-dependent format/arguments, exact status conversion and comparison logging order. Every allocated formatting temporary is destroyed on normal or unwind exit, retaining callback effects; borrowed error fields and its Box remain owned by the caller. This pre-cohort profile stops before the new 1.2.1 provider/feature selection.
+<!-- /registry -->
+
+<!-- registry:review:818169b6a66e45a1 -->
+<a id="review-818169b6a66e45a1"></a>
+
+The declared compatible range assumes the complete 1.1.2 ErrorCode match and one String copy of the selected exact variant name, without a Box or message-formatting operation. The added 1.2.0 variants are outside this table.
+<!-- /registry -->
+
+<!-- registry:review:b77cb7755a063f26 -->
+<a id="review-b77cb7755a063f26"></a>
+
+The declared compatible range assumes the actual generic ToString callback, destruction of an old owned account-name origin before replacement, and preservation of every other field and the same Box owner. The consumed argument is destroyed on normal/unwind exits; callback and cleanup outcomes remain explicit. This pre-cohort profile stops before the new 1.2.1 provider/feature selection.
+<!-- /registry -->

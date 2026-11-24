@@ -1,0 +1,306 @@
+{
+  "abstractions": {
+    "library::solana_instructions_sysvar": {
+      "order": 170,
+      "modules": {
+        "Solanalib.Specs.SolanaInstructionsSysvar": "c65a7aa8bc5f7b445dea0f85c7693fdc0efc30cb559d1c74d803a39e9f5d9d00",
+        "Solanalib.Specs.SolanaInstructionsSysvar.Capabilities": "d9092a447e007bc10e60ef88e01127960f90225fbdb6baffcdeba150f6d3fc31",
+        "Solanalib.Specs.SolanaInstructionsSysvar.Checked": "5b375663dba1916dbb03d9299c94284a68163ea59566bfe6611adae3a7c7b11a"
+      },
+      "source_ids": [
+        "sdk-utilities::solana-instructions-sysvar-3.0.0::src/lib.rs",
+        "sdk-utilities::solana-instructions-sysvar-4.0.0::src/lib.rs",
+        "sdk-utilities::solana-serialize-utils-3.1.1::src/lib.rs",
+        "sdk-utilities::solana-serialize-utils-3.1.2::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/sysvar-instructions.md#review-d756e317a51890b1",
+      "limitations": [
+        "@text:a59033a3f7b014d2",
+        "@text:f428bee2a0798d8f",
+        "@binding:b5fa051f6f3ee7b5",
+        "@binding:8eb0270e4a85336e"
+      ]
+    }
+  },
+  "packages": {
+    "solana-instructions-sysvar-4.0.0": {
+      "order": 139,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "00981086d76170fe10efd543a1a71e3d42edc2a4",
+      "path_prefix": "instructions-sysvar/"
+    },
+    "solana-instructions-sysvar-3.0.0": {
+      "order": 140,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "bdf00802fc054bbfbfb671a6fd33f809959f23e9",
+      "path_prefix": "instructions-sysvar/"
+    }
+  },
+  "interfaces": {
+    "sdk-utilities::solana-instructions-sysvar-4.0.0::src/lib.rs": {
+      "order": 588,
+      "crate": "solana-instructions-sysvar-4.0.0",
+      "path": "src/lib.rs",
+      "sha256": "c902f435e265ca5d9fe68ca3c82e24e86215e0b87ec0c3b63ae5869957c23077"
+    },
+    "sdk-utilities::solana-instructions-sysvar-3.0.0::src/lib.rs": {
+      "order": 591,
+      "crate": "solana-instructions-sysvar-3.0.0",
+      "path": "src/lib.rs",
+      "sha256": "b3e28b5a193c0369f517f31362e0aea0b0c320e148595e20410902b687fcd67a"
+    }
+  },
+  "models": {
+    "solana-instructions-sysvar::load_instruction_at_checked": {
+      "order": 436,
+      "contract": "Solanalib.Specs.SolanaInstructionsSysvar.load_instruction_at_checked_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.SolanaInstructionsSysvar.load_instruction_at_checked_hasExecution",
+      "assumptions": ["@binding:8eb0270e4a85336e"]
+    },
+    "solana-instructions-sysvar::load_current_index_checked": {
+      "order": 446,
+      "contract": "Solanalib.Specs.SolanaInstructionsSysvar.load_current_index_checked_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.SolanaInstructionsSysvar.load_current_index_checked_hasExecution",
+      "assumptions": ["@text:d89c4148beaf301a"]
+    }
+  },
+  "api": {
+    "sdk-utilities::solana-instructions-sysvar-4.0.0::load_current_index_checked": {
+      "order": 500,
+      "source_id": "sdk-utilities::solana-instructions-sysvar-4.0.0::src/lib.rs",
+      "line": 178,
+      "anchor_text": "pub fn load_current_index_checked(",
+      "scope": "@review:source-notes/owned-dependencies.md#review-ea88b12210a600e5",
+      "rust_names": ["solana_instructions_sysvar::load_current_index_checked"],
+      "models": ["solana-instructions-sysvar::load_current_index_checked"]
+    },
+    "sdk-utilities::solana-instructions-sysvar-4.0.0::load_instruction_at_checked": {
+      "order": 510,
+      "source_id": "sdk-utilities::solana-instructions-sysvar-4.0.0::src/lib.rs",
+      "line": 266,
+      "anchor_text": "pub fn load_instruction_at_checked(",
+      "scope": "@review:source-notes/owned-dependencies.md#review-ea88b12210a600e5",
+      "rust_names": ["solana_instructions_sysvar::load_instruction_at_checked"],
+      "models": ["solana-instructions-sysvar::load_instruction_at_checked"]
+    },
+    "sdk-utilities::solana-instructions-sysvar-3.0.0::load_current_index_checked": {
+      "order": 586,
+      "source_id": "sdk-utilities::solana-instructions-sysvar-3.0.0::src/lib.rs",
+      "line": 163,
+      "anchor_text": "pub fn load_current_index_checked(",
+      "scope": "@review:source-notes/owned-dependencies.md#review-ea88b12210a600e5",
+      "rust_names": ["solana_instructions_sysvar::load_current_index_checked"],
+      "models": ["solana-instructions-sysvar::load_current_index_checked"]
+    },
+    "sdk-utilities::solana-instructions-sysvar-3.0.0::load_instruction_at_checked": {
+      "order": 589,
+      "source_id": "sdk-utilities::solana-instructions-sysvar-3.0.0::src/lib.rs",
+      "line": 251,
+      "anchor_text": "pub fn load_instruction_at_checked(",
+      "scope": "@review:source-notes/owned-dependencies.md#review-ea88b12210a600e5",
+      "rust_names": ["solana_instructions_sysvar::load_instruction_at_checked"],
+      "models": ["solana-instructions-sysvar::load_instruction_at_checked"]
+    }
+  },
+  "applicability_sources": {
+    "solana-instructions-sysvar": {
+      "order": 49,
+      "package": "solana-instructions-sysvar",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-11",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-instructions-sysvar/solana-instructions-sysvar-0.0.1.crate",
+          "sha256": "aa42e28b5cc40a0c87f595ee54255a806f8eaa87b84d13d8ace55091a65ae065",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-instructions-sysvar/solana-instructions-sysvar-0.0.2.crate",
+          "sha256": "4e9ccd9543286c049fc30800997b3d0e93cd77249e641cba63ed1b3b1c75d9c0",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instructions-sysvar/solana-instructions-sysvar-2.2.0.crate",
+          "sha256": "6da5b2a406cb19ac7833cfe784d8084a146816ea30388bda39fd53ab2db8857a",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-instructions-sysvar/solana-instructions-sysvar-2.2.1.crate",
+          "sha256": "427f2d0d6dc0bb49f16cef5e7f975180d2e80aab9bdd3b2af68e2d029ec63f43",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.2.2": {
+          "archive_url": "https://static.crates.io/crates/solana-instructions-sysvar/solana-instructions-sysvar-2.2.2.crate",
+          "sha256": "e0e85a6fad5c2d0c4f5b91d34b8ca47118fc593af706e523cdbedf846a954f57",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instructions-sysvar/solana-instructions-sysvar-3.0.0.crate",
+          "sha256": "7ddf67876c541aa1e21ee1acae35c95c6fbc61119814bfef70579317a5e26955",
+          "revision": "bdf00802fc054bbfbfb671a6fd33f809959f23e9",
+          "path_prefix": "instructions-sysvar/"
+        },
+        "3.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-instructions-sysvar/solana-instructions-sysvar-3.0.1.crate",
+          "sha256": "9e0732294560e88ecdb2bbc656e67383e9f88c78ec09469cef172f0d28cd1bcd",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "4.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instructions-sysvar/solana-instructions-sysvar-4.0.0.crate",
+          "sha256": "e38363a181313d607f7a118df2b401bb27b477a0104b09283cbf504f5f0f00cc",
+          "revision": "00981086d76170fe10efd543a1a71e3d42edc2a4",
+          "path_prefix": "instructions-sysvar/"
+        },
+        "5.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instructions-sysvar/solana-instructions-sysvar-5.0.0.crate",
+          "sha256": "6b74c3b078450525dcb84536c51299d5b0dc052f33699b07276d6870bd1ebed6",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        }
+      },
+      "evidence": ["@text:799ac60809fd2e9d", "@text:e1738c835b01e6b4"]
+    }
+  },
+  "applicability": {
+    "solana-instructions-sysvar::load_instruction_at_checked": {
+      "order": 436,
+      "profiles": [
+        {
+          "id": "checked-4.0.0",
+          "source": "solana-instructions-sysvar",
+          "releases": ["4.0.0"],
+          "items": [
+            {
+              "releases": ["4.0.0"],
+              "item": "solana_instructions_sysvar::load_instruction_at_checked",
+              "implementation": "solana_instructions_sysvar::load_instruction_at_checked",
+              "compatible_ranges": [{"lower": "4.0.0", "upper": "5.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:8eb0270e4a85336e"],
+          "argument": "@review:source-notes/sysvar-instructions.md#review-65b0fd24d896c644",
+          "evidence": ["@text:9e206e2f3a1b3c78"],
+          "dependencies": [
+            "@shared:dependencies-27664df9cf5b83f5",
+            "@shared:dependencies-58b25057dafdeefd",
+            "@shared:dependencies-3656d778306b5ec2",
+            {
+              "package": "solana-serialize-utils",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["3.1.2"],
+              "reason": "@text:0c7792073ee397b1",
+              "compatible_ranges": [{"lower": "3.1.2", "upper": "4.0.0"}]
+            },
+            "@shared:dependencies-149c8b9ff3effdcb",
+            {
+              "package": "solana-sanitize",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["3.0.1"],
+              "reason": "@text:a2ec5353615e1d9a",
+              "compatible_ranges": [{"lower": "3.0.1", "upper": "4.0.0"}]
+            }
+          ],
+          "target": [{"field": "pointer_width", "include": ["64"], "reason": "@text:ec818b685543883b"}]
+        },
+        {
+          "argument": "@review:source-notes/sysvar-instructions.md#review-301b68a7d223a227",
+          "conditions": ["@binding:8eb0270e4a85336e"],
+          "dependencies": [
+            "@shared:dependencies-88fb02c980e8c0dc",
+            "@shared:dependencies-9c651d68979fa4ee",
+            "@shared:dependencies-6fe21511415ce3c7",
+            {
+              "package": "solana-serialize-utils",
+              "reason": "@text:d75fb3935d2a66b9",
+              "releases": ["3.1.1"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            },
+            {
+              "package": "solana-instruction",
+              "reason": "@text:506d1a343441436e",
+              "releases": ["3.4.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            },
+            {
+              "package": "solana-sanitize",
+              "reason": "@text:88ba6ec9fa62a0fb",
+              "releases": ["3.0.1"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            }
+          ],
+          "evidence": ["@text:a0dccc0ab32ad232"],
+          "id": "checked-3.0.0",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "3.0.0", "upper": "4.0.0"}],
+              "implementation": "solana_instructions_sysvar::load_instruction_at_checked",
+              "item": "solana_instructions_sysvar::load_instruction_at_checked",
+              "releases": ["3.0.0"]
+            }
+          ],
+          "releases": ["3.0.0"],
+          "source": "solana-instructions-sysvar",
+          "target": "@shared:target-16cd3ce938392ff1"
+        }
+      ]
+    },
+    "solana-instructions-sysvar::load_current_index_checked": {
+      "order": 446,
+      "profiles": [
+        {
+          "id": "checked-4.0.0",
+          "source": "solana-instructions-sysvar",
+          "releases": ["4.0.0"],
+          "items": [
+            {
+              "releases": ["4.0.0"],
+              "item": "solana_instructions_sysvar::load_current_index_checked",
+              "implementation": "solana_instructions_sysvar::load_current_index_checked",
+              "compatible_ranges": [{"lower": "4.0.0", "upper": "5.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:8eb0270e4a85336e"],
+          "argument": "@review:source-notes/sysvar-instructions.md#review-772927c571d336dc",
+          "evidence": ["@text:9e206e2f3a1b3c78"],
+          "dependencies": [
+            "@shared:dependencies-27664df9cf5b83f5",
+            "@shared:dependencies-58b25057dafdeefd",
+            "@shared:dependencies-3656d778306b5ec2"
+          ],
+          "target": [{"field": "pointer_width", "include": ["64"], "reason": "@text:3742d8ff494d6c21"}]
+        },
+        {
+          "argument": "@review:source-notes/sysvar-instructions.md#review-301b68a7d223a227",
+          "conditions": ["@binding:8eb0270e4a85336e"],
+          "dependencies": [
+            "@shared:dependencies-88fb02c980e8c0dc",
+            "@shared:dependencies-9c651d68979fa4ee",
+            "@shared:dependencies-6fe21511415ce3c7"
+          ],
+          "evidence": ["@text:a0dccc0ab32ad232"],
+          "id": "checked-3.0.0",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "3.0.0", "upper": "4.0.0"}],
+              "implementation": "solana_instructions_sysvar::load_current_index_checked",
+              "item": "solana_instructions_sysvar::load_current_index_checked",
+              "releases": ["3.0.0"]
+            }
+          ],
+          "releases": ["3.0.0"],
+          "source": "solana-instructions-sysvar",
+          "target": "@shared:target-16cd3ce938392ff1"
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:b5fa051f6f3ee7b5", "@binding:8eb0270e4a85336e"]
+}

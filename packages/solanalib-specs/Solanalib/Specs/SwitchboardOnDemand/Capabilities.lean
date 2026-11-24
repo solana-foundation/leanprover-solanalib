@@ -135,8 +135,8 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             address, isize-bounded length and a nonoverflowing extent remain separate Rust \
             argument bindings, not additional Ready premises."],
         evidence := ["https://github.com/switchboard-xyz/switchboard-sdk/blob/f75b1ef63e10eda35d046b1838810ec2935d7f39/solana/rust/switchboard-on-demand/src/on_demand/accounts/pull_feed.rs", "https://github.com/switchboard-xyz/switchboard-sdk/blob/f75b1ef63e10eda35d046b1838810ec2935d7f39/solana/rust/switchboard-on-demand/src/on_demand/error.rs", "https://github.com/switchboard-xyz/switchboard-sdk/blob/f75b1ef63e10eda35d046b1838810ec2935d7f39/solana/rust/switchboard-on-demand/Cargo.toml", "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.12.1.crate",
-          "source-map/libraries.json", "../../tools/library-conformance/corpus/manifests/in\
-          structions-3-4-0-bincode.json"],
+          "source-map.json", "../../tools/library-conformance/corpus/manifests/instructions\
+          -3-4-0-bincode.json"],
         argument :=
           "This exact Git source has the same pull_feed.rs and error.rs as crates.io \
             0.12.1. Its Cargo differences do not affect parse or its bytemuck helpers. The \

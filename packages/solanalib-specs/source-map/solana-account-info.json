@@ -1,0 +1,1204 @@
+{
+  "abstractions": {
+    "library::solana_account_info": {
+      "order": 132,
+      "modules": {
+        "Solanalib.Specs.SolanaAccountInfo": "6db7acfd578f191c6bcb59a66b91c038d7c91777c7e215ab4ea8819b05423fc2",
+        "Solanalib.Specs.SolanaAccountInfo.AccountInfo": "007e79c24a164a6877126508804cc89f98670edc7e4ad886698e131d829903c1",
+        "Solanalib.Specs.SolanaAccountInfo.Capabilities": "dd9e8a5150375a62f539d77e6e37299d1609c7dd6029f31bda839c6f90eb478d",
+        "Solanalib.Specs.SolanaAccountInfo.Realloc": "fb2ac714e8b8dba9d30c2b7bd3d2660acfd6c0e468bcb04f0e41ece64fa31acf",
+        "Solanalib.Specs.SolanaAccountInfo.Operations": "ac96b4ba97d16284b393d0a985eb9b05af4fa7010637032145520e577ada3ac5"
+      },
+      "source_ids": [
+        "solana-account-info-3.1.1::src/lib.rs",
+        "anchor-lang-1.0.2::src/accounts/account.rs",
+        "anchor-lang-1.0.2::src/accounts/interface_account.rs",
+        "anchor-lang-1.0.2::src/accounts/interface.rs",
+        "anchor-lang-1.0.2::src/accounts/account_loader.rs",
+        "anchor-lang-1.0.2::src/accounts/signer.rs",
+        "anchor-lang-1.0.2::src/accounts/account_info.rs",
+        "anchor-lang-1.0.2::src/lib.rs",
+        "anchor-spl-1.0.2::src/token.rs",
+        "anchor-spl-1.0.2::src/token_interface.rs",
+        "anchor-error-values-1.0.2",
+        "anchor-context-1.0.2",
+        "solana-program-error-3.0.1::src/lib.rs",
+        "anchor-syn-1.0.2::src/codegen/error.rs",
+        "anchor-spl-1.0.2::Cargo.toml",
+        "sdk-account-info::solana-account-info-2.3.0::src/lib.rs",
+        "sdk-account-info::solana-account-info-3.1.1::src/lib.rs",
+        "sdk-account-info::solana-program-1.15.2::src/account_info.rs",
+        "sdk-account-info::solana-program-1.15.2::src/program_error.rs",
+        "sdk-account-info::solana-program-1.15.2::src/program_memory.rs",
+        "sdk-account-info::solana-program-1.15.2::src/program_stubs.rs",
+        "sdk-account-info::solana-program-1.15.2::src/entrypoint.rs",
+        "sdk-account-info::solana-program-1.18.26::src/account_info.rs",
+        "sdk-account-info::solana-program-1.18.26::src/program_error.rs",
+        "sdk-account-info::solana-program-1.18.26::src/program_memory.rs",
+        "sdk-account-info::solana-program-1.18.26::src/program_stubs.rs",
+        "sdk-account-info::solana-program-1.18.26::src/entrypoint.rs",
+        "sdk-account-info::solana-program-memory-2.2.1::src/lib.rs",
+        "sdk-account-info::solana-program-memory-2.3.1::src/lib.rs",
+        "sdk-account-info::solana-program-memory-3.0.0::src/lib.rs",
+        "sdk-account-info::solana-program-memory-3.1.0::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/account-info-3.1.1.md#review-0095640bce0a850b",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@text:82acfbaaf707bc65",
+        "@text:cfcf69334da190e5",
+        "@text:4b89796d0fbdad1b",
+        "@text:0729e0191b5277d8",
+        "@binding:dfecc70a526cdd36",
+        "@text:2ed3a8025edecccd",
+        "@text:0e7a50555fec3acd"
+      ]
+    }
+  },
+  "packages": {
+    "solana-account-info-3.1.1": {
+      "order": 20,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "9b18fb2c3539bae21b4f7a8f97a0f087e4bf3c23",
+      "path_prefix": "account-info/"
+    },
+    "solana-account-info-2.3.0": {
+      "order": 105,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "985c90595dda6fe2bc1026f0b1c942c75a266b6f",
+      "path_prefix": "account-info/"
+    }
+  },
+  "interfaces": {
+    "solana-account-info-3.1.1::src/lib.rs": {
+      "order": 65,
+      "crate": "solana-account-info-3.1.1",
+      "path": "src/lib.rs",
+      "sha256": "f7aeb75e2f891502f8c3dd06650e86d57539528ad92f5e67372640ded0a194b7"
+    },
+    "cpi-signatures::solana-account-info-2.3.0::src/lib.rs": {
+      "order": 372,
+      "crate": "solana-account-info-2.3.0",
+      "path": "src/lib.rs",
+      "sha256": "6b59aba664bb70fda6e17bcc8cf6eb41fc0bc9d8bcbb797bd70c1b107809c29a",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-account-info-3.1.1::src/lib.rs": {
+      "order": 373,
+      "crate": "solana-account-info-3.1.1",
+      "path": "src/lib.rs",
+      "sha256": "f7aeb75e2f891502f8c3dd06650e86d57539528ad92f5e67372640ded0a194b7",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "sdk-account-info::solana-account-info-2.3.0::src/lib.rs": {
+      "order": 415,
+      "crate": "solana-account-info-2.3.0",
+      "path": "src/lib.rs",
+      "sha256": "6b59aba664bb70fda6e17bcc8cf6eb41fc0bc9d8bcbb797bd70c1b107809c29a"
+    },
+    "sdk-account-info::solana-account-info-3.1.1::src/lib.rs": {
+      "order": 416,
+      "crate": "solana-account-info-3.1.1",
+      "path": "src/lib.rs",
+      "sha256": "f7aeb75e2f891502f8c3dd06650e86d57539528ad92f5e67372640ded0a194b7"
+    },
+    "transfer-hook-resolution::solana-account-info-2.3.0::src/lib.rs": {
+      "order": 565,
+      "crate": "solana-account-info-2.3.0",
+      "path": "src/lib.rs",
+      "sha256": "6b59aba664bb70fda6e17bcc8cf6eb41fc0bc9d8bcbb797bd70c1b107809c29a",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed."
+    }
+  },
+  "models": {
+    "solana-account-info::AccountInfo::clone": {
+      "order": 116,
+      "contract": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.clone_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.clone_reference",
+      "witness": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.clone_reference_holds",
+      "execution": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.clone_reference_executes",
+      "assumptions": ["@binding:1aee417e4d5a09d4"]
+    },
+    "solana-account-info::AccountInfo::clone_observation": {
+      "order": 117,
+      "contract": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.clone_observation_contract",
+      "witness_kind": "Holds",
+      "kind": "partial",
+      "reference": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.clone_observation_reference",
+      "witness": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.clone_observation_reference_holds",
+      "execution": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.clone_observation_reference_executes",
+      "assumptions": ["@text:76ab8938ec6aa5cb"],
+      "model_gaps": ["@text:4237ccb1fa10ea70"],
+      "remaining_requirements": ["@text:4237ccb1fa10ea70"]
+    },
+    "solana-account-info::AccountInfo::data_len": {
+      "order": 118,
+      "contract": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.data_len_contract",
+      "witness_kind": "Holds",
+      "reference": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.data_len_reference",
+      "witness": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.data_len_reference_holds",
+      "execution": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.data_len_reference_executes",
+      "assumptions": ["@binding:bb350415a16a3490", "@binding:c37367abb942f927"]
+    },
+    "solana-account-info::AccountInfo::lamports": {
+      "order": 119,
+      "contract": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.lamports_contract",
+      "witness_kind": "Holds",
+      "reference": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.lamports_reference",
+      "witness": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.lamports_reference_holds",
+      "execution": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.lamports_reference_executes",
+      "assumptions": ["@binding:bb350415a16a3490", "@binding:c37367abb942f927"]
+    },
+    "solana-account-info::AccountInfo::try_borrow_data": {
+      "order": 120,
+      "contract": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.try_borrow_data_contract",
+      "witness_kind": "Holds",
+      "reference": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.try_borrow_data_reference",
+      "witness": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.try_borrow_data_reference_holds",
+      "execution": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.try_borrow_data_reference_executes",
+      "assumptions": ["@binding:9e176e56efb52170", "@binding:d58e18c6548503f5"]
+    },
+    "solana-account-info::AccountInfo::try_borrow_mut_data": {
+      "order": 121,
+      "contract": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.try_borrow_mut_data_contract",
+      "witness_kind": "Holds",
+      "reference": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.try_borrow_mut_data_reference",
+      "witness": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.try_borrow_mut_data_reference_holds",
+      "execution": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.try_borrow_mut_data_reference_executes",
+      "assumptions": ["@binding:9e176e56efb52170", "@binding:d58e18c6548503f5"]
+    },
+    "solana-account-info::AccountInfo::assign": {
+      "order": 270,
+      "contract": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.assign_contract",
+      "witness_kind": "RealizedBy",
+      "assumptions": ["@binding:dfecc70a526cdd36", "@binding:24ab93f48eddb4cc"]
+    },
+    "solana-account-info::AccountInfo::realloc": {
+      "order": 271,
+      "contract": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.realloc_contract",
+      "witness_kind": "Holds",
+      "assumptions": "@shared:assumptions-0d91b4ede8d2aa0c"
+    },
+    "solana-account-info::AccountInfo::resize": {
+      "order": 272,
+      "contract": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.resize_contract",
+      "witness_kind": "Holds",
+      "assumptions": ["@binding:dfecc70a526cdd36", "@binding:f94a9b8b313cea65", "@binding:7bf35fb4da09cb81"]
+    },
+    "solana-account-info::AccountInfo::try_borrow_lamports": {
+      "order": 273,
+      "contract": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.try_borrow_lamports_contract",
+      "witness_kind": "RealizedBy",
+      "assumptions": ["@binding:dfecc70a526cdd36", "@binding:c1d55f0616719a4c"]
+    },
+    "solana-account-info::AccountInfo::try_data_len": {
+      "order": 274,
+      "contract": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.try_data_len_contract",
+      "witness_kind": "Holds",
+      "assumptions": ["@binding:dfecc70a526cdd36", "@binding:406d4ce455251844"]
+    },
+    "solana-account-info::AccountInfo::as_ref": {
+      "order": 347,
+      "contract": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.as_ref_contract",
+      "witness_kind": "RealizedBy",
+      "assumptions": ["@binding:dfecc70a526cdd36", "@binding:55c845bff490db1c"]
+    },
+    "solana-account-info::AccountInfo::data_is_empty": {
+      "order": 398,
+      "contract": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.data_is_empty_contract",
+      "witness_kind": "Holds",
+      "assumptions": ["@binding:dfecc70a526cdd36", "@binding:8996044f28fdcf44"]
+    },
+    "solana-account-info::AccountInfo::try_borrow_mut_lamports": {
+      "order": 462,
+      "contract": "Solanalib.Specs.SolanaAccountInfo.AccountInfo.try_borrow_mut_lamports_contract",
+      "witness_kind": "RealizedBy",
+      "assumptions": ["@binding:dfecc70a526cdd36", "@binding:c1d55f0616719a4c"]
+    }
+  },
+  "api": {
+    "solana_account_info_3_1_1.AccountInfo.clone": {
+      "order": 174,
+      "anchor_text": "#[derive(Clone)]",
+      "binding_obligations": ["@binding:1aee417e4d5a09d4"],
+      "line": 26,
+      "scope": "@text:7c6416c60b9e0c57",
+      "source_id": "solana-account-info-3.1.1::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.clone_alias_conflict",
+        "SolanalibTest.Specs.AnchorLang.OwnerObservations.later_owner_check_uses_current_state",
+        "SolanalibTest.Specs.SolanaAccountInfo.RcLifecycle.clone_then_drop",
+        "SolanalibTest.Specs.SolanaAccountInfo.RcLifecycle.first_terminal_stops_cloning",
+        "SolanalibTest.Specs.SolanaAccountInfo.RcLifecycle.second_terminal_stops_without_drop",
+        "SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.clone_observation_needs_no_cells"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountInfoRc.cloneCall",
+        "Solanalib.Specs.SolanaAccountInfo.AccountInfo.clone_observation_contract"
+      ],
+      "rust_names": ["<solana_account_info::AccountInfo<'a> as core::clone::Clone>::clone"],
+      "models": ["solana-account-info::AccountInfo::clone"]
+    },
+    "solana_account_info_3_1_1.AccountInfo.data_len": {
+      "order": 175,
+      "anchor_text": "pub fn data_len(&self) -> usize {",
+      "binding_obligations": ["@binding:bb350415a16a3490", "@binding:c37367abb942f927"],
+      "line": 104,
+      "scope": "@text:193f0a8b9aad5862",
+      "source_id": "solana-account-info-3.1.1::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.data_len_panics",
+        "SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.data_len_aborts",
+        "SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.mutation_then_release",
+        "SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.selected_cell_getter_executes",
+        "SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.wrong_cell_kind_is_not_admitted"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borrow.acquire",
+        "Solanalib.Specs.Core.Borrow.release",
+        "Solanalib.Specs.Core.AccountInfo.ObservationReady",
+        "Solanalib.Specs.Core.AccountInfo.observe_not_malformed",
+        "Solanalib.Specs.Core.AccountInfo.observe_reference_exists"
+      ],
+      "rust_names": ["solana_account_info::AccountInfo::<'a>::data_len"],
+      "models": ["solana-account-info::AccountInfo::data_len"]
+    },
+    "solana_account_info_3_1_1.AccountInfo.lamports": {
+      "order": 176,
+      "anchor_text": "pub fn lamports(&self) -> u64 {",
+      "binding_obligations": ["@binding:bb350415a16a3490", "@binding:c37367abb942f927"],
+      "line": 83,
+      "scope": "@text:193f0a8b9aad5862",
+      "source_id": "solana-account-info-3.1.1::src/lib.rs",
+      "clients": ["SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.independent_lamports"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borrow.acquire",
+        "Solanalib.Specs.Core.Borrow.release",
+        "Solanalib.Specs.Core.AccountInfo.ObservationReady",
+        "Solanalib.Specs.Core.AccountInfo.observe_not_malformed",
+        "Solanalib.Specs.Core.AccountInfo.observe_reference_exists"
+      ],
+      "rust_names": ["solana_account_info::AccountInfo::<'a>::lamports"],
+      "models": ["solana-account-info::AccountInfo::lamports"]
+    },
+    "solana_account_info_3_1_1.AccountInfo.try_borrow_data": {
+      "order": 177,
+      "anchor_text": "pub fn try_borrow_data(&self) -> Result<Ref<'_, &mut [u8]>, ProgramError> {",
+      "binding_obligations": ["@binding:9e176e56efb52170", "@binding:d58e18c6548503f5"],
+      "line": 132,
+      "scope": "@text:c49d47bfab4c2642",
+      "source_id": "solana-account-info-3.1.1::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.shared_result_of_contract",
+        "SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.configured_saturation",
+        "SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.data_only_borrow_has_typed_post",
+        "SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.wrong_cell_kind_is_not_admitted"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borrow.acquire",
+        "Solanalib.Specs.Core.Borrow.release",
+        "Solanalib.Specs.Core.AccountInfo.DataBorrowReady",
+        "Solanalib.Specs.Core.AccountInfo.dataBorrowReference_realizes",
+        "Solanalib.Specs.Core.Borrow.acquire_valid",
+        "Solanalib.Specs.Core.Borrow.acquire_current"
+      ],
+      "rust_names": ["solana_account_info::AccountInfo::<'a>::try_borrow_data"],
+      "models": ["solana-account-info::AccountInfo::try_borrow_data"]
+    },
+    "solana_account_info_3_1_1.AccountInfo.try_borrow_mut_data": {
+      "order": 178,
+      "anchor_text": "pub fn try_borrow_mut_data(&self) -> Result<RefMut<'_, &'a mut [u8]>, ProgramError> {",
+      "binding_obligations": ["@binding:9e176e56efb52170", "@binding:d58e18c6548503f5"],
+      "line": 138,
+      "scope": "@text:c49d47bfab4c2642",
+      "source_id": "solana-account-info-3.1.1::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.readonly_mutable_borrow",
+        "SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.mutation_then_release",
+        "SolanalibTest.Specs.SolanaAccountInfo.AccountInfo.consumed_guard"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borrow.acquire",
+        "Solanalib.Specs.Core.Borrow.release",
+        "Solanalib.Specs.Core.AccountInfo.DataBorrowReady",
+        "Solanalib.Specs.Core.AccountInfo.dataBorrowReference_realizes",
+        "Solanalib.Specs.Core.Borrow.acquire_valid",
+        "Solanalib.Specs.Core.Borrow.acquire_current"
+      ],
+      "rust_names": ["solana_account_info::AccountInfo::<'a>::try_borrow_mut_data"],
+      "models": ["solana-account-info::AccountInfo::try_borrow_mut_data"]
+    },
+    "sdk-account-info::solana-account-info-2.3.0::assign": {
+      "order": 260,
+      "source_id": "sdk-account-info::solana-account-info-2.3.0::src/lib.rs",
+      "line": 203,
+      "anchor_text": "pub fn assign(&self, new_owner: &Pubkey) {",
+      "models": ["solana-account-info::AccountInfo::assign"],
+      "scope": "@text:49ef27c61c9a6746",
+      "binding_obligations": ["@binding:dfecc70a526cdd36", "@binding:24ab93f48eddb4cc"],
+      "rust_names": ["solana_account_info::AccountInfo::<'a>::assign", "solana_account_info::AccountInfo::<'_>::assign"],
+      "clients": [
+        "SolanalibTest.Specs.Core.AccountInfoSdk.assignment_does_not_borrow_data_or_lamports",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.assignment_updates_alias_owner_storage"
+      ],
+      "binding_defaults": false
+    },
+    "sdk-account-info::solana-account-info-2.3.0::realloc": {
+      "order": 261,
+      "source_id": "sdk-account-info::solana-account-info-2.3.0::src/lib.rs",
+      "line": 149,
+      "anchor_text": "pub fn realloc(&self, new_len: usize, zero_init: bool) -> Result<(), ProgramError> {",
+      "models": ["solana-account-info::AccountInfo::realloc"],
+      "scope": "@text:736c80ca0482bdd8",
+      "binding_obligations": "@shared:binding-obligations-0d91b4ede8d2aa0c",
+      "rust_names": ["solana_account_info::AccountInfo::<'a>::realloc", "solana_account_info::AccountInfo::<'_>::realloc"],
+      "clients": [
+        "SolanalibTest.Specs.Core.AccountInfoSdk.shrinking_retains_hidden_bytes",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.nonzeroing_regrowth_recovers_retained_bytes",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.zeroing_regrowth_overwrites_only_exposed_bytes",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.repeated_resize_leaves_no_live_guards"
+      ],
+      "binding_defaults": false
+    },
+    "sdk-account-info::solana-account-info-2.3.0::resize": {
+      "order": 262,
+      "source_id": "sdk-account-info::solana-account-info-2.3.0::src/lib.rs",
+      "line": 197,
+      "anchor_text": "pub fn resize(&self, new_len: usize) -> Result<(), ProgramError> {",
+      "models": ["solana-account-info::AccountInfo::resize"],
+      "scope": "@text:fd468e2f0cf68545",
+      "binding_obligations": "@shared:binding-obligations-ad5ec3a756fe96ba",
+      "rust_names": ["solana_account_info::AccountInfo::<'a>::resize", "solana_account_info::AccountInfo::<'_>::resize"],
+      "clients": [
+        "SolanalibTest.Specs.Core.AccountInfoSdk.zeroing_regrowth_overwrites_only_exposed_bytes",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.borrow_conflict_precedes_excessive_growth",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.growth_error_releases_temporary_guard",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.zeroing_terminal_exit_is_retained",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.unchanged_length_precedes_growth_limit"
+      ],
+      "binding_defaults": false
+    },
+    "sdk-account-info::solana-account-info-2.3.0::try_borrow_lamports": {
+      "order": 263,
+      "source_id": "sdk-account-info::solana-account-info-2.3.0::src/lib.rs",
+      "line": 109,
+      "anchor_text": "pub fn try_borrow_lamports(&self) -> Result<Ref<&mut u64>, ProgramError> {",
+      "models": ["solana-account-info::AccountInfo::try_borrow_lamports"],
+      "scope": "@text:6326fbb7084943f7",
+      "binding_obligations": ["@binding:dfecc70a526cdd36", "@binding:c1d55f0616719a4c"],
+      "rust_names": [
+        "solana_account_info::AccountInfo::<'a>::try_borrow_lamports",
+        "solana_account_info::AccountInfo::<'_>::try_borrow_lamports"
+      ],
+      "clients": [
+        "SolanalibTest.Specs.Core.AccountInfoSdk.independent_cells_can_be_borrowed_together",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.aliased_shared_lamports_block_exclusive"
+      ],
+      "binding_defaults": false
+    },
+    "sdk-account-info::solana-account-info-2.3.0::try_data_len": {
+      "order": 264,
+      "source_id": "sdk-account-info::solana-account-info-2.3.0::src/lib.rs",
+      "line": 97,
+      "anchor_text": "pub fn try_data_len(&self) -> Result<usize, ProgramError> {",
+      "models": ["solana-account-info::AccountInfo::try_data_len"],
+      "scope": "@text:c533fa5b76fbb40e",
+      "binding_obligations": ["@binding:dfecc70a526cdd36", "@binding:406d4ce455251844"],
+      "rust_names": [
+        "solana_account_info::AccountInfo::<'a>::try_data_len",
+        "solana_account_info::AccountInfo::<'_>::try_data_len"
+      ],
+      "clients": [
+        "SolanalibTest.Specs.Core.AccountInfoSdk.checked_length_reports_error_without_panic",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.releasing_data_guard_restores_checked_getter"
+      ],
+      "binding_defaults": false
+    },
+    "sdk-account-info::solana-account-info-2.3.0::as_ref": {
+      "order": 340,
+      "source_id": "sdk-account-info::solana-account-info-2.3.0::src/lib.rs",
+      "line": 407,
+      "anchor_text": "fn as_ref(&self) -> &AccountInfo<'a> {",
+      "models": ["solana-account-info::AccountInfo::as_ref"],
+      "scope": "@text:23c3797b38b25528",
+      "binding_obligations": ["@binding:dfecc70a526cdd36", "@binding:55c845bff490db1c"],
+      "rust_names": [
+        "<solana_account_info::AccountInfo<'a> as core::convert::AsRef<solana_account_info::AccountInfo<'a>>>::as_ref",
+        "<solana_account_info::AccountInfo<'_> as core::convert::AsRef<solana_account_info::AccountInfo<'_>>>::as_ref"
+      ],
+      "clients": ["SolanalibTest.Specs.Core.AccountInfoSdk.self_reference_preserves_existing_world"],
+      "binding_defaults": false
+    },
+    "sdk-account-info::solana-account-info-2.3.0::data_is_empty": {
+      "order": 409,
+      "source_id": "sdk-account-info::solana-account-info-2.3.0::src/lib.rs",
+      "line": 101,
+      "anchor_text": "pub fn data_is_empty(&self) -> bool {",
+      "models": ["solana-account-info::AccountInfo::data_is_empty"],
+      "scope": "@text:244750a8bcc83f5a",
+      "binding_obligations": ["@binding:dfecc70a526cdd36", "@binding:8996044f28fdcf44"],
+      "rust_names": [
+        "solana_account_info::AccountInfo::<'a>::data_is_empty",
+        "solana_account_info::AccountInfo::<'_>::data_is_empty"
+      ],
+      "clients": [
+        "SolanalibTest.Specs.Core.AccountInfoSdk.unchecked_empty_getter_unwinds_on_same_conflict",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.unchecked_empty_getter_can_abort",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.conflicting_empty_getter_cannot_return_false"
+      ],
+      "binding_defaults": false
+    },
+    "sdk-account-info::solana-account-info-3.1.1::try_borrow_mut_lamports": {
+      "order": 450,
+      "source_id": "sdk-account-info::solana-account-info-3.1.1::src/lib.rs",
+      "line": 126,
+      "anchor_text": "pub fn try_borrow_mut_lamports(&self) -> Result<RefMut<'_, &'a mut u64>, ProgramError> {",
+      "models": ["solana-account-info::AccountInfo::try_borrow_mut_lamports"],
+      "scope": "@text:d423b6096e278000",
+      "binding_obligations": ["@binding:dfecc70a526cdd36", "@binding:c1d55f0616719a4c"],
+      "rust_names": [
+        "solana_account_info::AccountInfo::<'a>::try_borrow_mut_lamports",
+        "solana_account_info::AccountInfo::<'_>::try_borrow_mut_lamports"
+      ],
+      "clients": [
+        "SolanalibTest.Specs.Core.AccountInfoSdk.mutable_borrow_ignores_metadata_flags",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.aliased_shared_lamports_block_exclusive"
+      ],
+      "binding_defaults": false
+    },
+    "sdk-account-info::solana-account-info-3.1.1::try_data_len": {
+      "order": 470,
+      "source_id": "sdk-account-info::solana-account-info-3.1.1::src/lib.rs",
+      "line": 108,
+      "anchor_text": "pub fn try_data_len(&self) -> Result<usize, ProgramError> {",
+      "models": ["solana-account-info::AccountInfo::try_data_len"],
+      "scope": "@text:c533fa5b76fbb40e",
+      "binding_obligations": ["@binding:dfecc70a526cdd36", "@binding:406d4ce455251844"],
+      "rust_names": [
+        "solana_account_info::AccountInfo::<'a>::try_data_len",
+        "solana_account_info::AccountInfo::<'_>::try_data_len"
+      ],
+      "clients": [
+        "SolanalibTest.Specs.Core.AccountInfoSdk.checked_length_reports_error_without_panic",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.releasing_data_guard_restores_checked_getter"
+      ],
+      "binding_defaults": false
+    },
+    "sdk-account-info::solana-account-info-3.1.1::resize": {
+      "order": 493,
+      "source_id": "sdk-account-info::solana-account-info-3.1.1::src/lib.rs",
+      "line": 155,
+      "anchor_text": "pub fn resize(&self, new_len: usize) -> Result<(), ProgramError> {",
+      "models": ["solana-account-info::AccountInfo::resize"],
+      "scope": "@text:fd468e2f0cf68545",
+      "binding_obligations": "@shared:binding-obligations-ad5ec3a756fe96ba",
+      "rust_names": ["solana_account_info::AccountInfo::<'a>::resize", "solana_account_info::AccountInfo::<'_>::resize"],
+      "clients": [
+        "SolanalibTest.Specs.Core.AccountInfoSdk.zeroing_regrowth_overwrites_only_exposed_bytes",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.borrow_conflict_precedes_excessive_growth",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.growth_error_releases_temporary_guard",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.zeroing_terminal_exit_is_retained",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.unchanged_length_precedes_growth_limit"
+      ],
+      "binding_defaults": false
+    },
+    "sdk-account-info::solana-account-info-3.1.1::as_ref": {
+      "order": 502,
+      "source_id": "sdk-account-info::solana-account-info-3.1.1::src/lib.rs",
+      "line": 394,
+      "anchor_text": "fn as_ref(&self) -> &AccountInfo<'a> {",
+      "models": ["solana-account-info::AccountInfo::as_ref"],
+      "scope": "@text:23c3797b38b25528",
+      "binding_obligations": ["@binding:dfecc70a526cdd36", "@binding:55c845bff490db1c"],
+      "rust_names": [
+        "<solana_account_info::AccountInfo<'a> as core::convert::AsRef<solana_account_info::AccountInfo<'a>>>::as_ref",
+        "<solana_account_info::AccountInfo<'_> as core::convert::AsRef<solana_account_info::AccountInfo<'_>>>::as_ref"
+      ],
+      "clients": ["SolanalibTest.Specs.Core.AccountInfoSdk.self_reference_preserves_existing_world"],
+      "binding_defaults": false
+    },
+    "sdk-account-info::solana-account-info-3.1.1::assign": {
+      "order": 517,
+      "source_id": "sdk-account-info::solana-account-info-3.1.1::src/lib.rs",
+      "line": 191,
+      "anchor_text": "pub fn assign(&self, new_owner: &Address) {",
+      "models": ["solana-account-info::AccountInfo::assign"],
+      "scope": "@text:49ef27c61c9a6746",
+      "binding_obligations": ["@binding:dfecc70a526cdd36", "@binding:24ab93f48eddb4cc"],
+      "rust_names": ["solana_account_info::AccountInfo::<'a>::assign", "solana_account_info::AccountInfo::<'_>::assign"],
+      "clients": [
+        "SolanalibTest.Specs.Core.AccountInfoSdk.assignment_does_not_borrow_data_or_lamports",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.assignment_updates_alias_owner_storage"
+      ],
+      "binding_defaults": false
+    },
+    "sdk-account-info::solana-account-info-3.1.1::data_is_empty": {
+      "order": 521,
+      "source_id": "sdk-account-info::solana-account-info-3.1.1::src/lib.rs",
+      "line": 112,
+      "anchor_text": "pub fn data_is_empty(&self) -> bool {",
+      "models": ["solana-account-info::AccountInfo::data_is_empty"],
+      "scope": "@text:244750a8bcc83f5a",
+      "binding_obligations": ["@binding:dfecc70a526cdd36", "@binding:8996044f28fdcf44"],
+      "rust_names": [
+        "solana_account_info::AccountInfo::<'a>::data_is_empty",
+        "solana_account_info::AccountInfo::<'_>::data_is_empty"
+      ],
+      "clients": [
+        "SolanalibTest.Specs.Core.AccountInfoSdk.unchecked_empty_getter_unwinds_on_same_conflict",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.unchecked_empty_getter_can_abort",
+        "SolanalibTest.Specs.Core.AccountInfoSdk.conflicting_empty_getter_cannot_return_false"
+      ],
+      "binding_defaults": false
+    }
+  },
+  "applicability_sources": {
+    "solana-account-info": {
+      "order": 12,
+      "package": "solana-account-info",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-0.0.1.crate",
+          "sha256": "3428d14b2a6f7e0d64ef6e7afec7155a92a1a57fb66906e31c05717fb2b26b01"
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-0.0.2.crate",
+          "sha256": "02c42da8a76c634cb55d057f0754b844878c907b4c502f178ec8e277adc1e92a",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.0.crate",
+          "sha256": "6abe81cfc4a75f71a510c6856b03a7d8525e416af3c69d55daef62e6078b8d40",
+          "revision": "c1080de464cfb578c301e975f498964b5d5313db",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.1.crate",
+          "sha256": "213a2c582fadaa92c84dbc7b1002a3c78d10cfed67a9a2795fae783ff3680f90",
+          "revision": "adeac02216dae627b90d7498a26e04276e88ed29",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.2.crate",
+          "sha256": "31e085851110dc6a38f55a78c238cf005e239ada61450a88713995022f7bbaf7",
+          "revision": "cefd3f13a2b8c1f3f8332ebeea3d7bf44d547a9a",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.4.crate",
+          "sha256": "57f86633175ed13054cf901a9386e4f447ba51917fc93e746b76658e57cd87a1",
+          "revision": "024d047eedba22768099cc6509414202400c6231",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.5.crate",
+          "sha256": "885a819467268110e40a728ef09ff296b5f18e69de729af44c0a28671f274580",
+          "revision": "4da190bd01724d1433cff65782100978aefd4c00",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.6.crate",
+          "sha256": "42051fa2def3a2d9123f0e33b62a983b25c13d153a30e707b14d3c3b79a91592",
+          "revision": "c15e6692b1eb2e9196a5d51af5ee8cb57ab7e689",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.7.crate",
+          "sha256": "8378a48833ee7f828e20a63e93a6cdaef1313a8fd8f71a90b243df83295987b1",
+          "revision": "c79c3c9e67274594ed4f43ed8386e9ddc60a99e9",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.8.crate",
+          "sha256": "e053b991f91fd274df53e070c77a0a6a33681a5102c6421a0ca9ffaa0040368a",
+          "revision": "6ea38fce866595908486a01c7d6b7182988f3b2d",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.9.crate",
+          "sha256": "fe9a5a802bc6ab2ba6a9d77580b038e7c2409932074f14fe35eaa64894a53c1e",
+          "revision": "fdb6acc0a634fd0f1fd060d13aa4142c2e4601de",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.10.crate",
+          "sha256": "abeb32e8dbead1f920a919d8c781fe058cf657313aa237566fa812d2288f2aab",
+          "revision": "33ab693d94c787e64686e7b2d2f49492eae63885",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.11.crate",
+          "sha256": "3ed2417317f26f0941dd8e552ac1f9768eb2aa3b7f16ec992a6833f058295bea",
+          "revision": "134be7c14066ea00c9791187d6bbc4795dd92f0e",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.12.crate",
+          "sha256": "0108d43d0dc6cb62f2fb5c5c6dddbbd2944cd41d674e78cfd7ab25505112fa83",
+          "revision": "00cfd3ee36e9f2af78465731e87a063504753385",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.13.crate",
+          "sha256": "1a67b02d022266e0979a3033f58f83c6e4d45f7e7cc85e6beeaf90b32ef5ede8",
+          "revision": "67412607f511ded3770031280b6aaf10607713fc",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.14.crate",
+          "sha256": "d546da680bab3d10ac3aeb45c0ff6cca6cb74abe0e40e78aa33653ad258765d4",
+          "revision": "3ad46824358db6337072ad2b5d50ebcab6e1f113",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.15": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.15.crate",
+          "sha256": "32ac5551eadb186c6b5162a1d722b066fa30dbad57558f555851654d5499e7d7",
+          "revision": "535456856619786b7ac47b5b50b0a730e571365d",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.16": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.16.crate",
+          "sha256": "07152a13229548c8b767d1a09bc18b6ea6af61757819f03694a65a9a6504bf91",
+          "revision": "5002c63047230994282abd24207414126cb57e22",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.17": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.17.crate",
+          "sha256": "569efef7f13573b2040520091e58f1daf022b000a22034ac177f04ebfc469024",
+          "revision": "4adcd0f2f9075d9a2c08e3e12a694ced58f2af29",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.18": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.18.crate",
+          "sha256": "4f472b4136edfb744a71005574d513ef989f9710588ea5f7742812271a31dd76",
+          "revision": "f91c2fcac24eee5a40f10606540ef6e08d1b6655",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.20": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.20.crate",
+          "sha256": "0208a6ce6349850842b0a226114af298e1b9237998484c2b467fe513c84f66f4",
+          "revision": "89985de3c6a8643f90af5dcb14bed23382bee088",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.1.21": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.21.crate",
+          "sha256": "9b43b59c9659eb61504c4cc73a92a5995a117fa4ffc04bb0da002848cfdd7fcd",
+          "revision": "8a085eebcb901b6846d1f82f4636667742146545",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.2.0.crate",
+          "sha256": "f5d3d8a883f0e6928427a2dcceeb33ec7d87c47ec349a78d446a8357acc415cf",
+          "revision": "1baa4033e0d2d4175373f07b73ddda2f3cc0a8d6",
+          "path_prefix": "sdk/account-info/"
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.2.1.crate",
+          "sha256": "e0c17d606a298a205fae325489fbed88ee6dc4463c111672172327e741c8905d",
+          "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+          "path_prefix": "account-info/",
+          "repository": "https://github.com/anza-xyz/solana-sdk"
+        },
+        "2.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate",
+          "sha256": "c8f5152a288ef1912300fc6efa6c2d1f9bb55d9398eb6c72326360b8063987da",
+          "revision": "985c90595dda6fe2bc1026f0b1c942c75a266b6f",
+          "path_prefix": "account-info/"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-3.0.0.crate",
+          "sha256": "82f4691b69b172c687d218dd2f1f23fc7ea5e9aa79df9ac26dab3d8dd829ce48",
+          "revision": "5f1421309d00dab1a4ff41c3cbff02715292c4b8",
+          "path_prefix": "account-info/"
+        },
+        "3.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.0.crate",
+          "sha256": "fc3397241392f5756925029acaa8515dc70fcbe3d8059d4885d7d6533baf64fd",
+          "revision": "481d37d12492cadbf6b5c5011d78a6f3e5faf991",
+          "path_prefix": "account-info/"
+        },
+        "3.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate",
+          "sha256": "a9cf16495d9eb53e3d04e72366a33bb1c20c24e78c171d8b8f5978357b63ae95",
+          "revision": "9b18fb2c3539bae21b4f7a8f97a0f087e4bf3c23",
+          "path_prefix": "account-info/"
+        }
+      },
+      "evidence": ["@text:777ab50fa50058c0"]
+    }
+  },
+  "applicability": {
+    "solana-account-info::AccountInfo::clone": {
+      "order": 116,
+      "profiles": [
+        {
+          "id": "solana-account-info-reviewed",
+          "source": "solana-account-info",
+          "conditions": ["@binding:1aee417e4d5a09d4", "@text:d20b670e661f4ca4"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-bb9ea77ce7135a7a",
+          "evidence": ["@text:509244d5684a3e9f", "@text:4d1e451e52828b01"],
+          "items": [
+            {
+              "item": "core::clone::Clone::clone",
+              "implementation": "<solana_account_info::AccountInfo<'a> as core::clone::Clone>::clone",
+              "releases": "@shared:releases-9e2b569b39d3639e",
+              "compatible_ranges": "@shared:compatible-ranges-d4731d23b05f1184"
+            }
+          ],
+          "releases": "@shared:releases-9e2b569b39d3639e"
+        }
+      ]
+    },
+    "solana-account-info::AccountInfo::clone_observation": {
+      "order": 117,
+      "profiles": [
+        {
+          "id": "solana-account-info-reviewed",
+          "source": "solana-account-info",
+          "conditions": ["@text:76ab8938ec6aa5cb", "@text:d20b670e661f4ca4"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-15a96daa773ad9e9",
+          "evidence": ["@text:509244d5684a3e9f", "@text:4d1e451e52828b01"],
+          "items": [
+            {
+              "item": "core::clone::Clone::clone",
+              "implementation": "<solana_account_info::AccountInfo<'a> as core::clone::Clone>::clone",
+              "releases": "@shared:releases-9e2b569b39d3639e",
+              "compatible_ranges": "@shared:compatible-ranges-d4731d23b05f1184"
+            }
+          ],
+          "releases": "@shared:releases-9e2b569b39d3639e"
+        }
+      ]
+    },
+    "solana-account-info::AccountInfo::data_len": {
+      "order": 118,
+      "profiles": [
+        {
+          "id": "solana-account-info-reviewed",
+          "source": "solana-account-info",
+          "conditions": ["@binding:bb350415a16a3490", "@binding:c37367abb942f927"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-283fcf0958e8ed38",
+          "evidence": ["@text:509244d5684a3e9f", "@text:4d1e451e52828b01"],
+          "items": [
+            {
+              "item": "solana_account_info::AccountInfo::<'a>::data_len",
+              "implementation": "solana_account_info::AccountInfo::<'a>::data_len",
+              "releases": "@shared:releases-9e2b569b39d3639e",
+              "compatible_ranges": "@shared:compatible-ranges-d4731d23b05f1184"
+            }
+          ],
+          "releases": "@shared:releases-9e2b569b39d3639e"
+        }
+      ]
+    },
+    "solana-account-info::AccountInfo::lamports": {
+      "order": 119,
+      "profiles": [
+        {
+          "id": "solana-account-info-reviewed",
+          "source": "solana-account-info",
+          "conditions": ["@binding:bb350415a16a3490", "@binding:c37367abb942f927"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-e47b0588f96ca5a9",
+          "evidence": ["@text:509244d5684a3e9f", "@text:4d1e451e52828b01"],
+          "items": [
+            {
+              "item": "solana_account_info::AccountInfo::<'a>::lamports",
+              "implementation": "solana_account_info::AccountInfo::<'a>::lamports",
+              "releases": "@shared:releases-9e2b569b39d3639e",
+              "compatible_ranges": "@shared:compatible-ranges-d4731d23b05f1184"
+            }
+          ],
+          "releases": "@shared:releases-9e2b569b39d3639e"
+        }
+      ]
+    },
+    "solana-account-info::AccountInfo::try_borrow_data": {
+      "order": 120,
+      "profiles": [
+        {
+          "id": "solana-account-info-reviewed",
+          "source": "solana-account-info",
+          "conditions": ["@binding:9e176e56efb52170", "@binding:d58e18c6548503f5"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-38c70df7e203c822",
+          "evidence": ["@text:509244d5684a3e9f", "@text:4d1e451e52828b01"],
+          "items": [
+            {
+              "item": "solana_account_info::AccountInfo::<'a>::try_borrow_data",
+              "implementation": "solana_account_info::AccountInfo::<'a>::try_borrow_data",
+              "releases": "@shared:releases-9e2b569b39d3639e",
+              "compatible_ranges": "@shared:compatible-ranges-d4731d23b05f1184"
+            }
+          ],
+          "releases": "@shared:releases-9e2b569b39d3639e"
+        }
+      ]
+    },
+    "solana-account-info::AccountInfo::try_borrow_mut_data": {
+      "order": 121,
+      "profiles": [
+        {
+          "id": "solana-account-info-reviewed",
+          "source": "solana-account-info",
+          "conditions": ["@binding:9e176e56efb52170", "@binding:d58e18c6548503f5"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-8ac3802dd85dbecf",
+          "evidence": ["@text:509244d5684a3e9f", "@text:4d1e451e52828b01"],
+          "items": [
+            {
+              "item": "solana_account_info::AccountInfo::<'a>::try_borrow_mut_data",
+              "implementation": "solana_account_info::AccountInfo::<'a>::try_borrow_mut_data",
+              "releases": "@shared:releases-9e2b569b39d3639e",
+              "compatible_ranges": "@shared:compatible-ranges-d4731d23b05f1184"
+            }
+          ],
+          "releases": "@shared:releases-9e2b569b39d3639e"
+        }
+      ]
+    },
+    "solana-account-info::AccountInfo::assign": {
+      "order": 270,
+      "profiles": [
+        {
+          "id": "sdk-account-info-solana-account-info-2.3.0",
+          "source": "solana-account-info",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_account_info::AccountInfo::<'a>::assign",
+              "implementation": "solana_account_info::AccountInfo::<'a>::assign",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            },
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_account_info::AccountInfo::<'_>::assign",
+              "implementation": "solana_account_info::AccountInfo::<'_>::assign",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:dfecc70a526cdd36", "@binding:24ab93f48eddb4cc"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-632068f1631cb579",
+          "evidence": ["@text:7fd9cf2d51710734"]
+        },
+        {
+          "id": "sdk-account-info-solana-account-info-3.1.1",
+          "source": "solana-account-info",
+          "releases": ["3.1.1"],
+          "items": [
+            {
+              "releases": ["3.1.1"],
+              "item": "solana_account_info::AccountInfo::<'a>::assign",
+              "implementation": "solana_account_info::AccountInfo::<'a>::assign",
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}]
+            },
+            {
+              "releases": ["3.1.1"],
+              "item": "solana_account_info::AccountInfo::<'_>::assign",
+              "implementation": "solana_account_info::AccountInfo::<'_>::assign",
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:dfecc70a526cdd36", "@binding:24ab93f48eddb4cc"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-712c5ddd232586b7",
+          "evidence": ["@text:4d1e451e52828b01"]
+        }
+      ]
+    },
+    "solana-account-info::AccountInfo::realloc": {
+      "order": 271,
+      "profiles": [
+        {
+          "id": "sdk-account-info-solana-account-info-2.3.0",
+          "source": "solana-account-info",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_account_info::AccountInfo::<'a>::realloc",
+              "implementation": "solana_account_info::AccountInfo::<'a>::realloc",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            },
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_account_info::AccountInfo::<'_>::realloc",
+              "implementation": "solana_account_info::AccountInfo::<'_>::realloc",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-0d91b4ede8d2aa0c",
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-03394c3755d8cafe",
+          "evidence": ["@text:7fd9cf2d51710734"],
+          "target": "@shared:target-66731304b0e065c0",
+          "dependencies": "@shared:dependencies-a16edb4de72794ec"
+        }
+      ]
+    },
+    "solana-account-info::AccountInfo::resize": {
+      "order": 272,
+      "profiles": [
+        {
+          "id": "sdk-account-info-solana-account-info-2.3.0",
+          "source": "solana-account-info",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_account_info::AccountInfo::<'a>::resize",
+              "implementation": "solana_account_info::AccountInfo::<'a>::resize",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            },
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_account_info::AccountInfo::<'_>::resize",
+              "implementation": "solana_account_info::AccountInfo::<'_>::resize",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-ad5ec3a756fe96ba",
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-b99f0323bc524a07",
+          "evidence": ["@text:7fd9cf2d51710734"],
+          "target": "@shared:target-66731304b0e065c0",
+          "dependencies": "@shared:dependencies-a16edb4de72794ec"
+        },
+        {
+          "id": "sdk-account-info-solana-account-info-3.1.1",
+          "source": "solana-account-info",
+          "releases": ["3.1.1"],
+          "items": [
+            {
+              "releases": ["3.1.1"],
+              "item": "solana_account_info::AccountInfo::<'a>::resize",
+              "implementation": "solana_account_info::AccountInfo::<'a>::resize",
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}]
+            },
+            {
+              "releases": ["3.1.1"],
+              "item": "solana_account_info::AccountInfo::<'_>::resize",
+              "implementation": "solana_account_info::AccountInfo::<'_>::resize",
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-ad5ec3a756fe96ba",
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-46070ae9c26c125b",
+          "evidence": ["@text:4d1e451e52828b01"],
+          "target": "@shared:target-66731304b0e065c0",
+          "dependencies": [
+            {
+              "package": "solana-program-memory",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["3.0.0", "3.1.0"],
+              "reason": "@text:58126e3a3f69a0a5",
+              "compatible_ranges": [{"lower": "3.0.0", "upper": "4.0.0"}]
+            }
+          ]
+        }
+      ]
+    },
+    "solana-account-info::AccountInfo::try_borrow_lamports": {
+      "order": 273,
+      "profiles": [
+        {
+          "id": "sdk-account-info-solana-account-info-2.3.0",
+          "source": "solana-account-info",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_account_info::AccountInfo::<'a>::try_borrow_lamports",
+              "implementation": "solana_account_info::AccountInfo::<'a>::try_borrow_lamports",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            },
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_account_info::AccountInfo::<'_>::try_borrow_lamports",
+              "implementation": "solana_account_info::AccountInfo::<'_>::try_borrow_lamports",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:dfecc70a526cdd36", "@binding:c1d55f0616719a4c"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-c99bb6559ee45343",
+          "evidence": ["@text:7fd9cf2d51710734"]
+        }
+      ]
+    },
+    "solana-account-info::AccountInfo::try_data_len": {
+      "order": 274,
+      "profiles": [
+        {
+          "id": "sdk-account-info-solana-account-info-2.3.0",
+          "source": "solana-account-info",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_account_info::AccountInfo::<'a>::try_data_len",
+              "implementation": "solana_account_info::AccountInfo::<'a>::try_data_len",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            },
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_account_info::AccountInfo::<'_>::try_data_len",
+              "implementation": "solana_account_info::AccountInfo::<'_>::try_data_len",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:dfecc70a526cdd36", "@binding:406d4ce455251844"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-6bb99c027b125c61",
+          "evidence": ["@text:7fd9cf2d51710734"]
+        },
+        {
+          "id": "sdk-account-info-solana-account-info-3.1.1",
+          "source": "solana-account-info",
+          "releases": ["3.1.1"],
+          "items": [
+            {
+              "releases": ["3.1.1"],
+              "item": "solana_account_info::AccountInfo::<'a>::try_data_len",
+              "implementation": "solana_account_info::AccountInfo::<'a>::try_data_len",
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}]
+            },
+            {
+              "releases": ["3.1.1"],
+              "item": "solana_account_info::AccountInfo::<'_>::try_data_len",
+              "implementation": "solana_account_info::AccountInfo::<'_>::try_data_len",
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:dfecc70a526cdd36", "@binding:406d4ce455251844"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-ca18053f6a577cb8",
+          "evidence": ["@text:4d1e451e52828b01"]
+        }
+      ]
+    },
+    "solana-account-info::AccountInfo::as_ref": {
+      "order": 347,
+      "profiles": [
+        {
+          "id": "sdk-account-info-solana-account-info-2.3.0",
+          "source": "solana-account-info",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "core::convert::AsRef::as_ref",
+              "implementation": "<solana_account_info::AccountInfo<'a> as core::convert::AsRef<solana_account_info::AccountInfo<'a>>>::as_ref",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            },
+            {
+              "releases": ["2.3.0"],
+              "item": "core::convert::AsRef::as_ref",
+              "implementation": "<solana_account_info::AccountInfo<'_> as core::convert::AsRef<solana_account_info::AccountInfo<'_>>>::as_ref",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:dfecc70a526cdd36", "@binding:55c845bff490db1c"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-3359342fd56175b1",
+          "evidence": ["@text:7fd9cf2d51710734"]
+        },
+        {
+          "id": "sdk-account-info-solana-account-info-3.1.1",
+          "source": "solana-account-info",
+          "releases": ["3.1.1"],
+          "items": [
+            {
+              "releases": ["3.1.1"],
+              "item": "core::convert::AsRef::as_ref",
+              "implementation": "<solana_account_info::AccountInfo<'a> as core::convert::AsRef<solana_account_info::AccountInfo<'a>>>::as_ref",
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}]
+            },
+            {
+              "releases": ["3.1.1"],
+              "item": "core::convert::AsRef::as_ref",
+              "implementation": "<solana_account_info::AccountInfo<'_> as core::convert::AsRef<solana_account_info::AccountInfo<'_>>>::as_ref",
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:dfecc70a526cdd36", "@binding:55c845bff490db1c"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-68f6269bf0616f6a",
+          "evidence": ["@text:4d1e451e52828b01"]
+        }
+      ]
+    },
+    "solana-account-info::AccountInfo::data_is_empty": {
+      "order": 398,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-e03745a506dd7d51",
+          "conditions": ["@binding:dfecc70a526cdd36", "@binding:8996044f28fdcf44"],
+          "evidence": ["@text:2a301c4dbd4fe428", "@text:e25799ce518d0bda", "@text:7fd9cf2d51710734"],
+          "id": "sdk-account-info-solana-account-info-2.3.0",
+          "items": [
+            {
+              "implementation": "solana_account_info::AccountInfo::<'a>::data_is_empty",
+              "item": "solana_account_info::AccountInfo::<'a>::data_is_empty",
+              "releases": ["2.1.0", "2.2.1", "2.3.0"],
+              "compatible_ranges": [{"lower": "2.1.0", "upper": "3.0.0"}]
+            },
+            {
+              "implementation": "solana_account_info::AccountInfo::<'_>::data_is_empty",
+              "item": "solana_account_info::AccountInfo::<'_>::data_is_empty",
+              "releases": ["2.1.0", "2.2.1", "2.3.0"],
+              "compatible_ranges": [{"lower": "2.1.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": ["2.1.0", "2.2.1", "2.3.0"],
+          "source": "solana-account-info"
+        },
+        {
+          "id": "sdk-account-info-solana-account-info-3.1.1",
+          "source": "solana-account-info",
+          "releases": ["3.1.1"],
+          "items": [
+            {
+              "releases": ["3.1.1"],
+              "item": "solana_account_info::AccountInfo::<'a>::data_is_empty",
+              "implementation": "solana_account_info::AccountInfo::<'a>::data_is_empty",
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}]
+            },
+            {
+              "releases": ["3.1.1"],
+              "item": "solana_account_info::AccountInfo::<'_>::data_is_empty",
+              "implementation": "solana_account_info::AccountInfo::<'_>::data_is_empty",
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:dfecc70a526cdd36", "@binding:8996044f28fdcf44"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-ea7a106374a47293",
+          "evidence": ["@text:4d1e451e52828b01"]
+        }
+      ]
+    },
+    "solana-account-info::AccountInfo::try_borrow_mut_lamports": {
+      "order": 462,
+      "profiles": [
+        {
+          "id": "sdk-account-info-solana-account-info-3.1.1",
+          "source": "solana-account-info",
+          "releases": ["3.1.1"],
+          "items": [
+            {
+              "releases": ["3.1.1"],
+              "item": "solana_account_info::AccountInfo::<'a>::try_borrow_mut_lamports",
+              "implementation": "solana_account_info::AccountInfo::<'a>::try_borrow_mut_lamports",
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}]
+            },
+            {
+              "releases": ["3.1.1"],
+              "item": "solana_account_info::AccountInfo::<'_>::try_borrow_mut_lamports",
+              "implementation": "solana_account_info::AccountInfo::<'_>::try_borrow_mut_lamports",
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:dfecc70a526cdd36", "@binding:c1d55f0616719a4c"],
+          "argument": "@review:source-notes/account-info-3.1.1.md#review-3a43ac3d4ba144f8",
+          "evidence": ["@text:4d1e451e52828b01"]
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:6365458673055eb5", "@binding:1b225f24050e4109"]
+}

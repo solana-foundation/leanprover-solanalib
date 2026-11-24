@@ -93,10 +93,6 @@ refresh-runtime-seal correspondence:
 refresh-sdk-seal abstraction:
     {{python}} tools/model-audit/refresh_sdk_abstraction.py {{quote(abstraction)}}
 
-# Refresh one reviewed foundation abstraction, including its shared contract sources.
-refresh-foundation-seal abstraction:
-    {{python}} tools/model-audit/refresh_sdk_abstraction.py {{quote(abstraction)}} --layer foundation
-
 # Seal reviewed gap inputs without changing the explicit review date or scope.
 refresh-gap-review:
     {{python}} tools/model-audit/refresh_gap_review.py

@@ -1,6 +1,6 @@
 # SDK AccountInfo operations
 
-The [source registry](../source-map/libraries.json) retains exact trait
+The [source registry](../source-map/solana-account-info.json) retains exact trait
 and inherent-method identities, source anchors and profiles for this subset.
 The table lists exact inspected references. The 3.1.1 profiles declare
 `[3.1.1, 4.0.0)` only under their method-specific current-cell, borrow, owner-write

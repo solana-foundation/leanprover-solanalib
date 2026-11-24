@@ -97,7 +97,7 @@ unconditional host stdout and owned String-error getters use distinct
 uses a symbolic provider for published declarations; SDK drivers run wrappers
 against scripted providers. These runs do not execute Agave or prove SDK bodies,
 cryptography or target equivalence. Reference builds, compatible ranges and remaining
-ABI obligations are recorded in the [source/API registry](../../packages/solanalib-specs/source-map/libraries.json), [applicability profiles](../../packages/solanalib-specs/source-map/applicability.json) and [binding guide](../../packages/solanalib-specs/BINDINGS.md).
+ABI obligations are recorded in the [source/API registry](../../packages/solanalib-specs/source-map.json), [applicability profiles](../../packages/solanalib-specs/VERSION_COMPATIBILITY.md) and [binding guide](../../packages/solanalib-specs/BINDINGS.md).
 
 ### Registered checker selection
 
@@ -1773,8 +1773,8 @@ account-name replacement and cleanup after a logger unwind. An Address implement
 Catalog compatibility does not add an exact source factory, selected generic
 argument tuple, `Binding` certificate or native observation. Concrete AccountLoader abort bindings must establish complete panic/width facts and source correspondence; supported unwind selection remains distinct. Native host callbacks
 are test instances, not evidence of on-chain layout or an invocation body.
-The [source/API registry](../../packages/solanalib-specs/source-map/libraries.json),
-[applicability profiles](../../packages/solanalib-specs/source-map/applicability.json) and
+The [source/API registry](../../packages/solanalib-specs/source-map.json),
+[applicability profiles](../../packages/solanalib-specs/VERSION_COMPATIBILITY.md) and
 [binding guide](../../packages/solanalib-specs/BINDINGS.md) retain
 the exact reference identities, declared ranges and remaining obligations.
 
@@ -1881,7 +1881,7 @@ constructors and arrays, Pack wrappers, account views and lifecycle operations,
 and token/stake CPI preparation. The 15 pinned native drivers retain all 1,088
 observations; each recording is authenticated against its exact source and build inputs.
 
-The [applicability profiles](../../packages/solanalib-specs/source-map/applicability.json)
+The [applicability profiles](../../packages/solanalib-specs/VERSION_COMPATIBILITY.md)
 separate those inspected references from declared compatibility within
 `[0.27.0, 0.28.0)` for Anchor and Anchor SPL, and `[1.15.2, 1.16.0)` for Program.
 Each range assumes preservation of the complete operation and relevant dependency

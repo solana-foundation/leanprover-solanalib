@@ -94,3 +94,35 @@ deprecated rent reserve and the raw rate bits. The model does not interpret
 them. Readers other than `&[u8]`, Borsh serialization, the bincode path and the
 deprecated `StakeState` decoder are not modeled. The derived field decoders
 are part of this model; they are not registered as separate APIs.
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:790c090ea27f6683 -->
+<a id="review-790c090ea27f6683"></a>
+
+Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact test lockfile into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
+
+Versioned public aggregate of the reviewed mathematical models.
+
+The StakeStateV2 decoder at R = &[u8] reads a u32 little-endian tag; tags 0 and 3 read nothing more, tag 1 reads Meta, tag 2 reads Meta, Stake and StakeFlags, and other tags return InvalidData "Invalid enum value" after the tag. Field decoders follow the derive order. The reference composes the registered borsh 1.6.1 u8/u32/u64/i64/f64 and solana-address 2.6.0 Address deserialize_reader models and is registered as the graph of that function. The contract relation Decodes states success as input = encode value ++ remaining with a non-NaN rate, and fixes the error of truncation, invalid-tag and NaN-rate failures; decodes_iff proves it equal to Borsh DecodeMatches agreement with the reference, so the remaining slice is fixed only on success.
+<!-- /registry -->
+
+<!-- registry:review:4124b2b87bde9782 -->
+<a id="review-4124b2b87bde9782"></a>
+
+All 18 releases have the same four-byte little-endian tag dispatcher. Tags 0/1/2/3 select Uninitialized, Initialized(Meta), Stake(Meta, Stake, StakeFlags) and RewardsPool, with widths 4/124/197/4. Other tags return InvalidData / Invalid enum value before reading a body; error construction is interpreted under the shared scope boundary. Through 3.1.0 the complete nested field order, integer/address decoding, every flag byte and success remainder match the model. Delegation warmup_cooldown_rate is f64, and NaNs fail with InvalidData / For portability reasons we do not allow to deserialize NaNs. before credits_observed and the trailing flag. Version 4.0.0 replaces this field with _reserved: [u8; 8], so NaN-shaped bytes are accepted and a truncated tail after them returns the short-input error instead. Retained native cases at 4.0.0 and 5.1.1 confirm these functional differences. Accordingly the nine releases through 3.1.0 are compatible and the nine later releases are incompatible, without excluding NaNs from the input domain or adding diagnostic-allocation premises. StakeStateV2 Borsh 1 trait implementation with Borsh/derive 1.6.1 and solana-pubkey 2.4.0. The f64 delegation field is retained.
+<!-- /registry -->
+
+<!-- registry:review:7908ca67224fa85f -->
+<a id="review-7908ca67224fa85f"></a>
+
+All 18 releases have the same four-byte little-endian tag dispatcher. Tags 0/1/2/3 select Uninitialized, Initialized(Meta), Stake(Meta, Stake, StakeFlags) and RewardsPool, with widths 4/124/197/4. Other tags return InvalidData / Invalid enum value before reading a body; error construction is interpreted under the shared scope boundary. Through 3.1.0 the complete nested field order, integer/address decoding, every flag byte and success remainder match the model. Delegation warmup_cooldown_rate is f64, and NaNs fail with InvalidData / For portability reasons we do not allow to deserialize NaNs. before credits_observed and the trailing flag. Version 4.0.0 replaces this field with _reserved: [u8; 8], so NaN-shaped bytes are accepted and a truncated tail after them returns the short-input error instead. Retained native cases at 4.0.0 and 5.1.1 confirm these functional differences. Accordingly the nine releases through 3.1.0 are compatible and the nine later releases are incompatible, without excluding NaNs from the input domain or adding diagnostic-allocation premises. StakeStateV2 Borsh 1 trait implementation with Borsh/derive 1.6.1 and solana-pubkey 3.0.0; its dependency chain resolves the same 32-byte address representation. The f64 delegation field is retained.
+<!-- /registry -->
+
+<!-- registry:review:9f0a4f30b4a38226 -->
+<a id="review-9f0a4f30b4a38226"></a>
+
+All 18 releases have the same four-byte little-endian tag dispatcher. Tags 0/1/2/3 select Uninitialized, Initialized(Meta), Stake(Meta, Stake, StakeFlags) and RewardsPool, with widths 4/124/197/4. Other tags return InvalidData / Invalid enum value before reading a body; error construction is interpreted under the shared scope boundary. Through 3.1.0 the complete nested field order, integer/address decoding, every flag byte and success remainder match the model. Delegation warmup_cooldown_rate is f64, and NaNs fail with InvalidData / For portability reasons we do not allow to deserialize NaNs. before credits_observed and the trailing flag. Version 4.0.0 replaces this field with _reserved: [u8; 8], so NaN-shaped bytes are accepted and a truncated tail after them returns the short-input error instead. Retained native cases at 4.0.0 and 5.1.1 confirm these functional differences. Accordingly the nine releases through 3.1.0 are compatible and the nine later releases are incompatible, without excluding NaNs from the input domain or adding diagnostic-allocation premises. StakeStateV2 Borsh 1 trait implementation with Borsh/derive 1.6.1 and solana-pubkey 4.4.0 / solana-address 2.9.0. The f64 delegation field is retained.
+<!-- /registry -->

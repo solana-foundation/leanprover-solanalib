@@ -96,7 +96,7 @@ def records(root=ROOT):
         [models[name]['contract'] for name in source_models],
         ['The registered mathematical witnesses do not prove the selected Rust implementations.'],
         model_ids=source_models, api_ids=[row['id'] for row in sdk['api']],
-        build_conditions={'registry': str(SDK / 'source-map/applicability.json')},
+        build_conditions={'registry': str(SDK / 'source-map.json')},
         sources=sdk['interfaces'], tests=['tools/library-conformance/README.md'],
         obligations=str(SDK / 'BINDINGS.md'))
 
@@ -131,7 +131,7 @@ def records(root=ROOT):
                 package=source['package'], version=version, source_id=finding['source'],
                 census_checked_on=census['checked_on'], source=source['source'],
                 last_source_review=source['reviewed_on'], model_ids=sorted(affected),
-                build_conditions={'registry': str(SDK / 'source-map/applicability.json'),
+                build_conditions={'registry': str(SDK / 'source-map.json'),
                                   'profile_ids': sorted({name for profiles in affected.values() for name in profiles})},
                 tests=['tools/model-audit/solana_applicability.py',
                        'tools/library-conformance/REFERENCE.md'],

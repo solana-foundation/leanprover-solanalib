@@ -1,0 +1,92 @@
+{
+  "packages": {
+    "solana-zk-sdk-pod-0.1.2": {
+      "order": 30,
+      "repository": "https://github.com/solana-program/zk-elgamal-proof",
+      "revision": "d7b04c7094b86ca78f77dc6b40832e9244ea7524",
+      "path_prefix": "zk-sdk-pod/"
+    }
+  },
+  "interfaces": {
+    "solana-zk-sdk-pod-0.1.2-auth-encryption": {
+      "order": 67,
+      "anchor_text": "#[repr(transparent)]",
+      "cargo_package_checksum": "a800583b7a4cea3e851686af162cc6e4712eef97fa91dfa9aca2459b95c84777",
+      "checked_layout_declarations": [
+        {
+          "fields": [{"line": 21, "name": "0", "type": "[u8; AE_CIPHERTEXT_LEN]"}],
+          "line": 21,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 20,
+          "source_id": "solana-zk-sdk-pod-0.1.2-auth-encryption",
+          "type": "PodAeCiphertext"
+        }
+      ],
+      "crate": "solana-zk-sdk-pod-0.1.2",
+      "line": 20,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "02833166d98ffc8010c91ea78581dc73b27b9091986735643a46a1c86c47d290",
+        "cargo_vcs_info_sha256": "06d33498a9a3ac3780e89c28744732b04d463cc76caa4466ec39ee5a4d535301"
+      },
+      "path": "src/encryption/auth_encryption.rs",
+      "sha256": "8e0a96638ea2c1618aeb364a3ac66a1bd9af3d6381ac87c4281fc6a4d41e3e17"
+    },
+    "solana-zk-sdk-pod-0.1.2-elgamal": {
+      "order": 68,
+      "anchor_text": "#[repr(transparent)]",
+      "cargo_package_checksum": "a800583b7a4cea3e851686af162cc6e4712eef97fa91dfa9aca2459b95c84777",
+      "checked_layout_declarations": [
+        {
+          "fields": [{"line": 27, "name": "0", "type": "[u8; ELGAMAL_CIPHERTEXT_LEN]"}],
+          "line": 27,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 26,
+          "source_id": "solana-zk-sdk-pod-0.1.2-elgamal",
+          "type": "PodElGamalCiphertext"
+        },
+        {
+          "fields": [{"line": 69, "name": "0", "type": "[u8; ELGAMAL_PUBKEY_LEN]"}],
+          "line": 69,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 68,
+          "source_id": "solana-zk-sdk-pod-0.1.2-elgamal",
+          "type": "PodElGamalPubkey"
+        }
+      ],
+      "crate": "solana-zk-sdk-pod-0.1.2",
+      "line": 26,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "02833166d98ffc8010c91ea78581dc73b27b9091986735643a46a1c86c47d290",
+        "cargo_vcs_info_sha256": "06d33498a9a3ac3780e89c28744732b04d463cc76caa4466ec39ee5a4d535301"
+      },
+      "path": "src/encryption/elgamal.rs",
+      "sha256": "62e145fb0756247f7166ecbd0e916366ff1cf1d32e8304090da33e4454daa3ee"
+    },
+    "solana-zk-sdk-pod-0.1.2-encryption": {
+      "order": 69,
+      "anchor_text": "pub const AE_CIPHERTEXT_LEN: usize = 36;",
+      "cargo_package_checksum": "a800583b7a4cea3e851686af162cc6e4712eef97fa91dfa9aca2459b95c84777",
+      "crate": "solana-zk-sdk-pod-0.1.2",
+      "line": 13,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "02833166d98ffc8010c91ea78581dc73b27b9091986735643a46a1c86c47d290",
+        "cargo_vcs_info_sha256": "06d33498a9a3ac3780e89c28744732b04d463cc76caa4466ec39ee5a4d535301"
+      },
+      "path": "src/encryption/mod.rs",
+      "sha256": "3603c9a60a8357f3a6e4ef846ffe77496a2e2c223d0c98ecda58bf0114706b2e"
+    },
+    "solana-zk-sdk-pod-0.1.2-lib": {
+      "order": 70,
+      "anchor_text": "pub const UNIT_LEN: usize = 32;",
+      "cargo_package_checksum": "a800583b7a4cea3e851686af162cc6e4712eef97fa91dfa9aca2459b95c84777",
+      "crate": "solana-zk-sdk-pod-0.1.2",
+      "line": 11,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "02833166d98ffc8010c91ea78581dc73b27b9091986735643a46a1c86c47d290",
+        "cargo_vcs_info_sha256": "06d33498a9a3ac3780e89c28744732b04d463cc76caa4466ec39ee5a4d535301"
+      },
+      "path": "src/lib.rs",
+      "sha256": "58e0a8ac218f76879c38f10c49eaa329c2d507b1d60599a27d2b8ba34073bd52"
+    }
+  }
+}

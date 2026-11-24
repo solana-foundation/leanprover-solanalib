@@ -84,3 +84,69 @@ failure, count-limit success and failure, and the fact that initialized transpor
 alone cannot prove the optional cryptographic agreement. All model relations are
 partial-correctness descriptions of finite exits; their closed sample executions
 do not assert termination for every provider.
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:36a587963d1dc0f8 -->
+<a id="review-36a587963d1dc0f8"></a>
+
+Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact test lockfile into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
+
+Represent the exact 32-byte array separately from account addresses; copying preserves every byte, with inverse and injectivity laws.
+
+In every listed release, Hash is repr(transparent) over [u8; 32], HASH_BYTES is 32, and to_bytes(&self) returns self.0. The function has no callees, allocation, error or configuration branch. The unrelated Hash trait implementation and feature-gated derives changed; they are not used by to_bytes. All versions share the entire original value-copy contract and its legal-access and representation obligations. Other hash methods and versions outside this window have not been assessed.
+<!-- /registry -->
+
+<!-- registry:review:fb64f1077c204b66 -->
+<a id="review-fb64f1077c204b66"></a>
+
+Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact test lockfile into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
+
+Forward the ordered slice collection and uninitialized destination; require every normal provider return to initialize all bytes, including nonzero status, then return those bytes. Preserve abnormal exits and state. Keep primitive and canonical count laws separate.
+
+Versioned aggregate of the exact registered callable utility models; coverage is the listed API subset.
+
+Generated typed capability catalog retains every complete registered family, exact Rust identity, source/build profile and closed reference witness.
+
+The selected Solana branch creates [0;32], passes that initialized output and the exact ordered input slices and count to sol_sha256, ignores its returned integer status and wraps the actual final 32 bytes as Hash. A normal provider reply may leave some or all bytes unchanged; no all-normal full-write premise is imposed. hash(val) performs exactly hashv(&[val]), including one empty slice for empty input. Host SHA2 is a different profile and is not admitted here.
+
+The versioned hash wrapper reindexes the reviewed hashv source family at one exact slice.
+<!-- /registry -->
+
+<!-- registry:review:728de313fd1dc37e -->
+<a id="review-728de313fd1dc37e"></a>
+
+In every listed release, Hash is repr(transparent) over [u8; 32], HASH_BYTES is 32, and to_bytes(&self) returns self.0. The function has no callees, allocation, error or configuration branch. The unrelated Hash trait implementation and feature-gated derives changed; they are not used by to_bytes. All versions share the entire original value-copy contract and its legal-access and representation obligations. Other hash methods and versions outside this window have not been assessed.
+<!-- /registry -->
+
+<!-- registry:review:655e626ff7893c13 -->
+<a id="review-655e626ff7893c13"></a>
+
+Every direct real release has HASH_BYTES=32, transparent [u8;32] storage and returns self.0 without callees or cfg branches. Releases through 3.0.0 consume self (3.0.0 adds const); 4.x borrow &self. Both realize the unchanged pure value-copy contract, while their physical receiver bindings differ. 3.1.0 reexports Hash from solana-hash ^4.0, whose entire published 4.0.0–4.7.0 resolution set is reviewed. 0.0.1 is a placeholder with no Hash API.
+<!-- /registry -->
+
+<!-- registry:review:00094bae31eaa266 -->
+<a id="review-00094bae31eaa266"></a>
+
+3.1.0 builds MaybeUninit<[u8;32]>, forwards the original slice-array pointer/count, ignores status and returns the provider-initialized output. The selected request records uninitialized output (none), with all provider finite exits/effects retained. Every earlier real hashv initializes [0;32], so its initial provider request is different; an arbitrary provider can distinguish that initial request while fully writing every normal reply. Equal digest samples or a projection erasing the initial request cannot establish equality of the complete family. Legacy no-write returns are outside EveryReturnInitialized and are not claimed as premise-satisfying counterexamples. Only 3.1.0 also selects this branch under BPF without Solana OS. 0.0.1 has no hashv API.
+<!-- /registry -->
+
+<!-- registry:review:d67302287a6118cb -->
+<a id="review-d67302287a6118cb"></a>
+
+The selected Solana branch creates [0;32], passes that initialized output and the exact ordered input slices and count to sol_sha256, ignores its returned integer status and wraps the actual final 32 bytes as Hash. A normal provider reply may leave some or all bytes unchanged; no all-normal full-write premise is imposed. hash(val) performs exactly hashv(&[val]), including one empty slice for empty input. Host SHA2 is a different profile and is not admitted here. The declared compatible range assumes preservation of the zero-filled 32-byte destination, ordered slice descriptors, ignored returned status, complete final buffer and provider state or exceptional exit; the selected Hash provider preserves every returned byte.
+<!-- /registry -->
+
+<!-- registry:review:60050e25608b2520 -->
+<a id="review-60050e25608b2520"></a>
+
+The selected Solana branch creates [0;32], passes that initialized output and the exact ordered input slices and count to sol_sha256, ignores its returned integer status and wraps the actual final 32 bytes as Hash. A normal provider reply may leave some or all bytes unchanged; no all-normal full-write premise is imposed. hash(val) performs exactly hashv(&[val]), including one empty slice for empty input. Host SHA2 is a different profile and is not admitted here. The declared compatible range assumes preservation of the zero-filled 32-byte destination, ordered slice descriptors, ignored returned status, complete final buffer and provider state or exceptional exit; the selected Hash provider preserves every returned byte. The hash wrapper keeps exactly one input slice, including an empty one.
+<!-- /registry -->
+
+<!-- registry:review:57cded8fdf371ffd -->
+<a id="review-57cded8fdf371ffd"></a>
+
+Preserve hashv(&[val]), including a singleton empty slice, the uninitialized output request, ignored status after every normal reply initializes all 32 bytes, and all provider effects/exits. Earlier hashv starts from zeroed output, which a valid provider can distinguish. Host SHA2 and the host no-feature panic remain outside both syscall profiles. The declared range is a complete-operation preservation assumption; inspected releases, native runs, exact ABI observations and source-call implementation obligations remain separate.
+<!-- /registry -->

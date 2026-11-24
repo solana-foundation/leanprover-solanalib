@@ -526,6 +526,7 @@ These suites test generators, source/identity checks, proof audits and native-re
 | [tools/model-audit/test_model_inventory.py](../tools/model-audit/test_model_inventory.py) | `just audit` |
 | [tools/model-audit/test_model_runtime_audit.py](../tools/model-audit/test_model_runtime_audit.py) | `just audit` |
 | [tools/model-audit/test_model_source_map.py](../tools/model-audit/test_model_source_map.py) | `just audit` |
+| [tools/model-audit/test_registry_data.py](../tools/model-audit/test_registry_data.py) | `just audit` |
 | [tools/model-audit/test_review_seals.py](../tools/model-audit/test_review_seals.py) | `just audit` |
 | [tools/model-audit/test_sdk_seals.py](../tools/model-audit/test_sdk_seals.py) | `just audit` |
 | [tools/model-audit/test_solana_applicability.py](../tools/model-audit/test_solana_applicability.py) | `just audit` |

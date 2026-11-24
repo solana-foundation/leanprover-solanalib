@@ -1,0 +1,896 @@
+{
+  "abstractions": {
+    "library::solana_pubkey": {
+      "order": 157,
+      "modules": {
+        "Solanalib.Specs.SolanaPubkey": "e55874d8e78f618033a1d0a8157ba62f88f4fac3b93a6fb653ecc14455e82706",
+        "Solanalib.Specs.SolanaPubkey.Capabilities": "b2c9973e544ff4b45081a9c373a53d3528b901c4e68c0542f16668834299a49e",
+        "Solanalib.Specs.SolanaPubkey.Pubkey": "5d6345edc52e5a561d3dc2a8a9aab20ab129efe8fbd0cb7b46722f1a1c1c22e4",
+        "Solanalib.Specs.SolanaPubkey.Borsh": "c715a25585a3bf517724181afbab3dae5ed1a287b739d29beb1221425180c12a"
+      },
+      "source_ids": [
+        "addresses::solana-pubkey-2.2.1::src/lib.rs",
+        "addresses::solana-pubkey-2.2.1::Cargo.toml.orig",
+        "addresses::solana-pubkey-2.4.0::src/lib.rs",
+        "addresses::solana-pubkey-2.4.0::Cargo.toml.orig",
+        "addresses::solana-program-1.15.2::src/pubkey.rs",
+        "addresses::solana-program-1.18.26::src/pubkey.rs",
+        "addresses::solana-loader-v3-interface-6.1.1::src/lib.rs",
+        "addresses::spl-associated-token-account-client-2.0.0::src/address.rs",
+        "addresses::spl-associated-token-account-client-2.0.0::src/lib.rs",
+        "addresses::spl-associated-token-account-interface-2.0.0::src/address.rs",
+        "addresses::spl-associated-token-account-interface-2.0.0::src/lib.rs",
+        "addresses::borsh-0.9.3::src/de/mod.rs",
+        "addresses::borsh-0.9.3::src/ser/mod.rs",
+        "addresses::borsh-1.6.0::src/de/mod.rs",
+        "addresses::borsh-1.6.0::src/ser/mod.rs",
+        "addresses::borsh-derive-1.6.0::src/internals/deserialize/structs/mod.rs",
+        "addresses::borsh-derive-1.6.0::src/internals/serialize/structs/mod.rs",
+        "addresses::borsh-derive-internal-0.9.3::src/struct_de.rs",
+        "addresses::borsh-derive-internal-0.9.3::src/struct_ser.rs",
+        "addresses::borsh-0.10.4::src/ser/mod.rs",
+        "addresses::solana-address-2.6.0::src/error.rs",
+        "addresses::solana-address-2.6.1::src/error.rs",
+        "addresses::solana-pubkey-3.0.0::src/lib.rs",
+        "addresses::solana-pubkey-4.2.0::src/lib.rs",
+        "addresses::solana-address-1.1.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/syscalls.rs",
+        "fee-address-2.6.1",
+        "value-request::solana-address-2.6.1::src/syscalls.rs",
+        "codecs::borsh-0.10.4::src/de/mod.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-4e030e98221d0985",
+      "limitations": "@shared:limitations-4576d1984dd24813"
+    }
+  },
+  "packages": {
+    "solana-pubkey-2.2.1": {
+      "order": 83,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+      "path_prefix": "pubkey/"
+    },
+    "solana-pubkey-2.4.0": {
+      "order": 84,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "483720e23010213a2d611ea1295bd72b3fd98979",
+      "path_prefix": "pubkey/"
+    },
+    "solana-pubkey-3.0.0": {
+      "order": 85,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "02e3385c069600b0e0224c78b46e4c5f5634bf44",
+      "path_prefix": "pubkey/"
+    },
+    "solana-pubkey-4.2.0": {
+      "order": 86,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "5b985fd7b60de1c845c25bb2d4fc16e19c9ee6ab",
+      "path_prefix": "pubkey/"
+    }
+  },
+  "interfaces": {
+    "addresses::solana-pubkey-2.2.1::Cargo.toml.orig": {
+      "order": 243,
+      "crate": "solana-pubkey-2.2.1",
+      "path": "Cargo.toml.orig",
+      "sha256": "728fc82c07709770049e7d4e3dab7f4a4b8c54af5ab70c41bc42d8f7f99fb7cd",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces.",
+      "path_in_repository": "pubkey/Cargo.toml"
+    },
+    "addresses::solana-pubkey-2.2.1::src/lib.rs": {
+      "order": 244,
+      "crate": "solana-pubkey-2.2.1",
+      "path": "src/lib.rs",
+      "sha256": "143252a8a99a9a5c1acd9cfb9bef6759b94c6b1788fdbbddc1126b57632a34a4",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "addresses::solana-pubkey-2.4.0::Cargo.toml.orig": {
+      "order": 245,
+      "crate": "solana-pubkey-2.4.0",
+      "path": "Cargo.toml.orig",
+      "sha256": "f3404fd496623fd5cb5a2c2af09880bff01b4b458f638cd220ec7c6c3da9fa40",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces.",
+      "path_in_repository": "pubkey/Cargo.toml"
+    },
+    "addresses::solana-pubkey-2.4.0::src/lib.rs": {
+      "order": 246,
+      "crate": "solana-pubkey-2.4.0",
+      "path": "src/lib.rs",
+      "sha256": "a667b28ce392328ef9ef3a6a4ef24606e9c764d58c9c536afe1d22a191898a24",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "addresses::solana-pubkey-3.0.0::src/lib.rs": {
+      "order": 247,
+      "crate": "solana-pubkey-3.0.0",
+      "path": "src/lib.rs",
+      "sha256": "d3afb7cdd2520f5d88dac5ece4a835b666f640e71aa35e97892fbd95a06f5dd9",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "addresses::solana-pubkey-4.2.0::src/lib.rs": {
+      "order": 248,
+      "crate": "solana-pubkey-4.2.0",
+      "path": "src/lib.rs",
+      "sha256": "b174f53f848c0c2e92b0f2a40bdbc19f281408e072bc91e885d1faa35d5318b8",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "stake-codecs::solana-pubkey-2.4.0::src/lib.rs": {
+      "order": 302,
+      "crate": "solana-pubkey-2.4.0",
+      "path": "src/lib.rs",
+      "sha256": "a667b28ce392328ef9ef3a6a4ef24606e9c764d58c9c536afe1d22a191898a24",
+      "review_scope": "Selected stake constructors/getters, Pack dispatch and cleanup, lookup bincode decoding and borrowed Pubkey layout, or WriteCounter framing only; other APIs are outside this review."
+    },
+    "sdk-values::solana-pubkey-3.0.0::Cargo.toml.orig": {
+      "order": 557,
+      "crate": "solana-pubkey-3.0.0",
+      "path": "Cargo.toml.orig",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/sdk-values.md. No whole-crate model is claimed.",
+      "sha256": "0cf8133110c9cb9aceb04fec45a407bb3e39d4bffd1d834fe5401cb86cff8495",
+      "path_in_repository": "pubkey/Cargo.toml"
+    },
+    "sdk-values::solana-pubkey-3.0.0::src/lib.rs": {
+      "order": 558,
+      "crate": "solana-pubkey-3.0.0",
+      "path": "src/lib.rs",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/sdk-values.md. No whole-crate model is claimed.",
+      "sha256": "d3afb7cdd2520f5d88dac5ece4a835b666f640e71aa35e97892fbd95a06f5dd9"
+    }
+  },
+  "models": {
+    "solana-pubkey::Pubkey::default": {
+      "order": 247,
+      "contract": "Solanalib.Specs.SolanaPubkey.Pubkey.default_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaPubkey.Pubkey.default_model"
+    },
+    "solana-pubkey::Pubkey::to_bytes": {
+      "order": 248,
+      "contract": "Solanalib.Specs.SolanaPubkey.Pubkey.to_bytes_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaPubkey.Pubkey.to_bytes_model"
+    },
+    "solana-pubkey::Pubkey::serialize": {
+      "order": 249,
+      "contract": "Solanalib.Specs.SolanaPubkey.Pubkey.serialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:784d07d7dda8727b"]
+    },
+    "solana-pubkey::Pubkey::as_ref": {
+      "order": 250,
+      "contract": "Solanalib.Specs.SolanaPubkey.Pubkey.as_ref_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaPubkey.Pubkey.as_ref_model"
+    },
+    "solana-pubkey::Pubkey::create_with_seed": {
+      "order": 251,
+      "contract": "Solanalib.Specs.SolanaPubkey.Pubkey.create_with_seed_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:784d07d7dda8727b"]
+    },
+    "solana-pubkey::Pubkey::create_program_address_solana": {
+      "order": 252,
+      "contract": "Solanalib.Specs.SolanaPubkey.Pubkey.create_program_address_solana_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:784d07d7dda8727b"]
+    },
+    "solana-pubkey::Pubkey::clone": {
+      "order": 253,
+      "contract": "Solanalib.Specs.SolanaPubkey.Pubkey.clone_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaPubkey.Pubkey.clone_model"
+    },
+    "solana-pubkey::Pubkey::deserialize_reader": {
+      "order": 254,
+      "contract": "Solanalib.Specs.SolanaPubkey.Pubkey.deserialize_reader_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:784d07d7dda8727b"]
+    },
+    "solana-pubkey::Pubkey::eq": {
+      "order": 255,
+      "contract": "Solanalib.Specs.SolanaPubkey.Pubkey.eq_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaPubkey.Pubkey.eq_model"
+    },
+    "solana-pubkey::Pubkey::find_program_address_solana": {
+      "order": 256,
+      "contract": "Solanalib.Specs.SolanaPubkey.Pubkey.find_program_address_solana_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:784d07d7dda8727b"]
+    },
+    "solana-pubkey::Pubkey::cmp": {
+      "order": 304,
+      "contract": "Solanalib.Specs.SolanaPubkey.Pubkey.cmp_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaPubkey.Pubkey.cmp_model"
+    },
+    "solana-pubkey::Pubkey::new_from_array": {
+      "order": 362,
+      "contract": "Solanalib.Specs.SolanaPubkey.Pubkey.new_from_array_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaPubkey.Pubkey.new_from_array_model"
+    },
+    "solana-pubkey::Pubkey::from": {
+      "order": 363,
+      "contract": "Solanalib.Specs.SolanaPubkey.Pubkey.from_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaPubkey.Pubkey.from_model"
+    }
+  },
+  "api": {
+    "addresses::solana-pubkey-2.4.0::to_bytes": {
+      "order": 234,
+      "source_id": "addresses::solana-pubkey-2.4.0::src/lib.rs",
+      "line": 960,
+      "anchor_text": "pub const fn to_bytes(self) -> [u8; 32] {",
+      "rust_names": ["solana_pubkey::Pubkey::to_bytes"],
+      "models": ["solana-pubkey::Pubkey::to_bytes"],
+      "scope": "@text:08148165980820f9",
+      "bindings": {"sdk-0c95de41d91fc7b5d06b": "solana_pubkey::Pubkey::to_bytes"}
+    },
+    "addresses::solana-pubkey-2.4.0::clone": {
+      "order": 235,
+      "source_id": "addresses::solana-pubkey-2.4.0::src/lib.rs",
+      "line": 166,
+      "anchor_text": "pub struct Pubkey(pub(crate) [u8; 32]);",
+      "rust_names": ["<solana_pubkey::Pubkey as core::clone::Clone>::clone"],
+      "models": ["solana-pubkey::Pubkey::clone"],
+      "scope": "@text:08148165980820f9",
+      "bindings": {"sdk-6bccfb903b98baa1be72": "<solana_pubkey::Pubkey as core::clone::Clone>::clone"}
+    },
+    "addresses::solana-pubkey-2.4.0::create_with_seed": {
+      "order": 236,
+      "source_id": "addresses::solana-pubkey-2.4.0::src/lib.rs",
+      "line": 522,
+      "anchor_text": "pub fn create_with_seed(",
+      "rust_names": ["solana_pubkey::Pubkey::create_with_seed"],
+      "models": ["solana-pubkey::Pubkey::create_with_seed"],
+      "scope": "@text:b1b57ce85fc08b8d",
+      "bindings": {"sdk-77935cbbdfac61195091": "solana_pubkey::Pubkey::create_with_seed"}
+    },
+    "addresses::solana-pubkey-2.4.0::eq": {
+      "order": 237,
+      "source_id": "addresses::solana-pubkey-2.4.0::src/lib.rs",
+      "line": 166,
+      "anchor_text": "pub struct Pubkey(pub(crate) [u8; 32]);",
+      "rust_names": ["<solana_pubkey::Pubkey as core::cmp::PartialEq>::eq"],
+      "models": ["solana-pubkey::Pubkey::eq"],
+      "scope": "@text:08148165980820f9",
+      "bindings": {"sdk-79f3e54ec89d256f899d": "<solana_pubkey::Pubkey as core::cmp::PartialEq>::eq"}
+    },
+    "addresses::solana-pubkey-2.4.0::default": {
+      "order": 238,
+      "source_id": "addresses::solana-pubkey-2.4.0::src/lib.rs",
+      "line": 166,
+      "anchor_text": "pub struct Pubkey(pub(crate) [u8; 32]);",
+      "rust_names": ["<solana_pubkey::Pubkey as core::default::Default>::default"],
+      "models": ["solana-pubkey::Pubkey::default"],
+      "scope": "@text:08148165980820f9",
+      "bindings": {"sdk-7f8e645ce489beddbef8": "<solana_pubkey::Pubkey as core::default::Default>::default"}
+    },
+    "addresses::solana-pubkey-2.4.0::serialize": {
+      "order": 239,
+      "source_id": "addresses::solana-pubkey-2.4.0::src/lib.rs",
+      "line": 1083,
+      "anchor_text": "impl_borsh_serialize!(borsh0_10);",
+      "rust_names": ["<solana_pubkey::Pubkey as borsh::ser::BorshSerialize>::serialize"],
+      "models": ["solana-pubkey::Pubkey::serialize"],
+      "scope": "@text:39aedeebbb980e8f",
+      "binding_obligations": ["@binding:b792c49c5b1e749b"],
+      "bindings": {"sdk-a46ee18b6a060996545c": "<solana_pubkey::Pubkey as borsh::ser::BorshSerialize>::serialize"}
+    },
+    "addresses::solana-pubkey-2.4.0::as_ref": {
+      "order": 240,
+      "source_id": "addresses::solana-pubkey-2.4.0::src/lib.rs",
+      "line": 991,
+      "anchor_text": "fn as_ref(&self) -> &[u8] {",
+      "rust_names": ["<solana_pubkey::Pubkey as core::convert::AsRef<[u8]>>::as_ref"],
+      "models": ["solana-pubkey::Pubkey::as_ref"],
+      "scope": "@text:08148165980820f9",
+      "bindings": {"sdk-ae3684507520c01ea4b7": "<solana_pubkey::Pubkey as core::convert::AsRef<[u8]>>::as_ref"}
+    },
+    "addresses::solana-pubkey-2.4.0::create_program_address_solana": {
+      "order": 241,
+      "source_id": "addresses::solana-pubkey-2.4.0::src/lib.rs",
+      "line": 911,
+      "anchor_text": "pub fn create_program_address(",
+      "rust_names": ["solana_pubkey::Pubkey::create_program_address"],
+      "models": ["solana-pubkey::Pubkey::create_program_address_solana"],
+      "scope": "@text:85e86589e68b7622",
+      "bindings": {"sdk-b083a0de09a6fa788411": "solana_pubkey::Pubkey::create_program_address"}
+    },
+    "addresses::solana-pubkey-2.4.0::find_program_address_solana": {
+      "order": 242,
+      "source_id": "addresses::solana-pubkey-2.4.0::src/lib.rs",
+      "line": 800,
+      "anchor_text": "pub fn find_program_address(seeds: &[&[u8]], program_id: &Pubkey) -> (Pubkey, u8) {",
+      "rust_names": ["solana_pubkey::Pubkey::find_program_address"],
+      "models": ["solana-pubkey::Pubkey::find_program_address_solana"],
+      "scope": "@text:8888d1cdf6c56008",
+      "bindings": {"sdk-dffd9036ba5ef4a8257e": "solana_pubkey::Pubkey::find_program_address"}
+    },
+    "addresses::solana-pubkey-2.4.0::deserialize_reader": {
+      "order": 243,
+      "source_id": "addresses::solana-pubkey-2.4.0::src/lib.rs",
+      "line": 1024,
+      "anchor_text": "fn deserialize_reader<R: borsh0_10::maybestd::io::Read>(",
+      "rust_names": ["<solana_pubkey::Pubkey as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "models": ["solana-pubkey::Pubkey::deserialize_reader"],
+      "scope": "@text:b72d92206517d327",
+      "binding_obligations": ["@binding:b792c49c5b1e749b"],
+      "bindings": {
+        "sdk-e4ff1756ba2372297a80": "<solana_pubkey::Pubkey as borsh::de::BorshDeserialize>::deserialize_reader"
+      }
+    },
+    "addresses::solana-pubkey-2.4.0::cmp": {
+      "order": 297,
+      "source_id": "addresses::solana-pubkey-2.4.0::src/lib.rs",
+      "line": 166,
+      "anchor_text": "pub struct Pubkey(pub(crate) [u8; 32]);",
+      "rust_names": ["<solana_pubkey::Pubkey as core::cmp::Ord>::cmp"],
+      "models": ["solana-pubkey::Pubkey::cmp"],
+      "scope": "@text:08148165980820f9",
+      "bindings": {"sdk-79a1ec6a6255d1ecc539": "<solana_pubkey::Pubkey as core::cmp::Ord>::cmp"}
+    },
+    "addresses::solana-pubkey-2.2.1::serialize": {
+      "order": 361,
+      "source_id": "addresses::solana-pubkey-2.2.1::src/lib.rs",
+      "line": 895,
+      "anchor_text": "impl_borsh_serialize!(borsh0_10);",
+      "rust_names": ["<solana_pubkey::Pubkey as borsh::ser::BorshSerialize>::serialize"],
+      "models": ["solana-pubkey::Pubkey::serialize"],
+      "scope": "@text:39aedeebbb980e8f",
+      "binding_obligations": ["@binding:b792c49c5b1e749b"],
+      "bindings": {
+        "<solana_pubkey::Pubkey as borsh::ser::BorshSerialize>::serialize [solana_pubkey::{impl#50}::serialize]": "<solana_pubkey::Pubkey as borsh::ser::BorshSerialize>::serialize"
+      }
+    },
+    "addresses::solana-pubkey-2.2.1::create_with_seed": {
+      "order": 362,
+      "source_id": "addresses::solana-pubkey-2.2.1::src/lib.rs",
+      "line": 332,
+      "anchor_text": "pub fn create_with_seed(",
+      "rust_names": ["solana_pubkey::Pubkey::create_with_seed"],
+      "models": ["solana-pubkey::Pubkey::create_with_seed"],
+      "scope": "@text:b1b57ce85fc08b8d",
+      "bindings": {"solana_pubkey::Pubkey::create_with_seed": "solana_pubkey::Pubkey::create_with_seed"}
+    },
+    "addresses::solana-pubkey-2.2.1::new_from_array": {
+      "order": 363,
+      "source_id": "addresses::solana-pubkey-2.2.1::src/lib.rs",
+      "line": 304,
+      "anchor_text": "pub const fn new_from_array(pubkey_array: [u8; 32]) -> Self {",
+      "rust_names": ["solana_pubkey::Pubkey::new_from_array"],
+      "models": ["solana-pubkey::Pubkey::new_from_array"],
+      "scope": "@text:08148165980820f9",
+      "bindings": {"solana_pubkey::Pubkey::new_from_array": "solana_pubkey::Pubkey::new_from_array"}
+    },
+    "addresses::solana-pubkey-2.2.1::from": {
+      "order": 364,
+      "source_id": "addresses::solana-pubkey-2.2.1::src/lib.rs",
+      "line": 253,
+      "anchor_text": "fn from(from: [u8; 32]) -> Self {",
+      "rust_names": ["<solana_pubkey::Pubkey as core::convert::From<[u8; 32]>>::from"],
+      "models": ["solana-pubkey::Pubkey::from"],
+      "scope": "@text:08148165980820f9",
+      "bindings": {
+        "<solana_pubkey::Pubkey as core::convert::From<[u8; 32]>>::from": "<solana_pubkey::Pubkey as core::convert::From<[u8; 32]>>::from"
+      }
+    },
+    "addresses::solana-pubkey-2.2.1::default": {
+      "order": 365,
+      "source_id": "addresses::solana-pubkey-2.2.1::src/lib.rs",
+      "line": 163,
+      "anchor_text": "pub struct Pubkey(pub(crate) [u8; 32]);",
+      "rust_names": ["<solana_pubkey::Pubkey as core::default::Default>::default"],
+      "models": ["solana-pubkey::Pubkey::default"],
+      "scope": "@text:08148165980820f9",
+      "bindings": {
+        "<solana_pubkey::Pubkey as core::default::Default>::default": "<solana_pubkey::Pubkey as core::default::Default>::default"
+      }
+    },
+    "addresses::solana-pubkey-2.2.1::to_bytes": {
+      "order": 366,
+      "source_id": "addresses::solana-pubkey-2.2.1::src/lib.rs",
+      "line": 770,
+      "anchor_text": "pub const fn to_bytes(self) -> [u8; 32] {",
+      "rust_names": ["solana_pubkey::Pubkey::to_bytes"],
+      "models": ["solana-pubkey::Pubkey::to_bytes"],
+      "scope": "@text:08148165980820f9",
+      "bindings": {"solana_pubkey::Pubkey::to_bytes": "solana_pubkey::Pubkey::to_bytes"}
+    },
+    "addresses::solana-pubkey-2.2.1::eq": {
+      "order": 367,
+      "source_id": "addresses::solana-pubkey-2.2.1::src/lib.rs",
+      "line": 163,
+      "anchor_text": "pub struct Pubkey(pub(crate) [u8; 32]);",
+      "rust_names": ["<solana_pubkey::Pubkey as core::cmp::PartialEq>::eq"],
+      "models": ["solana-pubkey::Pubkey::eq"],
+      "scope": "@text:08148165980820f9",
+      "bindings": {
+        "<solana_pubkey::Pubkey as core::cmp::PartialEq>::eq": "<solana_pubkey::Pubkey as core::cmp::PartialEq>::eq"
+      }
+    },
+    "addresses::solana-pubkey-2.2.1::as_ref": {
+      "order": 368,
+      "source_id": "addresses::solana-pubkey-2.2.1::src/lib.rs",
+      "line": 801,
+      "anchor_text": "fn as_ref(&self) -> &[u8] {",
+      "rust_names": ["<solana_pubkey::Pubkey as core::convert::AsRef<[u8]>>::as_ref"],
+      "models": ["solana-pubkey::Pubkey::as_ref"],
+      "scope": "@text:08148165980820f9",
+      "bindings": {
+        "<solana_pubkey::Pubkey as core::convert::AsRef<[u8]>>::as_ref": "<solana_pubkey::Pubkey as core::convert::AsRef<[u8]>>::as_ref"
+      }
+    },
+    "addresses::solana-pubkey-2.2.1::deserialize_reader": {
+      "order": 369,
+      "source_id": "addresses::solana-pubkey-2.2.1::src/lib.rs",
+      "line": 836,
+      "anchor_text": "fn deserialize_reader<R: borsh0_10::maybestd::io::Read>(",
+      "rust_names": ["<solana_pubkey::Pubkey as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "models": ["solana-pubkey::Pubkey::deserialize_reader"],
+      "scope": "@text:b72d92206517d327",
+      "binding_obligations": ["@binding:b792c49c5b1e749b"],
+      "bindings": {
+        "<solana_pubkey::Pubkey as borsh::de::BorshDeserialize>::deserialize_reader [solana_pubkey::{impl#23}::deserialize_reader]": "<solana_pubkey::Pubkey as borsh::de::BorshDeserialize>::deserialize_reader"
+      }
+    },
+    "addresses::solana-pubkey-2.2.1::find_program_address_solana": {
+      "order": 370,
+      "source_id": "addresses::solana-pubkey-2.2.1::src/lib.rs",
+      "line": 610,
+      "anchor_text": "pub fn find_program_address(seeds: &[&[u8]], program_id: &Pubkey) -> (Pubkey, u8) {",
+      "rust_names": ["solana_pubkey::Pubkey::find_program_address"],
+      "models": ["solana-pubkey::Pubkey::find_program_address_solana"],
+      "scope": "@text:8888d1cdf6c56008",
+      "bindings": {"solana_pubkey::Pubkey::find_program_address": "solana_pubkey::Pubkey::find_program_address"}
+    }
+  },
+  "applicability_sources": {
+    "addresses-solana-pubkey": {
+      "order": 37,
+      "package": "solana-pubkey",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-13",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-0.0.1.crate",
+          "sha256": "18a06fd2ec31b40179413416b74308c2b609f51b810d70372c13b25d4a58c475"
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-0.0.2.crate",
+          "sha256": "e2565530e0635940c3c4a31581d9ad6080bf56a5758056a5ab0e3798f8b701de"
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.0.crate",
+          "sha256": "bea3215775fcedf200d47590c7e2ce9a3a46bc2b7d3f77d0eae9c6edf0a39aec"
+        },
+        "2.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.1.crate",
+          "sha256": "a7e820ad0abe44b6c41878a0d655e678d535d32da1e67828e41684fc57f06918"
+        },
+        "2.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.2.crate",
+          "sha256": "2cc969903363ac8bb619009815083c86da1e78e136cf4e924fee2071042fe528"
+        },
+        "2.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.4.crate",
+          "sha256": "d75991d40b6717ad11d0357d435c494fbb2af46ffbffdec015d2abb2e5e8bd62"
+        },
+        "2.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.5.crate",
+          "sha256": "3e3480e24e3f8127dbe32d6fe22dc76dd143fa9b7622ef2345dcb5fa3a70bbfe"
+        },
+        "2.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.6.crate",
+          "sha256": "a954fba3af498201179981818b0ed61f95c32b4a3db5ea9cc042c971c84cdeae"
+        },
+        "2.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.7.crate",
+          "sha256": "c46701a845b731f2ffcf002c4bb08968434b9cf5e576cdd705259421074d1764"
+        },
+        "2.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.8.crate",
+          "sha256": "6dba2b19db8b73ab96b309b6d2a9f26386e45e2af3618a27b92389da9a3df1f1"
+        },
+        "2.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.9.crate",
+          "sha256": "bbc62c030963895f98b50bfbea6fe443200596be1b3009103e59d815248666f0"
+        },
+        "2.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.10.crate",
+          "sha256": "02016ff5f98314c886e219c023bffba188ad8d70dec007247bd7a9da50423ac0"
+        },
+        "2.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.11.crate",
+          "sha256": "fdb80787769457f022a39a55cf439d1996aeecc2364c99483c97318d80f15436"
+        },
+        "2.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.12.crate",
+          "sha256": "d87a0e1282ea13d3fab42d1c5df8f00283f8f739b2e5a9a5b530f76c4292e2b5"
+        },
+        "2.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.13.crate",
+          "sha256": "2d4cb0f3b71f466fe8e11bef05dc562060b5c8f526e969ecd150ce5bedc6e3eb"
+        },
+        "2.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.14.crate",
+          "sha256": "f1739df652083770bdc74459ef26b74eee86569cedad5f4eae8186ac144256e3"
+        },
+        "2.1.15": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.15.crate",
+          "sha256": "213f260c4a7a7037cabb109b8a22949ecec889ee65231cc1fe8b8621ca3745b5"
+        },
+        "2.1.16": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.16.crate",
+          "sha256": "a4354f5defcfd2badca65c0e63c6ad12b35a397965d631208f8d64d51258300f"
+        },
+        "2.1.17": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.17.crate",
+          "sha256": "4a8f7862e3a793acf8a0ad747de5e25ab5c61ecfb58dbebc44a3e5775e5869aa"
+        },
+        "2.1.18": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.18.crate",
+          "sha256": "a87eaf4643e68ca54642af6cdace4312d43a9d283a40faa1cd21703bd15c7894"
+        },
+        "2.1.20": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.20.crate",
+          "sha256": "53bd13d0350ea7e518e038402ccdc40f23f25d058f678fbf99b98e8c40aa2d89"
+        },
+        "2.1.21": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.1.21.crate",
+          "sha256": "16bcff57fc2a096f6c57851e22587a7a36b6fdaa567eab75bb0bcd06f449fcbc"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.0.crate",
+          "sha256": "ef5eb2846bcb028107c3979316501205c70fa64789214b5af85752fee61e7279"
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.1.crate",
+          "sha256": "40db1ff5a0f8aea2c158d78ab5f2cf897848964251d1df42fef78efd3c85b863",
+          "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+          "repository": "https://github.com/anza-xyz/solana-sdk"
+        },
+        "2.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.3.0.crate",
+          "sha256": "cad77cf9f30b971a1eec48dde6a863dcac60ba005a34dfde23736afa5c7ac667"
+        },
+        "2.4.0": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.4.0.crate",
+          "sha256": "9b62adb9c3261a052ca1f999398c388f1daf558a1b492f60a6d9e64857db4ff1",
+          "revision": "483720e23010213a2d611ea1295bd72b3fd98979"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-3.0.0.crate",
+          "sha256": "8909d399deb0851aa524420beeb5646b115fd253ef446e35fe4504c904da3941"
+        },
+        "4.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-4.0.0.crate",
+          "sha256": "a6f7104d456b58e1418c21a8581e89810278d1190f70f27ece7fc0b2c9282a57"
+        },
+        "4.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-4.1.0.crate",
+          "sha256": "1b06bd918d60111ee1f97de817113e2040ca0cedb740099ee8d646233f6b906c"
+        },
+        "4.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-4.2.0.crate",
+          "sha256": "7db719574990de7e8b0f55a8593ac92a5ccb42c8ce67b3e4bf05b139d5d9ee71"
+        },
+        "4.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-4.2.1.crate",
+          "sha256": "6ab5a422939ca3b81180f79c87f43600728e4c5513d6034902675f96df25d033"
+        },
+        "4.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-4.3.0.crate",
+          "sha256": "10f71b7a414de2ced1071f015834e9be581592d013432adbd06d02e4af11eba9"
+        },
+        "4.4.0": {
+          "archive_url": "https://static.crates.io/crates/solana-pubkey/solana-pubkey-4.4.0.crate",
+          "sha256": "e2b8ba5d677d77a76d557b59ce7ecf9a8578743089cb25c73990752c5f005885"
+        }
+      },
+      "evidence": ["@text:bf05a9f8d8feeb37", "@text:332213c83fe2f982"]
+    }
+  },
+  "applicability": {
+    "solana-pubkey::Pubkey::default": {
+      "order": 247,
+      "profiles": [
+        {
+          "id": "solana-pubkey-2.4.0-default",
+          "source": "addresses-solana-pubkey",
+          "releases": ["2.4.0", "2.2.1"],
+          "items": [
+            {
+              "releases": ["2.4.0", "2.2.1"],
+              "item": "core::default::Default::default",
+              "implementation": "<solana_pubkey::Pubkey as core::default::Default>::default",
+              "compatible_ranges": [{"lower": "2.4.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+          "argument": "@review:source-notes/address-profiles.md#review-ac56e80f81509652",
+          "evidence": ["@text:f68c9f24a56a4987", "@text:b1bd7dffce057a1b"]
+        }
+      ]
+    },
+    "solana-pubkey::Pubkey::to_bytes": {
+      "order": 248,
+      "profiles": [
+        {
+          "id": "solana-pubkey-2.4.0-to_bytes",
+          "source": "addresses-solana-pubkey",
+          "releases": ["2.4.0", "2.2.1", "2.3.0"],
+          "items": [
+            {
+              "releases": ["2.4.0", "2.2.1", "2.3.0"],
+              "item": "solana_pubkey::Pubkey::to_bytes",
+              "implementation": "solana_pubkey::Pubkey::to_bytes",
+              "compatible_ranges": [{"lower": "2.2.1", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+          "argument": "@review:source-notes/address-profiles.md#review-3d46b127d326346f",
+          "evidence": ["@text:f68c9f24a56a4987", "@text:b1bd7dffce057a1b", "@text:3c085df92c004334"]
+        }
+      ]
+    },
+    "solana-pubkey::Pubkey::serialize": {
+      "order": 249,
+      "profiles": [
+        {
+          "id": "solana-pubkey-2.4.0-serialize",
+          "source": "addresses-solana-pubkey",
+          "releases": ["2.4.0", "2.2.1"],
+          "items": [
+            {
+              "releases": ["2.4.0", "2.2.1"],
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<solana_pubkey::Pubkey as borsh::ser::BorshSerialize>::serialize",
+              "compatible_ranges": [{"lower": "2.4.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-443bb15228e8b089",
+          "argument": "@review:source-notes/address-profiles.md#review-13439dfad7668590",
+          "evidence": "@shared:evidence-f7f2dac9189a5247",
+          "dependencies": [
+            {
+              "package": "borsh",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["0.10.4"],
+              "reason": "@text:e3499fce0dfe909b",
+              "compatible_ranges": [{"lower": "0.10.4", "upper": "0.11.0"}]
+            }
+          ],
+          "features": {"all": ["borsh"], "reason": "@text:60e3f854d21484d2"}
+        }
+      ]
+    },
+    "solana-pubkey::Pubkey::as_ref": {
+      "order": 250,
+      "profiles": [
+        {
+          "id": "solana-pubkey-2.4.0-as_ref",
+          "source": "addresses-solana-pubkey",
+          "releases": ["2.4.0", "2.2.1"],
+          "items": [
+            {
+              "releases": ["2.4.0", "2.2.1"],
+              "item": "core::convert::AsRef::as_ref",
+              "implementation": "<solana_pubkey::Pubkey as core::convert::AsRef<[u8]>>::as_ref",
+              "compatible_ranges": [{"lower": "2.4.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+          "argument": "@review:source-notes/address-profiles.md#review-19f34d0ceb2a46b2",
+          "evidence": ["@text:f68c9f24a56a4987", "@text:b1bd7dffce057a1b"]
+        }
+      ]
+    },
+    "solana-pubkey::Pubkey::create_with_seed": {
+      "order": 251,
+      "profiles": [
+        {
+          "id": "solana-pubkey-2.4.0-create_with_seed",
+          "source": "addresses-solana-pubkey",
+          "releases": ["2.4.0", "2.2.1"],
+          "items": [
+            {
+              "releases": ["2.4.0", "2.2.1"],
+              "item": "solana_pubkey::Pubkey::create_with_seed",
+              "implementation": "solana_pubkey::Pubkey::create_with_seed",
+              "compatible_ranges": [{"lower": "2.4.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-93fe78b73fd2da29",
+          "argument": "@review:source-notes/address-profiles.md#review-6a3a476823bcd970",
+          "evidence": ["@text:f68c9f24a56a4987", "@text:b1bd7dffce057a1b"],
+          "target": "@shared:target-86e77ec323a176ad"
+        }
+      ]
+    },
+    "solana-pubkey::Pubkey::create_program_address_solana": {
+      "order": 252,
+      "profiles": [
+        {
+          "id": "solana-pubkey-2.4.0-create_program_address_solana",
+          "source": "addresses-solana-pubkey",
+          "releases": ["2.4.0", "2.2.1"],
+          "items": [
+            {
+              "releases": ["2.4.0", "2.2.1"],
+              "item": "solana_pubkey::Pubkey::create_program_address",
+              "implementation": "solana_pubkey::Pubkey::create_program_address",
+              "compatible_ranges": [{"lower": "2.4.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-7a25dd4bd9b4718f",
+          "argument": "@review:source-notes/address-profiles.md#review-aa2f64e2332986a8",
+          "evidence": ["@text:f68c9f24a56a4987", "@text:b1bd7dffce057a1b"],
+          "target": "@shared:target-86e77ec323a176ad"
+        }
+      ]
+    },
+    "solana-pubkey::Pubkey::clone": {
+      "order": 253,
+      "profiles": [
+        {
+          "id": "solana-pubkey-2.4.0-clone",
+          "source": "addresses-solana-pubkey",
+          "releases": ["2.4.0"],
+          "items": [
+            {
+              "releases": ["2.4.0"],
+              "item": "core::clone::Clone::clone",
+              "implementation": "<solana_pubkey::Pubkey as core::clone::Clone>::clone",
+              "compatible_ranges": [{"lower": "2.4.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+          "argument": "@review:source-notes/address-profiles.md#review-99ec6e885aac4b16",
+          "evidence": ["@text:f68c9f24a56a4987", "@text:b1bd7dffce057a1b"]
+        }
+      ]
+    },
+    "solana-pubkey::Pubkey::deserialize_reader": {
+      "order": 254,
+      "profiles": [
+        {
+          "id": "solana-pubkey-2.4.0-deserialize_reader",
+          "source": "addresses-solana-pubkey",
+          "releases": ["2.4.0", "2.2.1"],
+          "items": [
+            {
+              "releases": ["2.4.0", "2.2.1"],
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<solana_pubkey::Pubkey as borsh::de::BorshDeserialize>::deserialize_reader",
+              "compatible_ranges": [{"lower": "2.4.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-443bb15228e8b089",
+          "argument": "@review:source-notes/address-profiles.md#review-f305efe897dde2d6",
+          "evidence": "@shared:evidence-f7f2dac9189a5247",
+          "dependencies": [
+            {
+              "package": "borsh",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["0.10.4"],
+              "reason": "@text:b5ea7157a3d77b54",
+              "compatible_ranges": [{"lower": "0.10.4", "upper": "0.11.0"}]
+            }
+          ],
+          "features": {"all": ["borsh"], "reason": "@text:60e3f854d21484d2"}
+        }
+      ]
+    },
+    "solana-pubkey::Pubkey::eq": {
+      "order": 255,
+      "profiles": [
+        {
+          "id": "solana-pubkey-2.4.0-eq",
+          "source": "addresses-solana-pubkey",
+          "releases": ["2.4.0", "2.2.1"],
+          "items": [
+            {
+              "releases": ["2.4.0", "2.2.1"],
+              "item": "core::cmp::PartialEq::eq",
+              "implementation": "<solana_pubkey::Pubkey as core::cmp::PartialEq>::eq",
+              "compatible_ranges": [{"lower": "2.4.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+          "argument": "@review:source-notes/address-profiles.md#review-b9f4b57b20f8e3b5",
+          "evidence": ["@text:f68c9f24a56a4987", "@text:b1bd7dffce057a1b"]
+        }
+      ]
+    },
+    "solana-pubkey::Pubkey::find_program_address_solana": {
+      "order": 256,
+      "profiles": [
+        {
+          "id": "solana-pubkey-2.4.0-find_program_address_solana",
+          "source": "addresses-solana-pubkey",
+          "releases": ["2.4.0", "2.2.1"],
+          "items": [
+            {
+              "releases": ["2.4.0", "2.2.1"],
+              "item": "solana_pubkey::Pubkey::find_program_address",
+              "implementation": "solana_pubkey::Pubkey::find_program_address",
+              "compatible_ranges": [{"lower": "2.4.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+          "argument": "@review:source-notes/address-profiles.md#review-aae69cfa3e295e95",
+          "evidence": ["@text:f68c9f24a56a4987", "@text:b1bd7dffce057a1b"],
+          "target": "@shared:target-86e77ec323a176ad"
+        }
+      ]
+    },
+    "solana-pubkey::Pubkey::cmp": {
+      "order": 304,
+      "profiles": [
+        {
+          "id": "solana-pubkey-2.2.1-2.4.0-cmp",
+          "source": "addresses-solana-pubkey",
+          "releases": ["2.2.1", "2.3.0", "2.4.0"],
+          "items": [
+            {
+              "releases": ["2.2.1", "2.3.0", "2.4.0"],
+              "item": "core::cmp::Ord::cmp",
+              "implementation": "<solana_pubkey::Pubkey as core::cmp::Ord>::cmp",
+              "compatible_ranges": [{"lower": "2.2.1", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+          "argument": "@review:source-notes/address-profiles.md#review-91652df2c8613483",
+          "evidence": "@shared:evidence-78da7e091384a2ba"
+        }
+      ]
+    },
+    "solana-pubkey::Pubkey::new_from_array": {
+      "order": 362,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/address-profiles.md#review-7cc6e47d2b7c3e09",
+          "conditions": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+          "evidence": "@shared:evidence-78da7e091384a2ba",
+          "id": "solana-pubkey-2.2.1-2.4.0-new_from_array",
+          "items": [
+            {
+              "implementation": "solana_pubkey::Pubkey::new_from_array",
+              "item": "solana_pubkey::Pubkey::new_from_array",
+              "releases": ["2.2.1", "2.3.0", "2.4.0"],
+              "compatible_ranges": [{"lower": "2.2.1", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": ["2.2.1", "2.3.0", "2.4.0"],
+          "source": "addresses-solana-pubkey"
+        }
+      ]
+    },
+    "solana-pubkey::Pubkey::from": {
+      "order": 363,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/address-profiles.md#review-7b5bb8ed33707a6f",
+          "conditions": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+          "evidence": "@shared:evidence-78da7e091384a2ba",
+          "id": "solana-pubkey-2.2.1-2.4.0-from",
+          "items": [
+            {
+              "implementation": "<solana_pubkey::Pubkey as core::convert::From<[u8; 32]>>::from",
+              "item": "core::convert::From::from",
+              "releases": ["2.2.1", "2.3.0", "2.4.0"],
+              "compatible_ranges": [{"lower": "2.2.1", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": ["2.2.1", "2.3.0", "2.4.0"],
+          "source": "addresses-solana-pubkey"
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"]
+}

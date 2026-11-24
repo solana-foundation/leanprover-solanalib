@@ -2761,8 +2761,8 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             additional signer and do not perform the current multisig owner/size/key \
             filter or clear authority signer status. Versions 8.0.0/8.0.1/9.0.0 have the \
             modern local multisig wrapper, but their hook 0.10/resolver 0.10 profile \
-            preserves a new the signer flag of the extra account; the model always clears \
-            it. Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
+            preserves the signer flag of a new extra account; the model always clears it. \
+            Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
             0.11.1 profile: its PodMultisig pod_from_bytes helper is exactly \
             try_from_bytes.map_err(InvalidArgument), and its interface 2.1.0 Mint \
             parsing/getter and instruction closures correspond. Version 11.0.0 has the \
@@ -2899,8 +2899,8 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             additional signer and do not perform the current multisig owner/size/key \
             filter or clear authority signer status. Versions 8.0.0/8.0.1/9.0.0 have the \
             modern local multisig wrapper, but their hook 0.10/resolver 0.10 profile \
-            preserves a new the signer flag of the extra account; the model always clears \
-            it. Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
+            preserves the signer flag of a new extra account; the model always clears it. \
+            Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
             0.11.1 profile: its PodMultisig pod_from_bytes helper is exactly \
             try_from_bytes.map_err(InvalidArgument), and its interface 2.1.0 Mint \
             parsing/getter and instruction closures correspond. Version 11.0.0 has the \
@@ -3040,8 +3040,8 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             additional signer and do not perform the current multisig owner/size/key \
             filter or clear authority signer status. Versions 8.0.0/8.0.1/9.0.0 have the \
             modern local multisig wrapper, but their hook 0.10/resolver 0.10 profile \
-            preserves a new the signer flag of the extra account; the model always clears \
-            it. Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
+            preserves the signer flag of a new extra account; the model always clears it. \
+            Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
             0.11.1 profile: its PodMultisig pod_from_bytes helper is exactly \
             try_from_bytes.map_err(InvalidArgument), and its interface 2.1.0 Mint \
             parsing/getter and instruction closures correspond. Version 11.0.0 has the \
@@ -3176,8 +3176,8 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             additional signer and do not perform the current multisig owner/size/key \
             filter or clear authority signer status. Versions 8.0.0/8.0.1/9.0.0 have the \
             modern local multisig wrapper, but their hook 0.10/resolver 0.10 profile \
-            preserves a new the signer flag of the extra account; the model always clears \
-            it. Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
+            preserves the signer flag of a new extra account; the model always clears it. \
+            Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
             0.11.1 profile: its PodMultisig pod_from_bytes helper is exactly \
             try_from_bytes.map_err(InvalidArgument), and its interface 2.1.0 Mint \
             parsing/getter and instruction closures correspond. Version 11.0.0 has the \
@@ -3312,8 +3312,8 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             additional signer and do not perform the current multisig owner/size/key \
             filter or clear authority signer status. Versions 8.0.0/8.0.1/9.0.0 have the \
             modern local multisig wrapper, but their hook 0.10/resolver 0.10 profile \
-            preserves a new the signer flag of the extra account; the model always clears \
-            it. Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
+            preserves the signer flag of a new extra account; the model always clears it. \
+            Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
             0.11.1 profile: its PodMultisig pod_from_bytes helper is exactly \
             try_from_bytes.map_err(InvalidArgument), and its interface 2.1.0 Mint \
             parsing/getter and instruction closures correspond. Version 11.0.0 has the \

@@ -1,0 +1,2292 @@
+{
+  "abstractions": {
+    "library::pinocchio": {
+      "order": 125,
+      "modules": {
+        "Solanalib.Specs.Pinocchio": "f7aae32bf740d1f8cd839a370cd5696acb6e8efecdb4f0eaa22e70af1884cd41",
+        "Solanalib.Specs.Pinocchio.Capabilities": "43b94d99801e9e87a5f4efdaeab1982b8d1d39122dce7ad9850b180b051588c8",
+        "Solanalib.Specs.Pinocchio.Get": "10bb319e511b1222a0e9a1bba75e8725cd8c39f420c8de84bb88871711795b77",
+        "Solanalib.Specs.Pinocchio.Instructions": "e706a0cc12fd3803d6f05410ba4ddd700d7425f94bfd439017a5e6a6504414c1",
+        "Solanalib.Specs.Pinocchio.InstructionsGeneric": "7742eb69899e37c86559a89e23346a0c2a38dbfd9d3aa9e32e53ae8a927234d3",
+        "Solanalib.Specs.Pinocchio.Rent": "c199645a5c584469369939783483e5d1b61323731bdcde5ac5559b9bce3fe140",
+        "Solanalib.Specs.Pinocchio.RentAccount": "3748b82427d980555331303d2fe9d56726cd35adbac2ac295470f91ddae6835f",
+        "Solanalib.Specs.Pinocchio.Cpi": "551efdb7609169117130e8f4c4079c4e537a46bc20359842553e7b2dd21654ab",
+        "Solanalib.Specs.Pinocchio.EntryDeserialize": "2d67d49f70c4eaba5738d5bdcd6ce5fbaa1a35b85d6aea6ce2f9713a2cec9dfc",
+        "Solanalib.Specs.Pinocchio.AccountInfo": "5135b53c4864094b64836a6d5d4af9e77b5fb65ff7533d9b7d82e86c11170a39",
+        "Solanalib.Specs.Pinocchio.Guard": "6140e132033dabb8f5817381e0e2919d9f9b9e8e5be1ce2b187a6d376dbb4db8",
+        "Solanalib.Specs.Pinocchio.Instruction": "75c451a94f45305f4c4e1d84c14128d06ea7920510906b859d261853d3982516",
+        "Solanalib.Specs.Pinocchio.Pubkey": "694fe59a61277aa446ad04e5aad4b838cb1ace510c67c3a81040ea526a8efbfa"
+      },
+      "source_ids": [
+        "sysvars::pinocchio-0.11.1::src/sysvars/mod.rs",
+        "sysvars::pinocchio-0.11.1::src/sysvars/clock.rs",
+        "sysvars::pinocchio-0.11.1::src/sysvars/rent.rs",
+        "sysvars::pinocchio-0.11.1::src/sysvars/instructions.rs",
+        "sysvars::pinocchio-0.10.2::src/sysvars/mod.rs",
+        "sysvars::pinocchio-0.10.2::src/sysvars/clock.rs",
+        "sysvars::pinocchio-0.10.2::src/sysvars/rent.rs",
+        "cpi-signatures::solana-invoke-0.4.0::src/lib.rs",
+        "cpi-signatures::solana-invoke-0.4.0::src/stable_instruction_borrowed.rs",
+        "cpi-signatures::solana-invoke-0.5.0::src/lib.rs",
+        "cpi-signatures::solana-invoke-0.5.0::src/stable_instruction_borrowed.rs",
+        "cpi-signatures::solana-program-1.15.2::src/program.rs",
+        "cpi-signatures::solana-program-1.15.2::src/account_info.rs",
+        "cpi-signatures::solana-program-1.15.2::src/instruction.rs",
+        "cpi-signatures::solana-program-1.15.2::src/program_error.rs",
+        "cpi-signatures::solana-program-1.15.2::src/syscalls/definitions.rs",
+        "cpi-signatures::solana-program-1.18.26::src/program.rs",
+        "cpi-signatures::solana-program-1.18.26::src/account_info.rs",
+        "cpi-signatures::solana-program-1.18.26::src/instruction.rs",
+        "cpi-signatures::solana-program-1.18.26::src/program_error.rs",
+        "cpi-signatures::solana-program-1.18.26::src/syscalls/definitions.rs",
+        "cpi-signatures::solana-program-1.18.26::src/stable_layout/stable_instruction.rs",
+        "cpi-signatures::solana-program-1.18.26::src/stable_layout/stable_vec.rs",
+        "cpi-signatures::solana-program-2.2.1::src/program.rs",
+        "cpi-signatures::solana-program-2.3.0::src/program.rs",
+        "cpi-signatures::pinocchio-0.9.2::src/cpi.rs",
+        "cpi-signatures::pinocchio-0.9.2::src/syscalls.rs",
+        "cpi-signatures::pinocchio-0.9.2::src/instruction.rs",
+        "cpi-signatures::solana-define-syscall-2.3.0::src/lib.rs",
+        "cpi-signatures::solana-define-syscall-2.3.0::src/definitions.rs",
+        "cpi-signatures::solana-define-syscall-3.0.0::src/lib.rs",
+        "cpi-signatures::solana-define-syscall-3.0.0::src/definitions.rs",
+        "cpi-signatures::solana-define-syscall-5.1.0::src/lib.rs",
+        "cpi-signatures::solana-define-syscall-5.1.0::src/definitions.rs",
+        "cpi-signatures::solana-cpi-2.2.1::src/lib.rs",
+        "cpi-signatures::solana-account-info-2.3.0::src/lib.rs",
+        "cpi-signatures::solana-account-info-3.1.1::src/lib.rs",
+        "cpi-signatures::solana-instruction-2.2.1::src/lib.rs",
+        "cpi-signatures::solana-instruction-2.2.1::src/account_meta.rs",
+        "cpi-signatures::solana-instruction-2.3.3::src/lib.rs",
+        "cpi-signatures::solana-instruction-2.3.3::src/account_meta.rs",
+        "cpi-signatures::solana-instruction-3.4.0::src/lib.rs",
+        "cpi-signatures::solana-instruction-3.4.0::src/account_meta.rs",
+        "cpi-signatures::solana-program-error-2.2.2::src/lib.rs",
+        "cpi-signatures::solana-program-error-3.0.1::src/lib.rs",
+        "cpi-signatures::solana-stable-layout-2.2.1::src/stable_instruction.rs",
+        "cpi-signatures::solana-stable-layout-2.2.1::src/stable_vec.rs",
+        "cpi-signatures::solana-stable-layout-3.0.0::src/stable_instruction.rs",
+        "cpi-signatures::solana-stable-layout-3.0.0::src/stable_vec.rs",
+        "cpi-signatures::solana-stable-layout-3.0.1::src/stable_instruction.rs",
+        "cpi-signatures::solana-stable-layout-3.0.1::src/stable_vec.rs",
+        "cpi-signatures::solana-program-entrypoint-2.3.0::src/lib.rs",
+        "cpi-signatures::solana-program-entrypoint-3.1.1::src/lib.rs",
+        "entry-deserialize::pinocchio-0.9.2::src/entrypoint/mod.rs",
+        "entry-deserialize::pinocchio-0.9.2::src/account_info.rs",
+        "entry-deserialize::pinocchio-0.9.2::src/lib.rs",
+        "pinocchio@0.9.2::src/account_info.rs",
+        "pinocchio@0.9.2::src/instruction.rs",
+        "pinocchio@0.9.2::src/sysvars/clock.rs",
+        "pinocchio@0.9.2::src/pubkey.rs",
+        "pinocchio@0.9.2::src/sysvars/mod.rs",
+        "pinocchio@0.9.2::src/program_error.rs",
+        "raw-runtime::pinocchio-0.9.2::src/syscalls.rs"
+      ],
+      "argument": "@review:source-notes/account-view.md#review-67ae9a36a81b99a3",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:2bdd10cfed4f63a1",
+        "@text:9222eed7cf79bfc3",
+        "@text:03c93293e69f3a78",
+        "@binding:62c0aeb6d3e245ae",
+        "@binding:5e5a0ed2ab440ed4",
+        "@binding:a91a3edc32684bd0",
+        "@binding:1f54d6f6175ab591",
+        "@binding:c0681db98b1e8d03",
+        "@binding:b71285ec55ef5888",
+        "@binding:34c704f8b299f2ae",
+        "@text:132d16a6cd998881",
+        "@text:94fa3298c23cef70",
+        "@text:e5de8a5387837ac5",
+        "@text:a59033a3f7b014d2",
+        "@text:f428bee2a0798d8f"
+      ]
+    }
+  },
+  "packages": {
+    "pinocchio-0.11.1": {
+      "order": 1,
+      "repository": "https://github.com/anza-xyz/pinocchio",
+      "revision": "a2ba6529b58d201ce91be5d2bd937e56569ec17a",
+      "path_prefix": "sdk/"
+    },
+    "pinocchio-0.10.2": {
+      "order": 41,
+      "repository": "https://github.com/anza-xyz/pinocchio",
+      "revision": "5697fdd59d201466a23d67d0bceb284c5e6d9e79",
+      "path_prefix": "sdk/"
+    },
+    "pinocchio-0.9.2": {
+      "order": 63,
+      "repository": "https://github.com/anza-xyz/pinocchio",
+      "revision": "7ccb7ba4d02c410dc34000713c4803e6922a06da",
+      "path_prefix": "sdk/pinocchio/"
+    }
+  },
+  "interfaces": {
+    "sysvars::pinocchio-0.11.1::src/sysvars/clock.rs": {
+      "order": 24,
+      "crate": "pinocchio-0.11.1",
+      "path": "src/sysvars/clock.rs",
+      "sha256": "3a587a4d292f3b3a7147705076f6b6ce2639386984837b3ce79aa3a67125fa7b"
+    },
+    "sysvars::pinocchio-0.11.1::src/sysvars/instructions.rs": {
+      "order": 25,
+      "crate": "pinocchio-0.11.1",
+      "path": "src/sysvars/instructions.rs",
+      "sha256": "13ebdd41026776e4263e36b41e112206fa046a508b090d89c26e062398c814d8"
+    },
+    "sysvars::pinocchio-0.11.1::src/sysvars/mod.rs": {
+      "order": 26,
+      "crate": "pinocchio-0.11.1",
+      "path": "src/sysvars/mod.rs",
+      "sha256": "165a915c67919c98a27c8dd8c7366c7c3f6bd9f502510c96b4ae17b4c682bc8c"
+    },
+    "sysvars::pinocchio-0.11.1::src/sysvars/rent.rs": {
+      "order": 27,
+      "crate": "pinocchio-0.11.1",
+      "path": "src/sysvars/rent.rs",
+      "sha256": "5d1e577d7a10eb0682c4ffcb49ecddaff4a5aa4aa7bb10351d084f033f2f6b17"
+    },
+    "sysvars::pinocchio-0.10.2::src/sysvars/clock.rs": {
+      "order": 142,
+      "crate": "pinocchio-0.10.2",
+      "path": "src/sysvars/clock.rs",
+      "sha256": "bf7d4cfadb853d7ae27399af34ed6fcb95d80d041eb556289b7d0d79d92e61f4"
+    },
+    "sysvars::pinocchio-0.10.2::src/sysvars/mod.rs": {
+      "order": 143,
+      "crate": "pinocchio-0.10.2",
+      "path": "src/sysvars/mod.rs",
+      "sha256": "165a915c67919c98a27c8dd8c7366c7c3f6bd9f502510c96b4ae17b4c682bc8c"
+    },
+    "sysvars::pinocchio-0.10.2::src/sysvars/rent.rs": {
+      "order": 144,
+      "crate": "pinocchio-0.10.2",
+      "path": "src/sysvars/rent.rs",
+      "sha256": "7535a1fde8462259c81237185001c0328eea159178b3af78a1ab1bdbb1cdf28f"
+    },
+    "sdk-values::pinocchio-0.10.2::src/lib.rs": {
+      "order": 178,
+      "crate": "pinocchio-0.10.2",
+      "path": "src/lib.rs",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/error-nullable.md. No whole-crate model is claimed.",
+      "sha256": "304f3880c238d8e04e00fae572974c7b3b6056894f00f066923f4facaf2bc355"
+    },
+    "sdk-values::pinocchio-0.10.2::Cargo.toml.orig": {
+      "order": 179,
+      "crate": "pinocchio-0.10.2",
+      "path": "Cargo.toml.orig",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/error-nullable.md. No whole-crate model is claimed.",
+      "sha256": "d3bdaad442a4563034ea617a4182efc08795181a0e3123c0c78f178a7485d200",
+      "path_in_repository": "sdk/Cargo.toml"
+    },
+    "raw-runtime::pinocchio-0.9.2::src/lib.rs": {
+      "order": 181,
+      "crate": "pinocchio-0.9.2",
+      "path": "src/lib.rs",
+      "review_scope": "Public syscalls module is unconditional; std feature does not gate the raw clock declaration.",
+      "sha256": "b393de6de0adea5d9ae5daec04330d514acce193e4611a7d7b02b998e924fd05"
+    },
+    "raw-runtime::pinocchio-0.9.2::src/syscalls.rs": {
+      "order": 182,
+      "crate": "pinocchio-0.9.2",
+      "path": "src/syscalls.rs",
+      "review_scope": "sol_get_clock_sysvar dynamic extern-C declaration and static-syscalls alternative.",
+      "sha256": "09c33ee6564af09ff042a5808c63d41f7ffa868821b8cc9256bdc7f980640a9b"
+    },
+    "cpi-signatures::pinocchio-0.9.2::src/cpi.rs": {
+      "order": 369,
+      "crate": "pinocchio-0.9.2",
+      "path": "src/cpi.rs",
+      "sha256": "b4bd6b0349ffe3292e19488501178240fd2fe187f5b3e407c3c5f1d3e4b5109e",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::pinocchio-0.9.2::src/instruction.rs": {
+      "order": 370,
+      "crate": "pinocchio-0.9.2",
+      "path": "src/instruction.rs",
+      "sha256": "76ba72e91cb7de84739f41eade32b13ac171a6d703ad6c233a655441d227be86",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::pinocchio-0.9.2::src/syscalls.rs": {
+      "order": 371,
+      "crate": "pinocchio-0.9.2",
+      "path": "src/syscalls.rs",
+      "sha256": "09c33ee6564af09ff042a5808c63d41f7ffa868821b8cc9256bdc7f980640a9b",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "entry-deserialize::pinocchio-0.9.2::src/account_info.rs": {
+      "order": 543,
+      "crate": "pinocchio-0.9.2",
+      "path": "src/account_info.rs",
+      "sha256": "eb42e1944dd8bed611cab4dbc0d15f18a1f9b5dc8af1fff6831be06247610d15"
+    },
+    "entry-deserialize::pinocchio-0.9.2::src/entrypoint/mod.rs": {
+      "order": 544,
+      "crate": "pinocchio-0.9.2",
+      "path": "src/entrypoint/mod.rs",
+      "sha256": "d01494c890f93746068fa59ceebaa0ef7caec15ccf5934741224a8c67de03bba"
+    },
+    "entry-deserialize::pinocchio-0.9.2::src/lib.rs": {
+      "order": 545,
+      "crate": "pinocchio-0.9.2",
+      "path": "src/lib.rs",
+      "sha256": "b393de6de0adea5d9ae5daec04330d514acce193e4611a7d7b02b998e924fd05"
+    },
+    "pinocchio@0.9.2::src/account_info.rs": {
+      "order": 548,
+      "crate": "pinocchio-0.9.2",
+      "path": "src/account_info.rs",
+      "sha256": "eb42e1944dd8bed611cab4dbc0d15f18a1f9b5dc8af1fff6831be06247610d15"
+    },
+    "pinocchio@0.9.2::src/instruction.rs": {
+      "order": 549,
+      "crate": "pinocchio-0.9.2",
+      "path": "src/instruction.rs",
+      "sha256": "76ba72e91cb7de84739f41eade32b13ac171a6d703ad6c233a655441d227be86"
+    },
+    "pinocchio@0.9.2::src/program_error.rs": {
+      "order": 550,
+      "crate": "pinocchio-0.9.2",
+      "path": "src/program_error.rs",
+      "sha256": "8214d5ad5363641996d9ffc6df775c132944634daba3e689835919269f5e2c2b"
+    },
+    "pinocchio@0.9.2::src/pubkey.rs": {
+      "order": 551,
+      "crate": "pinocchio-0.9.2",
+      "path": "src/pubkey.rs",
+      "sha256": "4a1e156f14d90667eede0ac076e0dcdf0f04c207ac4c3d7cdf0d888f9244ee3f"
+    },
+    "pinocchio@0.9.2::src/sysvars/clock.rs": {
+      "order": 552,
+      "crate": "pinocchio-0.9.2",
+      "path": "src/sysvars/clock.rs",
+      "sha256": "2ee4eede80e4676f272302ea7c01ea8a15ac77bbc41938cbdd226fc68550fb91"
+    },
+    "pinocchio@0.9.2::src/sysvars/mod.rs": {
+      "order": 553,
+      "crate": "pinocchio-0.9.2",
+      "path": "src/sysvars/mod.rs",
+      "sha256": "08593507a509c9e99cf1a11c300acdd30621c840d180aa872d37df7065aba409"
+    }
+  },
+  "models": {
+    "pinocchio::sysvars::clock::Clock::get": {
+      "order": 92,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.clock.Clock.get_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.sysvars.clock.Clock.get_hasExecution",
+      "assumptions": ["@binding:7c831c1e0b4de3a2", "@text:1a95063a40b53b65", "@binding:bb8ed50904536916"]
+    },
+    "pinocchio::sysvars::instructions::Instructions::Generic::load_current_index": {
+      "order": 93,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.instructions.Instructions.Generic.load_current_index_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.sysvars.instructions.Instructions.Generic.load_current_index_hasExecution",
+      "assumptions": ["@text:8eff6568e5f74b9b", "@text:6ebe709a2985c4d6"]
+    },
+    "pinocchio::sysvars::instructions::Instructions::Generic::load_instruction_at": {
+      "order": 94,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.instructions.Instructions.Generic.load_instruction_at_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.sysvars.instructions.Instructions.Generic.load_instruction_at_hasExecution",
+      "assumptions": ["@text:f180ee200916028c", "@text:6ebe709a2985c4d6"]
+    },
+    "pinocchio::sysvars::instructions::Instructions::load_current_index": {
+      "order": 95,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.instructions.Instructions.load_current_index_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "supporting",
+      "assumptions": ["@text:2ed23ccea65f8e0c", "@text:e05c2d8bbac66685"],
+      "model_gaps": ["@text:c493b6c304f856de"]
+    },
+    "pinocchio::sysvars::instructions::Instructions::load_instruction_at": {
+      "order": 96,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.instructions.Instructions.load_instruction_at_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "supporting",
+      "assumptions": ["@text:ccb87c6fdd4d897f", "@text:e05c2d8bbac66685"],
+      "model_gaps": ["@text:c493b6c304f856de"]
+    },
+    "pinocchio::sysvars::instructions::Instructions::try_from": {
+      "order": 97,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.instructions.Instructions.try_from_contract",
+      "witness_kind": "RealizedBy",
+      "assumptions": ["@text:bc4c919309d4bd77", "@text:aeea3869d81ea6b6"]
+    },
+    "pinocchio::sysvars::instructions::IntrospectedInstruction::Generic::get_instruction_data": {
+      "order": 98,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.instructions.IntrospectedInstruction.Generic.get_instruction_data_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.sysvars.instructions.IntrospectedInstruction.Generic.get_instruction_data_hasExecution",
+      "assumptions": ["@text:ef2fea0019f3576b", "@text:6ebe709a2985c4d6"]
+    },
+    "pinocchio::sysvars::instructions::IntrospectedInstruction::Generic::get_program_id": {
+      "order": 99,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.instructions.IntrospectedInstruction.Generic.get_program_id_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.sysvars.instructions.IntrospectedInstruction.Generic.get_program_id_hasExecution",
+      "assumptions": ["@text:ddd5da25362cc488", "@text:6ebe709a2985c4d6"]
+    },
+    "pinocchio::sysvars::instructions::IntrospectedInstruction::get_instruction_data": {
+      "order": 100,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.instructions.IntrospectedInstruction.get_instruction_data_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "supporting",
+      "assumptions": ["@text:a9fcced455f6584f", "@text:e05c2d8bbac66685"],
+      "model_gaps": ["@text:c493b6c304f856de"]
+    },
+    "pinocchio::sysvars::instructions::IntrospectedInstruction::get_program_id": {
+      "order": 101,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.instructions.IntrospectedInstruction.get_program_id_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "supporting",
+      "assumptions": ["@text:893d2a6d8cb47a60", "@text:e05c2d8bbac66685"],
+      "model_gaps": ["@text:c493b6c304f856de"]
+    },
+    "pinocchio::sysvars::rent::Rent::fixed_rate::from_account_view": {
+      "order": 102,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.rent.Rent.fixed_rate.from_account_view_contract",
+      "witness_kind": "RealizedBy",
+      "assumptions": ["@text:952ec744d11626c5"]
+    },
+    "pinocchio::sysvars::rent::Rent::fixed_rate::try_minimum_balance": {
+      "order": 103,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.rent.Rent.fixed_rate.try_minimum_balance_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.Pinocchio.sysvars.rent.Rent.fixed_rate.try_minimum_balance",
+      "assumptions": ["@text:064e679ab56c138c"]
+    },
+    "pinocchio::sysvars::rent::Rent::threshold_rate::get": {
+      "order": 104,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.rent.Rent.threshold_rate.get_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.sysvars.rent.Rent.threshold_rate.get_hasExecution",
+      "assumptions": [
+        "@binding:7c831c1e0b4de3a2",
+        "@text:7d67665f3f3b0b63",
+        "@binding:4127ac8d33558d84",
+        "@binding:537ecccf4f4b28a5"
+      ]
+    },
+    "pinocchio::sysvars::rent::Rent::threshold_rate::try_minimum_balance": {
+      "order": 105,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.rent.Rent.threshold_rate.try_minimum_balance_contract",
+      "witness_kind": "Holds",
+      "execution": "Solanalib.Specs.Pinocchio.sysvars.rent.Rent.threshold_rate.try_minimum_balance_hasExecution",
+      "assumptions": ["@binding:28e35fd0e9f93d35"]
+    },
+    "pinocchio::syscalls::sol_invoke_signed_c": {
+      "order": 368,
+      "contract": "Solanalib.Specs.Pinocchio.syscalls.sol_invoke_signed_c_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-ca98373b1903b699"
+    },
+    "pinocchio::cpi::invoke_signed_unchecked": {
+      "order": 369,
+      "contract": "Solanalib.Specs.Pinocchio.cpi.invoke_signed_unchecked_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": [
+        "@binding:f2e36a141d24d78c",
+        "@binding:60f74de8272cb6ae",
+        "@binding:9535b5cea863a10d",
+        "@binding:037a85cf2ef8669f",
+        "@binding:976de49ba44eab42"
+      ]
+    },
+    "pinocchio::entrypoint::deserialize": {
+      "order": 371,
+      "contract": "Solanalib.Specs.Pinocchio.entrypoint.deserialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": [
+        "@binding:62c0aeb6d3e245ae",
+        "@binding:5e5a0ed2ab440ed4",
+        "@binding:a91a3edc32684bd0",
+        "@binding:1f54d6f6175ab591",
+        "@binding:c0681db98b1e8d03",
+        "@binding:b71285ec55ef5888",
+        "@binding:34c704f8b299f2ae"
+      ]
+    },
+    "pinocchio::account_info::AccountInfo::is_owned_by": {
+      "order": 374,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.AccountInfo.is_owned_by_contract",
+      "witness_kind": "RealizedBy"
+    },
+    "pinocchio::account_info::AccountInfo::key": {
+      "order": 375,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.AccountInfo.key_contract",
+      "witness_kind": "RealizedBy"
+    },
+    "pinocchio::account_info::AccountInfo::owner": {
+      "order": 376,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.AccountInfo.owner_contract",
+      "witness_kind": "RealizedBy"
+    },
+    "pinocchio::account_info::AccountInfo::try_borrow_mut_data": {
+      "order": 377,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.AccountInfo.try_borrow_mut_data_contract",
+      "witness_kind": "RealizedBy"
+    },
+    "pinocchio::account_info::AccountInfo::data_len": {
+      "order": 378,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.AccountInfo.data_len_contract",
+      "witness_kind": "RealizedBy"
+    },
+    "pinocchio::account_info::AccountInfo::is_signer": {
+      "order": 379,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.AccountInfo.is_signer_contract",
+      "witness_kind": "RealizedBy"
+    },
+    "pinocchio::account_info::AccountInfo::is_writable": {
+      "order": 380,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.AccountInfo.is_writable_contract",
+      "witness_kind": "RealizedBy"
+    },
+    "pinocchio::account_info::RefMut::map": {
+      "order": 382,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.RefMut.map_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.account_info.RefMut.map_hasExecution"
+    },
+    "pinocchio::pubkey::pubkey_eq": {
+      "order": 383,
+      "contract": "Solanalib.Specs.Pinocchio.pubkey.pubkey_eq_contract",
+      "witness_kind": "RealizedBy"
+    },
+    "pinocchio::account_info::AccountInfo::resize": {
+      "order": 384,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.AccountInfo.resize_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.account_info.AccountInfo.resize_hasExecution"
+    },
+    "pinocchio::account_info::Ref::deref": {
+      "order": 385,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.Ref.deref_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.account_info.Ref.deref_hasExecution"
+    },
+    "pinocchio::instruction::AccountMeta::readonly": {
+      "order": 387,
+      "contract": "Solanalib.Specs.Pinocchio.instruction.AccountMeta.readonly_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.instruction.AccountMeta.readonly_hasExecution"
+    },
+    "pinocchio::account_info::AccountInfo::lamports": {
+      "order": 388,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.AccountInfo.lamports_contract",
+      "witness_kind": "RealizedBy"
+    },
+    "pinocchio::instruction::AccountMeta::readonly_signer": {
+      "order": 389,
+      "contract": "Solanalib.Specs.Pinocchio.instruction.AccountMeta.readonly_signer_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.instruction.AccountMeta.readonly_signer_hasExecution"
+    },
+    "pinocchio::sysvars::clock::Clock::get_dedicated": {
+      "order": 390,
+      "contract": "Solanalib.Specs.Pinocchio.sysvars.clock.Clock.get_dedicated_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.sysvars.clock.Clock.get_dedicated_hasExecution"
+    },
+    "pinocchio::instruction::AccountMeta::writable_signer": {
+      "order": 391,
+      "contract": "Solanalib.Specs.Pinocchio.instruction.AccountMeta.writable_signer_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.instruction.AccountMeta.writable_signer_hasExecution"
+    },
+    "pinocchio::account_info::AccountInfo::try_borrow_mut_lamports": {
+      "order": 392,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.AccountInfo.try_borrow_mut_lamports_contract",
+      "witness_kind": "RealizedBy"
+    },
+    "pinocchio::account_info::RefMut::deref": {
+      "order": 393,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.RefMut.deref_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.account_info.RefMut.deref_hasExecution"
+    },
+    "pinocchio::account_info::RefMut::deref_mut": {
+      "order": 394,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.RefMut.deref_mut_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.account_info.RefMut.deref_mut_hasExecution"
+    },
+    "pinocchio::instruction::Seed::from_array": {
+      "order": 395,
+      "contract": "Solanalib.Specs.Pinocchio.instruction.Seed.from_array_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.instruction.Seed.from_array_hasExecution"
+    },
+    "pinocchio::instruction::AccountMeta::writable": {
+      "order": 396,
+      "contract": "Solanalib.Specs.Pinocchio.instruction.AccountMeta.writable_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.Pinocchio.instruction.AccountMeta.writable_hasExecution"
+    },
+    "pinocchio::account_info::AccountInfo::try_borrow_data": {
+      "order": 397,
+      "contract": "Solanalib.Specs.Pinocchio.account_info.AccountInfo.try_borrow_data_contract",
+      "witness_kind": "RealizedBy"
+    },
+    "pinocchio::syscalls::sol_get_clock_sysvar": {
+      "order": 422,
+      "contract": "Solanalib.Specs.Pinocchio.syscalls.sol_get_clock_sysvar_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-88c0eb59ed773f24"
+    }
+  },
+  "api": {
+    "sysvars::pinocchio-0.10.2::Clock::get": {
+      "order": 194,
+      "anchor_text": "fn get() -> Result<Self, $crate::error::ProgramError> {",
+      "binding_obligations": "@shared:binding-obligations-97ac8d88c937685c",
+      "line": 70,
+      "scope": "@text:bd85f79ab8a2a781",
+      "source_id": "sysvars::pinocchio-0.10.2::src/sysvars/mod.rs",
+      "clients": [
+        "SolanalibTest.Specs.Core.Sysvar.pin_generic_bounds_error_needs_no_destination",
+        "SolanalibTest.Specs.Core.Sysvar.uninitialized_success_violates_success_law"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Sysvar.GetterReady",
+        "Solanalib.Specs.Core.Sysvar.get",
+        "Solanalib.Specs.Core.Sysvar.get_success_valid",
+        "Solanalib.Specs.Core.Sysvar.GetterValid",
+        "Solanalib.Specs.Core.Sysvar.forwardGetter_hasOutcome_iff",
+        "Solanalib.Specs.Core.Sysvar.get_retains",
+        "Solanalib.Specs.Core.Sysvar.get_hasOutcome_iff"
+      ],
+      "rust_names": ["<pinocchio::sysvars::clock::Clock as pinocchio::sysvars::Sysvar>::get"],
+      "models": ["pinocchio::sysvars::clock::Clock::get"],
+      "binding_defaults": false
+    },
+    "sysvars::pinocchio-0.10.2::Rent::get": {
+      "order": 195,
+      "anchor_text": "fn get() -> Result<Self, $crate::error::ProgramError> {",
+      "binding_obligations": "@shared:binding-obligations-97ac8d88c937685c",
+      "line": 70,
+      "scope": "@text:681e5ebc616d0489",
+      "source_id": "sysvars::pinocchio-0.10.2::src/sysvars/mod.rs",
+      "clients": [
+        "SolanalibTest.Specs.Core.Sysvar.pin_generic_bounds_error_needs_no_destination",
+        "SolanalibTest.Specs.Core.Sysvar.uninitialized_success_violates_success_law"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Sysvar.GetterReady",
+        "Solanalib.Specs.Core.Sysvar.get",
+        "Solanalib.Specs.Core.Sysvar.get_success_valid",
+        "Solanalib.Specs.Core.Sysvar.GetterValid",
+        "Solanalib.Specs.Core.Sysvar.forwardGetter_hasOutcome_iff",
+        "Solanalib.Specs.Core.Sysvar.get_retains",
+        "Solanalib.Specs.Core.Sysvar.get_hasOutcome_iff"
+      ],
+      "rust_names": ["<pinocchio::sysvars::rent::Rent as pinocchio::sysvars::Sysvar>::get"],
+      "models": ["pinocchio::sysvars::rent::Rent::threshold_rate::get"],
+      "binding_defaults": false
+    },
+    "sysvars::pinocchio-0.10.2::Rent::try_minimum_balance": {
+      "order": 196,
+      "anchor_text": "pub fn try_minimum_balance(&self, data_len: usize) -> Result<u64, ProgramError> {",
+      "binding_obligations": ["@binding:2bdd10cfed4f63a1", "@binding:28e35fd0e9f93d35"],
+      "line": 281,
+      "scope": "@text:0fa71adf6a03e5f8",
+      "source_id": "sysvars::pinocchio-0.10.2::src/sysvars/rent.rs",
+      "clients": [
+        "SolanalibTest.Specs.Pinocchio.Rent.source_order_allows_threshold_one_large_rate",
+        "SolanalibTest.Specs.Pinocchio.Rent.nondefault_bpf_threshold_panics",
+        "SolanalibTest.Specs.Pinocchio.Rent.selected_panic_can_unwind"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Sysvar.rent102Try", "Solanalib.Specs.Core.Float64.multiplyUInt64ThenCast"],
+      "rust_names": ["pinocchio::sysvars::rent::Rent::try_minimum_balance"],
+      "models": ["pinocchio::sysvars::rent::Rent::threshold_rate::try_minimum_balance"],
+      "binding_defaults": false
+    },
+    "sysvars::pinocchio-0.11.1::Clock::get": {
+      "order": 197,
+      "anchor_text": "fn get() -> Result<Self, $crate::error::ProgramError> {",
+      "binding_obligations": [
+        "@binding:2bdd10cfed4f63a1",
+        "@binding:7c831c1e0b4de3a2",
+        "@binding:dee4822ceae1b1a1",
+        "@binding:bb8ed50904536916"
+      ],
+      "line": 70,
+      "scope": "@text:bb797683140a2e37",
+      "source_id": "sysvars::pinocchio-0.11.1::src/sysvars/mod.rs",
+      "clients": [
+        "SolanalibTest.Specs.Core.Sysvar.pin_generic_bounds_error_needs_no_destination",
+        "SolanalibTest.Specs.Core.Sysvar.uninitialized_success_violates_success_law",
+        "SolanalibTest.Specs.Core.Sysvar.uninitialized_provider_return_is_rejected",
+        "SolanalibTest.Specs.Core.Sysvar.invalid_initialized_value_has_raw_execution",
+        "SolanalibTest.Specs.Core.Sysvar.initialized_provider_successes_are_valid",
+        "SolanalibTest.Specs.Core.Sysvar.host_callback_unwind_remains_in_raw_family",
+        "SolanalibTest.Specs.Core.Sysvar.sample_error_conversion_keeps_error_execution",
+        "SolanalibTest.Specs.Core.Sysvar.mixed_success_provider_is_rejected",
+        "SolanalibTest.Specs.Core.Sysvar.nonzero_converted_success_needs_initialization",
+        "SolanalibTest.Specs.Core.Sysvar.zero_converted_error_keeps_uninitialized_reply",
+        "SolanalibTest.Specs.Core.Sysvar.initialized_success_reaches_stateful_continuation"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Sysvar.GetterReady",
+        "Solanalib.Specs.Core.Sysvar.get",
+        "Solanalib.Specs.Core.Sysvar.getterFamily",
+        "Solanalib.Specs.Core.Sysvar.get_success_valid",
+        "Solanalib.Specs.Core.Sysvar.GetterValid",
+        "Solanalib.Specs.Core.Sysvar.forwardGetter_hasOutcome_iff",
+        "Solanalib.Specs.Core.Sysvar.get_retains",
+        "Solanalib.Specs.Core.Sysvar.get_hasOutcome_iff",
+        "Solanalib.Specs.Pinocchio.sysvars.clock.Clock.get_hasOutcome_iff"
+      ],
+      "rust_names": ["<pinocchio::sysvars::clock::Clock as pinocchio::sysvars::Sysvar>::get"],
+      "models": ["pinocchio::sysvars::clock::Clock::get"],
+      "binding_defaults": false
+    },
+    "sysvars::pinocchio-0.11.1::Instructions::load_current_index": {
+      "order": 198,
+      "anchor_text": "pub fn load_current_index(&self) -> u16 {",
+      "binding_obligations": "@shared:binding-obligations-684074ce670ce87d",
+      "line": 56,
+      "scope": "@text:3fb417ce90e717de",
+      "source_id": "sysvars::pinocchio-0.11.1::src/sysvars/instructions.rs",
+      "clients": [
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.current_uses_first_length_second_pointer_and_current_state",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.current_preserves_second_deref_unwind_state",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.empty_current_retains_raw_zero_fallback",
+        "SolanalibTest.Specs.Pinocchio.Instructions.released_receiver_uses_empty_fallback",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.changing_current_has_checked_execution",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.empty_current_is_rejected",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.nondeterministic_unsafe_alternative_rejects_admission",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.empty_first_second_unwind_checked",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.odd_current_checked_execution",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.short_second_slice_rejects_footer",
+        "SolanalibTest.Specs.Pinocchio.Instructions.released_receiver_is_not_admitted"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.currentIndex",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.Memory",
+        "Solanalib.Specs.Pinocchio.sysvars.instructions.Instructions.load_current_index_contract",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.CurrentReady",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.checkedCurrent",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.current_checked"
+      ],
+      "rust_names": ["pinocchio::sysvars::instructions::Instructions::<T>::load_current_index"],
+      "models": ["pinocchio::sysvars::instructions::Instructions::Generic::load_current_index"],
+      "binding_defaults": false
+    },
+    "sysvars::pinocchio-0.11.1::Instructions::load_instruction_at": {
+      "order": 199,
+      "anchor_text": "pub fn load_instruction_at(",
+      "binding_obligations": "@shared:binding-obligations-684074ce670ce87d",
+      "line": 88,
+      "scope": "@text:9631c68a5cb243bb",
+      "source_id": "sysvars::pinocchio-0.11.1::src/sysvars/instructions.rs",
+      "clients": [
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.successful_lookup_calls_deref_three_times",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.out_of_range_calls_deref_once",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.odd_table_address_retains_raw_execution",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.odd_table_is_rejected",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.count_only_out_of_range_checked",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.count_only_in_range_is_rejected",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.one_past_lookup_is_not_a_decoded_instruction",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.short_first_slice_rejects_count",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.short_second_slice_rejects_table",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.third_zero_offset_dangling_checked",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.third_nonzero_offset_dangling_rejected",
+        "SolanalibTest.Specs.Pinocchio.Instructions.odd_native_table_is_not_admitted"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.instructionAt",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.Memory",
+        "Solanalib.Specs.Pinocchio.sysvars.instructions.Instructions.load_instruction_at_contract",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.AtReady",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.checkedAt",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.at_checked"
+      ],
+      "rust_names": ["pinocchio::sysvars::instructions::Instructions::<T>::load_instruction_at"],
+      "models": ["pinocchio::sysvars::instructions::Instructions::Generic::load_instruction_at"],
+      "binding_defaults": false
+    },
+    "sysvars::pinocchio-0.11.1::Instructions::try_from": {
+      "order": 200,
+      "anchor_text": "fn try_from(account_view: &'a AccountView) -> Result<Self, Self::Error> {",
+      "binding_obligations": ["@binding:2bdd10cfed4f63a1", "@binding:d282988771a2fb4f"],
+      "line": 122,
+      "scope": "@text:a0649c3fd061b028",
+      "source_id": "sysvars::pinocchio-0.11.1::src/sysvars/instructions.rs",
+      "clients": [
+        "SolanalibTest.Specs.Pinocchio.Instructions.nonempty_constructor_acquires_original_guard",
+        "SolanalibTest.Specs.Pinocchio.Instructions.constructor_accepts_short_unvalidated_data",
+        "SolanalibTest.Specs.Pinocchio.Instructions.instructions_address_error_precedes_exclusive_conflict",
+        "SolanalibTest.Specs.Pinocchio.Instructions.constructor_does_not_establish_decoder_extent",
+        "SolanalibTest.Specs.Pinocchio.Instructions.short_constructor_has_execution",
+        "SolanalibTest.Specs.Pinocchio.Instructions.short_constructor_does_not_admit_footer"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.InstructionsSysvar.tryFrom",
+        "Solanalib.Specs.Core.AccountView.acquire",
+        "Solanalib.Specs.Core.InstructionsSysvar.constructorReady",
+        "Solanalib.Specs.Core.InstructionsSysvar.checkedTryFrom",
+        "Solanalib.Specs.Core.InstructionsSysvar.constructor_checked"
+      ],
+      "rust_names": [
+        "<pinocchio::sysvars::instructions::Instructions<solana_account_view::Ref<'a, [u8]>> as core::convert::TryFrom<&'a solana_account_view::AccountView>>::try_from"
+      ],
+      "models": ["pinocchio::sysvars::instructions::Instructions::try_from"],
+      "binding_defaults": false
+    },
+    "sysvars::pinocchio-0.11.1::IntrospectedInstruction::get_instruction_data": {
+      "order": 201,
+      "anchor_text": "pub fn get_instruction_data(&self) -> &[u8] {",
+      "binding_obligations": "@shared:binding-obligations-6103b25c3dd40ea5",
+      "line": 230,
+      "scope": "@text:cdda055d3d360182",
+      "source_id": "sysvars::pinocchio-0.11.1::src/sysvars/instructions.rs",
+      "clients": [
+        "SolanalibTest.Specs.Pinocchio.Instructions.nonempty_data_bytes",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.empty_memory_has_address_without_allocation",
+        "SolanalibTest.Specs.Pinocchio.InstructionsGeneric.empty_data_has_real_prefix_and_one_past_result",
+        "SolanalibTest.Specs.Pinocchio.Instructions.empty_data_after_real_reads_is_admitted",
+        "SolanalibTest.Specs.Pinocchio.Instructions.truncated_data_is_not_admitted"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.instructionData",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.Memory",
+        "Solanalib.Specs.Pinocchio.sysvars.instructions.IntrospectedInstruction.get_instruction_data_contract",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.DataReady",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.checkedData",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.data_checked"
+      ],
+      "rust_names": ["pinocchio::sysvars::instructions::IntrospectedInstruction::<'_>::get_instruction_data"],
+      "models": ["pinocchio::sysvars::instructions::IntrospectedInstruction::Generic::get_instruction_data"],
+      "binding_defaults": false
+    },
+    "sysvars::pinocchio-0.11.1::IntrospectedInstruction::get_program_id": {
+      "order": 202,
+      "anchor_text": "pub fn get_program_id(&self) -> &Address {",
+      "binding_obligations": "@shared:binding-obligations-6103b25c3dd40ea5",
+      "line": 214,
+      "scope": "@text:7fcd0a5395dde9b5",
+      "source_id": "sysvars::pinocchio-0.11.1::src/sysvars/instructions.rs",
+      "clients": [
+        "SolanalibTest.Specs.Pinocchio.Instructions.nonempty_program_bytes",
+        "SolanalibTest.Specs.Pinocchio.Instructions.one_past_program_decode_is_not_admitted"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.programId",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.Memory",
+        "Solanalib.Specs.Pinocchio.sysvars.instructions.IntrospectedInstruction.get_program_id_contract",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.ProgramReady",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.checkedProgram",
+        "Solanalib.Specs.Core.InstructionsSysvar.Generic.program_checked"
+      ],
+      "rust_names": ["pinocchio::sysvars::instructions::IntrospectedInstruction::<'_>::get_program_id"],
+      "models": ["pinocchio::sysvars::instructions::IntrospectedInstruction::Generic::get_program_id"],
+      "binding_defaults": false
+    },
+    "sysvars::pinocchio-0.11.1::Rent::from_account_view": {
+      "order": 203,
+      "anchor_text": "pub fn from_account_view(account_view: &AccountView) -> Result<Rent, ProgramError> {",
+      "binding_obligations": ["@binding:2bdd10cfed4f63a1", "@binding:15c59e5e680dd420"],
+      "line": 59,
+      "scope": "@text:e17b406fc4b44ecb",
+      "source_id": "sysvars::pinocchio-0.11.1::src/sysvars/rent.rs",
+      "clients": [
+        "SolanalibTest.Specs.Pinocchio.RentAccount.copies_rate_without_shared_guard",
+        "SolanalibTest.Specs.Pinocchio.RentAccount.existing_shared_guard_is_unchanged",
+        "SolanalibTest.Specs.Pinocchio.RentAccount.exclusive_failure_precedes_wrong_address",
+        "SolanalibTest.Specs.Pinocchio.RentAccount.exclusive_error_admitted_without_data",
+        "SolanalibTest.Specs.Pinocchio.RentAccount.wrong_address_needs_no_data_extent",
+        "SolanalibTest.Specs.Pinocchio.RentAccount.wrong_address_admitted_without_data",
+        "SolanalibTest.Specs.Pinocchio.RentAccount.short_rate_rejected",
+        "SolanalibTest.Specs.Pinocchio.RentAccount.seven_bytes_rejected",
+        "SolanalibTest.Specs.Pinocchio.RentAccount.missing_account_rejected"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Sysvar.rent111FromAccount",
+        "Solanalib.Specs.Core.Sysvar.Rent111ReadReady",
+        "Solanalib.Specs.Core.Sysvar.Rent111ReadResult",
+        "Solanalib.Specs.Core.Sysvar.rent111FromAccount_read"
+      ],
+      "rust_names": ["pinocchio::sysvars::rent::Rent::from_account_view"],
+      "models": ["pinocchio::sysvars::rent::Rent::fixed_rate::from_account_view"],
+      "binding_defaults": false
+    },
+    "sysvars::pinocchio-0.11.1::Rent::try_minimum_balance": {
+      "order": 204,
+      "anchor_text": "pub fn try_minimum_balance(&self, data_len: usize) -> Result<u64, ProgramError> {",
+      "binding_obligations": ["@binding:2bdd10cfed4f63a1", "@binding:31821ab46e517f2b"],
+      "line": 183,
+      "scope": "@text:494d827c19966794",
+      "source_id": "sysvars::pinocchio-0.11.1::src/sysvars/rent.rs",
+      "clients": [
+        "SolanalibTest.Specs.Pinocchio.Rent.rate_only_calculation",
+        "SolanalibTest.Specs.Pinocchio.Rent.maximum_rate_is_allowed",
+        "SolanalibTest.Specs.Pinocchio.Rent.above_maximum_rate_rejected"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Sysvar.rent111Try", "Solanalib.Specs.Core.Sysvar.rent111_product_fits"],
+      "rust_names": ["pinocchio::sysvars::rent::Rent::try_minimum_balance"],
+      "models": ["pinocchio::sysvars::rent::Rent::fixed_rate::try_minimum_balance"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::syscalls::sol_invoke_signed_c": {
+      "order": 375,
+      "source_id": "cpi-signatures::pinocchio-0.9.2::src/syscalls.rs",
+      "line": 61,
+      "anchor_text": "define_syscall!(fn sol_invoke_signed_c(instruction_addr: *const u8, account_infos_addr: *const u8, account_infos_len: u64, signers_seeds_addr: *const u8, signers_seeds_len: u64) -> u64);",
+      "scope": "@text:8b9eece1c7d7fd21",
+      "binding_obligations": "@shared:binding-obligations-ead809654050e5c0",
+      "rust_names": ["pinocchio::syscalls::sol_invoke_signed_c"],
+      "clients": [
+        "SolanalibTest.Specs.Core.OpaqueCpi.raw_success",
+        "SolanalibTest.Specs.Core.OpaqueCpi.nonzero_is_rejected",
+        "SolanalibTest.Specs.Core.OpaqueCpi.seed_failure_no_return"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.OpaqueCpi.Index",
+        "Solanalib.Specs.Core.OpaqueCpi.Success",
+        "Solanalib.Specs.Core.OpaqueCpi.Failure",
+        "Solanalib.Specs.Core.CpiRequest.Request"
+      ],
+      "models": ["pinocchio::syscalls::sol_invoke_signed_c"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::cpi::invoke_signed_unchecked": {
+      "order": 376,
+      "source_id": "cpi-signatures::pinocchio-0.9.2::src/cpi.rs",
+      "line": 380,
+      "anchor_text": "pub unsafe fn invoke_signed_unchecked(",
+      "scope": "@text:80039d6ca51a536b",
+      "binding_obligations": [
+        "@binding:f2e36a141d24d78c",
+        "@binding:60f74de8272cb6ae",
+        "@binding:9535b5cea863a10d",
+        "@binding:037a85cf2ef8669f",
+        "@binding:976de49ba44eab42"
+      ],
+      "rust_names": ["pinocchio::cpi::invoke_signed_unchecked"],
+      "clients": [
+        "SolanalibTest.Specs.Core.OpaqueCpi.unit_success",
+        "SolanalibTest.Specs.Core.OpaqueCpi.lookup_before_privilege",
+        "SolanalibTest.Specs.Core.OpaqueCpi.seeds_before_authorization"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.OpaqueCpi.Index",
+        "Solanalib.Specs.Core.OpaqueCpi.Success",
+        "Solanalib.Specs.Core.OpaqueCpi.Failure",
+        "Solanalib.Specs.Core.CpiRequest.Request"
+      ],
+      "models": ["pinocchio::cpi::invoke_signed_unchecked"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::entrypoint::deserialize": {
+      "order": 379,
+      "source_id": "entry-deserialize::pinocchio-0.9.2::src/entrypoint/mod.rs",
+      "line": 304,
+      "anchor_text": "pub unsafe fn deserialize<const MAX_ACCOUNTS: usize>(",
+      "scope": "@text:2769f0212b4ff4fa",
+      "binding_obligations": [
+        "@binding:62c0aeb6d3e245ae",
+        "@binding:5e5a0ed2ab440ed4",
+        "@binding:a91a3edc32684bd0",
+        "@binding:1f54d6f6175ab591",
+        "@binding:c0681db98b1e8d03",
+        "@binding:b71285ec55ef5888",
+        "@binding:34c704f8b299f2ae"
+      ],
+      "rust_names": ["pinocchio::entrypoint::deserialize"],
+      "clients": [
+        "SolanalibTest.Specs.Core.EntryDeserialize.pin_retains_suffix",
+        "SolanalibTest.Specs.Core.EntryDeserialize.pin_skips_to_instruction",
+        "SolanalibTest.Specs.Core.EntryDeserialize.pin_nonzero_flags",
+        "SolanalibTest.Specs.Core.EntryDeserialize.pin_zero_capacity_rejected",
+        "SolanalibTest.Specs.Core.EntryDeserialize.pin_account_bridge_aliases",
+        "SolanalibTest.Specs.Core.EntryDeserialize.pin_account_bridge_data",
+        "SolanalibTest.Specs.Core.EntryDeserialize.pin_signed_delta_preserved"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.EntryDeserialize.parse",
+        "Solanalib.Specs.Core.EntryDeserialize.Pinocchio.execute",
+        "Solanalib.Specs.Core.EntryDeserialize.PinocchioAccounts.install"
+      ],
+      "bindings": {"sdk-592f1ed6c0badbb504c0": "pinocchio::entrypoint::deserialize"},
+      "models": ["pinocchio::entrypoint::deserialize"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::AccountInfo::is_owned_by": {
+      "order": 382,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 192,
+      "anchor_text": "pub fn is_owned_by(&self, program: &Pubkey) -> bool {",
+      "scope": "@text:bcf5b4d0c4bab23f",
+      "rust_names": ["pinocchio::account_info::AccountInfo::is_owned_by"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Accounts.owner_compares_current_field"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.State"],
+      "models": ["pinocchio::account_info::AccountInfo::is_owned_by"]
+    },
+    "pinocchio@0.9.2::AccountInfo::key": {
+      "order": 383,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 130,
+      "anchor_text": "pub fn key(&self) -> &Pubkey {",
+      "scope": "@text:ff48c868c869347a",
+      "rust_names": ["pinocchio::account_info::AccountInfo::key"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Accounts.field_references_retain_alias"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.State"],
+      "models": ["pinocchio::account_info::AccountInfo::key"]
+    },
+    "pinocchio@0.9.2::AccountInfo::owner": {
+      "order": 384,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 136,
+      "anchor_text": "pub fn owner(&self) -> &Pubkey {",
+      "scope": "@text:d7a238d83157b7ee",
+      "rust_names": ["pinocchio::account_info::AccountInfo::owner"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Accounts.field_references_retain_alias"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.State"],
+      "models": ["pinocchio::account_info::AccountInfo::owner"]
+    },
+    "pinocchio@0.9.2::AccountInfo::try_borrow_mut_data": {
+      "order": 385,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 390,
+      "anchor_text": "pub fn try_borrow_mut_data(&self) -> Result<RefMut<[u8]>, ProgramError> {",
+      "scope": "@text:6aabe4dc32967c4a",
+      "rust_names": ["pinocchio::account_info::AccountInfo::try_borrow_mut_data"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Accounts.data_exclusive_updates_only_low_nibble"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.borrowContract"],
+      "models": ["pinocchio::account_info::AccountInfo::try_borrow_mut_data"]
+    },
+    "pinocchio@0.9.2::AccountInfo::data_len": {
+      "order": 386,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 162,
+      "anchor_text": "pub fn data_len(&self) -> usize {",
+      "scope": "@text:c9aea21519e59e25",
+      "rust_names": ["pinocchio::account_info::AccountInfo::data_len"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Accounts.scalar_getters_ignore_exclusive_data_lease"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.State"],
+      "models": ["pinocchio::account_info::AccountInfo::data_len"]
+    },
+    "pinocchio@0.9.2::AccountInfo::is_signer": {
+      "order": 387,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 142,
+      "anchor_text": "pub fn is_signer(&self) -> bool {",
+      "scope": "@text:17795ab19d43fa05",
+      "rust_names": ["pinocchio::account_info::AccountInfo::is_signer"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Accounts.noncanonical_true_flags"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.State"],
+      "models": ["pinocchio::account_info::AccountInfo::is_signer"]
+    },
+    "pinocchio@0.9.2::AccountInfo::is_writable": {
+      "order": 388,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 148,
+      "anchor_text": "pub fn is_writable(&self) -> bool {",
+      "scope": "@text:31d3d96e08e3c527",
+      "rust_names": ["pinocchio::account_info::AccountInfo::is_writable"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Accounts.noncanonical_true_flags"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.State"],
+      "models": ["pinocchio::account_info::AccountInfo::is_writable"]
+    },
+    "pinocchio@0.9.2::RefMut::map": {
+      "order": 390,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 763,
+      "anchor_text": "pub fn map<U: ?Sized, F>(orig: RefMut<'a, T>, f: F) -> RefMut<'a, U>",
+      "scope": "@text:29a9712a115b4376",
+      "binding_obligations": ["@binding:04b7c89022dbabb7", "@binding:ba004bf07d76abfb", "@binding:bed8d41f4f7e6beb"],
+      "rust_names": ["pinocchio::account_info::RefMut::<'a, T>::map"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Guards.map_success_keeps_lease"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.mapFamily"],
+      "models": ["pinocchio::account_info::RefMut::map"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::pubkey_eq": {
+      "order": 391,
+      "source_id": "pinocchio@0.9.2::src/pubkey.rs",
+      "line": 44,
+      "anchor_text": "pub const fn pubkey_eq(p1: &Pubkey, p2: &Pubkey) -> bool {",
+      "scope": "@text:332310e6693b0856",
+      "binding_obligations": ["@binding:04b7c89022dbabb7"],
+      "rust_names": ["pinocchio::pubkey::pubkey_eq"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Values.pubkeys_compare_all_bytes"],
+      "model_dependencies": ["Solanalib.Specs.Core.Address.equal"],
+      "models": ["pinocchio::pubkey::pubkey_eq"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::AccountInfo::resize": {
+      "order": 392,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 498,
+      "anchor_text": "pub fn resize(&self, new_len: usize) -> Result<(), ProgramError> {",
+      "scope": "@text:af7de720cbb2a1a7",
+      "binding_obligations": ["@binding:8f761522110cd8cc"],
+      "rust_names": ["pinocchio::account_info::AccountInfo::resize"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Accounts.regrow_zeroes_retained_bytes"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.resizeFamily"],
+      "models": ["pinocchio::account_info::AccountInfo::resize"]
+    },
+    "pinocchio@0.9.2::Ref::deref": {
+      "order": 393,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 729,
+      "anchor_text": "fn deref(&self) -> &Self::Target {",
+      "scope": "@text:43cceabfa3d282d4",
+      "binding_obligations": ["@binding:04b7c89022dbabb7", "@binding:ba004bf07d76abfb"],
+      "rust_names": ["<pinocchio::account_info::Ref<'_, T> as core::ops::deref::Deref>::deref"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Guards.deref_mut_retains_current_reference"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.derefFamily"],
+      "models": ["pinocchio::account_info::Ref::deref"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::AccountMeta::readonly": {
+      "order": 395,
+      "source_id": "pinocchio@0.9.2::src/instruction.rs",
+      "line": 154,
+      "anchor_text": "pub const fn readonly(pubkey: &'a Pubkey) -> Self {",
+      "scope": "@text:6ebf0ff6d87f03c8",
+      "binding_obligations": ["@binding:04b7c89022dbabb7", "@binding:731a6fe39089b8a7"],
+      "rust_names": ["pinocchio::instruction::AccountMeta::<'a>::readonly"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Values.constructors_retain_reference_and_privileges"],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.Borrowed.metaFamily"],
+      "models": ["pinocchio::instruction::AccountMeta::readonly"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::AccountInfo::lamports": {
+      "order": 396,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 178,
+      "anchor_text": "pub fn lamports(&self) -> u64 {",
+      "scope": "@text:d76a8580a4946c26",
+      "rust_names": ["pinocchio::account_info::AccountInfo::lamports"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Accounts.scalar_getters_ignore_exclusive_data_lease"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.State"],
+      "models": ["pinocchio::account_info::AccountInfo::lamports"]
+    },
+    "pinocchio@0.9.2::AccountMeta::readonly_signer": {
+      "order": 397,
+      "source_id": "pinocchio@0.9.2::src/instruction.rs",
+      "line": 166,
+      "anchor_text": "pub const fn readonly_signer(pubkey: &'a Pubkey) -> Self {",
+      "scope": "@text:6ebf0ff6d87f03c8",
+      "binding_obligations": ["@binding:04b7c89022dbabb7", "@binding:731a6fe39089b8a7"],
+      "rust_names": ["pinocchio::instruction::AccountMeta::<'a>::readonly_signer"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Values.constructors_retain_reference_and_privileges"],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.Borrowed.metaFamily"],
+      "models": ["pinocchio::instruction::AccountMeta::readonly_signer"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::Clock::get": {
+      "order": 398,
+      "source_id": "pinocchio@0.9.2::src/sysvars/clock.rs",
+      "line": 78,
+      "anchor_text": "impl_sysvar_get!(sol_get_clock_sysvar);",
+      "scope": "@text:cb8510580bbda8cc",
+      "binding_obligations": ["@binding:04b7c89022dbabb7", "@binding:00e2ec0455cb764c"],
+      "rust_names": ["<pinocchio::sysvars::clock::Clock as pinocchio::sysvars::Sysvar>::get"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Values.clock_all_nonzero_statuses_are_unsupported"],
+      "model_dependencies": ["Solanalib.Specs.Core.Sysvar.getterFamily"],
+      "models": ["pinocchio::sysvars::clock::Clock::get_dedicated"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::AccountMeta::writable_signer": {
+      "order": 399,
+      "source_id": "pinocchio@0.9.2::src/instruction.rs",
+      "line": 172,
+      "anchor_text": "pub const fn writable_signer(pubkey: &'a Pubkey) -> Self {",
+      "scope": "@text:6ebf0ff6d87f03c8",
+      "binding_obligations": ["@binding:04b7c89022dbabb7", "@binding:731a6fe39089b8a7"],
+      "rust_names": ["pinocchio::instruction::AccountMeta::<'a>::writable_signer"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Values.constructors_retain_reference_and_privileges"],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.Borrowed.metaFamily"],
+      "models": ["pinocchio::instruction::AccountMeta::writable_signer"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::AccountInfo::try_borrow_mut_lamports": {
+      "order": 400,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 291,
+      "anchor_text": "pub fn try_borrow_mut_lamports(&self) -> Result<RefMut<u64>, ProgramError> {",
+      "scope": "@text:c92dd614e7e4049b",
+      "rust_names": ["pinocchio::account_info::AccountInfo::try_borrow_mut_lamports"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Accounts.field_leases_are_independent"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.borrowContract"],
+      "models": ["pinocchio::account_info::AccountInfo::try_borrow_mut_lamports"]
+    },
+    "pinocchio@0.9.2::RefMut::deref": {
+      "order": 401,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 820,
+      "anchor_text": "fn deref(&self) -> &Self::Target {",
+      "scope": "@text:43cceabfa3d282d4",
+      "binding_obligations": ["@binding:04b7c89022dbabb7", "@binding:ba004bf07d76abfb"],
+      "rust_names": ["<pinocchio::account_info::RefMut<'_, T> as core::ops::deref::Deref>::deref"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Guards.deref_mut_retains_current_reference"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.derefFamily"],
+      "models": ["pinocchio::account_info::RefMut::deref"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::RefMut::deref_mut": {
+      "order": 402,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 825,
+      "anchor_text": "fn deref_mut(&mut self) -> &mut <Self as core::ops::Deref>::Target {",
+      "scope": "@text:43cceabfa3d282d4",
+      "binding_obligations": ["@binding:04b7c89022dbabb7", "@binding:ba004bf07d76abfb"],
+      "rust_names": ["<pinocchio::account_info::RefMut<'_, T> as core::ops::deref::DerefMut>::deref_mut"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Guards.deref_mut_retains_current_reference"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.derefFamily"],
+      "models": ["pinocchio::account_info::RefMut::deref_mut"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::Seed::from_array": {
+      "order": 403,
+      "source_id": "pinocchio@0.9.2::src/instruction.rs",
+      "line": 215,
+      "anchor_text": "fn from(value: &'a [u8; SIZE]) -> Self {",
+      "scope": "@text:9ea639d91d304aae",
+      "binding_obligations": ["@binding:04b7c89022dbabb7", "@binding:e446da9f7dfd35d4"],
+      "rust_names": ["<pinocchio::instruction::Seed<'a> as core::convert::From<&'a [u8; SIZE]>>::from"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Values.seed_constructor_has_no_pda_length_check"],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.Borrowed.seedArrayFamily"],
+      "models": ["pinocchio::instruction::Seed::from_array"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::AccountMeta::writable": {
+      "order": 404,
+      "source_id": "pinocchio@0.9.2::src/instruction.rs",
+      "line": 160,
+      "anchor_text": "pub const fn writable(pubkey: &'a Pubkey) -> Self {",
+      "scope": "@text:6ebf0ff6d87f03c8",
+      "binding_obligations": ["@binding:04b7c89022dbabb7", "@binding:731a6fe39089b8a7"],
+      "rust_names": ["pinocchio::instruction::AccountMeta::<'a>::writable"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Values.constructors_retain_reference_and_privileges"],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.Borrowed.metaFamily"],
+      "models": ["pinocchio::instruction::AccountMeta::writable"],
+      "binding_defaults": false
+    },
+    "pinocchio@0.9.2::AccountInfo::try_borrow_data": {
+      "order": 405,
+      "source_id": "pinocchio@0.9.2::src/account_info.rs",
+      "line": 366,
+      "anchor_text": "pub fn try_borrow_data(&self) -> Result<Ref<[u8]>, ProgramError> {",
+      "scope": "@text:298607efa07126c5",
+      "rust_names": ["pinocchio::account_info::AccountInfo::try_borrow_data"],
+      "clients": ["SolanalibTest.Specs.Pinocchio.Accounts.exactly_seven_shared_data_leases"],
+      "model_dependencies": ["Solanalib.Specs.Core.PinocchioAccount.borrowContract"],
+      "models": ["pinocchio::account_info::AccountInfo::try_borrow_data"]
+    },
+    "pinocchio@0.9.2::syscalls::sol_get_clock_sysvar": {
+      "order": 408,
+      "source_id": "raw-runtime::pinocchio-0.9.2::src/syscalls.rs",
+      "line": 52,
+      "anchor_text": "define_syscall!(fn sol_get_clock_sysvar(addr: *mut u8) -> u64);",
+      "models": ["pinocchio::syscalls::sol_get_clock_sysvar"],
+      "scope": "@text:b689c4aeeaf5739d",
+      "binding_obligations": "@shared:binding-obligations-df9d9e20a3218a68",
+      "rust_names": ["pinocchio::syscalls::sol_get_clock_sysvar"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.clock_bytes",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.typed_v0",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.typed_input_restricted"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.RawState.typedStep"],
+      "binding_defaults": false
+    }
+  },
+  "applicability_sources": {
+    "pinocchio": {
+      "order": 5,
+      "package": "pinocchio",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.0.0.crate",
+          "sha256": "548a990cdb81472e9dfebed40ad5ed6d4a6bc2c643bcc2bda14f394f8248fc98",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.1.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.1.0.crate",
+          "sha256": "799f082a41784b8d1b7f767ccd142b6f48d3c8338b98a6960bc46f3c4dd2c2e6",
+          "revision": "aa9b364cde8068328a88dff2d24874d8685cd665",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.2.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.2.0.crate",
+          "sha256": "087bd14844ee3f8d3b6bfd516c6ede3e76df018bb4879768978ba9648440b15b",
+          "revision": "7a3186480cad48adca1c4f4a929a2a02341a79f2",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.3.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.3.0.crate",
+          "sha256": "f372274e1ae77170154908d3e613d66d842b05f0efe07a867c704cbb92d58a7b",
+          "revision": "d450ef52ce9da4d4a1626f718b47bda134539480",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.4.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.4.0.crate",
+          "sha256": "4205e6f0d6f9155ece9e9cff154192a8e36c2c987ce3143f50b5fbea46e7d2fa",
+          "revision": "b2884ae1206766721ce183fdf08f8d33bdf599bc",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.5.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.5.0.crate",
+          "sha256": "3be4a14e72d9098d35310de70667d5af8d7fc249ab8e26c54725f955c2dbd074",
+          "revision": "1b0d83a66ad110265266bc048e5443ebe8a00591",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.6.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.6.0.crate",
+          "sha256": "c9f716de2190437efa787dd7414f4bcea88d22c2f81bbeecabb7db6d9cc326bd",
+          "revision": "e018eb3d102ee63d7e4a267548c4be1caa781ffe",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.7.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.7.0.crate",
+          "sha256": "2999d06e0c7b659daa8d41d56d906c26531e551d22e49c044339024d3e195ebc",
+          "revision": "7d87a42f82dc441205b294702cdab77608e13aa5",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.7.1": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.7.1.crate",
+          "sha256": "43a8a77bf74e1c4050a2bad53648acfcfbf22b1806473f9c9334a58ef3b38ec4",
+          "revision": "0800d5d46056b26592850e211e8b091d61face25",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.8.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.8.0.crate",
+          "sha256": "2281a8e9e947c480ce0b64e2d6c6349d72890ba5db6503d5568edf96f304cba9"
+        },
+        "0.8.1": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.8.1.crate",
+          "sha256": "530596fa307103e53257f2cf064815919ee7fbc4c7ab999f6f13cc7067c3aff1",
+          "revision": "14b35642c088760f36adf88ec600dd89c7211547",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.8.2": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.8.2.crate",
+          "sha256": "a9cc3d639f805724755597e62b79bf61f79162284a6f9d0475a59b52842567d1",
+          "revision": "515f7c43f87f89395968323f35667d88016c7787",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.8.3": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.8.3.crate",
+          "sha256": "81225b3b8ce092ac54e0d1c55a962be61efcad1d021030f0eb660875703db562",
+          "revision": "93e593593bbab9d2d7af8052522da0781dad55f1",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.8.4": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.8.4.crate",
+          "sha256": "7c33b58567c11b07749cefbb8320ac023f3387c57807aeb8e3b1262501b6e9f0",
+          "revision": "6b5ad2abefd59c8a93a4855ee4e163de106622d1",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.9.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.9.0.crate",
+          "sha256": "5123fe61ac87a327d434d530eaddaaf65069a37e33e5c9f798feaed29e4974c8",
+          "revision": "2ad5a54a1e4958e1561fd47592a20b60ba5286fa",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.9.1": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.9.1.crate",
+          "sha256": "0c3410a5d525f024b0aed7f8747e94e918c91ba64274a190e2365903e2c0b2e9",
+          "revision": "b9eb2d456a2e7730713316c72192df4a7157fae6",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.9.2": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate",
+          "sha256": "5b971851087bc3699b001954ad02389d50c41405ece3548cbcafc88b3e20017a",
+          "revision": "7ccb7ba4d02c410dc34000713c4803e6922a06da",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.9.3": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate",
+          "sha256": "b8afe4f39c0e25cc471b35b89963312791a5162d45a86578cbeaad9e5e7d1b3b",
+          "revision": "3a62aff863f1ad92debbacf88fbaf1a09a20db4f",
+          "path_prefix": "sdk/pinocchio/"
+        },
+        "0.10.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.10.0.crate",
+          "sha256": "068560965a8a71332740d7879b16c22aa6c630881830a211c2e4bd54bf8f9b1e",
+          "revision": "d842f80b9e00519be38e64cf4c477b8183447da3",
+          "path_prefix": "sdk/"
+        },
+        "0.10.1": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.10.1.crate",
+          "sha256": "dfad955b2fe8f736e1ea276ebb31820d778ee69c1161146054e9b31be2e73326",
+          "revision": "8b45b3c6bbb49d79073f6c507dc5e7818f64ad3f",
+          "path_prefix": "sdk/"
+        },
+        "0.10.2": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.10.2.crate",
+          "sha256": "c06810dac15a4ef83d3dabdb4f2f22fb39c9adff669cd2781da4f716510a647c",
+          "revision": "5697fdd59d201466a23d67d0bceb284c5e6d9e79",
+          "path_prefix": "sdk/"
+        },
+        "0.11.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.11.0.crate",
+          "sha256": "929a06c3417427ae957330805916db548a027ab2afda4226b20ba671a4d317fd",
+          "revision": "eb22a63704f49ba538eab2f3f7a701258dde9cca",
+          "path_prefix": "sdk/"
+        },
+        "0.11.1": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.11.1.crate",
+          "sha256": "d707cea2843c1a2fd8ec49e4116ce3fdaedcd552a3ee168b03ce60e627fc0f62",
+          "revision": "a2ba6529b58d201ce91be5d2bd937e56569ec17a",
+          "path_prefix": "sdk/"
+        },
+        "0.11.2": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.11.2.crate",
+          "sha256": "a6cababcb62a2e739c7078ae16eda02789a6e3edd21bbdded864e85c38a7914d"
+        },
+        "0.12.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate",
+          "sha256": "402c0799a02d9b979837f50cade9f758898813430873542b87a62aaa3d56022a",
+          "revision": "85c9d4b141322f2a1eea78c5690372f448991445",
+          "path_prefix": "sdk/"
+        }
+      },
+      "evidence": ["@text:e0c23326f1a5c243", "@text:44817aca1cc51fc8"]
+    }
+  },
+  "applicability": {
+    "pinocchio::sysvars::clock::Clock::get": {
+      "order": 92,
+      "profiles": [
+        {
+          "id": "pinocchio-reviewed",
+          "source": "pinocchio",
+          "conditions": ["@binding:7c831c1e0b4de3a2", "@text:1a95063a40b53b65", "@binding:bb8ed50904536916"],
+          "argument": "@review:source-notes/account-view.md#review-3c98a61c49583f7c",
+          "evidence": ["@text:9dff674e38b66f89", "@text:169e827d0d5046d9"],
+          "target": "@shared:target-dbc310dfb797bc15",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::Sysvar::get",
+              "implementation": "<pinocchio::sysvars::clock::Clock as pinocchio::sysvars::Sysvar>::get",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.11.0", "0.11.1", "0.11.2", "0.12.0"],
+              "compatible_ranges": "@shared:compatible-ranges-bb3e31bb854378c9"
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.11.0", "0.11.1", "0.11.2", "0.12.0"]
+        },
+        {
+          "id": "pinocchio-reviewed-2",
+          "source": "pinocchio",
+          "conditions": "@shared:conditions-755120f8c41b3bc3",
+          "argument": "@review:source-notes/account-view.md#review-3c98a61c49583f7c",
+          "evidence": ["@text:9dff674e38b66f89", "@text:169e827d0d5046d9"],
+          "target": "@shared:target-dbc310dfb797bc15",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::Sysvar::get",
+              "implementation": "<pinocchio::sysvars::clock::Clock as pinocchio::sysvars::Sysvar>::get",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.11.0", "0.11.1", "0.11.2", "0.12.0"],
+              "compatible_ranges": "@shared:compatible-ranges-bb3e31bb854378c9"
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.11.0", "0.11.1", "0.11.2", "0.12.0"]
+        }
+      ]
+    },
+    "pinocchio::sysvars::instructions::Instructions::Generic::load_current_index": {
+      "order": 93,
+      "profiles": [
+        {
+          "id": "pinocchio-reviewed",
+          "source": "pinocchio",
+          "conditions": ["@text:8eff6568e5f74b9b", "@text:980ca75be4596988"],
+          "argument": "@review:source-notes/account-view.md#review-a134057fa08f1e44",
+          "evidence": ["@text:4e197c4d07d34eab", "@text:169e827d0d5046d9"],
+          "target": "@shared:target-625da7effc141cdd",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::instructions::Instructions::<T>::load_current_index",
+              "implementation": "pinocchio::sysvars::instructions::Instructions::<T>::load_current_index",
+              "releases": "@shared:releases-489ddbdfcc9057c4",
+              "compatible_ranges": "@shared:compatible-ranges-8591709dd2a429e4"
+            }
+          ],
+          "releases": "@shared:releases-489ddbdfcc9057c4"
+        }
+      ]
+    },
+    "pinocchio::sysvars::instructions::Instructions::Generic::load_instruction_at": {
+      "order": 94,
+      "profiles": [
+        {
+          "id": "pinocchio-reviewed-native-table-word",
+          "source": "pinocchio",
+          "conditions": ["@text:f180ee200916028c", "@text:980ca75be4596988"],
+          "argument": "@review:source-notes/account-view.md#review-1f44b0bb1504f09d",
+          "evidence": ["@text:d76ee202dd9a5761", "@text:169e827d0d5046d9"],
+          "target": "@shared:target-26801efc3e55c39f",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::instructions::Instructions::<T>::load_instruction_at",
+              "implementation": "pinocchio::sysvars::instructions::Instructions::<T>::load_instruction_at",
+              "releases": "@shared:releases-10a35b3a98e707d7",
+              "compatible_ranges": [
+                {"lower": "0.9.0", "upper": "0.10.0"},
+                {"lower": "0.10.0", "upper": "0.11.0"},
+                {"lower": "0.11.0", "upper": "0.12.0"}
+              ]
+            }
+          ],
+          "releases": "@shared:releases-10a35b3a98e707d7"
+        },
+        {
+          "id": "pinocchio-reviewed-direct",
+          "source": "pinocchio",
+          "conditions": ["@text:f180ee200916028c", "@text:980ca75be4596988"],
+          "argument": "@review:source-notes/account-view.md#review-1f44b0bb1504f09d",
+          "evidence": ["@text:d76ee202dd9a5761", "@text:169e827d0d5046d9"],
+          "target": "@shared:target-625da7effc141cdd",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::instructions::Instructions::<T>::load_instruction_at",
+              "implementation": "pinocchio::sysvars::instructions::Instructions::<T>::load_instruction_at",
+              "releases": ["0.12.0"],
+              "compatible_ranges": [{"lower": "0.12.0", "upper": "0.13.0"}]
+            }
+          ],
+          "releases": ["0.12.0"]
+        }
+      ]
+    },
+    "pinocchio::sysvars::instructions::Instructions::load_current_index": {
+      "order": 95,
+      "profiles": [
+        {
+          "id": "pinocchio-reviewed",
+          "source": "pinocchio",
+          "conditions": ["@text:2ed23ccea65f8e0c", "@text:e05c2d8bbac66685"],
+          "argument": "@review:source-notes/account-view.md#review-3257e6e01c555e2e",
+          "evidence": ["@text:9dff674e38b66f89", "@text:169e827d0d5046d9"],
+          "target": "@shared:target-625da7effc141cdd",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::instructions::Instructions::<T>::load_current_index",
+              "implementation": "pinocchio::sysvars::instructions::Instructions::<T>::load_current_index",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.11.0", "0.11.1", "0.11.2", "0.12.0"],
+              "compatible_ranges": "@shared:compatible-ranges-bb3e31bb854378c9"
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.11.0", "0.11.1", "0.11.2", "0.12.0"]
+        }
+      ]
+    },
+    "pinocchio::sysvars::instructions::Instructions::load_instruction_at": {
+      "order": 96,
+      "profiles": [
+        {
+          "id": "pinocchio-reviewed-native-table-word",
+          "source": "pinocchio",
+          "conditions": ["@text:ccb87c6fdd4d897f", "@text:e05c2d8bbac66685"],
+          "argument": "@review:source-notes/account-view.md#review-aad46ea0db4adaec",
+          "evidence": ["@text:9dff674e38b66f89", "@text:169e827d0d5046d9"],
+          "target": "@shared:target-26801efc3e55c39f",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::instructions::Instructions::<T>::load_instruction_at",
+              "implementation": "pinocchio::sysvars::instructions::Instructions::<T>::load_instruction_at",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.11.0", "0.11.1", "0.11.2"],
+              "compatible_ranges": [{"lower": "0.10.0", "upper": "0.11.0"}, {"lower": "0.11.0", "upper": "0.12.0"}]
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.11.0", "0.11.1", "0.11.2"]
+        },
+        {
+          "id": "pinocchio-reviewed-direct",
+          "source": "pinocchio",
+          "conditions": ["@text:ccb87c6fdd4d897f", "@text:e05c2d8bbac66685"],
+          "argument": "@review:source-notes/account-view.md#review-aad46ea0db4adaec",
+          "evidence": ["@text:9dff674e38b66f89", "@text:169e827d0d5046d9"],
+          "target": "@shared:target-625da7effc141cdd",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::instructions::Instructions::<T>::load_instruction_at",
+              "implementation": "pinocchio::sysvars::instructions::Instructions::<T>::load_instruction_at",
+              "releases": ["0.12.0"],
+              "compatible_ranges": [{"lower": "0.12.0", "upper": "0.13.0"}]
+            }
+          ],
+          "releases": ["0.12.0"]
+        }
+      ]
+    },
+    "pinocchio::sysvars::instructions::Instructions::try_from": {
+      "order": 97,
+      "profiles": [
+        {
+          "id": "pinocchio-reviewed",
+          "source": "pinocchio",
+          "conditions": ["@text:bc4c919309d4bd77", "@text:aeea3869d81ea6b6"],
+          "argument": "@review:source-notes/account-view.md#review-e4e487739ba6ff62",
+          "evidence": ["@text:9dff674e38b66f89", "@text:169e827d0d5046d9"],
+          "target": "@shared:target-625da7effc141cdd",
+          "items": [
+            {
+              "item": "core::convert::TryFrom::try_from",
+              "implementation": "<pinocchio::sysvars::instructions::Instructions<solana_account_view::Ref<'a, [u8]>> as core::convert::TryFrom<&'a solana_account_view::AccountView>>::try_from",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.11.0", "0.11.1", "0.11.2", "0.12.0"],
+              "compatible_ranges": "@shared:compatible-ranges-bb3e31bb854378c9"
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.11.0", "0.11.1", "0.11.2", "0.12.0"]
+        }
+      ]
+    },
+    "pinocchio::sysvars::instructions::IntrospectedInstruction::Generic::get_instruction_data": {
+      "order": 98,
+      "profiles": [
+        {
+          "id": "pinocchio-reviewed",
+          "source": "pinocchio",
+          "conditions": ["@text:ef2fea0019f3576b", "@text:980ca75be4596988"],
+          "argument": "@review:source-notes/account-view.md#review-6e4a5c83a23c0e27",
+          "evidence": ["@text:4e197c4d07d34eab", "@text:169e827d0d5046d9"],
+          "target": "@shared:target-625da7effc141cdd",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::instructions::IntrospectedInstruction::<'_>::get_instruction_data",
+              "implementation": "pinocchio::sysvars::instructions::IntrospectedInstruction::<'_>::get_instruction_data",
+              "releases": "@shared:releases-489ddbdfcc9057c4",
+              "compatible_ranges": "@shared:compatible-ranges-8591709dd2a429e4"
+            }
+          ],
+          "releases": "@shared:releases-489ddbdfcc9057c4"
+        }
+      ]
+    },
+    "pinocchio::sysvars::instructions::IntrospectedInstruction::Generic::get_program_id": {
+      "order": 99,
+      "profiles": [
+        {
+          "id": "pinocchio-reviewed",
+          "source": "pinocchio",
+          "conditions": ["@text:ddd5da25362cc488", "@text:980ca75be4596988"],
+          "argument": "@review:source-notes/account-view.md#review-06e60640236818df",
+          "evidence": ["@text:4e197c4d07d34eab", "@text:169e827d0d5046d9"],
+          "target": "@shared:target-625da7effc141cdd",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::instructions::IntrospectedInstruction::<'_>::get_program_id",
+              "implementation": "pinocchio::sysvars::instructions::IntrospectedInstruction::<'_>::get_program_id",
+              "releases": "@shared:releases-489ddbdfcc9057c4",
+              "compatible_ranges": "@shared:compatible-ranges-8591709dd2a429e4"
+            }
+          ],
+          "releases": "@shared:releases-489ddbdfcc9057c4"
+        }
+      ]
+    },
+    "pinocchio::sysvars::instructions::IntrospectedInstruction::get_instruction_data": {
+      "order": 100,
+      "profiles": [
+        {
+          "id": "pinocchio-reviewed",
+          "source": "pinocchio",
+          "conditions": ["@text:a9fcced455f6584f", "@text:e05c2d8bbac66685"],
+          "argument": "@review:source-notes/account-view.md#review-7a9a26b21ad22bf5",
+          "evidence": ["@text:9dff674e38b66f89", "@text:169e827d0d5046d9"],
+          "target": "@shared:target-625da7effc141cdd",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::instructions::IntrospectedInstruction::<'_>::get_instruction_data",
+              "implementation": "pinocchio::sysvars::instructions::IntrospectedInstruction::<'_>::get_instruction_data",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.11.0", "0.11.1", "0.11.2", "0.12.0"],
+              "compatible_ranges": "@shared:compatible-ranges-bb3e31bb854378c9"
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.11.0", "0.11.1", "0.11.2", "0.12.0"]
+        }
+      ]
+    },
+    "pinocchio::sysvars::instructions::IntrospectedInstruction::get_program_id": {
+      "order": 101,
+      "profiles": [
+        {
+          "id": "pinocchio-reviewed",
+          "source": "pinocchio",
+          "conditions": ["@text:893d2a6d8cb47a60", "@text:e05c2d8bbac66685"],
+          "argument": "@review:source-notes/account-view.md#review-616784e36ca090e8",
+          "evidence": ["@text:9dff674e38b66f89", "@text:169e827d0d5046d9"],
+          "target": "@shared:target-625da7effc141cdd",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::instructions::IntrospectedInstruction::<'_>::get_program_id",
+              "implementation": "pinocchio::sysvars::instructions::IntrospectedInstruction::<'_>::get_program_id",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.11.0", "0.11.1", "0.11.2", "0.12.0"],
+              "compatible_ranges": "@shared:compatible-ranges-bb3e31bb854378c9"
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.11.0", "0.11.1", "0.11.2", "0.12.0"]
+        }
+      ]
+    },
+    "pinocchio::sysvars::rent::Rent::fixed_rate::from_account_view": {
+      "order": 102,
+      "profiles": [
+        {
+          "id": "pinocchio-reviewed",
+          "source": "pinocchio",
+          "conditions": ["@text:952ec744d11626c5"],
+          "argument": "@review:source-notes/account-view.md#review-762bb8549e987fd9",
+          "evidence": ["@text:c12409ae3c4f320f", "@text:169e827d0d5046d9"],
+          "target": [{"field": "endian", "reason": "@text:fc47413df47e8da3", "include": ["little"]}],
+          "items": [
+            {
+              "item": "pinocchio::sysvars::rent::Rent::from_account_view",
+              "implementation": "pinocchio::sysvars::rent::Rent::from_account_view",
+              "releases": ["0.11.0", "0.11.1", "0.11.2", "0.12.0"],
+              "compatible_ranges": "@shared:compatible-ranges-89b4c8e6f9a385c5"
+            }
+          ],
+          "releases": ["0.11.0", "0.11.1", "0.11.2", "0.12.0"]
+        }
+      ]
+    },
+    "pinocchio::sysvars::rent::Rent::fixed_rate::try_minimum_balance": {
+      "order": 103,
+      "profiles": [
+        {
+          "id": "pinocchio-reviewed",
+          "source": "pinocchio",
+          "conditions": ["@text:064e679ab56c138c"],
+          "argument": "@review:source-notes/account-view.md#review-902a6f042689d6a3",
+          "evidence": ["@text:c12409ae3c4f320f", "@text:169e827d0d5046d9"],
+          "target": "@shared:target-866597277afb2480",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::rent::Rent::try_minimum_balance",
+              "implementation": "pinocchio::sysvars::rent::Rent::try_minimum_balance",
+              "releases": ["0.11.0", "0.11.1", "0.11.2", "0.12.0"],
+              "compatible_ranges": "@shared:compatible-ranges-89b4c8e6f9a385c5"
+            }
+          ],
+          "releases": ["0.11.0", "0.11.1", "0.11.2", "0.12.0"]
+        }
+      ]
+    },
+    "pinocchio::sysvars::rent::Rent::threshold_rate::get": {
+      "order": 104,
+      "profiles": [
+        {
+          "id": "pinocchio-reviewed",
+          "source": "pinocchio",
+          "conditions": "@shared:conditions-755120f8c41b3bc3",
+          "argument": "@review:source-notes/account-view.md#review-438a2d59c2661008",
+          "evidence": ["@text:9dff674e38b66f89", "@text:8553305e6275a000"],
+          "target": "@shared:target-dbc310dfb797bc15",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::Sysvar::get",
+              "implementation": "<pinocchio::sysvars::rent::Rent as pinocchio::sysvars::Sysvar>::get",
+              "releases": ["0.10.0", "0.10.1", "0.10.2"],
+              "compatible_ranges": [{"lower": "0.10.0", "upper": "0.11.0"}]
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2"]
+        }
+      ]
+    },
+    "pinocchio::sysvars::rent::Rent::threshold_rate::try_minimum_balance": {
+      "order": 105,
+      "profiles": [
+        {
+          "id": "pinocchio-reviewed",
+          "source": "pinocchio",
+          "conditions": ["@binding:28e35fd0e9f93d35"],
+          "argument": "@review:source-notes/account-view.md#review-74b7f91684683138",
+          "evidence": ["@text:9dff674e38b66f89", "@text:8553305e6275a000"],
+          "target": "@shared:target-866597277afb2480",
+          "items": [
+            {
+              "item": "pinocchio::sysvars::rent::Rent::try_minimum_balance",
+              "implementation": "pinocchio::sysvars::rent::Rent::try_minimum_balance",
+              "releases": ["0.10.0", "0.10.1", "0.10.2"],
+              "compatible_ranges": [{"lower": "0.10.0", "upper": "0.11.0"}]
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2"]
+        }
+      ]
+    },
+    "pinocchio::syscalls::sol_invoke_signed_c": {
+      "order": 368,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-ab7578be4036ce92",
+          "conditions": "@shared:conditions-ca98373b1903b699",
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "raw-cpi-c-pinocchio-0.9.2",
+          "items": [
+            {
+              "implementation": "pinocchio::syscalls::sol_invoke_signed_c",
+              "item": "pinocchio::syscalls::sol_invoke_signed_c",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio",
+          "target": "@shared:target-406ed975e9921226",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:12e6443bfc10e6ea"}
+        }
+      ]
+    },
+    "pinocchio::cpi::invoke_signed_unchecked": {
+      "order": 369,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-fcc5cc2136c4cefc",
+          "conditions": [
+            "@binding:f2e36a141d24d78c",
+            "@binding:60f74de8272cb6ae",
+            "@binding:9535b5cea863a10d",
+            "@binding:037a85cf2ef8669f",
+            "@binding:976de49ba44eab42"
+          ],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-unchecked-cpi",
+          "items": [
+            {
+              "implementation": "pinocchio::cpi::invoke_signed_unchecked",
+              "item": "pinocchio::cpi::invoke_signed_unchecked",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio",
+          "target": "@shared:target-406ed975e9921226",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:12e6443bfc10e6ea"}
+        }
+      ]
+    },
+    "pinocchio::entrypoint::deserialize": {
+      "order": 371,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-45a01c82308f9e86",
+          "conditions": [
+            "@binding:62c0aeb6d3e245ae",
+            "@binding:5e5a0ed2ab440ed4",
+            "@binding:a91a3edc32684bd0",
+            "@binding:1f54d6f6175ab591",
+            "@binding:c0681db98b1e8d03",
+            "@binding:b71285ec55ef5888",
+            "@binding:34c704f8b299f2ae"
+          ],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "entry-deserialize-0-9-2",
+          "items": [
+            {
+              "implementation": "pinocchio::entrypoint::deserialize",
+              "item": "pinocchio::entrypoint::deserialize",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::account_info::AccountInfo::is_owned_by": {
+      "order": 374,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-daf7e2b39ee287cc",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:2bcee7d9be9f2c81"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::account_info::AccountInfo::is_owned_by",
+              "item": "pinocchio::account_info::AccountInfo::is_owned_by",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::account_info::AccountInfo::key": {
+      "order": 375,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-178375f03fc67017",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:2bcee7d9be9f2c81"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::account_info::AccountInfo::key",
+              "item": "pinocchio::account_info::AccountInfo::key",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::account_info::AccountInfo::owner": {
+      "order": 376,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-670948c2b2b2777a",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:2bcee7d9be9f2c81"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::account_info::AccountInfo::owner",
+              "item": "pinocchio::account_info::AccountInfo::owner",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::account_info::AccountInfo::try_borrow_mut_data": {
+      "order": 377,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-c4c4f27629c6d0a3",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:2bcee7d9be9f2c81"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::account_info::AccountInfo::try_borrow_mut_data",
+              "item": "pinocchio::account_info::AccountInfo::try_borrow_mut_data",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::account_info::AccountInfo::data_len": {
+      "order": 378,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-23fef928de538aa2",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:2bcee7d9be9f2c81"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::account_info::AccountInfo::data_len",
+              "item": "pinocchio::account_info::AccountInfo::data_len",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::account_info::AccountInfo::is_signer": {
+      "order": 379,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-d253920ba73686b9",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:2bcee7d9be9f2c81"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::account_info::AccountInfo::is_signer",
+              "item": "pinocchio::account_info::AccountInfo::is_signer",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::account_info::AccountInfo::is_writable": {
+      "order": 380,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-66f44f2d3e75bf46",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:2bcee7d9be9f2c81"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::account_info::AccountInfo::is_writable",
+              "item": "pinocchio::account_info::AccountInfo::is_writable",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::account_info::RefMut::map": {
+      "order": 382,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-8b5d808ee9da660b",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:ba004bf07d76abfb", "@binding:bed8d41f4f7e6beb"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::account_info::RefMut::<'a, T>::map",
+              "item": "pinocchio::account_info::RefMut::<'a, T>::map",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::pubkey::pubkey_eq": {
+      "order": 383,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-3ff239bf818f0c4c",
+          "conditions": ["@binding:04b7c89022dbabb7"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::pubkey::pubkey_eq",
+              "item": "pinocchio::pubkey::pubkey_eq",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::account_info::AccountInfo::resize": {
+      "order": 384,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-2cc7975a33c4a679",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:2bcee7d9be9f2c81", "@binding:8f761522110cd8cc"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::account_info::AccountInfo::resize",
+              "item": "pinocchio::account_info::AccountInfo::resize",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio",
+          "target": "@shared:target-4b53925a5ff2bc7b"
+        }
+      ]
+    },
+    "pinocchio::account_info::Ref::deref": {
+      "order": 385,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-3851381e73d2a0d5",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:ba004bf07d76abfb"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "<pinocchio::account_info::Ref<'_, T> as core::ops::deref::Deref>::deref",
+              "item": "core::ops::deref::Deref::deref",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::instruction::AccountMeta::readonly": {
+      "order": 387,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-24b48bbf363dda04",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:731a6fe39089b8a7"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::instruction::AccountMeta::<'a>::readonly",
+              "item": "pinocchio::instruction::AccountMeta::<'a>::readonly",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::account_info::AccountInfo::lamports": {
+      "order": 388,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-82ec53fb1ba939bd",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:2bcee7d9be9f2c81"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::account_info::AccountInfo::lamports",
+              "item": "pinocchio::account_info::AccountInfo::lamports",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::instruction::AccountMeta::readonly_signer": {
+      "order": 389,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-2e2387f520be72c0",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:731a6fe39089b8a7"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::instruction::AccountMeta::<'a>::readonly_signer",
+              "item": "pinocchio::instruction::AccountMeta::<'a>::readonly_signer",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::sysvars::clock::Clock::get_dedicated": {
+      "order": 390,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-8785a04e907cea70",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:00e2ec0455cb764c"],
+          "evidence": ["@text:0615748e52d59384"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "<pinocchio::sysvars::clock::Clock as pinocchio::sysvars::Sysvar>::get",
+              "item": "pinocchio::sysvars::Sysvar::get",
+              "releases": ["0.9.2"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.9.3"}]
+            }
+          ],
+          "releases": ["0.9.2"],
+          "source": "pinocchio",
+          "target": "@shared:target-4b53925a5ff2bc7b"
+        }
+      ]
+    },
+    "pinocchio::instruction::AccountMeta::writable_signer": {
+      "order": 391,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-b34c131b2e9933ae",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:731a6fe39089b8a7"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::instruction::AccountMeta::<'a>::writable_signer",
+              "item": "pinocchio::instruction::AccountMeta::<'a>::writable_signer",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::account_info::AccountInfo::try_borrow_mut_lamports": {
+      "order": 392,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-de5e6288fbce3e5a",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:2bcee7d9be9f2c81"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::account_info::AccountInfo::try_borrow_mut_lamports",
+              "item": "pinocchio::account_info::AccountInfo::try_borrow_mut_lamports",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::account_info::RefMut::deref": {
+      "order": 393,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-3851381e73d2a0d5",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:ba004bf07d76abfb"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "<pinocchio::account_info::RefMut<'_, T> as core::ops::deref::Deref>::deref",
+              "item": "core::ops::deref::Deref::deref",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::account_info::RefMut::deref_mut": {
+      "order": 394,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-3851381e73d2a0d5",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:ba004bf07d76abfb"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "<pinocchio::account_info::RefMut<'_, T> as core::ops::deref::DerefMut>::deref_mut",
+              "item": "core::ops::deref::DerefMut::deref_mut",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::instruction::Seed::from_array": {
+      "order": 395,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-6b5f5d86efba144c",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:e446da9f7dfd35d4"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "<pinocchio::instruction::Seed<'a> as core::convert::From<&'a [u8; SIZE]>>::from",
+              "item": "core::convert::From::from",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::instruction::AccountMeta::writable": {
+      "order": 396,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-e209576a36e3038c",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:731a6fe39089b8a7"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::instruction::AccountMeta::<'a>::writable",
+              "item": "pinocchio::instruction::AccountMeta::<'a>::writable",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::account_info::AccountInfo::try_borrow_data": {
+      "order": 397,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-74b315976835f0b1",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:2bcee7d9be9f2c81"],
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f"],
+          "id": "pinocchio-0.9.2-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio::account_info::AccountInfo::try_borrow_data",
+              "item": "pinocchio::account_info::AccountInfo::try_borrow_data",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio"
+        }
+      ]
+    },
+    "pinocchio::syscalls::sol_get_clock_sysvar": {
+      "order": 422,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/account-view.md#review-ab7578be4036ce92",
+          "conditions": "@shared:conditions-40336273679407c7",
+          "evidence": ["@text:0615748e52d59384", "@text:dcea987be921842f", "@text:d8e797cfeb7a4e4d"],
+          "id": "raw-runtime-pinocchio-0.9.2",
+          "items": [
+            {
+              "implementation": "pinocchio::syscalls::sol_get_clock_sysvar",
+              "item": "pinocchio::syscalls::sol_get_clock_sysvar",
+              "releases": ["0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.2", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.2", "0.9.3"],
+          "source": "pinocchio",
+          "target": "@shared:target-5c93e1e0ee812b52",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:04b7c89022dbabb7", "@binding:2bcee7d9be9f2c81"]
+}

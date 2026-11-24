@@ -1,10 +1,10 @@
 # Error conversions and nullable Address values
 
-The [library registry](../source-map/libraries.json) records reference bindings for the two
+The [library registry](../source-map.json) records reference bindings for the two
 `solana-program-error 3.0.1` conversions and `solana-nullable 1.3.0::MaybeNull::get`.
 Each registration seals its immutable source, exact callable identity, closed
 mathematical witnesses and individually reviewed
-[release profiles](../source-map/applicability.json).
+[release profiles](../source-map.json).
 The declared compatible ranges assume preservation of the complete operations
 and their reached dependencies. The exact native lockfiles remain reproducible
 test references; they do not restrict callers to those dependency versions.
@@ -78,3 +78,25 @@ retain reviewed releases and reject missing or ambiguous Address providers.
 The [native family](../../../tools/library-conformance/SolanalibTest/Conformance/Library/Families/ErrorNullable.lean)
 replays the pinned error conversions and Address instance through the existing
 conformance runner; it does not execute arbitrary user callbacks.
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:cec27149e4a34a8d -->
+<a id="review-cec27149e4a34a8d"></a>
+
+This source module instantiates the shared SDK value family and closed witnesses at the exact source identities registered here. Imports do not add whole-crate coverage.
+<!-- /registry -->
+
+<!-- registry:review:ea5c88d7736c030b -->
+<a id="review-ea5c88d7736c030b"></a>
+
+Reference 1.3.0 calls the actual Nullable::is_none, including overrides, then moves a non-null value or drops the null owner before returning None. Query unwind cleans the retained owner in the reached state; a second unwind is terminal. A terminal query performs no later drop. The declared compatible range assumes preservation of this callback order, ownership transfer, cleanup and exceptional behavior.
+<!-- /registry -->
+
+<!-- registry:review:c9aa45c98a3949bf -->
+<a id="review-c9aa45c98a3949bf"></a>
+
+The reference Address Nullable implementation uses the all-zero NONE value and default borrowed equality query. Address and its NONE temporary have trivial drop, so this concrete index has no callback, cleanup or terminal effects. The declared compatible ranges assume preservation of the transparent 32-byte payload, equality, sentinel and trivial cleanup; other payloads retain the generic callback family. Exact native calls and emitted type layouts are recorded in source-notes/error-nullable.md.
+<!-- /registry -->

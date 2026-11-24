@@ -1,0 +1,18 @@
+{
+  "packages": {
+    "solana-clock-2.2.2": {
+      "order": 67,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "3782755a3f165672f7263c38240b66425de69132",
+      "path_prefix": "clock/"
+    }
+  },
+  "interfaces": {
+    "sdk-utilities::solana-clock-2.2.2::src/lib.rs": {
+      "order": 198,
+      "crate": "solana-clock-2.2.2",
+      "path": "src/lib.rs",
+      "sha256": "80e6c838c3ab92669bcb2000264a8a6d8f5b478df64f012cfe5a0d622c5bfd6a"
+    }
+  }
+}

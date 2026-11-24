@@ -1,0 +1,66 @@
+{
+  "packages": {
+    "anchor-syn-1.0.2": {
+      "order": 15,
+      "repository": "https://github.com/solana-foundation/anchor",
+      "revision": "1314a6b83b16e6a31947b372d57988fd0e81559c",
+      "path_prefix": "lang/syn/"
+    },
+    "anchor-syn-0.27.0": {
+      "order": 121,
+      "repository": "https://github.com/coral-xyz/anchor",
+      "revision": "bb2d72c927816971aeb20cf06e01faab2ef4dc45",
+      "path_prefix": "lang/syn/"
+    },
+    "anchor-syn-0.29.0": {
+      "order": 122,
+      "repository": "https://github.com/coral-xyz/anchor",
+      "revision": "fc9fd6d24b9be84abb2f40e47ed3faf7b11864ae",
+      "path_prefix": "lang/syn/"
+    },
+    "anchor-syn-0.32.1": {
+      "order": 123,
+      "repository": "https://github.com/coral-xyz/anchor",
+      "revision": "1ebbe58158d089a2a40b5e35ebead5a10db9090d",
+      "path_prefix": "lang/syn/"
+    },
+    "anchor-syn-1.1.2": {
+      "order": 124,
+      "repository": "https://github.com/otter-sec/anchor",
+      "revision": "24035e2b0035c87e321acc1c05f97793829a87f1",
+      "path_prefix": "lang/syn/"
+    }
+  },
+  "interfaces": {
+    "anchor-syn-1.0.2::src/codegen/error.rs": {
+      "order": 51,
+      "crate": "anchor-syn-1.0.2",
+      "path": "src/codegen/error.rs",
+      "sha256": "72b3a03dec38e7cbd0a06b5814f6f5bda6a2aee78e10e1861d175e6b1deaa459"
+    },
+    "anchor-syn-0.27.0::src/codegen/error.rs": {
+      "order": 442,
+      "crate": "anchor-syn-0.27.0",
+      "path": "src/codegen/error.rs",
+      "sha256": "4905cb5d58ca40896e4ca21d8881a83c8534492c677745d194e73bae2fae722b"
+    },
+    "anchor-syn-0.29.0::src/codegen/error.rs": {
+      "order": 443,
+      "crate": "anchor-syn-0.29.0",
+      "path": "src/codegen/error.rs",
+      "sha256": "02ac45d321e2802843550b758373054d158c7fb298f154f2b668d93ca5cf810a"
+    },
+    "anchor-syn-0.32.1::src/codegen/error.rs": {
+      "order": 444,
+      "crate": "anchor-syn-0.32.1",
+      "path": "src/codegen/error.rs",
+      "sha256": "f2a3b9f39993ed1a64d1e4a02d8f5cc3c8abd161bd2fcb9fad996dd05ddad2f0"
+    },
+    "anchor-syn-1.1.2::src/codegen/error.rs": {
+      "order": 445,
+      "crate": "anchor-syn-1.1.2",
+      "path": "src/codegen/error.rs",
+      "sha256": "25fd938f744493b7d77a05b35e03243ecc4b8a2a805c564dad724a0244aae7bb"
+    }
+  }
+}

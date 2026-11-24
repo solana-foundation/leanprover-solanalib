@@ -1,0 +1,362 @@
+{
+  "abstractions": {
+    "library::pyth_solana_receiver_sdk": {
+      "order": 130,
+      "modules": {
+        "Solanalib.Specs.PythSolanaReceiverSdk": "395df2d380be8ecbd881705023f680cf02c29bf912193071ea08f0bd678d8e1f",
+        "Solanalib.Specs.PythSolanaReceiverSdk.Capabilities": "fe4125463f8383fc988e291eae1c2b69e0ae18e982d61c45a0071fd54c113249",
+        "Solanalib.Specs.PythSolanaReceiverSdk.PriceUpdate": "30a05cfc0044aaef49663ec58ba1db8804518c0e9152ffc0468b74f7f3495a71",
+        "Solanalib.Specs.PythSolanaReceiverSdk.PriceUpdateDecode": "2ee853121a758f8b56fa88ccdc841c6c9e208d998c89a3b8e457d5e9ea0d804c"
+      },
+      "source_ids": [
+        "root-extra::pyth-solana-receiver-sdk-2.0.0::src/price_update.rs",
+        "root-extra::pyth-solana-receiver-sdk-2.0.0::src/error.rs",
+        "root-extra::pythnet-sdk-3.0.0::src/messages.rs",
+        "codecs::borsh-1.6.1::src/de/mod.rs"
+      ],
+      "argument": "@review:source-notes/other-sdk-functions.md#review-a1872d017fc9df3f",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:94d82941a618889f",
+        "@binding:142c76ae14e92655",
+        "@text:517b2e3b9a0ed73f"
+      ]
+    }
+  },
+  "packages": {
+    "pyth-solana-receiver-sdk-2.0.0": {
+      "order": 18,
+      "repository": "https://github.com/pyth-network/pyth-crosschain",
+      "revision": "4099cb15d0943e603bdc6ad12aecbd2b6eb0f2c0",
+      "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+    }
+  },
+  "interfaces": {
+    "root-extra::pyth-solana-receiver-sdk-2.0.0::src/error.rs": {
+      "order": 60,
+      "crate": "pyth-solana-receiver-sdk-2.0.0",
+      "path": "src/error.rs",
+      "sha256": "4920321266efe2f9045b9875a5c2870a26dad9a56182d517090a9b6bb10e3c6d"
+    },
+    "root-extra::pyth-solana-receiver-sdk-2.0.0::src/price_update.rs": {
+      "order": 61,
+      "crate": "pyth-solana-receiver-sdk-2.0.0",
+      "path": "src/price_update.rs",
+      "sha256": "12d0ce8bc3907ae2949043397eaf3d5bd25deed98450c6969d957be402c807ae"
+    }
+  },
+  "models": {
+    "pyth-solana-receiver-sdk::price_update::PriceUpdateV2::deserialize_reader": {
+      "order": 106,
+      "contract": "Solanalib.Specs.PythSolanaReceiverSdk.price_update.PriceUpdateV2.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.PythSolanaReceiverSdk.price_update.PriceUpdateV2.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6", "@text:cd8fd2b501565fba"]
+    },
+    "pyth-solana-receiver-sdk::price_update::PriceUpdateV2::get_price_no_older_than_with_custom_verification_level": {
+      "order": 107,
+      "contract": "Solanalib.Specs.PythSolanaReceiverSdk.price_update.PriceUpdateV2.get_price_no_older_than_with_custom_verification_level_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.PythSolanaReceiverSdk.price_update.PriceUpdateV2.get_price_no_older_than_with_custom_verification_level_hasExecution",
+      "assumptions": ["@binding:94d82941a618889f", "@binding:142c76ae14e92655"]
+    },
+    "pyth-solana-receiver-sdk::price_update::VerificationLevel::deserialize_reader": {
+      "order": 108,
+      "contract": "Solanalib.Specs.PythSolanaReceiverSdk.price_update.VerificationLevel.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.PythSolanaReceiverSdk.price_update.VerificationLevel.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6", "@text:65be5e82d883f66a"]
+    }
+  },
+  "api": {
+    "pyth-solana-receiver-sdk@2.0.0::price_update.PriceUpdateV2.deserialize_reader": {
+      "order": 83,
+      "anchor_text": "#[account]",
+      "line": 49,
+      "source_id": "root-extra::pyth-solana-receiver-sdk-2.0.0::src/price_update.rs",
+      "scope": "@text:ae71ab5638e08f60",
+      "binding_obligations": ["@binding:17a03b289e0ff9cd", "@binding:f876e3949ed46c08", "@binding:5190a32e6baa1ea3"],
+      "clients": [
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.decode_partial_sample",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.decode_full_sample",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.encoded_lengths",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.decode_truncated_each_field",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.decode_bad_tag_rejected",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.decode_field_order_observable",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.decode_leaves_trailing",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.deserialize_entry_returns_update",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.decoded_update_feeds_getter",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.contract_rejects_other_slot",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.contract_allows_any_slice_after_error"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.PythSolanaReceiverSdk.price_update.PriceUpdateV2.decoder",
+        "Solanalib.Specs.PythSolanaReceiverSdk.price_update.PriceUpdateV2.deserialize_forwards",
+        "Solanalib.Specs.SolanaAddress.Address.decoder",
+        "Solanalib.Specs.PythSolanaReceiverSdk.price_update.VerificationLevel.decoder",
+        "Solanalib.Specs.PythnetSdk.messages.PriceFeedMessage.decoder",
+        "Solanalib.Specs.Borsh.de.BorshDeserialize.deserialize_run",
+        "Solanalib.Specs.Borsh.invalid_data_profile",
+        "Solanalib.Specs.Core.Borsh.decodeU64",
+        "Solanalib.Specs.Core.Oracle.Pyth.PriceUpdate"
+      ],
+      "rust_names": [
+        "<pyth_solana_receiver_sdk::price_update::PriceUpdateV2 as borsh::de::BorshDeserialize>::deserialize_reader"
+      ],
+      "models": ["pyth-solana-receiver-sdk::price_update::PriceUpdateV2::deserialize_reader"]
+    },
+    "pyth-solana-receiver-sdk@2.0.0::price_update.PriceUpdateV2.get_price_no_older_than_with_custom_verification_level": {
+      "order": 84,
+      "anchor_text": "pub fn get_price_no_older_than_with_custom_verification_level(",
+      "binding_obligations": ["@binding:94d82941a618889f", "@binding:142c76ae14e92655", "@binding:16af5e6b4a95e14a"],
+      "line": 235,
+      "scope": "@text:4d98633350edc7fc",
+      "source_id": "root-extra::pyth-solana-receiver-sdk-2.0.0::src/price_update.rs",
+      "clients": [
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.abort_strategy_has_no_return_value",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.age_overflow_is_panic",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.feed_precedes_age",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.full_verification_satisfies_every_level",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.future_price_is_not_rejected",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.inclusive_age_boundary",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.maximum_converted_age_does_not_wrap",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.negative_timestamp_uses_signed_comparison",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.one_second_stale",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.positive_timestamp_addition_saturates",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.unwind_strategy_preserves_framed_state",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.verification_precedes_feed_and_age",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.abstract_slot_retains_exact_family_return",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.abstract_timestamp_retains_exact_family_error"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Oracle.Pyth.evaluate", "Solanalib.Specs.Core.Oracle.Pyth.run"],
+      "rust_names": [
+        "pyth_solana_receiver_sdk::price_update::PriceUpdateV2::get_price_no_older_than_with_custom_verification_level"
+      ],
+      "models": [
+        "pyth-solana-receiver-sdk::price_update::PriceUpdateV2::get_price_no_older_than_with_custom_verification_level"
+      ]
+    },
+    "pyth-solana-receiver-sdk@2.0.0::price_update.VerificationLevel.deserialize_reader": {
+      "order": 85,
+      "anchor_text": "#[derive(AnchorSerialize, AnchorDeserialize, Copy, Clone, PartialEq, BorshSchema, Debug)]",
+      "line": 18,
+      "source_id": "root-extra::pyth-solana-receiver-sdk-2.0.0::src/price_update.rs",
+      "scope": "@text:8f93bfd5fbe5f6f7",
+      "binding_obligations": ["@binding:17a03b289e0ff9cd", "@binding:113c1721b1564bb7", "@binding:5190a32e6baa1ea3"],
+      "clients": [
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.verification_partial_decodes",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.verification_full_decodes",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.verification_bad_tag_rejected",
+        "SolanalibTest.Specs.PythSolanaReceiverSdk.verification_partial_truncated"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.PythSolanaReceiverSdk.price_update.VerificationLevel.decoder",
+        "Solanalib.Specs.PythSolanaReceiverSdk.price_update.VerificationLevel.deserializeVariant",
+        "Solanalib.Specs.PythSolanaReceiverSdk.price_update.VerificationLevel.unexpectedVariantTag",
+        "Solanalib.Specs.Borsh.invalid_data_profile",
+        "Solanalib.Specs.Core.Borsh.decodeU8"
+      ],
+      "rust_names": [
+        "<pyth_solana_receiver_sdk::price_update::VerificationLevel as borsh::de::BorshDeserialize>::deserialize_reader"
+      ],
+      "models": ["pyth-solana-receiver-sdk::price_update::VerificationLevel::deserialize_reader"]
+    }
+  },
+  "applicability_sources": {
+    "pyth-solana-receiver-sdk": {
+      "order": 10,
+      "package": "pyth-solana-receiver-sdk",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.1.0": {
+          "archive_url": "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-0.1.0.crate",
+          "sha256": "937c8595148fb2a9a90439daf6a371a5b3c9fcd9b636f26d36ae31d6846d4339",
+          "revision": "6fbe59ad280b35f3f2f082bc65775c9790ebf8d0",
+          "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+        },
+        "0.2.0": {
+          "archive_url": "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-0.2.0.crate",
+          "sha256": "99e8c70e9aef57ff61c7c1f7c9c96dcc7d97dd0a7b7e1d157cf50bee0e21eb1a",
+          "revision": "a592c6bc333fe48e1e05983e00b5906b4e682891",
+          "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+        },
+        "0.3.0": {
+          "archive_url": "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-0.3.0.crate",
+          "sha256": "91e6559643f0b377b6f293269251f6a804ae7332c37f7310371f50c833453cd0",
+          "revision": "9230bae9c82f630dd019abecdd7598e985f842b7",
+          "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+        },
+        "0.3.1": {
+          "archive_url": "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-0.3.1.crate",
+          "sha256": "1b7854c4176470c8d86de301dc5b57ac84227dabb9527328b585fc332962d60b",
+          "revision": "d927907caee80615594a7b09935e43c87331e416",
+          "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+        },
+        "0.3.2": {
+          "archive_url": "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-0.3.2.crate",
+          "sha256": "186d107c507e71a4528405eccefc6b3b7177a10ad6dd4bde531604debf87f091",
+          "revision": "7612ad84681d7f3de7632c9761afd9df6623e9e8",
+          "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+        },
+        "0.4.0": {
+          "archive_url": "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-0.4.0.crate",
+          "sha256": "8f04d76e18fe4edf5d8dd3617e15e79c36041489be9c51f75bd01b6dab662d6d",
+          "revision": "c2f7225d791b773045e24e964261288c9ee42062",
+          "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+        },
+        "0.5.0": {
+          "archive_url": "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-0.5.0.crate",
+          "sha256": "918a6ec4d0cede6cc5825c034619a4f134ba6b524f63032a273344eee940d6cf",
+          "revision": "4621b981540fade9afad86dc6874075ea2f3bd22",
+          "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+        },
+        "0.6.0": {
+          "archive_url": "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-0.6.0.crate",
+          "sha256": "8f07e92abfc18154532ed3dabaa7dac8e693b9925bfe28b2915bc8f8c1540ca0",
+          "revision": "30efb0da682f4c6e1647f0825f58f975ce828ef0",
+          "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+        },
+        "0.6.1": {
+          "archive_url": "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-0.6.1.crate",
+          "sha256": "fb47105ed00f2ac09d9a297b5e4e1879981324d8633a177c4d6b0958a5a63d7b",
+          "revision": "4f7d3c5324659f3a24be13212e07f7574c51f17d",
+          "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+        },
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-1.0.0.crate",
+          "sha256": "d2f50084c1a401ce2009304bf8523d5261120f2bbe69c9c8142cd7898dc82edd",
+          "revision": "197139e346545bde998e4e3e0f70337c3c6eaf1f",
+          "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+        },
+        "1.0.1": {
+          "archive_url": "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-1.0.1.crate",
+          "sha256": "66596ab94606146630358bbf8b7187ac7353b766ab92028ecec7478a79a6059d",
+          "revision": "b57e6a27ffea9f6f13240d49531972264c986986",
+          "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+        },
+        "1.1.0": {
+          "archive_url": "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-1.1.0.crate",
+          "sha256": "99df99fe99bd2f286bf3ee6364e611ef4d91a7b330c863dfc32f06c44e863c2f",
+          "revision": "68d57efe326d006c9051c70b68b0ee057e985eab",
+          "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+        },
+        "1.2.0": {
+          "archive_url": "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-1.2.0.crate",
+          "sha256": "209892afe495433c5eae9406a76eedc1409100614727495348abdc91916154dd",
+          "revision": "0742fd32fc3f5691d36e0430c4f47b798af9ce6b",
+          "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+        },
+        "2.0.0": {
+          "archive_url": "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-2.0.0.crate",
+          "sha256": "245b1b03dd2177402018b6072fcbb7bea5b3d280427b1954796bf1dc189be48b",
+          "revision": "4099cb15d0943e603bdc6ad12aecbd2b6eb0f2c0",
+          "path_prefix": "target_chains/solana/pyth_solana_receiver_sdk/"
+        }
+      },
+      "evidence": ["@text:288d2c7f9f7f2169", "@text:fd5591ee2d207caa", "@text:2215992c73afdc7c", "@text:c645f7f7ef259929"]
+    }
+  },
+  "applicability": {
+    "pyth-solana-receiver-sdk::price_update::PriceUpdateV2::deserialize_reader": {
+      "order": 106,
+      "profiles": [
+        {
+          "id": "receiver-2.x-anchor-1.x",
+          "source": "pyth-solana-receiver-sdk",
+          "conditions": "@shared:conditions-4dc9840f172ce6e7",
+          "argument": "@review:source-notes/other-sdk-functions.md#review-6f9ccd58c30b3efe",
+          "evidence": ["@text:cac3329c13ff7b41"],
+          "dependencies": [
+            {
+              "package": "anchor-attribute-account",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["1.0.2"],
+              "reason": "@text:2e76de35c8347273",
+              "compatible_ranges": [{"lower": "1.0.2", "upper": "2.0.0"}]
+            },
+            "@shared:dependencies-ddfe5d0f4d5c4d65",
+            "@shared:dependencies-3ffa1ac5f215350d",
+            "@shared:dependencies-b0170ed96fe363c6",
+            "@shared:dependencies-76819729154736ae",
+            {
+              "package": "pythnet-sdk",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["3.0.0"],
+              "reason": "@text:28cb64419964dfba",
+              "compatible_ranges": [{"lower": "3.0.0", "upper": "4.0.0"}]
+            }
+          ],
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<pyth_solana_receiver_sdk::price_update::PriceUpdateV2 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["2.0.0"],
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": ["2.0.0"]
+        }
+      ]
+    },
+    "pyth-solana-receiver-sdk::price_update::PriceUpdateV2::get_price_no_older_than_with_custom_verification_level": {
+      "order": 107,
+      "profiles": [
+        {
+          "id": "pyth-solana-receiver-sdk-reviewed",
+          "source": "pyth-solana-receiver-sdk",
+          "conditions": ["@text:009fb37b9b6ed2b6", "@text:46b19bb802baef4b", "@text:12ea867b56bdbe87"],
+          "argument": "@review:source-notes/other-sdk-functions.md#review-b27a9726da79cdd4",
+          "evidence": ["@text:ef9176b976041260", "@text:cac3329c13ff7b41"],
+          "items": [
+            {
+              "item": "pyth_solana_receiver_sdk::price_update::PriceUpdateV2::get_price_no_older_than_with_custom_verification_level",
+              "implementation": "pyth_solana_receiver_sdk::price_update::PriceUpdateV2::get_price_no_older_than_with_custom_verification_level",
+              "releases": "@shared:releases-73f3e67ed98a58ca",
+              "compatible_ranges": [
+                {"lower": "0.1.0", "upper": "0.2.0"},
+                {"lower": "0.2.0", "upper": "0.3.0"},
+                {"lower": "0.3.0", "upper": "0.4.0"},
+                {"lower": "0.4.0", "upper": "0.5.0"},
+                {"lower": "0.5.0", "upper": "0.6.0"},
+                {"lower": "0.6.0", "upper": "0.7.0"},
+                {"lower": "1.0.0", "upper": "2.0.0"},
+                {"lower": "2.0.0", "upper": "3.0.0"}
+              ]
+            }
+          ],
+          "releases": "@shared:releases-73f3e67ed98a58ca"
+        }
+      ]
+    },
+    "pyth-solana-receiver-sdk::price_update::VerificationLevel::deserialize_reader": {
+      "order": 108,
+      "profiles": [
+        {
+          "id": "receiver-2.x-anchor-1.x",
+          "source": "pyth-solana-receiver-sdk",
+          "conditions": "@shared:conditions-4dc9840f172ce6e7",
+          "argument": "@review:source-notes/other-sdk-functions.md#review-44d5d11edded22b9",
+          "evidence": ["@text:cac3329c13ff7b41"],
+          "dependencies": [
+            "@shared:dependencies-ddfe5d0f4d5c4d65",
+            "@shared:dependencies-3ffa1ac5f215350d",
+            "@shared:dependencies-b0170ed96fe363c6",
+            "@shared:dependencies-76819729154736ae"
+          ],
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<pyth_solana_receiver_sdk::price_update::VerificationLevel as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["2.0.0"],
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": ["2.0.0"]
+        }
+      ]
+    }
+  }
+}

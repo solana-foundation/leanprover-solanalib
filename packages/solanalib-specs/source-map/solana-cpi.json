@@ -1,0 +1,321 @@
+{
+  "abstractions": {
+    "library::solana_cpi": {
+      "order": 163,
+      "argument": "@review:source-notes/raw-syscalls.md#review-ffe28c7df5555b69",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@text:778297b7fea994fc",
+        "@text:df44d9d0ec03d777",
+        "@text:62705fc5e29534ed",
+        "@text:4b3e6d0a29b22580",
+        "@binding:5f583f5855e8d5ee",
+        "@binding:0e0734da409a4986",
+        "@binding:d8520a9e72709815",
+        "@binding:4288734bf7f8f1b2",
+        "@binding:025d8e5631e6dc0b",
+        "@text:b1937ac5405b82da",
+        "@text:9222eed7cf79bfc3",
+        "@text:1990fc5cba945d0e",
+        "@text:a59033a3f7b014d2",
+        "@text:f428bee2a0798d8f"
+      ],
+      "source_ids": [
+        "raw-runtime::solana-cpi-2.2.1::src/syscalls.rs",
+        "raw-runtime::solana-define-syscall-2.3.0::src/definitions.rs",
+        "raw-runtime::solana-define-syscall-2.3.0::src/lib.rs",
+        "raw-runtime::solana-define-syscall-4.0.1::src/definitions.rs",
+        "raw-runtime::solana-define-syscall-4.0.1::src/lib.rs",
+        "raw-runtime::solana-define-syscall-5.1.0::src/definitions.rs",
+        "raw-runtime::solana-define-syscall-5.1.0::src/lib.rs",
+        "raw-runtime::solana-program-1.15.2::src/syscalls/definitions.rs",
+        "raw-runtime::solana-program-1.15.2::src/syscalls/mod.rs",
+        "raw-runtime::solana-program-1.18.26::src/syscalls/definitions.rs",
+        "raw-runtime::solana-program-1.18.26::src/syscalls/mod.rs",
+        "raw-runtime::solana-cpi-2.2.1::src/lib.rs",
+        "raw-runtime::solana-cpi-3.1.0::src/lib.rs",
+        "raw-runtime::solana-cpi-3.1.0::src/syscalls.rs",
+        "raw-runtime::pinocchio-0.9.2::src/lib.rs",
+        "raw-runtime::pinocchio-0.9.2::src/syscalls.rs",
+        "raw-runtime::pinocchio-log-0.5.1::src/logger.rs",
+        "raw-runtime::anchor-lang-1.0.2::src/lib.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.SolanaCpi": "c2efc073e18a8b4dd3902b633a814309da849943cdf8f8bb6c30b2899c7e8bf1",
+        "Solanalib.Specs.SolanaCpi.syscalls": "8c3d6e78ad777ce984dd8239d21f1368b3f69edf575a6d7d3ab95573dbb379e3",
+        "Solanalib.Specs.SolanaCpi.Capabilities": "1c82a09055765f6b84f3e8b3cdeaedd00118a86b6c471b5c6922bc8d1686618b",
+        "Solanalib.Specs.SolanaCpi.ReturnData": "22e599193827f54531d427530c67cc2ef037ee4995f69e0bec9abc8611d1d3e7"
+      }
+    }
+  },
+  "packages": {
+    "solana-cpi-3.1.0": {
+      "order": 43,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "a8ef5986f7e2178b020b49ca47ed05e39712d08a",
+      "path_prefix": "cpi/"
+    },
+    "solana-cpi-2.2.1": {
+      "order": 65,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+      "path_prefix": "cpi/"
+    }
+  },
+  "interfaces": {
+    "runtime-helpers::solana-cpi-3.1.0::src/lib.rs": {
+      "order": 133,
+      "crate": "solana-cpi-3.1.0",
+      "path": "src/lib.rs",
+      "sha256": "65a38d3dc33ad069186c1c8d8b618264d0e41bb5c696efa4b89e3b07e1f538de"
+    },
+    "raw-runtime::solana-cpi-2.2.1::src/lib.rs": {
+      "order": 184,
+      "crate": "solana-cpi-2.2.1",
+      "path": "src/lib.rs",
+      "review_scope": "2.2.1 target_os=solana module gate; 3.1.0 set_return_data forwarding body and its non-Solana no-op alternative. No invoke body is selected.",
+      "sha256": "f38caf706bedd0867b6bcadbcf9a77885b3cf155275aa0e6156caf95facaada6"
+    },
+    "raw-runtime::solana-cpi-2.2.1::src/syscalls.rs": {
+      "order": 185,
+      "crate": "solana-cpi-2.2.1",
+      "path": "src/syscalls.rs",
+      "review_scope": "2.2.1 sol_get_return_data declared by imported define_syscall macro, owned by solana_cpi; 3.1.0 sol_set_return_data reexport consumed by the wrapper. No invocation declaration is selected here.",
+      "sha256": "d876a2183eeb3f4ed7af7a88300a1d0060be3845aac6b34024ba90ce059b5dbf"
+    },
+    "raw-runtime::solana-cpi-3.1.0::src/lib.rs": {
+      "order": 186,
+      "crate": "solana-cpi-3.1.0",
+      "path": "src/lib.rs",
+      "review_scope": "2.2.1 target_os=solana module gate; 3.1.0 set_return_data forwarding body and its non-Solana no-op alternative. No invoke body is selected.",
+      "sha256": "65a38d3dc33ad069186c1c8d8b618264d0e41bb5c696efa4b89e3b07e1f538de"
+    },
+    "raw-runtime::solana-cpi-3.1.0::src/syscalls.rs": {
+      "order": 187,
+      "crate": "solana-cpi-3.1.0",
+      "path": "src/syscalls.rs",
+      "review_scope": "2.2.1 sol_get_return_data declared by imported define_syscall macro, owned by solana_cpi; 3.1.0 sol_set_return_data reexport consumed by the wrapper. No invocation declaration is selected here.",
+      "sha256": "7bd79dd095cfc2f5349bc93e6805b397b2f42197b23c5972441483dcb363d67b"
+    },
+    "cpi-signatures::solana-cpi-2.2.1::src/lib.rs": {
+      "order": 374,
+      "crate": "solana-cpi-2.2.1",
+      "path": "src/lib.rs",
+      "sha256": "f38caf706bedd0867b6bcadbcf9a77885b3cf155275aa0e6156caf95facaada6",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    }
+  },
+  "models": {
+    "solana-cpi::syscalls::sol_get_return_data": {
+      "order": 341,
+      "contract": "Solanalib.Specs.SolanaCpi.syscalls.sol_get_return_data_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-88c0eb59ed773f24"
+    },
+    "solana-cpi::set_return_data": {
+      "order": 452,
+      "contract": "Solanalib.Specs.SolanaCpi.set_return_data_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-88c0eb59ed773f24"
+    }
+  },
+  "api": {
+    "solana-cpi@2.2.1::syscalls::sol_get_return_data": {
+      "order": 341,
+      "source_id": "raw-runtime::solana-cpi-2.2.1::src/syscalls.rs",
+      "line": 7,
+      "anchor_text": "define_syscall!(fn sol_get_return_data(data: *mut u8, length: u64, program_id: *mut Pubkey) -> u64);",
+      "models": ["solana-cpi::syscalls::sol_get_return_data"],
+      "scope": "@text:28e478f42be787c8",
+      "binding_obligations": "@shared:binding-obligations-df9d9e20a3218a68",
+      "rust_names": ["solana_cpi::syscalls::sol_get_return_data"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaCpi.Runtime.return_truncated",
+        "SolanalibTest.Specs.SolanaCpi.Runtime.return_zero",
+        "SolanalibTest.Specs.SolanaCpi.Runtime.return_overlap"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.RawState.getReturnStep"]
+    },
+    "solana-cpi@3.1.0::set_return_data": {
+      "order": 516,
+      "source_id": "raw-runtime::solana-cpi-3.1.0::src/lib.rs",
+      "line": 340,
+      "anchor_text": "pub fn set_return_data(data: &[u8]) {",
+      "scope": "@text:82f47d6f7178ad20",
+      "binding_obligations": "@shared:binding-obligations-cfded73a7f40e27c",
+      "rust_names": ["solana_cpi::set_return_data"],
+      "clients": ["SolanalibTest.Specs.SolanaCpi.ReturnData.empty_clears"],
+      "models": ["solana-cpi::set_return_data"]
+    }
+  },
+  "applicability_sources": {
+    "solana-cpi": {
+      "order": 41,
+      "package": "solana-cpi",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-11",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-0.0.1.crate",
+          "sha256": "530afb350896c857da1055dd4dfec371df53711845be41f45345925b440c43bf"
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-0.0.2.crate",
+          "sha256": "e09e22512513e0a3e9183c1671ed5842890737d335283165bcacde1130ee099b"
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.0.crate",
+          "sha256": "25c536ad0ce25d84a64f48dedcb773e764827e0ef781eda41fa1fa35f5d64b38"
+        },
+        "2.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.1.crate",
+          "sha256": "3a4d6df3dc4b5ccb24782e0f869f9ec279d6bde5326bb62ad830330e4e0d97e4"
+        },
+        "2.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.2.crate",
+          "sha256": "d70d2d4fa6f1ecadc5293100f0a46e9a60abd63e2c2966f22c363b0972155395"
+        },
+        "2.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.4.crate",
+          "sha256": "6246ad163c7a1ec62ef3182732b91748631af5214a13176257b98919e699fe4e"
+        },
+        "2.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.5.crate",
+          "sha256": "a164c4b9fb754e2d58dbf93969170727e98097f2cf12249ab7286afde8bb199e"
+        },
+        "2.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.6.crate",
+          "sha256": "9e3b62e1ca838f92b90c25ab68c297272cee8e2256dad18806a219b05cfcd247"
+        },
+        "2.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.7.crate",
+          "sha256": "380b06ac8e2ebf8a5b8a54645b721f92f5d7a6d116550bbf1817167cc48abeb1"
+        },
+        "2.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.8.crate",
+          "sha256": "00bae0591481827ac9cfce5573aad2918bb01f91289b811ea531df4fcb73d136"
+        },
+        "2.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.9.crate",
+          "sha256": "e1b66925890e4108d10df357940da32ae01eea68d07b8da816eec4b93519db9d"
+        },
+        "2.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.10.crate",
+          "sha256": "5b87b387931f41422be3d82190e29c8414bbb4e8517dd94afb838012260d7a60"
+        },
+        "2.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.11.crate",
+          "sha256": "d54c3b096dc77222b9c19ffe9cf6c1c32bd1e9882ceb955d213be4315bbe3b95"
+        },
+        "2.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.12.crate",
+          "sha256": "faece18bae6d818d5121b40f10acd5a0f1f0d1ee2283e79ad00825a43a4dfaaa"
+        },
+        "2.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.13.crate",
+          "sha256": "dd452db5b927c0abbbd47ccc9f233a480754ecc7d07a9c5826c4d1f09168b6e1"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.2.0.crate",
+          "sha256": "be0ef159507ece00b3ae2e6c68055fb1ebe161d1c22ba0f33041ba3eb1a21eb3"
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.2.1.crate",
+          "sha256": "8dc71126edddc2ba014622fc32d0f5e2e78ec6c5a1e0eb511b85618c09e9ea11",
+          "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+          "path_prefix": "cpi/",
+          "repository": "https://github.com/anza-xyz/solana-sdk"
+        },
+        "2.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.14.crate",
+          "sha256": "44d6319a11aa56755dfc9f344920f77576b5e839fe5631fef5a8f6082489c745"
+        },
+        "2.1.15": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.15.crate",
+          "sha256": "0f88210af2c92fe846cecb6f975bc0066c47696110a353675861bc65aa454a0f"
+        },
+        "2.1.16": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.16.crate",
+          "sha256": "92c28c495c73e8b996f15db54131e3dd125af3b43ee053dd7d1b03d4b518e8e5"
+        },
+        "2.1.17": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.17.crate",
+          "sha256": "8b1eb3f5698a0510d6db251ee306f7cf732b9e528a426ef6c0f37b80c9488a9b"
+        },
+        "2.1.18": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.18.crate",
+          "sha256": "b3da8822eea2dd4b5fad58dc782fdc56b79155590a014384ac2e1bbac410294f"
+        },
+        "2.1.20": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.20.crate",
+          "sha256": "2d78f05dc684a6fb1090823a1e17dc9ccb0b7b1875b4486bd31a9bd9fc5d3813"
+        },
+        "2.1.21": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-2.1.21.crate",
+          "sha256": "f43b1391eecec7c15ae83477d0bfebc9a92ebe69f793683fd497ac02d180fcd5"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-3.0.0.crate",
+          "sha256": "16238feb63d1cbdf915fb287f29ef7a7ebf81469bd6214f8b72a53866b593f8f"
+        },
+        "3.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-cpi/solana-cpi-3.1.0.crate",
+          "sha256": "4dea26709d867aada85d0d3617db0944215c8bb28d3745b912de7db13a23280c",
+          "revision": "a8ef5986f7e2178b020b49ca47ed05e39712d08a",
+          "path_prefix": "cpi/"
+        }
+      },
+      "evidence": ["@text:4e3cab6676b198af", "@text:3f88c50cc4ba3af9"]
+    }
+  },
+  "applicability": {
+    "solana-cpi::syscalls::sol_get_return_data": {
+      "order": 341,
+      "profiles": [
+        {
+          "id": "raw-runtime-solana-cpi-2.2.1",
+          "source": "solana-cpi",
+          "releases": ["2.2.0", "2.2.1"],
+          "items": [
+            {
+              "releases": ["2.2.0", "2.2.1"],
+              "item": "solana_cpi::syscalls::sol_get_return_data",
+              "implementation": "solana_cpi::syscalls::sol_get_return_data",
+              "compatible_ranges": [{"lower": "2.2.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-850b238b1cd2b109",
+          "evidence": ["@text:e1a1abc61c29087f", "@text:f55eb49bf593aedb", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-8000ec168ae05c01",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"},
+          "dependencies": [{"package": "solana-define-syscall", "releases": ["2.3.0"], "reason": "@text:efced204f0110712"}]
+        }
+      ]
+    },
+    "solana-cpi::set_return_data": {
+      "order": 452,
+      "profiles": [
+        {
+          "id": "raw-runtime-solana-cpi-3.1.0",
+          "source": "solana-cpi",
+          "releases": ["3.1.0"],
+          "items": [
+            {
+              "releases": ["3.1.0"],
+              "item": "solana_cpi::set_return_data",
+              "implementation": "solana_cpi::set_return_data",
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-a3fe9c9bb79a37a7",
+          "evidence": ["@text:d62502d85ad0e511", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-8000ec168ae05c01"
+        }
+      ]
+    }
+  }
+}

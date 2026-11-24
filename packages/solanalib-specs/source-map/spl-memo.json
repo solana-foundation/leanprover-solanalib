@@ -1,0 +1,212 @@
+{
+  "abstractions": {
+    "library::spl_memo": {
+      "order": 161,
+      "modules": {
+        "Solanalib.Specs.SplMemo": "ce15553c45c489cb349624bd47d7a600e01e647f51fdf3f372b33bb309c51b6e",
+        "Solanalib.Specs.SplMemo.Capabilities": "f684daf6e8070453a0b9e242264aa4308aae9219a0f50f72ad9bbab46dfa67f8",
+        "Solanalib.Specs.SplMemo.Ids": "2910f5addd43764049215cb4d1744dee05831f897f687368b04eeadba01b57fb"
+      },
+      "source_ids": [
+        "token-instructions::spl-token-8.0.0::src/native_mint.rs",
+        "token-instructions::spl-token-2022-8.0.1::src/native_mint.rs",
+        "token-instructions::spl-memo-6.0.0::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/other-sdk-functions.md#review-548e308d9bfc9219",
+      "limitations": ["@text:a59033a3f7b014d2", "@text:f428bee2a0798d8f", "@binding:b985857460252cc6"]
+    }
+  },
+  "packages": {
+    "spl-memo-6.0.0": {
+      "order": 120,
+      "repository": "https://github.com/solana-labs/solana-program-library",
+      "revision": "58f4b7549b828854118c3d2bc13e49a865c58bdd",
+      "path_prefix": "memo/program/"
+    }
+  },
+  "interfaces": {
+    "anchor-spl-support::spl-memo-6.0.0::src/lib.rs": {
+      "order": 368,
+      "crate": "spl-memo-6.0.0",
+      "path": "src/lib.rs",
+      "sha256": "ce37fbb483c80b0a754551160d1be5a14b0f91d7164157655f4063c8e4233750"
+    },
+    "token-instructions::spl-memo-6.0.0::src/lib.rs": {
+      "order": 530,
+      "crate": "spl-memo-6.0.0",
+      "path": "src/lib.rs",
+      "sha256": "ce37fbb483c80b0a754551160d1be5a14b0f91d7164157655f4063c8e4233750"
+    }
+  },
+  "models": {
+    "spl-memo::id": {
+      "order": 348,
+      "contract": "Solanalib.Specs.SplMemo.id_contract",
+      "reference": "Solanalib.Specs.SplMemo.id_reference",
+      "witness_kind": "RealizedBy",
+      "witness": "Solanalib.Specs.SplMemo.id_reference_realizes",
+      "assumptions": ["@text:6a646a4d389efebd"]
+    }
+  },
+  "api": {
+    "spl-memo@6.0.0::id": {
+      "order": 347,
+      "source_id": "token-instructions::spl-memo-6.0.0::src/lib.rs",
+      "line": 26,
+      "anchor_text": "solana_pubkey::declare_id!(\"MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr\");",
+      "rust_names": ["spl_memo::id"],
+      "scope": "@text:938782baa2de0f5c",
+      "binding_obligations": ["@binding:b985857460252cc6"],
+      "clients": ["SolanalibTest.Specs.SplMemo.constant_is_nonzero"],
+      "models": ["spl-memo::id"]
+    }
+  },
+  "applicability_sources": {
+    "spl-memo": {
+      "order": 42,
+      "package": "spl-memo",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-11",
+      "releases": {
+        "0.1.0": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-0.1.0.crate",
+          "sha256": "cd391bcb83a57c18f4167ace49449f4489ecb5a06f6f670da9fab47e5fad6991"
+        },
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-1.0.0.crate",
+          "sha256": "22e6b954ac8b1df3f0bbb6ad1f21607be304f3cc9914bb9107c44b2065c8479e"
+        },
+        "1.0.1": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-1.0.1.crate",
+          "sha256": "db4ebc6a6d50b55cbe7c84c7f6cd0259f4f82a169eb49ef65ca62b9c69a76a1f"
+        },
+        "1.0.2": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-1.0.2.crate",
+          "sha256": "2d28cb8e0db4c8d578cde21a416af3e376ce4c3eeb6f5bcd7025fdf8980a3ce8"
+        },
+        "1.0.3": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-1.0.3.crate",
+          "sha256": "a53f355b9e88f1b53bc86e692fc15030108f48214d1ba59ff079de599fb5ea4d"
+        },
+        "1.0.4": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-1.0.4.crate",
+          "sha256": "451acd972c0ed2d114c42f8fffdd9a6007840e51fe7791f250d183e72c8ff7b5"
+        },
+        "1.0.5": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-1.0.5.crate",
+          "sha256": "d2dc0d44bc9328995780543643ec4333da3ae1367010230a489bafc5633e6e33"
+        },
+        "1.0.6": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-1.0.6.crate",
+          "sha256": "cba80d9979f9d1a4ff03430cead339eebefc3eb0a01e857d701ddf5f24f4fb76"
+        },
+        "1.0.7": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-1.0.7.crate",
+          "sha256": "b303bab17e0c696de6d7550ba6f05a5a6dbf5c5d1597e68a4592899072e1c07a"
+        },
+        "1.0.8": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-1.0.8.crate",
+          "sha256": "27179e3393cef59da1b0ae87f7d60260dce22569f95bbab03e927cf29366d3ee"
+        },
+        "1.0.9": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-1.0.9.crate",
+          "sha256": "2880a12ceb39ebb363a367e868babee2a16e26c0f7afb699cd33c490a2882437"
+        },
+        "2.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-2.0.0.crate",
+          "sha256": "99775feb54f735a6826ea0af500c1f78f7a5974d6b17f1ac586cd114e2da7d80"
+        },
+        "2.0.1": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-2.0.1.crate",
+          "sha256": "fb2b771f6146dec14ef5fbf498f9374652c54badc3befc8c40c1d426dd45d720"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-3.0.0.crate",
+          "sha256": "e76b60c6f58279b5469beb1705744e9778ee94d643c8e3e2ff91874c59bb3c63"
+        },
+        "3.0.1": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-3.0.1.crate",
+          "sha256": "bd0dc6f70db6bacea7ff25870b016a65ba1d1b6013536f08e4fd79a8f9005325"
+        },
+        "4.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-4.0.0.crate",
+          "sha256": "f0f180b03318c3dbab3ef4e1e4d46d5211ae3c780940dd0a28695aba4b59a75a"
+        },
+        "4.0.1": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-4.0.1.crate",
+          "sha256": "58e9bae02de3405079a057fe244c867a08f92d48327d231fc60da831f94caf0a"
+        },
+        "4.0.2": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-4.0.2.crate",
+          "sha256": "62a6d457c2cc1b52082cb1b370abad1285eecfa1f86a3ea6a8172c8b209680ad"
+        },
+        "4.0.3": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-4.0.3.crate",
+          "sha256": "64f13e674ae639249a78e2445fb043cf70e18f60e6dcf87a5411bc8c9580f130"
+        },
+        "4.0.4": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-4.0.4.crate",
+          "sha256": "a49f49f95f2d02111ded31696ab38a081fab623d4c76bd4cb074286db4560836"
+        },
+        "5.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-5.0.0.crate",
+          "sha256": "a0dba2f2bb6419523405d21c301a32c9f9568354d4742552e7972af801f4bdb3"
+        },
+        "6.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-6.0.0.crate",
+          "sha256": "9f09647c0974e33366efeb83b8e2daebb329f0420149e74d3a4bd2c08cf9f7cb",
+          "revision": "58f4b7549b828854118c3d2bc13e49a865c58bdd",
+          "path_prefix": "memo/program/"
+        },
+        "7.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-memo/spl-memo-7.0.0.crate",
+          "sha256": "68bc6079ad1aad373c95ca4f51bc6c2df634ec6c7ae57cd2cebcf63062f1d9fc"
+        }
+      },
+      "evidence": ["@text:047ed99b5d36d4ab", "@text:3f88c50cc4ba3af9"]
+    }
+  },
+  "applicability": {
+    "spl-memo::id": {
+      "order": 348,
+      "profiles": [
+        {
+          "id": "spl-memo-6.0.0-pubkey-2-2-solana",
+          "source": "spl-memo",
+          "releases": ["6.0.0"],
+          "items": [
+            {
+              "releases": ["6.0.0"],
+              "item": "spl_memo::id",
+              "implementation": "spl_memo::id",
+              "compatible_ranges": [{"lower": "6.0.0", "upper": "7.0.0"}]
+            }
+          ],
+          "target": "@shared:target-210cc27e224db129",
+          "dependencies": "@shared:dependencies-cdb95b7a9ee23aa0",
+          "conditions": ["@text:be6a35f4f5765654"],
+          "argument": "@review:source-notes/other-sdk-functions.md#review-5d1f888e8622a468",
+          "evidence": ["@text:2055737ab75b6d77", "@text:df901e865b6aa216"]
+        },
+        {
+          "id": "spl-memo-6.0.0-pubkey-2-4-solana",
+          "source": "spl-memo",
+          "releases": ["6.0.0"],
+          "items": [
+            {
+              "releases": ["6.0.0"],
+              "item": "spl_memo::id",
+              "implementation": "spl_memo::id",
+              "compatible_ranges": [{"lower": "6.0.0", "upper": "7.0.0"}]
+            }
+          ],
+          "target": "@shared:target-210cc27e224db129",
+          "dependencies": "@shared:dependencies-8d23174d155fbaf9",
+          "conditions": ["@text:be6a35f4f5765654"],
+          "argument": "@review:source-notes/other-sdk-functions.md#review-5d1f888e8622a468",
+          "evidence": ["@text:2055737ab75b6d77", "@text:df901e865b6aa216"]
+        }
+      ]
+    }
+  }
+}

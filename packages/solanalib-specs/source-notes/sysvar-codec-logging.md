@@ -109,3 +109,35 @@ address from the single write of the serializer through the decoder.
 This review compares the derive output with the pinned generator sources. It
 does not prove the expanded Rust body, a concrete writer or reader, or compiler
 correspondence.
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:7497323d7ed2f136 -->
+<a id="review-7497323d7ed2f136"></a>
+
+Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact test lockfile into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
+
+Versioned public aggregate of the reviewed mathematical models.
+
+Instantiate the shared mathematical operations for this exact SDK version; keep closed reference, precondition and execution witnesses in the public version namespace.
+
+Versioned aggregate of the exact registered callable utility models; coverage is the listed API subset.
+
+Solana-msg 2.2.1 calls sol_log_ with the UTF-8 pointer and byte length under target_os = solana. Its complementary branch unconditionally calls println!("{}", message); there is no host-no-std noop profile or alloc/std feature selection in this release. Source formatting, output failure and runtime effects are interpreted by the selected sink.
+
+Generated typed capability catalog retains every complete registered family, exact Rust identity, source/build profile and closed reference witness.
+<!-- /registry -->
+
+<!-- registry:review:f829629b6be9428c -->
+<a id="review-f829629b6be9428c"></a>
+
+The complete three-target family corresponds to 3.0.0 and 3.1.0: target_os=solana forwards the UTF-8 bytes and byte length to sol_log_; a non-Solana build with std uses println!; a non-Solana build without std uses black_box and has no log event. All 23 earlier real releases have the same Solana forwarding and host printing branches, but cannot realize the hostNoStd configuration of the family: they unconditionally print on non-Solana builds. Their Solana and hostStd branches were separately tested where listed; they are not full-family compatibility. The 0.0.1 package is a placeholder. The reached syscall declaration and macro were reviewed across the resolved major-version transitions; the sink relation still supplies printing, panic, termination and backend effects.
+<!-- /registry -->
+
+<!-- registry:review:9c5da246aa651a5e -->
+<a id="review-9c5da246aa651a5e"></a>
+
+Solana-msg 2.2.1 calls sol_log_ with the UTF-8 pointer and byte length under target_os = solana. Its complementary branch unconditionally calls println!("{}", message); there is no host-no-std noop profile or alloc/std feature selection in this release. Source formatting, output failure and runtime effects are interpreted by the selected sink. The declared compatible range assumes preservation of the UTF-8 syscall request on Solana and unconditional formatted stdout line on the host, including the state, unwind of the selected sink and terminal outcomes. It does not admit a host no-op branch.
+<!-- /registry -->

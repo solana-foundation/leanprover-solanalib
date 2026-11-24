@@ -1,0 +1,2563 @@
+{
+  "abstractions": {
+    "library::borsh": {
+      "order": 123,
+      "modules": {
+        "Solanalib.Specs.Borsh": "b19f7c8c9f51084d9f055c970d68b9b671cfca8ca703176b5af4c1cc1c16612c",
+        "Solanalib.Specs.Borsh.Capabilities": "c4ec15318c0314e5c3177b6c96a7a7cd797a503413d96d11e45eca103f24a722",
+        "Solanalib.Specs.Borsh.De": "7bbf7498f66b8a415b4b9dff610b63b30a50d809388b6e9fb87508ea23a6f4ae",
+        "Solanalib.Specs.Borsh.NostdIo": "15a4b8b281e007a0ebb89e6afb496d7e11e418c8e1f52a7287ee2b1b4bf0f6a2",
+        "Solanalib.Specs.Borsh.Ser": "2d9439aeb13c31a39719cc66d3fc7632c61d648085c6d28e6545241ee65a7670"
+      },
+      "source_ids": [
+        "codecs::borsh-0.10.4::src/de/mod.rs",
+        "codecs::borsh-0.10.4::src/de/hint.rs",
+        "codecs::borsh-1.6.1::src/de/mod.rs",
+        "codecs::borsh-1.6.1::src/de/hint.rs",
+        "codecs::borsh-1.6.1::src/error.rs",
+        "value-request::borsh-1.6.1::src/ser/mod.rs",
+        "codecs::borsh-1.6.1::src/nostd_io.rs"
+      ],
+      "argument": "@review:source-notes/borsh-codecs.md#review-1075a161670073c4",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@text:52e825a966b79e95",
+        "@text:7f450f0aa4569b02",
+        "@text:7cf56fe2d619ef64",
+        "@text:44258e450b35b577"
+      ]
+    }
+  },
+  "packages": {
+    "borsh-1.6.1": {
+      "order": 0,
+      "repository": "https://github.com/near/borsh-rs",
+      "revision": "f8109c75dd9462a2bc756c9d6fe3c0bc9c3e24ac",
+      "path_prefix": "borsh/"
+    },
+    "borsh-0.10.4": {
+      "order": 52,
+      "repository": "https://github.com/near/borsh-rs",
+      "revision": "a1fe3631df2306b2991c1fa9142d7bfa17c2419e",
+      "path_prefix": "borsh/"
+    },
+    "borsh-0.9.3": {
+      "order": 78,
+      "repository": "https://github.com/near/borsh-rs",
+      "revision": "eeb969ce1d3a4b63e97df87fe37d5ba86100db73",
+      "path_prefix": "borsh/"
+    },
+    "borsh-1.6.0": {
+      "order": 79,
+      "repository": "https://github.com/near/borsh-rs",
+      "revision": "819fa55288c85c2f17b4691e49bed7db8da30b69",
+      "path_prefix": "borsh/"
+    }
+  },
+  "interfaces": {
+    "value-request::borsh-1.6.1::src/ser/mod.rs": {
+      "order": 28,
+      "crate": "borsh-1.6.1",
+      "path": "src/ser/mod.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "f6265842f9a263673766cc7ab7d4add437e3b92681f0933e8bec1a96c29aa666"
+    },
+    "codecs::borsh-0.10.4::src/de/mod.rs": {
+      "order": 152,
+      "crate": "borsh-0.10.4",
+      "path": "src/de/mod.rs",
+      "review_scope": "Ordinary decoding at R = &[u8]. The behavior of the std slice reader (read_exact, and read returning min(buffer, remaining)) is assumed rather than modeled as a function, and its source and the allocator bodies are not pinned.",
+      "sha256": "6d4cb52550aac787186890ba6a0118157f8433d341c79118892bce1959d75fb2"
+    },
+    "codecs::borsh-0.10.4::src/de/hint.rs": {
+      "order": 153,
+      "crate": "borsh-0.10.4",
+      "path": "src/de/hint.rs",
+      "review_scope": "Capacity arithmetic after the truncating u32 cast, including division-by-zero panic; the program panic strategy is an explicit callback.",
+      "sha256": "dffc6467558f6966206fd7711cb7e366e192bb92b9d6ce33b8a19d087645f768"
+    },
+    "codecs::borsh-1.6.1::src/de/mod.rs": {
+      "order": 154,
+      "crate": "borsh-1.6.1",
+      "path": "src/de/mod.rs",
+      "review_scope": "Ordinary decoding at R = &[u8]. The behavior of the std slice reader (read_exact, and read returning min(buffer, remaining)) is assumed rather than modeled as a function, and its source and the allocator bodies are not pinned.",
+      "sha256": "de33c4401635c62ba60559014ee9bd69785cf40412c6da84cb2d12a45ead6462"
+    },
+    "codecs::borsh-1.6.1::src/de/hint.rs": {
+      "order": 155,
+      "crate": "borsh-1.6.1",
+      "path": "src/de/hint.rs",
+      "review_scope": "Capacity arithmetic after the truncating u32 cast, including division-by-zero panic; the program panic strategy is an explicit callback.",
+      "sha256": "dffc6467558f6966206fd7711cb7e366e192bb92b9d6ce33b8a19d087645f768"
+    },
+    "codecs::borsh-1.6.1::src/error.rs": {
+      "order": 156,
+      "crate": "borsh-1.6.1",
+      "path": "src/error.rs",
+      "review_scope": "Zero-sized collection rejection (check_zst).",
+      "sha256": "ee752a75bdf432e4fa435288dc94f4532dd774aeeaa5aa1e9847f253cd07a935"
+    },
+    "codecs::borsh-1.6.1::src/nostd_io.rs": {
+      "order": 157,
+      "crate": "borsh-1.6.1",
+      "path": "src/nostd_io.rs",
+      "review_scope": "The provided Write::write_all of the no-std io of borsh (545-560): the write loop, the WriteZero error and the allocation of its String message, the Interrupted retry, other errors and the panic of the slice index. The Error representation, the other Write and Read methods and the implementations that override write_all are not modeled.",
+      "sha256": "5ec34a946786142ff44f18cfbe692b62e45921e4d7e675da2d9f72496cf6e1bb"
+    },
+    "addresses::borsh-0.10.4::src/ser/mod.rs": {
+      "order": 228,
+      "crate": "borsh-0.10.4",
+      "path": "src/ser/mod.rs",
+      "sha256": "c915b074e19acd592aeb5c41b86618ae3ce7685e4bca45f02999877dfa07e719",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "addresses::borsh-0.9.3::src/de/mod.rs": {
+      "order": 229,
+      "crate": "borsh-0.9.3",
+      "path": "src/de/mod.rs",
+      "sha256": "37016f8c26bd9ffc54d05e60879e256973aed0462a1f2224b045133e353021f8",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "addresses::borsh-0.9.3::src/ser/mod.rs": {
+      "order": 230,
+      "crate": "borsh-0.9.3",
+      "path": "src/ser/mod.rs",
+      "sha256": "b3d5db4ec07f0b7d6a4ca6540add13648149707fb57cba309f8c889d15839fd9",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "addresses::borsh-1.6.0::src/de/mod.rs": {
+      "order": 231,
+      "crate": "borsh-1.6.0",
+      "path": "src/de/mod.rs",
+      "sha256": "de33c4401635c62ba60559014ee9bd69785cf40412c6da84cb2d12a45ead6462",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "addresses::borsh-1.6.0::src/ser/mod.rs": {
+      "order": 232,
+      "crate": "borsh-1.6.0",
+      "path": "src/ser/mod.rs",
+      "sha256": "f6265842f9a263673766cc7ab7d4add437e3b92681f0933e8bec1a96c29aa666",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    }
+  },
+  "models": {
+    "borsh::Array::invalid_data::deserialize_reader": {
+      "order": 33,
+      "contract": "Solanalib.Specs.Borsh.Array.invalid_data.deserialize_reader_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:01a49762cffd15fd", "@text:ab098935c75e8fd9", "@text:439bab019b776626"]
+    },
+    "borsh::Array::serialize": {
+      "order": 34,
+      "contract": "Solanalib.Specs.Borsh.Array.serialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:6e6284c76c0052ab", "@text:4a8781572a6de7b0"]
+    },
+    "borsh::Option::invalid_data::deserialize_reader": {
+      "order": 35,
+      "contract": "Solanalib.Specs.Borsh.Option.invalid_data.deserialize_reader_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:01a49762cffd15fd"]
+    },
+    "borsh::Option::invalid_input::deserialize_reader": {
+      "order": 36,
+      "contract": "Solanalib.Specs.Borsh.Option.invalid_input.deserialize_reader_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:01a49762cffd15fd", "@text:9d1d34ed194bbd7c"]
+    },
+    "borsh::Option::serialize": {
+      "order": 37,
+      "contract": "Solanalib.Specs.Borsh.Option.serialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:6e6284c76c0052ab"]
+    },
+    "borsh::Vec::invalid_input::deserialize_reader": {
+      "order": 38,
+      "contract": "Solanalib.Specs.Borsh.Vec.invalid_input.deserialize_reader_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": [
+        "@text:01a49762cffd15fd",
+        "@text:80e3d0987f15f29a",
+        "@text:45253be852ccfb0b",
+        "@text:2454e2ba22f6dba4",
+        "@text:72afc3e03f7f4dcb"
+      ]
+    },
+    "borsh::bool::invalid_data::deserialize_reader": {
+      "order": 39,
+      "contract": "Solanalib.Specs.Borsh.bool.invalid_data.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.Borsh.bool.invalid_data.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6"]
+    },
+    "borsh::bool::invalid_input::deserialize_reader": {
+      "order": 40,
+      "contract": "Solanalib.Specs.Borsh.bool.invalid_input.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.Borsh.bool.invalid_input.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6"]
+    },
+    "borsh::bool::serialize": {
+      "order": 41,
+      "contract": "Solanalib.Specs.Borsh.bool.serialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:e82c4e90eed6408d"]
+    },
+    "borsh::de::BorshDeserialize::deserialize": {
+      "order": 42,
+      "contract": "Solanalib.Specs.Borsh.de.BorshDeserialize.deserialize_contract",
+      "witness_kind": "FamilyReference",
+      "satisfiable": "Solanalib.Specs.Borsh.de.BorshDeserialize.deserialize_invalid_data_satisfiable",
+      "execution": "Solanalib.Specs.Borsh.de.BorshDeserialize.deserialize_invalid_data_has_execution",
+      "sample": "Solanalib.Specs.Borsh.de.BorshDeserialize.deserialize_invalid_data_sample",
+      "assumptions": ["@text:01a49762cffd15fd"]
+    },
+    "borsh::de::BorshDeserialize::try_from_slice": {
+      "order": 43,
+      "contract": "Solanalib.Specs.Borsh.de.BorshDeserialize.try_from_slice_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:2ea546f4349b7465", "@text:72afc3e03f7f4dcb"]
+    },
+    "borsh::de::BorshDeserialize::vec_from_reader": {
+      "order": 44,
+      "contract": "Solanalib.Specs.Borsh.de.BorshDeserialize.vec_from_reader_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:57c35f3bd7b31d9a"]
+    },
+    "borsh::de::hint::cautious": {
+      "order": 45,
+      "contract": "Solanalib.Specs.Borsh.de.hint.cautious_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:b8a342561938f119", "@text:2db8ee77063d4768"]
+    },
+    "borsh::f64::invalid_data::deserialize_reader": {
+      "order": 46,
+      "contract": "Solanalib.Specs.Borsh.f64.invalid_data.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.Borsh.f64.invalid_data.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6"]
+    },
+    "borsh::f64::serialize": {
+      "order": 47,
+      "contract": "Solanalib.Specs.Borsh.f64.serialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:e82c4e90eed6408d"]
+    },
+    "borsh::i32::invalid_data::deserialize_reader": {
+      "order": 48,
+      "contract": "Solanalib.Specs.Borsh.i32.invalid_data.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.Borsh.i32.invalid_data.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6"]
+    },
+    "borsh::i64::invalid_data::deserialize_reader": {
+      "order": 49,
+      "contract": "Solanalib.Specs.Borsh.i64.invalid_data.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.Borsh.i64.invalid_data.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6"]
+    },
+    "borsh::i64::serialize": {
+      "order": 50,
+      "contract": "Solanalib.Specs.Borsh.i64.serialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:e82c4e90eed6408d"]
+    },
+    "borsh::i8::invalid_input::deserialize_reader": {
+      "order": 51,
+      "contract": "Solanalib.Specs.Borsh.i8.invalid_input.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.Borsh.i8.invalid_input.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6"]
+    },
+    "borsh::nostd_io::Write::write_all": {
+      "order": 52,
+      "contract": "Solanalib.Specs.Borsh.nostd_io.Write.write_all_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:537d4ce241c52ea9", "@text:bbe5da953899786d", "@text:975310bb3e76d5ba", "@text:2b504ab099bc0a2e"]
+    },
+    "borsh::u32::invalid_data::deserialize_reader": {
+      "order": 53,
+      "contract": "Solanalib.Specs.Borsh.u32.invalid_data.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.Borsh.u32.invalid_data.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6"]
+    },
+    "borsh::u32::invalid_input::deserialize_reader": {
+      "order": 54,
+      "contract": "Solanalib.Specs.Borsh.u32.invalid_input.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.Borsh.u32.invalid_input.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6"]
+    },
+    "borsh::u32::serialize": {
+      "order": 55,
+      "contract": "Solanalib.Specs.Borsh.u32.serialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:e82c4e90eed6408d"]
+    },
+    "borsh::u64::invalid_data::deserialize_reader": {
+      "order": 56,
+      "contract": "Solanalib.Specs.Borsh.u64.invalid_data.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.Borsh.u64.invalid_data.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6"]
+    },
+    "borsh::u64::invalid_input::deserialize_reader": {
+      "order": 57,
+      "contract": "Solanalib.Specs.Borsh.u64.invalid_input.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.Borsh.u64.invalid_input.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6"]
+    },
+    "borsh::u64::serialize": {
+      "order": 58,
+      "contract": "Solanalib.Specs.Borsh.u64.serialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:e82c4e90eed6408d"]
+    },
+    "borsh::u8::invalid_data::array_from_reader": {
+      "order": 59,
+      "contract": "Solanalib.Specs.Borsh.u8.invalid_data.array_from_reader_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:312384afac96d6d3"]
+    },
+    "borsh::u8::invalid_data::deserialize_reader": {
+      "order": 60,
+      "contract": "Solanalib.Specs.Borsh.u8.invalid_data.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.Borsh.u8.invalid_data.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6"]
+    },
+    "borsh::u8::invalid_input::deserialize_reader": {
+      "order": 61,
+      "contract": "Solanalib.Specs.Borsh.u8.invalid_input.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.Borsh.u8.invalid_input.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6"]
+    },
+    "borsh::u8::serialize": {
+      "order": 62,
+      "contract": "Solanalib.Specs.Borsh.u8.serialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:e82c4e90eed6408d"]
+    },
+    "borsh::u8::u8_slice": {
+      "order": 63,
+      "contract": "Solanalib.Specs.Borsh.u8.u8_slice_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.Borsh.u8.u8_slice_model",
+      "assumptions": ["@text:97e7a1dfc0d8120d"]
+    }
+  },
+  "api": {
+    "borsh@0.10.4::de::BorshDeserialize::deserialize": {
+      "order": 21,
+      "source_id": "codecs::borsh-0.10.4::src/de/mod.rs",
+      "line": 38,
+      "anchor_text": "fn deserialize(buf: &mut &[u8]) -> Result<Self> {",
+      "scope": "@text:9f2ba7ed239dd4aa",
+      "binding_obligations": "@shared:binding-obligations-b9f5fdc096bfd613",
+      "rust_names": ["borsh::de::BorshDeserialize::deserialize"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.deserialize_family_forwards"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.deserializeProgram",
+        "Solanalib.Specs.Core.Borsh.deserializeFamily",
+        "Solanalib.Specs.Core.Borsh.deserializeRun_iff",
+        "Solanalib.Specs.Core.Borsh.deserializeFn"
+      ],
+      "models": ["borsh::de::BorshDeserialize::deserialize"],
+      "binding_defaults": false
+    },
+    "borsh@0.10.4::de::BorshDeserialize::try_from_slice": {
+      "order": 22,
+      "source_id": "codecs::borsh-0.10.4::src/de/mod.rs",
+      "line": 45,
+      "anchor_text": "fn try_from_slice(v: &[u8]) -> Result<Self> {",
+      "scope": "@text:436d1e4ac8933172",
+      "binding_obligations": ["@binding:f2d1a89f467a17ae", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["borsh::de::BorshDeserialize::try_from_slice"],
+      "clients": [
+        "SolanalibTest.Specs.Borsh.De.try_from_slice_controls",
+        "SolanalibTest.Specs.Borsh.De.try_from_slice_reports_inner_error"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.tryFromSliceProgram",
+        "Solanalib.Specs.Core.Borsh.tryFromSliceFamily",
+        "Solanalib.Specs.Core.Borsh.tryFromSliceFn",
+        "Solanalib.Specs.Core.Borsh.notAllBytesRead"
+      ],
+      "models": ["borsh::de::BorshDeserialize::try_from_slice"],
+      "binding_defaults": false
+    },
+    "borsh@0.10.4::de::BorshDeserialize::vec_from_reader": {
+      "order": 23,
+      "source_id": "codecs::borsh-0.10.4::src/de/mod.rs",
+      "line": 65,
+      "anchor_text": "fn vec_from_reader<R: Read>(len: u32, reader: &mut R) -> Result<Option<Vec<Self>>> {",
+      "scope": "@text:c10dbae040714710",
+      "binding_obligations": ["@binding:5190a32e6baa1ea3"],
+      "rust_names": ["borsh::de::BorshDeserialize::vec_from_reader"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.vec_from_reader_default_reads_nothing"],
+      "model_dependencies": ["Solanalib.Specs.Core.Borsh.vecFromReaderDefaultFamily"],
+      "models": ["borsh::de::BorshDeserialize::vec_from_reader"],
+      "binding_defaults": false
+    },
+    "borsh@0.10.4::de::Option::deserialize_reader": {
+      "order": 24,
+      "source_id": "codecs::borsh-0.10.4::src/de/mod.rs",
+      "line": 319,
+      "anchor_text": "impl<T> BorshDeserialize for Option<T>",
+      "scope": "@text:521e8af1cb8741ab",
+      "rust_names": ["<core::option::Option<T> as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.bool_and_option_tags"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.optionProgram",
+        "Solanalib.Specs.Core.Borsh.optionDecodeFamily",
+        "Solanalib.Specs.Core.Borsh.optionDecodeFn",
+        "Solanalib.Specs.Core.Borsh.optionDecodeRun_ofFunction"
+      ],
+      "models": ["borsh::Option::invalid_input::deserialize_reader"]
+    },
+    "borsh@0.10.4::de::Vec::deserialize_reader": {
+      "order": 25,
+      "source_id": "codecs::borsh-0.10.4::src/de/mod.rs",
+      "line": 374,
+      "anchor_text": "impl<T> BorshDeserialize for Vec<T>",
+      "scope": "@text:7bf94d3c2d20ee18",
+      "binding_obligations": ["@binding:17a03b289e0ff9cd", "@binding:c057a58384ccd687", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["<alloc::vec::Vec<T> as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": [
+        "SolanalibTest.Specs.Borsh.De.vec_cautious_capacity",
+        "SolanalibTest.Specs.Borsh.De.vec_family_at_function_graph",
+        "SolanalibTest.Specs.Borsh.De.empty_vec_allocates_nothing",
+        "SolanalibTest.Specs.Borsh.De.vec_truncation_panics_before_callbacks",
+        "SolanalibTest.Specs.Borsh.De.vec_truncation_preserves_earlier_exits",
+        "SolanalibTest.Specs.Borsh.De.vec_truncated_nonzero_capacity",
+        "SolanalibTest.Specs.Borsh.De.byte_vec_keeps_specialization"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.vecProgram",
+        "Solanalib.Specs.Core.Borsh.byteVecProgram",
+        "Solanalib.Specs.Core.Borsh.byteVecCalls",
+        "Solanalib.Specs.Core.Borsh.cautious",
+        "Solanalib.Specs.Core.Borsh.VecCall",
+        "Solanalib.Specs.Core.Borsh.vecDecodeFamily",
+        "Solanalib.Specs.Core.Borsh.vecDecodeFn",
+        "Solanalib.Specs.Core.Borsh.byteVecDecodeFn",
+        "Solanalib.Specs.Core.Borsh.vecDecodeRun_ofFunction",
+        "Solanalib.Specs.Core.Borsh.vecDecodeRun_byte",
+        "Solanalib.Specs.Core.Borsh.cautiousDivisor",
+        "Solanalib.Specs.Core.Borsh.VecProgram.Runs",
+        "Solanalib.Specs.Core.Borsh.vecDecodeWithPanicFn",
+        "Solanalib.Specs.Core.Borsh.vecDecodeRun_withPanic_ofFunction"
+      ],
+      "models": ["borsh::Vec::invalid_input::deserialize_reader"],
+      "binding_defaults": false
+    },
+    "borsh@0.10.4::de::bool::deserialize_reader": {
+      "order": 26,
+      "source_id": "codecs::borsh-0.10.4::src/de/mod.rs",
+      "line": 290,
+      "anchor_text": "impl BorshDeserialize for bool {",
+      "scope": "@text:209b58546d8b14b9",
+      "rust_names": ["<bool as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": [
+        "SolanalibTest.Specs.Borsh.De.bool_and_option_tags",
+        "SolanalibTest.Specs.Borsh.De.kinds_are_invalid_input"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.decodeBool",
+        "Solanalib.Specs.Core.Borsh.invalidBoolMessage",
+        "Solanalib.Specs.Core.Borsh.decoderContract"
+      ],
+      "models": ["borsh::bool::invalid_input::deserialize_reader"]
+    },
+    "borsh@0.10.4::de::hint::cautious": {
+      "order": 27,
+      "source_id": "codecs::borsh-0.10.4::src/de/hint.rs",
+      "line": 2,
+      "anchor_text": "pub fn cautious<T>(hint: u32) -> usize {",
+      "scope": "@text:26ee4601da4d26a6",
+      "binding_obligations": ["@binding:2bc46c3a684818c5", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["borsh::de::hint::cautious"],
+      "clients": [
+        "SolanalibTest.Specs.Borsh.De.cautious_values",
+        "SolanalibTest.Specs.Borsh.De.cautious_truncates_size",
+        "SolanalibTest.Specs.Borsh.De.cautious_family_panics",
+        "SolanalibTest.Specs.Borsh.De.cautious_rejects_untruncated_result"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.cautious",
+        "Solanalib.Specs.Core.Borsh.cautiousFamily",
+        "Solanalib.Specs.Core.Borsh.cautiousDivisor",
+        "Solanalib.Specs.Core.Borsh.cautiousFn",
+        "Solanalib.Specs.Core.Borsh.cautiousRun_ofFunction"
+      ],
+      "models": ["borsh::de::hint::cautious"],
+      "binding_defaults": false
+    },
+    "borsh@0.10.4::de::i8::deserialize_reader": {
+      "order": 28,
+      "source_id": "codecs::borsh-0.10.4::src/de/mod.rs",
+      "line": 203,
+      "anchor_text": "impl_for_integer!(i8);",
+      "scope": "@text:ba9c57272b918831",
+      "rust_names": ["<i8 as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.i8_price_exponent"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.decodeI8",
+        "Solanalib.Specs.Core.Borsh.takeExact",
+        "Solanalib.Specs.Core.Borsh.decoderContract"
+      ],
+      "models": ["borsh::i8::invalid_input::deserialize_reader"]
+    },
+    "borsh@0.10.4::de::u32::deserialize_reader": {
+      "order": 29,
+      "source_id": "codecs::borsh-0.10.4::src/de/mod.rs",
+      "line": 209,
+      "anchor_text": "impl_for_integer!(u32);",
+      "scope": "@text:527355bc1c29ef7b",
+      "rust_names": ["<u32 as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.u8_and_u32_little_endian"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.decodeU32",
+        "Solanalib.Specs.Core.Borsh.takeExact",
+        "Solanalib.Specs.Core.Borsh.decoderContract"
+      ],
+      "models": ["borsh::u32::invalid_input::deserialize_reader"]
+    },
+    "borsh@0.10.4::de::u64::deserialize_reader": {
+      "order": 30,
+      "source_id": "codecs::borsh-0.10.4::src/de/mod.rs",
+      "line": 210,
+      "anchor_text": "impl_for_integer!(u64);",
+      "scope": "@text:eaffb2146cb18a4b",
+      "rust_names": ["<u64 as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.kinds_are_invalid_input"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.decodeU64",
+        "Solanalib.Specs.Core.Borsh.takeExact",
+        "Solanalib.Specs.Core.Borsh.decoderContract"
+      ],
+      "models": ["borsh::u64::invalid_input::deserialize_reader"]
+    },
+    "borsh@0.10.4::de::u8::deserialize_reader": {
+      "order": 31,
+      "source_id": "codecs::borsh-0.10.4::src/de/mod.rs",
+      "line": 136,
+      "anchor_text": "impl BorshDeserialize for u8 {",
+      "scope": "@text:59735602b3632ed9",
+      "rust_names": ["<u8 as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.u8_and_u32_little_endian"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.decodeU8",
+        "Solanalib.Specs.Core.Borsh.takeExact",
+        "Solanalib.Specs.Core.Borsh.decoderContract"
+      ],
+      "models": ["borsh::u8::invalid_input::deserialize_reader"]
+    },
+    "borsh@1.6.1::de::Array::deserialize_reader": {
+      "order": 32,
+      "source_id": "codecs::borsh-1.6.1::src/de/mod.rs",
+      "line": 768,
+      "anchor_text": "impl<T, const N: usize> BorshDeserialize for [T; N]",
+      "scope": "@text:2f43711aed600a9a",
+      "rust_names": ["<[T; N] as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": [
+        "SolanalibTest.Specs.Borsh.De.byte_array_32",
+        "SolanalibTest.Specs.Borsh.De.array_family_byte_path",
+        "SolanalibTest.Specs.Borsh.De.array_family_generic_path"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.arrayProgram",
+        "Solanalib.Specs.Core.Borsh.decodeByteArray",
+        "Solanalib.Specs.Core.Borsh.arrayDecodeFamily",
+        "Solanalib.Specs.Core.Borsh.arrayDecodeFn",
+        "Solanalib.Specs.Core.Borsh.byteArrayDecodeFn",
+        "Solanalib.Specs.Core.Borsh.arrayDecodeRun_ofFunction",
+        "Solanalib.Specs.Core.Borsh.arrayDecodeRun_byte"
+      ],
+      "models": ["borsh::Array::invalid_data::deserialize_reader"]
+    },
+    "borsh@1.6.1::de::BorshDeserialize::deserialize": {
+      "order": 33,
+      "source_id": "codecs::borsh-1.6.1::src/de/mod.rs",
+      "line": 39,
+      "anchor_text": "fn deserialize(buf: &mut &[u8]) -> Result<Self> {",
+      "scope": "@text:9f2ba7ed239dd4aa",
+      "binding_obligations": "@shared:binding-obligations-b9f5fdc096bfd613",
+      "rust_names": ["borsh::de::BorshDeserialize::deserialize"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.deserialize_forwards_unwind"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.deserializeProgram",
+        "Solanalib.Specs.Core.Borsh.deserializeFamily",
+        "Solanalib.Specs.Core.Borsh.deserializeRun_iff",
+        "Solanalib.Specs.Core.Borsh.deserializeFn"
+      ],
+      "models": ["borsh::de::BorshDeserialize::deserialize"],
+      "binding_defaults": false
+    },
+    "borsh@1.6.1::de::Option::deserialize_reader": {
+      "order": 34,
+      "source_id": "codecs::borsh-1.6.1::src/de/mod.rs",
+      "line": 316,
+      "anchor_text": "impl<T> BorshDeserialize for Option<T>",
+      "scope": "@text:840a05a69b584284",
+      "rust_names": ["<core::option::Option<T> as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.option_family_at_function_graph"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.optionProgram",
+        "Solanalib.Specs.Core.Borsh.optionDecodeFamily",
+        "Solanalib.Specs.Core.Borsh.optionDecodeFn",
+        "Solanalib.Specs.Core.Borsh.optionDecodeRun_ofFunction"
+      ],
+      "models": ["borsh::Option::invalid_data::deserialize_reader"]
+    },
+    "borsh@1.6.1::de::bool::deserialize_reader": {
+      "order": 35,
+      "source_id": "codecs::borsh-1.6.1::src/de/mod.rs",
+      "line": 300,
+      "anchor_text": "impl BorshDeserialize for bool {",
+      "scope": "@text:d17ab6203a3ee65b",
+      "rust_names": ["<bool as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.bool_tag_error_is_invalid_data"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.decodeBool",
+        "Solanalib.Specs.Core.Borsh.invalidBoolMessage",
+        "Solanalib.Specs.Core.Borsh.decoderContract"
+      ],
+      "models": ["borsh::bool::invalid_data::deserialize_reader"]
+    },
+    "borsh@1.6.1::de::f64::deserialize_reader": {
+      "order": 36,
+      "source_id": "codecs::borsh-1.6.1::src/de/mod.rs",
+      "line": 298,
+      "anchor_text": "impl_for_float!(f64, u64);",
+      "scope": "@text:56f0185d268fb79c",
+      "rust_names": ["<f64 as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.f64_rate_and_nan"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.decodeF64",
+        "Solanalib.Specs.Core.Borsh.isNaN",
+        "Solanalib.Specs.Core.Float64.decode",
+        "Solanalib.Specs.Core.Borsh.decoderContract"
+      ],
+      "models": ["borsh::f64::invalid_data::deserialize_reader"]
+    },
+    "borsh@1.6.1::de::i32::deserialize_reader": {
+      "order": 37,
+      "source_id": "codecs::borsh-1.6.1::src/de/mod.rs",
+      "line": 215,
+      "anchor_text": "impl_for_integer!(i32);",
+      "scope": "@text:61051fad13a2e646",
+      "rust_names": ["<i32 as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.i32_negative_exponent"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.decodeI32",
+        "Solanalib.Specs.Core.Borsh.takeExact",
+        "Solanalib.Specs.Core.Borsh.decoderContract"
+      ],
+      "models": ["borsh::i32::invalid_data::deserialize_reader"]
+    },
+    "borsh@1.6.1::de::i64::deserialize_reader": {
+      "order": 38,
+      "source_id": "codecs::borsh-1.6.1::src/de/mod.rs",
+      "line": 216,
+      "anchor_text": "impl_for_integer!(i64);",
+      "scope": "@text:709820916e4a04bb",
+      "rust_names": ["<i64 as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.i64_and_u64_share_bytes_not_values"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.decodeI64",
+        "Solanalib.Specs.Core.Borsh.takeExact",
+        "Solanalib.Specs.Core.Borsh.decoderContract"
+      ],
+      "models": ["borsh::i64::invalid_data::deserialize_reader"]
+    },
+    "borsh@1.6.1::de::u32::deserialize_reader": {
+      "order": 39,
+      "source_id": "codecs::borsh-1.6.1::src/de/mod.rs",
+      "line": 219,
+      "anchor_text": "impl_for_integer!(u32);",
+      "scope": "@text:c333e90419641e17",
+      "rust_names": ["<u32 as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.u32_tag_little_endian"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.decodeU32",
+        "Solanalib.Specs.Core.Borsh.takeExact",
+        "Solanalib.Specs.Core.Borsh.decoderContract"
+      ],
+      "models": ["borsh::u32::invalid_data::deserialize_reader"]
+    },
+    "borsh@1.6.1::de::u64::deserialize_reader": {
+      "order": 40,
+      "source_id": "codecs::borsh-1.6.1::src/de/mod.rs",
+      "line": 220,
+      "anchor_text": "impl_for_integer!(u64);",
+      "scope": "@text:d4e0eb90cdc63f3a",
+      "rust_names": ["<u64 as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": [
+        "SolanalibTest.Specs.Borsh.De.short_input_is_invalid_data",
+        "SolanalibTest.Specs.Borsh.De.versioned_contract_holds",
+        "SolanalibTest.Specs.Borsh.De.contract_admits_unchanged_slice_after_error",
+        "SolanalibTest.Specs.Borsh.De.i64_and_u64_share_bytes_not_values"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.decodeU64",
+        "Solanalib.Specs.Core.Borsh.takeExact",
+        "Solanalib.Specs.Core.Borsh.decoderContract"
+      ],
+      "models": ["borsh::u64::invalid_data::deserialize_reader"]
+    },
+    "borsh@1.6.1::de::u8::array_from_reader": {
+      "order": 41,
+      "source_id": "codecs::borsh-1.6.1::src/de/mod.rs",
+      "line": 188,
+      "anchor_text": "fn array_from_reader<R: Read, const N: usize>(reader: &mut R) -> Result<Option<[Self; N]>> {",
+      "scope": "@text:12a3d820cf77fe7d",
+      "rust_names": ["<u8 as borsh::de::BorshDeserialize>::array_from_reader"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.array_from_reader_some"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.byteArrayFromReader",
+        "Solanalib.Specs.Core.Borsh.decodeByteArray",
+        "Solanalib.Specs.Core.Borsh.byteArrayFromReaderFamily"
+      ],
+      "models": ["borsh::u8::invalid_data::array_from_reader"]
+    },
+    "borsh@1.6.1::de::u8::deserialize_reader": {
+      "order": 42,
+      "source_id": "codecs::borsh-1.6.1::src/de/mod.rs",
+      "line": 146,
+      "anchor_text": "impl BorshDeserialize for u8 {",
+      "scope": "@text:dfeb83c08003bdf7",
+      "rust_names": ["<u8 as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "clients": ["SolanalibTest.Specs.Borsh.De.contract_rejects_wrong_success_remainder"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.decodeU8",
+        "Solanalib.Specs.Core.Borsh.takeExact",
+        "Solanalib.Specs.Core.Borsh.decoderContract"
+      ],
+      "models": ["borsh::u8::invalid_data::deserialize_reader"]
+    },
+    "borsh@1.6.1::nostd_io::Write::write_all": {
+      "order": 43,
+      "source_id": "codecs::borsh-1.6.1::src/nostd_io.rs",
+      "line": 545,
+      "anchor_text": "fn write_all(&mut self, mut buf: &[u8]) -> Result<()> {",
+      "scope": "@text:960ae3f8761f2c7f",
+      "binding_obligations": [
+        "@binding:223a82755f573ca2",
+        "@binding:79637d167eaeecdf",
+        "@binding:a12e3b881a4024a7",
+        "@binding:5190a32e6baa1ea3"
+      ],
+      "rust_names": ["borsh::nostd_io::Write::write_all"],
+      "clients": [
+        "SolanalibTest.Specs.Borsh.NostdIo.empty_buffer_no_call",
+        "SolanalibTest.Specs.Borsh.NostdIo.partial_counts_continue",
+        "SolanalibTest.Specs.Borsh.NostdIo.zero_count_is_write_zero",
+        "SolanalibTest.Specs.Borsh.NostdIo.zero_count_allocation_failure",
+        "SolanalibTest.Specs.Borsh.NostdIo.interrupted_retries_same_buffer",
+        "SolanalibTest.Specs.Borsh.NostdIo.other_error_unchanged",
+        "SolanalibTest.Specs.Borsh.NostdIo.overrun_panics",
+        "SolanalibTest.Specs.Borsh.NostdIo.write_unwind_forwarded",
+        "SolanalibTest.Specs.Borsh.NostdIo.always_interrupted_has_no_outcome",
+        "SolanalibTest.Specs.Borsh.NostdIo.u32_over_modelled_write_all"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.writeZeroError",
+        "Solanalib.Specs.Core.Borsh.WriteAllAllocation",
+        "Solanalib.Specs.Core.Borsh.WriteAllRuns",
+        "Solanalib.Specs.Core.Borsh.writeAllFamily",
+        "Solanalib.Specs.Core.Borsh.writeAllFuel",
+        "Solanalib.Specs.Core.Borsh.writeAllRuns_ofFunction_iff",
+        "Solanalib.Specs.Core.Borsh.WriterIndex.ofWrite"
+      ],
+      "models": ["borsh::nostd_io::Write::write_all"],
+      "binding_defaults": false
+    },
+    "borsh@1.6.1::ser::Array::serialize": {
+      "order": 44,
+      "source_id": "value-request::borsh-1.6.1::src/ser/mod.rs",
+      "line": 576,
+      "anchor_text": "impl<T, const N: usize> BorshSerialize for [T; N]",
+      "scope": "@text:2bd87166c2b73080",
+      "binding_obligations": ["@binding:806ff9d3f58588e0", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["<[T; N] as borsh::ser::BorshSerialize>::serialize"],
+      "clients": [
+        "SolanalibTest.Specs.Borsh.Ser.byte_array_16_one_chunk",
+        "SolanalibTest.Specs.Borsh.Ser.option_of_byte_array"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.byteArraySerializeProgram",
+        "Solanalib.Specs.Core.Borsh.arraySerializeProgram",
+        "Solanalib.Specs.Core.Borsh.arraySerializeFamily",
+        "Solanalib.Specs.Core.Borsh.byteArraySerializeFn",
+        "Solanalib.Specs.Core.Borsh.arraySerializeFn",
+        "Solanalib.Specs.Core.Borsh.arraySerializeRun_byte",
+        "Solanalib.Specs.Core.Borsh.arraySerializeRun_ofFunction"
+      ],
+      "models": ["borsh::Array::serialize"],
+      "binding_defaults": false
+    },
+    "borsh@1.6.1::ser::Option::serialize": {
+      "order": 45,
+      "source_id": "value-request::borsh-1.6.1::src/ser/mod.rs",
+      "line": 160,
+      "anchor_text": "impl<T> BorshSerialize for Option<T>",
+      "scope": "@text:bf0ec6d351697055",
+      "binding_obligations": ["@binding:49a16c6a1bbf1e3d", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["<core::option::Option<T> as borsh::ser::BorshSerialize>::serialize"],
+      "clients": ["SolanalibTest.Specs.Borsh.Ser.option_of_byte_array"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.optionSerializeProgram",
+        "Solanalib.Specs.Core.Borsh.optionSerializeFamily",
+        "Solanalib.Specs.Core.Borsh.optionSerializeFn",
+        "Solanalib.Specs.Core.Borsh.optionSerializeRun_ofFunction"
+      ],
+      "models": ["borsh::Option::serialize"],
+      "binding_defaults": false
+    },
+    "borsh@1.6.1::ser::bool::serialize": {
+      "order": 46,
+      "source_id": "value-request::borsh-1.6.1::src/ser/mod.rs",
+      "line": 153,
+      "anchor_text": "impl BorshSerialize for bool {",
+      "scope": "@text:14fefb213850eff8",
+      "binding_obligations": ["@binding:1a7c81de7b33e146", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["<bool as borsh::ser::BorshSerialize>::serialize"],
+      "clients": ["SolanalibTest.Specs.Borsh.Ser.bool_bytes"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.encodeBool",
+        "Solanalib.Specs.Core.Borsh.encodeProgram",
+        "Solanalib.Specs.Core.Borsh.writeChunks",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeFamily",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeFn",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeRun_ofFunction"
+      ],
+      "models": ["borsh::bool::serialize"],
+      "binding_defaults": false
+    },
+    "borsh@1.6.1::ser::f64::serialize": {
+      "order": 47,
+      "source_id": "value-request::borsh-1.6.1::src/ser/mod.rs",
+      "line": 151,
+      "anchor_text": "impl_for_float!(f64);",
+      "scope": "@text:2722e0e355b5773a",
+      "binding_obligations": ["@binding:1a7c81de7b33e146", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["<f64 as borsh::ser::BorshSerialize>::serialize"],
+      "clients": [
+        "SolanalibTest.Specs.Borsh.Ser.f64_finite_and_nan",
+        "SolanalibTest.Specs.Borsh.Ser.f64_infinity_written"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.encodeF64",
+        "Solanalib.Specs.Core.Borsh.encodeProgram",
+        "Solanalib.Specs.Core.Borsh.writeChunks",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeFamily",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeFn",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeRun_ofFunction"
+      ],
+      "models": ["borsh::f64::serialize"],
+      "binding_defaults": false
+    },
+    "borsh@1.6.1::ser::i64::serialize": {
+      "order": 48,
+      "source_id": "value-request::borsh-1.6.1::src/ser/mod.rs",
+      "line": 92,
+      "anchor_text": "impl_for_integer!(i64);",
+      "scope": "@text:cccb0dd0648f7d97",
+      "binding_obligations": ["@binding:1a7c81de7b33e146", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["<i64 as borsh::ser::BorshSerialize>::serialize"],
+      "clients": ["SolanalibTest.Specs.Borsh.Ser.i64_twos_complement"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.encodeI64",
+        "Solanalib.Specs.Core.Borsh.encodeProgram",
+        "Solanalib.Specs.Core.Borsh.writeChunks",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeFamily",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeFn",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeRun_ofFunction"
+      ],
+      "models": ["borsh::i64::serialize"],
+      "binding_defaults": false
+    },
+    "borsh@1.6.1::ser::u32::serialize": {
+      "order": 49,
+      "source_id": "value-request::borsh-1.6.1::src/ser/mod.rs",
+      "line": 95,
+      "anchor_text": "impl_for_integer!(u32);",
+      "scope": "@text:e04f5720f09ce06c",
+      "binding_obligations": ["@binding:1a7c81de7b33e146", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["<u32 as borsh::ser::BorshSerialize>::serialize"],
+      "clients": ["SolanalibTest.Specs.Borsh.Ser.u32_one_chunk_little_endian"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.encodeU32",
+        "Solanalib.Specs.Core.Borsh.encodeProgram",
+        "Solanalib.Specs.Core.Borsh.writeChunks",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeFamily",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeFn",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeRun_ofFunction"
+      ],
+      "models": ["borsh::u32::serialize"],
+      "binding_defaults": false
+    },
+    "borsh@1.6.1::ser::u64::serialize": {
+      "order": 50,
+      "source_id": "value-request::borsh-1.6.1::src/ser/mod.rs",
+      "line": 96,
+      "anchor_text": "impl_for_integer!(u64);",
+      "scope": "@text:7185b0f60b1dae90",
+      "binding_obligations": ["@binding:1a7c81de7b33e146", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["<u64 as borsh::ser::BorshSerialize>::serialize"],
+      "clients": ["SolanalibTest.Specs.Borsh.Ser.writer_error_retains_partial_write"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.encodeU64",
+        "Solanalib.Specs.Core.Borsh.encodeProgram",
+        "Solanalib.Specs.Core.Borsh.writeChunks",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeFamily",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeFn",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeRun_ofFunction"
+      ],
+      "models": ["borsh::u64::serialize"],
+      "binding_defaults": false
+    },
+    "borsh@1.6.1::ser::u8::serialize": {
+      "order": 51,
+      "source_id": "value-request::borsh-1.6.1::src/ser/mod.rs",
+      "line": 65,
+      "anchor_text": "impl BorshSerialize for u8 {",
+      "scope": "@text:76c6c4dbdefc556b",
+      "binding_obligations": ["@binding:1a7c81de7b33e146", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["<u8 as borsh::ser::BorshSerialize>::serialize"],
+      "clients": ["SolanalibTest.Specs.Borsh.Ser.u8_one_byte_chunk"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Borsh.encodeU8",
+        "Solanalib.Specs.Core.Borsh.encodeProgram",
+        "Solanalib.Specs.Core.Borsh.writeChunks",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeFamily",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeFn",
+        "Solanalib.Specs.Core.Borsh.primitiveSerializeRun_ofFunction"
+      ],
+      "models": ["borsh::u8::serialize"],
+      "binding_defaults": false
+    },
+    "borsh@1.6.1::ser::u8::u8_slice": {
+      "order": 52,
+      "source_id": "value-request::borsh-1.6.1::src/ser/mod.rs",
+      "line": 72,
+      "anchor_text": "fn u8_slice(slice: &[Self]) -> Option<&[u8]> {",
+      "scope": "@text:63dffaffabe70851",
+      "binding_obligations": ["@binding:e8ced30d0e6c882f", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["<u8 as borsh::ser::BorshSerialize>::u8_slice"],
+      "clients": ["SolanalibTest.Specs.Borsh.Ser.u8_slice_is_some"],
+      "model_dependencies": ["Solanalib.Specs.Core.Borsh.u8SliceContract"],
+      "models": ["borsh::u8::u8_slice"],
+      "binding_defaults": false
+    }
+  },
+  "applicability_sources": {
+    "borsh": {
+      "order": 3,
+      "package": "borsh",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.1.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.1.0.crate",
+          "sha256": "6dea24b80caa3a302e6e55af91811f005be7684faa81a4f1f05771f7af0d7481",
+          "revision": "eeef4a08b8c48f59926dda12e71d48b99a752634"
+        },
+        "0.2.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.2.0.crate",
+          "sha256": "41487e9524248ae97335c669479ec4d5d2e38396604e92e8ee1d878368280350",
+          "revision": "d264930a51a86d356acc772e08922a6cb9f7f0d8"
+        },
+        "0.2.1": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.2.1.crate",
+          "sha256": "3d968f8980d2c28a889ad3324b9ebde79099550e91cfb8bedabfe7deb7413dd0",
+          "revision": "7f77cb890560484615d5db352e00ec6b244f0a6d"
+        },
+        "0.2.2": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.2.2.crate",
+          "sha256": "8d2e860d2a6c167d6769bd176ed9610abaa9ecc1fcf999c14ecf093857512eec",
+          "revision": "c022b8042c7b108027815a2d802d61ba6eb63024"
+        },
+        "0.2.3": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.2.3.crate",
+          "sha256": "d2e5c862266f33764cc95583fd37d944a99edceab309805aa128210ec4f06f89",
+          "revision": "575ede34ebf435f64f221a508c7d40ada712383b"
+        },
+        "0.2.4": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.2.4.crate",
+          "sha256": "4af43e23dbc7ce5517388b2ea19c91894200b8ae66691bef4a90b91a2fd945b0",
+          "revision": "aec2fa9aedc6774fdfc3c3a7c26f8b5bf50e57f4"
+        },
+        "0.2.5": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.2.5.crate",
+          "sha256": "b51e61e52798ec08df9b9d6c432843c6b4c03cea21c09a22663ca967c08b87e7",
+          "revision": "6f5cc999673ba109ed5e2ea82c700e912f5afeb2"
+        },
+        "0.2.7": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.2.7.crate",
+          "sha256": "0c797ad04c210fab6ed758379b9fdb4ddf3b06565e1419baed33869f68f0b554",
+          "revision": "d77b8a5d2ded816cd1e2f9ea4c6c48ed64348a48"
+        },
+        "0.2.8": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.2.8.crate",
+          "sha256": "d20a2393497c6ac174b26fc87085eefa3bc2ad1a93752430bf55cb9ac5a62211",
+          "revision": "1851edae54a4c39433e1ade6f72552e15ea836b6"
+        },
+        "0.2.9": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.2.9.crate",
+          "sha256": "dcc19961b22d14bd3655eaa56950e18732f12539a2f937931333e1813888dd6e",
+          "revision": "35935143dcbee16ff304a811850449ee738d7629"
+        },
+        "0.2.10": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.2.10.crate",
+          "sha256": "6c56bce1ed0585bf13a971d3465844ee399a4b0a7380d6f7d7723bd46dbfbefb",
+          "revision": "e16de3385ab1a159e26987bfa4d875b34edd1e22"
+        },
+        "0.3.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.3.0.crate",
+          "sha256": "5424117b77fa1f75767eb437bf5df52fde7a330e9681b99d76d523ba7dc446e0",
+          "revision": "1c67bfc114263400aa0b9613183481ffa66d860c"
+        },
+        "0.4.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.4.0.crate",
+          "sha256": "717f7624d2c96606fbe135628db9c5d9b6ae849a457f144fefd43f06f9e57fe7",
+          "revision": "9b1d1e5826eb45b13c1f549164f62536f573ac7a"
+        },
+        "0.5.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.5.0.crate",
+          "sha256": "e999aeba3dba8c2a2ac164fc3081a617dbeea104c1cc7fa877d4251f05178eb2",
+          "revision": "681d90d01ca2ae20b703ea2ae494cc509654ad2f"
+        },
+        "0.6.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.6.0.crate",
+          "sha256": "3fb99f881a35802f6832f866fb11dbec1dd738abbe6c3a2e547e1bee8d435d30",
+          "revision": "0466418f728ca7b4ee9d4b96a2a48037b682d177"
+        },
+        "0.6.1": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.6.1.crate",
+          "sha256": "2f9dada4c07fa726bc195503048581e7b1719407f7fbef82741f7b149d3921b3",
+          "revision": "814c3db3e7c1ddfa1aef9586d5b8151fa99120b6"
+        },
+        "0.6.2": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.6.2.crate",
+          "sha256": "c7769f8f6fdc6ac7617bbc8bc7ef9dc263cd459d99d21cf2ab4afc3bc8d7d70d",
+          "revision": "edb090cbc980d848a7884bb55d27749003de2572"
+        },
+        "0.7.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.7.0.crate",
+          "sha256": "81d42092adf8d207d987cb8d676f068305a80b3dd58487a06680e8586e7c4c25",
+          "revision": "64e8dc936f69f89728539718f8f0405b86692170"
+        },
+        "0.7.1": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.7.1.crate",
+          "sha256": "30f3fd65922359a7c6e791bc9b2bba1b977ea0c0b96a528ac48007f535fb4184",
+          "revision": "ac794085a2aa6ebc3d92e94150c5a7726c4ae32c"
+        },
+        "0.7.2": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.7.2.crate",
+          "sha256": "b42b13fa9bf62be34702e5ee4526aff22530ae22fe34a0c4290d30d5e4e782e6",
+          "revision": "459ad1a361174672685944733164a3de41d4e2c8",
+          "repository": "https://github.com/near/borsh-rs"
+        },
+        "0.8.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.8.0.crate",
+          "sha256": "d8d2e03ffdeb51200e6d4229afaffadf559a1846dd352adff9fbbd5f02ea0d59",
+          "revision": "60ff72665bbf095d6d6d3bc48173d8597f1ec04d"
+        },
+        "0.8.1": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.8.1.crate",
+          "sha256": "a5a26c53ddf60281f18e7a29b20db7ba3db82a9d81b9650bfaa02d646f50d364",
+          "revision": "3dddc6d7af2e66bf4f5947c0187a9d1f7dae6888"
+        },
+        "0.8.2": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.8.2.crate",
+          "sha256": "09a7111f797cc721407885a323fb071636aee57f750b1a4ddc27397eba168a74",
+          "revision": "464df864aeefc45044ba63b8af57c064c5af9315"
+        },
+        "0.9.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.9.0.crate",
+          "sha256": "4fcabb02816fdadf90866dc9a7824491ccb63d69f55375a266dc03509ac68d36",
+          "revision": "735686d9345202e8b8ee1f35eab52d7db6bb82c5"
+        },
+        "0.9.1": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.9.1.crate",
+          "sha256": "18dda7dc709193c0d86a1a51050a926dc3df1cf262ec46a23a25dba421ea1924",
+          "revision": "3cf02fb60ac165ba3718e99c8223068ca5e96bef"
+        },
+        "0.9.2": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.9.2.crate",
+          "sha256": "4c9d0958efb8301e1626692ea879cbff622ef45cf731807ec8d488b34be98cb8"
+        },
+        "0.9.3": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.9.3.crate",
+          "sha256": "15bf3650200d8bffa99015595e10f1fbd17de07abbc25bb067da79e769939bfa"
+        },
+        "0.10.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.10.0.crate",
+          "sha256": "822462c1e7b17b31961798a6874b36daea6818e99e0cb7d3b7b0fa3c477751c3"
+        },
+        "0.10.1": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.10.1.crate",
+          "sha256": "a3ef05d137e34b7ac51dbec170ee523a9b728cff71385796771d259771d592f8"
+        },
+        "0.10.2": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.10.2.crate",
+          "sha256": "40f9ca3698b2e4cb7c15571db0abc5551dca417a21ae8140460b50309bb2cc62"
+        },
+        "0.10.3": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.10.3.crate",
+          "sha256": "4114279215a005bc675e386011e594e1d9b800918cea18fcadadcce864a2046b"
+        },
+        "0.10.4": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.10.4.crate",
+          "sha256": "115e54d64eb62cdebad391c19efc9dce4981c690c85a33a12199d99bb9546fee",
+          "revision": "a1fe3631df2306b2991c1fa9142d7bfa17c2419e",
+          "path_prefix": "borsh/"
+        },
+        "0.11.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-0.11.0.crate",
+          "sha256": "300ca295b46d7c8a955a4b07436b5d308c9b2842885642ed17d91f22215e5f44",
+          "revision": "b242f59c98c052b7ed34c73cc8f058d894a61fbc",
+          "path_prefix": "borsh/",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.0.0.crate",
+          "sha256": "4e6cb63579996213e822f6d828b0a47e1d23b1e8708f52d18a6b1af5670dd207",
+          "revision": "6e7fc2844555bcd621405988220f6a4fc7ed67ba",
+          "path_prefix": "borsh/"
+        },
+        "1.1.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.1.0.crate",
+          "sha256": "acedd71cd81a2231f8c032b8330184e4e290374ca4e782aa95916b17e04b71b8",
+          "revision": "e8d67c921f73f88368baab880eaa546f401ae1e9",
+          "path_prefix": "borsh/"
+        },
+        "1.1.1": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.1.1.crate",
+          "sha256": "5e3f7359eeed8d454c38bbb25eb89d98b888b1060bbfeed2cda71cb013ff2dc2",
+          "revision": "73f7d7fee703a9db9ffd4f6e5a8761d13dc653e4",
+          "path_prefix": "borsh/"
+        },
+        "1.1.2": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.1.2.crate",
+          "sha256": "18a744ac76a433734df0902926ed12edd997391a8da3add87f6d706afc2dcbea",
+          "revision": "df8c3cf37d4fcf46a40874daf4be32a3d5cbfd0b",
+          "path_prefix": "borsh/"
+        },
+        "1.2.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.2.0.crate",
+          "sha256": "bf617fabf5cdbdc92f774bfe5062d870f228b80056d41180797abf48bed4056e",
+          "revision": "903601b26a1fc11ead79a62c45b77faeedf7e6a1",
+          "path_prefix": "borsh/"
+        },
+        "1.2.1": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.2.1.crate",
+          "sha256": "9897ef0f1bd2362169de6d7e436ea2237dc1085d7d1e4db75f4be34d86f309d1",
+          "revision": "2b1f6c93f3087ab7c987b0654fae75a26bc67723",
+          "path_prefix": "borsh/"
+        },
+        "1.3.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.3.0.crate",
+          "sha256": "26d4d6dafc1a3bb54687538972158f07b2c948bc57d5890df22c0739098b3028",
+          "revision": "2e6dad673842afcb0c765dd7361a0ad12e02e5ef",
+          "path_prefix": "borsh/"
+        },
+        "1.3.1": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.3.1.crate",
+          "sha256": "f58b559fd6448c6e2fd0adb5720cd98a2506594cafa4737ff98c396f3e82f667",
+          "revision": "19e9feee24749cbcb3226e09bf0df03059ee02a0",
+          "path_prefix": "borsh/"
+        },
+        "1.4.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.4.0.crate",
+          "sha256": "0901fc8eb0aca4c83be0106d6f2db17d86a08dfc2c25f0e84464bf381158add6",
+          "revision": "410cab82204eaa884be64c4d6b9812e405de7f5e",
+          "path_prefix": "borsh/"
+        },
+        "1.5.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.5.0.crate",
+          "sha256": "dbe5b10e214954177fb1dc9fbd20a1a2608fe99e6c832033bdc7cea287a20d77",
+          "revision": "6fa3057b0892360ec3e10ba5c897bb058c09580b",
+          "path_prefix": "borsh/"
+        },
+        "1.5.1": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.5.1.crate",
+          "sha256": "a6362ed55def622cddc70a4746a68554d7b687713770de539e59a739b249f8ed",
+          "revision": "f16cd07e3c982539352aa43f65abf3607461a7bc",
+          "path_prefix": "borsh/"
+        },
+        "1.5.2": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.5.2.crate",
+          "sha256": "f5327f6c99920069d1fe374aa743be1af0031dea9f250852cdf1ae6a0861ee24",
+          "revision": "d521f76b6da0f8d9a3bfa120b042fca5dbf3d4e7",
+          "path_prefix": "borsh/"
+        },
+        "1.5.3": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.5.3.crate",
+          "sha256": "2506947f73ad44e344215ccd6403ac2ae18cd8e046e581a441bf8d199f257f03",
+          "revision": "0dc09cd4d5cf7a95686d044222557df106a62e1c",
+          "path_prefix": "borsh/"
+        },
+        "1.5.4": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.5.4.crate",
+          "sha256": "9fb65153674e51d3a42c8f27b05b9508cea85edfaade8aa46bc8fc18cecdfef3",
+          "revision": "fe78005d4ec26cdfd33bdb78b06a1b411aa810ce",
+          "path_prefix": "borsh/"
+        },
+        "1.5.5": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.5.5.crate",
+          "sha256": "5430e3be710b68d984d1391c854eb431a9d548640711faa54eecb1df93db91cc",
+          "revision": "a34f32481138bfbf1998a36189471e61ee3fe056",
+          "path_prefix": "borsh/"
+        },
+        "1.5.6": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.5.6.crate",
+          "sha256": "b2b74d67a0fc0af8e9823b79fd1c43a0900e5a8f0e0f4cc9210796bf3a820126",
+          "revision": "b9b7f09a4d81545d879d94d01def61f68f188650",
+          "path_prefix": "borsh/"
+        },
+        "1.5.7": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.5.7.crate",
+          "sha256": "ad8646f98db542e39fc66e68a20b2144f6a732636df7c2354e74645faaa433ce",
+          "revision": "abb9582c70b2afd54eef302c23b6e6d3a0b2c1c4",
+          "path_prefix": "borsh/"
+        },
+        "1.6.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.6.0.crate",
+          "sha256": "d1da5ab77c1437701eeff7c88d968729e7766172279eab0676857b3d63af7a6f",
+          "revision": "819fa55288c85c2f17b4691e49bed7db8da30b69",
+          "path_prefix": "borsh/"
+        },
+        "1.6.1": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.6.1.crate",
+          "sha256": "cfd1e3f8955a5d7de9fab72fc8373fade9fb8a703968cb200ae3dc6cf08e185a",
+          "revision": "f8109c75dd9462a2bc756c9d6fe3c0bc9c3e24ac",
+          "path_prefix": "borsh/"
+        },
+        "1.7.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.7.0.crate",
+          "sha256": "2f3f6da4992df95bbcd9af42a6c7dcb994498fc9048230405f3b36ff7cd3f145",
+          "revision": "3348776d27adf4df8acd0694238590d25e485258",
+          "path_prefix": "borsh/"
+        },
+        "1.8.0": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.8.0.crate",
+          "sha256": "a88b7ea17d208c4193f2c1e6de3c35fe71f98c96982d5ced308bdcc749ff6e1f",
+          "revision": "7fc21fe52d39b3d3c7409b6ab272976a21b5f482",
+          "path_prefix": "borsh/"
+        },
+        "1.8.1": {
+          "archive_url": "https://static.crates.io/crates/borsh/borsh-1.8.1.crate",
+          "sha256": "553c5d846a6ba5150c65e3b1b8ec073bcf1abc20f9b7220de384a4443ea4e20a",
+          "revision": "fe778bec428d5b44cd4922c896af0a7c39a863dd",
+          "path_prefix": "borsh/"
+        }
+      },
+      "evidence": ["@text:39936cd104a02e99", "@text:170352ae3a7a55a4"]
+    }
+  },
+  "applicability": {
+    "borsh::Array::invalid_data::deserialize_reader": {
+      "order": 33,
+      "profiles": [
+        {
+          "id": "borsh-reviewed",
+          "source": "borsh",
+          "conditions": [
+            "@text:01a49762cffd15fd",
+            "@text:ab098935c75e8fd9",
+            "@text:439bab019b776626",
+            "@text:83cad7e49152f47b"
+          ],
+          "argument": "@review:source-notes/borsh-codecs.md#review-1ee9794062f0a284",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<[T; N] as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        }
+      ]
+    },
+    "borsh::Array::serialize": {
+      "order": 34,
+      "profiles": [
+        {
+          "id": "borsh-reviewed-const-generics",
+          "source": "borsh",
+          "conditions": "@shared:conditions-2bd0117652af8248",
+          "argument": "@review:source-notes/borsh-codecs.md#review-a8e31471f677fe21",
+          "evidence": ["@text:9a60c51aed7d9741", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:601d091077d4286e", "all": ["const-generics"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<[T; N] as borsh::ser::BorshSerialize>::serialize",
+              "releases": ["0.9.1", "0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.1", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.1", "0.9.2", "0.9.3"]
+        },
+        {
+          "id": "borsh-reviewed-direct",
+          "source": "borsh",
+          "conditions": "@shared:conditions-2bd0117652af8248",
+          "argument": "@review:source-notes/borsh-codecs.md#review-a8e31471f677fe21",
+          "evidence": ["@text:9a60c51aed7d9741", "@text:3745bb8291716081"],
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<[T; N] as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-0cd27f10c8cb98d7",
+              "compatible_ranges": "@shared:compatible-ranges-f3c4b035a6b9c6c0"
+            }
+          ],
+          "releases": "@shared:releases-0cd27f10c8cb98d7"
+        }
+      ]
+    },
+    "borsh::Option::invalid_data::deserialize_reader": {
+      "order": 35,
+      "profiles": [
+        {
+          "id": "borsh-reviewed",
+          "source": "borsh",
+          "conditions": ["@text:01a49762cffd15fd", "@text:83cad7e49152f47b"],
+          "argument": "@review:source-notes/borsh-codecs.md#review-1d264637ee491e80",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<core::option::Option<T> as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        }
+      ]
+    },
+    "borsh::Option::invalid_input::deserialize_reader": {
+      "order": 36,
+      "profiles": [
+        {
+          "id": "borsh-reviewed",
+          "source": "borsh",
+          "conditions": "@shared:conditions-b871cbae047a2357",
+          "argument": "@review:source-notes/borsh-codecs.md#review-5a0184020050b766",
+          "evidence": ["@text:1c1816d9324f3cdd", "@text:f72044d045a2ab2f"],
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize",
+              "implementation": "<core::option::Option<T> as borsh::de::BorshDeserialize>::deserialize",
+              "releases": "@shared:releases-0d4509d389e2a548",
+              "compatible_ranges": "@shared:compatible-ranges-09000ab3a5c9f02d"
+            }
+          ],
+          "releases": "@shared:releases-0d4509d389e2a548"
+        },
+        {
+          "id": "borsh-reviewed-2",
+          "source": "borsh",
+          "conditions": "@shared:conditions-b871cbae047a2357",
+          "argument": "@review:source-notes/borsh-codecs.md#review-5a0184020050b766",
+          "evidence": ["@text:1c1816d9324f3cdd", "@text:f72044d045a2ab2f"],
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<core::option::Option<T> as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"],
+              "compatible_ranges": [{"lower": "0.10.0", "upper": "0.11.0"}]
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"]
+        }
+      ]
+    },
+    "borsh::Option::serialize": {
+      "order": 37,
+      "profiles": [
+        {
+          "id": "borsh-reviewed",
+          "source": "borsh",
+          "conditions": ["@text:6e6284c76c0052ab"],
+          "argument": "@review:source-notes/borsh-codecs.md#review-8adec8483076679e",
+          "evidence": ["@text:453715cb643bdb80", "@text:3745bb8291716081"],
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<core::option::Option<T> as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-2dff6160b50ed04f",
+              "compatible_ranges": "@shared:compatible-ranges-9832357adbc57d43"
+            }
+          ],
+          "releases": "@shared:releases-2dff6160b50ed04f"
+        }
+      ]
+    },
+    "borsh::Vec::invalid_input::deserialize_reader": {
+      "order": 38,
+      "profiles": [
+        {
+          "id": "borsh-reviewed",
+          "source": "borsh",
+          "conditions": [
+            "@text:01a49762cffd15fd",
+            "@text:80098b17d4d7c488",
+            "@text:45253be852ccfb0b",
+            "@text:76e819ec93a86b50",
+            "@text:72afc3e03f7f4dcb",
+            "@text:83cad7e49152f47b",
+            "@text:448ff545fca32f34"
+          ],
+          "argument": "@review:source-notes/borsh-codecs.md#review-817c85bec170cc44",
+          "evidence": ["@text:d791a27de6d79b66"],
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<alloc::vec::Vec<T> as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["0.10.4"],
+              "compatible_ranges": [{"lower": "0.10.4", "upper": "0.11.0"}]
+            }
+          ],
+          "releases": ["0.10.4"]
+        }
+      ]
+    },
+    "borsh::bool::invalid_data::deserialize_reader": {
+      "order": 39,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-217b33b885775461",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<bool as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-217b33b885775461",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<bool as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        }
+      ]
+    },
+    "borsh::bool::invalid_input::deserialize_reader": {
+      "order": 40,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-383eb0cc40ceec37",
+          "evidence": ["@text:1c1816d9324f3cdd", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize",
+              "implementation": "<bool as borsh::de::BorshDeserialize>::deserialize",
+              "releases": "@shared:releases-0d4509d389e2a548",
+              "compatible_ranges": "@shared:compatible-ranges-09000ab3a5c9f02d"
+            }
+          ],
+          "releases": "@shared:releases-0d4509d389e2a548"
+        },
+        {
+          "id": "std-2",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-383eb0cc40ceec37",
+          "evidence": ["@text:1c1816d9324f3cdd", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<bool as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"],
+              "compatible_ranges": [{"lower": "0.10.0", "upper": "0.11.0"}]
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"]
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-383eb0cc40ceec37",
+          "evidence": ["@text:f88f0562a921345b", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize",
+              "implementation": "<bool as borsh::de::BorshDeserialize>::deserialize",
+              "releases": ["0.8.0", "0.8.1", "0.8.2", "0.9.0", "0.9.1", "0.9.3"],
+              "compatible_ranges": "@shared:compatible-ranges-a0c41e354710534e"
+            }
+          ],
+          "releases": ["0.8.0", "0.8.1", "0.8.2", "0.9.0", "0.9.1", "0.9.3"]
+        },
+        {
+          "id": "nostd-2",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-383eb0cc40ceec37",
+          "evidence": ["@text:f88f0562a921345b", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<bool as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"],
+              "compatible_ranges": [{"lower": "0.10.0", "upper": "0.11.0"}]
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"]
+        }
+      ]
+    },
+    "borsh::bool::serialize": {
+      "order": 41,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-e4c1d2f38e270003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-fd8854e7622ce840",
+          "evidence": ["@text:453715cb643bdb80", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<bool as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-2dff6160b50ed04f",
+              "compatible_ranges": "@shared:compatible-ranges-9832357adbc57d43"
+            }
+          ],
+          "releases": "@shared:releases-2dff6160b50ed04f"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-e4c1d2f38e270003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-fd8854e7622ce840",
+          "evidence": ["@text:f88f0562a921345b", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<bool as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-84120799f8053ae9",
+              "compatible_ranges": "@shared:compatible-ranges-c1889c5d6f6ede33"
+            }
+          ],
+          "releases": "@shared:releases-84120799f8053ae9"
+        }
+      ]
+    },
+    "borsh::de::BorshDeserialize::deserialize": {
+      "order": 42,
+      "profiles": [
+        {
+          "id": "borsh-reviewed",
+          "source": "borsh",
+          "conditions": ["@text:01a49762cffd15fd"],
+          "argument": "@review:source-notes/borsh-codecs.md#review-429a2e1b0a9ae90a",
+          "evidence": ["@text:4279751676cba079", "@text:3745bb8291716081"],
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize",
+              "implementation": "borsh::de::BorshDeserialize::deserialize",
+              "releases": "@shared:releases-0cd27f10c8cb98d7",
+              "compatible_ranges": "@shared:compatible-ranges-f3c4b035a6b9c6c0"
+            }
+          ],
+          "releases": "@shared:releases-0cd27f10c8cb98d7"
+        },
+        {
+          "id": "borsh-reviewed-2",
+          "source": "borsh",
+          "conditions": ["@text:01a49762cffd15fd"],
+          "argument": "@review:source-notes/borsh-codecs.md#review-0cc129944db46b6c",
+          "evidence": ["@text:4279751676cba079", "@text:3745bb8291716081"],
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize",
+              "implementation": "borsh::de::BorshDeserialize::deserialize",
+              "releases": "@shared:releases-0cd27f10c8cb98d7",
+              "compatible_ranges": "@shared:compatible-ranges-f3c4b035a6b9c6c0"
+            }
+          ],
+          "releases": "@shared:releases-0cd27f10c8cb98d7"
+        }
+      ]
+    },
+    "borsh::de::BorshDeserialize::try_from_slice": {
+      "order": 43,
+      "profiles": [
+        {
+          "id": "borsh-reviewed",
+          "source": "borsh",
+          "conditions": ["@text:2ea546f4349b7465", "@text:72afc3e03f7f4dcb", "@text:83cad7e49152f47b"],
+          "argument": "@review:source-notes/borsh-codecs.md#review-da68bb645d21593b",
+          "evidence": ["@text:1c1816d9324f3cdd", "@text:3745bb8291716081"],
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::try_from_slice",
+              "implementation": "borsh::de::BorshDeserialize::try_from_slice",
+              "releases": "@shared:releases-ad0203beec83e313",
+              "compatible_ranges": [
+                {"lower": "0.6.0", "upper": "0.7.0"},
+                {"lower": "0.7.0", "upper": "0.8.0"},
+                {"lower": "0.8.0", "upper": "0.9.0"},
+                {"lower": "0.9.0", "upper": "0.10.0"},
+                {"lower": "0.10.0", "upper": "0.11.0"},
+                {"lower": "1.0.0", "upper": "2.0.0"}
+              ]
+            }
+          ],
+          "releases": "@shared:releases-ad0203beec83e313"
+        }
+      ]
+    },
+    "borsh::de::BorshDeserialize::vec_from_reader": {
+      "order": 44,
+      "profiles": [
+        {
+          "id": "borsh-reviewed",
+          "source": "borsh",
+          "conditions": ["@text:57c35f3bd7b31d9a"],
+          "argument": "@review:source-notes/borsh-codecs.md#review-c73c802ae93575b2",
+          "evidence": ["@text:9a60c51aed7d9741", "@text:3745bb8291716081"],
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::vec_from_bytes",
+              "implementation": "borsh::de::BorshDeserialize::vec_from_bytes",
+              "releases": ["0.9.1", "0.9.2", "0.9.3"],
+              "compatible_ranges": [{"lower": "0.9.1", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.1", "0.9.2", "0.9.3"]
+        },
+        {
+          "id": "borsh-reviewed-2",
+          "source": "borsh",
+          "conditions": ["@text:57c35f3bd7b31d9a"],
+          "argument": "@review:source-notes/borsh-codecs.md#review-c73c802ae93575b2",
+          "evidence": ["@text:9a60c51aed7d9741", "@text:3745bb8291716081"],
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::vec_from_reader",
+              "implementation": "borsh::de::BorshDeserialize::vec_from_reader",
+              "releases": "@shared:releases-0cd27f10c8cb98d7",
+              "compatible_ranges": "@shared:compatible-ranges-f3c4b035a6b9c6c0"
+            }
+          ],
+          "releases": "@shared:releases-0cd27f10c8cb98d7"
+        }
+      ]
+    },
+    "borsh::de::hint::cautious": {
+      "order": 45,
+      "profiles": [
+        {
+          "id": "borsh-reviewed",
+          "source": "borsh",
+          "conditions": ["@text:60cec87cc0547657", "@text:5c9f94e353fba04e", "@text:6a1eea13778d4478"],
+          "argument": "@review:source-notes/borsh-codecs.md#review-161a91fa75c09981",
+          "evidence": ["@text:c5b0031afecefa5e", "@text:3745bb8291716081"],
+          "items": [
+            {
+              "item": "borsh::de::hint::cautious",
+              "implementation": "borsh::de::hint::cautious",
+              "releases": "@shared:releases-a23e45053236f26c",
+              "compatible_ranges": [
+                {"lower": "0.2.8", "upper": "0.3.0"},
+                {"lower": "0.3.0", "upper": "0.4.0"},
+                {"lower": "0.4.0", "upper": "0.5.0"},
+                {"lower": "0.5.0", "upper": "0.6.0"},
+                {"lower": "0.6.0", "upper": "0.7.0"},
+                {"lower": "0.7.0", "upper": "0.8.0"},
+                {"lower": "0.8.0", "upper": "0.9.0"},
+                {"lower": "0.9.0", "upper": "0.10.0"},
+                {"lower": "0.10.0", "upper": "0.11.0"},
+                {"lower": "1.0.0", "upper": "2.0.0"}
+              ]
+            }
+          ],
+          "releases": "@shared:releases-a23e45053236f26c"
+        }
+      ]
+    },
+    "borsh::f64::invalid_data::deserialize_reader": {
+      "order": 46,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-9ea05dbdb8b57bf7",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<f64 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-9ea05dbdb8b57bf7",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<f64 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        }
+      ]
+    },
+    "borsh::f64::serialize": {
+      "order": 47,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-e4c1d2f38e270003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-4173a0841390920e",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<f64 as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-e4c1d2f38e270003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-4173a0841390920e",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<f64 as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        }
+      ]
+    },
+    "borsh::i32::invalid_data::deserialize_reader": {
+      "order": 48,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-9bad8eaa5a89fe49",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<i32 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-9bad8eaa5a89fe49",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<i32 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        }
+      ]
+    },
+    "borsh::i64::invalid_data::deserialize_reader": {
+      "order": 49,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-ed801cbd6396ba7b",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<i64 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-ed801cbd6396ba7b",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<i64 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        }
+      ]
+    },
+    "borsh::i64::serialize": {
+      "order": 50,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-e4c1d2f38e270003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-9d69c2467e12cf12",
+          "evidence": ["@text:453715cb643bdb80", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<i64 as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-2dff6160b50ed04f",
+              "compatible_ranges": "@shared:compatible-ranges-9832357adbc57d43"
+            }
+          ],
+          "releases": "@shared:releases-2dff6160b50ed04f"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-e4c1d2f38e270003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-9d69c2467e12cf12",
+          "evidence": ["@text:f88f0562a921345b", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<i64 as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-84120799f8053ae9",
+              "compatible_ranges": "@shared:compatible-ranges-c1889c5d6f6ede33"
+            }
+          ],
+          "releases": "@shared:releases-84120799f8053ae9"
+        }
+      ]
+    },
+    "borsh::i8::invalid_input::deserialize_reader": {
+      "order": 51,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-6719fef64be9c7d5",
+          "evidence": ["@text:1c1816d9324f3cdd", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize",
+              "implementation": "<i8 as borsh::de::BorshDeserialize>::deserialize",
+              "releases": "@shared:releases-0d4509d389e2a548",
+              "compatible_ranges": "@shared:compatible-ranges-09000ab3a5c9f02d"
+            }
+          ],
+          "releases": "@shared:releases-0d4509d389e2a548"
+        },
+        {
+          "id": "std-2",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-6719fef64be9c7d5",
+          "evidence": ["@text:1c1816d9324f3cdd", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<i8 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"],
+              "compatible_ranges": [{"lower": "0.10.0", "upper": "0.11.0"}]
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"]
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-6719fef64be9c7d5",
+          "evidence": ["@text:f88f0562a921345b", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize",
+              "implementation": "<i8 as borsh::de::BorshDeserialize>::deserialize",
+              "releases": ["0.8.0", "0.8.1", "0.8.2", "0.9.0", "0.9.1", "0.9.3"],
+              "compatible_ranges": "@shared:compatible-ranges-a0c41e354710534e"
+            }
+          ],
+          "releases": ["0.8.0", "0.8.1", "0.8.2", "0.9.0", "0.9.1", "0.9.3"]
+        },
+        {
+          "id": "nostd-2",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-6719fef64be9c7d5",
+          "evidence": ["@text:f88f0562a921345b", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<i8 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"],
+              "compatible_ranges": [{"lower": "0.10.0", "upper": "0.11.0"}]
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"]
+        }
+      ]
+    },
+    "borsh::nostd_io::Write::write_all": {
+      "order": 52,
+      "profiles": [
+        {
+          "id": "borsh-reviewed-usable-nostd",
+          "source": "borsh",
+          "conditions": [
+            "@text:537d4ce241c52ea9",
+            "@text:bbe5da953899786d",
+            "@text:975310bb3e76d5ba",
+            "@text:2b504ab099bc0a2e",
+            "@text:b3665b1450efaf85"
+          ],
+          "argument": "@review:source-notes/borsh-codecs.md#review-da0a6a33f4d4c193",
+          "evidence": ["@text:f88f0562a921345b", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:6bf1b0fb71a3c0a1", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::nostd_io::Write::write_all",
+              "implementation": "borsh::nostd_io::Write::write_all",
+              "releases": "@shared:releases-84120799f8053ae9",
+              "compatible_ranges": "@shared:compatible-ranges-c1889c5d6f6ede33"
+            }
+          ],
+          "releases": "@shared:releases-84120799f8053ae9"
+        }
+      ]
+    },
+    "borsh::u32::invalid_data::deserialize_reader": {
+      "order": 53,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-a829473bc4dd9b62",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<u32 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-a829473bc4dd9b62",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<u32 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        }
+      ]
+    },
+    "borsh::u32::invalid_input::deserialize_reader": {
+      "order": 54,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-68714ba2dbf9bad5",
+          "evidence": ["@text:1c1816d9324f3cdd", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize",
+              "implementation": "<u32 as borsh::de::BorshDeserialize>::deserialize",
+              "releases": "@shared:releases-0d4509d389e2a548",
+              "compatible_ranges": "@shared:compatible-ranges-09000ab3a5c9f02d"
+            }
+          ],
+          "releases": "@shared:releases-0d4509d389e2a548"
+        },
+        {
+          "id": "std-2",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-68714ba2dbf9bad5",
+          "evidence": ["@text:1c1816d9324f3cdd", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<u32 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"],
+              "compatible_ranges": [{"lower": "0.10.0", "upper": "0.11.0"}]
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"]
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-68714ba2dbf9bad5",
+          "evidence": ["@text:f88f0562a921345b", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize",
+              "implementation": "<u32 as borsh::de::BorshDeserialize>::deserialize",
+              "releases": ["0.8.0", "0.8.1", "0.8.2", "0.9.0", "0.9.1", "0.9.3"],
+              "compatible_ranges": "@shared:compatible-ranges-a0c41e354710534e"
+            }
+          ],
+          "releases": ["0.8.0", "0.8.1", "0.8.2", "0.9.0", "0.9.1", "0.9.3"]
+        },
+        {
+          "id": "nostd-2",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-68714ba2dbf9bad5",
+          "evidence": ["@text:f88f0562a921345b", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<u32 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"],
+              "compatible_ranges": [{"lower": "0.10.0", "upper": "0.11.0"}]
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"]
+        }
+      ]
+    },
+    "borsh::u32::serialize": {
+      "order": 55,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-e4c1d2f38e270003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-7b64bf329114bd07",
+          "evidence": ["@text:453715cb643bdb80", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<u32 as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-2dff6160b50ed04f",
+              "compatible_ranges": "@shared:compatible-ranges-9832357adbc57d43"
+            }
+          ],
+          "releases": "@shared:releases-2dff6160b50ed04f"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-e4c1d2f38e270003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-7b64bf329114bd07",
+          "evidence": ["@text:f88f0562a921345b", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<u32 as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-84120799f8053ae9",
+              "compatible_ranges": "@shared:compatible-ranges-c1889c5d6f6ede33"
+            }
+          ],
+          "releases": "@shared:releases-84120799f8053ae9"
+        }
+      ]
+    },
+    "borsh::u64::invalid_data::deserialize_reader": {
+      "order": 56,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-b4d7ff5a84e5b333",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<u64 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-b4d7ff5a84e5b333",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<u64 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        }
+      ]
+    },
+    "borsh::u64::invalid_input::deserialize_reader": {
+      "order": 57,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-623cf74e78b3d503",
+          "evidence": ["@text:1c1816d9324f3cdd", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize",
+              "implementation": "<u64 as borsh::de::BorshDeserialize>::deserialize",
+              "releases": "@shared:releases-0d4509d389e2a548",
+              "compatible_ranges": "@shared:compatible-ranges-09000ab3a5c9f02d"
+            }
+          ],
+          "releases": "@shared:releases-0d4509d389e2a548"
+        },
+        {
+          "id": "std-2",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-5a4b2e1260a5295a",
+          "evidence": ["@text:1c1816d9324f3cdd", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<u64 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"],
+              "compatible_ranges": [{"lower": "0.10.0", "upper": "0.11.0"}]
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"]
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-623cf74e78b3d503",
+          "evidence": ["@text:f88f0562a921345b", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize",
+              "implementation": "<u64 as borsh::de::BorshDeserialize>::deserialize",
+              "releases": ["0.8.0", "0.8.1", "0.8.2", "0.9.0", "0.9.1", "0.9.3"],
+              "compatible_ranges": "@shared:compatible-ranges-a0c41e354710534e"
+            }
+          ],
+          "releases": ["0.8.0", "0.8.1", "0.8.2", "0.9.0", "0.9.1", "0.9.3"]
+        },
+        {
+          "id": "nostd-2",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-5a4b2e1260a5295a",
+          "evidence": ["@text:f88f0562a921345b", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<u64 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"],
+              "compatible_ranges": [{"lower": "0.10.0", "upper": "0.11.0"}]
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"]
+        }
+      ]
+    },
+    "borsh::u64::serialize": {
+      "order": 58,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-e4c1d2f38e270003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-813a7ad30c8a6a1b",
+          "evidence": ["@text:453715cb643bdb80", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<u64 as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-2dff6160b50ed04f",
+              "compatible_ranges": "@shared:compatible-ranges-9832357adbc57d43"
+            }
+          ],
+          "releases": "@shared:releases-2dff6160b50ed04f"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-e4c1d2f38e270003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-813a7ad30c8a6a1b",
+          "evidence": ["@text:f88f0562a921345b", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<u64 as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-84120799f8053ae9",
+              "compatible_ranges": "@shared:compatible-ranges-c1889c5d6f6ede33"
+            }
+          ],
+          "releases": "@shared:releases-84120799f8053ae9"
+        }
+      ]
+    },
+    "borsh::u8::invalid_data::array_from_reader": {
+      "order": 59,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-9f2305b0b020969a",
+          "argument": "@review:source-notes/borsh-codecs.md#review-44a6b782c29da279",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::array_from_reader",
+              "implementation": "<u8 as borsh::de::BorshDeserialize>::array_from_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-9f2305b0b020969a",
+          "argument": "@review:source-notes/borsh-codecs.md#review-44a6b782c29da279",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::array_from_reader",
+              "implementation": "<u8 as borsh::de::BorshDeserialize>::array_from_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        }
+      ]
+    },
+    "borsh::u8::invalid_data::deserialize_reader": {
+      "order": 60,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-0031c987619b4804",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<u8 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-0031c987619b4804",
+          "evidence": ["@text:85b7f04cc4c12bb8", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<u8 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-082f57104a4c67e1",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-082f57104a4c67e1"
+        }
+      ]
+    },
+    "borsh::u8::invalid_input::deserialize_reader": {
+      "order": 61,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-e59ff90f9417543d",
+          "evidence": ["@text:1c1816d9324f3cdd", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize",
+              "implementation": "<u8 as borsh::de::BorshDeserialize>::deserialize",
+              "releases": "@shared:releases-0d4509d389e2a548",
+              "compatible_ranges": "@shared:compatible-ranges-09000ab3a5c9f02d"
+            }
+          ],
+          "releases": "@shared:releases-0d4509d389e2a548"
+        },
+        {
+          "id": "std-2",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-e59ff90f9417543d",
+          "evidence": ["@text:1c1816d9324f3cdd", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<u8 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"],
+              "compatible_ranges": [{"lower": "0.10.0", "upper": "0.11.0"}]
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"]
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-e59ff90f9417543d",
+          "evidence": ["@text:f88f0562a921345b", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize",
+              "implementation": "<u8 as borsh::de::BorshDeserialize>::deserialize",
+              "releases": ["0.8.0", "0.8.1", "0.8.2", "0.9.0", "0.9.1", "0.9.3"],
+              "compatible_ranges": "@shared:compatible-ranges-a0c41e354710534e"
+            }
+          ],
+          "releases": ["0.8.0", "0.8.1", "0.8.2", "0.9.0", "0.9.1", "0.9.3"]
+        },
+        {
+          "id": "nostd-2",
+          "source": "borsh",
+          "conditions": "@shared:conditions-a007194662425003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-e59ff90f9417543d",
+          "evidence": ["@text:f88f0562a921345b", "@text:f72044d045a2ab2f"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<u8 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"],
+              "compatible_ranges": [{"lower": "0.10.0", "upper": "0.11.0"}]
+            }
+          ],
+          "releases": ["0.10.0", "0.10.1", "0.10.2", "0.10.3", "0.10.4", "0.11.0"]
+        }
+      ]
+    },
+    "borsh::u8::serialize": {
+      "order": 62,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-e4c1d2f38e270003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-0d0a895ee5184226",
+          "evidence": ["@text:453715cb643bdb80", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<u8 as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-2dff6160b50ed04f",
+              "compatible_ranges": "@shared:compatible-ranges-9832357adbc57d43"
+            }
+          ],
+          "releases": "@shared:releases-2dff6160b50ed04f"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-e4c1d2f38e270003",
+          "argument": "@review:source-notes/borsh-codecs.md#review-0d0a895ee5184226",
+          "evidence": ["@text:f88f0562a921345b", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<u8 as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-84120799f8053ae9",
+              "compatible_ranges": "@shared:compatible-ranges-c1889c5d6f6ede33"
+            }
+          ],
+          "releases": "@shared:releases-84120799f8053ae9"
+        }
+      ]
+    },
+    "borsh::u8::u8_slice": {
+      "order": 63,
+      "profiles": [
+        {
+          "id": "std",
+          "source": "borsh",
+          "conditions": "@shared:conditions-18ded7ca492928ac",
+          "argument": "@review:source-notes/borsh-codecs.md#review-8dfa24b545c6e0d4",
+          "evidence": ["@text:9a60c51aed7d9741", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "all": ["std"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::u8_slice",
+              "implementation": "<u8 as borsh::ser::BorshSerialize>::u8_slice",
+              "releases": "@shared:releases-b3fed661fe91b661",
+              "compatible_ranges": [
+                {"lower": "0.9.1", "upper": "0.10.0"},
+                {"lower": "0.10.0", "upper": "0.11.0"},
+                {"lower": "1.0.0", "upper": "2.0.0"}
+              ]
+            }
+          ],
+          "releases": "@shared:releases-b3fed661fe91b661"
+        },
+        {
+          "id": "nostd",
+          "source": "borsh",
+          "conditions": "@shared:conditions-18ded7ca492928ac",
+          "argument": "@review:source-notes/borsh-codecs.md#review-8dfa24b545c6e0d4",
+          "evidence": ["@text:9a60c51aed7d9741", "@text:3745bb8291716081"],
+          "features": {"reason": "@text:b781ba6dd4c90fdc", "none": ["std"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::u8_slice",
+              "implementation": "<u8 as borsh::ser::BorshSerialize>::u8_slice",
+              "releases": "@shared:releases-c00db1a82096f183",
+              "compatible_ranges": [
+                {"lower": "0.9.1", "upper": "0.9.2"},
+                {"lower": "0.9.3", "upper": "0.10.0"},
+                {"lower": "0.10.0", "upper": "0.11.0"},
+                {"lower": "1.0.0", "upper": "2.0.0"}
+              ]
+            }
+          ],
+          "releases": "@shared:releases-c00db1a82096f183"
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:17a03b289e0ff9cd", "@binding:5190a32e6baa1ea3"]
+}

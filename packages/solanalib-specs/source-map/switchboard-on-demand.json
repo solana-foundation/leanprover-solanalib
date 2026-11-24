@@ -1,0 +1,517 @@
+{
+  "abstractions": {
+    "library::switchboard_on_demand": {
+      "order": 154,
+      "modules": {
+        "Solanalib.Specs.SwitchboardOnDemand": "86b204bbd89ec01780579df989a39c154d0cfbd987d796242b6455add4f0bbdf",
+        "Solanalib.Specs.SwitchboardOnDemand.Capabilities": "d7d4a96cdc5873b9083beaf10d01a4835c1398fc634c0fd386cd9b7f1f61fd4e",
+        "Solanalib.Specs.SwitchboardOnDemand.PullFeed": "370fc3ca69fcc8e44ae19139a5c089d41ed1b6e71cb163fc7060c42d32ea7fb5"
+      },
+      "source_ids": [
+        "root-extra::switchboard-on-demand-0.12.1::src/on_demand/accounts/pull_feed.rs",
+        "root-extra::switchboard-on-demand-0.12.1::src/on_demand/error.rs",
+        "root-extra::bytemuck-1.25.0::src/lib.rs",
+        "root-extra::bytemuck-1.25.0::src/internal.rs"
+      ],
+      "argument": "@review:source-notes/other-sdk-functions.md#review-3a86962caedde554",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:462e2f49be94cd57",
+        "@binding:308202f8b78687ec"
+      ]
+    }
+  },
+  "packages": {
+    "switchboard-on-demand-0.12.1": {
+      "order": 40,
+      "repository": "https://github.com/switchboard-xyz/switchboard-sdk",
+      "revision": "f75b1ef63e10eda35d046b1838810ec2935d7f39",
+      "path_prefix": "solana/rust/switchboard-on-demand/"
+    }
+  },
+  "interfaces": {
+    "root-extra::switchboard-on-demand-0.12.1::src/on_demand/accounts/pull_feed.rs": {
+      "order": 63,
+      "crate": "switchboard-on-demand-0.12.1",
+      "path": "src/on_demand/accounts/pull_feed.rs",
+      "sha256": "c5e807a998b17bf6d3d6d06dd3fb99b1165220a593066947c8ad92cfe79bd392"
+    },
+    "root-extra::switchboard-on-demand-0.12.1::src/on_demand/error.rs": {
+      "order": 64,
+      "crate": "switchboard-on-demand-0.12.1",
+      "path": "src/on_demand/error.rs",
+      "sha256": "94660eb0826127e0843ae2cd18e0aea601d58b9451b2f0540e51fec8db0969cb"
+    }
+  },
+  "models": {
+    "switchboard-on-demand::on_demand::accounts::pull_feed::PullFeedAccountData::parse": {
+      "order": 229,
+      "contract": "Solanalib.Specs.SwitchboardOnDemand.on_demand.accounts.pull_feed.PullFeedAccountData.parse_contract",
+      "witness_kind": "Holds",
+      "execution": "Solanalib.Specs.SwitchboardOnDemand.on_demand.accounts.pull_feed.PullFeedAccountData.parse_hasExecution",
+      "assumptions": ["@binding:462e2f49be94cd57", "@binding:308202f8b78687ec"]
+    }
+  },
+  "api": {
+    "switchboard-on-demand@0.12.1::on_demand.accounts.pull_feed.PullFeedAccountData.parse": {
+      "order": 193,
+      "anchor_text": "pub fn parse<'info>(data: Ref<'info, &mut [u8]>) -> Result<Ref<'info, Self>, OnDemandError> {",
+      "binding_obligations": ["@binding:462e2f49be94cd57", "@binding:308202f8b78687ec", "@binding:16af5e6b4a95e14a"],
+      "line": 270,
+      "scope": "@review:source-notes/owned-dependencies.md#review-16b8ab7237839656",
+      "source_id": "root-extra::switchboard-on-demand-0.12.1::src/on_demand/accounts/pull_feed.rs",
+      "clients": [
+        "SolanalibTest.Specs.SwitchboardOnDemand.aligned_i128_16_payload_succeeds",
+        "SolanalibTest.Specs.SwitchboardOnDemand.bad_discriminator_precedes_short_payload",
+        "SolanalibTest.Specs.SwitchboardOnDemand.failed_parse_releases_lease",
+        "SolanalibTest.Specs.SwitchboardOnDemand.i128_alignment_difference_is_observable",
+        "SolanalibTest.Specs.SwitchboardOnDemand.mapped_input_generation_is_unusable",
+        "SolanalibTest.Specs.SwitchboardOnDemand.mapped_reference_reads_current_payload",
+        "SolanalibTest.Specs.SwitchboardOnDemand.misaligned_payload_is_deserialization_error",
+        "SolanalibTest.Specs.SwitchboardOnDemand.short_discriminator_precedes_alignment",
+        "SolanalibTest.Specs.SwitchboardOnDemand.short_payload_is_invalid_data",
+        "SolanalibTest.Specs.SwitchboardOnDemand.success_retains_identity_and_cells",
+        "SolanalibTest.Specs.SwitchboardOnDemand.trailing_bytes_do_not_expand_view",
+        "SolanalibTest.Specs.SwitchboardOnDemand.validation_error_releases_input_guard",
+        "SolanalibTest.Specs.SwitchboardOnDemand.abstract_address_retains_exact_parse",
+        "SolanalibTest.Specs.SwitchboardOnDemand.other_mode_retains_error_and_retirement",
+        "SolanalibTest.Specs.SwitchboardOnDemand.consumed_input_is_not_ready"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Oracle.Switchboard.parse",
+        "Solanalib.Specs.Core.Borrow.transfer",
+        "Solanalib.Specs.Core.Borrow.release",
+        "Solanalib.Specs.Core.Oracle.Switchboard.parse_exists",
+        "Solanalib.Specs.Core.Oracle.Switchboard.parse_valid_consumes"
+      ],
+      "rust_names": ["switchboard_on_demand::on_demand::accounts::pull_feed::PullFeedAccountData::parse"],
+      "models": ["switchboard-on-demand::on_demand::accounts::pull_feed::PullFeedAccountData::parse"]
+    }
+  },
+  "applicability_sources": {
+    "switchboard-on-demand": {
+      "order": 34,
+      "package": "switchboard-on-demand",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.1.0": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.0.crate",
+          "sha256": "02ab7adf229f2686610d9f19ce7e3703eddfe9a6574dce7e0ccbe39fc7960cbd"
+        },
+        "0.1.1": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.1.crate",
+          "sha256": "b9ccdecf084e14981fe9a3d5ca209660eb778a37d855c084e0091a974f80851f"
+        },
+        "0.1.2": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.2.crate",
+          "sha256": "0eeca037370cd27544875902f59364e8788f7e6f5431c918a9f6a2a7893b6fab"
+        },
+        "0.1.3": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.3.crate",
+          "sha256": "c307d9645afe284bb62f5f40c3f0ed6a293d7279742b7da0c694fdc5cbcb80ba"
+        },
+        "0.1.4": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.4.crate",
+          "sha256": "de7175a73fbeb27cb95c7b9246053c92ed0b3a727e22872e7e14237444cf6337"
+        },
+        "0.1.5": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.5.crate",
+          "sha256": "7e064181311884799874f84ba2f2468751dc3df605770f664bd465c1bed3273c"
+        },
+        "0.1.6": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.6.crate",
+          "sha256": "a7cfde7830c750625259401b8f93e12d80a6095dd26a7f75132527ce143a3b33"
+        },
+        "0.1.7": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.7.crate",
+          "sha256": "ab4fb5e9b5121365dc149cc7f81def5d9061d2eb82e937acd883902b299550b9"
+        },
+        "0.1.8": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.8.crate",
+          "sha256": "4139bf73347d5332ae8a6c663f32fe17b65940e2c30e19a3a361223db23fe41a"
+        },
+        "0.1.9": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.9.crate",
+          "sha256": "0b55ea69d3f18048e1051e93893a23acf94625cabe85d9919e1f4e0ee44d2048"
+        },
+        "0.1.10": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.10.crate",
+          "sha256": "5984ec1fbaad46bb9398a3032069fccc08fc4c84b741cc5c7832eec5701925de"
+        },
+        "0.1.11": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.11.crate",
+          "sha256": "f62c9b8e3d91ad0b4276a9b1ca140a728a748b38bed1266581d34bf9822847f4"
+        },
+        "0.1.12": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.12.crate",
+          "sha256": "8f4abd6842db96de13759d86a317a9083aa0baa3a0da4f051c29b21efc41f6c0"
+        },
+        "0.1.13": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.13.crate",
+          "sha256": "d25f9c5e5776ee0db744d4adf4d61711416677eb03b03a499d2d895e348ebc24"
+        },
+        "0.1.14": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.14.crate",
+          "sha256": "3852951c42f8876a443060b6882bda945f1621224236ead37959e80f5369cf81"
+        },
+        "0.1.15": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.15.crate",
+          "sha256": "7ddb8d623f0daa9be45ad8f44b7c23a85bb8c3743777b1db5d34a4fcfc478618",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.1.16": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.16.crate",
+          "sha256": "20c3f6f4cc4b98b8ed4083193743eb1f25615e1d0c73f77d5468fb08d9ee970b",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.1.17": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.17.crate",
+          "sha256": "497d53961d56f61e5e5a789d95b4aa4d17fbd28cece8a041b727f14e0f89816d",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.1.18": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.18.crate",
+          "sha256": "17f6887564c46508ca1e1ffa5c04f16adddf4f11b297e2556e3bbebd3cda5680",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.1.20": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.1.20.crate",
+          "sha256": "6bc728d0af2eefd2cb76a712413c41fe122c04d188442da0e13f6a1f48827342",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.2.0": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.2.0.crate",
+          "sha256": "7494300e425d03929feba0d02ba562dd62fba55897540eb63de7169b25bd421e",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.2.1": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.2.1.crate",
+          "sha256": "cd6b8c786310104245a6f619c2d4fd92336c1cea7c915f7b1d264eb2cac8c968",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.2.2": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.2.2.crate",
+          "sha256": "cb16921275f550661148daa7a9226ab22facdf51f075b9b0b6231a8d4b983571",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.3.0": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.3.0.crate",
+          "sha256": "8df9b69c9101849362086812301113e6bb1722da91c034061999cbf1db4205e2",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.3.1": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.3.1.crate",
+          "sha256": "8139889cacbccfdb704da6ef4803c4950c03ca0e331607d5459f333e0657db19",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.3.2": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.3.2.crate",
+          "sha256": "1255884b12951ea800e5160a95ec5a9620206d4bdafe3dc02cde28676a16614f",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.3.3": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.3.3.crate",
+          "sha256": "27d7070a9de206155343ae9acff18e99f419ae1422aeeda645b3ccb0d2a6cf55",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.3.4": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.3.4.crate",
+          "sha256": "823fb60772f02779cddcdda22f735acf24eefe74ed696210cf4f41a749efb4e4",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.3.5": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.3.5.crate",
+          "sha256": "2ee00734181d7fdb6a5c9c72374d5257ba3991185db7dd6c5512f500faf70527",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.3.6": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.3.6.crate",
+          "sha256": "a4ffafd46249cf99a86ae1f4e91db00a051cc102fc4fe834261088748ce01ce6"
+        },
+        "0.3.7": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.3.7.crate",
+          "sha256": "5fa2055fc964f744d92db5594644181f068a4b2abcc3f1b8125b46195779c486",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.3.8": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.3.8.crate",
+          "sha256": "adb35a30ddf795fff8f5cec0a3143103df4d194b498236f52877f0e82da50ebc",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.4.0": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.4.0.crate",
+          "sha256": "b06212897fa58377d3eff26c4531c7fbf40581959b60090df3f21f929643e3ad",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.4.1": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.4.1.crate",
+          "sha256": "b0d3c73b44493fbdc54dc6cc45bfafd5b52ef24f887588ab0abbde76ebfa56b3",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.4.2": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.4.2.crate",
+          "sha256": "e8c868c91c6ca9d2c8d0eadc723330d1218ba1cb66d89d1a2ba92be875f44965",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.4.3": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.4.3.crate",
+          "sha256": "675c89643fc12e84150014fe52e049bf51567391db8f16af12d154e14bf19be9",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.4.4": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.4.4.crate",
+          "sha256": "ae5955f609a3555c267fd85dbb23aeedf9271c6371a9bbc5bc70900b56880518",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.4.5": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.4.5.crate",
+          "sha256": "32e595364d66e9ad20b2de4dbadaf11ebe51ac00aafe757f302dec43deb1a1be",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.4.6": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.4.6.crate",
+          "sha256": "84423a52b5badf606d8c723687ddf577345a96ce7f0b309c530b918b36f1bb7b",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.4.7": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.4.7.crate",
+          "sha256": "a419e930523809bcab481dd6fe54bfbe680c937ad288d460d6dee6cf6047d1cd",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.4.8": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.4.8.crate",
+          "sha256": "7f9334428e70ee14a06b4053e0375faa1774bab6b645e03bbea44ae8e64bd1ef",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.4.9": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.4.9.crate",
+          "sha256": "199e2e3cba85573ed01993dd045a1feca1b05ae75a0aa4d965224d7293a43755",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.5.0": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.5.0.crate",
+          "sha256": "e62510dc76cc62d8fcd6596caf9fbbc4e925188074e5e096cf8340e150e02c36",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.5.1": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.5.1.crate",
+          "sha256": "06f3477eb9e7d15fc3d07a9b49e28a5108eec37fbab5b9e36603c74ebb0900e0",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.5.2": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.5.2.crate",
+          "sha256": "83b862290cf30078238b27e1f97be5488b95e48eff3941d41982fa66f412408e",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.5.3": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.5.3.crate",
+          "sha256": "aa4cd888ebf7afaab59052360da7fdf93d746f5d6b99d3270a8d92bb68f721c8",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.5.4": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.5.4.crate",
+          "sha256": "9a5ffccd071e842dbe5f3a80a53c6f7a5cbabad0bbfbaedf9dc72875d514cfd4",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.5.5": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.5.5.crate",
+          "sha256": "7a9476f2de3fcb7a1c4703881963303b9f1f118ef417afd8a23aa91e7fd8602f",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.5.6": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.5.6.crate",
+          "sha256": "b65464cce6fb78dff24ee99821cdf18eb34178452632d3d216ce07336e7ab62e",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.6.0": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.6.0.crate",
+          "sha256": "f4fa365b3cf5f293dc3d3bcdf3f9164e00aa2f3513e36cc1277c84c8d589d8cc",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.7.0": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.7.0.crate",
+          "sha256": "c202bcb5b84b9f97b09b4ee97079cbb05b9843be315f4935a834c1dfb16d6bb8",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.7.1": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.7.1.crate",
+          "sha256": "cbff90a7dd22ad956f828c631c7da7822a409e093de2d2480e6e4124ba445dd0",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.7.2": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.7.2.crate",
+          "sha256": "e86d00b794ccedcfc4f08ce8a7ea2505ac51ed1fd2274cddc219e773d146b002",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.7.3": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.7.3.crate",
+          "sha256": "33febf3565be1733df50cc0297848ba16bd8c3de62d85e7f1978c18c66e9d5d2",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.7.4": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.7.4.crate",
+          "sha256": "4bdf82c89799b1badb996cf84e412f1f6c6e857eeb66020c34d5a32f39721a98"
+        },
+        "0.8.0": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.8.0.crate",
+          "sha256": "bd6c57220d30c512d864c9f7cf35cf887a44bc93a01091c7a91b3be1f96f61fc"
+        },
+        "0.9.0": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.9.0.crate",
+          "sha256": "bb1ffffa22ae86a3b58d7b754844e5c08e185c7c30b6c1a0364bcac3d70c37b8"
+        },
+        "0.9.1": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.9.1.crate",
+          "sha256": "0c4784b532f67208ce708e6b2a8c576f0abf2c3184d550b82f6800eeb2e7d82c"
+        },
+        "0.9.2": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.9.2.crate",
+          "sha256": "343e95e97688e7e6de40b69efcfa0625bdbc28cbb1d11fb8bdce518c56ad0c14"
+        },
+        "0.9.3": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.9.3.crate",
+          "sha256": "01d8c3fe6a5e9174bc91d2b2906c3d8308197d51fb0454a060b63e8e9997b0b5"
+        },
+        "0.9.4": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.9.4.crate",
+          "sha256": "c0183b01c2c8d20f5b4616de8db97f0748fc660e6945502565a628831bd328cb"
+        },
+        "0.9.5": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.9.5.crate",
+          "sha256": "b17ffe5f4b67e3ba7c63bd420e64c9e1d51d6ee562096325ff380712660d434a"
+        },
+        "0.10.0": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.10.0.crate",
+          "sha256": "ec6ee30d142d02fd34876a0e20b93ccc8f0de162ff99f83eccb3297101df3168"
+        },
+        "0.10.1": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.10.1.crate",
+          "sha256": "0e09dcc8868dbe48e8921821bf12d32428b4c7d27aadb1e75bd412c51f1d78ea"
+        },
+        "0.10.2": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.10.2.crate",
+          "sha256": "d72c403c87807efd323b0bd31bfa0d3c43036f6cac7947476358afbc1887146a"
+        },
+        "0.10.3": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.10.3.crate",
+          "sha256": "1cc3cee039a2fed6c088099625df8786a16c10eacb9faf73bb16100d4008feec"
+        },
+        "0.10.4": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.10.4.crate",
+          "sha256": "974776a4f1f77ad5ff457239d285fcf6688cc4f2f791fe1cd8f8f76916afc0fa"
+        },
+        "0.10.5": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.10.5.crate",
+          "sha256": "e2b15b314e9f8d97ff92ba3a574f052f09a4041d650d7187e59cfaa3b3e670f9"
+        },
+        "0.10.6": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.10.6.crate",
+          "sha256": "b7b69350b569e54dc3403033565634db5ec3301e20b2344d321ece477a1e4964"
+        },
+        "0.10.7": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.10.7.crate",
+          "sha256": "9c24791e8dbd6f2957e7986eb9e6e6b2c38c9ccd26c2b1a36632617d3d313364"
+        },
+        "0.10.8": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.10.8.crate",
+          "sha256": "3b52548b59a5de220fc0d3eb7d5aa32c92e9fb92f83a71d2e13ae637b9577348"
+        },
+        "0.11.1": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.11.1.crate",
+          "sha256": "ecdf2e6f733f59c094018762ec826457568d83f3c44dc6b281a88e1e4c7be061"
+        },
+        "0.11.2": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.11.2.crate",
+          "sha256": "cc468c53604f6e10e61a3b04a298177d74eda95eb2184d6c780dda7c950d8af6"
+        },
+        "0.11.3": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.11.3.crate",
+          "sha256": "038c5374a2b8caf01dcccc8a95e7789cddea056e0f34a4d67876fdbb743ddc3d"
+        },
+        "0.12.1": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.12.1.crate",
+          "sha256": "81df9e1129b8c88783816a227320d41854d0e6bcdf55321a6c80ef00e0d6ae05"
+        },
+        "0.13.0": {
+          "archive_url": "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.13.0.crate",
+          "sha256": "bc7a36809592252cc73f9ec01623b89628654a2fba00dbf5c339c286eb040d40"
+        }
+      },
+      "evidence": ["@text:536469aefacc70aa", "@text:683be32ebe9cf71b"]
+    },
+    "switchboard-on-demand@f75b1ef63e10": {
+      "order": 52,
+      "package": "switchboard-on-demand",
+      "source": {
+        "kind": "git",
+        "url": "https://github.com/switchboard-xyz/switchboard-sdk",
+        "revision": "f75b1ef63e10eda35d046b1838810ec2935d7f39"
+      },
+      "reviewed_on": "2026-11-11",
+      "releases": {
+        "0.12.1": {
+          "repository": "https://github.com/switchboard-xyz/switchboard-sdk",
+          "revision": "f75b1ef63e10eda35d046b1838810ec2935d7f39",
+          "path_prefix": "solana/rust/switchboard-on-demand/"
+        }
+      },
+      "evidence": ["@text:e7f2824773c90bec", "@text:34fdf28b1f256dfd", "@text:70479cc756d24e5a"]
+    }
+  },
+  "applicability": {
+    "switchboard-on-demand::on_demand::accounts::pull_feed::PullFeedAccountData::parse": {
+      "order": 229,
+      "profiles": [
+        {
+          "id": "switchboard-on-demand-reviewed",
+          "source": "switchboard-on-demand",
+          "conditions": "@shared:conditions-b8e25bcfa7ef460a",
+          "argument": "@review:source-notes/other-sdk-functions.md#review-bc4114fe79581f5d",
+          "evidence": ["@text:133a191873d68b2e", "@text:64498fa48f09a1b1"],
+          "items": [
+            {
+              "item": "switchboard_on_demand::on_demand::accounts::pull_feed::PullFeedAccountData::parse",
+              "implementation": "switchboard_on_demand::on_demand::accounts::pull_feed::PullFeedAccountData::parse",
+              "releases": "@shared:releases-bc620a3edc054ca6",
+              "compatible_ranges": [
+                {"lower": "0.7.0", "upper": "0.8.0"},
+                {"lower": "0.8.0", "upper": "0.9.0"},
+                {"lower": "0.9.0", "upper": "0.10.0"},
+                {"lower": "0.10.0", "upper": "0.11.0"},
+                {"lower": "0.11.1", "upper": "0.12.0"},
+                {"lower": "0.12.1", "upper": "0.13.0"},
+                {"lower": "0.13.0", "upper": "0.14.0"}
+              ]
+            }
+          ],
+          "releases": "@shared:releases-bc620a3edc054ca6"
+        },
+        {
+          "id": "switchboard-on-demand-git-f75b1ef63e10",
+          "source": "switchboard-on-demand@f75b1ef63e10",
+          "releases": ["0.12.1"],
+          "items": [
+            {
+              "releases": ["0.12.1"],
+              "item": "switchboard_on_demand::on_demand::accounts::pull_feed::PullFeedAccountData::parse",
+              "implementation": "switchboard_on_demand::on_demand::accounts::pull_feed::PullFeedAccountData::parse"
+            }
+          ],
+          "conditions": "@shared:conditions-b8e25bcfa7ef460a",
+          "argument": "@review:source-notes/other-sdk-functions.md#review-2fdf544ec5043063",
+          "evidence": [
+            "@text:e20c2d61e5686878",
+            "@text:67fba268ea06fd6d",
+            "@text:99c7528a76863cfb",
+            "@text:dbbf53eba47b63d1",
+            "@text:07a14baecd3c07a2",
+            "@text:f43876f4cd07c798"
+          ]
+        }
+      ]
+    }
+  }
+}

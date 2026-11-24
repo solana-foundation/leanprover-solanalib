@@ -78,8 +78,7 @@ class CommittedCorpus(unittest.TestCase):
                                 f"{driver}: {name} = {requirement}")
 
     def test_pyth_drivers_use_reviewed_registry_releases(self):
-        sources = json.loads((run.REPO / "packages/solanalib-specs/source-map/applicability.json")
-                             .read_text())["applicability_sources"]
+        sources = run.source_map()["applicability_sources"]
         registry = "registry+https://github.com/rust-lang/crates.io-index"
         for driver in ("pyth", "instructions-3-4-0-bincode"):
             lockfile = run.RUST / driver / "Cargo.lock"

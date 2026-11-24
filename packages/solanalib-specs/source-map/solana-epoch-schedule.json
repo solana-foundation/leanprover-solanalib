@@ -1,0 +1,287 @@
+{
+  "abstractions": {
+    "library::solana_epoch_schedule": {
+      "order": 173,
+      "argument": "@review:source-notes/other-sdk-functions.md#review-eb99249d6ff6ae2a",
+      "limitations": ["@binding:b5fa051f6f3ee7b5", "@text:a59033a3f7b014d2", "@text:f428bee2a0798d8f"],
+      "source_ids": [
+        "sdk-utilities::solana-epoch-schedule-3.0.0::src/lib.rs",
+        "sdk-utilities::solana-epoch-schedule-3.2.0::src/lib.rs",
+        "sdk-utilities::solana-program-1.15.2::src/epoch_schedule.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.SolanaEpochSchedule.EpochSchedule": "9a67efd982296a391211b4f025b64750d4bb9c5574c317941f9d2b1457452be7",
+        "Solanalib.Specs.SolanaEpochSchedule": "54c32bcc6ee23a3125c2a26840045838bdb908a9fe0d66c03be5ea8d9a1cfa46",
+        "Solanalib.Specs.SolanaEpochSchedule.Capabilities": "0eaec7d31ee3d3d74f3465448f38febc03b306437fb15ae082ce9aaeae05c6e5"
+      }
+    }
+  },
+  "packages": {
+    "solana-epoch-schedule-3.0.0": {
+      "order": 68,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "445615ab625981bbe8ed30deea2f799dea269cb3",
+      "path_prefix": "epoch-schedule/"
+    },
+    "solana-epoch-schedule-3.2.0": {
+      "order": 69,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "d4a48f529f6151ff8bc8750443b4d8348c6ebf3b",
+      "path_prefix": "epoch-schedule/"
+    }
+  },
+  "interfaces": {
+    "sdk-utilities::solana-epoch-schedule-3.0.0::src/lib.rs": {
+      "order": 199,
+      "crate": "solana-epoch-schedule-3.0.0",
+      "path": "src/lib.rs",
+      "sha256": "074198ed79c494c4bf2d49e512b24b77b87a9f2d1b961c3727e608c8fcaeead2"
+    },
+    "sdk-utilities::solana-epoch-schedule-3.2.0::src/lib.rs": {
+      "order": 200,
+      "crate": "solana-epoch-schedule-3.2.0",
+      "path": "src/lib.rs",
+      "sha256": "9380636f059ac95afea4c984c4954f5648a30e90bb03e3186aee9c8fec0dc1c1"
+    }
+  },
+  "models": {
+    "solana-epoch-schedule::EpochSchedule::get_first_slot_in_epoch": {
+      "order": 480,
+      "contract": "Solanalib.Specs.SolanaEpochSchedule.EpochSchedule.get_first_slot_in_epoch_contract",
+      "witness_kind": "RealizedBy"
+    }
+  },
+  "api": {
+    "sdk-utilities::EpochSchedule::get_first_slot_in_epoch": {
+      "order": 590,
+      "source_id": "sdk-utilities::solana-epoch-schedule-3.0.0::src/lib.rs",
+      "line": 189,
+      "anchor_text": "pub fn get_first_slot_in_epoch(&self, epoch: u64) -> u64 {",
+      "scope": "@text:1d8267433c22e780",
+      "binding_obligations": ["@binding:b5fa051f6f3ee7b5"],
+      "rust_names": ["solana_epoch_schedule::EpochSchedule::get_first_slot_in_epoch"],
+      "models": ["solana-epoch-schedule::EpochSchedule::get_first_slot_in_epoch"]
+    }
+  },
+  "applicability_sources": {
+    "solana-epoch-schedule": {
+      "order": 53,
+      "package": "solana-epoch-schedule",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-11",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-0.0.1.crate",
+          "sha256": "091f571c4e109a8472ea6bdb17a89cdbdd17e1180a2911a0211aa36d5ff11ea0",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-0.0.2.crate",
+          "sha256": "1af3f83ffcff41c886a23f2208a45de5df0059eb4ccc0b1d0551e92ccb191ae6",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.0.crate",
+          "sha256": "65c4cf7d7c266d353169cf4feeada5e4bba3a55f33715535fa1ef49080eac3e0",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.1.crate",
+          "sha256": "a005abde2c87c2fef95bafbe1c91a1e255d9ba27e8fd692603f3ccee66bd8c4c",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.2.crate",
+          "sha256": "6bf4eb069a4bb1c762fb59d1a3759bd496b2d275c3bb706e514c8cbafe02a24d",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.4.crate",
+          "sha256": "44e1f2e668cf1c0ace134d6eb54635f1c1e60dd2cdd65e8b14adc4ac383b3e5f",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.5.crate",
+          "sha256": "50e0a219e92b4a1517686f70eb69331abf62c7043ec846d41bf7c00496489572",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.6.crate",
+          "sha256": "c60dde3613fcd1af91c2033e67ffe8c8d2bcd58085c53c842fa7903fa839ad38",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.7.crate",
+          "sha256": "276fda33b7de27df41e3043f344e517d5e85ab345d2f2aa2425d1011bac570c4",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.8.crate",
+          "sha256": "6e783a735416c534228f24f18f18ade0b189c2c8a93be486c9a26bd314517d93",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.9.crate",
+          "sha256": "a0cf1615ea23ac98ffcec061c05f59b295913fa7b96de63c9cbb9a5800697b65",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.10.crate",
+          "sha256": "88aa6588f178c32258eb616ef1428f2c86beae370d6486843313f6320e055190",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.11.crate",
+          "sha256": "b3409f250234ec4bbd999de3eac727ca21dfbfd39a831906f6ec112a66d2e1a2",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.12.crate",
+          "sha256": "fd5c9e8f4a155d29cb8e6aa2e4856e1200c6d1b41d63c189823a074a55e31aff",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.13.crate",
+          "sha256": "dc5bd1733a0099c803b5e63be64ef6be1041b52010481f12a7d81124615e030d",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.14.crate",
+          "sha256": "2966b16bc3687c0dc3f3870e6f3c657676af847390c853e799e5965cdca4acf6",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.15": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.15.crate",
+          "sha256": "78aa8bbc89e887b49f4df660b16981245345d32eebfdf36885516f6f535b1e74",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.16": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.16.crate",
+          "sha256": "0658ab350017397b08f6cf54739ac048464299aaf3742e15e5f34d8a08a6efdf",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.17": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.17.crate",
+          "sha256": "41eb160a1719beee0039eaca59f9bd84c523b88b51400adef3e465af06e38939",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.18": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.18.crate",
+          "sha256": "30625236f9937ff10d421f73beb55f3c55500d960442a3620474161288bcd317",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.20": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.20.crate",
+          "sha256": "da5c12ca420f4c4a417e198c29048119187904372f0b4612b372e3a84e6437fc",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.1.21": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.1.21.crate",
+          "sha256": "80ec39611020935101afd9a57ac57ea6961796b7d8705974408601e97d4dfb30",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.2.0.crate",
+          "sha256": "1c616297c19a097a8f718c0abff0f23c0f80baccaddc24306a1b4701b0e5af60",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-2.2.1.crate",
+          "sha256": "3fce071fbddecc55d727b1d7ed16a629afe4f6e4c217bc8d00af3b785f6f67ed",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-3.0.0.crate",
+          "sha256": "6e5481e72cc4d52c169db73e4c0cd16de8bc943078aac587ec4817a75cc6388f",
+          "revision": "445615ab625981bbe8ed30deea2f799dea269cb3",
+          "path_prefix": "epoch-schedule/"
+        },
+        "3.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-3.1.0.crate",
+          "sha256": "9ce264b7b42322325947c4136a09460bf5c73d9aa8262c9b0a2064be63ba8639",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "3.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-3.1.1.crate",
+          "sha256": "7ad280b1ed803853f7b453cb3ea9a57e600ca5599a63e69f7be199b486c0ec93",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "3.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-3.2.0.crate",
+          "sha256": "8116e6ffa6002237d5ab5edcbda17f9ba66b6742c45a89c9fb40a94dbacd4c1d",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "3.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-3.3.0.crate",
+          "sha256": "a1633cfd10cde127f2caf8f12021b4f8e9a425e7e4eea4326e428c422376d6fd",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        },
+        "3.4.0": {
+          "archive_url": "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-3.4.0.crate",
+          "sha256": "43ae73018043cff5d3990b3998d846fab2e823c07e3b2f49be602ea584be3d4f",
+          "yanked": false,
+          "evidence": ["@text:66e225f6364b5871"]
+        }
+      },
+      "evidence": ["@text:799ac60809fd2e9d", "@text:09a9a13ddb07726f"]
+    }
+  },
+  "applicability": {
+    "solana-epoch-schedule::EpochSchedule::get_first_slot_in_epoch": {
+      "order": 477,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/other-sdk-functions.md#review-1a3f81796ccb2475",
+          "conditions": [],
+          "evidence": [
+            "@text:cdbde46f940c75ae",
+            "@text:a60c04b5127e5a99",
+            "@text:60310966ed7fe2e9",
+            "@text:417471500f8e16ab",
+            "@text:6e6f7bae3e574ba5",
+            "@text:3dcea43136ac8122"
+          ],
+          "id": "epoch-schedule-3.0.0",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "3.0.0", "upper": "4.0.0"}],
+              "implementation": "solana_epoch_schedule::EpochSchedule::get_first_slot_in_epoch",
+              "item": "solana_epoch_schedule::EpochSchedule::get_first_slot_in_epoch",
+              "releases": ["3.0.0", "3.1.0", "3.1.1", "3.2.0", "3.3.0", "3.4.0"]
+            }
+          ],
+          "releases": ["3.0.0", "3.1.0", "3.1.1", "3.2.0", "3.3.0", "3.4.0"],
+          "source": "solana-epoch-schedule"
+        }
+      ]
+    }
+  }
+}

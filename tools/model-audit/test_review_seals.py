@@ -30,7 +30,7 @@ class ModelSealControls(unittest.TestCase):
             source.parent.mkdir(parents=True)
             source.write_text('def changed : Nat := 7\n')
         self.runtime_path = self.runtime / 'source-map/sources.json'
-        self.sdk_path = self.sdk / 'source-map/libraries.json'
+        self.sdk_path = self.sdk / 'source-map/solana-system-interface.json'
         self.runtime_data = {'reference_runtime': 'unchanged pin', 'correspondence': [
             {'id': 'selected', 'modules': [self.runtime_name],
              'model_sha256': {self.runtime_name: 'old'}, 'limitations': ['Still open']},
@@ -40,6 +40,7 @@ class ModelSealControls(unittest.TestCase):
             'other': {'modules': {'unreviewed': 'old'}, 'limitations': ['Still open']}}}
         self.write(self.runtime_path, self.runtime_data)
         self.write(self.sdk_path, self.sdk_data)
+        self.write(self.sdk / 'source-map.json', {'fragments': ['source-map/solana-system-interface.json']})
 
     def write(self, path, data):
         path.parent.mkdir(parents=True, exist_ok=True)

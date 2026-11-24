@@ -1,0 +1,179 @@
+{
+  "abstractions": {
+    "library::solana_nullable": {
+      "order": 155,
+      "modules": {
+        "Solanalib.Specs.SolanaNullable.maybe_null.MaybeNull": "a72ec6b8b43bf44d167038fcc9d10a25a1325f3d9982a5115c6e95f7259c9945",
+        "Solanalib.Specs.SolanaNullable.maybe_null.MaybeNull.Address": "90f4e4faf4aa7510e6712b03e2ed2167a4e62dfa2538d1965dbae9a5e033fc7f",
+        "Solanalib.Specs.SolanaNullable": "d396473b9d65cfb8f6d84dc6eb18a1289d3e7eec306da00ab7891594e6be3915",
+        "Solanalib.Specs.SolanaNullable.Capabilities": "72e64d00a0265183f03ca7cba857523000372a197f92f8c27d469e08c3395ca3"
+      },
+      "source_ids": ["sdk-values::solana-nullable-1.3.0::src/maybe_null.rs"],
+      "argument": "@review:source-notes/error-nullable.md#review-cec27149e4a34a8d",
+      "limitations": ["@text:da0d819ff81c3f79"]
+    }
+  },
+  "packages": {
+    "solana-nullable-1.3.0": {
+      "order": 24,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "df930d35439b67b848bda57b7851d41ad3ce9dd2",
+      "path_prefix": "nullable/"
+    }
+  },
+  "interfaces": {
+    "fee-nullable-1.3.0": {
+      "order": 56,
+      "anchor_text": "#[repr(transparent)]",
+      "cargo_package_checksum": "889194d8c5faec648f2f6fadddb60566249921ebb074e2707e7095458d5864e2",
+      "checked_layout_declarations": [
+        {
+          "fields": [{"line": 34, "name": "0", "type": "T"}],
+          "line": 34,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 27,
+          "source_id": "fee-nullable-1.3.0",
+          "type": "MaybeNull"
+        }
+      ],
+      "crate": "solana-nullable-1.3.0",
+      "line": 27,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "66ff98f0f6eace66d2d4f9eb9f6ed6fb800a9561677310b0b6138293c8ffedd1",
+        "cargo_vcs_info_sha256": "dbfd57768b9fda91fb2eaa87c1d5b222e4bdfc7b10e17fa51c6b98f75e8e505a"
+      },
+      "path": "src/maybe_null.rs",
+      "sha256": "bd3794fab8efe7a600b8aad74369a247db8d8f72090185e40841ef0d9841b3ee"
+    },
+    "sdk-values::solana-nullable-1.3.0::src/maybe_null.rs": {
+      "order": 174,
+      "crate": "solana-nullable-1.3.0",
+      "path": "src/maybe_null.rs",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/error-nullable.md. No whole-crate model is claimed.",
+      "sha256": "bd3794fab8efe7a600b8aad74369a247db8d8f72090185e40841ef0d9841b3ee"
+    },
+    "sdk-values::solana-nullable-1.3.0::src/nullable.rs": {
+      "order": 175,
+      "crate": "solana-nullable-1.3.0",
+      "path": "src/nullable.rs",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/error-nullable.md. No whole-crate model is claimed.",
+      "sha256": "0199896454c63b3a9799f90df681a5f0a94d430f3263478837bd9f9bff99dc2d"
+    }
+  },
+  "models": {
+    "solana-nullable::maybe_null::MaybeNull::get": {
+      "order": 231,
+      "contract": "Solanalib.Specs.SolanaNullable.maybe_null.MaybeNull.get_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:a94eadb779c2b078", "@binding:f470a5fa36573684"]
+    }
+  },
+  "api": {
+    "solana-nullable@1.3.0::maybe_null.MaybeNull.get": {
+      "order": 217,
+      "source_id": "sdk-values::solana-nullable-1.3.0::src/maybe_null.rs",
+      "line": 56,
+      "anchor_text": "pub fn get(self) -> Option<T> {",
+      "scope": "@text:f69fb0c0c6f372dc",
+      "binding_obligations": ["@binding:a94eadb779c2b078", "@binding:f470a5fa36573684", "@binding:d6e262b172cb3892"],
+      "rust_names": ["solana_nullable::maybe_null::MaybeNull::<T>::get"],
+      "clients": [
+        "SolanalibTest.Specs.Core.ErrorNullable.nullable_null_drops",
+        "SolanalibTest.Specs.Core.ErrorNullable.nullable_nonnull_moves",
+        "SolanalibTest.Specs.Core.ErrorNullable.nullable_override_is_respected",
+        "SolanalibTest.Specs.Core.ErrorNullable.nullable_double_panic_terminal",
+        "SolanalibTest.Specs.Core.ErrorNullable.nullable_null_rejects_lost_drop",
+        "SolanalibTest.Specs.Core.ErrorNullable.nullable_double_panic_ne_return",
+        "SolanalibTest.Specs.Core.ErrorNullable.nullable_query_unwind_keeps_cleanup_state",
+        "SolanalibTest.Specs.Core.ErrorNullable.nullable_query_unwind_rejects_skipped_cleanup",
+        "SolanalibTest.Specs.Core.ErrorNullable.nullable_null_drop_unwind",
+        "SolanalibTest.Specs.Core.ErrorNullable.nullable_null_drop_unwind_rejects_return",
+        "SolanalibTest.Specs.Core.ErrorNullable.nullable_null_drop_terminal",
+        "SolanalibTest.Specs.Core.ErrorNullable.nullable_terminal_query_skips_drop",
+        "SolanalibTest.Specs.Core.ErrorNullable.nullable_terminal_query_rejects_return",
+        "SolanalibTest.Specs.Core.ErrorNullable.nullable_unwind_drop_terminal"
+      ],
+      "models": ["solana-nullable::maybe_null::MaybeNull::get"]
+    }
+  },
+  "applicability_sources": {
+    "solana-nullable": {
+      "order": 36,
+      "package": "solana-nullable",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-11",
+      "releases": {
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-nullable/solana-nullable-1.0.0.crate",
+          "sha256": "a90429a75d69fdcb31952c3dea79f5f3c8157cfe88221e066103c9c237876073"
+        },
+        "1.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-nullable/solana-nullable-1.1.0.crate",
+          "sha256": "da028344c595c7416769ff648d206de7962571291a4cea24c38a60b6f40d53bb"
+        },
+        "1.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-nullable/solana-nullable-1.1.1.crate",
+          "sha256": "a0f95d3028ef0f682bb174b77379c19d5dae2904a649f4a103fe29be7a139980"
+        },
+        "1.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-nullable/solana-nullable-1.2.0.crate",
+          "sha256": "ec7b49f68ccea949a6ea75f485dbe2e17cf4c1d894ed262371d584269359e1a0"
+        },
+        "1.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-nullable/solana-nullable-1.3.0.crate",
+          "sha256": "889194d8c5faec648f2f6fadddb60566249921ebb074e2707e7095458d5864e2",
+          "revision": "df930d35439b67b848bda57b7851d41ad3ce9dd2",
+          "path_prefix": "nullable/"
+        }
+      },
+      "evidence": ["@text:b7cc1f3af96efe20"]
+    }
+  },
+  "applicability": {
+    "solana-nullable::maybe_null::MaybeNull::get": {
+      "order": 231,
+      "profiles": [
+        {
+          "id": "reviewed-1-3-0",
+          "source": "solana-nullable",
+          "releases": ["1.3.0"],
+          "items": [
+            {
+              "releases": ["1.3.0"],
+              "item": "solana_nullable::maybe_null::MaybeNull::<T>::get",
+              "implementation": "solana_nullable::maybe_null::MaybeNull::<T>::get",
+              "compatible_ranges": [{"lower": "1.3.0", "upper": "2.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:a94eadb779c2b078", "@binding:f470a5fa36573684"],
+          "argument": "@review:source-notes/error-nullable.md#review-ea5c88d7736c030b",
+          "evidence": ["@text:c7c57f4ad1aaf821"]
+        },
+        {
+          "id": "address-2-6-1",
+          "source": "solana-nullable",
+          "releases": ["1.3.0"],
+          "items": [
+            {
+              "releases": ["1.3.0"],
+              "item": "solana_nullable::maybe_null::MaybeNull::<T>::get",
+              "implementation": "solana_nullable::maybe_null::MaybeNull::<T>::get",
+              "compatible_ranges": [{"lower": "1.3.0", "upper": "2.0.0"}]
+            }
+          ],
+          "conditions": ["@text:98c2f568f5d6f470", "@text:228e16ea9328106a", "@text:d522147740230627"],
+          "argument": "@review:source-notes/error-nullable.md#review-c9aa45c98a3949bf",
+          "evidence": ["@text:c7c57f4ad1aaf821", "@text:b06495e280378f79", "@text:8553305e6275a000"],
+          "dependencies": [
+            {
+              "package": "solana-address",
+              "releases": ["2.6.1"],
+              "reason": "@text:3cb0dd7855445c56",
+              "compatible_ranges": [{"lower": "2.6.1", "upper": "3.0.0"}]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

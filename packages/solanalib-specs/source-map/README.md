@@ -1,13 +1,6 @@
 # Source review registry
 
-The parent [source-map.json](../source-map.json) selects the fragments present
-in this checkout. `libraries.json` groups SDK models by library and function;
-`foundation.json` records shared module reviews, and `applicability.json`
-records source versions and build conditions. The `api` and `models` records
-define the exact modeled subset. A library namespace does not imply coverage
-of the whole crate. The loader
-rejects duplicate identities, missing fragments, unlisted JSON fragments and
-linked inputs.
+The parent [source-map.json](../source-map.json) selects one compact JSON file per crate, plus [core.json](core.json) for shared vocabulary. Each file keeps its source pins, interfaces, model and API records, module reviews and applicability alternatives together. The `api` and `models` records define the exact modeled subset; a library namespace does not imply coverage of the whole crate. The loader rejects duplicate identities, missing or unlisted fragments, linked inputs and invalid clause references.
 
 These are review inputs. Complete declaration lists and audit results are
 generated from Lean instead of being committed a second time.
@@ -37,7 +30,7 @@ module reviews, changed module contents and unapproved axioms. Witness
 closedness and exact compiled contract, reference and sample identities are
 checked from their types.
 
-Schema 3 uses these fixed defaults to omit repetition:
+The model and source records use these fixed defaults to omit repetition:
 
 - Rust implementation proof status is always open. The default kind of a model is
   `full`; assumptions, model gaps and remaining model requirements default to
@@ -61,6 +54,23 @@ Schema 3 uses these fixed defaults to omit repetition:
 - Source identities come from the crate pin. A Git pin supplies the revision and
   a repository path formed from `path_prefix` and the crate-relative `path`. An
   archive pin supplies the exact published package, version and archive checksum.
+
+## Shared clauses
+
+Schema 4 stores each exact prose clause once. [texts.json](texts.json) defines conditions, assumptions, reasons, evidence and scopes. [BINDINGS.md](../BINDINGS.md#registered-binding-clauses) defines the binding obligations. Long review arguments live under stable anchors in the relevant [source notes](../source-notes). The registry index lists every document that supplies a definition; all of these files participate in the source and gap-review seals.
+
+| Reference | Meaning |
+| --- | --- |
+| `@text:<id>` | Exact text from `texts.json`. |
+| `@binding:<id>` | Exact clause between the `registry:binding` and `/registry` markers in `BINDINGS.md`. |
+| `@review:source-notes/<file>.md#review-<id>` | Exact argument between the matching `registry:review` markers in that source note. |
+| `@shared:<field>-<id>` | A repeated structured value from [shared.json](shared.json), such as a release set or a list of conditions. |
+
+A prose ID is the first 16 hexadecimal digits of its UTF-8 SHA-256 digest. The clause excludes the surrounding marker lines and their separating newlines. A shared-value ID hashes the JSON value with shared references recursively expanded, keys sorted, Unicode preserved and the standard Python JSON separators. Text and prose references remain references in that digest. The loader rejects altered IDs, unknown or cyclic references, duplicate prose and unused definitions.
+
+Reuse an existing clause reference when its exact meaning and text apply. To add a clause, add its definition and explicit references together. To change one, create a new content ID and update the applicable references; remove the old definition when nothing uses it. For structured values, recompute any shared IDs that contain the changed reference. `order` retains the public list ordering independently of fragment order; new entries append the next integer of their section.
+
+A crate can declare `binding_defaults`, an ordered clause list prepended to each API entry. A function adds its own clauses through `binding_obligations`, or sets `binding_defaults: false` to select only its explicit obligations. These are source-binding requirements, not mathematical contract preconditions. The loader reconstructs the complete obligation list before the existing source and witness audits run. No reference or default supplies an implicit source revision, feature, target or dependency fact.
 
 ## Rust identities
 
@@ -205,7 +215,7 @@ A package can use an immutable published archive as its source:
   "kind": "crates-io",
   "package": "example-sdk",
   "version": "1.0.0",
-  "sha256": "<locked published archive SHA-256>"
+  "sha256": "<published archive SHA-256>"
 }
 ```
 

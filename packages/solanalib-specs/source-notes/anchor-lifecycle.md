@@ -1,6 +1,6 @@
 # Anchor account validation and lifecycle
 
-The literal [source API rows](../source-map/libraries.json) retain Anchor Lang
+The literal [source API rows](../source-map/anchor-lang.json) retain Anchor Lang
 0.32.1 at revision `1ebbe58158d089a2a40b5e35ebead5a10db9090d`. The twenty
 profiles also record inspected 0.32.0, 0.32.2 and 0.32.3 references and declare
 compatibility in `[0.32.0, 0.33.0)` under their operation-specific preservation

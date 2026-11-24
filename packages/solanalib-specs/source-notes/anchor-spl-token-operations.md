@@ -1,6 +1,6 @@
 # Anchor SPL token CPI operations
 
-The [source registry](../source-map/libraries.json) records inspected Anchor
+The [source registry](../source-map/anchor-spl.json) records inspected Anchor
 SPL 0.32.0–0.32.3 for `token_2022::transfer_checked`, using the 0.32.1
 reference binding. It declares `>=0.32.0, <0.33.0` with `token_2022` enabled
 and the recorded constructor, context, AccountInfo and legacy error

@@ -1,6 +1,6 @@
 # Anchor SPL values and supporting CPI wrappers
 
-The [source registry](../source-map/libraries.json) records the following
+The [source registry](../source-map/anchor-spl.json) records the following
 Anchor SPL operations with 0.32.1 reference bindings. The token value,
 associated-token and metadata operations have inspected 0.32.0–0.32.3 references and declare
 `[0.32.0, 0.33.0)` under their complete operation and dependency contracts.
@@ -38,7 +38,7 @@ ordered Memo construction, opaque invocation and cleanup. Other support
 wrappers keep their separate profiles; native and exact source references
 remain at 0.32.1.
 
-The [source registry](../source-map/libraries.json) selects
+The [source registry](../source-map/anchor-spl.json) selects
 `anchor-spl::token_interface::TokenAccount::deref` with inspected references
 0.32.1, 0.32.2 and 0.32.3 and declared range `[0.32.1, 0.33.0)`.
 The complete wrapper/module files and relevant manifest requirements agree.

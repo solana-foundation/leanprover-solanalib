@@ -1,0 +1,52 @@
+{
+  "packages": {
+    "mpl-token-metadata-5.1.1": {
+      "order": 104,
+      "repository": "https://github.com/metaplex-foundation/mpl-token-metadata",
+      "source_archive": {
+        "kind": "crates-io",
+        "package": "mpl-token-metadata",
+        "version": "5.1.1",
+        "sha256": "046f0779684ec348e2759661361c8798d79021707b1392cb49f3b5eb911340ff"
+      }
+    }
+  },
+  "interfaces": {
+    "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/instructions/create_metadata_account_v3.rs": {
+      "order": 357,
+      "crate": "mpl-token-metadata-5.1.1",
+      "path": "src/generated/instructions/create_metadata_account_v3.rs",
+      "sha256": "a952fd164924effd6a259e565d7d82fd3f92f9665fba9fb7835f923228c392b7"
+    },
+    "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/collection.rs": {
+      "order": 358,
+      "crate": "mpl-token-metadata-5.1.1",
+      "path": "src/generated/types/collection.rs",
+      "sha256": "0657800fa83802c5b1c5ee723a860cf6bd4b12598e81f6cfd60170afe9a2aff4"
+    },
+    "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/collection_details.rs": {
+      "order": 359,
+      "crate": "mpl-token-metadata-5.1.1",
+      "path": "src/generated/types/collection_details.rs",
+      "sha256": "1166ee9a32037b56153a897e22ef08cbd8da38a32b2b7dc8ab24874b1e5c2412"
+    },
+    "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/creator.rs": {
+      "order": 360,
+      "crate": "mpl-token-metadata-5.1.1",
+      "path": "src/generated/types/creator.rs",
+      "sha256": "8bbb191a12b5a737f773f9ac580b7c74bc44c2c270cf0fec51d4ed12c424e634"
+    },
+    "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/data_v2.rs": {
+      "order": 361,
+      "crate": "mpl-token-metadata-5.1.1",
+      "path": "src/generated/types/data_v2.rs",
+      "sha256": "3048417ffba0e5fa492957c9abe363ab1b7d4b5ff5ef92904b62fd88986204db"
+    },
+    "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/uses.rs": {
+      "order": 362,
+      "crate": "mpl-token-metadata-5.1.1",
+      "path": "src/generated/types/uses.rs",
+      "sha256": "3fc4e7e75959767b798dcd3f072e81e077eb9161ff35ae4133b3106ff14e1a1c"
+    }
+  }
+}

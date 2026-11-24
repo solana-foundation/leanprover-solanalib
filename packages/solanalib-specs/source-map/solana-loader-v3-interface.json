@@ -1,0 +1,203 @@
+{
+  "abstractions": {
+    "library::solana_loader_v3_interface": {
+      "order": 171,
+      "modules": {
+        "Solanalib.Specs.SolanaLoaderV3Interface": "6da1df57d8ef2ef1f885e5e66fd505dda8cc5e0d3c15f717a1175c8bba8746b0",
+        "Solanalib.Specs.SolanaLoaderV3Interface.Capabilities": "d6ece33d5fc4fb12efc68d8dc1f7543edbb1015e047f12ce4bb55f4be41c2cf3",
+        "Solanalib.Specs.SolanaLoaderV3Interface.Address": "c1e8bb56fc0728abfd13e8784fffc1f7f875ca2ecf1204210d39bfd4bc30bd57"
+      },
+      "source_ids": [
+        "addresses::solana-pubkey-2.2.1::src/lib.rs",
+        "addresses::solana-pubkey-2.2.1::Cargo.toml.orig",
+        "addresses::solana-pubkey-2.4.0::src/lib.rs",
+        "addresses::solana-pubkey-2.4.0::Cargo.toml.orig",
+        "addresses::solana-program-1.15.2::src/pubkey.rs",
+        "addresses::solana-program-1.18.26::src/pubkey.rs",
+        "addresses::solana-loader-v3-interface-6.1.1::src/lib.rs",
+        "addresses::spl-associated-token-account-client-2.0.0::src/address.rs",
+        "addresses::spl-associated-token-account-client-2.0.0::src/lib.rs",
+        "addresses::spl-associated-token-account-interface-2.0.0::src/address.rs",
+        "addresses::spl-associated-token-account-interface-2.0.0::src/lib.rs",
+        "addresses::borsh-0.9.3::src/de/mod.rs",
+        "addresses::borsh-0.9.3::src/ser/mod.rs",
+        "addresses::borsh-1.6.0::src/de/mod.rs",
+        "addresses::borsh-1.6.0::src/ser/mod.rs",
+        "addresses::borsh-derive-1.6.0::src/internals/deserialize/structs/mod.rs",
+        "addresses::borsh-derive-1.6.0::src/internals/serialize/structs/mod.rs",
+        "addresses::borsh-derive-internal-0.9.3::src/struct_de.rs",
+        "addresses::borsh-derive-internal-0.9.3::src/struct_ser.rs",
+        "addresses::borsh-0.10.4::src/ser/mod.rs",
+        "addresses::solana-address-2.6.0::src/error.rs",
+        "addresses::solana-address-2.6.1::src/error.rs",
+        "addresses::solana-pubkey-3.0.0::src/lib.rs",
+        "addresses::solana-pubkey-4.2.0::src/lib.rs",
+        "addresses::solana-address-1.1.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/syscalls.rs",
+        "fee-address-2.6.1",
+        "value-request::solana-address-2.6.1::src/syscalls.rs",
+        "codecs::borsh-0.10.4::src/de/mod.rs"
+      ],
+      "argument": "@review:source-notes/other-sdk-functions.md#review-29c3df036102ffee",
+      "limitations": "@shared:limitations-8770b03dd66ffeea"
+    }
+  },
+  "packages": {
+    "solana-loader-v3-interface-6.1.1": {
+      "order": 77,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "27e284dd9645d882124468e20146131771eea46c",
+      "path_prefix": "loader-v3-interface/"
+    }
+  },
+  "interfaces": {
+    "addresses::solana-loader-v3-interface-6.1.1::src/lib.rs": {
+      "order": 240,
+      "crate": "solana-loader-v3-interface-6.1.1",
+      "path": "src/lib.rs",
+      "sha256": "7c72cd7c44a452bae15d9318185b10885496f1f3b39fa8ce8641e068bcd36825",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "solana-loader-v3-interface-6.1.1::src/state.rs": {
+      "order": 448,
+      "crate": "solana-loader-v3-interface-6.1.1",
+      "path": "src/state.rs",
+      "sha256": "c27fd423293630454cf79de6d28e1fbadee092fd83c637104a6d8fa9142770a5"
+    }
+  },
+  "models": {
+    "solana-loader-v3-interface::get_program_data_address": {
+      "order": 440,
+      "contract": "Solanalib.Specs.SolanaLoaderV3Interface.get_program_data_address_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:784d07d7dda8727b"]
+    }
+  },
+  "api": {
+    "addresses::solana-loader-v3-interface-6.1.1::get_program_data_address": {
+      "order": 473,
+      "source_id": "addresses::solana-loader-v3-interface-6.1.1::src/lib.rs",
+      "line": 26,
+      "anchor_text": "pub fn get_program_data_address(program_address: &Pubkey) -> Pubkey {",
+      "rust_names": ["solana_loader_v3_interface::get_program_data_address"],
+      "models": ["solana-loader-v3-interface::get_program_data_address"],
+      "scope": "@text:c1cf725803784346",
+      "binding_obligations": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+      "bindings": {
+        "solana_loader_v3_interface::get_program_data_address": "solana_loader_v3_interface::get_program_data_address"
+      }
+    }
+  },
+  "applicability_sources": {
+    "addresses-solana-loader-v3-interface": {
+      "order": 51,
+      "package": "solana-loader-v3-interface",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-11",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-0.0.1.crate",
+          "sha256": "865526821097ee48cb1f91cf653539a4d907b8fedb3c5e812c8200af3d58ce51"
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-0.0.2.crate",
+          "sha256": "0afe5bdfd1b6519741b999d449143541cb3810f2af19bec0ce03c7eb18a513bb"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-2.2.0.crate",
+          "sha256": "feef12d4276f615604a36a3ae2088164fd5fffee487e1e62318751c7550a4f63"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-3.0.0.crate",
+          "sha256": "fa4be76cfa9afd84ca2f35ebc09f0da0f0092935ccdac0595d98447f259538c2"
+        },
+        "4.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-4.0.0.crate",
+          "sha256": "3831041f323d611bef4c6ec55b9df6d32b39aa5c466414be2b2b5f35b4661b07"
+        },
+        "4.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-4.0.1.crate",
+          "sha256": "5539bcadd5c3b306045563e9d102bbaa42b3643f335ae02bc9b5260a70ad9742"
+        },
+        "5.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-5.0.0.crate",
+          "sha256": "6f7162a05b8b0773156b443bccd674ea78bb9aa406325b467ea78c06c99a63a2"
+        },
+        "6.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-6.0.0.crate",
+          "sha256": "7e849501b4d1592246ce5414b0b3acb252b5d0e1294eac55786cc0aa4e9482f5"
+        },
+        "6.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-6.1.0.crate",
+          "sha256": "dee44c9b1328c5c712c68966fb8de07b47f3e7bac006e74ddd1bb053d3e46e5d"
+        },
+        "6.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-6.1.1.crate",
+          "sha256": "2e0538d4dbc9022e01616f1c58f2db98ece739c5d5ed4a2ef8737a953e76a2d4",
+          "revision": "27e284dd9645d882124468e20146131771eea46c"
+        },
+        "7.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-7.0.0.crate",
+          "sha256": "68029ab11d9c891d4ce23ada75745e40f983c5674af366f447b672569634231b"
+        },
+        "8.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-8.0.0.crate",
+          "sha256": "fe2c87b066c7821b95527842478da41e57bbccd0d246bf857605d82008e875b3"
+        },
+        "8.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-8.0.1.crate",
+          "sha256": "362b468fbde4c20521b9ff5ef743bc0d9b410455a5a92a8b29fd46954e89345f"
+        },
+        "8.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-8.1.0.crate",
+          "sha256": "122e6269cd5d6f48a5ed8954da46c6d55f29c41f3905e9d60887182576e70b0f"
+        },
+        "8.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-8.1.1.crate",
+          "sha256": "46255f7494fa739cb0c65ad43aaa12f49d1ed884d8632f0437b9c91ce48a936a"
+        },
+        "9.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-9.0.0.crate",
+          "sha256": "b1be12013e6364447d9ac7142a90ebff74c676b99bd4a5dca0986126eae6b9e7"
+        }
+      },
+      "evidence": ["@text:84f93d5515b5fbc3", "@text:e1738c835b01e6b4"]
+    }
+  },
+  "applicability": {
+    "solana-loader-v3-interface::get_program_data_address": {
+      "order": 440,
+      "profiles": [
+        {
+          "id": "solana-loader-v3-interface-6.1.1-get_program_data_address",
+          "source": "addresses-solana-loader-v3-interface",
+          "releases": ["6.1.1"],
+          "items": [
+            {
+              "releases": ["6.1.1"],
+              "item": "solana_loader_v3_interface::get_program_data_address",
+              "implementation": "solana_loader_v3_interface::get_program_data_address",
+              "compatible_ranges": [{"lower": "6.1.1", "upper": "7.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0", "@text:5879a6f61ff6f6f9"],
+          "argument": "@review:source-notes/other-sdk-functions.md#review-104ee369e04cc255",
+          "evidence": ["@text:11365c9650b94b3f"],
+          "target": "@shared:target-86e77ec323a176ad",
+          "dependencies": [
+            {
+              "package": "solana-pubkey",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["4.2.0"],
+              "reason": "@text:390cb5e63ad3743e",
+              "compatible_ranges": [{"lower": "4.2.0", "upper": "5.0.0"}]
+            },
+            "@shared:dependencies-9ae1e5ccc3308c86",
+            "@shared:dependencies-3656d778306b5ec2"
+          ]
+        }
+      ]
+    }
+  }
+}

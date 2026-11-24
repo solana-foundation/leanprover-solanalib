@@ -1,0 +1,376 @@
+{
+  "abstractions": {
+    "library::solana_borsh": {
+      "order": 135,
+      "modules": {
+        "Solanalib.Specs.SolanaBorsh": "338d96ba1f08122c70ce083d716e39000b4284a4bdd7e0e0bba47b93303085f2",
+        "Solanalib.Specs.SolanaBorsh.Capabilities": "e59d8a5f1c7a3a4a5fdbafc6c4ac3c1808ba073866e25c78000786a5c254ed42",
+        "Solanalib.Specs.SolanaBorsh.Unchecked": "08dfdeb3aea5ea8aabf78b5f264bcbc1b6828e3cd4a17603e376b366a2244075",
+        "Solanalib.Specs.SolanaBorsh.PackedLen": "4c461ea50187a43d93d2f9b563292c02317e5eee6dbe87a0543f22a34f58b3d4"
+      },
+      "source_ids": [
+        "sysvars::solana-borsh-3.0.2::src/macros.rs",
+        "sysvars::solana-borsh-3.0.2::src/v1.rs",
+        "stake-codecs::solana-program-1.15.2::src/stake/state.rs",
+        "stake-codecs::solana-program-1.15.2::src/stake/instruction.rs",
+        "stake-codecs::solana-program-1.15.2::src/stake/mod.rs",
+        "stake-codecs::solana-program-1.15.2::src/stake/config.rs",
+        "stake-codecs::solana-program-1.15.2::src/program_pack.rs",
+        "stake-codecs::solana-program-1.15.2::src/program_error.rs",
+        "stake-codecs::solana-program-1.15.2::src/instruction.rs",
+        "stake-codecs::solana-program-1.15.2::src/system_instruction.rs",
+        "stake-codecs::solana-program-1.15.2::src/pubkey.rs",
+        "stake-codecs::solana-program-1.15.2::src/sysvar/clock.rs",
+        "stake-codecs::solana-program-1.15.2::src/sysvar/rent.rs",
+        "stake-codecs::solana-program-1.15.2::src/sysvar/stake_history.rs",
+        "stake-codecs::solana-program-1.18.26::src/address_lookup_table/state.rs",
+        "stake-codecs::solana-program-1.18.26::src/borsh0_10.rs",
+        "stake-codecs::solana-program-1.18.26::src/borsh.rs",
+        "stake-codecs::solana-program-1.18.26::src/pubkey.rs",
+        "stake-codecs::solana-address-lookup-table-interface-2.2.2::src/state.rs",
+        "stake-codecs::solana-address-lookup-table-interface-2.2.2::Cargo.toml",
+        "stake-codecs::solana-borsh-2.2.1::src/v0_10.rs",
+        "stake-codecs::solana-borsh-2.2.1::src/macros.rs",
+        "stake-codecs::solana-borsh-2.2.1::Cargo.toml",
+        "stake-codecs::bincode-1.3.3::src/lib.rs",
+        "stake-codecs::bincode-1.3.3::src/config/mod.rs",
+        "stake-codecs::bincode-1.3.3::src/de/mod.rs",
+        "stake-codecs::bincode-1.3.3::src/ser/mod.rs",
+        "stake-codecs::bytemuck-1.21.0::src/lib.rs",
+        "stake-codecs::bytemuck-1.21.0::src/internal.rs",
+        "stake-codecs::bytemuck-1.24.0::src/lib.rs",
+        "stake-codecs::bytemuck-1.24.0::src/internal.rs",
+        "stake-codecs::solana-pubkey-2.4.0::src/lib.rs",
+        "stake-codecs::bincode-1.3.3::src/error.rs",
+        "stake-codecs::bincode-1.3.3::src/de/read.rs"
+      ],
+      "argument": "@review:source-notes/borsh-codecs.md#review-1d18dc7136746b3c",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:2bdd10cfed4f63a1",
+        "@text:4a9631f1802d57aa",
+        "@text:6f274b716867988f",
+        "@text:d22d6ebd2d84c108"
+      ]
+    }
+  },
+  "packages": {
+    "solana-borsh-3.0.2": {
+      "order": 22,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "ee893bd4247a632b6738b393994d46f5bc2dcb00",
+      "path_prefix": "borsh/"
+    },
+    "solana-borsh-2.2.1": {
+      "order": 95,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+      "path_prefix": "borsh/"
+    }
+  },
+  "interfaces": {
+    "sysvars::solana-borsh-3.0.2::src/macros.rs": {
+      "order": 121,
+      "crate": "solana-borsh-3.0.2",
+      "path": "src/macros.rs",
+      "sha256": "57c871da9ddfbbfa35c84dcb71f846dc69cd92102116df6f8bf1af08baf80583"
+    },
+    "sysvars::solana-borsh-3.0.2::src/v1.rs": {
+      "order": 122,
+      "crate": "solana-borsh-3.0.2",
+      "path": "src/v1.rs",
+      "sha256": "e4a1d72067474b9c36e6530fe7c1bc4933ef37b7800da3ac875e0eca435a63f0"
+    },
+    "stake-codecs::solana-borsh-2.2.1::Cargo.toml": {
+      "order": 284,
+      "crate": "solana-borsh-2.2.1",
+      "path": "Cargo.toml.orig",
+      "sha256": "b8713807616d71c5dd70b56551aa4f1280832880b9758bd4657393069a1129ef",
+      "review_scope": "Selected stake constructors/getters, Pack dispatch and cleanup, lookup bincode decoding and borrowed Pubkey layout, or WriteCounter framing only; other APIs are outside this review.",
+      "path_in_repository": "borsh/Cargo.toml"
+    },
+    "stake-codecs::solana-borsh-2.2.1::src/macros.rs": {
+      "order": 285,
+      "crate": "solana-borsh-2.2.1",
+      "path": "src/macros.rs",
+      "sha256": "0fd87dfe2cc6adb210ec0a2196c3f7a12cdd41c8793eb1ae0dc48c50b3ee2d2c",
+      "review_scope": "Selected stake constructors/getters, Pack dispatch and cleanup, lookup bincode decoding and borrowed Pubkey layout, or WriteCounter framing only; other APIs are outside this review."
+    },
+    "stake-codecs::solana-borsh-2.2.1::src/v0_10.rs": {
+      "order": 286,
+      "crate": "solana-borsh-2.2.1",
+      "path": "src/v0_10.rs",
+      "sha256": "08397a71312fb4dc8c878b64e4241e64f29e9f5f230217de7c2c532f5ce13050",
+      "review_scope": "Selected stake constructors/getters, Pack dispatch and cleanup, lookup bincode decoding and borrowed Pubkey layout, or WriteCounter framing only; other APIs are outside this review."
+    }
+  },
+  "models": {
+    "solana-borsh::v1::try_from_slice_unchecked": {
+      "order": 164,
+      "contract": "Solanalib.Specs.SolanaBorsh.v1.try_from_slice_unchecked_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.SolanaBorsh.v1.try_from_slice_unchecked_hasExecution",
+      "assumptions": ["@binding:7c831c1e0b4de3a2"]
+    },
+    "solana-borsh::v0_10::get_instance_packed_len": {
+      "order": 260,
+      "contract": "Solanalib.Specs.SolanaBorsh.v0_10.get_instance_packed_len_contract",
+      "witness_kind": "FamilyReference"
+    }
+  },
+  "api": {
+    "sysvars::solana-borsh-3.0.2::v1::try_from_slice_unchecked": {
+      "order": 205,
+      "anchor_text": "pub fn try_from_slice_unchecked<T: $borsh::BorshDeserialize>(data: &[u8]) -> Result<T, $borsh_io::Error> {",
+      "binding_obligations": ["@binding:2bdd10cfed4f63a1", "@binding:7c831c1e0b4de3a2"],
+      "line": 77,
+      "scope": "@text:9f443a25baac0660",
+      "source_id": "sysvars::solana-borsh-3.0.2::src/macros.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaBorsh.unchecked_accepts_trailing_bytes",
+        "SolanalibTest.Specs.SolanaBorsh.unchecked_empty_error_changes_callback_state",
+        "SolanalibTest.Specs.SolanaBorsh.unchecked_forwards_unwind_state"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Borsh.tryFromSliceUnchecked", "Solanalib.Contracts.Model.Callback.Run"],
+      "rust_names": ["solana_borsh::v1::try_from_slice_unchecked"],
+      "models": ["solana-borsh::v1::try_from_slice_unchecked"]
+    },
+    "stake-codecs::solana-borsh-2.2.1::solana_borsh::v0_10::get_instance_packed_len": {
+      "order": 248,
+      "source_id": "stake-codecs::solana-borsh-2.2.1::src/macros.rs",
+      "line": 175,
+      "anchor_text": "pub fn get_instance_packed_len<T: $borsh::BorshSerialize>(instance: &T) -> Result<usize, $borsh_io::Error> {",
+      "rust_names": ["solana_borsh::v0_10::get_instance_packed_len"],
+      "scope": "@text:2c9d1bc18b42dd8a",
+      "binding_obligations": "@shared:binding-obligations-4225dcfa9915c202",
+      "models": ["solana-borsh::v0_10::get_instance_packed_len"]
+    }
+  },
+  "applicability_sources": {
+    "solana-borsh": {
+      "order": 15,
+      "package": "solana-borsh",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-0.0.1.crate",
+          "sha256": "70a07ca26950f768658a20723fff181139e0c920cf1b4593e5abde3f8c20a4a9",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-0.0.2.crate",
+          "sha256": "a609d00083a40a72969854501bb234f4bb868d231df56bd1cf7a635289947d95",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.0.crate",
+          "sha256": "a5d526f3525ab22a3ada3f9a1d642664dafac00dc9208326b701a2045514eb04",
+          "revision": "c1080de464cfb578c301e975f498964b5d5313db",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.1.crate",
+          "sha256": "6cfbaf3130c77c18399a51fa3c4e31db15d5c7a5fa2a0a024a378db21287e209",
+          "revision": "adeac02216dae627b90d7498a26e04276e88ed29",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.2.crate",
+          "sha256": "1b9d146d0c485d8a2e363aa9b47f3e6b127d1603e1cafc12b4b958f25afd3082",
+          "revision": "cefd3f13a2b8c1f3f8332ebeea3d7bf44d547a9a",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.4.crate",
+          "sha256": "c0ce4df354110b7a3d40b0722028eabe87e897e4a316acb76ef27e6953e8eebe",
+          "revision": "024d047eedba22768099cc6509414202400c6231",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.5.crate",
+          "sha256": "6e70388e69fa1df45afc5a3b3b2e572e5a435106164ffc764be2f1cdf0d6d08f",
+          "revision": "4da190bd01724d1433cff65782100978aefd4c00",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.6.crate",
+          "sha256": "870197ea4929500d8e6f624c3eb578912b5063bbd5c8bfbe87396cd5b4257465",
+          "revision": "c15e6692b1eb2e9196a5d51af5ee8cb57ab7e689",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.7.crate",
+          "sha256": "055c45b7aae61c8c7b26a537f7a8387cc8a10036081ddfd7170a7a9b4d924ffd",
+          "revision": "c79c3c9e67274594ed4f43ed8386e9ddc60a99e9",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.8.crate",
+          "sha256": "7c55b83c305eac62095b6f24ea2ae729f17de47e5a4e866ee4ddd0dc501b351e",
+          "revision": "6ea38fce866595908486a01c7d6b7182988f3b2d",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.9.crate",
+          "sha256": "81d1d3a9cd527faf389b47736e48580585d4f216705197c09b36affa1f5afdb1",
+          "revision": "fdb6acc0a634fd0f1fd060d13aa4142c2e4601de",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.10.crate",
+          "sha256": "5b2428671e99134c97990d2b466c33779f785376b7934e6bddb635929c54208f",
+          "revision": "33ab693d94c787e64686e7b2d2f49492eae63885",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.11.crate",
+          "sha256": "99affe31b10c1cd4a6438d307b92c1b17c89c974aebf2c2aa15cd790d0ba672b",
+          "revision": "134be7c14066ea00c9791187d6bbc4795dd92f0e",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.12.crate",
+          "sha256": "9616b7f3914d8b630d8bc61bed5340c05ec2d932e7c9694615c1c37f312529c6",
+          "revision": "00cfd3ee36e9f2af78465731e87a063504753385",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.13.crate",
+          "sha256": "3950d83165c85ac9cb92be986a76c7a543c5c14c1e98982d6dfad3d98e6b2353",
+          "revision": "67412607f511ded3770031280b6aaf10607713fc",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.14.crate",
+          "sha256": "973556274b26e3dfb8b06c773cbc0a69e08755b5ea3a3ce715dd3795bf46c346",
+          "revision": "3ad46824358db6337072ad2b5d50ebcab6e1f113",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.15": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.15.crate",
+          "sha256": "7e63c12ea0b12f6a5c2954488cd56bb8b63c63bcaf8fe64d70fc30c131acf5b9",
+          "revision": "535456856619786b7ac47b5b50b0a730e571365d",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.16": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.16.crate",
+          "sha256": "8b2bde9bd3c2b98f9c06ffac587e596134d3c397ca5689d8b7f7688b924efec8",
+          "revision": "5002c63047230994282abd24207414126cb57e22",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.17": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.17.crate",
+          "sha256": "07cbcd5d7b31c47848bf0c0f7d1edb0bf3195895b76d37154efedce8d5828d4a",
+          "revision": "4adcd0f2f9075d9a2c08e3e12a694ced58f2af29",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.18": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.18.crate",
+          "sha256": "0aa44cfe413cfc9567243f4bb34c8a96b7fd5de6b83e031580a560dc76ecbbb0",
+          "revision": "f91c2fcac24eee5a40f10606540ef6e08d1b6655",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.20": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.20.crate",
+          "sha256": "344fee9277ae2c36c8560ba4478b474fa1689c73e086fedb7a5265a926e8c63a",
+          "revision": "89985de3c6a8643f90af5dcb14bed23382bee088",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.1.21": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.1.21.crate",
+          "sha256": "ad79f227829e9b3fa1227acf21b02877f1a0d99d1b753a8085254b706fbddfee",
+          "revision": "8a085eebcb901b6846d1f82f4636667742146545",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.2.0.crate",
+          "sha256": "5bd8ebd23d44ddfb3b6cb887499ceae1fea0c1dc63fc1a441a8b82192185f4b7",
+          "revision": "1baa4033e0d2d4175373f07b73ddda2f3cc0a8d6",
+          "path_prefix": "sdk/borsh/"
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-2.2.1.crate",
+          "sha256": "718333bcd0a1a7aed6655aa66bef8d7fb047944922b2d3a18f49cbc13e73d004",
+          "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+          "path_prefix": "borsh/",
+          "repository": "https://github.com/anza-xyz/solana-sdk"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-3.0.0.crate",
+          "sha256": "dc402b16657abbfa9991cd5cbfac5a11d809f7e7d28d3bb291baeb088b39060e",
+          "revision": "f929ae6099c89ef711b75c8796feff82eab717ee",
+          "path_prefix": "borsh/"
+        },
+        "3.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-3.0.1.crate",
+          "sha256": "be4a37fc44f0633779a619840b5117c2a895996cec57eb3dc10597fac7867875",
+          "revision": "59165dcf1c37f51d9d1fb535192448d4a92b6ccf",
+          "path_prefix": "borsh/"
+        },
+        "3.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-borsh/solana-borsh-3.0.2.crate",
+          "sha256": "c04abbae16f57178a163125805637b8a076175bb5c0002fb04f4792bea901cf7",
+          "revision": "ee893bd4247a632b6738b393994d46f5bc2dcb00",
+          "path_prefix": "borsh/"
+        }
+      },
+      "evidence": ["@text:69170e703d45b1bd"]
+    }
+  },
+  "applicability": {
+    "solana-borsh::v1::try_from_slice_unchecked": {
+      "order": 164,
+      "profiles": [
+        {
+          "id": "solana-borsh-reviewed",
+          "source": "solana-borsh",
+          "conditions": ["@text:00ca1ca220a49b68", "@text:bdadf588b1d82db0"],
+          "argument": "@review:source-notes/borsh-codecs.md#review-b6f2b6bd1f8ce54d",
+          "evidence": ["@text:959ce48510559803", "@text:dbe8d309bdec8f62"],
+          "items": [
+            {
+              "item": "solana_borsh::v1::try_from_slice_unchecked",
+              "implementation": "solana_borsh::v1::try_from_slice_unchecked",
+              "releases": "@shared:releases-f2d34cfd5b83b4f3",
+              "compatible_ranges": "@shared:compatible-ranges-d4731d23b05f1184"
+            }
+          ],
+          "releases": "@shared:releases-f2d34cfd5b83b4f3"
+        }
+      ]
+    },
+    "solana-borsh::v0_10::get_instance_packed_len": {
+      "order": 260,
+      "profiles": [
+        {
+          "id": "exact-reviewed",
+          "source": "solana-borsh",
+          "releases": ["2.2.1"],
+          "items": [
+            {
+              "releases": ["2.2.1"],
+              "item": "solana_borsh::v0_10::get_instance_packed_len",
+              "implementation": "solana_borsh::v0_10::get_instance_packed_len",
+              "compatible_ranges": [{"lower": "2.2.1", "upper": "3.0.0"}]
+            }
+          ],
+          "argument": "@review:source-notes/borsh-codecs.md#review-9546e92a4c193d63",
+          "conditions": ["@binding:7679e14f11acd2fe", "@binding:a42f266e82ec9f63"],
+          "evidence": ["@text:d0cc31721d00ee9d"],
+          "dependencies": [
+            {
+              "package": "borsh",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["0.10.4"],
+              "reason": "@text:16a66c38eee3ff4c",
+              "compatible_ranges": [{"lower": "0.10.4", "upper": "0.11.0"}]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -97,3 +97,33 @@ The exact source hash, anchors and Rust symbols remain recorded in the
 [source registry](../source-map.json). This is source-reviewed mathematical
 modeling, not a Rust execution or compiler correspondence proof or a standard-library proof.
 CPI invocation implementations are not involved.
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:d756e317a51890b1 -->
+<a id="review-d756e317a51890b1"></a>
+
+Import-only roots expose the selected versioned modules. Generated typed catalogs collect their exact registered contracts, source identities, profiles and closed reference witnesses. The generator check derives every catalog from the source registry without changing any model body.
+
+Both checked loaders reject an incorrect instructions ID before borrowing data, then acquire a shared Ref and use the current cell. The current-index loader reads exactly the final two little-endian bytes; a short slice panics (checked subtraction or wrapping slice-range panic), and the Ref is released on unwind. The instruction loader reads count, checks index, reads table offset and account count, allocates the meta Vec, reads and pushes flags/key pairs, then reads program key and byte length and allocates data. High flag bits are ignored; every reached bounds error is SanitizeError::IndexOutOfBounds mapped to InvalidArgument. A 32-byte Pubkey conversion cannot produce ValueOutOfBounds after its bounds check. A parse Err drops local metas before releasing the shared Ref; successful Vecs move into Instruction. Terminal exits have no cleanup state.
+<!-- /registry -->
+
+<!-- registry:review:65b0fd24d896c644 -->
+<a id="review-65b0fd24d896c644"></a>
+
+The declared compatible range assumes ID rejection before shared borrowing, then ordered count/index/offset/account-count reads, metadata allocation and flag/key pushes, program key and data-length reads, and data allocation. Ignore high flag bits; reached bounds errors map IndexOutOfBounds to InvalidArgument. Parse Err drops local metas before releasing the guard; successful vectors move into Instruction and terminal exits supply no cleanup state.
+<!-- /registry -->
+
+<!-- registry:review:301b68a7d223a227 -->
+<a id="review-301b68a7d223a227"></a>
+
+Both checked loaders reject an incorrect instructions ID before borrowing data, then acquire a shared Ref and use the current cell. The current-index loader reads exactly the final two little-endian bytes; a short slice panics (checked subtraction or wrapping slice-range panic), and the Ref is released on unwind. The instruction loader reads count, checks index, reads table offset and account count, allocates the meta Vec, reads and pushes flags/key pairs, then reads program key and byte length and allocates data. High flag bits are ignored; every reached bounds error is SanitizeError::IndexOutOfBounds mapped to InvalidArgument. A 32-byte Pubkey conversion cannot produce ValueOutOfBounds after its bounds check. A parse Err drops local metas before releasing the shared Ref; successful Vecs move into Instruction. Terminal exits have no cleanup state. The declared range is a complete-operation preservation assumption; inspected releases, native runs, exact ABI observations and source-call implementation obligations remain separate.
+<!-- /registry -->
+
+<!-- registry:review:772927c571d336dc -->
+<a id="review-772927c571d336dc"></a>
+
+The declared compatible range assumes instructions-ID rejection before shared borrowing, then little-endian decoding of exactly the final two data bytes. A short slice follows the actual arithmetic/slicing panic path, with shared-guard cleanup on unwind and no fabricated terminal cleanup state.
+<!-- /registry -->

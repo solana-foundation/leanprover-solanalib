@@ -1,8 +1,8 @@
 # Extended token operation contracts
 
-The [source registry](../source-map/libraries.json) names each exact API,
+The [source registry](../source-map.json) names each exact API,
 mathematical contract and source interpretation. The
-[profiles](../source-map/applicability.json) distinguish inspected reference
+[profiles](../source-map.json) distinguish inspected reference
 releases from declared compatible ranges and retain the build
 conditions of each operation, separately from the public mathematical namespace.
 

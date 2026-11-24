@@ -82,3 +82,35 @@ is outside the model.
   No standard-library function is modeled.
 - These are mathematical models compared manually with the pinned source.
   Rust body, compiler layout and runtime correspondence remain open.
+
+## Registered source reviews
+
+The crate records reference the following exact clauses by their stable identifiers.
+
+<!-- registry:review:14921be8d9a82b7e -->
+<a id="review-14921be8d9a82b7e"></a>
+
+Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact test lockfile into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
+
+bytes_of and default Zeroable::zeroed of bytemuck 1.25.2 as Families indexed by the layout of the selected type and encoding or decoding. bytes_of returns the reference address and exactly the size_of::<T>() bytes of the value, empty for a zero-sized type, following the pinned try_cast_slice path; zeroed returns the value of the all-zero pattern. Executable references are registered as graphs with closed reference, satisfiability and execution witnesses at the u64 sample.
+
+try_from_bytes and default Zeroable::zeroed of bytemuck 1.25.0 as Families indexed by the layout of the selected type and decoding. try_from_bytes reports SizeMismatch for any length other than size_of::<T>() regardless of address, then TargetAlignmentGreaterAndInputNotAligned for a misaligned slice address (also for empty slices), and otherwise returns a reference at the slice address with the decoded value; the declarative post determines the result. zeroed returns the value of the all-zero pattern. Executable references are registered as graphs with closed witnesses at the u64 sample.
+<!-- /registry -->
+
+<!-- registry:review:6119753468787605 -->
+<a id="review-6119753468787605"></a>
+
+1.16.3 removes the literal empty-slice shortcut and changes reached try_cast_slice to accept zero input bytes. For target u8, alignment and slop errors are impossible; all sized and zero-sized cases keep the input address and expose exactly size_of<T>() bytes. Every later published release has the same reached behavior, with equivalent modulo/align_offset branches. Earlier releases violate complete ZST behavior: 1.2.0–1.5.0 panic; other earlier releases return literal &[] at an unrelated address. Before 1.9.0 the public bound is additionally Pod rather than the full NoUninit domain.
+<!-- /registry -->
+
+<!-- registry:review:6a3879fc3666b87b -->
+<a id="review-6a3879fc3666b87b"></a>
+
+From 1.9.0 onward the public AnyBitPattern entry calls the reached internal routine, which checks exact length before alignment and returns the input-address reference on success. Before 1.14.0 alignment is integer modulo; 1.14.0+ adds the equivalent align_offset feature branch. The ZST still needs alignment. 1.1.0/1.2.0 use AlignmentMismatch, and 1.3.0–1.8.0 retain the narrower Pod domain despite matching equations on that subset. API absent through 1.0.1.
+<!-- /registry -->
+
+<!-- registry:review:3b821bb56247500f -->
+<a id="review-3b821bb56247500f"></a>
+
+The default trait body is unsafe { core::mem::zeroed() } throughout every published stable release. It has no target or feature branch and does not require Pod, NoUninit or AnyBitPattern. Existing restrictions to the default method and a valid Zeroable implementation are preserved, so custom overrides are outside this contract throughout.
+<!-- /registry -->
