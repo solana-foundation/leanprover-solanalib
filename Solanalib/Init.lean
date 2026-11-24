@@ -9,8 +9,8 @@ import Mathlib.Tactic.Linter.Header
 /-!
 # Solanalib.Init
 
-Single upstream module activated by every Solanalib source file (via the
-import chain rooted at `Solanalib.Primitives.Lamports`). Brings Mathlib's
+Single upstream module activated by the root Solanalib source files (via the
+import chain rooted at `Solanalib.SBPF.CommType`). Brings the Mathlib
 linter implementations into scope so the `weak.linter.style.*` options
 declared in `lakefile.lean` can actually fire.
 

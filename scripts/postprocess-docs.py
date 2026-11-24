@@ -43,18 +43,12 @@ CUSTOM_MAIN = f"""<main>
         — shared contract, reference, family and capability vocabulary</li>
     <li><a href="./Solanalib/Specs/Core.html">SDK models</a>
         — shared Solana operations and registered crate-specific models</li>
-    <li><a href="./Solanalib/Primitives/Lamports.html">Primitives</a>
-        — lamport and time notations</li>
-    <li><a href="./Solanalib/Numeric/Fraction.html">Numeric</a>
-        — Q68.60 fixed-point arithmetic</li>
     <li><a href="./Solanalib/Runtime/Account.html">Account</a>
         — runtime accounts, bounds and rent checks</li>
     <li><a href="./Solanalib/Runtime/Syscall.html#Solanalib.Runtime.CpiInstruction">Instructions</a>
         — runtime instruction values,
         <a href="./Solanalib/Runtime/View.html#Solanalib.Runtime.AccountMeta">account metadata</a>
         and <a href="./Solanalib/Runtime/Cpi.html">CPI checks</a></li>
-    <li><a href="./Solanalib/Finance/Decay.html">Finance</a>
-        — decay, growth, compounding, withdrawal caps</li>
     <li><a href="./Solanalib/SBPF/Syntax.html">SBPF</a>
         — the sBPF ISA semantics</li>
   </ul>

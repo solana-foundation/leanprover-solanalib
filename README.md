@@ -38,6 +38,8 @@ Everything lives in one Lake package, `solanalib`, on Lean 4.34.0 with the match
 
 A model of transaction execution that follows [Agave 4.3.2](https://github.com/anza-xyz/agave/tree/a203300045b405f86c9c84308b2eae76af69ac3b): accounts and rent, transaction admission and fees, durable nonces, instruction execution, cross-program invocation, syscalls, program-derived addresses, sysvars, the program cache, and commit and rollback. It also supplies the `Pubkey`, `Account` and instruction types used by every other library here. See the [runtime guide](packages/solanalib-runtime/README.md).
 
+Theorems come with the model. For example, [`transfer_preserves_total`](packages/solanalib-runtime/Solanalib/Runtime/Transfer.lean) proves that every successful System transfer keeps the total lamports of the transaction unchanged, including when account indices alias.
+
 ### `Solanalib.Specs.<Crate>`: 53 Rust crates
 
 Contracts for functions of the crates programs depend on. A contract relates the inputs and initial state of a function to its possible outcomes, including errors and panics.
@@ -55,10 +57,6 @@ Each crate root covers a listed subset of its crate, not every function. The [li
 ### `Solanalib.Contracts`: the contract vocabulary
 
 The library-neutral definitions the crate models are written in: preconditions, outcomes, callbacks, capabilities and versioning. Use it to write contracts for crates that are not covered yet. See the [contracts guide](packages/solanalib-contracts/README.md).
-
-### `Solanalib`: theorems and arithmetic
-
-The root library proves [`transfer_preserves_total`](Solanalib/Transfer.lean): every successful System transfer keeps the total lamports of the transaction unchanged, including when account indices alias. It also carries fixed-point arithmetic (`Numeric`) and recurring DeFi shapes with their proofs (`Finance`): decay and growth curves, compound interest and a withdrawal cap.
 
 ## A first proof
 
@@ -96,7 +94,7 @@ import Solanalib.Specs.PinocchioToken
 A model is only useful if it matches the code it describes. Each one comes with evidence you can rerun:
 
 - **Recorded native results.** The runtime model replays 79 cases recorded from native Agave. The crate models replay 12,276 records from the real Rust crates, with 2,673 negative controls that must fail.
-- **Scenario tests.** Thirteen runtime scenarios and a scenario library for each crate, all built with warnings as errors.
+- **Scenario tests.** Fourteen runtime scenarios and a scenario library for each crate, all built with warnings as errors.
 - **Source notes.** Every model module is tied to the pinned Rust source it was reviewed against, by file hash and line anchor.
 - **Axiom audit.** The runtime and crate model proofs depend only on `propext`, `Classical.choice` and `Quot.sound`, with no `sorry`.
 
@@ -114,7 +112,7 @@ Install [`elan`](https://github.com/leanprover/elan), [`just`](https://github.co
 ```sh
 just setup             # fetch committed dependencies, Mathlib cache and Python tools
 just build             # root library
-just test              # root regressions and System transfer conservation
+just test              # root regressions
 just test-examples     # the worked example, with warnings as errors
 just test-runtime      # runtime scenarios and offline controls
 just test-specs        # contracts and every crate library

@@ -585,7 +585,7 @@ complete AccountInfo 3.1.1 interpreter. See [the focused SDK analysis](sdk-abi.m
 fixed-context Clock agreement. They do not establish concrete request encodings.
 
 `FlagConsistency`, `Frame`, `Executable`, `LamportFrame`, `StackFrame`, `SysvarCoherence`,
-`ReadonlyFrame`, `WritesLegal` and `Theorems` prove consequences of the actual
+`ReadonlyFrame`, `WritesLegal`, `Theorems` and `Transfer` prove consequences of the actual
 Lean transitions. Retain every premise, including active indices, consistent
 layouts and the Instructions-sysvar exception. A proved model theorem does not
 supply an unproved bank, primitive, program or representation connection.

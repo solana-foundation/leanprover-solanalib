@@ -6,9 +6,9 @@ Run commands from the repository root after [setup](getting-started.md). `just c
 
 | Suite | Command | Indexed Lean files |
 | --- | --- | --- |
-| Root regression tests | `just test` | 14 |
+| Root regression tests | `just test` | 7 |
 | Worked example | `just test-examples` | 1 |
-| Runtime scenarios | `just test-runtime` | 14 |
+| Runtime scenarios | `just test-runtime` | 15 |
 | SDK scenarios | `just test-specs` | 218 |
 | Runtime replay harness | `just test-conformance` | 1 |
 | SDK checkers and replay harness | `just test-conformance` | 217 |
@@ -17,19 +17,12 @@ Run commands from the repository root after [setup](getting-started.md). `just c
 
 Command: `just test`.
 
-- [SolanalibTest/Finance/CompoundInterestTest.lean](../SolanalibTest/Finance/CompoundInterestTest.lean)
-- [SolanalibTest/Finance/DecayTest.lean](../SolanalibTest/Finance/DecayTest.lean)
-- [SolanalibTest/Finance/GrowthTest.lean](../SolanalibTest/Finance/GrowthTest.lean)
-- [SolanalibTest/Finance/LinearDecayTest.lean](../SolanalibTest/Finance/LinearDecayTest.lean)
-- [SolanalibTest/Finance/WithdrawalCapTest.lean](../SolanalibTest/Finance/WithdrawalCapTest.lean)
-- [SolanalibTest/Numeric/FractionTest.lean](../SolanalibTest/Numeric/FractionTest.lean)
 - [SolanalibTest/SBPF/DecoderTest.lean](../SolanalibTest/SBPF/DecoderTest.lean)
 - [SolanalibTest/SBPF/InterpreterTest.lean](../SolanalibTest/SBPF/InterpreterTest.lean)
 - [SolanalibTest/SBPF/LiftTest.lean](../SolanalibTest/SBPF/LiftTest.lean)
 - [SolanalibTest/SBPF/MemoryTest.lean](../SolanalibTest/SBPF/MemoryTest.lean)
 - [SolanalibTest/SBPF/SyntaxTest.lean](../SolanalibTest/SBPF/SyntaxTest.lean)
 - [SolanalibTest/SBPF/VerifierTest.lean](../SolanalibTest/SBPF/VerifierTest.lean)
-- [SolanalibTest/TransferTest.lean](../SolanalibTest/TransferTest.lean)
 - [SolanalibTest.lean](../SolanalibTest.lean)
 
 ## Worked example
@@ -55,6 +48,7 @@ Command: `just test-runtime`.
 - [packages/solanalib-runtime/SolanalibTest/Runtime/SiblingOutputs.lean](../packages/solanalib-runtime/SolanalibTest/Runtime/SiblingOutputs.lean)
 - [packages/solanalib-runtime/SolanalibTest/Runtime/TransactionRollback.lean](../packages/solanalib-runtime/SolanalibTest/Runtime/TransactionRollback.lean)
 - [packages/solanalib-runtime/SolanalibTest/Runtime/TransactionSuccess.lean](../packages/solanalib-runtime/SolanalibTest/Runtime/TransactionSuccess.lean)
+- [packages/solanalib-runtime/SolanalibTest/Runtime/Transfer.lean](../packages/solanalib-runtime/SolanalibTest/Runtime/Transfer.lean)
 - [packages/solanalib-runtime/SolanalibTest/Runtime.lean](../packages/solanalib-runtime/SolanalibTest/Runtime.lean)
 
 ## SDK scenarios

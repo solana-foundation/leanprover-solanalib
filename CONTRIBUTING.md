@@ -4,7 +4,7 @@ Start with [Getting started](docs/getting-started.md), then follow the relevant 
 
 ## Choose the right layer
 
-Use the shared `Solanalib.Runtime` public-key, account and instruction types for Solana developments. Account balances remain `Nat` values with the `u64` bound in `Account.WF`. The root library also holds lamport and time notations, numeric and finance models, sBPF, and the [System transfer conservation theorem](Solanalib/Transfer.lean). The shared `Solanalib.Contracts.Model` vocabulary is the one contract type; `Solanalib.Specs.Core` reexports it and adds Solana-specific models.
+Use the shared `Solanalib.Runtime` public-key, account and instruction types for Solana developments. Account balances remain `Nat` values with the `u64` bound in `Account.WF`. The runtime library includes the [System transfer conservation theorem](packages/solanalib-runtime/Solanalib/Runtime/Transfer.lean); the root library holds the sBPF model. The shared `Solanalib.Contracts.Model` vocabulary is the one contract type; `Solanalib.Specs.Core` reexports it and adds Solana-specific models.
 
 All libraries belong to the root `solanalib` Lake package. Keep them separately selectable, with one module owner and one shared artifact directory. Runtime source imports stay within the runtime and Lean libraries. SDK source imports use contracts, runtime, shared SDK models, Lean core and Std. The Mathlib dependency of the package does not widen those source boundaries. Compiler, program-logic and application dependencies belong outside these model layers. A separate binding to the Rust implementation must discharge source selection, memory representation and execution correspondence obligations.
 

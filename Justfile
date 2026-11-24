@@ -18,7 +18,7 @@ setup:
 build:
     lake --wfail build Solanalib sbpf-oracle
 
-# Run root regressions, including System transfer conservation and rejection cases.
+# Run the root sBPF regressions.
 test:
     lake --wfail build SolanalibTest
     lake --wfail test
@@ -28,7 +28,7 @@ test-examples:
     lake --wfail build SolanalibTest.Examples
     lake env lean -DwarningAsError=true examples/SolanalibTest/Examples/CheckedTransfer.lean
 
-# Build all thirteen runtime scenarios and run the offline harness controls.
+# Build all fourteen runtime scenarios and run the offline harness controls.
 test-runtime:
     lake --wfail build Solanalib.Runtime SolanalibTest.Runtime SolanalibTest.Conformance.Runtime
     {{python}} -B -m unittest discover -s tools/runtime-conformance -p 'test_*.py'

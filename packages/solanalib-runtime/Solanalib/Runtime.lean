@@ -26,6 +26,7 @@ public import Solanalib.Runtime.Memory
 public import Solanalib.Runtime.Syscall
 public import Solanalib.Runtime.Cpi
 public import Solanalib.Runtime.System
+public import Solanalib.Runtime.Transfer
 public import Solanalib.Runtime.LoaderEffects
 public import Solanalib.Runtime.Exec
 public import Solanalib.Runtime.Message

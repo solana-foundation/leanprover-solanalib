@@ -3,7 +3,11 @@ Copyright (c) 2026 Harmonic. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Solanalib Contributors
 -/
-import Solanalib.Transfer
+module
+
+public import Solanalib.Runtime.Transfer
+
+@[expose] public section
 
 /-!
 # System transfer regressions
@@ -13,7 +17,7 @@ cases cover zero transfers, a fully drained source, aliased instruction accounts
 and the signature, data, ownership, writability, index and arithmetic checks.
 -/
 
-namespace SolanalibTest.Transfer
+namespace SolanalibTest.Runtime.TransferTest
 
 open Solanalib.Runtime
 
@@ -95,4 +99,4 @@ example : sysTransfer { context with f := { frame with
     accounts := [⟨0, true, true⟩, ⟨3, false, true⟩] } } before 0 1 7 =
     .error .MissingAccount := by cbv
 
-end SolanalibTest.Transfer
+end SolanalibTest.Runtime.TransferTest
