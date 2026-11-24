@@ -111,8 +111,7 @@ Install [`elan`](https://github.com/leanprover/elan), [`just`](https://github.co
 
 ```sh
 just setup             # fetch committed dependencies, Mathlib cache and Python tools
-just build             # root library
-just test              # root regressions
+just build             # runtime and contract libraries
 just test-examples     # the worked example, with warnings as errors
 just test-runtime      # runtime scenarios and offline controls
 just test-specs        # contracts and every crate library

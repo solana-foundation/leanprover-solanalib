@@ -27,8 +27,7 @@ def source_inventory(root, names):
         package = next(path for path in source_roots if source.is_relative_to(path))
         relative = source.relative_to(package)
         module = '.'.join(relative.with_suffix('').parts)
-        # The sBPF command-line executable has its own entry point.
-        if module.split('.')[0] not in PUBLIC_ROOTS and name != 'Oracle.lean':
+        if module.split('.')[0] not in PUBLIC_ROOTS:
             raise ValueError(f'Module outside the public roots: {name}')
         if module in modules:
             raise ValueError(f'Duplicate module {module}: {modules[module]}, {source}')

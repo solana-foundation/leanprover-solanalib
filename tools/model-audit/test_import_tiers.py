@@ -84,8 +84,15 @@ class PackageBoundaries(unittest.TestCase):
         self.assertTrue(check({"packages/solanalib-runtime/Solanalib/Runtime/Basic.lean":
                                'import Solanalib.Runtime.«../Primitives/Pubkey»\n'}))
 
-    def test_root_production_cannot_import_tests(self):
-        self.assertTrue(check({"Solanalib/Primitives/Lamports.lean": "import SolanalibTest.Runtime\n"}))
+    def test_sbpf_stays_within_its_own_library(self):
+        path = "packages/solanalib-sbpf/Solanalib/SBPF/Memory.lean"
+        self.assertEqual(check({path: "import Solanalib.SBPF.Value\nimport Std.Tactic.BVDecide\n"}), [])
+        for target in ("Mathlib", "Solanalib.Runtime", "SolanalibTest.SBPF.MemoryTest"):
+            with self.subTest(target=target):
+                self.assertTrue(check({path: f"import {target}\n"}))
+
+    def test_root_source_directories_are_not_registered(self):
+        self.assertTrue(check({"Solanalib/Example.lean": "import Init\n"}))
 
     def test_unknown_owned_module_is_rejected(self):
         self.assertTrue(check({"packages/solanalib-runtime/Unknown.lean": "import Init\n"}))

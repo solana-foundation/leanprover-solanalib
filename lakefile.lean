@@ -4,10 +4,12 @@ open Lake DSL
 /-!
 ## Solanalib
 
-A library of formal models and verified results for Solana programs.
+Lean models of the Solana runtime and of the Rust crates Solana programs are built on.
+Every library below belongs to this one package; its sources live under `packages/`,
+`tools/` and `examples/`.
 
 Dependencies:
-* Mathlib — algebraic infrastructure, tactics, numeric types.
+* Mathlib — pinned for the package; no library here imports it.
 * doc-gen4 — gated behind `-Kenv=dev` so casual builds don't pay its cost.
 -/
 
@@ -22,29 +24,13 @@ package solanalib where
     ⟨`weak.linter.style.cdotPattern, true⟩,
     ⟨`weak.linter.style.commandStart, true⟩
   ]
-  testDriver := "SolanalibTest"
+  testDriver := "SolanalibTest.Runtime"
 
 require "leanprover-community" / "mathlib" @ git "v4.34.0"
 
 meta if get_config? env = some "dev" then
 require «doc-gen4» from git
   "https://github.com/leanprover/doc-gen4" @ "a6521b2d0c93dcdf2d640089f95548df5dd8bf46"
-
-@[default_target]
-lean_lib Solanalib where
-  roots := #[]
-  globs := #[
-    .one `Solanalib,
-    .one `Solanalib.Init,
-    .submodules `Solanalib.SBPF
-  ]
-
-lean_lib SolanalibTest where
-  roots := #[]
-  globs := #[
-    .one `SolanalibTest,
-    .submodules `SolanalibTest.SBPF
-  ]
 
 -- The getting-started example is checked like a scenario, not exported as a model.
 lean_lib SolanalibTest.Examples where
@@ -53,6 +39,7 @@ lean_lib SolanalibTest.Examples where
 
 -- These libraries share one package output directory because Lean resolves modules
 -- by their top-level root. Source directories remain separate for navigation.
+@[default_target]
 lean_lib Solanalib.Runtime where
   srcDir := "packages/solanalib-runtime"
   roots := #[`Solanalib.Runtime]
@@ -67,6 +54,7 @@ lean_lib SolanalibTest.Conformance.Runtime where
   srcDir := "tools/runtime-conformance"
   roots := #[`SolanalibTest.Conformance.Runtime]
 
+@[default_target]
 lean_lib Solanalib.Contracts where
   srcDir := "packages/solanalib-contracts"
   roots := #[`Solanalib.Contracts]
@@ -628,10 +616,21 @@ lean_exe «solanalib-selection-control» where
   root := `SolanalibTest.Conformance.SelectionMain
   leanOptions := #[⟨`autoImplicit, true⟩]
 
-/-- Executable front end to the Lean sBPF semantics, used by the differential
-testing harness (`spinoza validate`). -/
+-- The sBPF machine model is an exploration, separate from the runtime and SDK models.
+lean_lib Solanalib.SBPF where
+  srcDir := "packages/solanalib-sbpf"
+  roots := #[`Solanalib.SBPF]
+  globs := #[.one `Solanalib.SBPF, .submodules `Solanalib.SBPF]
+
+lean_lib SolanalibTest.SBPF where
+  srcDir := "packages/solanalib-sbpf"
+  roots := #[`SolanalibTest.SBPF]
+  globs := #[.one `SolanalibTest.SBPF, .submodules `SolanalibTest.SBPF]
+
+/-- Command-line front end to the sBPF interpreter, for differential testing. -/
 lean_exe «sbpf-oracle» where
-  root := `Oracle
+  srcDir := "packages/solanalib-sbpf"
+  root := `SolanalibTest.SBPFOracle
 
 /-- Check real module ownership; invoked with the source inventory by the Python wrapper. -/
 script checkModuleOwners (args) do

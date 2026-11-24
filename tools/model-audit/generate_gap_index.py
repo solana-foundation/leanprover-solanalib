@@ -20,7 +20,7 @@ REVIEW = Path('docs/gap-review.json')
 OUTPUT = Path('docs/model-gaps.md')
 EXTRA_INPUTS = [RUNTIME, CONFORMANCE / 'not-tested.toml', CONFORMANCE / 'requires-open.toml',
                 CONFORMANCE / 'checker_selection.py', SDK / 'BINDINGS.md',
-                Path('Solanalib/SBPF/Interpreter.lean'),
+                Path('packages/solanalib-sbpf/Solanalib/SBPF/Interpreter.lean'),
                 Path('packages/solanalib-runtime/Solanalib/Runtime/Exec.lean'),
                 Path('packages/solanalib-runtime/Solanalib/Runtime/Transfer.lean'), CENSUS]
 STATUS = {'runtime': 'recorded model scope',

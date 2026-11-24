@@ -5,7 +5,7 @@ The [regular workflow](../.github/workflows/ci.yml) runs on pull requests, pushe
 | Job | Checks | Configured timeout |
 | --- | --- | ---: |
 | Lint | Lean style, prose, source-layer imports, documentation links, upstream references, generated test/gap indexes and their controls. | 10 minutes |
-| Root library | Root library, tutorial, tests, sBPF oracle, module roots and unique Lake ownership. | 25 minutes |
+| Build | The sBPF exploration and its oracle, the worked example, module roots and unique Lake ownership. | 25 minutes |
 | Runtime | Runtime and scenario builds, authenticated Agave replay, comparator controls, source-correspondence hashes and complete proof dependencies. Local upstream source copies are not supplied, so this job does not check their bytes. | 15 minutes |
 | Contracts | Shared contract vocabulary. | 10 minutes |
 | SDK groups | Six disjoint groups cover all 108 production and scenario libraries, with their complete import closures. | 25 minutes per group |
@@ -16,7 +16,7 @@ These are workflow settings, not measured hosted-CI runtimes. Hosted setup time,
 
 The library runner is serial by default. `--control-jobs` runs independent mutations concurrently. It retains every selected record, mutation and failure assertion, with separate input copies and outputs, synchronized command receipts and deterministic result ordering. Omitted records receive no conformance credit.
 
-Lean jobs cache `.lake/packages` and `.lake/build`. Cache keys include the root Lake configuration, manifest, toolchain and relevant Lean sources; shared-model changes invalidate dependent SDK groups. Lake checks restored artifacts against current inputs. The workflows fetch the pinned Mathlib cache for the two direct package imports, `Mathlib.Tactic.Linter.Style` and `Mathlib.Tactic.Linter.Header`.
+Lean jobs cache `.lake/packages` and `.lake/build`. Cache keys include the root Lake configuration, manifest, toolchain and relevant Lean sources; shared-model changes invalidate dependent SDK groups. Lake checks restored artifacts against current inputs. The workflows still fetch the small pinned Mathlib cache for `Mathlib.Tactic.Linter.Style` and `Mathlib.Tactic.Linter.Header`, although no library imports Mathlib.
 
 ## Documentation
 

@@ -6,24 +6,12 @@ Run commands from the repository root after [setup](getting-started.md). `just c
 
 | Suite | Command | Indexed Lean files |
 | --- | --- | --- |
-| Root regression tests | `just test` | 7 |
 | Worked example | `just test-examples` | 1 |
 | Runtime scenarios | `just test-runtime` | 15 |
 | SDK scenarios | `just test-specs` | 218 |
+| sBPF exploration | `just test-sbpf` | 8 |
 | Runtime replay harness | `just test-conformance` | 1 |
 | SDK checkers and replay harness | `just test-conformance` | 217 |
-
-## Root regression tests
-
-Command: `just test`.
-
-- [SolanalibTest/SBPF/DecoderTest.lean](../SolanalibTest/SBPF/DecoderTest.lean)
-- [SolanalibTest/SBPF/InterpreterTest.lean](../SolanalibTest/SBPF/InterpreterTest.lean)
-- [SolanalibTest/SBPF/LiftTest.lean](../SolanalibTest/SBPF/LiftTest.lean)
-- [SolanalibTest/SBPF/MemoryTest.lean](../SolanalibTest/SBPF/MemoryTest.lean)
-- [SolanalibTest/SBPF/SyntaxTest.lean](../SolanalibTest/SBPF/SyntaxTest.lean)
-- [SolanalibTest/SBPF/VerifierTest.lean](../SolanalibTest/SBPF/VerifierTest.lean)
-- [SolanalibTest.lean](../SolanalibTest.lean)
 
 ## Worked example
 
@@ -273,6 +261,19 @@ Command: `just test-specs`.
 - [packages/solanalib-specs/SolanalibTest/Specs/SplTransferHookInterface.lean](../packages/solanalib-specs/SolanalibTest/Specs/SplTransferHookInterface.lean)
 - [packages/solanalib-specs/SolanalibTest/Specs/SwitchboardOnDemand/PullFeed.lean](../packages/solanalib-specs/SolanalibTest/Specs/SwitchboardOnDemand/PullFeed.lean)
 - [packages/solanalib-specs/SolanalibTest/Specs/SwitchboardOnDemand.lean](../packages/solanalib-specs/SolanalibTest/Specs/SwitchboardOnDemand.lean)
+
+## sBPF exploration
+
+Command: `just test-sbpf`.
+
+- [packages/solanalib-sbpf/SolanalibTest/SBPF/DecoderTest.lean](../packages/solanalib-sbpf/SolanalibTest/SBPF/DecoderTest.lean)
+- [packages/solanalib-sbpf/SolanalibTest/SBPF/InterpreterTest.lean](../packages/solanalib-sbpf/SolanalibTest/SBPF/InterpreterTest.lean)
+- [packages/solanalib-sbpf/SolanalibTest/SBPF/LiftTest.lean](../packages/solanalib-sbpf/SolanalibTest/SBPF/LiftTest.lean)
+- [packages/solanalib-sbpf/SolanalibTest/SBPF/MemoryTest.lean](../packages/solanalib-sbpf/SolanalibTest/SBPF/MemoryTest.lean)
+- [packages/solanalib-sbpf/SolanalibTest/SBPF/SyntaxTest.lean](../packages/solanalib-sbpf/SolanalibTest/SBPF/SyntaxTest.lean)
+- [packages/solanalib-sbpf/SolanalibTest/SBPF/VerifierTest.lean](../packages/solanalib-sbpf/SolanalibTest/SBPF/VerifierTest.lean)
+- [packages/solanalib-sbpf/SolanalibTest/SBPF.lean](../packages/solanalib-sbpf/SolanalibTest/SBPF.lean)
+- [packages/solanalib-sbpf/SolanalibTest/SBPFOracle.lean](../packages/solanalib-sbpf/SolanalibTest/SBPFOracle.lean)
 
 ## Runtime replay harness
 

@@ -14,14 +14,13 @@ setup:
     lake exe cache get Mathlib.Tactic.Linter.Style Mathlib.Tactic.Linter.Header
     {{python}} --version
 
-# Build the root library and sBPF oracle, with warnings as errors.
+# Build the runtime and contract libraries, with warnings as errors.
 build:
-    lake --wfail build Solanalib sbpf-oracle
+    lake --wfail build
 
-# Run the root sBPF regressions.
-test:
-    lake --wfail build SolanalibTest
-    lake --wfail test
+# Build the exploratory sBPF model, its regressions and the oracle executable.
+test-sbpf:
+    lake --wfail build Solanalib.SBPF SolanalibTest.SBPF sbpf-oracle
 
 # Check the tutorial proof through Lake and ordinary Lean loading.
 test-examples:
@@ -63,7 +62,7 @@ audit-runtime:
     {{python}} tools/model-audit/check_runtime.py
 
 # Complete source/proof/generator audits and compiled negative controls.
-audit: build test test-examples test-runtime test-specs lint audit-runtime check-generated
+audit: build test-sbpf test-examples test-runtime test-specs lint audit-runtime check-generated
     {{python}} -B -m unittest discover -s scripts -p 'test_*.py'
     SOLANA_SPECS_INTEGRATION_TESTS=1 {{python}} -B -m unittest discover -s tools/model-audit -p 'test_*.py'
     just audit-specs

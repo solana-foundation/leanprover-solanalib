@@ -18,10 +18,10 @@
       "e266db2aa17a813bda5656401265294690dbce4b01a2d21a6457b440d653e2f5",
       "f403e50e94605ecab55453160a26499f5fc623edab0560218391af242332f7b4"
     ],
-    "Solanalib/Init.lean": [
-      "87abef3a235f3096eade29a64d00bbae41272d3478dd8f268c77a12e2a8a85d1"
+    "lakefile.lean": [
+      "dcbc26e243b21b68e6fade24b2f98a9b56ea9973c8fc75592e670f0b95d483ef"
     ],
-    "Solanalib/SBPF/Interpreter.lean": [
+    "packages/solanalib-sbpf/Solanalib/SBPF/Interpreter.lean": [
       "097eb7fee06b1059a8257529a2c2f50944d19bc6885db1c87da6cbf70a6a669b",
       "32c6afa374a7bb2c69396cc126c9c0f8ff80b5b025a899fc8c3460c965b4558f",
       "533e7d130cc93a3fa606ddecd09575e724f20ba9226939e5eca22df0d6dba04c",
@@ -30,52 +30,32 @@
       "a6081266d3da4fb9f17b10b28d799497d8e9808a24936ed183597918fd7c4b0d",
       "cff78c8d318a10bba6bfd182fb58dd575abff64876627680e5ccd2e391eaf8c2"
     ],
-    "Solanalib/SBPF/Memory.lean": [
+    "packages/solanalib-sbpf/Solanalib/SBPF/Memory.lean": [
       "d25f0aa0aa29fda68839b6be5ba39cc1fab1dbeae5841c8730a19d96ac427de2",
       "e06475422cf4e0b71b8ec899c38668f972a1c8b2ad36edf8dbd5c98b919e1548",
       "ed2b48cfad82d3cf9795aeebb8e07cd801af7a307b99dd0dce304ddee9b75c72"
     ],
-    "Solanalib/SBPF/State.lean": [
+    "packages/solanalib-sbpf/Solanalib/SBPF/State.lean": [
       "63b9cfc65f50f055008ed25db4eac4ed173b3534c29c697283ae12551a57051e",
       "8ad17c8c6438c0f03c95393c9704f63d1685ef831993ba5fd95482806b95bba5",
       "ea3873c4fffbfb1ac4b3d967edaaed6cbcd4ed50cbeabd33d6e20a85cc0eb6f9",
       "f4d94fd552659967afb8ebb8034e8b7931268da27379c7567e47a7ec599ea8b3"
     ],
-    "Solanalib/SBPF/Syntax.lean": [
+    "packages/solanalib-sbpf/Solanalib/SBPF/Syntax.lean": [
       "6a5a8458d7a97347b718f52608b8ba6cd27ff2c9b5fe512e77e3415814606e90",
       "80aff86d407809763c8c61c21257eb6ecd07b814c82f263d99b50135d69c1e94",
       "83f429d1fd2e68e379e0fd7d7ccd49cbf13cea415ed77f8cd5aef208686bb1c6",
       "9e5eb226bfac432670fec27f6ae9f27f6b0b8a79db8b6c4d161444cf093042b2"
     ],
-    "Solanalib/SBPF/Value.lean": [
+    "packages/solanalib-sbpf/Solanalib/SBPF/Value.lean": [
       "96a207c7e49ab060b1950718c658c0353d6e7249d29046f99119a2ecfa238d2b",
       "c18426b89b63f885aaaa719fab8a4a614f8f784bfd055fe9986610b5af9920f4"
-    ],
-    "SolanalibTest.lean": [
-      "a5d43f5db20bf931f9c407d862ec3152cb16b46bc93633560b05e5b9c774f30d"
-    ],
-    "lakefile.lean": [
-      "dcbc26e243b21b68e6fade24b2f98a9b56ea9973c8fc75592e670f0b95d483ef"
     ],
     "scripts/lint-style.sh": [
       "217cd1ef14ea6117ec10b380b7686f683961ddd8b8243af5a975b506df195459"
     ],
     "scripts/postprocess-docs.py": [
       "7371aa50cd44fb8bc23600173db628b78d8d535de57906fd64423d69468ea281"
-    ],
-    "skills/lean-best-practices/SKILL.md": [
-      "17f2ee69c5099ebb4c7247ad89b38f09551a325b845fb440f96757f77920b8ad",
-      "4bc0bac27f95cba804f59d8c3c1ac2166440f94f7f4599ae28af59b3199aec80",
-      "6913941532a2273b477e2bb5290e0472e69eeb3aac7ece9b01f6b3b1be6c6ff6",
-      "745a4488b31f05e64ee36522fcc9210175d94f8de0439d8b80da9d9a41e2e1a5",
-      "8025e13c5cc891dd36fbb13eedab475ac266265292aa35c8d41bcc381fe39639",
-      "8a72225f691e474a21bf1f74fc77b20fc6f9aed1f6e5b8fc06eb07e6e1311c50",
-      "9fb74ffac03024917e0c127199c07beecb5310439c5dc2b5b4a8d8f8928f7c1d",
-      "a41540cc30c9779847e450236e93c79db6605b7e9a2074b20f244959ebb04266",
-      "d911b7fadbf824abe46107ac82e635768a023ec95ddf424a5025b859b31a840c",
-      "dfbc8b75e26d7b5adf76542acca4407bfa878503c70af1df3a70f121861a5822",
-      "f4729eb36877c1f4ac1ae8157d7bdd0f4ed4d69c009ec915e6e44244b3f8cf3b",
-      "f5dea9cd1e55b3a534dc36669a267dd72e76625ad43b05fcebb99f076d239d90"
     ]
   }
 }

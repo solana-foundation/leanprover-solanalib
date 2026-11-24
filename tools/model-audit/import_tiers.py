@@ -157,10 +157,14 @@ def allowed_imports(path):
         if root in TEST_ROOTS:
             allowed += [root, COMMON_TEST_ROOT]
         return allowed
-    if path.startswith("Solanalib/") or path == "Solanalib.lean":
-        return ["Init", "Std", "Lean", "Mathlib", "Solanalib"]
-    if path.startswith("SolanalibTest/") or path == "SolanalibTest.lean":
-        return ["Init", "Std", "Lean", "Mathlib", "Solanalib", "SolanalibTest"]
+    sbpf = "packages/solanalib-sbpf/"
+    if path.startswith(sbpf):
+        name = path[len(sbpf):].removesuffix(".lean").replace("/", ".")
+        parts = tuple(name.split('.'))
+        tests = has_prefix(parts, "SolanalibTest.SBPF") or name == "SolanalibTest.SBPFOracle"
+        if not tests and not has_prefix(parts, "Solanalib.SBPF"):
+            raise ValueError("unregistered sBPF module: " + path)
+        return ["Init", "Std", "Lean", "Solanalib.SBPF", *(["SolanalibTest.SBPF"] if tests else [])]
     raise ValueError("unregistered package module: " + path)
 
 
@@ -193,7 +197,8 @@ def main():
     paths = source_files()
     errors = check({str(p.relative_to(ROOT)): p.read_text() for p in paths})
     for component in (ROOT / "packages/solanalib-runtime", ROOT / "packages/solanalib-contracts",
-                      ROOT / "packages/solanalib-specs", ROOT / "tools/library-conformance"):
+                      ROOT / "packages/solanalib-specs", ROOT / "packages/solanalib-sbpf",
+                      ROOT / "tools/library-conformance"):
         if any((component / name).exists() for name in ("lakefile.lean", "lakefile.toml")):
             errors.append(f"{component}: all model libraries must belong to the root package")
     if errors:

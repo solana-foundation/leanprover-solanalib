@@ -13,7 +13,8 @@ just check-all
 
 | Target | Checks |
 | --- | --- |
-| `build`, `test` | Root library, sBPF oracle, regressions and System transfer conservation. |
+| `build` | The runtime and contract libraries. |
+| `test-sbpf` | The exploratory sBPF model, its regressions and the oracle executable. |
 | `test-examples` | The worked transfer proof through a warnings-as-errors build and ordinary Lean loading. |
 | `test-runtime` | Runtime production/scenario libraries and offline conformance controls. |
 | `test-specs` | Shared contracts and every registered SDK production/scenario pair. |
