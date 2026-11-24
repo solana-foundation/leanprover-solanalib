@@ -4,7 +4,7 @@
       "order": 125,
       "modules": {
         "Solanalib.Specs.Pinocchio": "f7aae32bf740d1f8cd839a370cd5696acb6e8efecdb4f0eaa22e70af1884cd41",
-        "Solanalib.Specs.Pinocchio.Capabilities": "43b94d99801e9e87a5f4efdaeab1982b8d1d39122dce7ad9850b180b051588c8",
+        "Solanalib.Specs.Pinocchio.Capabilities": "567aa88f3e66e6aac90dab3ea8e87a2218b7a243de6e8a1103a7eef642991727",
         "Solanalib.Specs.Pinocchio.Get": "10bb319e511b1222a0e9a1bba75e8725cd8c39f420c8de84bb88871711795b77",
         "Solanalib.Specs.Pinocchio.Instructions": "e706a0cc12fd3803d6f05410ba4ddd700d7425f94bfd439017a5e6a6504414c1",
         "Solanalib.Specs.Pinocchio.InstructionsGeneric": "7742eb69899e37c86559a89e23346a0c2a38dbfd9d3aa9e32e53ae8a927234d3",

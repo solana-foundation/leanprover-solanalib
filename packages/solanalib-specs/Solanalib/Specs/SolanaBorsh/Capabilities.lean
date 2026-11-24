@@ -74,13 +74,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.10.4"],
-          reason :=
-            "Reference: 0.10.4. Compatibility in [0.10.4, 0.11.0) assumes the actual \
-              selected 0.10 serializer/Write identity and write, write_all and flush \
-              interaction preserve full-buffer counting, the actual target overflow \
-              behavior, and serializer control/effects/error ownership, caught unwind, \
-              cleanup, terminal outcomes and divergence. The serializer remains the actual \
-              indexed T implementation, with no totality or successful-write premise.",
           compatibleRanges := [{
             lower := "0.10.4",
             upper := "0.11.0"
@@ -93,20 +86,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind wordBits and checkedOverflow to the target usize width and \
             overflow-check configuration. A checked overflow uses the selected panic \
             callback before updating the count; unchecked addition wraps. Keep serializer \
-            IO error resources and external state."],
-        evidence := ["https://static.crates.io/crates/solana-borsh/solana-borsh-2.2.1.crate"],
-        argument :=
-          "Reference: solana-borsh 2.2.1. Compatibility in [2.2.1, 3.0.0) assumes that the \
-            defining operation and its reached dependencies preserve this behavior: \
-            Preserve the actual v0_10 generic serializer and WriteCounter interaction: \
-            fresh zero count; each write counts its full buffer and returns its length; \
-            flush preserves count; return the count only after serializer success. Bind \
-            wordBits and checkedOverflow to the actual usize/configuration, retaining \
-            checked panic before count update or unchecked wrapping. Preserve writer-error \
-            handling, serializer effects, caught unwind, owned IO error resources, cleanup \
-            and terminal outcomes. Arbitrary continuations and divergence remain allowed; \
-            finite-fuel replay and a compatibility range provide no serializer-termination \
-            premise."
+            IO error resources and external state."]
       }
     ]
     | .v1_try_from_slice_unchecked => [
@@ -138,18 +118,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             unwind, termination and divergence. The family precondition remains True.",
             "The callback relation interprets T::deserialize, including an override; it \
             must not be replaced with a pure decoder or with deserialize_reader. Borsh \
-            std/no_std error types are supplied by the existing generic binding."],
-        evidence := ["https://static.crates.io/crates/solana-borsh/solana-borsh-0.0.2.crate", "https://static.crates.io/crates/solana-borsh/solana-borsh-3.0.2.crate"],
-        argument :=
-          "All 26 API releases have the identical impl_try_from_slice_unchecked macro and \
-            the v1 Borsh trait dispatch. The wrapper copies the input slice reference \
-            locally, invokes actual T::deserialize exactly once, propagates its error or \
-            nonreturning behavior and state effects, and discards the remaining local \
-            slice on success. There is no trailing-byte rejection, re-decoding, allocation \
-            or additional callback. Dependency feature changes in 3.0.1/3.0.2 affect the \
-            chosen IO representation but not this generic contract. 0.0.1 is a placeholder \
-            without the API. Stateful overridden callbacks were executed across the \
-            release transitions, including the 3.0.2 no_std dependency profile."
+            std/no_std error types are supplied by the existing generic binding."]
       }
     ]
   applicabilityConsumers := fun key => match key with

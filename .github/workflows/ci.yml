@@ -42,6 +42,8 @@ jobs:
           python3 tools/model-audit/generate_gap_index.py --check
           python3 -B -m unittest discover -s tools/model-audit -p 'test_gap_index.py'
           python3 -B -m unittest discover -s tools/model-audit -p 'test_review_seals.py'
+          python3 -B -m unittest discover -s tools/model-audit -p 'test_sdk_seals.py'
+          python3 -B -m unittest discover -s tools/model-audit -p 'test_registry_data.py'
 
   build:
     runs-on: ubuntu-latest
@@ -154,6 +156,7 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+      - uses: extractions/setup-just@v3
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -174,12 +177,11 @@ jobs:
           SOLANA_SPECS_INTEGRATION_TESTS: '1'
         run: |
           python3 -B -m unittest discover -s tools/model-audit -p 'test_solana_*.py'
-          python3 -B -m unittest discover -s tools/model-audit -p 'test_capability_generation.py'
+          python3 -B -m unittest discover -s tools/model-audit -p 'test_*generation.py'
           python3 -B -m unittest discover -s tools/model-audit -p 'test_lean_format.py'
       - name: Generated registries, full axiom closure and pinned source bytes
         run: |
-          python3 packages/solanalib-specs/tools/generate_capabilities.py --check
-          python3 packages/solanalib-specs/tools/version_compatibility.py --check
+          just --set python python3 check-generated
           python3 tools/model-audit/check_solana_specs.py --fetch-sdk --output "$RUNNER_TEMP/specs-audit.json"
 
   library-replay:

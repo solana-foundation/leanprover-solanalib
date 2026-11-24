@@ -4,7 +4,7 @@
       "order": 121,
       "modules": {
         "Solanalib.Specs.AnchorLang": "eb251ccfe6c4dda187afbf6f63e0c363b1803f14d63bff1443501754e2f04e16",
-        "Solanalib.Specs.AnchorLang.Capabilities": "646189f865487ed1f6535751c25ae6d18fee347a2dc1fd719ac697a55a66dd5a",
+        "Solanalib.Specs.AnchorLang.Capabilities": "a438bafc6a7259078ee01c42f03388f5cb0dd52ec7217e1f09c6e23170d1b90b",
         "Solanalib.Specs.AnchorLang.accounts": "36dff9a904769c8d2cb07cecc12eabfe43519823b300ba34729d1b1b5dabf62a",
         "Solanalib.Specs.AnchorLang.construct": "92c9995c3205c363688e869291f4a49244ea445bb738cf43a9a9ac283234d248",
         "Solanalib.Specs.AnchorLang.context": "9f24442f73b8394b0a17e50d69f040e1bcba2ef8a810af5431a62425cda8d64c",

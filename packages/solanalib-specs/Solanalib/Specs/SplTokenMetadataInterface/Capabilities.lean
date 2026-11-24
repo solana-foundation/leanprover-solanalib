@@ -72,20 +72,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -94,10 +89,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1"],
-          reason :=
-            "Exact reviewed resolved 32-byte key implementation and declare_id/check_id \
-              expansion."
+          releases := ["2.2.1"]
         }, {
           package := "solana-instruction",
           source := some {
@@ -105,10 +97,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1"],
-          reason :=
-            "Actual Instruction and AccountMeta representation; borrowed source access and \
-              owned Vec layouts are separately bound."
+          releases := ["2.2.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -117,10 +106,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -132,10 +117,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.5.7"],
-          reason :=
-            "Exact reached String/slice serialization and to_vec: u32 UTF-8 byte lengths, \
-              ordered bytes, length overflow InvalidData, temporary vector ownership."
+          releases := ["1.5.7"]
         }],
         conditions :=
           ["Bind each actual vector allocation, literal, push, extend and drop to its \
@@ -149,15 +131,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             callback denotes the whole consuming unwrap, including its unwind or terminal \
             exit.", "The reviewed Borsh std configuration serializes the derived fields in \
             name, symbol, uri order into its actual Vec writer. Fixed 32-byte key access \
-            and moved String layouts remain source bindings."],
-        evidence := ["https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.7.0.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The 0.7.0 reference allocates four ordered metas before discriminator-prefixed \
-            Borsh data, serializes the three current UTF-8 String owners, then \
-            appends/destroys the temporary and input owners. Compatibility within 0.7 \
-            assumes these bytes, field order and all reached unwrap/cleanup exits remain \
-            unchanged under the exact dependency variants."
+            and moved String layouts remain source bindings."]
       },
       {
         id := "spl-token-metadata-interface-0.7.0-pubkey-2-4-solana",
@@ -177,20 +151,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -199,10 +168,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.4.0"],
-          reason :=
-            "Exact reviewed resolved 32-byte key implementation and declare_id/check_id \
-              expansion."
+          releases := ["2.4.0"]
         }, {
           package := "solana-instruction",
           source := some {
@@ -210,10 +176,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.3.3"],
-          reason :=
-            "Actual Instruction and AccountMeta representation; borrowed source access and \
-              owned Vec layouts are separately bound."
+          releases := ["2.3.3"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -222,10 +185,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -237,10 +196,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.6.0"],
-          reason :=
-            "Exact reached String/slice serialization and to_vec: u32 UTF-8 byte lengths, \
-              ordered bytes, length overflow InvalidData, temporary vector ownership."
+          releases := ["1.6.0"]
         }],
         conditions :=
           ["Bind each actual vector allocation, literal, push, extend and drop to its \
@@ -254,15 +210,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             callback denotes the whole consuming unwrap, including its unwind or terminal \
             exit.", "The reviewed Borsh std configuration serializes the derived fields in \
             name, symbol, uri order into its actual Vec writer. Fixed 32-byte key access \
-            and moved String layouts remain source bindings."],
-        evidence := ["https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.7.0.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The 0.7.0 reference allocates four ordered metas before discriminator-prefixed \
-            Borsh data, serializes the three current UTF-8 String owners, then \
-            appends/destroys the temporary and input owners. Compatibility within 0.7 \
-            assumes these bytes, field order and all reached unwrap/cleanup exits remain \
-            unchanged under the exact dependency variants."
+            and moved String layouts remain source bindings."]
       }
     ]
     | .state_TokenMetadata_default => [
@@ -290,10 +238,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["0.5.1"],
-          reason :=
-            "Reviewed unsigned little-endian fields, nullable key and Pod conversion \
-              definitions consumed by this function."
+          releases := ["0.5.1"]
         }, {
           package := "solana-pubkey",
           source := some {
@@ -301,17 +246,8 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1", "2.4.0"],
-          reason :=
-            "The reached concrete key default and zero comparison use the reviewed 32-byte \
-              Pubkey representation."
-        }],
-        evidence := ["https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.7.0.crate"],
-        argument :=
-          "The 0.7.0 derived default contains two zero keys, three empty Strings and an \
-            empty Vec of pairs, without allocation or a uniqueness precondition. \
-            Compatibility within 0.7 assumes these six fields and empty-container \
-            representations remain unchanged under the selected dependencies."
+          releases := ["2.2.1", "2.4.0"]
+        }]
       }
     ]
   applicabilityConsumers := fun key => match key with

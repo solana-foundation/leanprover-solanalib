@@ -78,10 +78,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The source usize length and final-two-byte slice arithmetic use the reviewed \
-              64-bit width."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-account-info",
@@ -91,10 +88,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -107,10 +100,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -123,9 +112,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.0"],
-          reason :=
-            "Assume the exact declared instructions/sysvar or program key bytes reached by \
-              this call remain unchanged.",
           compatibleRanges := [{
             lower := "3.1.0",
             upper := "4.0.0"
@@ -136,13 +122,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             and each vector through the actual allocation world. The Vec providers \
             describe with_capacity, push, to_vec and drop, including allocation identity, \
             contents, abnormal exits and double-unwind termination. No source allocation \
-            or ownership is manufactured by an observation."],
-        evidence := ["https://static.crates.io/crates/solana-instructions-sysvar/solana-instructions-sysvar-4.0.0.crate"],
-        argument :=
-          "The declared compatible range assumes instructions-ID rejection before shared \
-            borrowing, then little-endian decoding of exactly the final two data bytes. A \
-            short slice follows the actual arithmetic/slicing panic path, with \
-            shared-guard cleanup on unwind and no fabricated terminal cleanup state."
+            or ownership is manufactured by an observation."]
       },
       {
         id := "checked-3.0.0",
@@ -162,10 +142,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The mathematical length and source usize use the reviewed 64-bit width before \
-              the u64 integer/binary64 calculation."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-account-info",
@@ -174,10 +151,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "The checked wrapper borrows the actual RefCell data and maps acquisition \
-              failure to AccountBorrowFailed."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -185,10 +159,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "Wrong ID, borrowing and parse failure return the exact UnsupportedSysvar, \
-              AccountBorrowFailed and InvalidArgument constructors."
+          releases := ["3.0.1"]
         }, {
           package := "solana-sdk-ids",
           source := some {
@@ -196,31 +167,14 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.0"],
-          reason := "The checked address is the exact canonical instructions sysvar ID."
+          releases := ["3.1.0"]
         }],
         conditions :=
           ["Interpret the selected account through its current alias-aware borrow cells \
             and each vector through the actual allocation world. The Vec providers \
             describe with_capacity, push, to_vec and drop, including allocation identity, \
             contents, abnormal exits and double-unwind termination. No source allocation \
-            or ownership is manufactured by an observation."],
-        evidence := ["https://static.crates.io/crates/solana-instructions-sysvar/solana-instructions-sysvar-3.0.0.crate"],
-        argument :=
-          "Both checked loaders reject an incorrect instructions ID before borrowing data, \
-            then acquire a shared Ref and use the current cell. The current-index loader \
-            reads exactly the final two little-endian bytes; a short slice panics (checked \
-            subtraction or wrapping slice-range panic), and the Ref is released on unwind. \
-            The instruction loader reads count, checks index, reads table offset and \
-            account count, allocates the meta Vec, reads and pushes flags/key pairs, then \
-            reads program key and byte length and allocates data. High flag bits are \
-            ignored; every reached bounds error is SanitizeError::IndexOutOfBounds mapped \
-            to InvalidArgument. A 32-byte Pubkey conversion cannot produce \
-            ValueOutOfBounds after its bounds check. A parse Err drops local metas before \
-            releasing the shared Ref; successful Vecs move into Instruction. Terminal \
-            exits have no cleanup state. The declared range is a complete-operation \
-            preservation assumption; inspected releases, native runs, exact ABI \
-            observations and source-call implementation obligations remain separate."
+            or ownership is manufactured by an observation."]
       }
     ]
     | .load_instruction_at_checked => [
@@ -242,10 +196,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The source usize lengths, checked offsets, metadata counts and vector \
-              capacities use the reviewed 64-bit width."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-account-info",
@@ -255,10 +206,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -271,10 +218,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -287,9 +230,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.0"],
-          reason :=
-            "Assume the exact declared instructions/sysvar or program key bytes reached by \
-              this call remain unchanged.",
           compatibleRanges := [{
             lower := "3.1.0",
             upper := "4.0.0"
@@ -302,9 +242,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.2"],
-          reason :=
-            "Assume the reached checked little-endian reads, offset updates, key copies \
-              and to_vec allocation order preserve exact bounds errors and partial effects.",
           compatibleRanges := [{
             lower := "3.1.2",
             upper := "4.0.0"
@@ -317,10 +254,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.4.0"],
-          reason :=
-            "Assume complete Instruction/AccountMeta values retain source metadata \
-              order/flags, owned buffers and move/drop behavior; no projected instruction \
-              replaces the actual value.",
           compatibleRanges := [{
             lower := "3.4.0",
             upper := "4.0.0"
@@ -333,10 +266,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached IndexOutOfBounds error and its InvalidArgument conversion \
-              remain unchanged; unreachable conversion variants are not supplied \
-              artificially.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -347,16 +276,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             and each vector through the actual allocation world. The Vec providers \
             describe with_capacity, push, to_vec and drop, including allocation identity, \
             contents, abnormal exits and double-unwind termination. No source allocation \
-            or ownership is manufactured by an observation."],
-        evidence := ["https://static.crates.io/crates/solana-instructions-sysvar/solana-instructions-sysvar-4.0.0.crate"],
-        argument :=
-          "The declared compatible range assumes ID rejection before shared borrowing, \
-            then ordered count/index/offset/account-count reads, metadata allocation and \
-            flag/key pushes, program key and data-length reads, and data allocation. \
-            Ignore high flag bits; reached bounds errors map IndexOutOfBounds to \
-            InvalidArgument. Parse Err drops local metas before releasing the guard; \
-            successful vectors move into Instruction and terminal exits supply no cleanup \
-            state."
+            or ownership is manufactured by an observation."]
       },
       {
         id := "checked-3.0.0",
@@ -376,10 +296,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The mathematical length and source usize use the reviewed 64-bit width before \
-              the u64 integer/binary64 calculation."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-account-info",
@@ -388,10 +305,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "The checked wrapper borrows the actual RefCell data and maps acquisition \
-              failure to AccountBorrowFailed."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -399,10 +313,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "Wrong ID, borrowing and parse failure return the exact UnsupportedSysvar, \
-              AccountBorrowFailed and InvalidArgument constructors."
+          releases := ["3.0.1"]
         }, {
           package := "solana-sdk-ids",
           source := some {
@@ -410,8 +321,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.0"],
-          reason := "The checked address is the exact canonical instructions sysvar ID."
+          releases := ["3.1.0"]
         }, {
           package := "solana-serialize-utils",
           source := some {
@@ -419,10 +329,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "Checked little-endian scalar/key/slice reads and the data to_vec allocation \
-              determine parser order and errors."
+          releases := ["3.1.1"]
         }, {
           package := "solana-instruction",
           source := some {
@@ -430,10 +337,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.4.0"],
-          reason :=
-            "Returned Instruction owns ordered AccountMeta and data Vecs with the reviewed \
-              key and flag fields."
+          releases := ["3.4.0"]
         }, {
           package := "solana-sanitize",
           source := some {
@@ -441,33 +345,14 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "All reached serializer bounds errors are IndexOutOfBounds; its conversion \
-              selects InvalidArgument."
+          releases := ["3.0.1"]
         }],
         conditions :=
           ["Interpret the selected account through its current alias-aware borrow cells \
             and each vector through the actual allocation world. The Vec providers \
             describe with_capacity, push, to_vec and drop, including allocation identity, \
             contents, abnormal exits and double-unwind termination. No source allocation \
-            or ownership is manufactured by an observation."],
-        evidence := ["https://static.crates.io/crates/solana-instructions-sysvar/solana-instructions-sysvar-3.0.0.crate"],
-        argument :=
-          "Both checked loaders reject an incorrect instructions ID before borrowing data, \
-            then acquire a shared Ref and use the current cell. The current-index loader \
-            reads exactly the final two little-endian bytes; a short slice panics (checked \
-            subtraction or wrapping slice-range panic), and the Ref is released on unwind. \
-            The instruction loader reads count, checks index, reads table offset and \
-            account count, allocates the meta Vec, reads and pushes flags/key pairs, then \
-            reads program key and byte length and allocates data. High flag bits are \
-            ignored; every reached bounds error is SanitizeError::IndexOutOfBounds mapped \
-            to InvalidArgument. A 32-byte Pubkey conversion cannot produce \
-            ValueOutOfBounds after its bounds check. A parse Err drops local metas before \
-            releasing the shared Ref; successful Vecs move into Instruction. Terminal \
-            exits have no cleanup state. The declared range is a complete-operation \
-            preservation assumption; inspected releases, native runs, exact ABI \
-            observations and source-call implementation obligations remain separate."
+            or ownership is manufactured by an observation."]
       }
     ]
   applicabilityConsumers := fun key => match key with

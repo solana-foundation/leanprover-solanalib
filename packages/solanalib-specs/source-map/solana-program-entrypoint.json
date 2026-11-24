@@ -5,7 +5,7 @@
       "modules": {
         "Solanalib.Specs.SolanaProgramEntrypoint.EntryDeserialize": "cb33aae19149f15231f6d1459684dcc8a60c8001eacb4ff9820c208f5a49855c",
         "Solanalib.Specs.SolanaProgramEntrypoint": "1792789f1974932328e6d64999c1082924b974eacc5c0b0b4d37626db2b9145d",
-        "Solanalib.Specs.SolanaProgramEntrypoint.Capabilities": "ae35b7731d766642c737a268ed2d58775c72385690d1fd329bc574e080e9a994"
+        "Solanalib.Specs.SolanaProgramEntrypoint.Capabilities": "cc205925d0727f8a31a7b25e281169bd7c35fc5fb0dd602706fcad6332634e6d"
       },
       "source_ids": ["entry-deserialize::solana-program-entrypoint-2.3.0::src/lib.rs"],
       "argument": "@review:source-notes/entry-deserialize.md#review-12e1da0b0036ec30",

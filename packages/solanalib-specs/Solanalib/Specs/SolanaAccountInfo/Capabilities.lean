@@ -236,14 +236,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
             layout and legal memory access remain explicit source-call assumptions.",
             "Reference.id denotes the same existing shared AccountInfo reference; no Rc \
-            operation, pointee snapshot or independent ownership is introduced."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate"],
-        argument :=
-          "The 2.3.0 reference returns the existing shared AccountInfo reference, with \
-            unchanged state and no Rc clone or new guard. Compatibility within the \
-            declared 2.x range assumes this identity operation remains unchanged. Actual \
-            record layout, lifetimes and reference permission remain source-binding \
-            obligations."
+            operation, pointee snapshot or independent ownership is introduced."]
       },
       {
         id := "sdk-account-info-solana-account-info-2.3.0:1",
@@ -266,14 +259,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
             layout and legal memory access remain explicit source-call assumptions.",
             "Reference.id denotes the same existing shared AccountInfo reference; no Rc \
-            operation, pointee snapshot or independent ownership is introduced."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate"],
-        argument :=
-          "The 2.3.0 reference returns the existing shared AccountInfo reference, with \
-            unchanged state and no Rc clone or new guard. Compatibility within the \
-            declared 2.x range assumes this identity operation remains unchanged. Actual \
-            record layout, lifetimes and reference permission remain source-binding \
-            obligations."
+            operation, pointee snapshot or independent ownership is introduced."]
       },
       {
         id := "sdk-account-info-solana-account-info-3.1.1:0",
@@ -296,12 +282,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
             layout and legal memory access remain explicit source-call assumptions.",
             "Reference.id denotes the same existing shared AccountInfo reference; no Rc \
-            operation, pointee snapshot or independent ownership is introduced."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same shared AccountInfo \
-            object with its existing lifetime, aliases and complete state, without \
-            allocation or Rc cloning."
+            operation, pointee snapshot or independent ownership is introduced."]
       },
       {
         id := "sdk-account-info-solana-account-info-3.1.1:1",
@@ -324,12 +305,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
             layout and legal memory access remain explicit source-call assumptions.",
             "Reference.id denotes the same existing shared AccountInfo reference; no Rc \
-            operation, pointee snapshot or independent ownership is introduced."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same shared AccountInfo \
-            object with its existing lifetime, aliases and complete state, without \
-            allocation or Rc cloning."
+            operation, pointee snapshot or independent ownership is introduced."]
       }
     ]
     | .AccountInfo_assign => [
@@ -353,17 +329,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "OwnerRef identifies the actual writable owner storage behind the shared \
             reference. The finite store bound establishes the new current value through \
-            every alias; runtime reassignment authorization is separate."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate"],
-        argument :=
-          "Reference: solana-account-info 2.3.0. The declared [2.3.0, 3.0.0) range assumes \
-            preservation of the volatile current-owner update through self.owner, with \
-            new_owner.to_bytes copying all 32 bytes. The same writable storage changes \
-            through every alias while all borrow cells, buffers and unrelated state remain \
-            unchanged. This adds no signer, writability or runtime \
-            reassignment-authorization check. The actual key conversion and legal \
-            shared-reference write are interpreted by the existing source and OwnerRef \
-            conditions."
+            every alias; runtime reassignment authorization is separate."]
       },
       {
         id := "sdk-account-info-solana-account-info-2.3.0:1",
@@ -385,17 +351,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "OwnerRef identifies the actual writable owner storage behind the shared \
             reference. The finite store bound establishes the new current value through \
-            every alias; runtime reassignment authorization is separate."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate"],
-        argument :=
-          "Reference: solana-account-info 2.3.0. The declared [2.3.0, 3.0.0) range assumes \
-            preservation of the volatile current-owner update through self.owner, with \
-            new_owner.to_bytes copying all 32 bytes. The same writable storage changes \
-            through every alias while all borrow cells, buffers and unrelated state remain \
-            unchanged. This adds no signer, writability or runtime \
-            reassignment-authorization check. The actual key conversion and legal \
-            shared-reference write are interpreted by the existing source and OwnerRef \
-            conditions."
+            every alias; runtime reassignment authorization is separate."]
       },
       {
         id := "sdk-account-info-solana-account-info-3.1.1:0",
@@ -417,12 +373,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "OwnerRef identifies the actual writable owner storage behind the shared \
             reference. The finite store bound establishes the new current value through \
-            every alias; runtime reassignment authorization is separate."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "The declared compatible range assumes the volatile write of all 32 owner bytes \
-            through the actual owner reference, visible through aliases and with all other \
-            AccountInfo state retained."
+            every alias; runtime reassignment authorization is separate."]
       },
       {
         id := "sdk-account-info-solana-account-info-3.1.1:1",
@@ -444,12 +395,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "OwnerRef identifies the actual writable owner storage behind the shared \
             reference. The finite store bound establishes the new current value through \
-            every alias; runtime reassignment authorization is separate."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "The declared compatible range assumes the volatile write of all 32 owner bytes \
-            through the actual owner reference, visible through aliases and with all other \
-            AccountInfo state retained."
+            every alias; runtime reassignment authorization is separate."]
       }
     ]
     | .AccountInfo_clone => [
@@ -482,20 +428,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ownership correctness are separately bound.", "The source value projection \
             maps pre-3.0.0 rent_epoch:u64 and 3.0.0+ _unused:u64 to the same uninterpreted \
             Value.unused slot; key/owner reference identities and both cell aliases are \
-            preserved."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-0.0.2.crate", "https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "Every API-bearing archive derives Clone on a struct with \
-            lamports:Rc<RefCell<&mut u64>> preceding data:Rc<RefCell<&mut [u8]>>. Actual \
-            pinned-compiler expansions at 0.0.2/3.0.0/3.1.1 confirm that order. The \
-            reached Global Rc clone increments the relevant strong count before the second \
-            dependency call, never clones the payload, and aborts on count wrap. The full \
-            existing indexed family retains dependency state, terminal exits and \
-            sequencing; no unconditional count/allocation guarantee is added to that \
-            family. Successful metadata, aliases and owner reference are unchanged across \
-            the rent/address/import transitions. Release 0.0.1 only defines a placeholder \
-            add function, so absence is distinct from incompatible behavior. No published \
-            release is skipped."
+            preserved."]
       }
     ]
     | .AccountInfo_clone_observation => [
@@ -529,17 +462,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             effects, retaining the stated partial-model gap; actual Rc sequencing belongs \
             to the primary clone family.", "The source value projection maps pre-3.0.0 \
             rent_epoch:u64 and 3.0.0+ _unused:u64 to the same uninterpreted Value.unused \
-            slot; key/owner reference identities and both cell aliases are preserved."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-0.0.2.crate", "https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "The underlying operation is the same derived Clone as the primary family. On \
-            its normal completion, all metadata, both cell aliases and the owner reference \
-            are preserved without observing the RefCell contents. The existing supporting \
-            observation intentionally forgets Rc lifecycle/terminal behavior and stays \
-            partial; it is not substituted for the primary clone family. Its unconditional \
-            mathematical premise is retained. Release 0.0.1 only defines a placeholder add \
-            function, so absence is distinct from incompatible behavior. No published \
-            release is skipped."
+            slot; key/owner reference identities and both cell aliases are preserved."]
       }
     ]
     | .AccountInfo_data_is_empty => [
@@ -563,14 +486,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "ObservationReady supplies only the selected current typed data projection. \
             RefCell conflict or saturation follows the explicit panic strategy, with no \
-            invented ordinary error return."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.0.crate", "https://static.crates.io/crates/solana-account-info/solana-account-info-2.2.1.crate", "https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate"],
-        argument :=
-          "The inspected 2.1.0/2.2.1/2.3.0 data_is_empty definitions and legacy carrier \
-            agree. The declared 2.x range assumes temporary shared acquisition, current \
-            data emptiness and release, preserving conflict/saturation panic behavior and \
-            receiver state. The source reference and concrete layout remain separately \
-            bound; later metadata carriers are not silently substituted."
+            invented ordinary error return."]
       },
       {
         id := "sdk-account-info-solana-account-info-2.3.0:1",
@@ -592,14 +508,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "ObservationReady supplies only the selected current typed data projection. \
             RefCell conflict or saturation follows the explicit panic strategy, with no \
-            invented ordinary error return."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-2.1.0.crate", "https://static.crates.io/crates/solana-account-info/solana-account-info-2.2.1.crate", "https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate"],
-        argument :=
-          "The inspected 2.1.0/2.2.1/2.3.0 data_is_empty definitions and legacy carrier \
-            agree. The declared 2.x range assumes temporary shared acquisition, current \
-            data emptiness and release, preserving conflict/saturation panic behavior and \
-            receiver state. The source reference and concrete layout remain separately \
-            bound; later metadata carriers are not silently substituted."
+            invented ordinary error return."]
       },
       {
         id := "sdk-account-info-solana-account-info-3.1.1:0",
@@ -621,12 +530,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "ObservationReady supplies only the selected current typed data projection. \
             RefCell conflict or saturation follows the explicit panic strategy, with no \
-            invented ordinary error return."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "The declared compatible range assumes the unchecked shared data borrow and \
-            current-slice emptiness test, including the reached RefCell panic policy and \
-            guard lifetime; it is not replaced by a checked Result-returning borrow."
+            invented ordinary error return."]
       },
       {
         id := "sdk-account-info-solana-account-info-3.1.1:1",
@@ -648,12 +552,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "ObservationReady supplies only the selected current typed data projection. \
             RefCell conflict or saturation follows the explicit panic strategy, with no \
-            invented ordinary error return."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "The declared compatible range assumes the unchecked shared data borrow and \
-            current-slice emptiness test, including the reached RefCell panic policy and \
-            guard lifetime; it is not replaced by a checked Result-returning borrow."
+            invented ordinary error return."]
       }
     ]
     | .AccountInfo_data_len => [
@@ -686,17 +585,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             malformed branch and produce a finite getter outcome.", "The source \
             interpretation relates the selected cell policy and explicit panic strategy to \
             Rust RefCell behavior. Other account cells and unused target-width bounds are \
-            not mathematical getter preconditions."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-0.0.2.crate", "https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "All 27 API-bearing releases have the same byte-identical method body \
-            self.data.borrow().len(). With the reached RefCell policy this temporarily \
-            acquires a shared lease, reads the current slice length, releases the \
-            temporary lease, or invokes the selected panic behavior on conflict/shared \
-            saturation. The contract retains selected-cell ObservationReady only; it does \
-            not require the lamports cell or an unused whole-account validity premise. \
-            Release 0.0.1 only defines a placeholder add function, so absence is distinct \
-            from incompatible behavior. No published release is skipped."
+            not mathematical getter preconditions."]
       }
     ]
     | .AccountInfo_lamports => [
@@ -729,16 +618,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             malformed branch and produce a finite getter outcome.", "The source \
             interpretation relates the selected cell policy and explicit panic strategy to \
             Rust RefCell behavior. Other account cells and unused target-width bounds are \
-            not mathematical getter preconditions."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-0.0.2.crate", "https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "All 27 API-bearing releases have the same byte-identical body \
-            **self.lamports.borrow(). The selected live lamports cell supplies the current \
-            u64, a successful temporary shared lease is released, and conflict/shared \
-            saturation panics under the supplied strategy. The contract retains \
-            selected-cell ObservationReady and does not require validity of the unrelated \
-            data cell. Release 0.0.1 only defines a placeholder add function, so absence \
-            is distinct from incompatible behavior. No published release is skipped."
+            not mathematical getter preconditions."]
       }
     ]
     | .AccountInfo_realloc => [
@@ -760,10 +640,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The Solana memory syscall has no user-defined unwind callback; legacy host \
-              SyscallStubs are separately replaceable and are not modeled here."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-program-memory",
@@ -773,12 +650,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.1"],
-          reason :=
-            "References 2.2.1 and 2.3.1; [2.2.1, 3.0.0) assumes that the reached Solana \
-              sol_memset branch forwards the exact tail pointer, zero byte and count to \
-              sol_memset_. A normal return zeroes only that tail; termination retains no \
-              after-state after the prior length writes. Host stubs and unwind callbacks \
-              remain excluded.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -795,18 +666,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "The Solana memory syscall writes exactly the reached new tail on a normal \
             return and may terminate without a post-state. Legacy replaceable host \
             SyscallStubs are outside this profile.", "The explicit zero_init flag is \
-            retained; false preserves stale bytes on shrink/regrow."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate"],
-        argument :=
-          "Reference: solana-account-info 2.3.0. The declared [2.3.0, 3.0.0) range assumes \
-            the same order: exclusive data borrow; equal-length return before \
-            original-header access; saturating growth from the immutable original length \
-            against 10,240 bytes; serialized-length write before slice replacement; \
-            optional nonempty-tail zeroing; guard release. Borrow conflicts and \
-            InvalidRealloc retain their error and cleanup behavior. Shrinking preserves \
-            spare bytes, and zero_init = false may expose them again. The Solana memory \
-            provider below preserves the reached zeroing operation, including its terminal \
-            exit after the length updates."
+            retained; false preserves stale bytes on shrink/regrow."]
       },
       {
         id := "sdk-account-info-solana-account-info-2.3.0:1",
@@ -826,10 +686,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The Solana memory syscall has no user-defined unwind callback; legacy host \
-              SyscallStubs are separately replaceable and are not modeled here."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-program-memory",
@@ -839,12 +696,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.1"],
-          reason :=
-            "References 2.2.1 and 2.3.1; [2.2.1, 3.0.0) assumes that the reached Solana \
-              sol_memset branch forwards the exact tail pointer, zero byte and count to \
-              sol_memset_. A normal return zeroes only that tail; termination retains no \
-              after-state after the prior length writes. Host stubs and unwind callbacks \
-              remain excluded.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -861,18 +712,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "The Solana memory syscall writes exactly the reached new tail on a normal \
             return and may terminate without a post-state. Legacy replaceable host \
             SyscallStubs are outside this profile.", "The explicit zero_init flag is \
-            retained; false preserves stale bytes on shrink/regrow."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate"],
-        argument :=
-          "Reference: solana-account-info 2.3.0. The declared [2.3.0, 3.0.0) range assumes \
-            the same order: exclusive data borrow; equal-length return before \
-            original-header access; saturating growth from the immutable original length \
-            against 10,240 bytes; serialized-length write before slice replacement; \
-            optional nonempty-tail zeroing; guard release. Borrow conflicts and \
-            InvalidRealloc retain their error and cleanup behavior. Shrinking preserves \
-            spare bytes, and zero_init = false may expose them again. The Solana memory \
-            provider below preserves the reached zeroing operation, including its terminal \
-            exit after the length updates."
+            retained; false preserves stale bytes on shrink/regrow."]
       }
     ]
     | .AccountInfo_resize => [
@@ -894,10 +734,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The Solana memory syscall has no user-defined unwind callback; legacy host \
-              SyscallStubs are separately replaceable and are not modeled here."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-program-memory",
@@ -907,12 +744,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.1"],
-          reason :=
-            "References 2.2.1 and 2.3.1; [2.2.1, 3.0.0) assumes that the reached Solana \
-              sol_memset branch forwards the exact tail pointer, zero byte and count to \
-              sol_memset_. A normal return zeroes only that tail; termination retains no \
-              after-state after the prior length writes. Host stubs and unwind callbacks \
-              remain excluded.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -928,16 +759,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             pointer width, alignment, allocation and legal volatile/raw writes.",
             "The Solana memory syscall writes exactly the reached new tail on a normal \
             return and may terminate without a post-state. Legacy replaceable host \
-            SyscallStubs are outside this profile."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate"],
-        argument :=
-          "Reference: solana-account-info 2.3.0. The declared [2.3.0, 3.0.0) range assumes \
-            that resize(new_len) remains realloc(new_len, true), preserving the \
-            borrow-error/equal-length/original-header/growth-check order and \
-            serialized-length-before-slice update. Shrink retains backing bytes; \
-            successful regrowth zeroes only the newly exposed tail. Temporary-guard \
-            cleanup and a reached zeroing terminal exit remain unchanged. The \
-            explicit-zero-flag realloc contract stays separate."
+            SyscallStubs are outside this profile."]
       },
       {
         id := "sdk-account-info-solana-account-info-2.3.0:1",
@@ -957,10 +779,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The Solana memory syscall has no user-defined unwind callback; legacy host \
-              SyscallStubs are separately replaceable and are not modeled here."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-program-memory",
@@ -970,12 +789,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.1"],
-          reason :=
-            "References 2.2.1 and 2.3.1; [2.2.1, 3.0.0) assumes that the reached Solana \
-              sol_memset branch forwards the exact tail pointer, zero byte and count to \
-              sol_memset_. A normal return zeroes only that tail; termination retains no \
-              after-state after the prior length writes. Host stubs and unwind callbacks \
-              remain excluded.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -991,16 +804,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             pointer width, alignment, allocation and legal volatile/raw writes.",
             "The Solana memory syscall writes exactly the reached new tail on a normal \
             return and may terminate without a post-state. Legacy replaceable host \
-            SyscallStubs are outside this profile."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate"],
-        argument :=
-          "Reference: solana-account-info 2.3.0. The declared [2.3.0, 3.0.0) range assumes \
-            that resize(new_len) remains realloc(new_len, true), preserving the \
-            borrow-error/equal-length/original-header/growth-check order and \
-            serialized-length-before-slice update. Shrink retains backing bytes; \
-            successful regrowth zeroes only the newly exposed tail. Temporary-guard \
-            cleanup and a reached zeroing terminal exit remain unchanged. The \
-            explicit-zero-flag realloc contract stays separate."
+            SyscallStubs are outside this profile."]
       },
       {
         id := "sdk-account-info-solana-account-info-3.1.1:0",
@@ -1020,10 +824,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The Solana memory syscall has no user-defined unwind callback; legacy host \
-              SyscallStubs are separately replaceable and are not modeled here."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-program-memory",
@@ -1033,10 +834,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.0", "3.1.0"],
-          reason :=
-            "Assume the selected Solana memory-zeroing branch writes only the newly \
-              exposed tail and retains actual state/terminal effects; host replacement \
-              callbacks remain outside this profile.",
           compatibleRanges := [{
             lower := "3.0.0",
             upper := "4.0.0"
@@ -1052,14 +849,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             pointer width, alignment, allocation and legal volatile/raw writes.",
             "The Solana memory syscall writes exactly the reached new tail on a normal \
             return and may terminate without a post-state. Legacy replaceable host \
-            SyscallStubs are outside this profile."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "The declared compatible range assumes the checked exclusive data borrow, \
-            original-data-length growth limit and source-order length writes, followed by \
-            zeroing only newly exposed bytes through the selected memory provider. \
-            Alias-visible partial effects and actual guard cleanup survive errors or \
-            unwind; the current metadata field remains uninterpreted."
+            SyscallStubs are outside this profile."]
       },
       {
         id := "sdk-account-info-solana-account-info-3.1.1:1",
@@ -1079,10 +869,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The Solana memory syscall has no user-defined unwind callback; legacy host \
-              SyscallStubs are separately replaceable and are not modeled here."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-program-memory",
@@ -1092,10 +879,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.0", "3.1.0"],
-          reason :=
-            "Assume the selected Solana memory-zeroing branch writes only the newly \
-              exposed tail and retains actual state/terminal effects; host replacement \
-              callbacks remain outside this profile.",
           compatibleRanges := [{
             lower := "3.0.0",
             upper := "4.0.0"
@@ -1111,14 +894,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             pointer width, alignment, allocation and legal volatile/raw writes.",
             "The Solana memory syscall writes exactly the reached new tail on a normal \
             return and may terminate without a post-state. Legacy replaceable host \
-            SyscallStubs are outside this profile."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "The declared compatible range assumes the checked exclusive data borrow, \
-            original-data-length growth limit and source-order length writes, followed by \
-            zeroing only newly exposed bytes through the selected memory provider. \
-            Alias-visible partial effects and actual guard cleanup survive errors or \
-            unwind; the current metadata field remains uninterpreted."
+            SyscallStubs are outside this profile."]
       }
     ]
     | .AccountInfo_try_borrow_data => [
@@ -1152,20 +928,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             relates cell identities, the actual current cell policy, counter bounds and \
             ownership to Rust RefCell behavior. Whole-AccountInfo validity, the unrelated \
             lamports cell and profile-width equalities are not premises of this \
-            mathematical borrow contract."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-0.0.2.crate", "https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "All 27 API-bearing releases have the same byte-identical body \
-            self.data.try_borrow().map_err(|_| ProgramError::AccountBorrowFailed). It \
-            returns a live shared Ref, not a snapshot; shared count increments subject to \
-            isize::MAX and guards retain the lease until drop. Both conflict and \
-            saturation map to the exact unit SDK error and preserve cell contents/lease \
-            state on failure. The reached unit variant exists in every allowed reviewed \
-            ProgramError release. Explicit lifetime spelling changes at 3.0.0 are \
-            equivalent. The existing DataBorrowReady premise and \
-            typed-current-data/protocol-validity postcondition are retained. Release 0.0.1 \
-            only defines a placeholder add function, so absence is distinct from \
-            incompatible behavior. No published release is skipped."
+            mathematical borrow contract."]
       }
     ]
     | .AccountInfo_try_borrow_lamports => [
@@ -1190,16 +953,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "LamportsBorrowReady supplies a typed selected cell and protocol-valid lease \
             world. The current cell policy, guard lifetime and counter bounds interpret \
             the actual RefCell. No account writability or unrelated-cell condition is \
-            assumed."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate"],
-        argument :=
-          "Reference: solana-account-info 2.3.0. The declared [2.3.0, 3.0.0) range assumes \
-            preservation of shared acquisition of the actual lamports Rc/RefCell, exact \
-            AccountBorrowFailed mapping and the live guard to its current typed value. \
-            Aliases, generations, finite shared-counter policy and guard lifetime remain \
-            in the common borrow world. No data-cell, signer or writability condition is \
-            introduced. This guard-returning operation stays distinct from a temporary \
-            observation."
+            assumed."]
       },
       {
         id := "sdk-account-info-solana-account-info-2.3.0:1",
@@ -1222,16 +976,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "LamportsBorrowReady supplies a typed selected cell and protocol-valid lease \
             world. The current cell policy, guard lifetime and counter bounds interpret \
             the actual RefCell. No account writability or unrelated-cell condition is \
-            assumed."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate"],
-        argument :=
-          "Reference: solana-account-info 2.3.0. The declared [2.3.0, 3.0.0) range assumes \
-            preservation of shared acquisition of the actual lamports Rc/RefCell, exact \
-            AccountBorrowFailed mapping and the live guard to its current typed value. \
-            Aliases, generations, finite shared-counter policy and guard lifetime remain \
-            in the common borrow world. No data-cell, signer or writability condition is \
-            introduced. This guard-returning operation stays distinct from a temporary \
-            observation."
+            assumed."]
       }
     ]
     | .AccountInfo_try_borrow_mut_data => [
@@ -1265,18 +1010,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             relates cell identities, the actual current cell policy, counter bounds and \
             ownership to Rust RefCell behavior. Whole-AccountInfo validity, the unrelated \
             lamports cell and profile-width equalities are not premises of this \
-            mathematical borrow contract."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-0.0.2.crate", "https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "All 27 API-bearing releases have the same byte-identical body \
-            self.data.try_borrow_mut().map_err(|_| ProgramError::AccountBorrowFailed). \
-            Only a free data cell admits a live exclusive RefMut; either shared or \
-            exclusive conflict maps to the exact unit SDK error, without inspecting \
-            is_writable or the lamports cell. Explicit lifetime spelling changes at 3.0.0 \
-            are equivalent. Existing DataBorrowReady and the current typed \
-            data/protocol-validity postcondition are retained. Release 0.0.1 only defines \
-            a placeholder add function, so absence is distinct from incompatible behavior. \
-            No published release is skipped."
+            mathematical borrow contract."]
       }
     ]
     | .AccountInfo_try_borrow_mut_lamports => [
@@ -1301,12 +1035,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "LamportsBorrowReady supplies a typed selected cell and protocol-valid lease \
             world. The current cell policy, guard lifetime and counter bounds interpret \
             the actual RefCell. No account writability or unrelated-cell condition is \
-            assumed."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "The declared compatible range assumes the checked exclusive lamports guard over \
-            the current cell, exact AccountBorrowFailed result on conflict and \
-            alias-visible typed value, preserving the actual source representation."
+            assumed."]
       },
       {
         id := "sdk-account-info-solana-account-info-3.1.1:1",
@@ -1329,12 +1058,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "LamportsBorrowReady supplies a typed selected cell and protocol-valid lease \
             world. The current cell policy, guard lifetime and counter bounds interpret \
             the actual RefCell. No account writability or unrelated-cell condition is \
-            assumed."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "The declared compatible range assumes the checked exclusive lamports guard over \
-            the current cell, exact AccountBorrowFailed result on conflict and \
-            alias-visible typed value, preserving the actual source representation."
+            assumed."]
       }
     ]
     | .AccountInfo_try_data_len => [
@@ -1358,15 +1082,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "ObservationReady supplies only the selected current typed data projection and \
             excludes malformed mathematical paths; borrow conflicts map to \
-            AccountBorrowFailed and a successful temporary shared guard is released."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate"],
-        argument :=
-          "Reference: solana-account-info 2.3.0. The declared [2.3.0, 3.0.0) range assumes \
-            preservation of self.try_borrow_data()?.len(): temporarily acquire the actual \
-            shared data guard, return AccountBorrowFailed on conflict, read the current \
-            length and release the successful temporary. The used RefCell policy, typed \
-            projection, aliases, counters and cleanup remain exact. No persistent guard, \
-            saved length or unchecked-getter panic behavior is substituted."
+            AccountBorrowFailed and a successful temporary shared guard is released."]
       },
       {
         id := "sdk-account-info-solana-account-info-2.3.0:1",
@@ -1388,15 +1104,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "ObservationReady supplies only the selected current typed data projection and \
             excludes malformed mathematical paths; borrow conflicts map to \
-            AccountBorrowFailed and a successful temporary shared guard is released."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-2.3.0.crate"],
-        argument :=
-          "Reference: solana-account-info 2.3.0. The declared [2.3.0, 3.0.0) range assumes \
-            preservation of self.try_borrow_data()?.len(): temporarily acquire the actual \
-            shared data guard, return AccountBorrowFailed on conflict, read the current \
-            length and release the successful temporary. The used RefCell policy, typed \
-            projection, aliases, counters and cleanup remain exact. No persistent guard, \
-            saved length or unchecked-getter panic behavior is substituted."
+            AccountBorrowFailed and a successful temporary shared guard is released."]
       },
       {
         id := "sdk-account-info-solana-account-info-3.1.1:0",
@@ -1418,12 +1126,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "ObservationReady supplies only the selected current typed data projection and \
             excludes malformed mathematical paths; borrow conflicts map to \
-            AccountBorrowFailed and a successful temporary shared guard is released."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "The declared compatible range assumes the actual shared RefCell borrow of the \
-            current data slice, its usize length, AccountBorrowFailed on conflict and \
-            release of the acquired guard."
+            AccountBorrowFailed and a successful temporary shared guard is released."]
       },
       {
         id := "sdk-account-info-solana-account-info-3.1.1:1",
@@ -1445,12 +1148,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "ObservationReady supplies only the selected current typed data projection and \
             excludes malformed mathematical paths; borrow conflicts map to \
-            AccountBorrowFailed and a successful temporary shared guard is released."],
-        evidence := ["https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate"],
-        argument :=
-          "The declared compatible range assumes the actual shared RefCell borrow of the \
-            current data slice, its usize length, AccountBorrowFailed on conflict and \
-            release of the acquired guard."
+            AccountBorrowFailed and a successful temporary shared guard is released."]
       }
     ]
   applicabilityConsumers := fun key => match key with

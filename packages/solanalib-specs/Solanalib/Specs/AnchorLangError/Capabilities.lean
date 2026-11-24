@@ -90,10 +90,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the selected error-code generator preserves the annotated table, exact \
-              name/message match, String evaluation order and Box construction reached \
-              here; a leading ::std qualification does not alter that behavior.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "2.0.0"
@@ -107,13 +103,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes the complete 1.1.2 ErrorCode table, with \
-            exact number, name and Display message, evaluated as name allocation, message \
-            allocation and boxed AnchorError construction in that order. The two variants \
-            introduced in 1.2.0 require a different complete table."
+            a source dependency terminates."]
       }
     ]
     | .Error_log => [
@@ -140,10 +130,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -157,15 +143,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes the boxed modern ProgramError \
-            representation, origin-dependent format/arguments, exact status conversion and \
-            comparison logging order. Every allocated formatting temporary is destroyed on \
-            normal or unwind exit, retaining callback effects; borrowed error fields and \
-            its Box remain owned by the caller. This pre-cohort profile stops before the \
-            new 1.2.1 provider/feature selection."
+            a source dependency terminates."]
       }
     ]
     | .Error_with_account_name => [
@@ -192,15 +170,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes the actual generic ToString callback, \
-            destruction of an old owned account-name origin before replacement, and \
-            preservation of every other field and the same Box owner. The consumed \
-            argument is destroyed on normal/unwind exits; callback and cleanup outcomes \
-            remain explicit. This pre-cohort profile stops before the new 1.2.1 \
-            provider/feature selection."
+            a source dependency terminates."]
       }
     ]
     | .ErrorCode_name => [
@@ -227,10 +197,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the selected error-code generator preserves the annotated table, exact \
-              name/message match, String evaluation order and Box construction reached \
-              here; a leading ::std qualification does not alter that behavior.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "2.0.0"
@@ -244,12 +210,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes the complete 1.1.2 ErrorCode match and \
-            one String copy of the selected exact variant name, without a Box or \
-            message-formatting operation. The added 1.2.0 variants are outside this table."
+            a source dependency terminates."]
       }
     ]
   applicabilityConsumers := fun key => match key with

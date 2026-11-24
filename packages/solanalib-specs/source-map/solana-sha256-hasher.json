@@ -4,7 +4,7 @@
       "order": 146,
       "modules": {
         "Solanalib.Specs.SolanaSha256Hasher": "15a4c76b068e346a7c36237c039b78d0966be9e95131eba6d40dbdb035c85a0a",
-        "Solanalib.Specs.SolanaSha256Hasher.Capabilities": "2e887ef23c39e9482b92f26d95d5c46a9b486a15c559ca260b2e865b06548795",
+        "Solanalib.Specs.SolanaSha256Hasher.Capabilities": "126e17766fd817d66a3b0aa5bd1730c142ee130f494812d59cde55b275727e0b",
         "Solanalib.Specs.SolanaSha256Hasher.Hashv": "ad0a2810d1532a627aa4c35c6a063a66271fd24c98049ac2189dd0a4665a1a6f",
         "Solanalib.Specs.SolanaSha256Hasher.HashInitialized": "29c5daee9b92a1028784d835b11ee2b1c6b41f1101133be36fba59359095a300",
         "Solanalib.Specs.SolanaSha256Hasher.Hash": "116098a52144d3f3077d0917b42ccd5d4525387ac5020daa466eb3eaa4256d47"

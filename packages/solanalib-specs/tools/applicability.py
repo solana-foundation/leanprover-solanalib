@@ -1,8 +1,9 @@
 """Match reviewed function profiles against an explicitly resolved build.
 
-This module ships with the specification package. It has no repository-tool,
-network, Cargo or Lean dependency. Eligibility selects an existing mathematical
-model; the returned interpretation conditions remain obligations of its user.
+An exported manifest needs only this module and the Python standard library.
+In a repository checkout, lookup reads the current registry through the local loader.
+Neither path requires network access, Cargo or Lean. Eligibility selects an existing
+mathematical model; the returned interpretation conditions remain user obligations.
 """
 
 from copy import deepcopy
@@ -322,7 +323,17 @@ def validate_manifest(value):
 
 
 def load_manifest(path=None):
-    path = Path(path) if path is not None else Path(__file__).resolve().parents[1] / "applicability.json"
+    package = Path(__file__).resolve().parents[1]
+    if path is None and (package / 'source-map.json').is_file():
+        import sys
+        support = package.parents[1] / 'tools/model-audit'
+        if not (support / 'solana_source_map.py').is_file():
+            raise ValueError('Registry lookup needs the repository loader; use --manifest with an exported manifest')
+        sys.path.insert(0, str(support))
+        from solana_source_map import load_source_map
+        from solana_applicability import normalized_applicability
+        return normalized_applicability(load_source_map(package))
+    path = Path(path) if path is not None else package / 'applicability.json'
     return validate_manifest(read_json(path.read_text()))
 
 

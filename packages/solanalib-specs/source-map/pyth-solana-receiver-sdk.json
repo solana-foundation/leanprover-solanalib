@@ -4,7 +4,7 @@
       "order": 130,
       "modules": {
         "Solanalib.Specs.PythSolanaReceiverSdk": "395df2d380be8ecbd881705023f680cf02c29bf912193071ea08f0bd678d8e1f",
-        "Solanalib.Specs.PythSolanaReceiverSdk.Capabilities": "fe4125463f8383fc988e291eae1c2b69e0ae18e982d61c45a0071fd54c113249",
+        "Solanalib.Specs.PythSolanaReceiverSdk.Capabilities": "bd4d2587fb1e1b044e6becd6026c5318ee10e9eed0cc98f2b7a57895fcc9cf8a",
         "Solanalib.Specs.PythSolanaReceiverSdk.PriceUpdate": "30a05cfc0044aaef49663ec58ba1db8804518c0e9152ffc0468b74f7f3495a71",
         "Solanalib.Specs.PythSolanaReceiverSdk.PriceUpdateDecode": "2ee853121a758f8b56fa88ccdc841c6c9e208d998c89a3b8e457d5e9ea0d804c"
       },

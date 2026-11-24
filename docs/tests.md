@@ -534,6 +534,7 @@ These suites test generators, source/identity checks, proof audits and native-re
 | [tools/model-audit/test_solana_source_bytes.py](../tools/model-audit/test_solana_source_bytes.py) | `just audit` |
 | [tools/model-audit/test_solana_specs.py](../tools/model-audit/test_solana_specs.py) | `just audit` |
 | [tools/model-audit/test_solana_versions.py](../tools/model-audit/test_solana_versions.py) | `just audit` |
+| [tools/model-audit/test_version_generation.py](../tools/model-audit/test_version_generation.py) | `just audit` |
 | [tools/runtime-conformance/test_adopt_recording.py](../tools/runtime-conformance/test_adopt_recording.py) | `just test-runtime` |
 | [tools/runtime-conformance/test_run.py](../tools/runtime-conformance/test_run.py) | `just test-runtime` |
 | [tools/library-conformance/test_build_probe.py](../tools/library-conformance/test_build_probe.py) | `just test-conformance` |

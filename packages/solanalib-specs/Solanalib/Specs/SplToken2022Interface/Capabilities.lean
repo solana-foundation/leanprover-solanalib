@@ -374,15 +374,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             interpretation; no allocation or invocation occurs in the modeled entry.",
             "Use a buildable exact dependency/feature profile with the key, error and \
             Instruction interpretations reviewed here; this does not quantify over every \
-            possible future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "Every API-bearing release checks Token-2022 first and then inline legacy Token \
-            by short-circuit key equality, returning IncorrectProgramId exactly when both \
-            differ. Equality is derived on the 32 bytes in the reviewed Pubkey/Address \
-            dependencies; there is no account-executable check, allocation or invocation. \
-            The only source changes in the selected function are Pubkey-to-Address type \
-            names. The 0.0.0 package is a placeholder with add, not this API."
+            possible future resolution of the published Cargo semver ranges."]
       }
     ]
     | .extension_BaseStateWithExtensions_get_extension => [
@@ -419,17 +411,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             added.", "Production library builds exclude cfg(test) extension variants. \
             Selected control-flow items have no target_os=solana branch.", "Exact resolved \
             providers, finite outcomes and representation observations are interpreted as \
-            the existing family requires."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "The concrete default lookup closure remains raw-tag based with account \
-            association first, first matching header before zero sentinel, unknown-tag \
-            skipping, selected-value bounds, then Pod size/alignment validation. Old \
-            spl-pod wrappers are source-equivalent to the direct bytemuck calls introduced \
-            in 3.0.0. Actual older V::TYPE values map into the existing generic \
-            representation index; no claim is made that later PermissionedBurn types \
-            existed earlier. The supporting observation remains narrower than arbitrary \
-            provider overrides."
+            the existing family requires."]
       }
     ]
     | .extension_BaseStateWithExtensions_get_extension_operational => [
@@ -466,15 +448,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             added.", "Production library builds exclude cfg(test) extension variants. \
             Selected control-flow items have no target_os=solana branch.", "Exact resolved \
             providers, finite outcomes and representation observations are interpreted as \
-            the existing family requires."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "Every API-bearing release invokes the resolved get_extension_bytes provider and \
-            then performs the same Pod cast. All actual finite provider outcomes and \
-            returned state/reference identity remain parameters. The spl-pod \
-            pod_from_bytes wrapper maps exactly the same Bytemuck size/alignment failures \
-            to InvalidArgument and adds no allocation or callback. No generic type or \
-            provider is specialized or strengthened."
+            the existing family requires."]
       }
     ]
     | .extension_BaseStateWithExtensions_get_extension_types => [
@@ -505,15 +479,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             added.", "Production library builds exclude cfg(test) extension variants. \
             Selected control-flow items have no target_os=solana branch.", "Exact resolved \
             providers, finite outcomes and representation observations are interpreted as \
-            the existing family requires."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-3.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "This explicitly pure ordered-list observation omits vector allocation/ownership \
-            and abnormal exits. Its whole value behavior first matches3.0.0, when \
-            PermissionedBurn tag28 is added. The later push-versus-bounds reordering does \
-            not change the pure result on immutable bytes. Ordered duplicates, zero \
-            sentinel, short-tail acceptance, unknown tags, short headers and bounds errors \
-            have been reviewed at every release."
+            the existing family requires."]
       }
     ]
     | .extension_BaseStateWithExtensions_get_extension_types_operational => [
@@ -544,16 +510,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             added.", "Production library builds exclude cfg(test) extension variants. \
             Selected control-flow items have no target_os=solana branch.", "Exact resolved \
             providers, finite outcomes and representation observations are interpreted as \
-            the existing family requires."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-3.1.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "Versions before 3.0.0 also reject tag28. More broadly every release through \
-            3.0.1 pushes a recognized tag before reading/checking payload length, while \
-            the existing full family validates the entry before push. Native \
-            allocation/reallocation counts and allocator-failure terminal probes \
-            distinguish the paths. Starting with 3.1.0 the visitor callback runs only \
-            after complete bounds checks; accessor effects, current reads, vector \
-            identity, pushes, cleanup and abnormal exits match the existing family."
+            the existing family requires."]
       }
     ]
     | .extension_BaseStateWithExtensions_get_extension_types_push_before_payload => [
@@ -580,27 +537,14 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The source usize lengths, slice offsets and saturating arithmetic are \
-              interpreted at the reviewed 64-bit width; source cfg selection alone does \
-              not prove SBF layout."
+          «exclude» := []
         }],
         conditions :=
           ["Ordinary dependency compilation with cfg(test) unset; no test-only extension \
             enum variants.", "Interpret the indexed accessors, borrowed source ranges, \
             vector allocation/push/drop, base Pack and owned-base destruction at their \
             reached source call sites. Finite unwind and terminal exits retain their \
-            effects; no callback success or whole-call result is assumed."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-2.1.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-2.0.0.crate"],
-        argument :=
-          "Preserve accessor-before-allocation and type/length-header checks followed by \
-            push BEFORE payload bounds validation, with source-order cleanup and actual \
-            vector ownership. A failing push can precede malformed-payload rejection; the \
-            later bounds-before-push scan differs. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            effects; no callback success or whole-call result is assumed."]
       }
     ]
     | .extension_ExtensionType_get_required_init_account_extensions => [
@@ -628,26 +572,14 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The source usize lengths, slice offsets and saturating arithmetic are \
-              interpreted at the reviewed 64-bit width; source cfg selection alone does \
-              not prove SBF layout."
+          «exclude» := []
         }],
         conditions :=
           ["Ordinary dependency compilation with cfg(test) unset; no test-only extension \
             enum variants.", "Interpret the immutable source enum slice and the reached \
             Vec empty/push/drop operations, retaining each finite unwind or terminal exit \
             and the same live result owner. This method has no base parser or base \
-            destructor."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-2.1.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-2.0.0.crate"],
-        argument :=
-          "Preserve the empty Vec and ordered per-input pushes, including duplicates and \
-            NonTransferableAccount then ImmutableOwner. Do not replace the reached \
-            allocation/push protocol by a flat_map/collect protocol merely because \
-            successful lists agree. The declared range is a complete-operation \
-            preservation assumption; inspected releases, native runs, exact ABI \
-            observations and source-call implementation obligations remain separate."
+            destructor."]
       }
     ]
     | .extension_ExtensionType_try_calculate_account_len => [
@@ -672,11 +604,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The source usize lengths, slice offsets and saturating arithmetic are \
-              interpreted at the reviewed 64-bit width; source cfg selection alone does \
-              not prove SBF layout."
+          «exclude» := []
         }],
         conditions :=
           ["Ordinary dependency compilation with cfg(test) unset; no test-only extension \
@@ -687,16 +615,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             manages internal iterator/vector child borrowing and repays the original input \
             region on continuing outcomes; equal addresses do not supply child access \
             permission. The concrete Mint and Account bindings use 82 and 165 \
-            respectively. This method does not parse or destroy a base-state value."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-2.1.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-2.0.0.crate"],
-        argument :=
-          "Preserve full temporary-reference deduplication before type-size calculation, \
-            actual first-occurrence references, cleanup, base/marker and multisig \
-            adjustment. The 28-kind/299-byte bounds are derived, not caller assumptions. \
-            The later PermissionedBurn enum and sizing/iterator families are outside this \
-            profile. The declared range is a complete-operation preservation assumption; \
-            inspected releases, native runs, exact ABI observations and source-call \
-            implementation obligations remain separate."
+            respectively. This method does not parse or destroy a base-state value."]
       }
     ]
     | .extension_StateWithExtensions_unpack => [
@@ -726,17 +645,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             added.", "Production library builds exclude cfg(test) extension variants. \
             Selected control-flow items have no target_os=solana branch.", "Exact resolved \
             providers, finite outcomes and representation observations are interpreted as \
-            the existing family requires."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-3.1.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "Although every tested ordinary packed-Mint/Account result matches all releases, \
-            this supporting contract is still a family preserving actual parser exits and \
-            returned state, with immutable bytes and trivial base destruction. It has no \
-            post-parser allocation provider or allocation-success condition. The old \
-            padding allocation creates an extra terminal outcome after a successful \
-            parser; all pre-3.1 native allocation-failure probes abort. Full-family \
-            correspondence therefore starts at 3.1.0 without weakening it to ordinary \
-            returns only."
+            the existing family requires."]
       }
     ]
     | .extension_StateWithExtensions_unpack_operational => [
@@ -766,17 +675,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             added.", "Production library builds exclude cfg(test) extension variants. \
             Selected control-flow items have no target_os=solana branch.", "Exact resolved \
             providers, finite outcomes and representation observations are interpreted as \
-            the existing family requires."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-3.1.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "The top-level unpack is identical at all API-bearing releases, but through \
-            3.0.1 type_and_tlv_indices allocates vec![0; padding] after successful \
-            parsing. The existing operational family has parser/destructor providers and \
-            no padding allocator; the old global allocator state effects and terminal \
-            abort cannot be assigned to the earlier completed parser. Starting with 3.1.0 \
-            iter().any removes this allocation. Exact generic parser calls, base \
-            destruction, error precedence and static-versus-borrowed tail origins remain \
-            unchanged."
+            the existing family requires."]
       }
     ]
     | .extension_StateWithExtensions_unpack_owned_base => [
@@ -800,26 +699,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The source usize lengths, slice offsets and saturating arithmetic are \
-              interpreted at the reviewed 64-bit width; source cfg selection alone does \
-              not prove SBF layout."
+          «exclude» := []
         }],
         conditions :=
           ["Interpret the indexed accessors, borrowed source ranges, vector \
             allocation/push/drop, base Pack and owned-base destruction at their reached \
             source call sites. Finite unwind and terminal exits retain their effects; no \
-            callback success or whole-call result is assumed."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-3.0.1.crate"],
-        argument :=
-          "The declared compatible range assumes minimum-length and multisig-collision \
-            checks before the actual generic Pack::unpack; tail failure/unwind destroys \
-            the owned base. A nonempty remainder allocates a zero-filled padding Vec, \
-            captures the comparison, drops that temporary, and only then reads/checks the \
-            current account marker. Ending exactly at the marker returns an empty borrowed \
-            tail, not a validated TLV stream. The allocation-removing 3.1.0 tail \
-            implementation is excluded."
+            callback success or whole-call result is assumed."]
       },
       {
         id := "spl-token-2022-interface-2.1.0-extension-StateWithExtensions-unpack",
@@ -841,26 +727,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The source usize lengths, slice offsets and saturating arithmetic are \
-              interpreted at the reviewed 64-bit width; source cfg selection alone does \
-              not prove SBF layout."
+          «exclude» := []
         }],
         conditions :=
           ["Interpret the indexed accessors, borrowed source ranges, vector \
             allocation/push/drop, base Pack and owned-base destruction at their reached \
             source call sites. Finite unwind and terminal exits retain their effects; no \
-            callback success or whole-call result is assumed."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-2.1.0.crate"],
-        argument :=
-          "The declared compatible range assumes minimum-length and multisig-collision \
-            checks before the actual generic Pack::unpack; tail failure/unwind destroys \
-            the owned base. A nonempty remainder allocates a zero-filled padding Vec, \
-            captures the comparison, drops that temporary, and only then reads/checks the \
-            current account marker. Ending exactly at the marker returns an empty borrowed \
-            tail, not a validated TLV stream. The allocation-removing 3.1.0 tail \
-            implementation is excluded."
+            callback success or whole-call result is assumed."]
       }
     ]
     | .extension_account_len_try_calculate_account_len_from_mint_data => [
@@ -892,16 +765,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             added.", "Production library builds exclude cfg(test) extension variants. \
             Selected control-flow items have no target_os=solana branch.", "Exact resolved \
             providers, finite outcomes and representation observations are interpreted as \
-            the existing family requires."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-3.1.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "The API is first published in3.1.0. Its full account_len.rs file is identical \
-            through4.0.0, as are reached enum, type map, padding and scan helper bodies. \
-            PodMint initialization and InvalidMint conversion, requested-kind-before-mint \
-            error order, production fixed layouts, required-extension groups, local bitset \
-            deduplication and allocation-free accumulation remain unchanged. All modern \
-            released dependencies retain those layouts; unrelated4.0.0 AccountView resize \
-            APIs are not reached."
+            the existing family requires."]
       }
     ]
     | .extension_transfer_fee_TransferFee_calculate_fee => [
@@ -937,17 +801,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             all UInt16 rates are admitted; no rate <= 10000 bound and no successful-return \
             assumption is introduced.", "Source correspondence uses the existing \
             decoded-field and checked-primitive assumptions.", "The reached fee methods, \
-            constants and integer read conversions have no target or serde feature branch."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "All nine sources decode the full u16 rate, short-circuit only zero rate/amount, \
-            checked-multiply in u128, invoke the identical checked-add/subtract/divide \
-            ceil_div helper, narrow the uncapped result to u64, then apply cmp::min with \
-            the decoded cap. In particular a raw fee exceeding u64::MAX yields None even \
-            with cap zero. The record is immutable. The old Pod wrappers and later \
-            zero-copy wrappers have reviewed unconditional little-endian conversions. \
-            Source declaration/representation, constant and reached-helper review \
-            supplements the equal body hashes and native cases."
+            constants and integer read conversions have no target or serde feature branch."]
       }
     ]
     | .extension_transfer_fee_TransferFee_calculate_post_fee_amount => [
@@ -985,15 +839,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             all UInt16 rates are admitted; no rate <= 10000 bound and no successful-return \
             assumption is introduced.", "Source correspondence uses the existing \
             decoded-field and checked-primitive assumptions.", "The reached fee methods, \
-            constants and integer read conversions have no target or serde feature branch."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "All nine sources first execute calculate_fee, including its checked u128 helper \
-            and narrowing-before-cap failure, then checked_sub the resulting u64 fee from \
-            the requested amount. They preserve the full record and permit None both from \
-            fee calculation and subtraction. The relevant source closure includes \
-            calculate_fee, ceil_div, both constants and the old/new exact field \
-            conversions, not merely this one-line body."
+            constants and integer read conversions have no target or serde feature branch."]
       }
     ]
     | .extension_transfer_fee_TransferFee_calculate_pre_fee_amount => [
@@ -1031,18 +877,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             all UInt16 rates are admitted; no rate <= 10000 bound and no successful-return \
             assumption is introduced.", "Source correspondence uses the existing \
             decoded-field and checked-primitive assumptions.", "The reached fee methods, \
-            constants and integer read conversions have no target or serde feature branch."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "All nine sources read the decoded cap/rate and preserve ordered branches: zero \
-            rate, zero requested output, exactly 10000 basis points with checked \
-            cap-plus-output, then checked u128 multiplication, checked scale-minus-rate, \
-            ceil_div, checked raw-minus-output, cap comparison and either checked \
-            output-plus-cap or narrowing of raw input. Positive outputs above 10000 fail \
-            even at cap zero; zero output still succeeds. Zero cap can recover u64::MAX \
-            before an uncapped narrowing would fail. These operations, conversions, helper \
-            and constants match the existing total model without restricting the decoded \
-            u16 domain."
+            constants and integer read conversions have no target or serde feature branch."]
       }
     ]
     | .extension_transfer_fee_TransferFeeConfig_calculate_epoch_fee => [
@@ -1074,10 +909,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["0.7.3"],
-          reason :=
-            "Reviewed unsigned little-endian fields, nullable key and Pod conversion \
-              definitions consumed by this function."
+          releases := ["0.7.3"]
         }, {
           package := "solana-zero-copy",
           source := some {
@@ -1085,19 +917,8 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.0.1"],
-          reason :=
-            "The selected spl-pod release re-exports its U16/U64 little-endian conversion \
-              implementations from this exact source dependency."
-        }],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-2.1.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-2.0.0.crate"],
-        argument :=
-          "Preserve unsigned little-endian Pod decoding, newer-fee selection at epoch \
-            equality, checked ceiling arithmetic, u64 narrowing BEFORE maximum-fee capping \
-            and None for applicable invalid raw rates. No basis-point-domain precondition \
-            is added. The declared range is a complete-operation preservation assumption; \
-            inspected releases, native runs, exact ABI observations and source-call \
-            implementation obligations remain separate."
+          releases := ["1.0.1"]
+        }]
       }
     ]
     | .extension_transfer_fee_TransferFeeConfig_get_epoch_fee => [
@@ -1135,16 +956,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             all UInt16 rates are admitted; no rate <= 10000 bound and no successful-return \
             assumption is introduced.", "Source correspondence uses the existing \
             decoded-field and checked-primitive assumptions.", "The reached fee methods, \
-            constants and integer read conversions have no target or serde feature branch."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "All nine sources compare the requested epoch to the currently decoded newer \
-            epoch and return a reference to newer on >=, otherwise older. The copied-value \
-            observation preserves the entire configuration and does not claim \
-            returned-reference identity. Source review includes the old/new integer \
-            representations; the older activation epoch, authority bytes and withheld \
-            amount are not inspected or changed. This observation has no independently \
-            registered Rust callable identity."
+            constants and integer read conversions have no target or serde feature branch."]
       }
     ]
     | .extension_transfer_fee_TransferFeeConfig_get_epoch_fee_live => [
@@ -1191,18 +1003,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             related to the corresponding source field location.", "For admitted valid \
             source reads, U64-to-u64 conversion, comparison and shared field projection \
             have the modeled ordinary return behavior. No callback, allocation, borrow \
-            acquisition or guard consumption occurs in this method."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "All nine sources return the actual shared field reference of the existing \
-            receiver, newer on epoch >= current newer epoch and older otherwise, with \
-            unchanged state. There is no callback, allocation, borrow-guard acquisition or \
-            consumption in the reached closure. Reviewed PodU64/U64 conversions are \
-            ordinary little-endian reads; field location and live parent permissions \
-            remain the existing source interpretation obligations. Native pointer \
-            comparisons distinguish both fields and two equal-valued parent \
-            configurations. The generic family is preserved; these samples do not prove \
-            arbitrary lifetimes or a Rust memory interpretation."
+            acquisition or guard consumption occurs in this method."]
       }
     ]
     | .id => [
@@ -1236,15 +1037,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             interpretation; no allocation or invocation occurs in the modeled entry.",
             "Use a buildable exact dependency/feature profile with the key, error and \
             Instruction interpretations reviewed here; this does not quantify over every \
-            possible future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "The declared base58 literal is unchanged in every API-bearing release. The \
-            reached declare_id macro returns the exact 32-byte constant. Pubkey 2.4.0 is a \
-            transparent [u8; 32]; Pubkey 3 and 4 reexport Address through the recorded \
-            dependency profiles. Address macros distinguish a bpf static ID from a non-bpf \
-            const ID, but id() returns the same constant bytes in both branches and \
-            performs no allocation. The 0.0.0 release lacks the selected root-level API."
+            possible future resolution of the published Cargo semver ranges."]
       }
     ]
     | .instruction_close_account => [
@@ -1291,17 +1084,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             to the full existing outcome/current-resource/ownership/frame laws.",
             "Use a buildable exact dependency/feature profile with the key, error and \
             Instruction interpretations reviewed here; this does not quantify over every \
-            possible future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "Every API-bearing release accepts either program before allocation, packs tag 9 \
-            with one push, then calls Vec::with_capacity(3 + signer count) and pushes \
-            source/destination/authority/signers in source order. Authority is a signer \
-            iff no explicit signers, duplicates are preserved and no execution-state check \
-            is performed. Selected source bodies are identical modulo Pubkey/Address, with \
-            unchanged reached check, pack arm and metadata constructors. The full family \
-            preserves data-first resource lifetime and partial-metadata-before-data \
-            cleanup. The 0.0.0 API is absent."
+            possible future resolution of the published Cargo semver ranges."]
       }
     ]
     | .instruction_close_account_value => [
@@ -1339,20 +1122,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             outcome; do not add a successful-allocation precondition.", "Use a buildable \
             exact dependency/feature profile with the key, error and Instruction \
             interpretations reviewed here; this does not quantify over every possible \
-            future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "Every API-bearing release accepts either program before allocation, packs tag 9 \
-            with one push, then calls Vec::with_capacity(3 + signer count) and pushes \
-            source/destination/authority/signers in source order. Authority is a signer \
-            iff no explicit signers, duplicates are preserved and no execution-state check \
-            is performed. Selected source bodies are identical modulo Pubkey/Address, with \
-            unchanged reached check, pack arm and metadata constructors. The full family \
-            preserves data-first resource lifetime and partial-metadata-before-data \
-            cleanup. The 0.0.0 API is absent. This entry is only the existing value \
-            observation; compatible releases share admission and returned values, while \
-            allocation, owned-resource lifecycle and abnormal exits remain covered by the \
-            separately registered full family."
+            future resolution of the published Cargo semver ranges."]
       }
     ]
     | .instruction_initialize_account3 => [
@@ -1399,18 +1169,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             to the full existing outcome/current-resource/ownership/frame laws.",
             "Use a buildable exact dependency/feature profile with the key, error and \
             Instruction interpretations reviewed here; this does not quantify over every \
-            possible future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "The crate-specific program check runs first: legacy-only for \
-            spl-token-interface, either token program for spl-token-2022-interface. The \
-            builder packs tag 18 by a single push followed by one owner-byte extend, then \
-            constructs a two-entry metadata literal (writable nonsigner account, readonly \
-            nonsigner mint); owner appears only in the data. The body and selected packing \
-            branch match in all API-bearing releases modulo key-type spelling. The full \
-            family retains data-before-metadata allocation, target enumSize reservation, \
-            actual vector identities, dependency outcomes and cleanup. The 0.0.0 API is \
-            absent."
+            possible future resolution of the published Cargo semver ranges."]
       }
     ]
     | .instruction_initialize_account3_value => [
@@ -1448,21 +1207,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             outcome; do not add a successful-allocation precondition.", "Use a buildable \
             exact dependency/feature profile with the key, error and Instruction \
             interpretations reviewed here; this does not quantify over every possible \
-            future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "The crate-specific program check runs first: legacy-only for \
-            spl-token-interface, either token program for spl-token-2022-interface. The \
-            builder packs tag 18 by a single push followed by one owner-byte extend, then \
-            constructs a two-entry metadata literal (writable nonsigner account, readonly \
-            nonsigner mint); owner appears only in the data. The body and selected packing \
-            branch match in all API-bearing releases modulo key-type spelling. The full \
-            family retains data-before-metadata allocation, target enumSize reservation, \
-            actual vector identities, dependency outcomes and cleanup. The 0.0.0 API is \
-            absent. This entry is only the existing value observation; compatible releases \
-            share admission and returned values, while allocation, owned-resource \
-            lifecycle and abnormal exits remain covered by the separately registered full \
-            family."
+            future resolution of the published Cargo semver ranges."]
       }
     ]
     | .instruction_transfer_checked => [
@@ -1509,18 +1254,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             to the full existing outcome/current-resource/ownership/frame laws.",
             "Use a buildable exact dependency/feature profile with the key, error and \
             Instruction interpretations reviewed here; this does not quantify over every \
-            possible future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "Every API-bearing release accepts either token program before allocation; pack \
-            reserves size_of<TokenInstruction>, pushes tag 12, extends the eight \
-            little-endian amount bytes, then separately pushes the decimals byte. The \
-            builder reserves 4 + signer count metadata and pushes writable source, \
-            readonly mint, writable destination, readonly authority and every readonly \
-            signer in order. It imposes no mint-decimal, balance or signer-limit \
-            validation. Reached bodies and arm match modulo key type. Full family \
-            allocation calls, resource identities, exceptional dependency exits and \
-            cleanup remain intact; 0.0.0 lacks the API."
+            possible future resolution of the published Cargo semver ranges."]
       }
     ]
     | .instruction_transfer_checked_value => [
@@ -1558,21 +1292,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             outcome; do not add a successful-allocation precondition.", "Use a buildable \
             exact dependency/feature profile with the key, error and Instruction \
             interpretations reviewed here; this does not quantify over every possible \
-            future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "Every API-bearing release accepts either token program before allocation; pack \
-            reserves size_of<TokenInstruction>, pushes tag 12, extends the eight \
-            little-endian amount bytes, then separately pushes the decimals byte. The \
-            builder reserves 4 + signer count metadata and pushes writable source, \
-            readonly mint, writable destination, readonly authority and every readonly \
-            signer in order. It imposes no mint-decimal, balance or signer-limit \
-            validation. Reached bodies and arm match modulo key type. Full family \
-            allocation calls, resource identities, exceptional dependency exits and \
-            cleanup remain intact; 0.0.0 lacks the API. This entry is only the existing \
-            value observation; compatible releases share admission and returned values, \
-            while allocation, owned-resource lifecycle and abnormal exits remain covered \
-            by the separately registered full family."
+            future resolution of the published Cargo semver ranges."]
       }
     ]
     | .instruction_withdraw_excess_lamports => [
@@ -1619,19 +1339,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             to the full existing outcome/current-resource/ownership/frame laws.",
             "Use a buildable exact dependency/feature profile with the key, error and \
             Instruction interpretations reviewed here; this does not quantify over every \
-            possible future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "Every API-bearing release rejects the legacy and all other programs before \
-            allocation. It first constructs a three-entry metadata literal, then pushes \
-            all signer keys, and only then evaluates \
-            TokenInstruction::WithdrawExcessLamports.pack in the returned Instruction data \
-            field (reserve enumSize, push tag 38). This differs from the other builders, \
-            and exactly matches the existing metasThenData/fromListThenPush family. \
-            Signer-push unwind drops partial metadata without starting pack; packing \
-            unwind drops partial bytes before the already-moved metadata. Completed \
-            Instruction drop still retires metadata before bytes. All selected bodies/arms \
-            match modulo key type; 0.0.0 is absent."
+            possible future resolution of the published Cargo semver ranges."]
       }
     ]
     | .instruction_withdraw_excess_lamports_value => [
@@ -1669,22 +1377,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             outcome; do not add a successful-allocation precondition.", "Use a buildable \
             exact dependency/feature profile with the key, error and Instruction \
             interpretations reviewed here; this does not quantify over every possible \
-            future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate"],
-        argument :=
-          "Every API-bearing release rejects the legacy and all other programs before \
-            allocation. It first constructs a three-entry metadata literal, then pushes \
-            all signer keys, and only then evaluates \
-            TokenInstruction::WithdrawExcessLamports.pack in the returned Instruction data \
-            field (reserve enumSize, push tag 38). This differs from the other builders, \
-            and exactly matches the existing metasThenData/fromListThenPush family. \
-            Signer-push unwind drops partial metadata without starting pack; packing \
-            unwind drops partial bytes before the already-moved metadata. Completed \
-            Instruction drop still retires metadata before bytes. All selected bodies/arms \
-            match modulo key type; 0.0.0 is absent. This entry is only the existing value \
-            observation; compatible releases share admission and returned values, while \
-            allocation, owned-resource lifecycle and abnormal exits remain covered by the \
-            separately registered full family."
+            future resolution of the published Cargo semver ranges."]
       }
     ]
     | .state_Mint_clone => [
@@ -1712,10 +1405,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.0"],
-          reason :=
-            "The selected COption<Address> provider is assumed to preserve its \
-              representation, None/Some discriminant and complete payload during Clone, \
-              without allocation or additional effects.",
           compatibleRanges := [{
             lower := "3.1.0",
             upper := "4.0.0"
@@ -1728,10 +1417,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.6.1"],
-          reason :=
-            "The selected defining Address is assumed to remain a transparent 32-byte Copy \
-              value whose Clone preserves every byte without allocation or callbacks; this \
-              does not admit arbitrary generic Clone implementations.",
           compatibleRanges := [{
             lower := "2.6.1",
             upper := "3.0.0"
@@ -1743,17 +1428,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             retain legal shared access to the caller-owned record.", "The mathematical \
             model is an unconditional complete value copy. Source representation, compiler \
             and Rust implementation correspondence remain separate; no account-parser or \
-            initialized-mint condition is imposed."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-3.1.1.crate", "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-3.1.2.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-3.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.6.1.crate"],
-        argument :=
-          "The reviewed 3.1.1 and 3.1.2 state.rs files are byte-identical. Derived Clone \
-            copies all five fields of the concrete repr(C) Mint, retaining the receiver \
-            without allocation or user callbacks; neither Pack nor IsInitialized is \
-            called. COption<Address> preserves None versus Some and all 32 payload bytes. \
-            The declared compatible range assumes preservation of that complete copy and \
-            the selected field providers. A separate Rust binding must check the actual \
-            88-byte host layout; native recordings serialize 82 logical account bytes and \
-            do not prove target-layout equivalence."
+            initialized-mint condition is imposed."]
       }
     ]
   applicabilityConsumers := fun key => match key with

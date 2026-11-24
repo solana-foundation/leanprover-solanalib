@@ -74,31 +74,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The mathematical length and source usize use the reviewed 64-bit width before \
-              the u64 integer/binary64 calculation."
+          «exclude» := []
         }],
         conditions :=
           ["Interpret usize as 64 bits and binary64 with round-to-nearest ties-to-even and \
             gradual underflow. Preserve the selected checked/wrapping integer overflow and \
             unwind/abort profile; NaN payloads are unobserved by the final saturating u64 \
-            cast."],
-        evidence := ["https://static.crates.io/crates/solana-rent/solana-rent-2.2.1.crate", "https://static.crates.io/crates/solana-rent/solana-rent-3.0.0.crate", "https://static.crates.io/crates/solana-rent/solana-rent-3.1.0.crate"],
-        argument :=
-          "The reviewed sources retain overhead 128, u64 rate, f64 threshold and ignored \
-            burn_percent. minimum_balance adds the u64 length to overhead, multiplies the \
-            integer rate, rounds that integer to binary64, multiplies the arbitrary \
-            threshold and saturating-casts to u64. is_exempt calls that computation first \
-            and compares balance >= the returned minimum; integer failures occur before \
-            comparison. Arbitrary public fields, nonfinite values and both overflow \
-            profiles remain admitted. The declared compatible range assumes preservation \
-            of this complete calculation, integer overflow behavior, binary64 rounding and \
-            casts, and failure-before-comparison order for all public field values. The \
-            3.0.0 and 3.1.0 references preserve the threshold arithmetic and overflow \
-            behavior. Compatibility in 3.x assumes that protocol is unchanged. Version \
-            4.0.0 replaces the public f64 threshold with private bytes and adds size/rate \
-            validation plus specialized arithmetic; it is excluded."
+            cast."]
       }
     ]
     | .Rent_minimum_balance => [
@@ -126,10 +108,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The complete arbitrary-field rent model preserves the reviewed 64-bit \
-              integer-before-binary64 evaluation order."
+          «exclude» := []
         }],
         conditions :=
           ["64-bit usize and binary64 round-to-nearest ties-to-even with gradual \
@@ -137,25 +116,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             payloads are unobserved by the final u64 cast.", "Retain arbitrary \
             representable field values, the exact integer-before-floating evaluation \
             order, explicit checked/wrapping overflow and panic profiles, 64-bit usize and \
-            binary64 round-to-nearest ties-to-even with gradual underflow."],
-        evidence := ["https://static.crates.io/crates/solana-rent/solana-rent-0.0.2.crate", "https://static.crates.io/crates/solana-rent/solana-rent-3.1.0.crate"],
-        argument :=
-          "All 25 real releases through 3.1.0 have the same expression, u64 rate, f64 \
-            threshold and overhead 128. The source first casts data_len to u64, adds \
-            overhead, multiplies the integer rate, casts that result to f64, multiplies \
-            the arbitrary f64 threshold, and casts to u64. Checked overflow and wrapping \
-            overflow remain different profiles; arbitrary thresholds, NaN, infinities, \
-            signed zero, rounding and saturating casts remain in scope. burn_percent is \
-            ignored. All seven 4.x releases rename the rate field, replace the f64 field \
-            by little-endian bytes, change Default to rate 6960 and threshold 1.0, route \
-            through try_minimum_balance().expect(), reject lengths above 10 MiB and \
-            excessive rates, and use integer shortcuts for thresholds 1.0 and 2.0. Other \
-            thresholds retain a host floating calculation and panic on the BPF branch. \
-            4.0.0 makes the byte threshold and burn fields private; 4.1.0 and later make \
-            them public and deprecated. The new guards already refute complete-contract \
-            correspondence, even under a numerical embedding of the new fields. Native \
-            4.0.0 and 4.5.0 counterexamples distinguish those guards from mere \
-            representation changes."
+            binary64 round-to-nearest ties-to-even with gradual underflow."]
       }
     ]
   applicabilityConsumers := fun key => match key with

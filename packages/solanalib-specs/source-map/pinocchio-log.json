@@ -14,7 +14,7 @@
       "modules": {
         "Solanalib.Specs.PinocchioLog.Logger": "b6df7c3dedab4977769719425d6bc2b121348e753a1965dd6c16c577bdf09309",
         "Solanalib.Specs.PinocchioLog": "eed92121d2941abd5ef808cd43d8d685d4d16976ac8a2cd67baa2b1b5ea78ef0",
-        "Solanalib.Specs.PinocchioLog.Capabilities": "68c04f1a92adaa8319fa356ed7d7bb560be6802539308cb44045b19bc890ec3d"
+        "Solanalib.Specs.PinocchioLog.Capabilities": "b07d031406ca72ee341a962b01d8df6a689224f917cf1851f77954c79262d297"
       }
     }
   },

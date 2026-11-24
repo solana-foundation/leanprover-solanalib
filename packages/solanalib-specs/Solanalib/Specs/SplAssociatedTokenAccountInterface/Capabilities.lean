@@ -69,15 +69,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "The selected source passes 64-bit slice counts to the runtime ABI."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Select the reviewed runtime syscall branch; the host retry/crypto branch is \
-              separate."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -87,10 +83,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.0"],
-          reason :=
-            "Assume the selected Pubkey facade retains its defining Address identity, \
-              complete key representation and the reached copy/PDA operation; the concrete \
-              provider and full ABI join remain separate.",
           compatibleRanges := [{
             lower := "3.0.0",
             upper := "4.0.0"
@@ -103,10 +95,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.6.0", "2.6.1"],
-          reason :=
-            "Assume the defining Address retains the complete 32-byte representation and \
-              selected Solana PDA search, including MaybeUninit output, ordered seeds, \
-              status/panic behavior and actual callback effects.",
           compatibleRanges := [{
             lower := "2.6.0",
             upper := "3.0.0"
@@ -122,13 +110,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the defining Address 2.6.0/2.6.1. The single-package dependency projection \
             does not independently validate the intermediate same-named facade.",
             "The actual status-zero PDA reply initializes the address destination. This \
-            premise is imposed only at the reached call."],
-        evidence := ["https://static.crates.io/crates/spl-associated-token-account-interface/spl-associated-token-account-interface-2.0.0.crate"],
-        argument :=
-          "The declared compatible range assumes ordered wallet/token-program/mint seeds, \
-            the fixed ATA ID, the actual dependency PDA search and discarding only its \
-            returned bump. The selected facade reaches MaybeUninit Address search; a \
-            zero-initialized output profile is not interchangeable."
+            premise is imposed only at the reached call."]
       }
     ]
   applicabilityConsumers := fun key => match key with

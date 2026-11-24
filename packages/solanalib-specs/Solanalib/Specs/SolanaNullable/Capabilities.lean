@@ -61,15 +61,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             that default is selected. Do not assume the query is pure or is a zero \
             comparison.", "Interpret payloads as retained identities and put mutable \
             interior contents in State. Bind dropValue and doubleUnwind to the actual \
-            destructor and panic runtime, including their cleanup and terminal outcomes."],
-        evidence := ["https://static.crates.io/crates/solana-nullable/solana-nullable-1.3.0.crate"],
-        argument :=
-          "Reference 1.3.0 calls the actual Nullable::is_none, including overrides, then \
-            moves a non-null value or drops the null owner before returning None. Query \
-            unwind cleans the retained owner in the reached state; a second unwind is \
-            terminal. A terminal query performs no later drop. The declared compatible \
-            range assumes preservation of this callback order, ownership transfer, cleanup \
-            and exceptional behavior."
+            destructor and panic runtime, including their cleanup and terminal outcomes."]
       },
       {
         id := "address-2-6-1",
@@ -94,10 +86,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.6.1"],
-          reason :=
-            "The selected defining Address provider is assumed to preserve its transparent \
-              32-byte representation, all-zero Nullable sentinel, byte equality and \
-              trivial cleanup.",
           compatibleRanges := [{
             lower := "2.6.1",
             upper := "3.0.0"
@@ -113,16 +101,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             callback family remains required for other payloads.", "The recorded ABI is a \
             transparent MaybeNull containing a transparent 32-byte Address, returning a \
             33-byte Option with a byte tag and complete payload. Source binding and \
-            implementation correctness remain explicit obligations."],
-        evidence := ["https://static.crates.io/crates/solana-nullable/solana-nullable-1.3.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.6.1.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.10.2.crate"],
-        argument :=
-          "The reference Address Nullable implementation uses the all-zero NONE value and \
-            default borrowed equality query. Address and its NONE temporary have trivial \
-            drop, so this concrete index has no callback, cleanup or terminal effects. The \
-            declared compatible ranges assume preservation of the transparent 32-byte \
-            payload, equality, sentinel and trivial cleanup; other payloads retain the \
-            generic callback family. Exact native calls and emitted type layouts are \
-            recorded in source-notes/error-nullable.md."
+            implementation correctness remain explicit obligations."]
       }
     ]
   applicabilityConsumers := fun key => match key with

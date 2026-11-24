@@ -4,7 +4,7 @@
       "order": 128,
       "modules": {
         "Solanalib.Specs.PinocchioToken": "062c4393d09435f7fed22643347a517d6f37575edbf73b0916fdd752251478f0",
-        "Solanalib.Specs.PinocchioToken.Capabilities": "ad0c6bb289c8c261d7d810609c491974c9fe739c42293cee8cc86aa4bc5f7980",
+        "Solanalib.Specs.PinocchioToken.Capabilities": "901b70d042ea357d840022e3ea54feee2b13f513e36d9e655eb6c5fb814dacc8",
         "Solanalib.Specs.PinocchioToken.Instructions": "32755f8eff782f4b2bf58543f3e79ecbe32d476b649fdff1a1160552185647a1",
         "Solanalib.Specs.PinocchioToken.State": "32c11e19093d84ccb116fc292f555ad3c66302aeccd2600c4bd8368c5dd16392"
       },

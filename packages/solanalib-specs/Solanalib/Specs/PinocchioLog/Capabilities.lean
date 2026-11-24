@@ -98,14 +98,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Instantiate Log::write_with_args at the empty argument slice and the actual \
             by-value destructor. The unsafe Log trait law requires a truthful \
             initialized-byte count within the supplied tail and preserves its extent; \
-            source callback effects and cleanup remain explicit."],
-        evidence := ["https://static.crates.io/crates/pinocchio-log/pinocchio-log-0.5.1.crate"],
-        argument :=
-          "The 0.5.1 archive is the inspected reference. The declared 0.5 range assumes \
-            the same full/zero-capacity branch, initialized-prefix writes, truncation, \
-            by-value Log destructor, receiver identity and partial state through \
-            formatter/drop unwind and double-unwind termination. Macro enablement, source \
-            layout and runtime interpretation remain separate."
+            source callback effects and cleanup remain explicit."]
       }
     ]
     | .logger_Logger_default => [
@@ -130,13 +123,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layouts, and source result representation separately. These contracts are \
             assumed SDK interfaces, not Rust implementation proofs.", "The capacity is the \
             actual BUFFER const argument. Retain initialized-prefix and full \
-            backing-storage representation, receiver identity and permissions."],
-        evidence := ["https://static.crates.io/crates/pinocchio-log/pinocchio-log-0.5.1.crate"],
-        argument :=
-          "The 0.5.1 archive is the inspected reference. The declared 0.5 range assumes \
-            the same uninitialized backing array with length zero and no invented \
-            initialized suffix. Macro enablement, source layout and runtime interpretation \
-            remain separate."
+            backing-storage representation, receiver identity and permissions."]
       }
     ]
     | .logger_Logger_log => [
@@ -158,17 +145,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "The contract uses the Solana syscall branch; the native host fallback \
-            differs."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "This profile binds the named dynamic extern sol_log_ declaration; the hashed \
-              static-call ABI is not included."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["Bind actual pointer provenance, lifetimes, target integer and aggregate \
@@ -177,14 +159,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             actual BUFFER const argument. Retain initialized-prefix and full \
             backing-storage representation, receiver identity and permissions.",
             "Bind the actual dynamic sol_log_ provider. Normal completion gives no UTF-8 \
-            validity or runtime success guarantee; the provider may terminate."],
-        evidence := ["https://static.crates.io/crates/pinocchio-log/pinocchio-log-0.5.1.crate"],
-        argument :=
-          "The 0.5.1 archive is the inspected reference. The declared 0.5 range assumes \
-            the same current initialized prefix and length forwarded to the Solana logger, \
-            preserving provider effects and terminal outcomes; the host UTF-8/println path \
-            stays outside the source profile. Macro enablement, source layout and runtime \
-            interpretation remain separate."
+            validity or runtime success guarantee; the provider may terminate."]
       }
     ]
     | .logger_syscalls_sol_memcpy_ => [
@@ -206,23 +181,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -236,13 +204,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/pinocchio-log/pinocchio-log-0.5.1.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The 0.5.1 archive is the inspected reference. The declared 0.5 range assumes \
-            this exact dynamically dispatched extern-C memcpy declaration, argument order \
-            and unit return under the existing Solana and 64-bit gates. Macro enablement, \
-            source layout and runtime interpretation remain separate."
+            interpretation."]
       }
     ]
     | .logger_syscalls_sol_memset_ => [
@@ -264,23 +226,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -294,13 +249,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/pinocchio-log/pinocchio-log-0.5.1.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The 0.5.1 archive is the inspected reference. The declared 0.5 range assumes \
-            this exact dynamically dispatched extern-C memset declaration, u8 fill \
-            argument and unit return under the existing Solana and 64-bit gates. Macro \
-            enablement, source layout and runtime interpretation remain separate."
+            interpretation."]
       }
     ]
   applicabilityConsumers := fun key => match key with

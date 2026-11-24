@@ -84,10 +84,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The family models the syscall branch; host SHA2 and host no-feature panic \
-              have different behavior."
+          «exclude» := []
         }],
         conditions :=
           ["Select target_os=\"solana\" or target_arch=\"bpf\". Host SHA2 and host \
@@ -100,17 +97,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ^4.0 resolves only to reviewed \
             4.0.0,4.0.1,4.1.0,4.2.0,4.3.0,4.4.0,4.5.0,4.6.0,4.7.0; define-syscall ^4.0 \
             resolves to reviewed 4.0.0/4.0.1. Static dispatch needs its existing provider \
-            binding."],
-        evidence := ["https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-3.1.0.crate"],
-        argument :=
-          "Preserve hashv(&[val]), including a singleton empty slice, the uninitialized \
-            output request, ignored status after every normal reply initializes all 32 \
-            bytes, and all provider effects/exits. Earlier hashv starts from zeroed \
-            output, which a valid provider can distinguish. Host SHA2 and the host \
-            no-feature panic remain outside both syscall profiles. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            binding."]
       },
       {
         id := "singleton-solana-sha256-hasher-reviewed-bpf",
@@ -130,17 +117,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason :=
-            "The family models the syscall branch; host SHA2 and host no-feature panic \
-              have different behavior."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason :=
-            "The family models the syscall branch; host SHA2 and host no-feature panic \
-              have different behavior."
+          «exclude» := []
         }],
         conditions :=
           ["Select target_os=\"solana\" or target_arch=\"bpf\". Host SHA2 and host \
@@ -153,17 +134,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ^4.0 resolves only to reviewed \
             4.0.0,4.0.1,4.1.0,4.2.0,4.3.0,4.4.0,4.5.0,4.6.0,4.7.0; define-syscall ^4.0 \
             resolves to reviewed 4.0.0/4.0.1. Static dispatch needs its existing provider \
-            binding."],
-        evidence := ["https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-3.1.0.crate"],
-        argument :=
-          "Preserve hashv(&[val]), including a singleton empty slice, the uninitialized \
-            output request, ignored status after every normal reply initializes all 32 \
-            bytes, and all provider effects/exits. Earlier hashv starts from zeroed \
-            output, which a valid provider can distinguish. Host SHA2 and the host \
-            no-feature panic remain outside both syscall profiles. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            binding."]
       }
     ]
     | .hashv => [
@@ -185,10 +156,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The family models the syscall branch; host SHA2 and host no-feature panic \
-              have different behavior."
+          «exclude» := []
         }],
         conditions :=
           ["Select target_os=\"solana\" or target_arch=\"bpf\". Host SHA2 and host \
@@ -201,20 +169,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ^4.0 resolves only to reviewed \
             4.0.0,4.0.1,4.1.0,4.2.0,4.3.0,4.4.0,4.5.0,4.6.0,4.7.0; define-syscall ^4.0 \
             resolves to reviewed 4.0.0/4.0.1. Static dispatch needs its existing provider \
-            binding."],
-        evidence := ["https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-3.1.0.crate"],
-        argument :=
-          "3.1.0 builds MaybeUninit<[u8;32]>, forwards the original slice-array \
-            pointer/count, ignores status and returns the provider-initialized output. The \
-            selected request records uninitialized output (none), with all provider finite \
-            exits/effects retained. Every earlier real hashv initializes [0;32], so its \
-            initial provider request is different; an arbitrary provider can distinguish \
-            that initial request while fully writing every normal reply. Equal digest \
-            samples or a projection erasing the initial request cannot establish equality \
-            of the complete family. Legacy no-write returns are outside \
-            EveryReturnInitialized and are not claimed as premise-satisfying \
-            counterexamples. Only 3.1.0 also selects this branch under BPF without Solana \
-            OS. 0.0.1 has no hashv API."
+            binding."]
       },
       {
         id := "solana-sha256-hasher-reviewed-bpf",
@@ -234,17 +189,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason :=
-            "The family models the syscall branch; host SHA2 and host no-feature panic \
-              have different behavior."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason :=
-            "The family models the syscall branch; host SHA2 and host no-feature panic \
-              have different behavior."
+          «exclude» := []
         }],
         conditions :=
           ["Select target_os=\"solana\" or target_arch=\"bpf\". Host SHA2 and host \
@@ -257,20 +206,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ^4.0 resolves only to reviewed \
             4.0.0,4.0.1,4.1.0,4.2.0,4.3.0,4.4.0,4.5.0,4.6.0,4.7.0; define-syscall ^4.0 \
             resolves to reviewed 4.0.0/4.0.1. Static dispatch needs its existing provider \
-            binding."],
-        evidence := ["https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-3.1.0.crate"],
-        argument :=
-          "3.1.0 builds MaybeUninit<[u8;32]>, forwards the original slice-array \
-            pointer/count, ignores status and returns the provider-initialized output. The \
-            selected request records uninitialized output (none), with all provider finite \
-            exits/effects retained. Every earlier real hashv initializes [0;32], so its \
-            initial provider request is different; an arbitrary provider can distinguish \
-            that initial request while fully writing every normal reply. Equal digest \
-            samples or a projection erasing the initial request cannot establish equality \
-            of the complete family. Legacy no-write returns are outside \
-            EveryReturnInitialized and are not claimed as premise-satisfying \
-            counterexamples. Only 3.1.0 also selects this branch under BPF without Solana \
-            OS. 0.0.1 has no hashv API."
+            binding."]
       }
     ]
     | .zero_initialized_hash => [
@@ -292,10 +228,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The zero-initialized syscall branch is selected only by target_os = solana in \
-              this release."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-hash",
@@ -305,9 +238,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "The declared dependency range assumes Hash wraps all 32 final bytes in order, \
-              without allocation or additional callback effects.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -320,10 +250,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "The declared dependency range assumes the same sol_sha256 callable identity, \
-              nested-slice pointer, u64 count, destination and status signature; runtime \
-              behavior remains an explicit provider interpretation.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -336,20 +262,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             target_os = solana is selected. Interpret the nested slice descriptors, u64 \
             count and initialized 32-byte destination with actual memory and lifetime; the \
             provider reply is the final complete buffer. Cryptographic agreement is an \
-            additional provider law."],
-        evidence := ["https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.3.0.crate"],
-        argument :=
-          "The selected Solana branch creates [0;32], passes that initialized output and \
-            the exact ordered input slices and count to sol_sha256, ignores its returned \
-            integer status and wraps the actual final 32 bytes as Hash. A normal provider \
-            reply may leave some or all bytes unchanged; no all-normal full-write premise \
-            is imposed. hash(val) performs exactly hashv(&[val]), including one empty \
-            slice for empty input. Host SHA2 is a different profile and is not admitted \
-            here. The declared compatible range assumes preservation of the zero-filled \
-            32-byte destination, ordered slice descriptors, ignored returned status, \
-            complete final buffer and provider state or exceptional exit; the selected \
-            Hash provider preserves every returned byte. The hash wrapper keeps exactly \
-            one input slice, including an empty one."
+            additional provider law."]
       }
     ]
     | .zero_initialized_hashv => [
@@ -371,10 +284,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The zero-initialized syscall branch is selected only by target_os = solana in \
-              this release."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-hash",
@@ -384,9 +294,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "The declared dependency range assumes Hash wraps all 32 final bytes in order, \
-              without allocation or additional callback effects.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -399,10 +306,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "The declared dependency range assumes the same sol_sha256 callable identity, \
-              nested-slice pointer, u64 count, destination and status signature; runtime \
-              behavior remains an explicit provider interpretation.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -415,19 +318,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             target_os = solana is selected. Interpret the nested slice descriptors, u64 \
             count and initialized 32-byte destination with actual memory and lifetime; the \
             provider reply is the final complete buffer. Cryptographic agreement is an \
-            additional provider law."],
-        evidence := ["https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.3.0.crate"],
-        argument :=
-          "The selected Solana branch creates [0;32], passes that initialized output and \
-            the exact ordered input slices and count to sol_sha256, ignores its returned \
-            integer status and wraps the actual final 32 bytes as Hash. A normal provider \
-            reply may leave some or all bytes unchanged; no all-normal full-write premise \
-            is imposed. hash(val) performs exactly hashv(&[val]), including one empty \
-            slice for empty input. Host SHA2 is a different profile and is not admitted \
-            here. The declared compatible range assumes preservation of the zero-filled \
-            32-byte destination, ordered slice descriptors, ignored returned status, \
-            complete final buffer and provider state or exceptional exit; the selected \
-            Hash provider preserves every returned byte."
+            additional provider law."]
       }
     ]
   applicabilityConsumers := fun key => match key with

@@ -348,20 +348,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Retain HasAccount for the Pool getter and True for the observation getter. \
             Relate the current data_len field to the mathematical length, using a 64-bit \
             usize target or an explicit field bound for the source cast; no whole-pool \
-            Ready premise is added."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release reads the current raw data_len and casts u64 to usize. On the \
-            represented 64-bit target this is the exact logical length and leaves state \
-            unchanged; the source cast must be interpreted explicitly on other word \
-            widths. This supporting observation projects one account into a state/result \
-            pair: acquisitions return current bytes and hide identities, while \
-            AccountView.Pool represents guard and alias lifecycles. Its preconditions \
-            specify the input domain of each observation, and its postconditions support \
-            invariant preservation. This review records source correspondence for the \
-            mathematical contract under its stated interpretation obligations; it does not \
-            prove the Rust body or register a callable binding. Version 0.0.0 contains \
-            only the placeholder add function and has no AccountView or guard API."
+            Ready premise is added."]
       }
     ]
     | .AccountView_Observation_is_signer => [
@@ -389,20 +376,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Retain HasAccount for the Pool getter and True for the observation getter. \
             Interpret the raw flag by its nonzero Boolean observation, without adding \
-            canonical-flag or authorization assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release reads the current is_signer u8 and returns whether it is \
-            nonzero. Noncanonical bytes such as 2, 127 and 255 normalize to true; the \
-            getter supplies no signer authority. This supporting observation projects one \
-            account into a state/result pair: acquisitions return current bytes and hide \
-            identities, while AccountView.Pool represents guard and alias lifecycles. Its \
-            preconditions specify the input domain of each observation, and its \
-            postconditions support invariant preservation. This review records source \
-            correspondence for the mathematical contract under its stated interpretation \
-            obligations; it does not prove the Rust body or register a callable binding. \
-            Version 0.0.0 contains only the placeholder add function and has no \
-            AccountView or guard API."
+            canonical-flag or authorization assumptions."]
       }
     ]
     | .AccountView_Observation_lamports => [
@@ -430,19 +404,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Retain HasAccount for the Pool getter and True for the observation getter. The \
             source u64 value represents the Nat balance of the selected current cell; no \
-            unrelated account invariant is required."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release directly reads the current u64 balance through raw. Aliased \
-            AccountView handles observe the same current cell; no lease or header field \
-            changes. This supporting observation projects one account into a state/result \
-            pair: acquisitions return current bytes and hide identities, while \
-            AccountView.Pool represents guard and alias lifecycles. Its preconditions \
-            specify the input domain of each observation, and its postconditions support \
-            invariant preservation. This review records source correspondence for the \
-            mathematical contract under its stated interpretation obligations; it does not \
-            prove the Rust body or register a callable binding. Version 0.0.0 contains \
-            only the placeholder add function and has no AccountView or guard API."
+            unrelated account invariant is required."]
       }
     ]
     | .AccountView_Observation_set_lamports => [
@@ -472,22 +434,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             actual Rust arguments separately satisfy u64 representation. The observation \
             contract retains its original value < 2^64 precondition. Supply the actual \
             source receiver access (&self at 1.0.0, &mut self at 2.0.0+), without adding a \
-            global uniqueness or authorization premise."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four API releases replace the raw u64 balance immediately, without checking \
-            signer, writable, owner or data-borrow state and without changing other bytes. \
-            1.0.0 uses &self; 2.0.0 and later use &mut self. This receiver distinction is \
-            a source-reference obligation and does not alter the complete mathematical \
-            replacement post or imply global uniqueness of aliased account handles. This \
-            supporting observation projects one account into a state/result pair: \
-            acquisitions return current bytes and hide identities, while AccountView.Pool \
-            represents guard and alias lifecycles. Its preconditions specify the input \
-            domain of each observation, and its postconditions support invariant \
-            preservation. This review records source correspondence for the mathematical \
-            contract under its stated interpretation obligations; it does not prove the \
-            Rust body or register a callable binding. Version 0.0.0 contains only the \
-            placeholder add function and has no AccountView or guard API."
+            global uniqueness or authorization premise."]
       }
     ]
     | .AccountView_Observation_try_borrow => [
@@ -518,22 +465,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             and the AccountView 254-share policy. The observation acquisition retains \
             before.Valid, including exact byte availability/length and bounded \
             lease/balance/length. Valid source storage and reference lifetimes remain \
-            interpretation obligations."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four releases check borrow_state < 2 first and return AccountBorrowFailed \
-            without change in that branch. Success decrements the byte and returns a Ref \
-            to the current complete data slice, retaining the same state-byte pointer. \
-            Free=255, exclusive=0 and 255 - n for n shared leases realizes the existing \
-            maximum of 254 shared guards; the same generic destructor releases one lease. \
-            This supporting observation projects one account into a state/result pair: \
-            acquisitions return current bytes and hide identities, while AccountView.Pool \
-            represents guard and alias lifecycles. Its preconditions specify the input \
-            domain of each observation, and its postconditions support invariant \
-            preservation. This review records source correspondence for the mathematical \
-            contract under its stated interpretation obligations; it does not prove the \
-            Rust body or register a callable binding. Version 0.0.0 contains only the \
-            placeholder add function and has no AccountView or guard API."
+            interpretation obligations."]
       }
     ]
     | .AccountView_Observation_try_borrow_mut => [
@@ -563,23 +495,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             retains before.Valid. Bind a real cell, the source borrow byte and valid \
             current data region. Supply actual mutable reference permission and the \
             per-version receiver access; equal handles do not establish physical alias \
-            permission."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four releases first require borrow_state = 255, otherwise return \
-            AccountBorrowFailed unchanged; success sets the byte to 0 and returns a RefMut \
-            to the current complete data slice. The helper pointer changes from a mutable \
-            data_ptr in 1.0.0 to data_mut_ptr in 2.0.0+, and the receiver changes from \
-            &self to &mut self; the extent, exclusive lease and current-byte behavior \
-            remain the same. This supporting observation projects one account into a \
-            state/result pair: acquisitions return current bytes and hide identities, \
-            while AccountView.Pool represents guard and alias lifecycles. Its \
-            preconditions specify the input domain of each observation, and its \
-            postconditions support invariant preservation. This review records source \
-            correspondence for the mathematical contract under its stated interpretation \
-            obligations; it does not prove the Rust body or register a callable binding. \
-            Version 0.0.0 contains only the placeholder add function and has no \
-            AccountView or guard API."
+            permission."]
       }
     ]
     | .AccountView_Pool_address => [
@@ -608,16 +524,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Retain the True admission and descriptor role of the contract. A source \
             binding identifies a real RuntimeAccount address field and supplies the \
             lifetime and access permission of the returned reference; a mathematical \
-            handle alone is not a Rust reference."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release returns &(*raw).address; the AccountView raw identity and \
-            32-byte Address representation are unchanged. The model returns an AddressRef \
-            descriptor with the same account handle and unchanged state, rather than a \
-            copied key. This is source correspondence for the unchanged mathematical \
-            contract under its existing interpretation obligations, not a Rust body proof \
-            or a newly registered callable binding. Version 0.0.0 contains only the \
-            placeholder add function and has no AccountView or guard API."
+            handle alone is not a Rust reference."]
       },
       {
         id := "solana-account-view-reviewed-2",
@@ -645,14 +552,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             interpret real Rust accounts, current bytes, source integer widths, physical \
             storage, and live reference/alias permissions; a mathematical handle or guard \
             is not itself a Rust pointer permission. This source review supplies no Rust \
-            body proof."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four API releases return &(*raw).address. RuntimeAccount remains repr(C), \
-            Address remains a transparent 32-byte array, and the address offset stays 8 on \
-            the tested 64-bit layout. The return denotes the same account field, preserves \
-            the pool, and acquires no lease or allocation. The v2 padding change and v3 \
-            owned owner result do not affect this field reference."
+            body proof."]
       }
     ]
     | .AccountView_Pool_clone => [
@@ -682,14 +582,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             interpret real Rust accounts, current bytes, source integer widths, physical \
             storage, and live reference/alias permissions; a mathematical handle or guard \
             is not itself a Rust pointer permission. This source review supplies no Rust \
-            body proof."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "AccountView derives Clone over its sole raw pointer field in all four API \
-            releases. Cloning copies the account identity without copying account \
-            contents, issuing a lease, or allocating. Optional Copy adds no different \
-            Clone behavior. The 1-to-2 header revision does not change the pointed-to \
-            identity, and tests mutate/borrow through aliases."
+            body proof."]
       }
     ]
     | .AccountView_Pool_close_header => [
@@ -715,21 +608,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Retain the conditional precondition isBorrowed = false implies HasAccount; the \
             borrow-error branch requires no full Ready predicate. The source binding \
             supplies a writable represented header and lawful references for the reached \
-            48-byte update. Do not add 1.0.0 signed-counter assumptions to this contract."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-2.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "2.0.0, 2.1.0 and 3.0.0 have identical reached bodies: reject borrow_state != \
-            255, otherwise zero exactly the 48 owner/lamports/data_len bytes preceding \
-            data, leaving every data byte and the four padding bytes unchanged. 1.0.0 \
-            additionally computes resize_delta - (data_len as i32), modifying four real \
-            header bytes and potentially overflowing. The existing 2.0-root contract has \
-            neither that effect nor its arithmetic admission premise. Native Lean \
-            comparison rejects five nonempty 1.0.0 close cases; 1.0.0 is incompatible, not \
-            silently admitted under a new assumption. This is source correspondence for \
-            the unchanged mathematical contract under its existing interpretation \
-            obligations, not a Rust body proof or a newly registered callable binding. \
-            Version 0.0.0 contains only the placeholder add function and has no \
-            AccountView or guard API."
+            48-byte update. Do not add 1.0.0 signed-counter assumptions to this contract."]
       }
     ]
     | .AccountView_Pool_close_with_resize_delta => [
@@ -761,18 +640,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             &mut self at 2.0.0/2.1.0/3.0.0. Distinct AccountView wrappers may still alias \
             the same account; &mut to one wrapper does not prove global account uniqueness.",
             "Preserve HasAccount and CloseArithmetic .v1. Owner generation invalidation \
-            refers to valid live owner references and does not prove physical alias safety."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate"],
-        argument :=
-          "At 1.0.0 close rejects every nonfree borrow byte before arithmetic or writes, \
-            then computes resize_delta - data_len as i32 and zeros exactly the 48 bytes \
-            for owner, balance, and logical length. The existing HasAccount and \
-            CloseArithmetic .v1 premises admit that returning branch; backing bytes remain \
-            untouched and owner references are invalidated. In 2.0.0, 2.1.0, and 3.0.0 the \
-            signed field is replaced by padding and close performs no signed-counter \
-            update. A length-5 account closes with offset-4 value -5 in v1 and 0 in later \
-            releases. Keeping the full v1 state/effect excludes those releases rather than \
-            replacing its counter with a different ghost interpretation."
+            refers to valid live owner references and does not prove physical alias safety."]
       }
     ]
     | .AccountView_Pool_data_len => [
@@ -801,16 +669,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Retain HasAccount for the Pool getter and True for the observation getter. \
             Relate the current data_len field to the mathematical length, using a 64-bit \
             usize target or an explicit field bound for the source cast; no whole-pool \
-            Ready premise is added."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release reads the current raw data_len and casts u64 to usize. On the \
-            represented 64-bit target this is the exact logical length and leaves state \
-            unchanged; the source cast must be interpreted explicitly on other word \
-            widths. This is source correspondence for the unchanged mathematical contract \
-            under its existing interpretation obligations, not a Rust body proof or a \
-            newly registered callable binding. Version 0.0.0 contains only the placeholder \
-            add function and has no AccountView or guard API."
+            Ready premise is added."]
       },
       {
         id := "solana-account-view-reviewed-2",
@@ -838,15 +697,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             interpret real Rust accounts, current bytes, source integer widths, physical \
             storage, and live reference/alias permissions; a mathematical handle or guard \
             is not itself a Rust pointer permission. This source review supplies no Rust \
-            body proof."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four API releases load RuntimeAccount.data_len and cast u64 to usize; the \
-            selected cell and pool are unchanged. The existing contract only requires \
-            HasAccount. The tested Solana-source/64-bit profile preserves the u64 value; \
-            physical valid data extents and the actual usize width remain source \
-            interpretation obligations, not new mathematical preconditions. The offset \
-            remains 80 despite the v2 padding revision."
+            body proof."]
       }
     ]
     | .AccountView_Pool_is_data_empty => [
@@ -876,13 +727,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             interpret real Rust accounts, current bytes, source integer widths, physical \
             storage, and live reference/alias permissions; a mathematical handle or guard \
             is not itself a Rust pointer permission. This source review supplies no Rust \
-            body proof."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four API releases call data_len and test equality with zero. The complete \
-            data_len closure and its width/storage interpretation therefore apply. The \
-            only 2.0-to-2.1 textual change here removes a comment; the branch, returned \
-            Boolean, and unchanged pool are the same."
+            body proof."]
       }
     ]
     | .AccountView_Pool_is_signer => [
@@ -910,15 +755,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Retain HasAccount for the Pool getter and True for the observation getter. \
             Interpret the raw flag by its nonzero Boolean observation, without adding \
-            canonical-flag or authorization assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release reads the current is_signer u8 and returns whether it is \
-            nonzero. Noncanonical bytes such as 2, 127 and 255 normalize to true; the \
-            getter supplies no signer authority. This is source correspondence for the \
-            unchanged mathematical contract under its existing interpretation obligations, \
-            not a Rust body proof or a newly registered callable binding. Version 0.0.0 \
-            contains only the placeholder add function and has no AccountView or guard API."
+            canonical-flag or authorization assumptions."]
       },
       {
         id := "solana-account-view-reviewed-2",
@@ -946,13 +783,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             interpret real Rust accounts, current bytes, source integer widths, physical \
             storage, and live reference/alias permissions; a mathematical handle or guard \
             is not itself a Rust pointer permission. This source review supplies no Rust \
-            body proof."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four API releases load the signer byte and compare it with zero. Any \
-            nonzero byte observes true, including 2, 127, and 255 in fresh native cases. \
-            The current cell is exhibited under HasAccount and the pool stays unchanged. \
-            No authentication, borrow, or authority check is introduced."
+            body proof."]
       }
     ]
     | .AccountView_Pool_is_writable => [
@@ -982,13 +813,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             interpret real Rust accounts, current bytes, source integer widths, physical \
             storage, and live reference/alias permissions; a mathematical handle or guard \
             is not itself a Rust pointer permission. This source review supplies no Rust \
-            body proof."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four API releases load the writable byte and compare it with zero, leaving \
-            the pool unchanged. Nonboolean source bytes are observed by nonzeroness, as \
-            tested. HasAccount remains the sole mathematical precondition; this \
-            observation does not supply write authority."
+            body proof."]
       }
     ]
     | .AccountView_Pool_lamports => [
@@ -1016,15 +841,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Retain HasAccount for the Pool getter and True for the observation getter. The \
             source u64 value represents the Nat balance of the selected current cell; no \
-            unrelated account invariant is required."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release directly reads the current u64 balance through raw. Aliased \
-            AccountView handles observe the same current cell; no lease or header field \
-            changes. This is source correspondence for the unchanged mathematical contract \
-            under its existing interpretation obligations, not a Rust body proof or a \
-            newly registered callable binding. Version 0.0.0 contains only the placeholder \
-            add function and has no AccountView or guard API."
+            unrelated account invariant is required."]
       },
       {
         id := "solana-account-view-reviewed-2",
@@ -1052,14 +869,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             interpret real Rust accounts, current bytes, source integer widths, physical \
             storage, and live reference/alias permissions; a mathematical handle or guard \
             is not itself a Rust pointer permission. This source review supplies no Rust \
-            body proof."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four API releases read the u64 balance at RuntimeAccount offset 72 with no \
-            borrow check and no state effect. It is the current shared account cell, \
-            including through cloned aliases after set_lamports. HasAccount is unchanged; \
-            the source u64-to-Nat interpretation is separate from the unrestricted \
-            mathematical value domain."
+            body proof."]
       }
     ]
     | .AccountView_Pool_owned_by => [
@@ -1087,17 +897,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Retain HasAccount only. Bind both owner and program to the reviewed Address \
             2.x 32-byte representation and equality; no retained owner-reference \
-            permission is inferred."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "1.0.0 compares the immediately borrowed owner() with program; 2.0.0, 2.1.0 and \
-            3.0.0 compare the owner field directly. All admitted Address 2.x releases are \
-            transparent 32-byte arrays with derived PartialEq. Neither branch retains an \
-            owner reference or changes state; the unrelated 3.0.0 owner-by-value API \
-            change is not reached. This is source correspondence for the unchanged \
-            mathematical contract under its existing interpretation obligations, not a \
-            Rust body proof or a newly registered callable binding. Version 0.0.0 contains \
-            only the placeholder add function and has no AccountView or guard API."
+            permission is inferred."]
       },
       {
         id := "solana-account-view-reviewed-2",
@@ -1125,14 +925,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             interpret real Rust accounts, current bytes, source integer widths, physical \
             storage, and live reference/alias permissions; a mathematical handle or guard \
             is not itself a Rust pointer permission. This source review supplies no Rust \
-            body proof."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Version 1 calls owner() and derived Address equality; versions 2.0, 2.1, and \
-            3.0 compare the raw owner field directly. Both compare all 32 bytes of the \
-            current owner and preserve the whole pool. Every allowed released Address 2.x \
-            dependency retains the transparent [u8; 32] representation and derived \
-            Eq/PartialEq. The 3.0 change to owner() does not affect this direct comparison."
+            body proof."]
       }
     ]
     | .AccountView_Pool_owner => [
@@ -1161,17 +954,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             is not itself a Rust pointer permission. This source review supplies no Rust \
             body proof.", "Preserve OwnerRef account/generation and require its existing \
             Valid condition at each use; construction of a mathematical descriptor creates \
-            no physical owner reference."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-2.1.0.crate"],
-        argument :=
-          "Versions 1.0.0, 2.0.0, and 2.1.0 return a reference to raw.owner at offset 40, \
-            preserving its account identity and the creation generation represented by \
-            OwnerRef. The method is unsafe in v1 and safe in v2, but using a reference \
-            after owner mutation still needs the existing source validity/alias \
-            discipline. Version 3.0.0 returns an Address cloned by value. A saved native \
-            value remains valid and unchanged after close; it is not a reference to the \
-            account owner field. The complete borrowed-reference/generation contract is \
-            therefore incompatible at 3.0.0."
+            no physical owner reference."]
       }
     ]
     | .AccountView_Pool_resize => [
@@ -1201,18 +984,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             accounts and stale descriptors remain mathematical cases without fabricated \
             valid Rust pointers.", "Preserve HasAccount and ResizeArithmetic; source usize \
             width, runtime reserve and allocated physical capacity remain separate storage \
-            bindings, not inferred from the mathematical list-extension operation."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate"],
-        argument :=
-          "Only 1.0.0 exposes resize. Its reached closure checks free lease first, \
-            converts the request to i32, returns early for unchanged length, then checks \
-            resize_delta + (new_len - data_len) against 10,240 before updating \
-            length/counter and zeroing only positive growth. Shrink preserves hidden bytes \
-            and regrowth zeroes the newly exposed interval. Keep HasAccount and \
-            ResizeArithmetic exactly; fixed physical reserve is a separate source storage \
-            binding. Overflow on forged headers excluded by those arithmetic premises is \
-            observed separately. Both resize and resize_unchecked are absent in every \
-            2.x/3.x release, not behaviorally approximated by a caller wrapper."
+            bindings, not inferred from the mathematical list-extension operation."]
       }
     ]
     | .AccountView_Pool_set_lamports => [
@@ -1242,18 +1014,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             actual Rust arguments separately satisfy u64 representation. The observation \
             contract retains its original value < 2^64 precondition. Supply the actual \
             source receiver access (&self at 1.0.0, &mut self at 2.0.0+), without adding a \
-            global uniqueness or authorization premise."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four API releases replace the raw u64 balance immediately, without checking \
-            signer, writable, owner or data-borrow state and without changing other bytes. \
-            1.0.0 uses &self; 2.0.0 and later use &mut self. This receiver distinction is \
-            a source-reference obligation and does not alter the complete mathematical \
-            replacement post or imply global uniqueness of aliased account handles. This \
-            is source correspondence for the unchanged mathematical contract under its \
-            existing interpretation obligations, not a Rust body proof or a newly \
-            registered callable binding. Version 0.0.0 contains only the placeholder add \
-            function and has no AccountView or guard API."
+            global uniqueness or authorization premise."]
       },
       {
         id := "solana-account-view-reviewed-2",
@@ -1283,15 +1044,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             is not itself a Rust pointer permission. This source review supplies no Rust \
             body proof.", "Use the actual receiver permission: &self at 1.0.0, &mut self \
             at 2.0.0/2.1.0/3.0.0. Distinct AccountView wrappers may still alias the same \
-            account; &mut to one wrapper does not prove global account uniqueness."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four API releases write the supplied u64 directly into the shared account \
-            balance and touch no other account field or lease. There is no writable, \
-            signer, owner, or balance-conservation check. The mathematical replacement \
-            uses only HasAccount; its Nat argument is not narrowed. Version 2 changes \
-            &self to &mut self, which changes the Rust receiver binding while preserving \
-            the full account transition and alias observations."
+            account; &mut to one wrapper does not prove global account uniqueness."]
       }
     ]
     | .AccountView_Pool_try_borrow => [
@@ -1322,18 +1075,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             and the AccountView 254-share policy. The observation acquisition retains \
             before.Valid, including exact byte availability/length and bounded \
             lease/balance/length. Valid source storage and reference lifetimes remain \
-            interpretation obligations."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four releases check borrow_state < 2 first and return AccountBorrowFailed \
-            without change in that branch. Success decrements the byte and returns a Ref \
-            to the current complete data slice, retaining the same state-byte pointer. \
-            Free=255, exclusive=0 and 255 - n for n shared leases realizes the existing \
-            maximum of 254 shared guards; the same generic destructor releases one lease. \
-            This is source correspondence for the unchanged mathematical contract under \
-            its existing interpretation obligations, not a Rust body proof or a newly \
-            registered callable binding. Version 0.0.0 contains only the placeholder add \
-            function and has no AccountView or guard API."
+            interpretation obligations."]
       },
       {
         id := "solana-account-view-reviewed-2",
@@ -1365,17 +1107,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             for exclusive, and 255 - n for n live shared guards, with n at most 254. \
             Registry ownership/generations represent real guard moves and drops; missing \
             accounts and stale descriptors remain mathematical cases without fabricated \
-            valid Rust pointers."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four API releases call check_borrow before changing the byte or forming the \
-            slice: bytes below 2 yield AccountBorrowFailed unchanged, otherwise the \
-            counter decreases by one and the returned Ref holds the current data \
-            pointer/length plus the original borrow-state pointer. The whole reached \
-            closure, 254-share policy, repr(C) header size, and generic Ref/drop \
-            representation agree across the padding revision. Success retains an \
-            identified live lease; saturation/exclusive conflicts and drop/reacquisition \
-            were executed."
+            valid Rust pointers."]
       }
     ]
     | .AccountView_Pool_try_borrow_mut => [
@@ -1405,18 +1137,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             retains before.Valid. Bind a real cell, the source borrow byte and valid \
             current data region. Supply actual mutable reference permission and the \
             per-version receiver access; equal handles do not establish physical alias \
-            permission."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four releases first require borrow_state = 255, otherwise return \
-            AccountBorrowFailed unchanged; success sets the byte to 0 and returns a RefMut \
-            to the current complete data slice. The helper pointer changes from a mutable \
-            data_ptr in 1.0.0 to data_mut_ptr in 2.0.0+, and the receiver changes from \
-            &self to &mut self; the extent, exclusive lease and current-byte behavior \
-            remain the same. This is source correspondence for the unchanged mathematical \
-            contract under its existing interpretation obligations, not a Rust body proof \
-            or a newly registered callable binding. Version 0.0.0 contains only the \
-            placeholder add function and has no AccountView or guard API."
+            permission."]
       },
       {
         id := "solana-account-view-reviewed-2",
@@ -1450,16 +1171,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             accounts and stale descriptors remain mathematical cases without fabricated \
             valid Rust pointers.", "Use the actual receiver permission: &self at 1.0.0, \
             &mut self at 2.0.0/2.1.0/3.0.0. Distinct AccountView wrappers may still alias \
-            the same account; &mut to one wrapper does not prove global account uniqueness."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four API releases require borrow_state == 255, otherwise returning \
-            AccountBorrowFailed unchanged. Success sets it to 0 and returns a RefMut over \
-            the current data range with the original state pointer. Version 1 obtains the \
-            data pointer through data_ptr; v2+ use data_mut_ptr and an &mut receiver. The \
-            pointer arithmetic still adds sizeof(RuntimeAccount), with unchanged tested \
-            size/offset, and release resets the same byte. Physical exclusive-target \
-            permissions remain separate from aliasable wrapper identities."
+            the same account; &mut to one wrapper does not prove global account uniqueness."]
       }
     ]
     | .Ref_deref => [
@@ -1490,18 +1202,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             validity/footprint interpretation, and its True descriptor-construction \
             precondition. The Rust binding separately establishes live physical target \
             permission and lifetimes; no slice-only specialization or Ready precondition \
-            replaces the family."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release has the identical generic Ref structure and Deref body: the \
-            stored NonNull<T> supplies the current reference, with no state-byte update, \
-            copied target value or second lease. T remains arbitrary and may be unsized or \
-            an external mapped target. The descriptor contract does not itself establish \
-            that the represented target is readable or writable. This is source \
-            correspondence for the unchanged mathematical contract under its existing \
-            interpretation obligations, not a Rust body proof or a newly registered \
-            callable binding. Version 0.0.0 contains only the placeholder add function and \
-            has no AccountView or guard API."
+            replaces the family."]
       },
       {
         id := "solana-account-view-reviewed-2",
@@ -1536,15 +1237,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             accounts and stale descriptors remain mathematical cases without fabricated \
             valid Rust pointers.", "The existing GuardProfile interprets every T/U, \
             including unsized and external targets, with its own lifetime/access/footprint \
-            permission. Keep the full indexed Family."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "In every API release Ref<T> stores NonNull<T>, the source NonNull<u8> lease \
-            pointer, and PhantomData<&T>; Deref returns self.value.as_ref(). This \
-            preserves the world and target/guard identity without allocation, a new lease, \
-            or copying T. Generic targets may be sized, unsized, or outside the account; \
-            their existing profile supplies permission. Both byte targets and \
-            independently valid static [u64]/u64/str targets were exercised."
+            permission. Keep the full indexed Family."]
       }
     ]
     | .Ref_map => [
@@ -1584,18 +1277,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             captured state/frame, independent returned target permission, retained-lease \
             unwind, terminal outcomes, and absence of a finite divergence outcome. Match \
             the actual callback panic/termination profile; no callback termination \
-            assumption is added."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "The entire generic Ref::map<T: ?Sized, U: ?Sized, F: FnOnce(&T) -> &U> closure \
-            is identical across all API releases. It first wraps orig in ManuallyDrop, \
-            calls F once, then stores NonNull::from(returned target) with orig.state. \
-            Success moves guard ownership to the new target while retaining the original \
-            lease and every permitted captured effect. A finite unwind after ManuallyDrop \
-            retains the lease and effects, consumes the input guard, and returns no guard. \
-            Terminal exits supply no final world; divergence has no finite result. Keep \
-            universal CallbackSafe and independent result-target permission rather than \
-            assuming a byte subslice or normal return."
+            assumption is added."]
       }
     ]
     | .Ref_release => [
@@ -1625,18 +1307,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             precondition. No target-validity or whole-pool Ready premise is added to the \
             successful destructor post. Binding an owned physical guard and its source \
             state byte is separate from the mathematical identity; released tokens cannot \
-            be reused."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release has the identical generic Ref destructor, which increments \
-            the source state byte by one. It never reads or copies back the target and is \
-            independent of T, including external and unsized targets. It retires the one \
-            owned guard while preserving account/captured contents; actual source guard \
-            construction and coherent state-byte representation justify the physical \
-            write. This is source correspondence for the unchanged mathematical contract \
-            under its existing interpretation obligations, not a Rust body proof or a \
-            newly registered callable binding. Version 0.0.0 contains only the placeholder \
-            add function and has no AccountView or guard API."
+            be reused."]
       },
       {
         id := "solana-account-view-reviewed-2",
@@ -1670,16 +1341,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             accounts and stale descriptors remain mathematical cases without fabricated \
             valid Rust pointers.", "The existing GuardProfile interprets every T/U, \
             including unsized and external targets, with its own lifetime/access/footprint \
-            permission. Keep the full indexed Family."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release implements Drop for Ref<T: ?Sized> by incrementing the \
-            original available-borrow byte once. No T drop, byte copyback, account \
-            mutation, or allocation is performed. With the existing live registry \
-            slot/lease interpretation this consumes exactly that guard while preserving \
-            current contents and captured state, even when the target was mapped into \
-            independent storage. Saturated, last, mapped, sized, and unsized releases were \
-            exercised."
+            permission. Keep the full indexed Family."]
       }
     ]
     | .Ref_try_map => [
@@ -1711,22 +1373,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             CallbackSafe has exit-specific validity/frame conditions; no additional \
             initial target/pool Ready premise or callback-termination assumption is added. \
             The Rust binding supplies the callback input reference and the \
-            representation/lifetime/permission of every actual returned target."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four releases have byte-identical Ref::try_map and reached generic \
-            dereference/guard definitions. ManuallyDrop is constructed before calling \
-            FnOnce, so normal success preserves the source lease with the returned target, \
-            ordinary failure returns (originalGuard, E) in that order while retaining all \
-            captured effects, and unwind consumes the owned guard without \
-            decrementing/releasing its lease. Terminal callback exits propagate without a \
-            fabricated final world; divergence has no finite outcome. T and U are ?Sized \
-            and E is arbitrary; external targets need their own permission rather than \
-            being forced into an account slice. No allocation is performed by the library \
-            mapping wrapper. This is source correspondence for the unchanged mathematical \
-            contract under its existing interpretation obligations, not a Rust body proof \
-            or a newly registered callable binding. Version 0.0.0 contains only the \
-            placeholder add function and has no AccountView or guard API."
+            representation/lifetime/permission of every actual returned target."]
       }
     ]
     | .RefMut_deref => [
@@ -1757,18 +1404,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             validity/footprint interpretation, and its True descriptor-construction \
             precondition. The Rust binding separately establishes live physical target \
             permission and lifetimes; no slice-only specialization or Ready precondition \
-            replaces the family."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release has the identical generic RefMut structure and Deref body: \
-            the stored NonNull<T> supplies the current reference, with no state-byte \
-            update, copied target value or second lease. T remains arbitrary and may be \
-            unsized or an external mapped target. The descriptor contract does not itself \
-            establish that the represented target is readable or writable. This is source \
-            correspondence for the unchanged mathematical contract under its existing \
-            interpretation obligations, not a Rust body proof or a newly registered \
-            callable binding. Version 0.0.0 contains only the placeholder add function and \
-            has no AccountView or guard API."
+            replaces the family."]
       }
     ]
     | .RefMut_deref_mut => [
@@ -1799,18 +1435,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             validity/footprint interpretation, and its True descriptor-construction \
             precondition. The Rust binding separately establishes live physical target \
             permission and lifetimes; no slice-only specialization or Ready precondition \
-            replaces the family."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release has the identical generic RefMut structure and DerefMut body: \
-            the stored NonNull<T> supplies the current reference, with no state-byte \
-            update, copied target value or second lease. T remains arbitrary and may be \
-            unsized or an external mapped target. The descriptor contract does not itself \
-            establish that the represented target is readable or writable. This is source \
-            correspondence for the unchanged mathematical contract under its existing \
-            interpretation obligations, not a Rust body proof or a newly registered \
-            callable binding. Version 0.0.0 contains only the placeholder add function and \
-            has no AccountView or guard API."
+            replaces the family."]
       },
       {
         id := "solana-account-view-reviewed-2",
@@ -1845,15 +1470,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             accounts and stale descriptors remain mathematical cases without fabricated \
             valid Rust pointers.", "The existing GuardProfile interprets every T/U, \
             including unsized and external targets, with its own lifetime/access/footprint \
-            permission. Keep the full indexed Family."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release returns self.value.as_mut() from the same generic \
-            NonNull<T>/NonNull<u8>/PhantomData<&mut T> representation. It preserves the \
-            world and issues no new lease; writes through the returned target are \
-            immediate. The full family retains arbitrary target profiles, including an \
-            external [u64; 3] exercised by the native supplement, with separately \
-            justified exclusive access."
+            permission. Keep the full indexed Family."]
       }
     ]
     | .RefMut_release => [
@@ -1884,18 +1501,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             precondition. No target-validity or whole-pool Ready premise is added to the \
             successful destructor post. Binding an owned physical guard and its source \
             state byte is separate from the mathematical identity; released tokens cannot \
-            be reused."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release has the identical generic RefMut destructor, which resets the \
-            source state byte to NOT_BORROWED (255). It never reads or copies back the \
-            target and is independent of T, including external and unsized targets. It \
-            retires the one owned guard while preserving account/captured contents; actual \
-            source guard construction and coherent state-byte representation justify the \
-            physical write. This is source correspondence for the unchanged mathematical \
-            contract under its existing interpretation obligations, not a Rust body proof \
-            or a newly registered callable binding. Version 0.0.0 contains only the \
-            placeholder add function and has no AccountView or guard API."
+            be reused."]
       },
       {
         id := "solana-account-view-reviewed-2",
@@ -1930,14 +1536,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             accounts and stale descriptors remain mathematical cases without fabricated \
             valid Rust pointers.", "The existing GuardProfile interprets every T/U, \
             including unsized and external targets, with its own lifetime/access/footprint \
-            permission. Keep the full indexed Family."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "Every API release resets the original borrow-state pointer to NOT_BORROWED \
-            (255) on RefMut<T> drop. It does not drop T or copy target data back. The live \
-            exclusive guard is consumed and current account/captured contents remain \
-            unchanged by release; prior writes persist. Byte/empty/external targets and \
-            the absence of delayed copyback were exercised."
+            permission. Keep the full indexed Family."]
       }
     ]
     | .RefMut_try_map => [
@@ -1969,23 +1568,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             CallbackSafe has exit-specific validity/frame conditions; no additional \
             initial target/pool Ready premise or callback-termination assumption is added. \
             The Rust binding supplies the callback input reference and the \
-            representation/lifetime/permission of every actual returned target."],
-        evidence := ["https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate", "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate"],
-        argument :=
-          "All four releases have byte-identical RefMut::try_map and reached generic \
-            dereference/guard definitions. ManuallyDrop is constructed before calling \
-            FnOnce, so normal success preserves the source lease with the returned target, \
-            ordinary failure returns (originalGuard, E) in that order while retaining \
-            mutable data writes and all captured effects, and unwind consumes the owned \
-            guard without decrementing/releasing its lease. Terminal callback exits \
-            propagate without a fabricated final world; divergence has no finite outcome. \
-            T and U are ?Sized and E is arbitrary; external targets need their own \
-            permission rather than being forced into an account slice. No allocation is \
-            performed by the library mapping wrapper. This is source correspondence for \
-            the unchanged mathematical contract under its existing interpretation \
-            obligations, not a Rust body proof or a newly registered callable binding. \
-            Version 0.0.0 contains only the placeholder add function and has no \
-            AccountView or guard API."
+            representation/lifetime/permission of every actual returned target."]
       }
     ]
   applicabilityConsumers := fun key => match key with

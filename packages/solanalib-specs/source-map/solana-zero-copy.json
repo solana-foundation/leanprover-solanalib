@@ -4,7 +4,7 @@
       "order": 150,
       "modules": {
         "Solanalib.Specs.SolanaZeroCopy": "9e152ebcfd72cf26b2ceaefbc2f2a8eab8d45615e26da4796bfdde8968e13758",
-        "Solanalib.Specs.SolanaZeroCopy.Capabilities": "3d0e354f8bbd41231fe7e94076a1ebde086e21a69bf6941053ea2a671efcf38c",
+        "Solanalib.Specs.SolanaZeroCopy.Capabilities": "a007945565a619a34bb5fe6a07985d304bcfdf130a8150b0a16dfb87b1a2e606",
         "Solanalib.Specs.SolanaZeroCopy.Unaligned": "3760b43a3cc64d519f1ae4277ea4575aea87826cc0ddd756d73dae6fe2ab80b9",
         "Solanalib.Specs.SolanaZeroCopy.U16": "d5d34332c802e61a6c459be537ee086f85ad16b8937049710ac8c1f9ecfc64c6"
       },

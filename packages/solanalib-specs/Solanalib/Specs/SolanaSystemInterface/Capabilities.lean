@@ -116,8 +116,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["bincode"],
           any := [],
-          none := [],
-          reason := "Through 3.0.0 the constructor is compiled for the bincode path only."
+          none := []
         },
         conditions :=
           ["Use a coherent published dependency/feature profile with the same canonical \
@@ -128,23 +127,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             space as u64; the Lean family precondition is not strengthened with unused \
             machine-width assumptions.", "Apply this observation only to the returned \
             Instruction value with canonical key, ordered account and byte observations.",
-            "Instantiate the existing serializer mode with bincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-1.0.0.crate", "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.3.0.crate"],
-        argument :=
-          "create_account retains [from signer+writable, to signer+writable] and \
-            serializes tag 0, lamports, space, owner in that order (52 bytes). The program \
-            ID is 32 zero bytes, duplicate from/to keys remain two ordered entries, and \
-            full source u64 values including maxima are accepted by construction. System \
-            1.0/2.0 uses Pubkey; 3.x uses Address with the same canonical 32-byte \
-            observation. Appending CreateAccountAllowPrefund in 3.0 does not alter variant \
-            tags 0 and 2. Versions through 3.0 call bincode directly; 3.1+ reaches \
-            create_instruction, choosing wincode if enabled. The serializer defaults and \
-            derive field order preserve fixed-width little-endian tags/u64 and the owner \
-            bytes across the reviewed codec patches. This registered entry is the narrower \
-            returned-value observation. It specifies constructed fields/bytes after \
-            successful construction and does not establish allocation order, unwind \
-            cleanup or termination; those belong to the separately classified operational \
-            entry."
+            "Instantiate the existing serializer mode with bincode."]
       },
       {
         id := "solana-system-interface-reviewed-codec-selection-bincode",
@@ -164,10 +147,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["bincode"],
           any := [],
-          none := ["wincode"],
-          reason :=
-            "From 3.1.0 wincode takes precedence; the bincode branch requires wincode to \
-              be disabled."
+          none := ["wincode"]
         },
         conditions :=
           ["Use a coherent published dependency/feature profile with the same canonical \
@@ -178,23 +158,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             space as u64; the Lean family precondition is not strengthened with unused \
             machine-width assumptions.", "Apply this observation only to the returned \
             Instruction value with canonical key, ordered account and byte observations.",
-            "Instantiate the existing serializer mode with bincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-1.0.0.crate", "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.3.0.crate"],
-        argument :=
-          "create_account retains [from signer+writable, to signer+writable] and \
-            serializes tag 0, lamports, space, owner in that order (52 bytes). The program \
-            ID is 32 zero bytes, duplicate from/to keys remain two ordered entries, and \
-            full source u64 values including maxima are accepted by construction. System \
-            1.0/2.0 uses Pubkey; 3.x uses Address with the same canonical 32-byte \
-            observation. Appending CreateAccountAllowPrefund in 3.0 does not alter variant \
-            tags 0 and 2. Versions through 3.0 call bincode directly; 3.1+ reaches \
-            create_instruction, choosing wincode if enabled. The serializer defaults and \
-            derive field order preserve fixed-width little-endian tags/u64 and the owner \
-            bytes across the reviewed codec patches. This registered entry is the narrower \
-            returned-value observation. It specifies constructed fields/bytes after \
-            successful construction and does not establish allocation order, unwind \
-            cleanup or termination; those belong to the separately classified operational \
-            entry."
+            "Instantiate the existing serializer mode with bincode."]
       },
       {
         id := "solana-system-interface-reviewed-codec-selection-wincode",
@@ -214,10 +178,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["wincode"],
           any := [],
-          none := [],
-          reason :=
-            "From 3.1.0 an enabled wincode feature selects that serializer, including when \
-              bincode is also enabled."
+          none := []
         },
         conditions :=
           ["Use a coherent published dependency/feature profile with the same canonical \
@@ -228,23 +189,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             space as u64; the Lean family precondition is not strengthened with unused \
             machine-width assumptions.", "Apply this observation only to the returned \
             Instruction value with canonical key, ordered account and byte observations.",
-            "Instantiate the existing serializer mode with wincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-1.0.0.crate", "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.3.0.crate"],
-        argument :=
-          "create_account retains [from signer+writable, to signer+writable] and \
-            serializes tag 0, lamports, space, owner in that order (52 bytes). The program \
-            ID is 32 zero bytes, duplicate from/to keys remain two ordered entries, and \
-            full source u64 values including maxima are accepted by construction. System \
-            1.0/2.0 uses Pubkey; 3.x uses Address with the same canonical 32-byte \
-            observation. Appending CreateAccountAllowPrefund in 3.0 does not alter variant \
-            tags 0 and 2. Versions through 3.0 call bincode directly; 3.1+ reaches \
-            create_instruction, choosing wincode if enabled. The serializer defaults and \
-            derive field order preserve fixed-width little-endian tags/u64 and the owner \
-            bytes across the reviewed codec patches. This registered entry is the narrower \
-            returned-value observation. It specifies constructed fields/bytes after \
-            successful construction and does not establish allocation order, unwind \
-            cleanup or termination; those belong to the separately classified operational \
-            entry."
+            "Instantiate the existing serializer mode with wincode."]
       }
     ]
     | .instruction_create_account_allow_prefund => [
@@ -267,10 +212,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["bincode"],
           any := [],
-          none := ["wincode"],
-          reason :=
-            "The constructor is gated by this serializer feature; wincode takes precedence \
-              when present."
+          none := ["wincode"]
         },
         dependencies := [{
           package := "solana-instruction",
@@ -280,10 +222,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.4.0"],
-          reason :=
-            "Assume complete Instruction/AccountMeta values retain source metadata \
-              order/flags, owned buffers and move/drop behavior; no projected instruction \
-              replaces the actual value.",
           compatibleRanges := [{
             lower := "3.4.0",
             upper := "4.0.0"
@@ -296,10 +234,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Assume fixed little-endian enum-tag/integer/Pubkey encoding for this System \
-              constructor and retain its actual serializer allocation, failures and \
-              cleanup.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -311,14 +245,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             reference/current-resource identities to legal source borrows and owned \
             allocations in one shared memory interpretation, with the exact selected \
             layouts and scalar/Boolean widths.", "Instantiate the serializer mode with \
-            bincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.2.0.crate"],
-        argument :=
-          "The declared compatible range assumes allocation of one new-account \
-            signer/writable metadata entry, then insertion of an optional payer even at \
-            zero lamports or an equal key, and variant-13/u64-lamports/u64-space/owner \
-            encoding at the zero System key. Wincode takes precedence over Bincode; actual \
-            moves, serializer failures and cleanup are retained without a CPI claim."
+            bincode."]
       },
       {
         id := "solana-system-interface-3.2.0-wincode",
@@ -339,10 +266,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["wincode"],
           any := [],
-          none := [],
-          reason :=
-            "The constructor is gated by this serializer feature; wincode takes precedence \
-              when present."
+          none := []
         },
         dependencies := [{
           package := "solana-instruction",
@@ -352,10 +276,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.4.0"],
-          reason :=
-            "Assume complete Instruction/AccountMeta values retain source metadata \
-              order/flags, owned buffers and move/drop behavior; no projected instruction \
-              replaces the actual value.",
           compatibleRanges := [{
             lower := "3.4.0",
             upper := "4.0.0"
@@ -368,10 +288,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.5.5"],
-          reason :=
-            "Assume variant 13 and its lamports/space/owner fields retain the exact \
-              encoded bytes and actual allocation/failure/cleanup behavior; this branch \
-              takes precedence when both serializer features are enabled.",
           compatibleRanges := [{
             lower := "0.5.5",
             upper := "0.6.0"
@@ -383,14 +299,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             reference/current-resource identities to legal source borrows and owned \
             allocations in one shared memory interpretation, with the exact selected \
             layouts and scalar/Boolean widths.", "Instantiate the serializer mode with \
-            wincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.2.0.crate"],
-        argument :=
-          "The declared compatible range assumes allocation of one new-account \
-            signer/writable metadata entry, then insertion of an optional payer even at \
-            zero lamports or an equal key, and variant-13/u64-lamports/u64-space/owner \
-            encoding at the zero System key. Wincode takes precedence over Bincode; actual \
-            moves, serializer failures and cleanup are retained without a CPI claim."
+            wincode."]
       }
     ]
     | .instruction_create_account_operational => [
@@ -418,8 +327,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["bincode"],
           any := [],
-          none := [],
-          reason := "Through 3.0.0 the constructor is compiled for the bincode path only."
+          none := []
         },
         conditions :=
           ["Use a coherent published dependency/feature profile with the same canonical \
@@ -431,25 +339,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             machine-width assumptions.", "Retain the existing explicit VectorOps, \
             serializer, unwrap-failure, cleanup and double-unwind relations. Their value \
             laws/resource frames are separate obligations for stronger conclusions.",
-            "Instantiate the existing serializer mode with bincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-1.0.0.crate", "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.3.0.crate"],
-        argument :=
-          "create_account retains [from signer+writable, to signer+writable] and \
-            serializes tag 0, lamports, space, owner in that order (52 bytes). The program \
-            ID is 32 zero bytes, duplicate from/to keys remain two ordered entries, and \
-            full source u64 values including maxima are accepted by construction. System \
-            1.0/2.0 uses Pubkey; 3.x uses Address with the same canonical 32-byte \
-            observation. Appending CreateAccountAllowPrefund in 3.0 does not alter variant \
-            tags 0 and 2. Versions through 3.0 call bincode directly; 3.1+ reaches \
-            create_instruction, choosing wincode if enabled. The serializer defaults and \
-            derive field order preserve fixed-width little-endian tags/u64 and the owner \
-            bytes across the reviewed codec patches. The operational family retains the \
-            actual Vec construction before serializer invocation, successful \
-            resource-handle moves, unwrap failure, stateful dependency outcomes, \
-            current-table observations, retained-accounts destruction and \
-            terminal/double-unwind policy. It assumes no successful \
-            allocation/serialization or rollback. It is not replaced by the value \
-            observation."
+            "Instantiate the existing serializer mode with bincode."]
       },
       {
         id := "solana-system-interface-reviewed-codec-selection-bincode",
@@ -469,10 +359,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["bincode"],
           any := [],
-          none := ["wincode"],
-          reason :=
-            "From 3.1.0 wincode takes precedence; the bincode branch requires wincode to \
-              be disabled."
+          none := ["wincode"]
         },
         conditions :=
           ["Use a coherent published dependency/feature profile with the same canonical \
@@ -484,25 +371,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             machine-width assumptions.", "Retain the existing explicit VectorOps, \
             serializer, unwrap-failure, cleanup and double-unwind relations. Their value \
             laws/resource frames are separate obligations for stronger conclusions.",
-            "Instantiate the existing serializer mode with bincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-1.0.0.crate", "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.3.0.crate"],
-        argument :=
-          "create_account retains [from signer+writable, to signer+writable] and \
-            serializes tag 0, lamports, space, owner in that order (52 bytes). The program \
-            ID is 32 zero bytes, duplicate from/to keys remain two ordered entries, and \
-            full source u64 values including maxima are accepted by construction. System \
-            1.0/2.0 uses Pubkey; 3.x uses Address with the same canonical 32-byte \
-            observation. Appending CreateAccountAllowPrefund in 3.0 does not alter variant \
-            tags 0 and 2. Versions through 3.0 call bincode directly; 3.1+ reaches \
-            create_instruction, choosing wincode if enabled. The serializer defaults and \
-            derive field order preserve fixed-width little-endian tags/u64 and the owner \
-            bytes across the reviewed codec patches. The operational family retains the \
-            actual Vec construction before serializer invocation, successful \
-            resource-handle moves, unwrap failure, stateful dependency outcomes, \
-            current-table observations, retained-accounts destruction and \
-            terminal/double-unwind policy. It assumes no successful \
-            allocation/serialization or rollback. It is not replaced by the value \
-            observation."
+            "Instantiate the existing serializer mode with bincode."]
       },
       {
         id := "solana-system-interface-reviewed-codec-selection-wincode",
@@ -522,10 +391,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["wincode"],
           any := [],
-          none := [],
-          reason :=
-            "From 3.1.0 an enabled wincode feature selects that serializer, including when \
-              bincode is also enabled."
+          none := []
         },
         conditions :=
           ["Use a coherent published dependency/feature profile with the same canonical \
@@ -537,25 +403,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             machine-width assumptions.", "Retain the existing explicit VectorOps, \
             serializer, unwrap-failure, cleanup and double-unwind relations. Their value \
             laws/resource frames are separate obligations for stronger conclusions.",
-            "Instantiate the existing serializer mode with wincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-1.0.0.crate", "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.3.0.crate"],
-        argument :=
-          "create_account retains [from signer+writable, to signer+writable] and \
-            serializes tag 0, lamports, space, owner in that order (52 bytes). The program \
-            ID is 32 zero bytes, duplicate from/to keys remain two ordered entries, and \
-            full source u64 values including maxima are accepted by construction. System \
-            1.0/2.0 uses Pubkey; 3.x uses Address with the same canonical 32-byte \
-            observation. Appending CreateAccountAllowPrefund in 3.0 does not alter variant \
-            tags 0 and 2. Versions through 3.0 call bincode directly; 3.1+ reaches \
-            create_instruction, choosing wincode if enabled. The serializer defaults and \
-            derive field order preserve fixed-width little-endian tags/u64 and the owner \
-            bytes across the reviewed codec patches. The operational family retains the \
-            actual Vec construction before serializer invocation, successful \
-            resource-handle moves, unwrap failure, stateful dependency outcomes, \
-            current-table observations, retained-accounts destruction and \
-            terminal/double-unwind policy. It assumes no successful \
-            allocation/serialization or rollback. It is not replaced by the value \
-            observation."
+            "Instantiate the existing serializer mode with wincode."]
       }
     ]
     | .instruction_create_account_with_seed => [
@@ -577,10 +425,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["bincode"],
           any := [],
-          none := [],
-          reason :=
-            "This 1.x profile selects the bincode-enabled constructor and bincode \
-              serializer mode. The later wincode-selecting branch is outside this profile."
+          none := []
         },
         dependencies := [{
           package := "solana-instruction",
@@ -590,13 +435,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "References: 2.2.1, 2.3.3. Compatibility in [2.2.1, 3.0.0) assumes the reached \
-              AccountMeta constructors and Instruction bincode builder retain the \
-              canonical key/Boolean fields, all three distinct ordered metadata positions, \
-              variant/field serialization, resource moves, allocation and cleanup order, \
-              unwrap, and every modeled abnormal exit. Do not substitute the inherited \
-              narrower successful-value observation for this operational contract.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -609,14 +447,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Reference: 1.3.3. Compatibility in [1.3.3, 2.0.0) assumes the reached \
-              serializer preserves fixed little-endian variant 3, u64 values and UTF-8 \
-              String byte length in the exact base/String/lamports/space/owner field \
-              order. Preserve its actual output-buffer allocation and partial \
-              initialization, returned errors and external state, including their \
-              surrounding unwrap and cleanup in the registered operational constructor; \
-              successful-wire-format agreement alone is insufficient.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -628,23 +458,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             reference/current-resource identities to legal source borrows and owned \
             allocations in one shared memory interpretation, with the exact selected \
             layouts and scalar/Boolean widths.", "Instantiate the serializer mode with \
-            bincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-1.0.0.crate"],
-        argument :=
-          "Reference: solana-system-interface 1.0.0. Compatibility in [1.0.0, 2.0.0) \
-            assumes that the defining operation and its reached dependencies preserve this \
-            behavior: Preserve the full operational constructor and reached \
-            String/Vec/Instruction/bincode providers, not only the successful bytes: \
-            always keep three ordered metadata positions, including key aliases, with \
-            funding signer+writable, destination writable+nonsigner and base \
-            signer+readonly. Allocate metadata before copying the entire UTF-8 seed into a \
-            temporary String, serialize fixed little-endian variant 3/base/String/u64 \
-            lamports/u64 space/owner, transfer returned owners, and drop the temporary at \
-            the recorded point. Retain allocation, partial initialization, serialization, \
-            unwrap, cleanup and abnormal-exit order, lawful GlobalAlloc no-unwind \
-            behavior, and terminal exits without later cleanup. Do not introduce \
-            seed-length or derived-key checks. System 3.2.0 duplicate-base omission \
-            remains excluded."
+            bincode."]
       }
     ]
     | .instruction_transfer => [
@@ -672,8 +486,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["bincode"],
           any := [],
-          none := [],
-          reason := "Through 3.0.0 the constructor is compiled for the bincode path only."
+          none := []
         },
         conditions :=
           ["Use a coherent published dependency/feature profile with the same canonical \
@@ -684,22 +497,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             u64; the Lean family precondition is not strengthened with unused \
             machine-width assumptions.", "Apply this observation only to the returned \
             Instruction value with canonical key, ordered account and byte observations.",
-            "Instantiate the existing serializer mode with bincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-1.0.0.crate", "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.3.0.crate"],
-        argument :=
-          "transfer retains [from signer+writable, to nonsigner+writable] and serializes \
-            tag 2, lamports (12 bytes). The program ID is 32 zero bytes, duplicate from/to \
-            keys remain two ordered entries, and full source u64 values including maxima \
-            are accepted by construction. System 1.0/2.0 uses Pubkey; 3.x uses Address \
-            with the same canonical 32-byte observation. Appending \
-            CreateAccountAllowPrefund in 3.0 does not alter variant tags 0 and 2. Versions \
-            through 3.0 call bincode directly; 3.1+ reaches create_instruction, choosing \
-            wincode if enabled. The serializer defaults and derive field order preserve \
-            fixed-width little-endian tags/u64 and the owner bytes across the reviewed \
-            codec patches. This registered entry is the narrower returned-value \
-            observation. It specifies constructed fields/bytes after successful \
-            construction and does not establish allocation order, unwind cleanup or \
-            termination; those belong to the separately classified operational entry."
+            "Instantiate the existing serializer mode with bincode."]
       },
       {
         id := "solana-system-interface-reviewed-codec-selection-bincode",
@@ -719,10 +517,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["bincode"],
           any := [],
-          none := ["wincode"],
-          reason :=
-            "From 3.1.0 wincode takes precedence; the bincode branch requires wincode to \
-              be disabled."
+          none := ["wincode"]
         },
         conditions :=
           ["Use a coherent published dependency/feature profile with the same canonical \
@@ -733,22 +528,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             u64; the Lean family precondition is not strengthened with unused \
             machine-width assumptions.", "Apply this observation only to the returned \
             Instruction value with canonical key, ordered account and byte observations.",
-            "Instantiate the existing serializer mode with bincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-1.0.0.crate", "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.3.0.crate"],
-        argument :=
-          "transfer retains [from signer+writable, to nonsigner+writable] and serializes \
-            tag 2, lamports (12 bytes). The program ID is 32 zero bytes, duplicate from/to \
-            keys remain two ordered entries, and full source u64 values including maxima \
-            are accepted by construction. System 1.0/2.0 uses Pubkey; 3.x uses Address \
-            with the same canonical 32-byte observation. Appending \
-            CreateAccountAllowPrefund in 3.0 does not alter variant tags 0 and 2. Versions \
-            through 3.0 call bincode directly; 3.1+ reaches create_instruction, choosing \
-            wincode if enabled. The serializer defaults and derive field order preserve \
-            fixed-width little-endian tags/u64 and the owner bytes across the reviewed \
-            codec patches. This registered entry is the narrower returned-value \
-            observation. It specifies constructed fields/bytes after successful \
-            construction and does not establish allocation order, unwind cleanup or \
-            termination; those belong to the separately classified operational entry."
+            "Instantiate the existing serializer mode with bincode."]
       },
       {
         id := "solana-system-interface-reviewed-codec-selection-wincode",
@@ -768,10 +548,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["wincode"],
           any := [],
-          none := [],
-          reason :=
-            "From 3.1.0 an enabled wincode feature selects that serializer, including when \
-              bincode is also enabled."
+          none := []
         },
         conditions :=
           ["Use a coherent published dependency/feature profile with the same canonical \
@@ -782,22 +559,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             u64; the Lean family precondition is not strengthened with unused \
             machine-width assumptions.", "Apply this observation only to the returned \
             Instruction value with canonical key, ordered account and byte observations.",
-            "Instantiate the existing serializer mode with wincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-1.0.0.crate", "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.3.0.crate"],
-        argument :=
-          "transfer retains [from signer+writable, to nonsigner+writable] and serializes \
-            tag 2, lamports (12 bytes). The program ID is 32 zero bytes, duplicate from/to \
-            keys remain two ordered entries, and full source u64 values including maxima \
-            are accepted by construction. System 1.0/2.0 uses Pubkey; 3.x uses Address \
-            with the same canonical 32-byte observation. Appending \
-            CreateAccountAllowPrefund in 3.0 does not alter variant tags 0 and 2. Versions \
-            through 3.0 call bincode directly; 3.1+ reaches create_instruction, choosing \
-            wincode if enabled. The serializer defaults and derive field order preserve \
-            fixed-width little-endian tags/u64 and the owner bytes across the reviewed \
-            codec patches. This registered entry is the narrower returned-value \
-            observation. It specifies constructed fields/bytes after successful \
-            construction and does not establish allocation order, unwind cleanup or \
-            termination; those belong to the separately classified operational entry."
+            "Instantiate the existing serializer mode with wincode."]
       }
     ]
     | .instruction_transfer_operational => [
@@ -825,8 +587,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["bincode"],
           any := [],
-          none := [],
-          reason := "Through 3.0.0 the constructor is compiled for the bincode path only."
+          none := []
         },
         conditions :=
           ["Use a coherent published dependency/feature profile with the same canonical \
@@ -838,24 +599,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             machine-width assumptions.", "Retain the existing explicit VectorOps, \
             serializer, unwrap-failure, cleanup and double-unwind relations. Their value \
             laws/resource frames are separate obligations for stronger conclusions.",
-            "Instantiate the existing serializer mode with bincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-1.0.0.crate", "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.3.0.crate"],
-        argument :=
-          "transfer retains [from signer+writable, to nonsigner+writable] and serializes \
-            tag 2, lamports (12 bytes). The program ID is 32 zero bytes, duplicate from/to \
-            keys remain two ordered entries, and full source u64 values including maxima \
-            are accepted by construction. System 1.0/2.0 uses Pubkey; 3.x uses Address \
-            with the same canonical 32-byte observation. Appending \
-            CreateAccountAllowPrefund in 3.0 does not alter variant tags 0 and 2. Versions \
-            through 3.0 call bincode directly; 3.1+ reaches create_instruction, choosing \
-            wincode if enabled. The serializer defaults and derive field order preserve \
-            fixed-width little-endian tags/u64 and the owner bytes across the reviewed \
-            codec patches. The operational family retains the actual Vec construction \
-            before serializer invocation, successful resource-handle moves, unwrap \
-            failure, stateful dependency outcomes, current-table observations, \
-            retained-accounts destruction and terminal/double-unwind policy. It assumes no \
-            successful allocation/serialization or rollback. It is not replaced by the \
-            value observation."
+            "Instantiate the existing serializer mode with bincode."]
       },
       {
         id := "solana-system-interface-reviewed-codec-selection-bincode",
@@ -875,10 +619,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["bincode"],
           any := [],
-          none := ["wincode"],
-          reason :=
-            "From 3.1.0 wincode takes precedence; the bincode branch requires wincode to \
-              be disabled."
+          none := ["wincode"]
         },
         conditions :=
           ["Use a coherent published dependency/feature profile with the same canonical \
@@ -890,24 +631,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             machine-width assumptions.", "Retain the existing explicit VectorOps, \
             serializer, unwrap-failure, cleanup and double-unwind relations. Their value \
             laws/resource frames are separate obligations for stronger conclusions.",
-            "Instantiate the existing serializer mode with bincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-1.0.0.crate", "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.3.0.crate"],
-        argument :=
-          "transfer retains [from signer+writable, to nonsigner+writable] and serializes \
-            tag 2, lamports (12 bytes). The program ID is 32 zero bytes, duplicate from/to \
-            keys remain two ordered entries, and full source u64 values including maxima \
-            are accepted by construction. System 1.0/2.0 uses Pubkey; 3.x uses Address \
-            with the same canonical 32-byte observation. Appending \
-            CreateAccountAllowPrefund in 3.0 does not alter variant tags 0 and 2. Versions \
-            through 3.0 call bincode directly; 3.1+ reaches create_instruction, choosing \
-            wincode if enabled. The serializer defaults and derive field order preserve \
-            fixed-width little-endian tags/u64 and the owner bytes across the reviewed \
-            codec patches. The operational family retains the actual Vec construction \
-            before serializer invocation, successful resource-handle moves, unwrap \
-            failure, stateful dependency outcomes, current-table observations, \
-            retained-accounts destruction and terminal/double-unwind policy. It assumes no \
-            successful allocation/serialization or rollback. It is not replaced by the \
-            value observation."
+            "Instantiate the existing serializer mode with bincode."]
       },
       {
         id := "solana-system-interface-reviewed-codec-selection-wincode",
@@ -927,10 +651,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["wincode"],
           any := [],
-          none := [],
-          reason :=
-            "From 3.1.0 an enabled wincode feature selects that serializer, including when \
-              bincode is also enabled."
+          none := []
         },
         conditions :=
           ["Use a coherent published dependency/feature profile with the same canonical \
@@ -942,24 +663,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             machine-width assumptions.", "Retain the existing explicit VectorOps, \
             serializer, unwrap-failure, cleanup and double-unwind relations. Their value \
             laws/resource frames are separate obligations for stronger conclusions.",
-            "Instantiate the existing serializer mode with wincode."],
-        evidence := ["https://static.crates.io/crates/solana-system-interface/solana-system-interface-1.0.0.crate", "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.3.0.crate"],
-        argument :=
-          "transfer retains [from signer+writable, to nonsigner+writable] and serializes \
-            tag 2, lamports (12 bytes). The program ID is 32 zero bytes, duplicate from/to \
-            keys remain two ordered entries, and full source u64 values including maxima \
-            are accepted by construction. System 1.0/2.0 uses Pubkey; 3.x uses Address \
-            with the same canonical 32-byte observation. Appending \
-            CreateAccountAllowPrefund in 3.0 does not alter variant tags 0 and 2. Versions \
-            through 3.0 call bincode directly; 3.1+ reaches create_instruction, choosing \
-            wincode if enabled. The serializer defaults and derive field order preserve \
-            fixed-width little-endian tags/u64 and the owner bytes across the reviewed \
-            codec patches. The operational family retains the actual Vec construction \
-            before serializer invocation, successful resource-handle moves, unwrap \
-            failure, stateful dependency outcomes, current-table observations, \
-            retained-accounts destruction and terminal/double-unwind policy. It assumes no \
-            successful allocation/serialization or rollback. It is not replaced by the \
-            value observation."
+            "Instantiate the existing serializer mode with wincode."]
       }
     ]
   applicabilityConsumers := fun key => match key with

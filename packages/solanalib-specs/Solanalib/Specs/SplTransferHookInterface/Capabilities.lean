@@ -62,17 +62,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The source vectors, slice counts, Rc counters and PDA descriptors use the \
-              reviewed 64-bit widths."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Select the runtime syscall branch in Pubkey 2.2.1; the host retry/hash/curve \
-              implementation is not this operational family."
+          «exclude» := []
         }],
         dependencies := [{
           package := "spl-tlv-account-resolution",
@@ -82,10 +76,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.9.0"],
-          reason :=
-            "Assume per-extra borrowing of every current Execute info, fresh-key signer \
-              preservation, privilege union across aliases, first-match lookup and \
-              sequential clone-before-push/cleanup order remain unchanged.",
           compatibleRanges := [{
             lower := "0.9.0",
             upper := "0.10.0"
@@ -98,10 +88,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.7.0"],
-          reason :=
-            "Assume whole-region validation, discriminator-vector allocation/push order, \
-              first Execute lookup, zero-tail acceptance and payload-bound failure \
-              precedence remain unchanged.",
           compatibleRanges := [{
             lower := "0.7.0",
             upper := "0.8.0"
@@ -114,10 +100,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.5.0", "0.5.1"],
-          reason :=
-            "Assume PodSlice layout errors precede declared-count bounds panic, 35-byte \
-              alignment-one records and nonzero-to-Boolean flags; the inspected \
-              0.5.0/0.5.1 slice definitions agree.",
           compatibleRanges := [{
             lower := "0.5.0",
             upper := "0.6.0"
@@ -130,10 +112,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.4.1"],
-          reason :=
-            "Assume the eight-byte discriminator carrier and compiled Execute \
-              discriminator stay fixed; no later macro expansion or new instruction is \
-              inferred.",
           compatibleRanges := [{
             lower := "0.4.1",
             upper := "0.5.0"
@@ -146,10 +124,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0", "2.2.1", "2.3.0"],
-          reason :=
-            "Assume actual shared data RefCell acquisition/release and declaration-order \
-              Rc clone/drop retain duplicate aliases, current views and owner \
-              multiplicities; the legacy fields agree in the inspected references.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -162,10 +136,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "Assume the reached Instruction/AccountMeta fields, ordered metadata flags and \
-              key copying, Vec ownership, Clone allocation effects and declaration-order \
-              destruction are preserved; source layouts remain separately bound.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -178,11 +148,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0", "2.4.0"],
-          reason :=
-            "The inspected 2.2.1/2.3.0/2.4.0 target find_program_address paths all use \
-              zeroed output and bump 255. Assume identical ordered seed descriptors, \
-              partial writes and nonzero-status panic; MaybeUninit output and the 3.0.0 \
-              Address reexport are outside this range.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -195,10 +160,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0", "2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "Assume the reached InvalidAccountData, AccountBorrowFailed and bounded Custom \
-              codes and full legacy String-bearing enum are preserved; 3.0.0 has a \
-              different carrier.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -211,10 +172,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.22.0", "1.24.0", "1.25.2"],
-          reason :=
-            "Assume the reached exact-size/from-slice casts retain their size, slop and \
-              alignment checks for alignment-one POD records; these calls do not allocate \
-              or reinterpret another layout.",
           compatibleRanges := [{
             lower := "1.22.0",
             upper := "2.0.0"
@@ -238,17 +195,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             policy. Cryptographic correctness is separate; this helper never invokes CPI.",
             "Rust SDK/standard-library bodies, compiler/target layout and source memory \
             correspondence remain explicit assumed interfaces. Mathematical reference, \
-            execution and satisfiability theorems do not discharge source-call coverage."],
-        evidence := ["https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.9.0.crate",
-          "source-notes/transfer-hook-resolution-0.9.0.md"],
-        argument :=
-          "The 0.9.0 helper and locked dependency chain are the inspected reference. The \
-            declared 0.9 range assumes validation PDA before program lookup, whole-region \
-            TLV/POD validation, every-current-info borrowing, fresh signer preservation \
-            and alias privilege union, ordered first-match resolution/clone-before-push \
-            and cleanup. Copyback remains metadata before infos, retaining partial \
-            mutation on unwind; the zeroed PDA provider and resource frames remain \
-            explicit. This helper performs no CPI."
+            execution and satisfiability theorems do not discharge source-call coverage."]
       }
     ]
   applicabilityConsumers := fun key => match key with

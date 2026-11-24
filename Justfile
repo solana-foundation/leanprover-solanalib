@@ -63,11 +63,9 @@ audit-runtime:
     {{python}} tools/model-audit/check_runtime.py
 
 # Complete source/proof/generator audits and compiled negative controls.
-audit: build test test-examples test-runtime test-specs lint audit-runtime
+audit: build test test-examples test-runtime test-specs lint audit-runtime check-generated
     {{python}} -B -m unittest discover -s scripts -p 'test_*.py'
     SOLANA_SPECS_INTEGRATION_TESTS=1 {{python}} -B -m unittest discover -s tools/model-audit -p 'test_*.py'
-    {{python}} packages/solanalib-specs/tools/generate_capabilities.py --check
-    {{python}} packages/solanalib-specs/tools/version_compatibility.py --check
     just audit-specs
     {{python}} tools/model-audit/import_tiers.py
     lake --wfail build SolanalibTest.Conformance.Library solanalib-library-conformance solanalib-selection-control
@@ -75,7 +73,7 @@ audit: build test test-examples test-runtime test-specs lint audit-runtime
     {{python}} scripts/check-lean-loading.py
 
 # Build and postprocess the documentation of every production library.
-docs:
+docs: check-generated
     {{python}} scripts/build-docs.py
 
 # Open the generated site in the default browser.
@@ -106,6 +104,19 @@ generate-indexes:
 generate-specs:
     {{python}} packages/solanalib-specs/tools/generate_capabilities.py
     {{python}} packages/solanalib-specs/tools/version_compatibility.py
+
+# Generate committed Lean and human guides, plus an ignored applicability export.
+# Reviewed source and gap seals must be current before generating indexes.
+generate: generate-specs generate-conformance generate-indexes
+
+# Check committed generated artifacts and validate an independent machine export.
+# Ordinary Lake builds use the committed Lean and need no Python generation.
+check-generated:
+    {{python}} packages/solanalib-specs/tools/generate_capabilities.py --check
+    {{python}} packages/solanalib-specs/tools/version_compatibility.py --check
+    {{python}} -B tools/library-conformance/run.py --check-registry
+    {{python}} tools/model-audit/generate_gap_index.py --check
+    {{python}} scripts/generate-test-index.py --check
 
 # Audit SDK source bytes, exact witness identities and proof dependencies.
 audit-specs:

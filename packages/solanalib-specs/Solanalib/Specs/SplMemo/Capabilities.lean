@@ -56,20 +56,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -78,21 +73,10 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1"],
-          reason :=
-            "Exact reviewed resolved 32-byte key implementation and declare_id/check_id \
-              expansion."
+          releases := ["2.2.1"]
         }],
         conditions := ["Exact key and source value representation; no allocation or \
-          runtime call."],
-        evidence := ["https://static.crates.io/crates/spl-memo/spl-memo-6.0.0.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The 6.0.0 reference returns the declared Memo program key without allocation, \
-            derivation or state change. Compatibility within 6.x assumes the same \
-            macro-generated value operation and selected defining Pubkey representation. \
-            The two exact Pubkey dependency variants and production target gates remain \
-            distinct."
+          runtime call."]
       },
       {
         id := "spl-memo-6.0.0-pubkey-2-4-solana",
@@ -112,20 +96,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -134,21 +113,10 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.4.0"],
-          reason :=
-            "Exact reviewed resolved 32-byte key implementation and declare_id/check_id \
-              expansion."
+          releases := ["2.4.0"]
         }],
         conditions := ["Exact key and source value representation; no allocation or \
-          runtime call."],
-        evidence := ["https://static.crates.io/crates/spl-memo/spl-memo-6.0.0.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The 6.0.0 reference returns the declared Memo program key without allocation, \
-            derivation or state change. Compatibility within 6.x assumes the same \
-            macro-generated value operation and selected defining Pubkey representation. \
-            The two exact Pubkey dependency variants and production target gates remain \
-            distinct."
+          runtime call."]
       }
     ]
   applicabilityConsumers := fun key => match key with

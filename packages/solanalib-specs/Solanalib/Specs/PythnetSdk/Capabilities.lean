@@ -64,10 +64,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["solana-program"],
           any := [],
-          none := [],
-          reason :=
-            "This feature selects the reviewed trait implementation; other feature \
-              branches may select a different decoder or omit the API."
+          none := []
         },
         dependencies := [{
           package := "anchor-derive-serde",
@@ -77,10 +74,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.2"],
-          reason :=
-            "The selected Anchor 1 derive expansion is assumed to preserve \
-              declaration-order fields, enum tags and delegation to Borsh 1; Anchor 0.x \
-              selects observably different Borsh errors.",
           compatibleRanges := [{
             lower := "1.0.2",
             upper := "2.0.0"
@@ -93,10 +86,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.0.2"],
-          reason :=
-            "The selected Anchor 1 derive expansion is assumed to preserve \
-              declaration-order fields, enum tags and delegation to Borsh 1; Anchor 0.x \
-              selects observably different Borsh errors.",
           compatibleRanges := [{
             lower := "1.0.2",
             upper := "2.0.0"
@@ -109,10 +98,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.8.1"],
-          reason :=
-            "The selected Borsh 1 slice decoder and derive expansion are assumed to \
-              preserve values, success remainders and exact InvalidData diagnostics of the \
-              reference; no error remainder is required.",
           compatibleRanges := [{
             lower := "1.5.3",
             upper := "2.0.0"
@@ -125,10 +110,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.8.1"],
-          reason :=
-            "The selected Borsh 1 slice decoder and derive expansion are assumed to \
-              preserve values, success remainders and exact InvalidData diagnostics of the \
-              reference; no error remainder is required.",
           compatibleRanges := [{
             lower := "1.5.3",
             upper := "2.0.0"
@@ -145,29 +126,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             1.6.1; the latter uses Anchor 1.0.2 with the selected 1.0.2 or 1.2.2 macro \
             versions.", "These are concrete Pyth build selections. The resulting Pyth \
             decoder behavior includes its dependencies and adds no Borsh proof obligation \
-            for callers."],
-        evidence := ["https://static.crates.io/crates/pythnet-sdk/pythnet-sdk-2.3.0.crate"],
-        argument :=
-          "All six published Pythnet messages have the same ordered fields and 84-byte \
-            encoding: feed ID [u8; 32], price i64, confidence u64, exponent i32, publish \
-            time i64, previous publish time i64, EMA price i64 and EMA confidence u64. The \
-            reviewed Pyth implementations read those fields in order, stop at the first \
-            error and return the exact suffix on success. Under the shared \
-            error-construction boundary, the 2.3.0/2.3.1 solana-program profiles and 3.0.0 \
-            direct/matched-Anchor profiles provide the modeled InvalidData / Unexpected \
-            length of input diagnostics. The Anchor derive routes explicitly to \
-            anchor_lang::prelude::borsh, so the independent 0.10 schema dependency does \
-            not determine the selected reader. The default 2.3.x reader and the 2.0.0 \
-            reader instead return InvalidInput; this is an observable Pyth API difference. \
-            Versions 2.1.0/2.2.0 add optional Anchor but pin proc-macro2 = 1.0.79, \
-            preventing the reviewed Anchor 1.0.2 profile; 2.1.0 records the exact \
-            attempted resolver conflict. Their older buildable profile remains \
-            incompatible. Diagnostic-allocation failure lies outside the shared model \
-            boundary and does not exclude a version from this partition. Pyth \
-            PriceFeedMessage uses AnchorDeserialize; effective Anchor is 1.0.2, \
-            anchor-derive-serde is 1.2.2, and the emitted reader uses the Borsh/derive \
-            1.8.1 of Anchor. Direct Borsh 0.10.4 supplies the independent schema trait, \
-            not this reader."
+            for callers."]
       },
       {
         id := "pythnet-2.3.1-solana-anchor-1.0.2",
@@ -189,10 +148,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["solana-program"],
           any := [],
-          none := [],
-          reason :=
-            "This feature selects the reviewed trait implementation; other feature \
-              branches may select a different decoder or omit the API."
+          none := []
         },
         dependencies := [{
           package := "anchor-derive-serde",
@@ -202,10 +158,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.2"],
-          reason :=
-            "The selected Anchor 1 derive expansion is assumed to preserve \
-              declaration-order fields, enum tags and delegation to Borsh 1; Anchor 0.x \
-              selects observably different Borsh errors.",
           compatibleRanges := [{
             lower := "1.0.2",
             upper := "2.0.0"
@@ -218,10 +170,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.0.2"],
-          reason :=
-            "The selected Anchor 1 derive expansion is assumed to preserve \
-              declaration-order fields, enum tags and delegation to Borsh 1; Anchor 0.x \
-              selects observably different Borsh errors.",
           compatibleRanges := [{
             lower := "1.0.2",
             upper := "2.0.0"
@@ -234,10 +182,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.8.1"],
-          reason :=
-            "The selected Borsh 1 slice decoder and derive expansion are assumed to \
-              preserve values, success remainders and exact InvalidData diagnostics of the \
-              reference; no error remainder is required.",
           compatibleRanges := [{
             lower := "1.5.3",
             upper := "2.0.0"
@@ -250,10 +194,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.8.1"],
-          reason :=
-            "The selected Borsh 1 slice decoder and derive expansion are assumed to \
-              preserve values, success remainders and exact InvalidData diagnostics of the \
-              reference; no error remainder is required.",
           compatibleRanges := [{
             lower := "1.5.3",
             upper := "2.0.0"
@@ -270,29 +210,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             1.6.1; the latter uses Anchor 1.0.2 with the selected 1.0.2 or 1.2.2 macro \
             versions.", "These are concrete Pyth build selections. The resulting Pyth \
             decoder behavior includes its dependencies and adds no Borsh proof obligation \
-            for callers."],
-        evidence := ["https://static.crates.io/crates/pythnet-sdk/pythnet-sdk-2.3.1.crate"],
-        argument :=
-          "All six published Pythnet messages have the same ordered fields and 84-byte \
-            encoding: feed ID [u8; 32], price i64, confidence u64, exponent i32, publish \
-            time i64, previous publish time i64, EMA price i64 and EMA confidence u64. The \
-            reviewed Pyth implementations read those fields in order, stop at the first \
-            error and return the exact suffix on success. Under the shared \
-            error-construction boundary, the 2.3.0/2.3.1 solana-program profiles and 3.0.0 \
-            direct/matched-Anchor profiles provide the modeled InvalidData / Unexpected \
-            length of input diagnostics. The Anchor derive routes explicitly to \
-            anchor_lang::prelude::borsh, so the independent 0.10 schema dependency does \
-            not determine the selected reader. The default 2.3.x reader and the 2.0.0 \
-            reader instead return InvalidInput; this is an observable Pyth API difference. \
-            Versions 2.1.0/2.2.0 add optional Anchor but pin proc-macro2 = 1.0.79, \
-            preventing the reviewed Anchor 1.0.2 profile; 2.1.0 records the exact \
-            attempted resolver conflict. Their older buildable profile remains \
-            incompatible. Diagnostic-allocation failure lies outside the shared model \
-            boundary and does not exclude a version from this partition. Pyth \
-            PriceFeedMessage uses AnchorDeserialize; effective Anchor is 1.0.2, \
-            anchor-derive-serde is 1.2.2, and the emitted reader uses the Borsh/derive \
-            1.8.1 of Anchor. Direct Borsh 0.10.4 supplies the independent schema trait, \
-            not this reader."
+            for callers."]
       },
       {
         id := "pythnet-3.x-direct",
@@ -314,10 +232,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["solana-program"],
-          reason :=
-            "Without solana-program the PriceFeedMessage reader is emitted directly by \
-              Borsh; enabling it selects the separate Anchor derive branch."
+          none := ["solana-program"]
         },
         dependencies := [{
           package := "borsh",
@@ -327,10 +242,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 slice decoder and derive expansion are assumed to \
-              preserve values, success remainders and exact InvalidData diagnostics of the \
-              reference; no error remainder is required.",
           compatibleRanges := [{
             lower := "1.5.3",
             upper := "2.0.0"
@@ -343,10 +254,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 slice decoder and derive expansion are assumed to \
-              preserve values, success remainders and exact InvalidData diagnostics of the \
-              reference; no error remainder is required.",
           compatibleRanges := [{
             lower := "1.5.3",
             upper := "2.0.0"
@@ -363,30 +270,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             1.6.1; the latter uses Anchor 1.0.2 with the selected 1.0.2 or 1.2.2 macro \
             versions.", "These are concrete Pyth build selections. The resulting Pyth \
             decoder behavior includes its dependencies and adds no Borsh proof obligation \
-            for callers."],
-        evidence := ["https://static.crates.io/crates/pythnet-sdk/pythnet-sdk-3.0.0.crate"],
-        argument :=
-          "Reference: Pythnet 3.0.0, with the recorded direct/Anchor derive selections. \
-            Declared registry ranges assume preservation of the 84-byte field encoding, \
-            success suffix and exact Borsh 1 errors. The solana-program branch remains \
-            explicit. All six published Pythnet messages have the same ordered fields and \
-            84-byte encoding: feed ID [u8; 32], price i64, confidence u64, exponent i32, \
-            publish time i64, previous publish time i64, EMA price i64 and EMA confidence \
-            u64. The reviewed Pyth implementations read those fields in order, stop at the \
-            first error and return the exact suffix on success. Under the shared \
-            error-construction boundary, the 2.3.0/2.3.1 solana-program profiles and 3.0.0 \
-            direct/matched-Anchor profiles provide the modeled InvalidData / Unexpected \
-            length of input diagnostics. The Anchor derive routes explicitly to \
-            anchor_lang::prelude::borsh, so the independent 0.10 schema dependency does \
-            not determine the selected reader. The default 2.3.x reader and the 2.0.0 \
-            reader instead return InvalidInput; this is an observable Pyth API difference. \
-            Versions 2.1.0/2.2.0 add optional Anchor but pin proc-macro2 = 1.0.79, \
-            preventing the reviewed Anchor 1.0.2 profile; 2.1.0 records the exact \
-            attempted resolver conflict. Their older buildable profile remains \
-            incompatible. Diagnostic-allocation failure lies outside the shared model \
-            boundary and does not exclude a version from this partition. Pyth \
-            PriceFeedMessage derives its direct Borsh/derive 1.6.1 reader; solana-program \
-            is disabled."
+            for callers."]
       },
       {
         id := "pythnet-3.x-solana-anchor-1.x",
@@ -408,10 +292,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["solana-program"],
           any := [],
-          none := [],
-          reason :=
-            "This feature selects the reviewed trait implementation; other feature \
-              branches may select a different decoder or omit the API."
+          none := []
         },
         dependencies := [{
           package := "anchor-derive-serde",
@@ -421,10 +302,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.0.2", "1.2.2"],
-          reason :=
-            "The selected Anchor 1 derive expansion is assumed to preserve \
-              declaration-order fields, enum tags and delegation to Borsh 1; Anchor 0.x \
-              selects observably different Borsh errors.",
           compatibleRanges := [{
             lower := "1.0.2",
             upper := "2.0.0"
@@ -437,10 +314,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.0.2"],
-          reason :=
-            "The selected Anchor 1 derive expansion is assumed to preserve \
-              declaration-order fields, enum tags and delegation to Borsh 1; Anchor 0.x \
-              selects observably different Borsh errors.",
           compatibleRanges := [{
             lower := "1.0.2",
             upper := "2.0.0"
@@ -453,10 +326,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 slice decoder and derive expansion are assumed to \
-              preserve values, success remainders and exact InvalidData diagnostics of the \
-              reference; no error remainder is required.",
           compatibleRanges := [{
             lower := "1.5.3",
             upper := "2.0.0"
@@ -469,10 +338,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 slice decoder and derive expansion are assumed to \
-              preserve values, success remainders and exact InvalidData diagnostics of the \
-              reference; no error remainder is required.",
           compatibleRanges := [{
             lower := "1.5.3",
             upper := "2.0.0"
@@ -489,31 +354,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             1.6.1; the latter uses Anchor 1.0.2 with the selected 1.0.2 or 1.2.2 macro \
             versions.", "These are concrete Pyth build selections. The resulting Pyth \
             decoder behavior includes its dependencies and adds no Borsh proof obligation \
-            for callers."],
-        evidence := ["https://static.crates.io/crates/pythnet-sdk/pythnet-sdk-3.0.0.crate"],
-        argument :=
-          "Reference: Pythnet 3.0.0, with the recorded direct/Anchor derive selections. \
-            Declared registry ranges assume preservation of the 84-byte field encoding, \
-            success suffix and exact Borsh 1 errors. The solana-program branch remains \
-            explicit. All six published Pythnet messages have the same ordered fields and \
-            84-byte encoding: feed ID [u8; 32], price i64, confidence u64, exponent i32, \
-            publish time i64, previous publish time i64, EMA price i64 and EMA confidence \
-            u64. The reviewed Pyth implementations read those fields in order, stop at the \
-            first error and return the exact suffix on success. Under the shared \
-            error-construction boundary, the 2.3.0/2.3.1 solana-program profiles and 3.0.0 \
-            direct/matched-Anchor profiles provide the modeled InvalidData / Unexpected \
-            length of input diagnostics. The Anchor derive routes explicitly to \
-            anchor_lang::prelude::borsh, so the independent 0.10 schema dependency does \
-            not determine the selected reader. The default 2.3.x reader and the 2.0.0 \
-            reader instead return InvalidInput; this is an observable Pyth API difference. \
-            Versions 2.1.0/2.2.0 add optional Anchor but pin proc-macro2 = 1.0.79, \
-            preventing the reviewed Anchor 1.0.2 profile; 2.1.0 records the exact \
-            attempted resolver conflict. Their older buildable profile remains \
-            incompatible. Diagnostic-allocation failure lies outside the shared model \
-            boundary and does not exclude a version from this partition. Pyth \
-            PriceFeedMessage uses the receiver 2.0.0 dependency graph: Anchor and \
-            derive/account macros 1.0.2, Borsh/derive 1.6.1. This is the exact retained \
-            native-to-Lean profile."
+            for callers."]
       }
     ]
   applicabilityConsumers := fun key => match key with

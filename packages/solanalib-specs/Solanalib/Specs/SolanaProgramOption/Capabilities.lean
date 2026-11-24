@@ -108,13 +108,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Interpret the COption discriminant and nominal payload identities in the \
             source values. For borrowed operations, the observed values refer to the \
             actual live shared borrows. This is a source representation obligation, not a \
-            mathematical precondition."],
-        evidence := ["https://static.crates.io/crates/solana-program-option/solana-program-option-2.1.0.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-2.2.0.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-2.2.1.crate"],
-        argument :=
-          "Return None or the payload reference of the same parent, without a new owner or \
-            guard. The 2.1.0, 2.2.0 and 2.2.1 files are identical. Compatibility within \
-            2.x assumes the same discriminants, callbacks and reached cleanup; concrete \
-            key/bool variants retain their gates."
+            mathematical precondition."]
       },
       {
         id := "reviewed-key",
@@ -138,10 +132,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1", "2.4.0"],
-          reason :=
-            "Source binding must independently establish the exact nominal Pubkey provider \
-              and its transparent key representation."
+          releases := ["2.2.1", "2.4.0"]
         }],
         conditions :=
           ["Select the exact nominal source payload solana-pubkey 2.2.1::Pubkey or \
@@ -151,13 +142,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             actual shared references. Key equality is derived byte equality, key Default \
             is the all-zero key, and these key/Boolean payloads have trivial drop. This \
             profile does not admit arbitrary same-layout nominal types or callback \
-            implementations."],
-        evidence := ["https://static.crates.io/crates/solana-program-option/solana-program-option-2.1.0.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-2.2.0.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-2.2.1.crate"],
-        argument :=
-          "Return None or the payload reference of the same parent, without a new owner or \
-            guard. The 2.1.0, 2.2.0 and 2.2.1 files are identical. Compatibility within \
-            2.x assumes the same discriminants, callbacks and reached cleanup; concrete \
-            key/bool variants retain their gates."
+            implementations."]
       }
     ]
     | .COption_eq => [
@@ -183,12 +168,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             mathematical precondition.", "The index supplies the actual reached callbacks, \
             their state and finite outcomes. A FnOnce provider consumes its closure and \
             payload and includes their internal cleanup. Empty callback relations admit no \
-            finite exit and do not fabricate a result."],
-        evidence := ["https://static.crates.io/crates/solana-program-option/solana-program-option-3.1.0.crate"],
-        argument :=
-          "The declared compatible range assumes discriminant comparison before invoking \
-            payload PartialEq only for two Some values. Preserve the original left/right \
-            borrowed payloads, callback state and every finite exit."
+            finite exit and do not fabricate a result."]
       },
       {
         id := "reviewed-key",
@@ -212,12 +192,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.6.0", "2.6.1"],
-          reason :=
-            "Exact nominal Address 2.6.0/2.6.1 identities are required by the selected \
-              concrete payload profile; retain their complete transparent key, derived \
-              equality and trivial drop. Other releases are not asserted behaviorally \
-              different."
+          releases := ["2.6.0", "2.6.1"]
         }],
         conditions :=
           ["Select the exact nominal source payload solana-address 2.6.0::Address or \
@@ -227,14 +202,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             actual shared references. Key equality is derived byte equality, key Default \
             is the all-zero key, and these key/Boolean payloads have trivial drop. This \
             profile does not admit arbitrary same-layout nominal types or callback \
-            implementations."],
-        evidence := ["https://static.crates.io/crates/solana-program-option/solana-program-option-3.1.0.crate"],
-        argument :=
-          "The declared compatible range assumes discriminant comparison before invoking \
-            payload PartialEq only for two Some values. Preserve the original left/right \
-            borrowed payloads, callback state and every finite exit. The concrete key \
-            interpretation retains the exact Address identities of the selected concrete \
-            payload profile; generic-family applicability is unchanged."
+            implementations."]
       }
     ]
     | .COption_is_none => [
@@ -257,13 +225,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Interpret the COption discriminant and nominal payload identities in the \
             source values. For borrowed operations, the observed values refer to the \
             actual live shared borrows. This is a source representation obligation, not a \
-            mathematical precondition."],
-        evidence := ["https://static.crates.io/crates/solana-program-option/solana-program-option-2.1.0.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-2.2.0.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-2.2.1.crate"],
-        argument :=
-          "Negate is_some without moving or destroying the payload. The 2.1.0, 2.2.0 and \
-            2.2.1 files are identical. Compatibility within 2.x assumes the same \
-            discriminants, callbacks and reached cleanup; concrete key/bool variants \
-            retain their gates."
+            mathematical precondition."]
       },
       {
         id := "reviewed-key",
@@ -287,10 +249,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1", "2.4.0"],
-          reason :=
-            "Source binding must independently establish the exact nominal Pubkey provider \
-              and its transparent key representation."
+          releases := ["2.2.1", "2.4.0"]
         }],
         conditions :=
           ["Select the exact nominal source payload solana-pubkey 2.2.1::Pubkey or \
@@ -300,13 +259,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             actual shared references. Key equality is derived byte equality, key Default \
             is the all-zero key, and these key/Boolean payloads have trivial drop. This \
             profile does not admit arbitrary same-layout nominal types or callback \
-            implementations."],
-        evidence := ["https://static.crates.io/crates/solana-program-option/solana-program-option-2.1.0.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-2.2.0.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-2.2.1.crate"],
-        argument :=
-          "Negate is_some without moving or destroying the payload. The 2.1.0, 2.2.0 and \
-            2.2.1 files are identical. Compatibility within 2.x assumes the same \
-            discriminants, callbacks and reached cleanup; concrete key/bool variants \
-            retain their gates."
+            implementations."]
       }
     ]
     | .COption_is_some => [
@@ -336,18 +289,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Interpret each source payload type and COption variant in the indexed logical \
             representation; no physical enum-layout claim is made.", "Retain the family \
             index for arbitrary Rust payload types and the borrowed &self behavior. No \
-            Copy/Clone restriction or physical enum-layout premise is added."],
-        evidence := ["https://static.crates.io/crates/solana-program-option/solana-program-option-0.0.2.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-3.1.0.crate"],
-        argument :=
-          "Every one of the 26 nonplaceholder releases has the same impl<T> method taking \
-            &self and matching Some(_) versus None. There is no Copy, Clone or Drop \
-            constraint on T and the wildcard pattern does not move, clone or drop the \
-            payload. The indexed logical representation covers every source payload type, \
-            including an uninhabited payload in None. Native checks execute all 26 \
-            releases with the existing four-type value corpus and additional \
-            String-owning, non-Copy drop-counted payload checks. This establishes source \
-            correspondence and native samples; it does not assert a physical COption \
-            layout theorem."
+            Copy/Clone restriction or physical enum-layout premise is added."]
       }
     ]
     | .COption_map => [
@@ -373,13 +315,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             mathematical precondition.", "The index supplies the actual reached callbacks, \
             their state and finite outcomes. A FnOnce provider consumes its closure and \
             payload and includes their internal cleanup. Empty callback relations admit no \
-            finite exit and do not fabricate a result."],
-        evidence := ["https://static.crates.io/crates/solana-program-option/solana-program-option-2.1.0.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-2.2.0.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-2.2.1.crate"],
-        argument :=
-          "Some moves closure and payload into FnOnce and forwards every exit; None drops \
-            the unused closure before returning None. The 2.1.0, 2.2.0 and 2.2.1 files are \
-            identical. Compatibility within 2.x assumes the same discriminants, callbacks \
-            and reached cleanup; concrete key/bool variants retain their gates."
+            finite exit and do not fabricate a result."]
       }
     ]
     | .COption_unwrap => [
@@ -405,13 +341,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             mathematical precondition.", "The index supplies the actual reached callbacks, \
             their state and finite outcomes. A FnOnce provider consumes its closure and \
             payload and includes their internal cleanup. Empty callback relations admit no \
-            finite exit and do not fabricate a result."],
-        evidence := ["https://static.crates.io/crates/solana-program-option/solana-program-option-3.1.0.crate"],
-        argument :=
-          "The declared compatible range assumes movement of a Some payload unchanged and \
-            invocation of the nonreturning panic provider with the exact None diagnostic. \
-            None remains admitted; its actual unwind or terminal behavior is not hidden by \
-            a precondition."
+            finite exit and do not fabricate a result."]
       },
       {
         id := "reviewed-key",
@@ -431,11 +361,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The concrete key unwrap index preserves the terminal None path under the \
-              recorded panic=abort compilation; an unwinding panic requires the general \
-              family."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-address",
@@ -444,12 +370,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.6.0", "2.6.1"],
-          reason :=
-            "Exact nominal Address 2.6.0/2.6.1 identities are required by the selected \
-              concrete payload profile; retain their complete transparent key, derived \
-              equality and trivial drop. Other releases are not asserted behaviorally \
-              different."
+          releases := ["2.6.0", "2.6.1"]
         }],
         conditions :=
           ["Select the exact nominal source payload solana-address 2.6.0::Address or \
@@ -461,16 +382,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             profile does not admit arbitrary same-layout nominal types or callback \
             implementations.", "Select ProgramOption.keyUnwrapAbortIndex. None remains \
             admitted and terminates with the exact unwrap diagnostic. Other panic policies \
-            select the general family and their actual provider."],
-        evidence := ["https://static.crates.io/crates/solana-program-option/solana-program-option-3.1.0.crate"],
-        argument :=
-          "The declared compatible range assumes movement of a Some payload unchanged and \
-            invocation of the nonreturning panic provider with the exact None diagnostic. \
-            None remains admitted; its actual unwind or terminal behavior is not hidden by \
-            a precondition. The concrete key interpretation retains the exact Address \
-            identities of the selected concrete payload profile; generic-family \
-            applicability is unchanged. This concrete index selects panic=abort; unwinding \
-            panic remains a general-family choice."
+            select the general family and their actual provider."]
       }
     ]
     | .COption_unwrap_or => [
@@ -501,14 +413,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the return place remains live if the unused fallback destructor unwinds \
             (rust-lang/rust#47949). ReturnPlace.drop separately represents a lowering that \
             cleans that value and double-unwind remains terminal. Do not choose the policy \
-            independently of the compiled cleanup paths."],
-        evidence := ["https://static.crates.io/crates/solana-program-option/solana-program-option-2.1.0.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-2.2.0.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-2.2.1.crate"],
-        argument :=
-          "None moves the evaluated fallback; Some drops that fallback before returning \
-            the original payload. Preserve unwind/terminal outcomes and the selected \
-            moved-return cleanup policy. The 2.1.0, 2.2.0 and 2.2.1 files are identical. \
-            Compatibility within 2.x assumes the same discriminants, callbacks and reached \
-            cleanup; concrete key/bool variants retain their gates."
+            independently of the compiled cleanup paths."]
       },
       {
         id := "plain-bool",
@@ -532,14 +437,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             COption layout and actual shared references. Key equality is derived byte \
             equality, key Default is the all-zero key, and these key/Boolean payloads have \
             trivial drop. This profile does not admit arbitrary same-layout nominal types \
-            or callback implementations."],
-        evidence := ["https://static.crates.io/crates/solana-program-option/solana-program-option-2.1.0.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-2.2.0.crate", "https://static.crates.io/crates/solana-program-option/solana-program-option-2.2.1.crate"],
-        argument :=
-          "None moves the evaluated fallback; Some drops that fallback before returning \
-            the original payload. Preserve unwind/terminal outcomes and the selected \
-            moved-return cleanup policy. The 2.1.0, 2.2.0 and 2.2.1 files are identical. \
-            Compatibility within 2.x assumes the same discriminants, callbacks and reached \
-            cleanup; concrete key/bool variants retain their gates."
+            or callback implementations."]
       }
     ]
   applicabilityConsumers := fun key => match key with

@@ -453,13 +453,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             repr(C) RuntimeAccount header with separate low-nibble data and high-nibble \
             lamports leases, initially FF. Duplicate AccountInfo pointers denote the same \
             header and cells; the common guard ledger must represent the actual byte and \
-            live tokens."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 account protocol differs only in documentation. The \
-            declared range assumes the exact current data length and unchanged \
-            header/lease state. The two-nibble protocol and actual source representation \
-            remain explicit."
+            live tokens."]
       }
     ]
     | .account_info_AccountInfo_is_owned_by => [
@@ -485,13 +479,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             repr(C) RuntimeAccount header with separate low-nibble data and high-nibble \
             lamports leases, initially FF. Duplicate AccountInfo pointers denote the same \
             header and cells; the common guard ledger must represent the actual byte and \
-            live tokens."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 account protocol differs only in documentation. The \
-            declared range assumes all 32 owner bytes and the unchanged header/lease \
-            state. The two-nibble protocol and actual source representation remain \
-            explicit."
+            live tokens."]
       }
     ]
     | .account_info_AccountInfo_is_signer => [
@@ -517,13 +505,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             repr(C) RuntimeAccount header with separate low-nibble data and high-nibble \
             lamports leases, initially FF. Duplicate AccountInfo pointers denote the same \
             header and cells; the common guard ledger must represent the actual byte and \
-            live tokens."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 account protocol differs only in documentation. The \
-            declared range assumes nonzero raw signer-byte truth and unchanged \
-            header/lease state. The two-nibble protocol and actual source representation \
-            remain explicit."
+            live tokens."]
       }
     ]
     | .account_info_AccountInfo_is_writable => [
@@ -549,13 +531,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             repr(C) RuntimeAccount header with separate low-nibble data and high-nibble \
             lamports leases, initially FF. Duplicate AccountInfo pointers denote the same \
             header and cells; the common guard ledger must represent the actual byte and \
-            live tokens."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 account protocol differs only in documentation. The \
-            declared range assumes nonzero raw writable-byte truth and unchanged \
-            header/lease state. The two-nibble protocol and actual source representation \
-            remain explicit."
+            live tokens."]
       }
     ]
     | .account_info_AccountInfo_key => [
@@ -581,13 +557,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             repr(C) RuntimeAccount header with separate low-nibble data and high-nibble \
             lamports leases, initially FF. Duplicate AccountInfo pointers denote the same \
             header and cells; the common guard ledger must represent the actual byte and \
-            live tokens."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 account protocol differs only in documentation. The \
-            declared range assumes the borrowed key location, receiver identity and \
-            unchanged full storage. The two-nibble protocol and actual source \
-            representation remain explicit."
+            live tokens."]
       }
     ]
     | .account_info_AccountInfo_lamports => [
@@ -613,13 +583,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             repr(C) RuntimeAccount header with separate low-nibble data and high-nibble \
             lamports leases, initially FF. Duplicate AccountInfo pointers denote the same \
             header and cells; the common guard ledger must represent the actual byte and \
-            live tokens."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 account protocol differs only in documentation. The \
-            declared range assumes the current lamports value without borrowing or \
-            changing either lease nibble. The two-nibble protocol and actual source \
-            representation remain explicit."
+            live tokens."]
       }
     ]
     | .account_info_AccountInfo_owner => [
@@ -645,13 +609,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             repr(C) RuntimeAccount header with separate low-nibble data and high-nibble \
             lamports leases, initially FF. Duplicate AccountInfo pointers denote the same \
             header and cells; the common guard ledger must represent the actual byte and \
-            live tokens."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 account protocol differs only in documentation. The \
-            declared range assumes the borrowed owner location, receiver identity and \
-            unchanged full storage. The two-nibble protocol and actual source \
-            representation remain explicit."
+            live tokens."]
       }
     ]
     | .account_info_AccountInfo_resize => [
@@ -673,9 +631,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "The contract uses the Solana syscall branch; the native host fallback \
-            differs."
+          «exclude» := []
         }],
         conditions :=
           ["Bind actual pointer provenance, lifetimes, target integer and aggregate \
@@ -688,15 +644,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             actual loader allocation and 10240 spare bytes. Apply the separate arithmetic \
             lemma to the i32 intermediates and bind zeroRange to the reached sol_memset_ \
             destination after both header writes. Lamport leases do not restrict data \
-            resize."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 account protocol differs only in documentation. The \
-            declared range assumes data-borrow checking before i32 conversion, the \
-            equal-length shortcut, signed cumulative 10240-byte growth limit, header \
-            writes before zeroing, unchanged spare suffix and actual primitive terminal \
-            effects. The two-nibble protocol and actual source representation remain \
-            explicit."
+            resize."]
       }
     ]
     | .account_info_AccountInfo_try_borrow_data => [
@@ -722,14 +670,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             repr(C) RuntimeAccount header with separate low-nibble data and high-nibble \
             lamports leases, initially FF. Duplicate AccountInfo pointers denote the same \
             header and cells; the common guard ledger must represent the actual byte and \
-            live tokens."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 account protocol differs only in documentation. The \
-            declared range assumes the independent low-nibble lease, seven shared credits, \
-            current slice projection, alias identity, AccountBorrowFailed branch and exact \
-            release token. The two-nibble protocol and actual source representation remain \
-            explicit."
+            live tokens."]
       }
     ]
     | .account_info_AccountInfo_try_borrow_mut_data => [
@@ -755,14 +696,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             repr(C) RuntimeAccount header with separate low-nibble data and high-nibble \
             lamports leases, initially FF. Duplicate AccountInfo pointers denote the same \
             header and cells; the common guard ledger must represent the actual byte and \
-            live tokens."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 account protocol differs only in documentation. The \
-            declared range assumes the independent data-nibble exclusive acquisition, \
-            current mutable slice, alias identity, AccountBorrowFailed branch and exact \
-            release token. The two-nibble protocol and actual source representation remain \
-            explicit."
+            live tokens."]
       }
     ]
     | .account_info_AccountInfo_try_borrow_mut_lamports => [
@@ -788,14 +722,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             repr(C) RuntimeAccount header with separate low-nibble data and high-nibble \
             lamports leases, initially FF. Duplicate AccountInfo pointers denote the same \
             header and cells; the common guard ledger must represent the actual byte and \
-            live tokens."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 account protocol differs only in documentation. The \
-            declared range assumes the independent high-nibble exclusive acquisition, \
-            current mutable lamports cell, alias identity, AccountBorrowFailed branch and \
-            exact release token. The two-nibble protocol and actual source representation \
-            remain explicit."
+            live tokens."]
       }
     ]
     | .account_info_Ref_deref => [
@@ -822,14 +749,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             generic target descriptor at the actual input and output types, including \
             sized, slice and trait-object metadata. The source lease field and the mapped \
             reference target are distinct; dereferencing reads current storage, never a \
-            saved copy."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 guard definitions agree. The declared range assumes \
-            current target storage and metadata, the actual reference identity/permission, \
-            and the unchanged field lease; no saved value is substituted. Sized and \
-            unsized targets and all finite callback exits retain their existing \
-            interpretation."
+            saved copy."]
       }
     ]
     | .account_info_RefMut_deref => [
@@ -856,14 +776,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             generic target descriptor at the actual input and output types, including \
             sized, slice and trait-object metadata. The source lease field and the mapped \
             reference target are distinct; dereferencing reads current storage, never a \
-            saved copy."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 guard definitions agree. The declared range assumes \
-            current target storage and metadata, the actual reference identity/permission, \
-            and the unchanged field lease; no saved value is substituted. Sized and \
-            unsized targets and all finite callback exits retain their existing \
-            interpretation."
+            saved copy."]
       }
     ]
     | .account_info_RefMut_deref_mut => [
@@ -891,14 +804,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             generic target descriptor at the actual input and output types, including \
             sized, slice and trait-object metadata. The source lease field and the mapped \
             reference target are distinct; dereferencing reads current storage, never a \
-            saved copy."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 guard definitions agree. The declared range assumes \
-            current target storage and metadata, the actual reference identity/permission, \
-            and the unchanged field lease; no saved value is substituted. Sized and \
-            unsized targets and all finite callback exits retain their existing \
-            interpretation."
+            saved copy."]
       }
     ]
     | .account_info_RefMut_map => [
@@ -926,14 +832,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             reference target are distinct; dereferencing reads current storage, never a \
             saved copy.", "Bind the closure and captured-state effects to the universal \
             CallbackFrame condition. ManuallyDrop is established before the call; an \
-            unwind does not execute the original guard destructor."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 guard definitions agree. The declared range assumes \
-            ManuallyDrop before the actual closure, current callback mutations, fresh \
-            output generation and transferred field lease; unwind consumes the old token \
-            but retains the lease and reached state. Sized and unsized targets and all \
-            finite callback exits retain their existing interpretation."
+            unwind does not execute the original guard destructor."]
       }
     ]
     | .cpi_invoke_signed_unchecked => [
@@ -955,39 +854,24 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The on-chain invocation branch is selected; native stubs and the black_box \
-              host branch of Pinocchio have different behavior."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The reviewed source pointers, lengths, RefCell borrow counts and runtime \
-              layouts are 64-bit."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The reviewed stable/C layouts and the source memory codec use little-endian \
-              integer fields."
+          «exclude» := []
         }, {
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The selected invocation signature has terminal local panic/allocation \
-              behavior and no unwind exit."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static syscall features replace the registered external declaration with a \
-              function thunk."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["Bind the runtime index to the separately pinned Agave 4.3.2 configuration with \
@@ -1008,14 +892,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             borrow preflight; establish the Rust access and lifetime obligations of the \
             caller separately. The reviewed body passes accounts.len() in full, despite an \
             adjacent documentation sentence about a required-account prefix. Its normal \
-            return is unit."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 body and C layout agree. The declared range assumes \
-            one borrowed CInstruction header, complete accounts.len() and signer \
-            forwarding, unit return and no borrow preflight. The \
-            Solana/64-bit/little-endian/abort and dynamic-dispatch gates remain; the \
-            entire CPI boundary stays opaque."
+            return is unit."]
       }
     ]
     | .entrypoint_deserialize => [
@@ -1059,15 +936,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             binding must guarantee backing lifetime for every subsequent use of those \
             references, or encapsulate them under a shorter scoped interface that prevents \
             escape. Input and output uniqueness and the exposed-provenance alignment \
-            round-trip are explicit representation obligations."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 deserializer bodies are identical. The declared range \
-            assumes allocation-free parsing of the aligned loader format, exact \
-            duplicate-header aliases, initialized output prefix and unchanged \
-            suffix/input, including skipped-account traversal. The \
-            nonempty-input/positive-capacity and backing-lifetime obligations remain; the \
-            unrelated panic-handler attribute change grants no startup proof."
+            round-trip are explicit representation obligations."]
       }
     ]
     | .instruction_AccountMeta_readonly => [
@@ -1091,12 +960,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layouts, and source result representation separately. These contracts are \
             assumed SDK interfaces, not Rust implementation proofs.", "The model address \
             is the borrowed source reference, with source field order separately \
-            interpreted."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 constructor is identical. The declared range assumes \
-            the borrowed key identity and nonsigner/read-only flags, with the same \
-            initialized result fields and unchanged source state."
+            interpreted."]
       }
     ]
     | .instruction_AccountMeta_readonly_signer => [
@@ -1120,12 +984,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layouts, and source result representation separately. These contracts are \
             assumed SDK interfaces, not Rust implementation proofs.", "The model address \
             is the borrowed source reference, with source field order separately \
-            interpreted."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 constructor is identical. The declared range assumes \
-            the borrowed key identity and signer/read-only flags, with the same \
-            initialized result fields and unchanged source state."
+            interpreted."]
       }
     ]
     | .instruction_AccountMeta_writable => [
@@ -1149,12 +1008,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layouts, and source result representation separately. These contracts are \
             assumed SDK interfaces, not Rust implementation proofs.", "The model address \
             is the borrowed source reference, with source field order separately \
-            interpreted."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 constructor is identical. The declared range assumes \
-            the borrowed key identity and nonsigner/writable flags, with the same \
-            initialized result fields and unchanged source state."
+            interpreted."]
       }
     ]
     | .instruction_AccountMeta_writable_signer => [
@@ -1178,12 +1032,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layouts, and source result representation separately. These contracts are \
             assumed SDK interfaces, not Rust implementation proofs.", "The model address \
             is the borrowed source reference, with source field order separately \
-            interpreted."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 constructor is identical. The declared range assumes \
-            the borrowed key identity and signer/writable flags, with the same initialized \
-            result fields and unchanged source state."
+            interpreted."]
       }
     ]
     | .instruction_Seed_from_array => [
@@ -1208,12 +1057,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layouts, and source result representation separately. These contracts are \
             assumed SDK interfaces, not Rust implementation proofs.", "Use the actual SIZE \
             const parameter and retain input array reference provenance, including \
-            zero-sized arrays."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 Seed conversion is identical. The declared range \
-            assumes the full borrowed array descriptor, const length and provenance are \
-            retained without allocation or byte mutation."
+            zero-sized arrays."]
       }
     ]
     | .pubkey_pubkey_eq => [
@@ -1235,12 +1079,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Bind actual pointer provenance, lifetimes, target integer and aggregate \
             layouts, and source result representation separately. These contracts are \
-            assumed SDK interfaces, not Rust implementation proofs."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 definition is identical. The declared range assumes \
-            comparison of all 32 key bytes and unchanged input storage, with actual \
-            reference/layout obligations kept separate."
+            assumed SDK interfaces, not Rust implementation proofs."]
       }
     ]
     | .syscalls_sol_get_clock_sysvar => [
@@ -1262,18 +1101,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -1287,14 +1120,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 syscall declarations and defining macro are \
-            identical. The declared range assumes this exact extern-C item, argument order \
-            and result type under its existing dynamic-dispatch gates. The separately \
-            pinned runtime relation, registrations, source memory and effects remain \
-            unchanged."
+            interpretation."]
       }
     ]
     | .syscalls_sol_invoke_signed_c => [
@@ -1316,39 +1142,24 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The on-chain invocation branch is selected; native stubs and the black_box \
-              host branch of Pinocchio have different behavior."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The reviewed source pointers, lengths, RefCell borrow counts and runtime \
-              layouts are 64-bit."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The reviewed stable/C layouts and the source memory codec use little-endian \
-              integer fields."
+          «exclude» := []
         }, {
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The selected invocation signature has terminal local panic/allocation \
-              behavior and no unwind exit."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static syscall features replace the registered external declaration with a \
-              function thunk."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["Bind the runtime index to the separately pinned Agave 4.3.2 configuration with \
@@ -1370,14 +1181,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             instruction/account/seed data layouts; both declarations have extern-C \
             function calling convention.", "Only the dynamic external declaration is \
             bound. Exclude static-syscalls; for define-syscall 5.1.0 also exclude \
-            unstable-static-syscalls on BPF. No raw implementation body is traversed."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.9.3.crate"],
-        argument :=
-          "The inspected 0.9.2/0.9.3 syscall declarations and defining macro are \
-            identical. The declared range assumes this exact extern-C item, argument order \
-            and result type under its existing dynamic-dispatch gates. The separately \
-            pinned runtime relation, registrations, source memory and effects remain \
-            unchanged."
+            unstable-static-syscalls on BPF. No raw implementation body is traversed."]
       }
     ]
     | .sysvars_clock_Clock_get => [
@@ -1406,10 +1210,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The reviewed profile calls the typed Solana syscall; the host pointer-status \
-              fallback has different behavior."
+          «exclude» := []
         }],
         conditions :=
           ["Supplied callback relations must interpret the actual primitive or trait \
@@ -1422,20 +1223,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             profile selects target_os = solana; identifying the model target with that \
             branch and proving cfg/features, output representation and syscall ABI remain \
             source-binding obligations. The host pointer-status fallback is outside the \
-            reviewed profile."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.10.0.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "The full existing getter contract agrees at every 0.10.x, 0.11.x and 0.12.0 \
-            release: the Clock ID, offset 0, length 40, MaybeUninit destination, success \
-            initialization requirement and status converter (0 success, 1 InvalidArgument, \
-            all other statuses UnsupportedSysvar) are unchanged. Every actual provider \
-            exit/effect is forwarded under the existing relation. 0.1.0–0.8.3 instead \
-            start from Default and invoke the typed clock syscall with ProgramError \
-            conversion; 0.8.4 changes to MaybeUninit but retains that call/converter. \
-            0.9.0–0.9.2 use the typed syscall and fold all errors; 0.9.3 uses the generic \
-            request but still folds status 1 to UnsupportedSysvar. 0.12.0 adds the \
-            bpf-only generic-getter cfg branch, while the already required \
-            target_os=solana profile is unchanged. The 0.0.0 crate is a placeholder."
+            reviewed profile."]
       },
       {
         id := "pinocchio-reviewed-2",
@@ -1462,10 +1250,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The reviewed profile calls the typed Solana syscall; the host pointer-status \
-              fallback has different behavior."
+          «exclude» := []
         }],
         conditions :=
           ["Supplied callback relations must interpret the actual primitive or trait \
@@ -1479,20 +1264,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             value-validity gate.", "To interpret the pinned Solana source branch, a \
             binding must justify target_os = solana, destination initialization and \
             representation, and the syscall ABI. The mathematical family itself has no \
-            target gate."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.10.0.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "The full existing getter contract agrees at every 0.10.x, 0.11.x and 0.12.0 \
-            release: the Clock ID, offset 0, length 40, MaybeUninit destination, success \
-            initialization requirement and status converter (0 success, 1 InvalidArgument, \
-            all other statuses UnsupportedSysvar) are unchanged. Every actual provider \
-            exit/effect is forwarded under the existing relation. 0.1.0–0.8.3 instead \
-            start from Default and invoke the typed clock syscall with ProgramError \
-            conversion; 0.8.4 changes to MaybeUninit but retains that call/converter. \
-            0.9.0–0.9.2 use the typed syscall and fold all errors; 0.9.3 uses the generic \
-            request but still folds status 1 to UnsupportedSysvar. 0.12.0 adds the \
-            bpf-only generic-getter cfg branch, while the already required \
-            target_os=solana profile is unchanged. The 0.0.0 crate is a placeholder."
+            target gate."]
       }
     ]
     | .sysvars_clock_Clock_get_dedicated => [
@@ -1515,9 +1287,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "The contract uses the Solana syscall branch; the native host fallback \
-            differs."
+          «exclude» := []
         }],
         conditions :=
           ["Bind actual pointer provenance, lifetimes, target integer and aggregate \
@@ -1526,14 +1296,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             dedicated typed Clock provider and actual five-field C representation. \
             Status-zero output must initialize a valid Clock; the pointer-valued host \
             fallback and later generic sol_get_sysvar error mapping are outside this \
-            profile."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.2.crate"],
-        argument :=
-          "The inspected 0.9.2 getter calls the dedicated clock syscall into MaybeUninit, \
-            returns the initialized Clock only at status zero and folds every nonzero \
-            status to UnsupportedSysvar. The declaration stops before 0.9.3, which changes \
-            to the generic syscall even though it still folds errors. Provider effects and \
-            finite abnormal exits are retained."
+            profile."]
       }
     ]
     | .sysvars_instructions_Instructions_Generic_load_current_index => [
@@ -1569,10 +1332,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "Instruction introspection uses the reviewed 64-bit usize/isize span and \
-              pointer arithmetic."
+          «exclude» := []
         }],
         conditions :=
           ["CurrentReady covers every actual returned Deref prefix: valid current slices, \
@@ -1583,16 +1343,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source uses 64-bit usize/isize, metadata size 33 and Address size 32/alignment \
             1. Numeric span/alignment/addition checks do not prove physical allocation \
             identity, provenance, storage initialization or reference permissions; those \
-            remain explicit Rust-binding obligations."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.8.1.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "Every API-bearing release from 0.8.1 through 0.12.0 evaluates the first Deref \
-            for length, the second for the current data pointer, and only after the second \
-            return subtracts two and reads a bytewise little-endian footer. There is no \
-            current-index/count validation. This order preserves arbitrary supplied Deref \
-            effects and abnormal prefixes, including an empty first result followed by a \
-            second-call panic; later read obligations are not imposed on that prefix. The \
-            AccountView dependency transitions do not constrain the generic T contract."
+            remain explicit Rust-binding obligations."]
       }
     ]
     | .sysvars_instructions_Instructions_Generic_load_instruction_at => [
@@ -1623,18 +1374,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "Instruction introspection uses the reviewed 64-bit usize/isize span and \
-              pointer arithmetic."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "Before 0.12.0 the instruction offset table is read as a native u16; the model \
-              observes little-endian words. The bytewise little-endian read from 0.12.0 is \
-              independent of target endianness."
+          «exclude» := []
         }],
         conditions :=
           ["AtReady covers the actual first count read and, only for an in-range index, \
@@ -1645,22 +1389,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             64-bit usize/isize, metadata size 33 and Address size 32/alignment 1. Numeric \
             span/alignment/addition checks do not prove physical allocation identity, \
             provenance, storage initialization or reference permissions; those remain \
-            explicit Rust-binding obligations."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.0.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "0.8.1, 0.8.2, 0.8.3 and 0.8.4 perform the first count read as native u16 and \
-            require alignment 2. Existing AtReady admits that count read at alignment 1, \
-            including immediate out-of-range errors; adding alignment would weaken the \
-            full applicability question, so those releases are incompatible despite all \
-            aligned samples passing. From 0.9.0 the count is read bytewise little-endian. \
-            Out-of-range returns InvalidInstructionData after only the first Deref; \
-            success performs a second Deref for the table entry and a third for the \
-            resulting pointer plus the saved offset. All effects/prefix failures remain \
-            ordered. The native-u16 table read through 0.11.2 uses existing alignment \
-            2/little-endian assumptions. 0.12.0 switches that read to bytewise LE, which \
-            enlarges the source domain but remains compatible with the existing stronger \
-            table admission. Returned pointers may be one-past or arise from an empty \
-            third slice with zero offset; body readability belongs to later accessors."
+            explicit Rust-binding obligations."]
       },
       {
         id := "pinocchio-reviewed-direct",
@@ -1681,10 +1410,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "Instruction introspection uses the reviewed 64-bit usize/isize span and \
-              pointer arithmetic."
+          «exclude» := []
         }],
         conditions :=
           ["AtReady covers the actual first count read and, only for an in-range index, \
@@ -1695,22 +1421,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             64-bit usize/isize, metadata size 33 and Address size 32/alignment 1. Numeric \
             span/alignment/addition checks do not prove physical allocation identity, \
             provenance, storage initialization or reference permissions; those remain \
-            explicit Rust-binding obligations."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.9.0.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "0.8.1, 0.8.2, 0.8.3 and 0.8.4 perform the first count read as native u16 and \
-            require alignment 2. Existing AtReady admits that count read at alignment 1, \
-            including immediate out-of-range errors; adding alignment would weaken the \
-            full applicability question, so those releases are incompatible despite all \
-            aligned samples passing. From 0.9.0 the count is read bytewise little-endian. \
-            Out-of-range returns InvalidInstructionData after only the first Deref; \
-            success performs a second Deref for the table entry and a third for the \
-            resulting pointer plus the saved offset. All effects/prefix failures remain \
-            ordered. The native-u16 table read through 0.11.2 uses existing alignment \
-            2/little-endian assumptions. 0.12.0 switches that read to bytewise LE, which \
-            enlarges the source domain but remains compatible with the existing stronger \
-            table admission. Returned pointers may be one-past or arise from an empty \
-            third slice with zero offset; body readability belongs to later accessors."
+            explicit Rust-binding obligations."]
       }
     ]
     | .sysvars_instructions_Instructions_load_current_index => [
@@ -1739,10 +1450,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "Instruction introspection uses the reviewed 64-bit usize/isize span and \
-              pointer arithmetic."
+          «exclude» := []
         }],
         conditions :=
           ["The supporting Ref contract requires currentIndexReady: a live shared guard \
@@ -1751,24 +1459,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Actual AccountView storage, a two-aligned data-allocation base for native \
             table reads, provenance and live Rust reference permissions remain source \
             bindings. The primary generic model separately retains arbitrary Deref \
-            callback effects."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.10.0.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "This is the supporting specialization over a live captured \
-            solana-account-view::Ref, not an independent callable binding. It exists at \
-            0.10.0, 0.10.1, 0.10.2, 0.11.0, 0.11.1, 0.11.2 and 0.12.0. Earlier internal \
-            AccountInfo/Ref types are API-absent for this particular specialization. Its \
-            existing captured-slice/readiness and shared-lifetime assumptions are \
-            preserved. Ref deref returns the saved slice without changing availability, \
-            and the wrapper/guard drop increments availability exactly once. The source \
-            generic operation has this argument: Every API-bearing release from 0.8.1 \
-            through 0.12.0 evaluates the first Deref for length, the second for the \
-            current data pointer, and only after the second return subtracts two and reads \
-            a bytewise little-endian footer. There is no current-index/count validation. \
-            This order preserves arbitrary supplied Deref effects and abnormal prefixes, \
-            including an empty first result followed by a second-call panic; later read \
-            obligations are not imposed on that prefix. The AccountView dependency \
-            transitions do not constrain the generic T contract."
+            callback effects."]
       }
     ]
     | .sysvars_instructions_Instructions_load_instruction_at => [
@@ -1794,18 +1485,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "Instruction introspection uses the reviewed 64-bit usize/isize span and \
-              pointer arithmetic."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "Before 0.12.0 the instruction offset table is read as a native u16; the model \
-              observes little-endian words. The bytewise little-endian read from 0.12.0 is \
-              independent of target endianness."
+          «exclude» := []
         }],
         conditions :=
           ["The supporting Ref contract requires instructionAtReady: a live captured view \
@@ -1814,30 +1498,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             alone supplies no instruction-body validity.", "Actual AccountView storage, a \
             two-aligned data-allocation base for native table reads, provenance and live \
             Rust reference permissions remain source bindings. The primary generic model \
-            separately retains arbitrary Deref callback effects."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.10.0.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "This is the supporting specialization over a live captured \
-            solana-account-view::Ref, not an independent callable binding. It exists at \
-            0.10.0, 0.10.1, 0.10.2, 0.11.0, 0.11.1, 0.11.2 and 0.12.0. Earlier internal \
-            AccountInfo/Ref types are API-absent for this particular specialization. Its \
-            existing captured-slice/readiness and shared-lifetime assumptions are \
-            preserved. Ref deref returns the saved slice without changing availability, \
-            and the wrapper/guard drop increments availability exactly once. The source \
-            generic operation has this argument: 0.8.1, 0.8.2, 0.8.3 and 0.8.4 perform the \
-            first count read as native u16 and require alignment 2. Existing AtReady \
-            admits that count read at alignment 1, including immediate out-of-range \
-            errors; adding alignment would weaken the full applicability question, so \
-            those releases are incompatible despite all aligned samples passing. From \
-            0.9.0 the count is read bytewise little-endian. Out-of-range returns \
-            InvalidInstructionData after only the first Deref; success performs a second \
-            Deref for the table entry and a third for the resulting pointer plus the saved \
-            offset. All effects/prefix failures remain ordered. The native-u16 table read \
-            through 0.11.2 uses existing alignment 2/little-endian assumptions. 0.12.0 \
-            switches that read to bytewise LE, which enlarges the source domain but \
-            remains compatible with the existing stronger table admission. Returned \
-            pointers may be one-past or arise from an empty third slice with zero offset; \
-            body readability belongs to later accessors."
+            separately retains arbitrary Deref callback effects."]
       },
       {
         id := "pinocchio-reviewed-direct",
@@ -1858,10 +1519,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "Instruction introspection uses the reviewed 64-bit usize/isize span and \
-              pointer arithmetic."
+          «exclude» := []
         }],
         conditions :=
           ["The supporting Ref contract requires instructionAtReady: a live captured view \
@@ -1870,30 +1528,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             alone supplies no instruction-body validity.", "Actual AccountView storage, a \
             two-aligned data-allocation base for native table reads, provenance and live \
             Rust reference permissions remain source bindings. The primary generic model \
-            separately retains arbitrary Deref callback effects."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.10.0.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "This is the supporting specialization over a live captured \
-            solana-account-view::Ref, not an independent callable binding. It exists at \
-            0.10.0, 0.10.1, 0.10.2, 0.11.0, 0.11.1, 0.11.2 and 0.12.0. Earlier internal \
-            AccountInfo/Ref types are API-absent for this particular specialization. Its \
-            existing captured-slice/readiness and shared-lifetime assumptions are \
-            preserved. Ref deref returns the saved slice without changing availability, \
-            and the wrapper/guard drop increments availability exactly once. The source \
-            generic operation has this argument: 0.8.1, 0.8.2, 0.8.3 and 0.8.4 perform the \
-            first count read as native u16 and require alignment 2. Existing AtReady \
-            admits that count read at alignment 1, including immediate out-of-range \
-            errors; adding alignment would weaken the full applicability question, so \
-            those releases are incompatible despite all aligned samples passing. From \
-            0.9.0 the count is read bytewise little-endian. Out-of-range returns \
-            InvalidInstructionData after only the first Deref; success performs a second \
-            Deref for the table entry and a third for the resulting pointer plus the saved \
-            offset. All effects/prefix failures remain ordered. The native-u16 table read \
-            through 0.11.2 uses existing alignment 2/little-endian assumptions. 0.12.0 \
-            switches that read to bytewise LE, which enlarges the source domain but \
-            remains compatible with the existing stronger table admission. Returned \
-            pointers may be one-past or arise from an empty third slice with zero offset; \
-            body readability belongs to later accessors."
+            separately retains arbitrary Deref callback effects."]
       }
     ]
     | .sysvars_instructions_Instructions_try_from => [
@@ -1924,10 +1559,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "Instruction introspection uses the reviewed 64-bit usize/isize span and \
-              pointer arithmetic."
+          «exclude» := []
         }],
         conditions :=
           ["constructorReady requires a present cell for the address read. Only a \
@@ -1936,19 +1568,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             and proves checkedTryFrom succeeds; empty and short slices are admitted \
             without serialization validation.", "Source AccountView policy, legitimate \
             handles, physical allocation and reference lifetime/permissions remain \
-            explicit implementation bindings."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.10.0.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "The reviewed AccountView/solana-account-view::Ref specialization exists at all \
-            seven releases 0.10.0–0.12.0. It compares the Instructions address first, \
-            returning UnsupportedSysvar without borrowing on mismatch, then calls \
-            try_borrow and propagates AccountBorrowFailed. Shared state >= 2 is \
-            decremented once and a captured slice is stored; ordinary drop restores that \
-            lease. No instruction serialization or footer validation occurs, so zero- and \
-            one-byte captured data are successful constructor cases. AccountView 1.0.0, \
-            2.0.0/2.1.0 and 3.0.0 preserve these shared guard semantics. Earlier \
-            AccountInfo/internal-Ref constructors are distinct specializations and are \
-            API-absent for this AccountView contract."
+            explicit implementation bindings."]
       }
     ]
     | .sysvars_instructions_IntrospectedInstruction_Generic_get_instruction_data => [
@@ -1987,10 +1607,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "Instruction introspection uses the reviewed 64-bit usize/isize span and \
-              pointer arithmetic."
+          «exclude» := []
         }],
         conditions :=
           ["DataReady requires actual current count/length reads, defined additions and \
@@ -1999,16 +1616,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "The selected source uses 64-bit usize/isize, metadata size 33 and Address \
             size 32/alignment 1. Numeric span/alignment/addition checks do not prove \
             physical allocation identity, provenance, storage initialization or reference \
-            permissions; those remain explicit Rust-binding obligations."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.8.1.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "All 15 releases from 0.8.1 through 0.12.0 read the two-byte LE metadata count, \
-            read the two-byte LE data length at offset 2 + 33 * count + 32, and borrow the \
-            full slice beginning two bytes later. Empty output still requires both earlier \
-            scalar reads and permits a one-past start. Metadata renaming, helper \
-            extraction and the transparent Pubkey-to-Address representation preserve these \
-            reads and sizes. The output aliases the current storage; it is not copied or \
-            normalized."
+            permissions; those remain explicit Rust-binding obligations."]
       }
     ]
     | .sysvars_instructions_IntrospectedInstruction_Generic_get_program_id => [
@@ -2045,10 +1653,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "Instruction introspection uses the reviewed 64-bit usize/isize span and \
-              pointer arithmetic."
+          «exclude» := []
         }],
         conditions :=
           ["ProgramReady requires the actual two-byte count, defined pointer addition and \
@@ -2057,19 +1662,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "The selected source uses 64-bit usize/isize, metadata size 33 and Address \
             size 32/alignment 1. Numeric span/alignment/addition checks do not prove \
             physical allocation identity, provenance, storage initialization or reference \
-            permissions; those remain explicit Rust-binding obligations."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.8.1.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "All 15 releases from 0.8.1 through 0.12.0 read a two-byte LE metadata count and \
-            borrow the complete 32-byte program region at offset 2 + 33 * count. Older \
-            inline count reads and the later num_account_metas helper have identical \
-            reached reads. IntrospectedAccountMeta is renamed \
-            IntrospectedInstructionAccount in 0.10, but the repr(C) flags-plus-key size \
-            stays 33. Pubkey=[u8;32] becomes Address, whose reviewed 2.x representation is \
-            transparent [u8;32] with alignment 1. The raw-pointer field becomes private in \
-            0.11 and lifetime spelling is made explicit without changing the borrowed \
-            output. Physical provenance/reference permissions remain the existing Rust \
-            binding obligations."
+            permissions; those remain explicit Rust-binding obligations."]
       }
     ]
     | .sysvars_instructions_IntrospectedInstruction_get_instruction_data => [
@@ -2101,10 +1694,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "Instruction introspection uses the reviewed 64-bit usize/isize span and \
-              pointer arithmetic."
+          «exclude» := []
         }],
         conditions :=
           ["The supporting Ref contract requires dataReady: the live captured slice \
@@ -2113,23 +1703,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             slice.", "Actual AccountView storage, a two-aligned data-allocation base for \
             native table reads, provenance and live Rust reference permissions remain \
             source bindings. The primary generic model separately retains arbitrary Deref \
-            callback effects."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.10.0.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "This is the supporting specialization over a live captured \
-            solana-account-view::Ref, not an independent callable binding. It exists at \
-            0.10.0, 0.10.1, 0.10.2, 0.11.0, 0.11.1, 0.11.2 and 0.12.0. Earlier internal \
-            AccountInfo/Ref types are API-absent for this particular specialization. Its \
-            existing captured-slice/readiness and shared-lifetime assumptions are \
-            preserved. Ref deref returns the saved slice without changing availability, \
-            and the wrapper/guard drop increments availability exactly once. The source \
-            generic operation has this argument: All 15 releases from 0.8.1 through 0.12.0 \
-            read the two-byte LE metadata count, read the two-byte LE data length at \
-            offset 2 + 33 * count + 32, and borrow the full slice beginning two bytes \
-            later. Empty output still requires both earlier scalar reads and permits a \
-            one-past start. Metadata renaming, helper extraction and the transparent \
-            Pubkey-to-Address representation preserve these reads and sizes. The output \
-            aliases the current storage; it is not copied or normalized."
+            callback effects."]
       }
     ]
     | .sysvars_instructions_IntrospectedInstruction_get_program_id => [
@@ -2159,10 +1733,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "Instruction introspection uses the reviewed 64-bit usize/isize span and \
-              pointer arithmetic."
+          «exclude» := []
         }],
         conditions :=
           ["The supporting Ref contract requires programIdReady: the live captured slice \
@@ -2170,26 +1741,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             checked pointer construction and exact current byte length.", "Actual \
             AccountView storage, a two-aligned data-allocation base for native table \
             reads, provenance and live Rust reference permissions remain source bindings. \
-            The primary generic model separately retains arbitrary Deref callback effects."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.10.0.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "This is the supporting specialization over a live captured \
-            solana-account-view::Ref, not an independent callable binding. It exists at \
-            0.10.0, 0.10.1, 0.10.2, 0.11.0, 0.11.1, 0.11.2 and 0.12.0. Earlier internal \
-            AccountInfo/Ref types are API-absent for this particular specialization. Its \
-            existing captured-slice/readiness and shared-lifetime assumptions are \
-            preserved. Ref deref returns the saved slice without changing availability, \
-            and the wrapper/guard drop increments availability exactly once. The source \
-            generic operation has this argument: All 15 releases from 0.8.1 through 0.12.0 \
-            read a two-byte LE metadata count and borrow the complete 32-byte program \
-            region at offset 2 + 33 * count. Older inline count reads and the later \
-            num_account_metas helper have identical reached reads. IntrospectedAccountMeta \
-            is renamed IntrospectedInstructionAccount in 0.10, but the repr(C) \
-            flags-plus-key size stays 33. Pubkey=[u8;32] becomes Address, whose reviewed \
-            2.x representation is transparent [u8;32] with alignment 1. The raw-pointer \
-            field becomes private in 0.11 and lifetime spelling is made explicit without \
-            changing the borrowed output. Physical provenance/reference permissions remain \
-            the existing Rust binding obligations."
+            The primary generic model separately retains arbitrary Deref callback effects."]
       }
     ]
     | .sysvars_rent_Rent_fixed_rate_from_account_view => [
@@ -2214,10 +1766,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The unchecked native rent word is related to the little-endian eight-byte \
-              decode of the model."
+          «exclude» := []
         }],
         conditions :=
           ["Rent111ReadReady requires an existing account and eight logical bytes only \
@@ -2225,18 +1774,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             Rent111ReadResult identifies the actual cell and exact error branch or \
             complete eight-byte decode. Physical reference validity, read permissions and \
             target little-endian representation remain source-binding obligations; \
-            unrelated pool validity and pointer alignment are not model preconditions."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.11.0.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "The AccountView API starts at 0.10.0. Its 0.10.x implementation checks the Rent \
-            key first, acquires a shared Ref and returns a borrowed 16-byte Rent. Starting \
-            at 0.11.0 it checks exclusive borrowing first (AccountBorrowFailed), checks \
-            the key second (InvalidArgument), then reads eight bytes unaligned into an \
-            owned value. It does not acquire a guard or alter borrow state, even with 254 \
-            shared leases. 0.11.0, 0.11.1, 0.11.2 and 0.12.0 preserve this complete \
-            reached-read/resource contract; malformed short data is admitted only on \
-            earlier error paths. Older from_account_info APIs are distinct and do not \
-            supply this AccountView operation."
+            unrelated pool validity and pointer alignment are not model preconditions."]
       }
     ]
     | .sysvars_rent_Rent_fixed_rate_try_minimum_balance => [
@@ -2261,22 +1799,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The complete model retains the 64-bit usize arithmetic and bounds of the \
-              reviewed rent implementation."
+          «exclude» := []
         }],
         conditions :=
           ["64-bit usize; the independent rate/data checks imply the integer product fits \
-            u64."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.11.0.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.12.0.crate"],
-        argument :=
-          "try_minimum_balance is absent through 0.9.3. 0.11.0, 0.11.1, 0.11.2 and 0.12.0 \
-            use an 8-byte rate and independent ordered guards for data length <= 10485760 \
-            and rate <= 1759197129867; these bounds make (128 + data_len) * rate fit u64. \
-            Checked and wrapping profiles therefore agree. 0.10.x instead carries \
-            threshold bytes, lacks the unconditional rate check and can overflow/panic; it \
-            does not satisfy this complete contract."
+            u64."]
       }
     ]
     | .sysvars_rent_Rent_threshold_rate_get => [
@@ -2299,10 +1826,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The reviewed profile calls the typed Solana syscall; the host pointer-status \
-              fallback has different behavior."
+          «exclude» := []
         }],
         conditions :=
           ["Supplied callback relations must interpret the actual primitive or trait \
@@ -2316,17 +1840,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             value-validity gate.", "To interpret the pinned Solana source branch, a \
             binding must justify target_os = solana, destination initialization and \
             representation, and the syscall ABI. The mathematical family itself has no \
-            target gate."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.10.0.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.10.2.crate"],
-        argument :=
-          "Only 0.10.0, 0.10.1 and 0.10.2 retain the modeled 16-byte rate-plus-threshold \
-            representation, Rent ID, offset 0, length 16 and the generic getter status \
-            converter. Earlier releases through 0.9.2 invoke the typed Rent syscall using \
-            a 24-byte rate/f64/burn layout; 0.9.3 requests 17 serialized bytes and zeroes \
-            seven trailing padding bytes, and still folds every nonzero status. Starting \
-            at 0.11.0 Rent contains only an owned 8-byte rate and requests eight bytes. \
-            These differences change the provider request/value contract even when \
-            selected numerical balances happen to agree."
+            target gate."]
       }
     ]
     | .sysvars_rent_Rent_threshold_rate_try_minimum_balance => [
@@ -2348,28 +1862,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The complete model retains the 64-bit usize arithmetic and bounds of the \
-              reviewed rent implementation."
+          «exclude» := []
         }],
         conditions :=
           ["64-bit usize and binary64 round-to-nearest ties-to-even with gradual \
             underflow; integer overflow and panic profiles are explicit. Arithmetic NaN \
-            payloads are unobserved by the final u64 cast."],
-        evidence := ["https://static.crates.io/crates/pinocchio/pinocchio-0.10.0.crate", "https://static.crates.io/crates/pinocchio/pinocchio-0.10.2.crate"],
-        argument :=
-          "try_minimum_balance is absent before 0.10.0. All three 0.10.x releases retain \
-            the full branch structure: data length at most 10 MiB; the 879598564933 rate \
-            check applies only to threshold 2; its following else-if test against \
-            1759197129867 is unreachable, so threshold 1 and arbitrary threshold bits are \
-            not rate-guarded. minimum_balance_unchecked preserves threshold-specific \
-            integer multiplication order, checked/wrapping overflow, host binary64 \
-            conversion/multiplication/cast and the BPF panic for other thresholds. \
-            Starting at 0.11.0 the threshold field is removed and an unconditional rate \
-            check changes both admitted results and panic/overflow behavior. Existing \
-            binary64/profile assumptions are retained, not replaced by a default-rent \
-            restriction."
+            payloads are unobserved by the final u64 cast."]
       }
     ]
   applicabilityConsumers := fun key => match key with

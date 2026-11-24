@@ -4,7 +4,7 @@
       "order": 158,
       "modules": {
         "Solanalib.Specs.SolanaAddressLookupTableInterface": "c48997ab5daa287e44bd23b4cd655998603d6ef0940e5ce4b7a4573901c798cd",
-        "Solanalib.Specs.SolanaAddressLookupTableInterface.Capabilities": "b4f14aaa83da82682b9128661ae9d60023c1e6e644f62115c8f08344b74363f7",
+        "Solanalib.Specs.SolanaAddressLookupTableInterface.Capabilities": "9be6adbb3048362480ef0f4fdcfafa653aaa23e3d8fbb2f2953f45a4d09a7f99",
         "Solanalib.Specs.SolanaAddressLookupTableInterface.LookupTable": "a5ab2e31a449ef26ba61fd145e8ceba970a25ac091b4f9e5e12700ad81585bad"
       },
       "source_ids": [

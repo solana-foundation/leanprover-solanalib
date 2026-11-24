@@ -133,7 +133,7 @@ def render(root, models, declarations, identities, applicability=None):
             profiles = applicability[model["id"]]["profiles"]
             if profiles:
                 terms = ",\n".join(
-                    "      " + lean_profile(profile, multiline=True).replace("\n", "\n      ")
+                    "      " + lean_profile(profile, multiline=True, review=False).replace("\n", "\n      ")
                     for profile in profiles)
                 lines.append(f"    | .{key} => [\n{terms}\n    ]")
             else:

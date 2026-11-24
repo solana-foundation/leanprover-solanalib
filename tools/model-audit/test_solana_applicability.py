@@ -836,6 +836,34 @@ class RegisteredApplicabilityTests(unittest.TestCase):
 
 
 class InstalledLookupTests(unittest.TestCase):
+    def test_checkout_lookup_reads_current_registry_without_a_machine_manifest(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            repository = Path(temporary) / 'repository'
+            package = repository / 'packages/solanalib-specs'
+            tools = package / 'tools'
+            tools.mkdir(parents=True)
+            for name in ('applicability.py', 'lookup_applicability.py'):
+                shutil.copyfile(ROOT / 'packages/solanalib-specs/tools' / name, tools / name)
+            shutil.copytree(ROOT / 'tools/model-audit', repository / 'tools/model-audit',
+                            ignore=shutil.ignore_patterns('__pycache__'))
+            document = dict(fixture(), schema_version=2)
+            (package / 'source-map.json').write_text(json.dumps(document))
+            command = [sys.executable, str(tools / 'lookup_applicability.py'), '--build', '-', '--model', 'read']
+            environment = {**os.environ, 'PYTHONPATH': '', 'PYTHONDONTWRITEBYTECODE': '1'}
+            def invoke(*flags):
+                return subprocess.run([*command, *flags], input=json.dumps(build()), text=True,
+                                      capture_output=True, env=environment, cwd=temporary)
+            result = invoke()
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertEqual(json.loads(result.stdout)['status'], 'eligible')
+            # An ignored stale export cannot shadow the reviewed checkout registry.
+            export = package / 'applicability.json'
+            export.write_text('{invalid')
+            self.assertEqual(invoke().returncode, 0)
+            explicit = invoke('--manifest', str(export))
+            self.assertEqual(explicit.returncode, 2)
+            self.assertEqual(json.loads(explicit.stdout)['status'], 'invalid')
+
     def test_lookup_runs_from_a_standalone_package_without_repository_scripts(self):
         with tempfile.TemporaryDirectory() as temporary:
             package = Path(temporary) / "installed/packages/solanalib-specs"

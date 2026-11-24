@@ -100,9 +100,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.6.0", "2.6.1"],
-          reason :=
-            "Assume the defining Address keeps the complete 32-byte key representation and \
-              const construction used by this declare_id, with trivial copy/drop.",
           compatibleRanges := [{
             lower := "2.6.0",
             upper := "3.0.0"
@@ -110,12 +107,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Interpret the returned Address in the canonical 32-byte key model and bind the \
-            exact macro provider, target layout and source result ABI."],
-        evidence := ["https://static.crates.io/crates/solana-sdk-ids/solana-sdk-ids-3.1.0.crate"],
-        argument :=
-          "The declared compatible range assumes return of the exact canonical 32-byte \
-            bpf_loader_upgradeable key from its declare_id invocation, with unchanged \
-            state; host and BPF macro branches return the same constant."
+            exact macro provider, target layout and source result ABI."]
       }
     ]
     | .ed25519_program_id => [
@@ -142,9 +134,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.6.0", "2.6.1"],
-          reason :=
-            "Assume the defining Address keeps the complete 32-byte key representation and \
-              const construction used by this declare_id, with trivial copy/drop.",
           compatibleRanges := [{
             lower := "2.6.0",
             upper := "3.0.0"
@@ -152,12 +141,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Interpret the returned Address in the canonical 32-byte key model and bind the \
-            exact macro provider, target layout and source result ABI."],
-        evidence := ["https://static.crates.io/crates/solana-sdk-ids/solana-sdk-ids-3.1.0.crate"],
-        argument :=
-          "The declared compatible range assumes return of the exact canonical 32-byte \
-            ed25519_program key from its declare_id invocation, with unchanged state; host \
-            and BPF macro branches return the same constant."
+            exact macro provider, target layout and source result ABI."]
       }
     ]
     | .system_program_id => [
@@ -183,21 +167,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Interpret the returned canonical Pubkey as the pinned SDK address value; \
             physical macro expansion and Rust representation remain separate.", "Interpret \
             the source return value as the canonical 32-byte address; physical \
-            Pubkey/Address identity and macro expansion are separate binding obligations."],
-        evidence := ["https://static.crates.io/crates/solana-sdk-ids/solana-sdk-ids-0.0.2.crate", "https://static.crates.io/crates/solana-sdk-ids/solana-sdk-ids-3.1.0.crate"],
-        argument :=
-          "Each of the six real SDK IDs releases declares the system program using exactly \
-            32 base58 ones. Through 3.0.0 the invocation uses solana_pubkey::declare_id!; \
-            3.1.0 uses solana_address::declare_id!. The review follows the Pubkey 2.x \
-            macros and const decoder, Pubkey 3.0.0 re-exports through Address 1.x, Address \
-            1.1.0 re-exports through 2.x, and all relevant Address 2.x macros and constant \
-            decoders. The decode closure maps each base58 one to digit zero, all \
-            accumulation stays zero, and the 32 leading-zero characters produce exactly 32 \
-            zero bytes. Host id returns ID; the Address BPF branch re-evaluates the same \
-            constant literal and yields the same value. The changes in wrapper type, const \
-            versus static ID and macro expansion do not change the interpreted canonical \
-            address. Physical Rust type identity and compiled macro correspondence remain \
-            separate."
+            Pubkey/Address identity and macro expansion are separate binding obligations."]
       }
     ]
     | .sysvar_instructions_id => [
@@ -223,23 +193,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.6.0", "2.6.1"],
-          reason :=
-            "These are the independently reviewed resolved declare_id macro providers and \
-              canonical address representations for this function."
+          releases := ["2.6.0", "2.6.1"]
         }],
         conditions :=
           ["Interpret the returned Address in the canonical 32-byte key model and bind the \
-            exact macro provider, target layout and source result ABI."],
-        evidence := ["https://static.crates.io/crates/solana-sdk-ids/solana-sdk-ids-3.1.0.crate"],
-        argument :=
-          "Preserve the exact declared 32-byte constant, by-value result and \
-            solana-address macro-provider gate. The 3.0 source invokes the solana-pubkey \
-            provider; it is a separate nominal-source case even though the key bytes \
-            agree. Inspected provider references remain exact. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            exact macro provider, target layout and source result ABI."]
       }
     ]
     | .vote_id => [
@@ -265,23 +223,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.6.0", "2.6.1"],
-          reason :=
-            "These are the independently reviewed resolved declare_id macro providers and \
-              canonical address representations for this function."
+          releases := ["2.6.0", "2.6.1"]
         }],
         conditions :=
           ["Interpret the returned Address in the canonical 32-byte key model and bind the \
-            exact macro provider, target layout and source result ABI."],
-        evidence := ["https://static.crates.io/crates/solana-sdk-ids/solana-sdk-ids-3.1.0.crate"],
-        argument :=
-          "Preserve the exact declared 32-byte constant, by-value result and \
-            solana-address macro-provider gate. The 3.0 source invokes the solana-pubkey \
-            provider; it is a separate nominal-source case even though the key bytes \
-            agree. Inspected provider references remain exact. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            exact macro provider, target layout and source result ABI."]
       }
     ]
   applicabilityConsumers := fun key => match key with

@@ -77,12 +77,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         compatibleRanges := [{
           lower := "1.1.1",
           upper := "2.0.0"
-        }],
-        evidence := ["https://static.crates.io/crates/solana-zero-copy/solana-zero-copy-1.1.1.crate"],
-        argument :=
-          "The declared compatible range assumes consumption of the two stored bytes and \
-            little-endian u16 decoding, with unchanged ambient state and no alignment, \
-            allocation or callback requirement."
+        }]
       },
       {
         id := "reviewed-1-0-1",
@@ -100,15 +95,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         compatibleRanges := [{
           lower := "1.0.1",
           upper := "2.0.0"
-        }],
-        evidence := ["https://static.crates.io/crates/solana-zero-copy/solana-zero-copy-1.0.1.crate"],
-        argument :=
-          "Decode the exact two bytes as little-endian u16; every byte pattern is \
-            admitted, independent of source pointer alignment. Keep the exact source item \
-            and provider gates. The source reference remains 1.0.1; the interval is a \
-            separate preservation assumption. The declared range is a complete-operation \
-            preservation assumption; inspected releases, native runs, exact ABI \
-            observations and source-call implementation obligations remain separate."
+        }]
       }
     ]
     | .unaligned_U64_into_u64 => [
@@ -132,15 +119,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["U64 denotes exactly eight initialized bytes, and the result is the \
             corresponding 64-bit unsigned integer; core conversion/compiler/legal-access \
-            correctness remains a source binding."],
-        evidence := ["https://static.crates.io/crates/solana-zero-copy/solana-zero-copy-1.0.0.crate", "https://static.crates.io/crates/solana-zero-copy/solana-zero-copy-1.3.0.crate"],
-        argument :=
-          "All six archives declare transparent U64([u8;8]) and expand the same From<U64> \
-            for u64 body, Self::from_le_bytes(unaligned.0). Macro additions in 1.1.0/1.1.1 \
-            affect other operations and compile-time layout assertions, not this call \
-            closure. Optional serialization/bytemuck/wincode derives do not branch the \
-            conversion. The mathematical contract does not require a physical alignment \
-            hypothesis."
+            correctness remains a source binding."]
       }
     ]
   applicabilityConsumers := fun key => match key with

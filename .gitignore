@@ -10,3 +10,6 @@ __pycache__/
 
 # Personal Lean playground — never committed
 /scratch/
+
+# Machine-readable export; the source registry is authoritative.
+/packages/solanalib-specs/applicability.json

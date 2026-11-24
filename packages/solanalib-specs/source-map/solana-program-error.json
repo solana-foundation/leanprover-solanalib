@@ -5,7 +5,7 @@
       "modules": {
         "Solanalib.Specs.SolanaProgramError.ProgramError": "ed87a876caf88dd02da6cfe1e99ed8bfc65d279f53bb8dfbc6a527e26f06b1ba",
         "Solanalib.Specs.SolanaProgramError": "2f5220cb77060a75478e7b2dc51c570a69a5c5939348feac84e306fb8bf5e325",
-        "Solanalib.Specs.SolanaProgramError.Capabilities": "23aff37df077f0b4ba59d126e74fb463fb9198b3a2a1c8c8f8d3c8a8e5877b0a"
+        "Solanalib.Specs.SolanaProgramError.Capabilities": "ce28f4940ceeed6c7210403d3d0990e774f9344de801de6c4c1f0ba1a7ffac24"
       },
       "source_ids": ["sdk-values::solana-program-error-3.0.1::src/lib.rs"],
       "argument": "@review:source-notes/error-nullable.md#review-cec27149e4a34a8d",

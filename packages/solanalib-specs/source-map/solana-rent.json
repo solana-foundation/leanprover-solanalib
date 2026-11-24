@@ -4,7 +4,7 @@
       "order": 144,
       "modules": {
         "Solanalib.Specs.SolanaRent": "335976e383d0dded97ee71904f3f78e2b58a528fe60d5719644d95a142454798",
-        "Solanalib.Specs.SolanaRent.Capabilities": "8b7973f3b3814eebe3f5a630aba4f386216718a2395a7e3753b7ae892d8d6e09",
+        "Solanalib.Specs.SolanaRent.Capabilities": "662e91633156bd7114daecea36d51fdeb9f890e144c46cffcbfefad1e24f39b7",
         "Solanalib.Specs.SolanaRent.Rent": "ad0789107922c6f8f1c2c04842c5d3058d52ad9cea7f372d2c5e2e1abb63bdac",
         "Solanalib.Specs.SolanaRent.RentExempt": "38079b4edf1382764942a6b991fbd545af2b6d7feabcf312d55e836089f4d2a3"
       },

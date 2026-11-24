@@ -64,18 +64,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The explicit provider interprets the actual runtime syscall, host stub or \
             library operation with its normal results, state changes, unwind and terminal \
-            exits; no termination or validator implementation is assumed."],
-        evidence := ["https://static.crates.io/crates/solana-msg/solana-msg-2.2.1.crate"],
-        argument :=
-          "Solana-msg 2.2.1 calls sol_log_ with the UTF-8 pointer and byte length under \
-            target_os = solana. Its complementary branch unconditionally calls \
-            println!(\"{}\", message); there is no host-no-std noop profile or alloc/std \
-            feature selection in this release. Source formatting, output failure and \
-            runtime effects are interpreted by the selected sink. The declared compatible \
-            range assumes preservation of the UTF-8 syscall request on Solana and \
-            unconditional formatted stdout line on the host, including the state, unwind \
-            of the selected sink and terminal outcomes. It does not admit a host no-op \
-            branch."
+            exits; no termination or validator implementation is assumed."]
       }
     ]
     | .sol_log => [
@@ -101,20 +90,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             cost and backend implementation are supplied by the sink.", "The complete \
             target family includes Solana, host with std and host without std. Preserve \
             that family; earlier branch-specific agreements do not add the missing \
-            hostNoStd branch."],
-        evidence := ["https://static.crates.io/crates/solana-msg/solana-msg-3.0.0.crate", "https://static.crates.io/crates/solana-msg/solana-msg-3.1.0.crate"],
-        argument :=
-          "The complete three-target family corresponds to 3.0.0 and 3.1.0: \
-            target_os=solana forwards the UTF-8 bytes and byte length to sol_log_; a \
-            non-Solana build with std uses println!; a non-Solana build without std uses \
-            black_box and has no log event. All 23 earlier real releases have the same \
-            Solana forwarding and host printing branches, but cannot realize the hostNoStd \
-            configuration of the family: they unconditionally print on non-Solana builds. \
-            Their Solana and hostStd branches were separately tested where listed; they \
-            are not full-family compatibility. The 0.0.1 package is a placeholder. The \
-            reached syscall declaration and macro were reviewed across the resolved \
-            major-version transitions; the sink relation still supplies printing, panic, \
-            termination and backend effects."
+            hostNoStd branch."]
       }
     ]
   applicabilityConsumers := fun key => match key with

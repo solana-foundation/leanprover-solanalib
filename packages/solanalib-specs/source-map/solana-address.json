@@ -6,7 +6,7 @@
         "Solanalib.Specs.SolanaAddress": "c01fdeb659b5b56bfae6d0c25ae482fbb903b4bc3fc6efae8d265cd919a1fe5f",
         "Solanalib.Specs.SolanaAddress.Address": "855823cbca58cf48b4f4852e78eea6cf6f9e4cc486d271a2e6283f206349a835",
         "Solanalib.Specs.SolanaAddress.Borsh": "e4694a72807fb2278ad110a087ccad29d7587fd17c8dc43630164f4035345732",
-        "Solanalib.Specs.SolanaAddress.Capabilities": "7fb465d42db496f2001bec65748f6f2a25dc95f793affa25e47ad6d4c32e5856",
+        "Solanalib.Specs.SolanaAddress.Capabilities": "7652a0b8d31647ad8364f472623779f766e66edb09caf7c3a896279e677c53e2",
         "Solanalib.Specs.SolanaAddress.Syscalls": "ec34a7347174ce8a7404e64801d3395e06b38c28e9133283660b05f08f460bdb",
         "Solanalib.Specs.SolanaAddress.Address.Cmp": "9d18bc8e4ff78e53b78d3ab38fc454dbae4971edbea9a131e82a55caa4f27225",
         "Solanalib.Specs.SolanaAddress.Operations": "8ffd70dd9cbf494b7bab45d8dde80d7f59b725dbced89116aebf9836bbc653bf"

@@ -161,9 +161,7 @@ assumption, and retain known behavior boundaries such as TLV resolver `0.11.4`
 and the `3.1.0` allocation change of the Token-2022 interface. A git package may have
 compatible registry dependencies without widening its own source revision.
 
-`tools/version_compatibility.py` normalizes this registry into the installed
-`applicability.json` and generates [the function table](../VERSION_COMPATIBILITY.md).
-`tools/generate_capabilities.py` emits the same profiles as typed Lean data.
+`tools/version_compatibility.py` exports this registry as an ignored `applicability.json` and generates [the committed function table](../VERSION_COMPATIBILITY.md). `tools/generate_capabilities.py` emits the selection facts and interpretation conditions as committed Lean data; review arguments, evidence and explanatory reasons remain in this registry. `just check-generated` checks both generators. Ordinary Lean builds use the committed catalogs without Python.
 The installed lookup reports eligible, unsupported or unresolved per model;
 `Catalog.forBuild` gives eligible source-call members their reviewed defining
 identities while preserving their complete families. A reviewed observation

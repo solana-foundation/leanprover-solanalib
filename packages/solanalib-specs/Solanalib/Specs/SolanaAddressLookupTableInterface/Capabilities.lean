@@ -72,9 +72,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["bincode", "bytemuck"],
           any := [],
-          none := [],
-          reason := "The deserialize implementation exists only when both features are \
-            enabled."
+          none := []
         },
         dependencies := [{
           package := "bincode",
@@ -84,14 +82,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Reference: 1.3.3. Compatibility in [1.3.3, 2.0.0) assumes the reached \
-              ProgramState decoder preserves fixed little-endian tag/field decoding, \
-              None/Some metadata lengths, trailing-byte acceptance, actual \
-              Box<ErrorKind>/diagnostic construction and destruction, and all reached \
-              state and abnormal outcomes within the existing allocation-failure boundary. \
-              Preserve decode-before-suffix ordering and error destruction before \
-              InvalidAccountData.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -104,11 +94,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.24.0"],
-          reason :=
-            "Reference: 1.24.0. Compatibility in [1.24.0, 2.0.0) assumes the selected \
-              full-suffix cast retains the alignment check, exact-size/no-slop check for \
-              complete 32-byte elements, and the original borrowed allocation, byte \
-              offset, provenance and lifetime, without allocating an address buffer.",
           compatibleRanges := [{
             lower := "1.24.0",
             upper := "2.0.0"
@@ -121,12 +106,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.4.0"],
-          reason :=
-            "Reference: 2.4.0. Compatibility in [2.4.0, 3.0.0) assumes the reached Pubkey \
-              representation remains transparent with 32-byte size, alignment 1, no \
-              invalid bit patterns and the same borrow interpretation for this cast. This \
-              is a source representation obligation, not a new precondition on the \
-              mathematical decoder.",
           compatibleRanges := [{
             lower := "2.4.0",
             upper := "3.0.0"
@@ -145,23 +124,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             GlobalAlloc no-unwind requirement of Rust. For errors reached by this fixed \
             decoder, bind their normal owned-resource destruction; generic cleanup-unwind \
             witnesses do not establish a source destructor unwind. Allocation failure \
-            follows the selected terminal policy."],
-        evidence := ["https://static.crates.io/crates/solana-address-lookup-table-interface/solana-address-lookup-table-interface-2.2.2.crate"],
-        argument :=
-          "Reference: solana-address-lookup-table-interface 2.2.2. Compatibility in \
-            [2.2.2, 3.0.0) assumes that the defining operation and its reached \
-            dependencies preserve this behavior: Preserve the complete reached bincode \
-            decoder, owned-error cleanup and bytemuck/Pubkey representation: decode \
-            ProgramState first, destroy the owned error before InvalidAccountData, retain \
-            Uninitialized precedence, None/Some serialized metadata lengths 24/56 and \
-            trailing-byte/padding behavior, then borrow the entire suffix at byte offset \
-            56 as complete 32-byte alignment-1 Pubkeys. Retain the original \
-            allocation/provenance/lifetime and Cow::Borrowed representation, without an \
-            address-storage allocation, 256-address limit or liveness check. Reached \
-            Box<ErrorKind>/diagnostic allocation and destruction, source-normal cleanup, \
-            external effects and the recorded allocation-failure boundary must remain the \
-            same; generic destructor-unwind witnesses do not claim that GlobalAlloc \
-            unwinds."
+            follows the selected terminal policy."]
       },
       {
         id := "exact-reviewed:1",
@@ -185,9 +148,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["bincode", "bytemuck"],
           any := [],
-          none := [],
-          reason := "The deserialize implementation exists only when both features are \
-            enabled."
+          none := []
         },
         dependencies := [{
           package := "bincode",
@@ -197,14 +158,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Reference: 1.3.3. Compatibility in [1.3.3, 2.0.0) assumes the reached \
-              ProgramState decoder preserves fixed little-endian tag/field decoding, \
-              None/Some metadata lengths, trailing-byte acceptance, actual \
-              Box<ErrorKind>/diagnostic construction and destruction, and all reached \
-              state and abnormal outcomes within the existing allocation-failure boundary. \
-              Preserve decode-before-suffix ordering and error destruction before \
-              InvalidAccountData.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -217,11 +170,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.24.0"],
-          reason :=
-            "Reference: 1.24.0. Compatibility in [1.24.0, 2.0.0) assumes the selected \
-              full-suffix cast retains the alignment check, exact-size/no-slop check for \
-              complete 32-byte elements, and the original borrowed allocation, byte \
-              offset, provenance and lifetime, without allocating an address buffer.",
           compatibleRanges := [{
             lower := "1.24.0",
             upper := "2.0.0"
@@ -234,12 +182,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.4.0"],
-          reason :=
-            "Reference: 2.4.0. Compatibility in [2.4.0, 3.0.0) assumes the reached Pubkey \
-              representation remains transparent with 32-byte size, alignment 1, no \
-              invalid bit patterns and the same borrow interpretation for this cast. This \
-              is a source representation obligation, not a new precondition on the \
-              mathematical decoder.",
           compatibleRanges := [{
             lower := "2.4.0",
             upper := "3.0.0"
@@ -258,23 +200,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             GlobalAlloc no-unwind requirement of Rust. For errors reached by this fixed \
             decoder, bind their normal owned-resource destruction; generic cleanup-unwind \
             witnesses do not establish a source destructor unwind. Allocation failure \
-            follows the selected terminal policy."],
-        evidence := ["https://static.crates.io/crates/solana-address-lookup-table-interface/solana-address-lookup-table-interface-2.2.2.crate"],
-        argument :=
-          "Reference: solana-address-lookup-table-interface 2.2.2. Compatibility in \
-            [2.2.2, 3.0.0) assumes that the defining operation and its reached \
-            dependencies preserve this behavior: Preserve the complete reached bincode \
-            decoder, owned-error cleanup and bytemuck/Pubkey representation: decode \
-            ProgramState first, destroy the owned error before InvalidAccountData, retain \
-            Uninitialized precedence, None/Some serialized metadata lengths 24/56 and \
-            trailing-byte/padding behavior, then borrow the entire suffix at byte offset \
-            56 as complete 32-byte alignment-1 Pubkeys. Retain the original \
-            allocation/provenance/lifetime and Cow::Borrowed representation, without an \
-            address-storage allocation, 256-address limit or liveness check. Reached \
-            Box<ErrorKind>/diagnostic allocation and destruction, source-normal cleanup, \
-            external effects and the recorded allocation-failure boundary must remain the \
-            same; generic destructor-unwind witnesses do not claim that GlobalAlloc \
-            unwinds."
+            follows the selected terminal policy."]
       }
     ]
   applicabilityConsumers := fun key => match key with

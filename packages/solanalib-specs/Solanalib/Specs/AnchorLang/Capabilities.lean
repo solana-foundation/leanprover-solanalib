@@ -1928,14 +1928,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             and result layouts, and every outcome of the actual unchecked callback at the \
             same native state.", "Only implementations inheriting this provided default \
             are admitted. Generic indices do not certify a different or overriding Rust \
-            implementation."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes the provided default forwarding the same \
-            mutable slice reference to the actual try_deserialize_unchecked callback, \
-            preserving every state, error, unwind and terminal result. Overrides remain \
-            different callable identities. This pre-cohort profile stops before the new \
-            1.2.1 provider/feature selection."
+            implementation."]
       },
       {
         id := "anchor-lang-1.1.2-default-mint",
@@ -1958,17 +1951,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["This is the provided Anchor AccountDeserialize default; an overriding \
             implementation is outside this source member.", "A Rust binding must retain \
             the actual mutable slice receiver, nominal Self and result layouts, and every \
-            outcome of the actual unchecked callback."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes the provided default forwarding the same \
-            mutable slice reference to the actual try_deserialize_unchecked callback, \
-            preserving every state, error, unwind and terminal result. Overrides remain \
-            different callable identities. This pre-cohort profile stops before the new \
-            1.2.1 provider/feature selection. The inspected anchor-spl 1.1.2 Mint supplies \
-            only the unchecked method; the default remains defined by anchor-lang. This \
-            adds no reverse Cargo dependency and does not replace the actual \
-            provider/caller-unit join."
+            outcome of the actual unchecked callback."]
       },
       {
         id := "anchor-lang-1.1.2-default-token-account",
@@ -1991,17 +1974,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["This is the provided Anchor AccountDeserialize default; an overriding \
             implementation is outside this source member.", "A Rust binding must retain \
             the actual mutable slice receiver, nominal Self and result layouts, and every \
-            outcome of the actual unchecked callback."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes the provided default forwarding the same \
-            mutable slice reference to the actual try_deserialize_unchecked callback, \
-            preserving every state, error, unwind and terminal result. Overrides remain \
-            different callable identities. This pre-cohort profile stops before the new \
-            1.2.1 provider/feature selection. The inspected anchor-spl 1.1.2 TokenAccount \
-            supplies only the unchecked method; the default remains defined by \
-            anchor-lang. This adds no reverse Cargo dependency and does not replace the \
-            actual provider/caller-unit join."
+            outcome of the actual unchecked callback."]
       }
     ]
     | .AccountInfo_key => [
@@ -2043,20 +2016,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1 the source \
             is the crate-root blanket Key implementation specialized to AccountInfo and \
             its reflexive AsRef. The generic method at another receiver type is not this \
-            source interpretation."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.14.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "For this concrete AccountInfo receiver, 0.14.0-0.20.1 and 0.23.0-1.2.2 copy \
-            *self.key directly. 0.21.0-0.22.1 use the AsRef blanket Key implementation; \
-            the reached concrete AccountInfo::as_ref is identity, so no callback effect, \
-            borrow or Rc operation is introduced. The old 0.10.0-0.13.2 blanket Key \
-            instead calls the AccountInfo-specific ToAccountInfo, cloning lamports Rc then \
-            data Rc and dropping the temporary. Its possible Rc-overflow abort and \
-            lifecycle operations are absent from the current pure, always-returning \
-            projection contract; equal ordinary returned keys do not establish that full \
-            contract. The Key API is absent through 0.9.0. Pubkey/Address aliases and \
-            rent_epoch/_unused metadata changes do not change this projection under the \
-            existing reference/value binding."
+            source interpretation."]
       },
       {
         id := "anchor-lang-reviewed-direct-2",
@@ -2105,20 +2065,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1 the source \
             is the crate-root blanket Key implementation specialized to AccountInfo and \
             its reflexive AsRef. The generic method at another receiver type is not this \
-            source interpretation."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.14.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "For this concrete AccountInfo receiver, 0.14.0-0.20.1 and 0.23.0-1.2.2 copy \
-            *self.key directly. 0.21.0-0.22.1 use the AsRef blanket Key implementation; \
-            the reached concrete AccountInfo::as_ref is identity, so no callback effect, \
-            borrow or Rc operation is introduced. The old 0.10.0-0.13.2 blanket Key \
-            instead calls the AccountInfo-specific ToAccountInfo, cloning lamports Rc then \
-            data Rc and dropping the temporary. Its possible Rc-overflow abort and \
-            lifecycle operations are absent from the current pure, always-returning \
-            projection contract; equal ordinary returned keys do not establish that full \
-            contract. The Key API is absent through 0.9.0. Pubkey/Address aliases and \
-            rent_epoch/_unused metadata changes do not change this projection under the \
-            existing reference/value binding."
+            source interpretation."]
       },
       {
         id := "anchor-lang-reviewed-direct-3",
@@ -2143,20 +2090,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1 the source \
             is the crate-root blanket Key implementation specialized to AccountInfo and \
             its reflexive AsRef. The generic method at another receiver type is not this \
-            source interpretation."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.14.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "For this concrete AccountInfo receiver, 0.14.0-0.20.1 and 0.23.0-1.2.2 copy \
-            *self.key directly. 0.21.0-0.22.1 use the AsRef blanket Key implementation; \
-            the reached concrete AccountInfo::as_ref is identity, so no callback effect, \
-            borrow or Rc operation is introduced. The old 0.10.0-0.13.2 blanket Key \
-            instead calls the AccountInfo-specific ToAccountInfo, cloning lamports Rc then \
-            data Rc and dropping the temporary. Its possible Rc-overflow abort and \
-            lifecycle operations are absent from the current pure, always-returning \
-            projection contract; equal ordinary returned keys do not establish that full \
-            contract. The Key API is absent through 0.9.0. Pubkey/Address aliases and \
-            rent_epoch/_unused metadata changes do not change this projection under the \
-            existing reference/value binding."
+            source interpretation."]
       },
       {
         id := "anchor-lang-reviewed-direct-4",
@@ -2185,20 +2119,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1 the source \
             is the crate-root blanket Key implementation specialized to AccountInfo and \
             its reflexive AsRef. The generic method at another receiver type is not this \
-            source interpretation."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.14.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "For this concrete AccountInfo receiver, 0.14.0-0.20.1 and 0.23.0-1.2.2 copy \
-            *self.key directly. 0.21.0-0.22.1 use the AsRef blanket Key implementation; \
-            the reached concrete AccountInfo::as_ref is identity, so no callback effect, \
-            borrow or Rc operation is introduced. The old 0.10.0-0.13.2 blanket Key \
-            instead calls the AccountInfo-specific ToAccountInfo, cloning lamports Rc then \
-            data Rc and dropping the temporary. Its possible Rc-overflow abort and \
-            lifecycle operations are absent from the current pure, always-returning \
-            projection contract; equal ordinary returned keys do not establish that full \
-            contract. The Key API is absent through 0.9.0. Pubkey/Address aliases and \
-            rent_epoch/_unused metadata changes do not change this projection under the \
-            existing reference/value binding."
+            source interpretation."]
       },
       {
         id := "anchor-lang-reviewed-program2-monolithic",
@@ -2229,10 +2150,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.0.8", "2.0.9", "2.0.10", "2.0.11", "2.0.13", "2.0.14", "2.0.15", "2.0.16",
               "2.0.17",
             "2.0.18", "2.0.19", "2.0.20", "2.0.21", "2.0.22", "2.0.23", "2.0.24", "2.0.25"],
-          reason :=
-            "The selected program package preserves the AccountInfo receiver definition: \
-              2.0.x is monolithic and 2.1+ reexports the split crate. These distinct \
-              definition paths remain separate alternatives.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "2.1.0"
@@ -2243,20 +2160,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1 the source \
             is the crate-root blanket Key implementation specialized to AccountInfo and \
             its reflexive AsRef. The generic method at another receiver type is not this \
-            source interpretation."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.14.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "For this concrete AccountInfo receiver, 0.14.0-0.20.1 and 0.23.0-1.2.2 copy \
-            *self.key directly. 0.21.0-0.22.1 use the AsRef blanket Key implementation; \
-            the reached concrete AccountInfo::as_ref is identity, so no callback effect, \
-            borrow or Rc operation is introduced. The old 0.10.0-0.13.2 blanket Key \
-            instead calls the AccountInfo-specific ToAccountInfo, cloning lamports Rc then \
-            data Rc and dropping the temporary. Its possible Rc-overflow abort and \
-            lifecycle operations are absent from the current pure, always-returning \
-            projection contract; equal ordinary returned keys do not establish that full \
-            contract. The Key API is absent through 0.9.0. Pubkey/Address aliases and \
-            rent_epoch/_unused metadata changes do not change this projection under the \
-            existing reference/value binding."
+            source interpretation."]
       },
       {
         id := "anchor-lang-reviewed-program2-split",
@@ -2286,10 +2190,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.3.0"],
-          reason :=
-            "The selected program package preserves the AccountInfo receiver definition: \
-              2.0.x is monolithic and 2.1+ reexports the split crate. These distinct \
-              definition paths remain separate alternatives.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -2300,20 +2200,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1 the source \
             is the crate-root blanket Key implementation specialized to AccountInfo and \
             its reflexive AsRef. The generic method at another receiver type is not this \
-            source interpretation."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.14.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "For this concrete AccountInfo receiver, 0.14.0-0.20.1 and 0.23.0-1.2.2 copy \
-            *self.key directly. 0.21.0-0.22.1 use the AsRef blanket Key implementation; \
-            the reached concrete AccountInfo::as_ref is identity, so no callback effect, \
-            borrow or Rc operation is introduced. The old 0.10.0-0.13.2 blanket Key \
-            instead calls the AccountInfo-specific ToAccountInfo, cloning lamports Rc then \
-            data Rc and dropping the temporary. Its possible Rc-overflow abort and \
-            lifecycle operations are absent from the current pure, always-returning \
-            projection contract; equal ordinary returned keys do not establish that full \
-            contract. The Key API is absent through 0.9.0. Pubkey/Address aliases and \
-            rent_epoch/_unused metadata changes do not change this projection under the \
-            existing reference/value binding."
+            source interpretation."]
       }
     ]
     | .AccountsExit_exit => [
@@ -2335,13 +2222,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["This source identity denotes the provided default implementation, not a user \
             override. The unit Result representation is related to the actual source \
-            result."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references return Ok(()) without reading the receiver or \
-            program ID. Compatibility within the declared 0.32 line assumes this provided \
-            no-op and its Result representation remain unchanged."
+            result."]
       },
       {
         id := "anchor-lifecycle-1.1.2",
@@ -2361,14 +2242,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["This source identity denotes the provided default implementation, not a user \
             override. The unit Result representation is related to the actual source \
-            result."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes the provided default implementation \
-            returning Ok(()) with unchanged state. An overriding implementation has its \
-            own source identity. This pre-cohort profile stops before the new 1.2.1 \
-            provider/feature selection."
+            result."]
       },
       {
         id := "anchor-lifecycle-1.0.2",
@@ -2388,19 +2262,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["This source identity denotes the provided default implementation, not a user \
             override. The unit Result representation is related to the actual source \
-            result."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The provided AccountsExit::exit implementation returns Ok(()) and leaves all \
-            state unchanged. Reviewed source distinctions and continuation conditions are \
-            recorded in source-notes/anchor-lifecycle.md. Error representation is boxed; \
-            AccountInfo fields are borrowed. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            result."]
       },
       {
         id := "anchor-lifecycle-0.29.0",
@@ -2420,14 +2282,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["This source identity denotes the provided default implementation, not a user \
             override. The unit Result representation is related to the actual source \
-            result."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return unit through the default exit \
-            without serializing a payload or acquiring an AccountInfo guard. Compatibility \
-            in [0.29.0, 0.30.0) assumes this complete operation and the scoped \
-            dependencies remain unchanged; source/ABI/provider obligations stay explicit."
+            result."]
       },
       {
         id := "anchor-lifecycle-0.27.0",
@@ -2447,14 +2302,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["This source identity denotes the provided default implementation, not a user \
             override. The unit Result representation is related to the actual source \
-            result."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The provided AccountsExit::exit implementation returns Ok(()) and leaves all \
-            state unchanged. Compatibility in [0.27.0, 0.28.0) assumes this operation and \
-            its selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            result."]
       }
     ]
     | .Lamports_get_lamports => [
@@ -2479,14 +2327,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             payload resources are interpreted in the auxiliary state.", "Bind the actual \
             AsRef and panic callbacks and the selected AccountInfo lamports cell. The \
             reached typed-cell premise excludes malformed interpretations but admits \
-            borrow conflicts."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The inspected 0.32.0–0.32.3 operation and reached context/error definitions \
-            agree. The declared 0.32 range assumes the actual AsRef loan and current \
-            lamports cell, temporary shared acquisition/release and configured panic \
-            behavior with unchanged receiver ownership. Actual provider, layout and \
-            finite-exit obligations remain unchanged."
+            borrow conflicts."]
       }
     ]
     | .Pubkey_key => [
@@ -2508,16 +2349,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Key source, \
-            key-provider import and relevant dependency requirement. The declared [0.32.1, \
-            0.33.0) range assumes that this exact implementation for solana_pubkey::Pubkey \
-            copies all 32 bytes and preserves the complete ambient world. The used nominal \
-            key provider and Copy/value interpretation must remain compatible; an \
-            Address-defined receiver is a distinct source identity. No AccountInfo clone, \
-            borrow, serialization, allocator or key-search operation is reached."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2",
@@ -2537,12 +2369,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes copying all 32 bytes of the actual \
-            Pubkey/Address while leaving the supplied state unchanged. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2",
@@ -2562,22 +2389,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Copies the complete 32-byte Pubkey/Address and preserves the supplied ambient \
-            state. Each listed immutable release was reviewed separately. Anchor 0.27.0 \
-            owns AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared \
-            reference. InterfaceAccount delegates to its contained Account and preserves \
-            the saved owner. Callback identities, source loans, owned payload transfer, \
-            current AccountInfo cells and all finite exits remain explicit at the family \
-            index; no source body, target-layout or dependency implementation proof is \
-            claimed. See source-notes/anchor-views.md. Preserve the complete 1.0 \
-            operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0",
@@ -2597,13 +2409,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Copy the complete monolithic Pubkey bytes \
-            while retaining the actual source key and nominal identity. Compatibility in \
-            [0.29.0, 0.30.0) assumes this complete operation and the scoped dependencies \
-            remain unchanged; source/ABI/provider obligations stay explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.27.0",
@@ -2623,13 +2429,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Copy the complete 32-byte Pubkey and preserve the ambient state. This operation \
-            adds no callback, allocation or source-reference identity. Compatibility in \
-            [0.27.0, 0.28.0) assumes this operation and its selected dependency contracts \
-            preserve that behavior; the exact releases remain inspected references."
+            payload resources are interpreted in the auxiliary state."]
       }
     ]
     | .ToAccountInfo_to_account_info => [
@@ -2691,20 +2491,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["AsRef and the two non-unwinding Global Rc dependencies are bound to the actual \
-            implementations and aliases."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.21.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The exact generic blanket implementation for arbitrary T: AsRef<AccountInfo> \
-            first calls self.as_ref() at the current state, then performs derived \
-            AccountInfo::clone. It is byte-identical in every stable release from 0.21.0 \
-            through 1.2.2. The reached clone performs lamports Rc then data Rc, preserves \
-            key/owner references, scalar flags and the existing metadata field, and \
-            acquires no RefCell borrow. AsRef unwind skips both clones; a terminal Rc exit \
-            skips later work. Earlier releases have the trait and some concrete \
-            implementations but not this generic AsRef blanket source operation; admitting \
-            them would narrow or replace the modeled generic API. The supporting \
-            observation records the callback exit and copied value while deliberately \
-            forgetting the Rc ownership lifecycle of the primary model."
+            implementations and aliases."]
       }
     ]
     | .ToAccountInfo_to_account_info_observation => [
@@ -2766,20 +2553,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["AsRef and the two non-unwinding Global Rc dependencies are bound to the actual \
-            implementations and aliases."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.21.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The exact generic blanket implementation for arbitrary T: AsRef<AccountInfo> \
-            first calls self.as_ref() at the current state, then performs derived \
-            AccountInfo::clone. It is byte-identical in every stable release from 0.21.0 \
-            through 1.2.2. The reached clone performs lamports Rc then data Rc, preserves \
-            key/owner references, scalar flags and the existing metadata field, and \
-            acquires no RefCell borrow. AsRef unwind skips both clones; a terminal Rc exit \
-            skips later work. Earlier releases have the trait and some concrete \
-            implementations but not this generic AsRef blanket source operation; admitting \
-            them would narrow or replace the modeled generic API. The supporting \
-            observation records the callback exit and copied value while deliberately \
-            forgetting the Rc ownership lifecycle of the primary model."
+            implementations and aliases."]
       }
     ]
     | .accounts_account_Account_clone_borrowed_info => [
@@ -2805,17 +2579,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             payload resources are interpreted in the auxiliary state.", "Bind T::clone to \
             the actual source-reference callback, including pointer identity, interior \
             effects and all finite exits. For owned AccountInfo bind both non-unwinding \
-            Global Rc operations in declaration order."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, whose complete Account/wrapper sources \
-            and relevant dependency requirements agree. The declared [0.32.1, 0.33.0) \
-            range assumes preservation of the ordinary Clone derive: clone T through its \
-            actual decoded-field source reference, then copy the borrowed AccountInfo \
-            reference. Callback identity, current value, interior effects, payload \
-            ownership and every finite exit remain in the indexed contract. The result has \
-            a fresh logical wrapper identity; retaining borrowed info neither clones Rc \
-            fields nor asserts a heap allocation. The owned-info variant stays separate."
+            Global Rc operations in declaration order."]
       },
       {
         id := "anchor-views-0.32.1:1",
@@ -2840,17 +2604,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             payload resources are interpreted in the auxiliary state.", "Bind T::clone to \
             the actual source-reference callback, including pointer identity, interior \
             effects and all finite exits. For owned AccountInfo bind both non-unwinding \
-            Global Rc operations in declaration order."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, whose complete Account/wrapper sources \
-            and relevant dependency requirements agree. The declared [0.32.1, 0.33.0) \
-            range assumes preservation of the ordinary Clone derive: clone T through its \
-            actual decoded-field source reference, then copy the borrowed AccountInfo \
-            reference. Callback identity, current value, interior effects, payload \
-            ownership and every finite exit remain in the indexed contract. The result has \
-            a fresh logical wrapper identity; retaining borrowed info neither clones Rc \
-            fields nor asserts a heap allocation. The owned-info variant stays separate."
+            Global Rc operations in declaration order."]
       },
       {
         id := "anchor-views-0.29.0:0",
@@ -2874,15 +2628,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             payload resources are interpreted in the auxiliary state.", "Bind T::clone to \
             the actual source-reference callback, including pointer identity, interior \
             effects and all finite exits. For owned AccountInfo bind both non-unwinding \
-            Global Rc operations in declaration order."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Invoke the actual payload Clone operation \
-            and retain the borrowed AccountInfo identity. Preserve callback effects and \
-            fresh wrapper/payload identities without inventing an Rc clone for the \
-            borrowed field. Compatibility in [0.29.0, 0.30.0) assumes this complete \
-            operation and the scoped dependencies remain unchanged; source/ABI/provider \
-            obligations stay explicit."
+            Global Rc operations in declaration order."]
       },
       {
         id := "anchor-views-0.29.0:1",
@@ -2907,15 +2653,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             payload resources are interpreted in the auxiliary state.", "Bind T::clone to \
             the actual source-reference callback, including pointer identity, interior \
             effects and all finite exits. For owned AccountInfo bind both non-unwinding \
-            Global Rc operations in declaration order."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Invoke the actual payload Clone operation \
-            and retain the borrowed AccountInfo identity. Preserve callback effects and \
-            fresh wrapper/payload identities without inventing an Rc clone for the \
-            borrowed field. Compatibility in [0.29.0, 0.30.0) assumes this complete \
-            operation and the scoped dependencies remain unchanged; source/ABI/provider \
-            obligations stay explicit."
+            Global Rc operations in declaration order."]
       }
     ]
     | .accounts_account_Account_close => [
@@ -2944,10 +2682,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Preserve Rc clone/drop order, panicking lamports borrows, owner assignment \
-              and zero resize, including late-error writes and retained backing. Resize \
-              first exists in 2.3.0; source layout remains separately bound.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -2963,10 +2697,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "Preserve the full legacy ProgramError payload domain and reached \
-              AccountBorrowFailed/InvalidRealloc injection. BorshIoError retains its owned \
-              String; arithmetic overflow on this close path still panics.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -2986,14 +2716,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             enum, actual String/Box operations and fixed builtin ProgramError injection. \
             This 0.32 profile uses boxed storage. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references clone the source and use destination-first \
-            checked_add(...).unwrap() close. Compatibility assumes this legacy path, \
-            ordered balance/owner/resize effects, alias behavior and moved-value cleanup \
-            remain unchanged; the noncloning and checked-error 1.x paths are distinct."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -3020,10 +2743,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Preserve Rc clone/drop order, panicking lamports borrows, owner assignment \
-              and zero resize, including late-error writes and retained backing. Resize \
-              first exists in 2.3.0; source layout remains separately bound.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -3039,10 +2758,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "Preserve the full legacy ProgramError payload domain and reached \
-              AccountBorrowFailed/InvalidRealloc injection. BorshIoError retains its owned \
-              String; arithmetic overflow on this close path still panics.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -3062,14 +2777,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             enum, actual String/Box operations and fixed builtin ProgramError injection. \
             This 0.32 profile uses boxed storage. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references clone the source and use destination-first \
-            checked_add(...).unwrap() close. Compatibility assumes this legacy path, \
-            ordered balance/owner/resize effects, alias behavior and moved-value cleanup \
-            remain unchanged; the noncloning and checked-error 1.x paths are distinct."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:0",
@@ -3096,12 +2804,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the current AccountInfo Rc/RefCell policy and \
-              subfield geometry through lamports transfer, owner assignment and data \
-              resize, with phase-aware cleanup and actual borrow errors. No final \
-              positive-count gate is added.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -3122,16 +2824,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Use the exact current RefCell policy and \
-            Rc subfield layout through the source close phases. Retain recipient/source \
-            balance order, owner assignment, data resizing and phase-aware cleanup; no \
-            final positive borrow-count gate is introduced. Compatibility in [0.29.0, \
-            0.30.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -3158,12 +2851,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the current AccountInfo Rc/RefCell policy and \
-              subfield geometry through lamports transfer, owner assignment and data \
-              resize, with phase-aware cleanup and actual borrow errors. No final \
-              positive-count gate is added.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -3184,16 +2871,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Use the exact current RefCell policy and \
-            Rc subfield layout through the source close phases. Retain recipient/source \
-            balance order, owner assignment, data resizing and phase-aware cleanup; no \
-            final positive borrow-count gate is introduced. Compatibility in [0.29.0, \
-            0.30.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       }
     ]
     | .accounts_account_Account_close_checked => [
@@ -3222,11 +2900,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -3239,10 +2912,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -3255,10 +2924,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -3279,15 +2944,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes source-order lamports reads and checked \
-            addition, current-cell writes, owner assignment and zero resize, including \
-            aliasing, borrow failures and moved-value cleanup. The borrowed AccountInfo is \
-            not cloned into a temporary; overflow follows the checked modern path. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -3314,11 +2971,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -3331,10 +2983,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -3347,10 +2995,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -3371,15 +3015,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes source-order lamports reads and checked \
-            addition, current-cell writes, owner assignment and zero resize, including \
-            aliasing, borrow failures and moved-value cleanup. The borrowed AccountInfo is \
-            not cloned into a temporary; overflow follows the checked modern path. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            their owned String resources."]
       }
     ]
     | .accounts_account_Account_close_inline_error => [
@@ -3408,11 +3044,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -3433,15 +3064,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Source-order lamports reads and writes, version-selected overflow and borrow \
-            errors, owner assignment, zero resize, aliasing and moved-value cleanup. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -3468,11 +3091,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -3493,15 +3111,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Source-order lamports reads and writes, version-selected overflow and borrow \
-            errors, owner assignment, zero resize, aliasing and moved-value cleanup. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            their owned String resources."]
       }
     ]
     | .accounts_account_Account_deref => [
@@ -3538,15 +3148,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The source reference, lifetime and projected field are related to the \
             corresponding mathematical value.", "Through 0.26.0 the source Account<T> impl \
             additionally requires T: Owner; 0.27.0 removes that source trait bound. The \
-            mathematical field projection adds no unused Owner premise."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.15.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "Account first exists in 0.15.0. Every released implementation returns a shared \
-            reference to its stored account field; the 0.26.0 removal of redundant (*self) \
-            syntax does not invoke a payload operation. The owned-to-borrowed AccountInfo \
-            representation change in 0.29.0 does not clone, borrow, or drop anything \
-            during deref. Earlier ProgramAccount is a distinct overlapping API, not an \
-            alias."
+            mathematical field projection adds no unused Owner premise."]
       },
       {
         id := "anchor-lang-reviewed-2",
@@ -3602,15 +3204,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The source reference, lifetime and projected field are related to the \
             corresponding mathematical value.", "Through 0.26.0 the source Account<T> impl \
             additionally requires T: Owner; 0.27.0 removes that source trait bound. The \
-            mathematical field projection adds no unused Owner premise."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.15.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "Account first exists in 0.15.0. Every released implementation returns a shared \
-            reference to its stored account field; the 0.26.0 removal of redundant (*self) \
-            syntax does not invoke a payload operation. The owned-to-borrowed AccountInfo \
-            representation change in 0.29.0 does not clone, borrow, or drop anything \
-            during deref. Earlier ProgramAccount is a distinct overlapping API, not an \
-            alias."
+            mathematical field projection adds no unused Owner premise."]
       },
       {
         id := "anchor-lang-reviewed-3",
@@ -3641,15 +3235,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The source reference, lifetime and projected field are related to the \
             corresponding mathematical value.", "Through 0.26.0 the source Account<T> impl \
             additionally requires T: Owner; 0.27.0 removes that source trait bound. The \
-            mathematical field projection adds no unused Owner premise."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.15.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "Account first exists in 0.15.0. Every released implementation returns a shared \
-            reference to its stored account field; the 0.26.0 removal of redundant (*self) \
-            syntax does not invoke a payload operation. The owned-to-borrowed AccountInfo \
-            representation change in 0.29.0 does not clone, borrow, or drop anything \
-            during deref. Earlier ProgramAccount is a distinct overlapping API, not an \
-            alias."
+            mathematical field projection adds no unused Owner premise."]
       }
     ]
     | .accounts_account_Account_deref_mut => [
@@ -3675,18 +3261,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
             payload resources are interpreted in the auxiliary state.", "Select debug from \
             the actual anchor-debug feature. Bind the logging and panic dependencies to \
-            their complete actual finite outcomes."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account source \
-            and anchor-debug definition. The declared [0.32.1, 0.33.0) range assumes \
-            preservation of the same exclusive decoded-field reference. With debug \
-            disabled there is no writability check; with debug enabled and is_writable \
-            false, the actual message provider logs 'The given Account is not mutable' \
-            before panic. Their diagnostic text, effects and all finite exits remain \
-            indexed. A source binding limited to the ordinary branch must require debug = \
-            false; the debug branch of the full family adds no blanket writable \
-            precondition."
+            their complete actual finite outcomes."]
       },
       {
         id := "anchor-views-0.32.1:1",
@@ -3710,18 +3285,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
             payload resources are interpreted in the auxiliary state.", "Select debug from \
             the actual anchor-debug feature. Bind the logging and panic dependencies to \
-            their complete actual finite outcomes."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account source \
-            and anchor-debug definition. The declared [0.32.1, 0.33.0) range assumes \
-            preservation of the same exclusive decoded-field reference. With debug \
-            disabled there is no writability check; with debug enabled and is_writable \
-            false, the actual message provider logs 'The given Account is not mutable' \
-            before panic. Their diagnostic text, effects and all finite exits remain \
-            indexed. A source binding limited to the ordinary branch must require debug = \
-            false; the debug branch of the full family adds no blanket writable \
-            precondition."
+            their complete actual finite outcomes."]
       },
       {
         id := "anchor-views-1.1.2:0",
@@ -3745,14 +3309,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
             payload resources are interpreted in the auxiliary state.", "Select debug from \
             the actual anchor-debug feature. Bind the logging and panic dependencies to \
-            their complete actual finite outcomes."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same exclusive \
-            decoded-field reference and the anchor-debug branch that logs and panics when \
-            is_writable is false. Both feature outcomes retain actual callback effects and \
-            the borrowed AccountInfo representation. This pre-cohort profile stops before \
-            the new 1.2.1 provider/feature selection."
+            their complete actual finite outcomes."]
       },
       {
         id := "anchor-views-1.1.2:1",
@@ -3776,14 +3333,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
             payload resources are interpreted in the auxiliary state.", "Select debug from \
             the actual anchor-debug feature. Bind the logging and panic dependencies to \
-            their complete actual finite outcomes."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same exclusive \
-            decoded-field reference and the anchor-debug branch that logs and panics when \
-            is_writable is false. Both feature outcomes retain actual callback effects and \
-            the borrowed AccountInfo representation. This pre-cohort profile stops before \
-            the new 1.2.1 provider/feature selection."
+            their complete actual finite outcomes."]
       },
       {
         id := "anchor-views-0.29.0:0",
@@ -3807,15 +3357,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
             payload resources are interpreted in the auxiliary state.", "Select debug from \
             the actual anchor-debug feature. Bind the logging and panic dependencies to \
-            their complete actual finite outcomes."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the decoded field of the same \
-            wrapper with the original exclusive loan. Retain the 0.29 debug-only writable \
-            assertion and its selected panic effects; release-mode access does not \
-            silently acquire this check. Compatibility in [0.29.0, 0.30.0) assumes this \
-            complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            their complete actual finite outcomes."]
       },
       {
         id := "anchor-views-0.29.0:1",
@@ -3839,15 +3381,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
             payload resources are interpreted in the auxiliary state.", "Select debug from \
             the actual anchor-debug feature. Bind the logging and panic dependencies to \
-            their complete actual finite outcomes."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the decoded field of the same \
-            wrapper with the original exclusive loan. Retain the 0.29 debug-only writable \
-            assertion and its selected panic effects; release-mode access does not \
-            silently acquire this check. Compatibility in [0.29.0, 0.30.0) assumes this \
-            complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            their complete actual finite outcomes."]
       },
       {
         id := "anchor-views-0.27.0",
@@ -3871,15 +3405,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
             payload resources are interpreted in the auxiliary state.", "Select debug from \
             the actual anchor-debug feature. Bind the logging and panic dependencies to \
-            their complete actual finite outcomes."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Return the same exclusive decoded-field reference. The separately indexed \
-            anchor-debug branch logs and panics on a non-writable account; the ordinary \
-            branch retains the same reference and state. No new feature gate is inferred. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            their complete actual finite outcomes."]
       }
     ]
     | .accounts_account_Account_exit => [
@@ -3911,10 +3437,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.3.0"],
-          reason :=
-            "Preserve panicking data_is_empty and checked mutable-data borrow/release over \
-              the same RefCell, with partial bytes retained. The selected operations and \
-              AccountInfo fields are unchanged in the reviewed 2.x providers.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -3930,10 +3452,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "Preserve AccountBorrowFailed injection and the full legacy \
-              ProgramError/Anchor Result payload domain. BorshIoError retains its owned \
-              String; serializer errors are forwarded with their owners.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -3953,15 +3471,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             enum, actual String/Box operations and fixed builtin ProgramError injection. \
             This 0.32 profile uses boxed storage. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references call Owner, test expected ownership and \
-            closedness, then serialize under the mutable data guard without a local \
-            AccountInfo clone. Compatibility assumes this branch order, BpfWriter behavior \
-            and finite cleanup remain unchanged; pre-0.31 clones and the 1.2.2 \
-            unowned-account branch are distinct."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -3991,10 +3501,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.3.0"],
-          reason :=
-            "Preserve panicking data_is_empty and checked mutable-data borrow/release over \
-              the same RefCell, with partial bytes retained. The selected operations and \
-              AccountInfo fields are unchanged in the reviewed 2.x providers.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -4010,10 +3516,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "Preserve AccountBorrowFailed injection and the full legacy \
-              ProgramError/Anchor Result payload domain. BorshIoError retains its owned \
-              String; serializer errors are forwarded with their owners.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -4033,15 +3535,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             enum, actual String/Box operations and fixed builtin ProgramError injection. \
             This 0.32 profile uses boxed storage. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references call Owner, test expected ownership and \
-            closedness, then serialize under the mutable data guard without a local \
-            AccountInfo clone. Compatibility assumes this branch order, BpfWriter behavior \
-            and finite cleanup remain unchanged; pre-0.31 clones and the 1.2.2 \
-            unowned-account branch are distinct."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:0",
@@ -4068,11 +3562,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -4085,10 +3574,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -4101,10 +3586,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -4125,15 +3606,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes the expected-owner comparison and \
-            is_closed short circuit before the mutable data borrow and actual serializer, \
-            including partial writes and guard cleanup. The later unowned-account exit \
-            path is a different operation and is not admitted here. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -4160,11 +3633,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -4177,10 +3645,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -4193,10 +3657,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -4217,15 +3677,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes the expected-owner comparison and \
-            is_closed short circuit before the mutable data borrow and actual serializer, \
-            including partial writes and guard cleanup. The later unowned-account exit \
-            path is a different operation and is not admitted here. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            their owned String resources."]
       }
     ]
     | .accounts_account_Account_exit_cloned_info => [
@@ -4254,12 +3706,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the current AccountInfo clone, data RefCell \
-              guard and repayment, borrow-error conversion and declaration-ordered owner \
-              cleanup around the actual serializer. The exact borrowed record and \
-              ProgramError representation remain explicit.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -4280,16 +3726,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. After the selected Owner and is_closed \
-            short circuits, clone the current AccountInfo, borrow its data and serialize \
-            through BpfWriter. Preserve partial writes and the old the source-ordered \
-            cleanup of the local clone on every continuing exit. Compatibility in [0.29.0, \
-            0.30.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -4316,12 +3753,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the current AccountInfo clone, data RefCell \
-              guard and repayment, borrow-error conversion and declaration-ordered owner \
-              cleanup around the actual serializer. The exact borrowed record and \
-              ProgramError representation remain explicit.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -4342,16 +3773,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. After the selected Owner and is_closed \
-            short circuits, clone the current AccountInfo, borrow its data and serialize \
-            through BpfWriter. Preserve partial writes and the old the source-ordered \
-            cleanup of the local clone on every continuing exit. Compatibility in [0.29.0, \
-            0.30.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       }
     ]
     | .accounts_account_Account_exit_inline_error => [
@@ -4380,11 +3802,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -4405,15 +3822,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Owner-selected conditional serialization, is_closed short circuit, exact \
-            mutable guard and old local clone cleanup, with actual partial writes on \
-            failure. Compatibility in [0.27.0, 0.28.0) assumes this operation and its \
-            selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -4440,11 +3849,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -4465,15 +3869,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Owner-selected conditional serialization, is_closed short circuit, exact \
-            mutable guard and old local clone cleanup, with actual partial writes on \
-            failure. Compatibility in [0.27.0, 0.28.0) assumes this operation and its \
-            selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            their owned String resources."]
       }
     ]
     | .accounts_account_Account_into_inner => [
@@ -4497,15 +3893,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
             payload resources are interpreted in the auxiliary state.", "The consumed \
             receiver is owned and has no outstanding source loan. Bind destruction of \
-            owned AccountInfo Rc fields, including terminal allocation-owner behavior."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Move the current decoded payload out of \
-            Account and destroy only the remaining wrapper fields. Preserve payload \
-            identity and the borrowed AccountInfo representation; no payload clone or \
-            deserialization is reached. Compatibility in [0.29.0, 0.30.0) assumes this \
-            complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            owned AccountInfo Rc fields, including terminal allocation-owner behavior."]
       },
       {
         id := "anchor-views-0.29.0:1",
@@ -4529,15 +3917,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
             payload resources are interpreted in the auxiliary state.", "The consumed \
             receiver is owned and has no outstanding source loan. Bind destruction of \
-            owned AccountInfo Rc fields, including terminal allocation-owner behavior."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Move the current decoded payload out of \
-            Account and destroy only the remaining wrapper fields. Preserve payload \
-            identity and the borrowed AccountInfo representation; no payload clone or \
-            deserialization is reached. Compatibility in [0.29.0, 0.30.0) assumes this \
-            complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            owned AccountInfo Rc fields, including terminal allocation-owner behavior."]
       }
     ]
     | .accounts_account_Account_reload => [
@@ -4564,10 +3944,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -4580,10 +3956,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -4606,14 +3978,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             fixed builtin ProgramError injection. The facade fixes inline storage for 0.27 \
             and boxed storage for later releases. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Recheck the current owner, deserialize under the data guard, then destroy and \
-            replace the current payload at the source assignment, retaining partial \
-            effects on failure. The 0.32.0–0.32.3 files agree. Compatibility within 0.32 \
-            assumes the same boxed errors, borrowed fields and reached operation order."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -4638,10 +4003,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -4654,10 +4015,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -4680,14 +4037,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             fixed builtin ProgramError injection. The facade fixes inline storage for 0.27 \
             and boxed storage for later releases. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Recheck the current owner, deserialize under the data guard, then destroy and \
-            replace the current payload at the source assignment, retaining partial \
-            effects on failure. The 0.32.0–0.32.3 files agree. Compatibility within 0.32 \
-            assumes the same boxed errors, borrowed fields and reached operation order."
+            errors.programStrings lists exactly their owned String resources."]
       }
     ]
     | .accounts_account_Account_reload_inline_error => [
@@ -4714,11 +4064,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -4741,15 +4086,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             fixed builtin ProgramError injection. The facade fixes inline storage for 0.27 \
             and boxed storage for later releases. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Selected legacy or modern reload, exact owner-recheck and data-guard lifetime, \
-            current payload destruction and replacement on return or unwind. Compatibility \
-            in [0.27.0, 0.28.0) assumes this operation and its selected dependency \
-            contracts preserve that behavior; the exact releases remain inspected \
-            references."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -4774,11 +4111,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -4801,15 +4133,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             fixed builtin ProgramError injection. The facade fixes inline storage for 0.27 \
             and boxed storage for later releases. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Selected legacy or modern reload, exact owner-recheck and data-guard lifetime, \
-            current payload destruction and replacement on return or unwind. Compatibility \
-            in [0.27.0, 0.28.0) assumes this operation and its selected dependency \
-            contracts preserve that behavior; the exact releases remain inspected \
-            references."
+            errors.programStrings lists exactly their owned String resources."]
       }
     ]
     | .accounts_account_Account_set_inner => [
@@ -4834,15 +4158,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             payload resources are interpreted in the auxiliary state.", "Bind the actual \
             old-field destructor and replacement owner. Its source field identity and \
             auxiliary effects are preserved; no destructor success or non-unwind premise \
-            is assumed."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Drop the old decoded field through its actual exclusive reference, then install \
-            the new owner on ordinary return and destructor unwind. The 0.27 receiver owns \
-            its AccountInfo field; preserve its record identity and source loan. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            is assumed."]
       }
     ]
     | .accounts_account_Account_try_accounts => [
@@ -4874,10 +4190,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.3.0"],
-          reason :=
-            "Preserve panicking lamports observation, checked shared-data borrow/release \
-              and borrowed-record identity. The selected operations and AccountInfo fields \
-              are unchanged in the reviewed 2.x providers.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -4893,10 +4205,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "Preserve AccountBorrowFailed injection and the full legacy \
-              ProgramError/Anchor Result payload domain. BorshIoError retains its owned \
-              String; decoder errors are forwarded without numeric erasure.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -4920,14 +4228,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             operations and fixed builtin ProgramError injection. This 0.32 profile uses \
             boxed storage. Legacy ProgramError values obey the selected release \
             availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references consume one record before checked Account \
-            construction, leaving an empty slice untouched. Compatibility assumes that \
-            consumption, initialization/Owner ordering, checked decoder selection and \
-            borrowed-record result remain unchanged."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -4957,10 +4258,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.3.0"],
-          reason :=
-            "Preserve panicking lamports observation, checked shared-data borrow/release \
-              and borrowed-record identity. The selected operations and AccountInfo fields \
-              are unchanged in the reviewed 2.x providers.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -4976,10 +4273,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "Preserve AccountBorrowFailed injection and the full legacy \
-              ProgramError/Anchor Result payload domain. BorshIoError retains its owned \
-              String; decoder errors are forwarded without numeric erasure.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -5003,14 +4296,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             operations and fixed builtin ProgramError injection. This 0.32 profile uses \
             boxed storage. Legacy ProgramError values obey the selected release \
             availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references consume one record before checked Account \
-            construction, leaving an empty slice untouched. Compatibility assumes that \
-            consumption, initialization/Owner ordering, checked decoder selection and \
-            borrowed-record result remain unchanged."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:0",
@@ -5037,11 +4323,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -5054,10 +4335,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -5070,10 +4347,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -5098,16 +4371,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes consumption of the first AccountReference \
-            before initialization and current-owner checks and the checked decoder, while \
-            empty input keeps its position and constructs AccountNotEnoughKeys. Preserve \
-            boxed errors, shared data-guard cleanup and the actual remaining slice, bumps \
-            and reallocations. This pre-cohort profile stops before the new 1.2.1 \
-            provider/feature selection."
+            resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -5134,11 +4398,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -5151,10 +4410,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -5167,10 +4422,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -5195,16 +4446,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes consumption of the first AccountReference \
-            before initialization and current-owner checks and the checked decoder, while \
-            empty input keeps its position and constructs AccountNotEnoughKeys. Preserve \
-            boxed errors, shared data-guard cleanup and the actual remaining slice, bumps \
-            and reallocations. This pre-cohort profile stops before the new 1.2.1 \
-            provider/feature selection."
+            resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:0",
@@ -5231,12 +4473,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the current AccountInfo initialization/owner \
-              observations, actual data borrow and guard repayment around the selected \
-              deserializer, including borrow-error conversion. Source record, Rc/RefCell \
-              policy and error representation remain explicit.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -5261,16 +4497,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Consume the head AccountInfo before the \
-            actual checked conversion, retain owner/initialization checks and guarded \
-            deserialization, and preserve the consumed tail and all error/cleanup effects. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -5297,12 +4524,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the current AccountInfo initialization/owner \
-              observations, actual data borrow and guard repayment around the selected \
-              deserializer, including borrow-error conversion. Source record, Rc/RefCell \
-              policy and error representation remain explicit.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -5327,16 +4548,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Consume the head AccountInfo before the \
-            actual checked conversion, retain owner/initialization checks and guarded \
-            deserialization, and preserve the consumed tail and all error/cleanup effects. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            resources."]
       }
     ]
     | .accounts_account_Account_try_accounts_inline_error => [
@@ -5365,11 +4577,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -5394,18 +4601,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Source-ordered initialization, current-owner validation, selected checked or \
-            unchecked decoder and scoped AccountInfo clone/data-guard cleanup. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Compatibility in [0.27.0, 0.28.0) assumes \
-            this operation and its selected dependency contracts preserve that behavior; \
-            the exact releases remain inspected references."
+            resources."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -5432,11 +4628,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -5461,18 +4652,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Source-ordered initialization, current-owner validation, selected checked or \
-            unchecked decoder and scoped AccountInfo clone/data-guard cleanup. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Compatibility in [0.27.0, 0.28.0) assumes \
-            this operation and its selected dependency contracts preserve that behavior; \
-            the exact releases remain inspected references."
+            resources."]
       }
     ]
     | .accounts_account_Account_try_from => [
@@ -5520,23 +4700,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Raw operations and posts are unchanged. Admission supplies local continuation \
             without assuming callback, allocation or destructor termination. Concrete \
             trait, resource, reference, lifetime and target interpretations remain \
-            separate bindings; a consumed guard receives no fabricated cleanup."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The full owned constructor corresponds from 0.29.0: short-circuit \
-            system-owner/lamports initialization, first Owner then comparison, wrong-owner \
-            name/message/Box creation before actual-owner copy and the second Owner \
-            callback, exact error cleanup if that callback unwinds, checked shared data \
-            borrow, arbitrary decoder exits and release, and a wrapper retaining the input \
-            AccountInfo reference. 0.15.0–0.18.2 lack the initialization check; older \
-            errors also differ. All 0.15.0–0.28.0 clone AccountInfo before decoding and \
-            store it by value; before 0.29.0 Anchor errors are unboxed. A decoder can \
-            observe the extra two Rc references. From 0.29.0 the primary family forwards \
-            arbitrary decoder error resource identities without destructuring or \
-            destroying their payloads; its only internally constructed ProgramError is \
-            AccountBorrowFailed. Therefore legacy String-bearing BorshIoError callback \
-            payloads do not impose the 1.0.0 bound of the separate observation facet. This \
-            argument does not restrict arbitrary callbacks."
+            separate bindings; a consumed guard receives no fabricated cleanup."]
       }
     ]
     | .accounts_account_Account_try_from_inline_error => [
@@ -5563,11 +4727,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -5592,15 +4751,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Source-ordered initialization, current-owner validation, selected checked or \
-            unchecked decoder and scoped AccountInfo clone/data-guard cleanup. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            resources."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -5625,11 +4776,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -5654,15 +4800,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Source-ordered initialization, current-owner validation, selected checked or \
-            unchecked decoder and scoped AccountInfo clone/data-guard cleanup. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            resources."]
       }
     ]
     | .accounts_account_Account_try_from_observation => [
@@ -5689,20 +4827,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             constructor continuation; no unrelated account-field or source-width validity \
             bundle is imposed.", "This facet omits owned error factories and retains its \
             recorded partial-model gap. Callback termination and concrete source \
-            representation remain separate obligations."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "This supporting observation keeps the existing ConstructorReady callback/guard \
-            contract and its recorded omission of owned error/dependency lifecycle. Unlike \
-            the primary family, AnchorAccount.Error is the concrete AnchorError.Value \
-            ProgramError.Value, including a unit borshIoError. Arbitrary decoder errors \
-            (and arbitrary CheckOwner errors for InterfaceAccount) in every pre-1.0 \
-            release can carry ProgramError::BorshIoError(String); source and native \
-            witnesses preserve the String. Erasing it or restricting callback errors would \
-            change the existing contract. The compatible source set therefore starts at \
-            1.0.0. Initialization, callback sequencing, data guard cleanup and \
-            current-owner capture follow the primary source closure; no resource-lifecycle \
-            completeness is claimed for this facet."
+            representation remain separate obligations."]
       }
     ]
     | .accounts_account_Account_try_from_unchecked => [
@@ -5733,10 +4858,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.3.0"],
-          reason :=
-            "Preserve panicking lamports observation, checked shared-data borrow/release \
-              and borrowed-record identity. The selected operations and AccountInfo fields \
-              are unchanged in the reviewed 2.x providers.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -5752,10 +4873,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "Preserve AccountBorrowFailed injection and the full legacy \
-              ProgramError/Anchor Result payload domain. BorshIoError retains its owned \
-              String; decoder errors are forwarded without numeric erasure.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -5780,14 +4897,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ProgramError injection. This 0.32 profile uses boxed storage. Legacy \
             ProgramError values obey the selected release availability predicate and \
             retain owned BorshIoError Strings; errors.programStrings lists exactly their \
-            owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references validate initialization and Owner before invoking \
-            try_deserialize_unchecked under a shared data guard. Compatibility assumes \
-            this ordering, unchecked callback selection, finite guard cleanup and \
-            borrowed-record result remain unchanged; the pre-0.29 owned clone is distinct."
+            owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -5816,10 +4926,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.3.0"],
-          reason :=
-            "Preserve panicking lamports observation, checked shared-data borrow/release \
-              and borrowed-record identity. The selected operations and AccountInfo fields \
-              are unchanged in the reviewed 2.x providers.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -5835,10 +4941,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "Preserve AccountBorrowFailed injection and the full legacy \
-              ProgramError/Anchor Result payload domain. BorshIoError retains its owned \
-              String; decoder errors are forwarded without numeric erasure.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -5863,14 +4965,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ProgramError injection. This 0.32 profile uses boxed storage. Legacy \
             ProgramError values obey the selected release availability predicate and \
             retain owned BorshIoError Strings; errors.programStrings lists exactly their \
-            owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references validate initialization and Owner before invoking \
-            try_deserialize_unchecked under a shared data guard. Compatibility assumes \
-            this ordering, unchecked callback selection, finite guard cleanup and \
-            borrowed-record result remain unchanged; the pre-0.29 owned clone is distinct."
+            owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:0",
@@ -5896,11 +4991,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -5913,10 +5003,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -5929,10 +5015,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -5957,15 +5039,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ProgramError injection. The facade fixes inline storage for 0.27 and boxed \
             storage for later releases. Legacy ProgramError values obey the selected \
             release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes the system-owner/zero-lamports \
-            initialization check, actual current-owner check and unchecked deserializer \
-            under the real shared data guard. Preserve the borrowed AccountInfo, boxed \
-            errors, source-order callbacks and cleanup. This pre-cohort profile stops \
-            before the new 1.2.1 provider/feature selection."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -5991,11 +5065,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -6008,10 +5077,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -6024,10 +5089,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -6052,15 +5113,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ProgramError injection. The facade fixes inline storage for 0.27 and boxed \
             storage for later releases. Legacy ProgramError values obey the selected \
             release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes the system-owner/zero-lamports \
-            initialization check, actual current-owner check and unchecked deserializer \
-            under the real shared data guard. Preserve the borrowed AccountInfo, boxed \
-            errors, source-order callbacks and cleanup. This pre-cohort profile stops \
-            before the new 1.2.1 provider/feature selection."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:0",
@@ -6086,12 +5139,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the current AccountInfo initialization/owner \
-              observations, actual data borrow and guard repayment around the selected \
-              deserializer, including borrow-error conversion. Source record, Rc/RefCell \
-              policy and error representation remain explicit.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -6116,16 +5163,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ProgramError injection. The facade fixes inline storage for 0.27 and boxed \
             storage for later releases. Legacy ProgramError values obey the selected \
             release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Retain initialization and Owner \
-            observations before unchecked deserialization under the actual data guard. \
-            Preserve borrowed AccountInfo identity, payload/error ownership and source \
-            cleanup. Compatibility in [0.29.0, 0.30.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -6151,12 +5189,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the current AccountInfo initialization/owner \
-              observations, actual data borrow and guard repayment around the selected \
-              deserializer, including borrow-error conversion. Source record, Rc/RefCell \
-              policy and error representation remain explicit.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -6181,16 +5213,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ProgramError injection. The facade fixes inline storage for 0.27 and boxed \
             storage for later releases. Legacy ProgramError values obey the selected \
             release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Retain initialization and Owner \
-            observations before unchecked deserialization under the actual data guard. \
-            Preserve borrowed AccountInfo identity, payload/error ownership and source \
-            cleanup. Compatibility in [0.29.0, 0.30.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            errors.programStrings lists exactly their owned String resources."]
       }
     ]
     | .accounts_account_Account_try_from_unchecked_inline_error => [
@@ -6218,11 +5241,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -6247,15 +5265,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ProgramError injection. The facade fixes inline storage for 0.27 and boxed \
             storage for later releases. Legacy ProgramError values obey the selected \
             release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Source-ordered initialization, current-owner validation, selected checked or \
-            unchecked decoder and scoped AccountInfo clone/data-guard cleanup. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -6281,11 +5291,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -6310,15 +5315,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ProgramError injection. The facade fixes inline storage for 0.27 and boxed \
             storage for later releases. Legacy ProgramError values obey the selected \
             release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Source-ordered initialization, current-owner validation, selected checked or \
-            unchecked decoder and scoped AccountInfo clone/data-guard cleanup. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            errors.programStrings lists exactly their owned String resources."]
       }
     ]
     | .accounts_account_info_AccountInfo_try_accounts => [
@@ -6350,10 +5347,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.3.0"],
-          reason :=
-            "Preserve the two Rc fields, declaration-order clone/drop effects and non-Rc \
-              metadata. This leaf does not borrow or resize account data; the reviewed 2.x \
-              struct and Clone derivation agree.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -6369,10 +5362,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "Preserve the full legacy ProgramError variant and owned-payload domain in the \
-              source Anchor Result representation. This leaf itself constructs only \
-              AccountNotEnoughKeys, not a ProgramError.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -6392,14 +5381,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             enum, actual String/Box operations and fixed builtin ProgramError injection. \
             This 0.32 profile uses boxed storage. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references consume one record and clone its AccountInfo \
-            owner, or construct AccountNotEnoughKeys without consuming an empty slice. \
-            Compatibility assumes that slice update and ordered Rc clone/cleanup behavior \
-            remain unchanged."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -6429,10 +5411,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.3.0"],
-          reason :=
-            "Preserve the two Rc fields, declaration-order clone/drop effects and non-Rc \
-              metadata. This leaf does not borrow or resize account data; the reviewed 2.x \
-              struct and Clone derivation agree.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -6448,10 +5426,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "2.1.8",
             "2.1.9", "2.1.10", "2.1.11", "2.1.12", "2.1.13", "2.1.14", "2.1.15", "2.1.16",
             "2.1.17", "2.1.18", "2.1.20", "2.1.21", "2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "Preserve the full legacy ProgramError variant and owned-payload domain in the \
-              source Anchor Result representation. This leaf itself constructs only \
-              AccountNotEnoughKeys, not a ProgramError.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -6471,14 +5445,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             enum, actual String/Box operations and fixed builtin ProgramError injection. \
             This 0.32 profile uses boxed storage. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references consume one record and clone its AccountInfo \
-            owner, or construct AccountNotEnoughKeys without consuming an empty slice. \
-            Compatibility assumes that slice update and ordered Rc clone/cleanup behavior \
-            remain unchanged."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:0",
@@ -6505,12 +5472,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the complete AccountInfo fields and \
-              declaration-ordered lamports/data Rc clones, alias counts and reached \
-              clone/cleanup behavior. No program-error conversion or data borrow is added \
-              to this collection step.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -6531,15 +5492,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Consume the head reference and clone its \
-            actual AccountInfo owners in source order. Preserve empty-input error effects, \
-            alias counters and cleanup on reached failures. Compatibility in [0.29.0, \
-            0.30.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -6566,12 +5519,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the complete AccountInfo fields and \
-              declaration-ordered lamports/data Rc clones, alias counts and reached \
-              clone/cleanup behavior. No program-error conversion or data borrow is added \
-              to this collection step.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -6592,15 +5539,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Consume the head reference and clone its \
-            actual AccountInfo owners in source order. Preserve empty-input error effects, \
-            alias counters and cleanup on reached failures. Compatibility in [0.29.0, \
-            0.30.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       }
     ]
     | .accounts_account_info_AccountInfo_try_accounts_inline_error => [
@@ -6629,11 +5568,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -6654,20 +5588,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Preserve the reference non-repr(C) \
-            record, current Rc/RefCell identities and the reached borrow/drop effects; \
-            physical layouts remain separately bound. Compatibility in [0.27.0, 0.28.0) \
-            assumes this operation and its selected dependency contracts preserve that \
-            behavior; the exact releases remain inspected references."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -6694,11 +5615,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -6719,20 +5635,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Preserve the reference non-repr(C) \
-            record, current Rc/RefCell identities and the reached borrow/drop effects; \
-            physical layouts remain separately bound. Compatibility in [0.27.0, 0.28.0) \
-            assumes this operation and its selected dependency contracts preserve that \
-            behavior; the exact releases remain inspected references."
+            their owned String resources."]
       }
     ]
     | .accounts_account_loader_AccountLoader_as_ref => [
@@ -6760,13 +5663,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Represent the stored source record reference and its legal returned reference \
-            permission; no data or owner read is imposed."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "Return the stored AccountInfo reference without a read, clone or guard; equal \
-            metadata does not identify distinct records. The inspected 0.32 and 1.x \
-            references agree, including the 1.2 constructor rename. Compatibility assumes \
-            this local protocol and actual representation obligations remain unchanged."
+            permission; no data or owner read is imposed."]
       }
     ]
     | .accounts_account_loader_AccountLoader_clone => [
@@ -6790,14 +5687,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Represent the stored source reference and PhantomData exactly; cloning does \
-            not require a payload, discriminator, owner callback or borrow operation."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "Preserve the derived copy of the same AccountInfo reference and PhantomData. \
-            There is no Rc clone, payload read, owner check, discriminator check or borrow \
-            acquisition. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            not require a payload, discriminator, owner callback or borrow operation."]
       }
     ]
     | .accounts_account_loader_AccountLoader_close => [
@@ -6825,17 +5715,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             actual dependency outcome; neither is assumed to terminate.", "Bind the actual \
             shared lamports/data cells, current owner and complete resize backing, \
             original/current length words, and the owned destination Rc fields. No Owner, \
-            discriminator or payload-layout operation is invoked."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/solana-account-info/solana-account-info-3.1.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Preserve destination-then-source lamports reads, checked-add panic, ordered \
-            balance stores, system-owner assignment, resize-to-zero and destination \
-            cleanup, including aliases and late failures. The borrowed source is not \
-            cloned. Anchor 1.1 uses add_lamports with a different error/order protocol; \
-            1.2.2 additionally rejects equal keys before those effects. The declared range \
-            is a complete-operation preservation assumption; inspected releases, native \
-            runs, exact ABI observations and source-call implementation obligations remain \
-            separate."
+            discriminator or payload-layout operation is invoked."]
       }
     ]
     | .accounts_account_loader_AccountLoader_exit => [
@@ -6867,14 +5747,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             actual non-closed result. No writable, payload-layout or \
             discriminator-capacity success gate is added.", "Bind Owner and associated \
             discriminator, current owner/data storage, BpfWriter prefix mutation and \
-            actual checked guard. The payload layout is not inspected."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "After Owner and is_closed short circuits, borrow data and write the \
-            discriminator. A short destination retains the partial write before unwrap \
-            unwinds; release the guard on continuing exits. Inspected 0.32 and pre-1.2 \
-            references agree. Compatibility assumes this order and cleanup; 1.2.0 \
-            introduces size checks and is excluded."
+            actual checked guard. The payload layout is not inspected."]
       }
     ]
     | .accounts_account_loader_AccountLoader_key => [
@@ -6902,16 +5775,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1, instantiate \
             the crate-root blanket Key implementation at the actual AccountLoader \
             receiver. Its AsRef implementation returns the stored AccountInfo reference \
-            without cloning; arbitrary AsRef callbacks are not this source specialization."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.18.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "AccountLoader first exists in 0.18.0. The module moves from loader_account to \
-            accounts::loader_account to accounts::account_loader. Direct key \
-            implementations copy the stored key; 0.21.0, 0.22.0, and 0.22.1 reach the same \
-            field through the blanket Key implementation and the concrete identity-field \
-            AsRef. They invoke neither Owner nor Discriminator nor a checked borrow. The \
-            older Loader type remains a distinct contemporaneous API and is not silently \
-            substituted."
+            without cloning; arbitrary AsRef callbacks are not this source specialization."]
       },
       {
         id := "anchor-lang-reviewed-2",
@@ -6935,16 +5799,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1, instantiate \
             the crate-root blanket Key implementation at the actual AccountLoader \
             receiver. Its AsRef implementation returns the stored AccountInfo reference \
-            without cloning; arbitrary AsRef callbacks are not this source specialization."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.18.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "AccountLoader first exists in 0.18.0. The module moves from loader_account to \
-            accounts::loader_account to accounts::account_loader. Direct key \
-            implementations copy the stored key; 0.21.0, 0.22.0, and 0.22.1 reach the same \
-            field through the blanket Key implementation and the concrete identity-field \
-            AsRef. They invoke neither Owner nor Discriminator nor a checked borrow. The \
-            older Loader type remains a distinct contemporaneous API and is not silently \
-            substituted."
+            without cloning; arbitrary AsRef callbacks are not this source specialization."]
       },
       {
         id := "anchor-lang-reviewed-3",
@@ -6969,16 +5824,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1, instantiate \
             the crate-root blanket Key implementation at the actual AccountLoader \
             receiver. Its AsRef implementation returns the stored AccountInfo reference \
-            without cloning; arbitrary AsRef callbacks are not this source specialization."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.18.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "AccountLoader first exists in 0.18.0. The module moves from loader_account to \
-            accounts::loader_account to accounts::account_loader. Direct key \
-            implementations copy the stored key; 0.21.0, 0.22.0, and 0.22.1 reach the same \
-            field through the blanket Key implementation and the concrete identity-field \
-            AsRef. They invoke neither Owner nor Discriminator nor a checked borrow. The \
-            older Loader type remains a distinct contemporaneous API and is not silently \
-            substituted."
+            without cloning; arbitrary AsRef callbacks are not this source specialization."]
       },
       {
         id := "anchor-lang-reviewed-4",
@@ -7024,16 +5870,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1, instantiate \
             the crate-root blanket Key implementation at the actual AccountLoader \
             receiver. Its AsRef implementation returns the stored AccountInfo reference \
-            without cloning; arbitrary AsRef callbacks are not this source specialization."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.18.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "AccountLoader first exists in 0.18.0. The module moves from loader_account to \
-            accounts::loader_account to accounts::account_loader. Direct key \
-            implementations copy the stored key; 0.21.0, 0.22.0, and 0.22.1 reach the same \
-            field through the blanket Key implementation and the concrete identity-field \
-            AsRef. They invoke neither Owner nor Discriminator nor a checked borrow. The \
-            older Loader type remains a distinct contemporaneous API and is not silently \
-            substituted."
+            without cloning; arbitrary AsRef callbacks are not this source specialization."]
       },
       {
         id := "anchor-lang-reviewed-5",
@@ -7065,16 +5902,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1, instantiate \
             the crate-root blanket Key implementation at the actual AccountLoader \
             receiver. Its AsRef implementation returns the stored AccountInfo reference \
-            without cloning; arbitrary AsRef callbacks are not this source specialization."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.18.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "AccountLoader first exists in 0.18.0. The module moves from loader_account to \
-            accounts::loader_account to accounts::account_loader. Direct key \
-            implementations copy the stored key; 0.21.0, 0.22.0, and 0.22.1 reach the same \
-            field through the blanket Key implementation and the concrete identity-field \
-            AsRef. They invoke neither Owner nor Discriminator nor a checked borrow. The \
-            older Loader type remains a distinct contemporaneous API and is not silently \
-            substituted."
+            without cloning; arbitrary AsRef callbacks are not this source specialization."]
       }
     ]
     | .accounts_account_loader_AccountLoader_load => [
@@ -7115,20 +5943,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             are unchanged. Admission supplies local continuation without assuming \
             callback, allocation or destructor termination. Concrete trait, resource, \
             reference, lifetime and target interpretations remain separate bindings; a \
-            consumed guard receives no fabricated cleanup."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.31.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The complete load correspondence is 0.31.0–1.1.2. Loading borrows current data \
-            without rechecking Owner, validates the immutable arbitrary-length \
-            discriminator, and transfers the live guard through Ref::map after exact \
-            payload slicing and bytemuck size/alignment checks. Reached discriminator \
-            errors allocate name/message/Box while the guard is live, then release it. \
-            0.18.0–0.20.1 map the entire trailing slice, so excess payload bytes differ; \
-            later old releases still invoke an effectful, overridable discriminator method \
-            and retain older discriminator error messages. From 1.2.0 check_size returns \
-            AccountDidNotDeserialize (3003) on short payload or size addition overflow \
-            before mapping, whereas the existing contract retains bounds/overflow panic \
-            and configured abort. No extra payload-length precondition is added."
+            consumed guard receives no fabricated cleanup."]
       }
     ]
     | .accounts_account_loader_AccountLoader_load_init => [
@@ -7161,13 +5976,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             post-state. No zero-prefix, payload-size, alignment-success or Owner gate is \
             imposed.", "The associated discriminator, ZeroCopy byte size/alignment and \
             checked-overflow/panic profile instantiate the mathematical index. Bind the \
-            actual acquired/mapped guard; never derive its identity from bytes or counters."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "Check writable, acquire data, panic on a short discriminator prefix, reject \
-            nonzero bytes, then map the same guard with source slicing/alignment failures. \
-            Write no bytes. Inspected 0.32 and pre-1.2 references agree. Compatibility \
-            assumes this order and cleanup; 1.2.0 introduces size checks and is excluded."
+            actual acquired/mapped guard; never derive its identity from bytes or counters."]
       }
     ]
     | .accounts_account_loader_AccountLoader_load_init_observation => [
@@ -7195,14 +6004,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["The supporting facet decides the selected typed-data domain and exposes the \
-            exact current mapped range, all local panics and normal error values."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "This partial observation follows load_init through the same guard and mapped \
-            bytes; diagnostic allocation stays in the primary family. It has no \
-            source-call registration. Inspected 0.32 and pre-1.2 references agree. \
-            Compatibility assumes this order and cleanup; 1.2.0 introduces size checks and \
-            is excluded."
+            exact current mapped range, all local panics and normal error values."]
       }
     ]
     | .accounts_account_loader_AccountLoader_load_mut => [
@@ -7243,20 +6045,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             are unchanged. Admission supplies local continuation without assuming \
             callback, allocation or destructor termination. Concrete trait, resource, \
             reference, lifetime and target interpretations remain separate bindings; a \
-            consumed guard receives no fabricated cleanup."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.31.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The complete load_mut correspondence is 0.31.0–1.1.2. Writable metadata is \
-            checked before attempting the exclusive data borrow; the non-writable error \
-            takes precedence over a borrow conflict. The remaining path uses current \
-            bytes, an immutable arbitrary-length discriminator, held-guard error \
-            factories, and RefMut::map, transferring the original guard and exposing the \
-            actual mutable payload range without Owner recheck. Older releases have \
-            overridable discriminator callbacks, older error messages, and (through \
-            0.20.1) whole-trailing-slice mapping. 1.2.0–1.2.2 add check_size, replacing \
-            admitted short-payload/overflow panic or abort paths with a newly allocated \
-            AccountDidNotDeserialize error. The existing full contract is retained, \
-            including its failure paths."
+            consumed guard receives no fabricated cleanup."]
       }
     ]
     | .accounts_account_loader_AccountLoader_load_mut_observation => [
@@ -7291,23 +6080,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             preserves its existing bounds/alignment panic or abort outcomes. Owned \
             String/Box error allocation remains outside this partial observation; source \
             reference permissions and target/layout correspondence remain separate \
-            bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.31.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "This supporting observation retains its recorded omission of owned \
-            error/dependency lifecycle. It reviews the same underlying operation, \
-            including callback, live-data, guard-transfer and panic/error distinctions; it \
-            cannot bypass a changed discriminator or short-payload branch. The complete \
-            load_mut correspondence is 0.31.0–1.1.2. Writable metadata is checked before \
-            attempting the exclusive data borrow; the non-writable error takes precedence \
-            over a borrow conflict. The remaining path uses current bytes, an immutable \
-            arbitrary-length discriminator, held-guard error factories, and RefMut::map, \
-            transferring the original guard and exposing the actual mutable payload range \
-            without Owner recheck. Older releases have overridable discriminator \
-            callbacks, older error messages, and (through 0.20.1) whole-trailing-slice \
-            mapping. 1.2.0–1.2.2 add check_size, replacing admitted short-payload/overflow \
-            panic or abort paths with a newly allocated AccountDidNotDeserialize error. \
-            The existing full contract is retained, including its failure paths."
+            bindings."]
       }
     ]
     | .accounts_account_loader_AccountLoader_load_observation => [
@@ -7342,24 +6115,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             preserves its existing bounds/alignment panic or abort outcomes. Owned \
             String/Box error allocation remains outside this partial observation; source \
             reference permissions and target/layout correspondence remain separate \
-            bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.31.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "This supporting observation retains its recorded omission of owned \
-            error/dependency lifecycle. It reviews the same underlying operation, \
-            including callback, live-data, guard-transfer and panic/error distinctions; it \
-            cannot bypass a changed discriminator or short-payload branch. The complete \
-            load correspondence is 0.31.0–1.1.2. Loading borrows current data without \
-            rechecking Owner, validates the immutable arbitrary-length discriminator, and \
-            transfers the live guard through Ref::map after exact payload slicing and \
-            bytemuck size/alignment checks. Reached discriminator errors allocate \
-            name/message/Box while the guard is live, then release it. 0.18.0–0.20.1 map \
-            the entire trailing slice, so excess payload bytes differ; later old releases \
-            still invoke an effectful, overridable discriminator method and retain older \
-            discriminator error messages. From 1.2.0 check_size returns \
-            AccountDidNotDeserialize (3003) on short payload or size addition overflow \
-            before mapping, whereas the existing contract retains bounds/overflow panic \
-            and configured abort. No extra payload-length precondition is added."
+            bindings."]
       }
     ]
     | .accounts_account_loader_AccountLoader_try_accounts => [
@@ -7391,14 +6147,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             condition on the empty slice. Current resource and trait interpretation remain \
             source-binding obligations.", "Bind the mutable source slice and bump/realloc \
             resources, the head record, associated discriminator, Owner callback and \
-            actual held data guard. Payload size/alignment is not inspected."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "Consume one record before checked construction, preserving the consumed tail on \
-            error or unwind; empty input constructs AccountNotEnoughKeys. Bumps and \
-            reallocations remain unchanged. The inspected 0.32 and 1.x references agree, \
-            including the 1.2 constructor rename. Compatibility assumes this local \
-            protocol and actual representation obligations remain unchanged."
+            actual held data guard. Payload size/alignment is not inspected."]
       }
     ]
     | .accounts_account_loader_AccountLoader_try_from => [
@@ -7439,22 +6188,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             local continuation without assuming callback, allocation or destructor \
             termination. Concrete trait, resource, reference, lifetime and target \
             interpretations remain separate bindings; a consumed guard receives no \
-            fabricated cleanup."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.31.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The full constructor corresponds from 0.31.0 through 1.2.2: first \
-            Owner/comparison, conditional diagnostic factory and second Owner, checked \
-            shared borrow, immutable arbitrary-length discriminator validation, exact \
-            guard release, and borrowed input reference. Earlier implementations clone \
-            AccountInfo through 0.28.0, use unboxed errors through 0.28.0, and call the \
-            overridable Discriminator::discriminator method through 0.30.3. That method \
-            can mutate state or unwind, which the current immutable discriminator \
-            parameter does not model; native counterexamples do so. Short discriminator \
-            data panics before 0.24.0; 0.24.0–0.30.3 return older discriminator messages. \
-            The 1.2.0 new→new_unchecked helper rename preserves the behavior of this \
-            constructor; its new check_size helper is not called here. AccountBorrowFailed \
-            is the only reached ProgramError variant, so an unrelated legacy BorshIoError \
-            payload does not narrow this operation."
+            fabricated cleanup."]
       }
     ]
     | .accounts_account_loader_AccountLoader_try_from_observation => [
@@ -7488,26 +6222,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             constructor_loader_continue supplies the finite local borrow/discriminator \
             result, including checked borrow failure.", "The owner callback need not \
             terminate. Owned error factories and concrete source representation remain \
-            outside this recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.31.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "This supporting observation retains its recorded omission of owned \
-            error/dependency lifecycle. It reviews the same underlying operation, \
-            including callback, live-data, guard-transfer and panic/error distinctions; it \
-            cannot bypass a changed discriminator or short-payload branch. The full \
-            constructor corresponds from 0.31.0 through 1.2.2: first Owner/comparison, \
-            conditional diagnostic factory and second Owner, checked shared borrow, \
-            immutable arbitrary-length discriminator validation, exact guard release, and \
-            borrowed input reference. Earlier implementations clone AccountInfo through \
-            0.28.0, use unboxed errors through 0.28.0, and call the overridable \
-            Discriminator::discriminator method through 0.30.3. That method can mutate \
-            state or unwind, which the current immutable discriminator parameter does not \
-            model; native counterexamples do so. Short discriminator data panics before \
-            0.24.0; 0.24.0–0.30.3 return older discriminator messages. The 1.2.0 \
-            new→new_unchecked helper rename preserves the behavior of this constructor; \
-            its new check_size helper is not called here. AccountBorrowFailed is the only \
-            reached ProgramError variant, so an unrelated legacy BorshIoError payload does \
-            not narrow this operation."
+            outside this recorded partial observation facet."]
       }
     ]
     | .accounts_account_loader_AccountLoader_try_from_unchecked => [
@@ -7541,15 +6256,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             required by store/drop. This is not a whole-call termination premise.",
             "Bind the Owner callback and current owner storage, actual error resources and \
             the stored AccountInfo record reference. Neither payload layout nor \
-            discriminator is read."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "Call Owner before comparing current owner; mismatch constructs the error and \
-            calls Owner again with the recorded cleanup. Success stores the same borrowed \
-            record without reading data or the program-ID argument. The inspected 0.32 and \
-            1.x references agree, including the 1.2 constructor rename. Compatibility \
-            assumes this local protocol and actual representation obligations remain \
-            unchanged."
+            discriminator is read."]
       }
     ]
     | .accounts_borrowed_info_ref => [
@@ -7573,18 +6280,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account, Program \
-            and Signer sources and relevant dependency requirements. The declared [0.32.1, \
-            0.33.0) range assumes that the four exact receiver/trait mappings return the \
-            same separately stored AccountInfo reference through its existing parent loan. \
-            The resolved AccountInfo provider preserves the current complete record, \
-            defining identity and emitted representation. These projections perform no \
-            clone, RefCell acquisition, allocation, owner check or cleanup. Equal \
-            lamports/data handles do not identify distinct containing records; owned-info \
-            and decoded-payload projections remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:1",
@@ -7606,18 +6302,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account, Program \
-            and Signer sources and relevant dependency requirements. The declared [0.32.1, \
-            0.33.0) range assumes that the four exact receiver/trait mappings return the \
-            same separately stored AccountInfo reference through its existing parent loan. \
-            The resolved AccountInfo provider preserves the current complete record, \
-            defining identity and emitted representation. These projections perform no \
-            clone, RefCell acquisition, allocation, owner check or cleanup. Equal \
-            lamports/data handles do not identify distinct containing records; owned-info \
-            and decoded-payload projections remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:2",
@@ -7639,18 +6324,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account, Program \
-            and Signer sources and relevant dependency requirements. The declared [0.32.1, \
-            0.33.0) range assumes that the four exact receiver/trait mappings return the \
-            same separately stored AccountInfo reference through its existing parent loan. \
-            The resolved AccountInfo provider preserves the current complete record, \
-            defining identity and emitted representation. These projections perform no \
-            clone, RefCell acquisition, allocation, owner check or cleanup. Equal \
-            lamports/data handles do not identify distinct containing records; owned-info \
-            and decoded-payload projections remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:3",
@@ -7671,18 +6345,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account, Program \
-            and Signer sources and relevant dependency requirements. The declared [0.32.1, \
-            0.33.0) range assumes that the four exact receiver/trait mappings return the \
-            same separately stored AccountInfo reference through its existing parent loan. \
-            The resolved AccountInfo provider preserves the current complete record, \
-            defining identity and emitted representation. These projections perform no \
-            clone, RefCell acquisition, allocation, owner check or cleanup. Equal \
-            lamports/data handles do not identify distinct containing records; owned-info \
-            and decoded-payload projections remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:4",
@@ -7704,18 +6367,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account, Program \
-            and Signer sources and relevant dependency requirements. The declared [0.32.1, \
-            0.33.0) range assumes that the four exact receiver/trait mappings return the \
-            same separately stored AccountInfo reference through its existing parent loan. \
-            The resolved AccountInfo provider preserves the current complete record, \
-            defining identity and emitted representation. These projections perform no \
-            clone, RefCell acquisition, allocation, owner check or cleanup. Equal \
-            lamports/data handles do not identify distinct containing records; owned-info \
-            and decoded-payload projections remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:5",
@@ -7737,18 +6389,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account, Program \
-            and Signer sources and relevant dependency requirements. The declared [0.32.1, \
-            0.33.0) range assumes that the four exact receiver/trait mappings return the \
-            same separately stored AccountInfo reference through its existing parent loan. \
-            The resolved AccountInfo provider preserves the current complete record, \
-            defining identity and emitted representation. These projections perform no \
-            clone, RefCell acquisition, allocation, owner check or cleanup. Equal \
-            lamports/data handles do not identify distinct containing records; owned-info \
-            and decoded-payload projections remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:6",
@@ -7770,18 +6411,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account, Program \
-            and Signer sources and relevant dependency requirements. The declared [0.32.1, \
-            0.33.0) range assumes that the four exact receiver/trait mappings return the \
-            same separately stored AccountInfo reference through its existing parent loan. \
-            The resolved AccountInfo provider preserves the current complete record, \
-            defining identity and emitted representation. These projections perform no \
-            clone, RefCell acquisition, allocation, owner check or cleanup. Equal \
-            lamports/data handles do not identify distinct containing records; owned-info \
-            and decoded-payload projections remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:7",
@@ -7803,18 +6433,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account, Program \
-            and Signer sources and relevant dependency requirements. The declared [0.32.1, \
-            0.33.0) range assumes that the four exact receiver/trait mappings return the \
-            same separately stored AccountInfo reference through its existing parent loan. \
-            The resolved AccountInfo provider preserves the current complete record, \
-            defining identity and emitted representation. These projections perform no \
-            clone, RefCell acquisition, allocation, owner check or cleanup. Equal \
-            lamports/data handles do not identify distinct containing records; owned-info \
-            and decoded-payload projections remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:8",
@@ -7836,18 +6455,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account, Program \
-            and Signer sources and relevant dependency requirements. The declared [0.32.1, \
-            0.33.0) range assumes that the four exact receiver/trait mappings return the \
-            same separately stored AccountInfo reference through its existing parent loan. \
-            The resolved AccountInfo provider preserves the current complete record, \
-            defining identity and emitted representation. These projections perform no \
-            clone, RefCell acquisition, allocation, owner check or cleanup. Equal \
-            lamports/data handles do not identify distinct containing records; owned-info \
-            and decoded-payload projections remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:9",
@@ -7869,18 +6477,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account, Program \
-            and Signer sources and relevant dependency requirements. The declared [0.32.1, \
-            0.33.0) range assumes that the four exact receiver/trait mappings return the \
-            same separately stored AccountInfo reference through its existing parent loan. \
-            The resolved AccountInfo provider preserves the current complete record, \
-            defining identity and emitted representation. These projections perform no \
-            clone, RefCell acquisition, allocation, owner check or cleanup. Equal \
-            lamports/data handles do not identify distinct containing records; owned-info \
-            and decoded-payload projections remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:10",
@@ -7902,18 +6499,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account, Program \
-            and Signer sources and relevant dependency requirements. The declared [0.32.1, \
-            0.33.0) range assumes that the four exact receiver/trait mappings return the \
-            same separately stored AccountInfo reference through its existing parent loan. \
-            The resolved AccountInfo provider preserves the current complete record, \
-            defining identity and emitted representation. These projections perform no \
-            clone, RefCell acquisition, allocation, owner check or cleanup. Equal \
-            lamports/data handles do not identify distinct containing records; owned-info \
-            and decoded-payload projections remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:11",
@@ -7935,18 +6521,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account, Program \
-            and Signer sources and relevant dependency requirements. The declared [0.32.1, \
-            0.33.0) range assumes that the four exact receiver/trait mappings return the \
-            same separately stored AccountInfo reference through its existing parent loan. \
-            The resolved AccountInfo provider preserves the current complete record, \
-            defining identity and emitted representation. These projections perform no \
-            clone, RefCell acquisition, allocation, owner check or cleanup. Equal \
-            lamports/data handles do not identify distinct containing records; owned-info \
-            and decoded-payload projections remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:12",
@@ -7968,18 +6543,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete Account, Program \
-            and Signer sources and relevant dependency requirements. The declared [0.32.1, \
-            0.33.0) range assumes that the four exact receiver/trait mappings return the \
-            same separately stored AccountInfo reference through its existing parent loan. \
-            The resolved AccountInfo provider preserves the current complete record, \
-            defining identity and emitted representation. These projections perform no \
-            clone, RefCell acquisition, allocation, owner check or cleanup. Equal \
-            lamports/data handles do not identify distinct containing records; owned-info \
-            and decoded-payload projections remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:0",
@@ -8001,14 +6565,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same borrowed AccountInfo \
-            object with its parent lifetime and complete auxiliary state. InterfaceAccount \
-            delegates through its contained Account without replacing its saved owner; no \
-            AccountInfo clone or owned-field projection is inserted. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:1",
@@ -8030,14 +6587,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same borrowed AccountInfo \
-            object with its parent lifetime and complete auxiliary state. InterfaceAccount \
-            delegates through its contained Account without replacing its saved owner; no \
-            AccountInfo clone or owned-field projection is inserted. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:2",
@@ -8059,14 +6609,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same borrowed AccountInfo \
-            object with its parent lifetime and complete auxiliary state. InterfaceAccount \
-            delegates through its contained Account without replacing its saved owner; no \
-            AccountInfo clone or owned-field projection is inserted. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:3",
@@ -8088,14 +6631,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same borrowed AccountInfo \
-            object with its parent lifetime and complete auxiliary state. InterfaceAccount \
-            delegates through its contained Account without replacing its saved owner; no \
-            AccountInfo clone or owned-field projection is inserted. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:4",
@@ -8117,14 +6653,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same borrowed AccountInfo \
-            object with its parent lifetime and complete auxiliary state. InterfaceAccount \
-            delegates through its contained Account without replacing its saved owner; no \
-            AccountInfo clone or owned-field projection is inserted. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:5",
@@ -8146,14 +6675,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same borrowed AccountInfo \
-            object with its parent lifetime and complete auxiliary state. InterfaceAccount \
-            delegates through its contained Account without replacing its saved owner; no \
-            AccountInfo clone or owned-field projection is inserted. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:6",
@@ -8175,14 +6697,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same borrowed AccountInfo \
-            object with its parent lifetime and complete auxiliary state. InterfaceAccount \
-            delegates through its contained Account without replacing its saved owner; no \
-            AccountInfo clone or owned-field projection is inserted. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:7",
@@ -8203,14 +6718,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same borrowed AccountInfo \
-            object with its parent lifetime and complete auxiliary state. InterfaceAccount \
-            delegates through its contained Account without replacing its saved owner; no \
-            AccountInfo clone or owned-field projection is inserted. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:8",
@@ -8232,14 +6740,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same borrowed AccountInfo \
-            object with its parent lifetime and complete auxiliary state. InterfaceAccount \
-            delegates through its contained Account without replacing its saved owner; no \
-            AccountInfo clone or owned-field projection is inserted. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:9",
@@ -8261,14 +6762,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same borrowed AccountInfo \
-            object with its parent lifetime and complete auxiliary state. InterfaceAccount \
-            delegates through its contained Account without replacing its saved owner; no \
-            AccountInfo clone or owned-field projection is inserted. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:10",
@@ -8290,14 +6784,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same borrowed AccountInfo \
-            object with its parent lifetime and complete auxiliary state. InterfaceAccount \
-            delegates through its contained Account without replacing its saved owner; no \
-            AccountInfo clone or owned-field projection is inserted. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:11",
@@ -8319,14 +6806,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same borrowed AccountInfo \
-            object with its parent lifetime and complete auxiliary state. InterfaceAccount \
-            delegates through its contained Account without replacing its saved owner; no \
-            AccountInfo clone or owned-field projection is inserted. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:12",
@@ -8348,14 +6828,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes return of the same borrowed AccountInfo \
-            object with its parent lifetime and complete auxiliary state. InterfaceAccount \
-            delegates through its contained Account without replacing its saved owner; no \
-            AccountInfo clone or owned-field projection is inserted. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:0",
@@ -8377,23 +6850,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The exact AccountInfo object reference, preserving its parent lifetime and \
-            distinguishing an owned receiver field from an external shared object. Each \
-            listed immutable release was reviewed separately. Anchor 0.27.0 owns \
-            AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared reference. \
-            InterfaceAccount delegates to its contained Account and preserves the saved \
-            owner. Callback identities, source loans, owned payload transfer, current \
-            AccountInfo cells and all finite exits remain explicit at the family index; no \
-            source body, target-layout or dependency implementation proof is claimed. See \
-            source-notes/anchor-views.md. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:1",
@@ -8415,23 +6872,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The exact AccountInfo object reference, preserving its parent lifetime and \
-            distinguishing an owned receiver field from an external shared object. Each \
-            listed immutable release was reviewed separately. Anchor 0.27.0 owns \
-            AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared reference. \
-            InterfaceAccount delegates to its contained Account and preserves the saved \
-            owner. Callback identities, source loans, owned payload transfer, current \
-            AccountInfo cells and all finite exits remain explicit at the family index; no \
-            source body, target-layout or dependency implementation proof is claimed. See \
-            source-notes/anchor-views.md. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:2",
@@ -8453,23 +6894,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The exact AccountInfo object reference, preserving its parent lifetime and \
-            distinguishing an owned receiver field from an external shared object. Each \
-            listed immutable release was reviewed separately. Anchor 0.27.0 owns \
-            AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared reference. \
-            InterfaceAccount delegates to its contained Account and preserves the saved \
-            owner. Callback identities, source loans, owned payload transfer, current \
-            AccountInfo cells and all finite exits remain explicit at the family index; no \
-            source body, target-layout or dependency implementation proof is claimed. See \
-            source-notes/anchor-views.md. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:3",
@@ -8491,23 +6916,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The exact AccountInfo object reference, preserving its parent lifetime and \
-            distinguishing an owned receiver field from an external shared object. Each \
-            listed immutable release was reviewed separately. Anchor 0.27.0 owns \
-            AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared reference. \
-            InterfaceAccount delegates to its contained Account and preserves the saved \
-            owner. Callback identities, source loans, owned payload transfer, current \
-            AccountInfo cells and all finite exits remain explicit at the family index; no \
-            source body, target-layout or dependency implementation proof is claimed. See \
-            source-notes/anchor-views.md. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:4",
@@ -8529,23 +6938,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The exact AccountInfo object reference, preserving its parent lifetime and \
-            distinguishing an owned receiver field from an external shared object. Each \
-            listed immutable release was reviewed separately. Anchor 0.27.0 owns \
-            AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared reference. \
-            InterfaceAccount delegates to its contained Account and preserves the saved \
-            owner. Callback identities, source loans, owned payload transfer, current \
-            AccountInfo cells and all finite exits remain explicit at the family index; no \
-            source body, target-layout or dependency implementation proof is claimed. See \
-            source-notes/anchor-views.md. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:5",
@@ -8567,23 +6960,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The exact AccountInfo object reference, preserving its parent lifetime and \
-            distinguishing an owned receiver field from an external shared object. Each \
-            listed immutable release was reviewed separately. Anchor 0.27.0 owns \
-            AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared reference. \
-            InterfaceAccount delegates to its contained Account and preserves the saved \
-            owner. Callback identities, source loans, owned payload transfer, current \
-            AccountInfo cells and all finite exits remain explicit at the family index; no \
-            source body, target-layout or dependency implementation proof is claimed. See \
-            source-notes/anchor-views.md. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:6",
@@ -8605,23 +6982,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The exact AccountInfo object reference, preserving its parent lifetime and \
-            distinguishing an owned receiver field from an external shared object. Each \
-            listed immutable release was reviewed separately. Anchor 0.27.0 owns \
-            AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared reference. \
-            InterfaceAccount delegates to its contained Account and preserves the saved \
-            owner. Callback identities, source loans, owned payload transfer, current \
-            AccountInfo cells and all finite exits remain explicit at the family index; no \
-            source body, target-layout or dependency implementation proof is claimed. See \
-            source-notes/anchor-views.md. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:7",
@@ -8642,23 +7003,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The exact AccountInfo object reference, preserving its parent lifetime and \
-            distinguishing an owned receiver field from an external shared object. Each \
-            listed immutable release was reviewed separately. Anchor 0.27.0 owns \
-            AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared reference. \
-            InterfaceAccount delegates to its contained Account and preserves the saved \
-            owner. Callback identities, source loans, owned payload transfer, current \
-            AccountInfo cells and all finite exits remain explicit at the family index; no \
-            source body, target-layout or dependency implementation proof is claimed. See \
-            source-notes/anchor-views.md. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:8",
@@ -8680,23 +7025,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The exact AccountInfo object reference, preserving its parent lifetime and \
-            distinguishing an owned receiver field from an external shared object. Each \
-            listed immutable release was reviewed separately. Anchor 0.27.0 owns \
-            AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared reference. \
-            InterfaceAccount delegates to its contained Account and preserves the saved \
-            owner. Callback identities, source loans, owned payload transfer, current \
-            AccountInfo cells and all finite exits remain explicit at the family index; no \
-            source body, target-layout or dependency implementation proof is claimed. See \
-            source-notes/anchor-views.md. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:9",
@@ -8718,23 +7047,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The exact AccountInfo object reference, preserving its parent lifetime and \
-            distinguishing an owned receiver field from an external shared object. Each \
-            listed immutable release was reviewed separately. Anchor 0.27.0 owns \
-            AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared reference. \
-            InterfaceAccount delegates to its contained Account and preserves the saved \
-            owner. Callback identities, source loans, owned payload transfer, current \
-            AccountInfo cells and all finite exits remain explicit at the family index; no \
-            source body, target-layout or dependency implementation proof is claimed. See \
-            source-notes/anchor-views.md. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:10",
@@ -8756,23 +7069,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The exact AccountInfo object reference, preserving its parent lifetime and \
-            distinguishing an owned receiver field from an external shared object. Each \
-            listed immutable release was reviewed separately. Anchor 0.27.0 owns \
-            AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared reference. \
-            InterfaceAccount delegates to its contained Account and preserves the saved \
-            owner. Callback identities, source loans, owned payload transfer, current \
-            AccountInfo cells and all finite exits remain explicit at the family index; no \
-            source body, target-layout or dependency implementation proof is claimed. See \
-            source-notes/anchor-views.md. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:11",
@@ -8794,23 +7091,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The exact AccountInfo object reference, preserving its parent lifetime and \
-            distinguishing an owned receiver field from an external shared object. Each \
-            listed immutable release was reviewed separately. Anchor 0.27.0 owns \
-            AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared reference. \
-            InterfaceAccount delegates to its contained Account and preserves the saved \
-            owner. Callback identities, source loans, owned payload transfer, current \
-            AccountInfo cells and all finite exits remain explicit at the family index; no \
-            source body, target-layout or dependency implementation proof is claimed. See \
-            source-notes/anchor-views.md. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:12",
@@ -8832,23 +7113,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The exact AccountInfo object reference, preserving its parent lifetime and \
-            distinguishing an owned receiver field from an external shared object. Each \
-            listed immutable release was reviewed separately. Anchor 0.27.0 owns \
-            AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared reference. \
-            InterfaceAccount delegates to its contained Account and preserves the saved \
-            owner. Callback identities, source loans, owned payload transfer, current \
-            AccountInfo cells and all finite exits remain explicit at the family index; no \
-            source body, target-layout or dependency implementation proof is claimed. See \
-            source-notes/anchor-views.md. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:0",
@@ -8870,15 +7135,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the stored AccountInfo reference \
-            of the same wrapper without cloning, deserializing or reading its metadata. \
-            Equal records do not authorize swapping the actual returned pointer or loan. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:1",
@@ -8900,15 +7157,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the stored AccountInfo reference \
-            of the same wrapper without cloning, deserializing or reading its metadata. \
-            Equal records do not authorize swapping the actual returned pointer or loan. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:2",
@@ -8930,15 +7179,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the stored AccountInfo reference \
-            of the same wrapper without cloning, deserializing or reading its metadata. \
-            Equal records do not authorize swapping the actual returned pointer or loan. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:3",
@@ -8960,15 +7201,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the stored AccountInfo reference \
-            of the same wrapper without cloning, deserializing or reading its metadata. \
-            Equal records do not authorize swapping the actual returned pointer or loan. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:4",
@@ -8990,15 +7223,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the stored AccountInfo reference \
-            of the same wrapper without cloning, deserializing or reading its metadata. \
-            Equal records do not authorize swapping the actual returned pointer or loan. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:5",
@@ -9020,15 +7245,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the stored AccountInfo reference \
-            of the same wrapper without cloning, deserializing or reading its metadata. \
-            Equal records do not authorize swapping the actual returned pointer or loan. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:6",
@@ -9050,15 +7267,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the stored AccountInfo reference \
-            of the same wrapper without cloning, deserializing or reading its metadata. \
-            Equal records do not authorize swapping the actual returned pointer or loan. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:7",
@@ -9079,15 +7288,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the stored AccountInfo reference \
-            of the same wrapper without cloning, deserializing or reading its metadata. \
-            Equal records do not authorize swapping the actual returned pointer or loan. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:8",
@@ -9109,15 +7310,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the stored AccountInfo reference \
-            of the same wrapper without cloning, deserializing or reading its metadata. \
-            Equal records do not authorize swapping the actual returned pointer or loan. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:9",
@@ -9139,15 +7332,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the stored AccountInfo reference \
-            of the same wrapper without cloning, deserializing or reading its metadata. \
-            Equal records do not authorize swapping the actual returned pointer or loan. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:10",
@@ -9169,15 +7354,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the stored AccountInfo reference \
-            of the same wrapper without cloning, deserializing or reading its metadata. \
-            Equal records do not authorize swapping the actual returned pointer or loan. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:11",
@@ -9199,15 +7376,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the stored AccountInfo reference \
-            of the same wrapper without cloning, deserializing or reading its metadata. \
-            Equal records do not authorize swapping the actual returned pointer or loan. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:12",
@@ -9229,15 +7398,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return the stored AccountInfo reference \
-            of the same wrapper without cloning, deserializing or reading its metadata. \
-            Equal records do not authorize swapping the actual returned pointer or loan. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       }
     ]
     | .accounts_boxed_Box_close => [
@@ -9268,14 +7429,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references call the actual current inner AccountsClose \
-            implementation with the moved destination. Compatibility assumes this single \
-            delegation and full outcome/state forwarding remain unchanged; it does not \
-            select Account.close semantics for arbitrary T."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -9304,14 +7458,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references call the actual current inner AccountsClose \
-            implementation with the moved destination. Compatibility assumes this single \
-            delegation and full outcome/state forwarding remain unchanged; it does not \
-            select Account.close semantics for arbitrary T."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-0.29.0:0",
@@ -9340,16 +7487,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Delegate to the contained close \
-            implementation with the exact payload and recipient. Preserve all callback \
-            results, state changes and cleanup without independently asserting close \
-            success. Compatibility in [0.29.0, 0.30.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -9378,16 +7516,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Delegate to the contained close \
-            implementation with the exact payload and recipient. Preserve all callback \
-            results, state changes and cleanup without independently asserting close \
-            success. Compatibility in [0.29.0, 0.30.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            alone does not establish target-memory equivalence."]
       }
     ]
     | .accounts_boxed_Box_exit => [
@@ -9418,13 +7547,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references call the actual current inner AccountsExit \
-            implementation. Compatibility assumes this single delegation and full \
-            outcome/state forwarding remain unchanged."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -9453,13 +7576,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references call the actual current inner AccountsExit \
-            implementation. Compatibility assumes this single delegation and full \
-            outcome/state forwarding remain unchanged."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-1.1.2:0",
@@ -9488,14 +7605,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes delegation to the actual current inner \
-            payload and preservation of the entire exit result and successor state without \
-            an extra allocation or projection. This pre-cohort profile stops before the \
-            new 1.2.1 provider/feature selection."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -9524,14 +7634,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes delegation to the actual current inner \
-            payload and preservation of the entire exit result and successor state without \
-            an extra allocation or projection. This pre-cohort profile stops before the \
-            new 1.2.1 provider/feature selection."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-1.0.2:0",
@@ -9560,20 +7663,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Delegate the selected exit/close to the actual current inner payload and \
-            preserve its full outcome and successor state; Option None exit returns Ok \
-            without a callback. Reviewed source distinctions and continuation conditions \
-            are recorded in source-notes/anchor-lifecycle.md. Error representation is \
-            boxed; AccountInfo fields are borrowed. Preserve the complete 1.0 operation, \
-            reached callbacks and cleanup at the original exact dependency/build gates; \
-            adding this alternative does not replace modern parent alternatives. The \
-            declared range is a complete-operation preservation assumption; inspected \
-            releases, native runs, exact ABI observations and source-call implementation \
-            obligations remain separate."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-1.0.2:1",
@@ -9602,20 +7692,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Delegate the selected exit/close to the actual current inner payload and \
-            preserve its full outcome and successor state; Option None exit returns Ok \
-            without a callback. Reviewed source distinctions and continuation conditions \
-            are recorded in source-notes/anchor-lifecycle.md. Error representation is \
-            boxed; AccountInfo fields are borrowed. Preserve the complete 1.0 operation, \
-            reached callbacks and cleanup at the original exact dependency/build gates; \
-            adding this alternative does not replace modern parent alternatives. The \
-            declared range is a complete-operation preservation assumption; inspected \
-            releases, native runs, exact ABI observations and source-call implementation \
-            obligations remain separate."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-0.29.0:0",
@@ -9644,15 +7721,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Delegate to the contained exit \
-            implementation with the exact program ID and payload. Preserve callback \
-            writes, errors, unwind and terminal effects. Compatibility in [0.29.0, 0.30.0) \
-            assumes this complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -9681,15 +7750,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Delegate to the contained exit \
-            implementation with the exact program ID and payload. Preserve callback \
-            writes, errors, unwind and terminal effects. Compatibility in [0.29.0, 0.30.0) \
-            assumes this complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-0.27.0:0",
@@ -9718,14 +7779,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Delegate AccountsExit to the actual current inner payload and retain its \
-            complete outcome, effects and successor state. Compatibility in [0.27.0, \
-            0.28.0) assumes this operation and its selected dependency contracts preserve \
-            that behavior; the exact releases remain inspected references."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -9754,14 +7808,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Delegate AccountsExit to the actual current inner payload and retain its \
-            complete outcome, effects and successor state. Compatibility in [0.27.0, \
-            0.28.0) assumes this operation and its selected dependency contracts preserve \
-            that behavior; the exact releases remain inspected references."
+            alone does not establish target-memory equivalence."]
       }
     ]
     | .accounts_boxed_Box_try_accounts => [
@@ -9796,13 +7843,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             enum, actual String/Box operations and fixed builtin ProgramError injection. \
             This 0.32 profile uses boxed storage. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references invoke inner Accounts and box only its successful \
-            payload. Compatibility assumes this sequencing, all five operand effects, and \
-            skipping allocation on inner error, unwind or terminal exit remain unchanged."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -9835,13 +7876,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             enum, actual String/Box operations and fixed builtin ProgramError injection. \
             This 0.32 profile uses boxed storage. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references invoke inner Accounts and box only its successful \
-            payload. Compatibility assumes this sequencing, all five operand effects, and \
-            skipping allocation on inner error, unwind or terminal exit remain unchanged."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:0",
@@ -9868,11 +7903,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -9893,14 +7923,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes the actual inner Accounts execution \
-            followed by Box allocation only on Ok, preserving the inner remaining slice, \
-            bumps, reallocations and every allocation, error, unwind or terminal outcome. \
-            This pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -9927,11 +7950,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -9952,14 +7970,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes the actual inner Accounts execution \
-            followed by Box allocation only on Ok, preserving the inner remaining slice, \
-            bumps, reallocations and every allocation, error, unwind or terminal outcome. \
-            This pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:0",
@@ -9993,20 +8004,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Inner Accounts execution followed by actual Box allocation only on Ok, \
-            preserving inner slice/bumps/reallocations and every error or unwind. Reviewed \
-            source distinctions and continuation conditions are recorded in \
-            source-notes/anchor-lifecycle.md. Error representation is boxed; AccountInfo \
-            fields are borrowed. Preserve the complete 1.0 operation, reached callbacks \
-            and cleanup at the original exact dependency/build gates; adding this \
-            alternative does not replace modern parent alternatives. The declared range is \
-            a complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:1",
@@ -10040,20 +8038,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Inner Accounts execution followed by actual Box allocation only on Ok, \
-            preserving inner slice/bumps/reallocations and every error or unwind. Reviewed \
-            source distinctions and continuation conditions are recorded in \
-            source-notes/anchor-lifecycle.md. Error representation is boxed; AccountInfo \
-            fields are borrowed. Preserve the complete 1.0 operation, reached callbacks \
-            and cleanup at the original exact dependency/build gates; adding this \
-            alternative does not replace modern parent alternatives. The declared range is \
-            a complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:0",
@@ -10087,16 +8072,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Call the actual inner Accounts \
-            implementation before allocating the Box for a successful payload. Preserve \
-            account consumption, allocation failures and payload cleanup in that order. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -10130,16 +8106,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Call the actual inner Accounts \
-            implementation before allocating the Box for a successful payload. Preserve \
-            account consumption, allocation failures and payload cleanup in that order. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            their owned String resources."]
       }
     ]
     | .accounts_boxed_Box_try_accounts_inline_error => [
@@ -10175,15 +8142,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Inner Accounts execution followed by actual Box allocation only on Ok, \
-            preserving inner slice/bumps/reallocations and every error or unwind. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -10217,15 +8176,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Inner Accounts execution followed by actual Box allocation only on Ok, \
-            preserving inner slice/bumps/reallocations and every error or unwind. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            their owned String resources."]
       }
     ]
     | .accounts_clone_borrowed_info => [
@@ -10250,14 +8201,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
             payload resources are interpreted in the auxiliary state.", "For owned \
             AccountInfo bind both non-unwinding Global Rc operations. Program and \
-            Interface PhantomData do not invoke T::clone."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The 0.32.0–0.32.3 references clone the Program, Interface, Signer, \
-            SystemAccount or UncheckedAccount wrapper while retaining its borrowed \
-            AccountInfo record. No payload callback or owned Rc clone is reached. \
-            Compatibility within 0.32 assumes the same borrowed fields and clone protocol; \
-            0.27.0 owns AccountInfo and remains a different variant."
+            Interface PhantomData do not invoke T::clone."]
       },
       {
         id := "anchor-views-0.32.1:1",
@@ -10281,14 +8225,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
             payload resources are interpreted in the auxiliary state.", "For owned \
             AccountInfo bind both non-unwinding Global Rc operations. Program and \
-            Interface PhantomData do not invoke T::clone."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The 0.32.0–0.32.3 references clone the Program, Interface, Signer, \
-            SystemAccount or UncheckedAccount wrapper while retaining its borrowed \
-            AccountInfo record. No payload callback or owned Rc clone is reached. \
-            Compatibility within 0.32 assumes the same borrowed fields and clone protocol; \
-            0.27.0 owns AccountInfo and remains a different variant."
+            Interface PhantomData do not invoke T::clone."]
       },
       {
         id := "anchor-views-0.32.1:2",
@@ -10311,14 +8248,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
             payload resources are interpreted in the auxiliary state.", "For owned \
             AccountInfo bind both non-unwinding Global Rc operations. Program and \
-            Interface PhantomData do not invoke T::clone."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The 0.32.0–0.32.3 references clone the Program, Interface, Signer, \
-            SystemAccount or UncheckedAccount wrapper while retaining its borrowed \
-            AccountInfo record. No payload callback or owned Rc clone is reached. \
-            Compatibility within 0.32 assumes the same borrowed fields and clone protocol; \
-            0.27.0 owns AccountInfo and remains a different variant."
+            Interface PhantomData do not invoke T::clone."]
       },
       {
         id := "anchor-views-0.32.1:3",
@@ -10342,14 +8272,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
             payload resources are interpreted in the auxiliary state.", "For owned \
             AccountInfo bind both non-unwinding Global Rc operations. Program and \
-            Interface PhantomData do not invoke T::clone."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The 0.32.0–0.32.3 references clone the Program, Interface, Signer, \
-            SystemAccount or UncheckedAccount wrapper while retaining its borrowed \
-            AccountInfo record. No payload callback or owned Rc clone is reached. \
-            Compatibility within 0.32 assumes the same borrowed fields and clone protocol; \
-            0.27.0 owns AccountInfo and remains a different variant."
+            Interface PhantomData do not invoke T::clone."]
       },
       {
         id := "anchor-views-0.32.1:4",
@@ -10373,14 +8296,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
             payload resources are interpreted in the auxiliary state.", "For owned \
             AccountInfo bind both non-unwinding Global Rc operations. Program and \
-            Interface PhantomData do not invoke T::clone."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The 0.32.0–0.32.3 references clone the Program, Interface, Signer, \
-            SystemAccount or UncheckedAccount wrapper while retaining its borrowed \
-            AccountInfo record. No payload callback or owned Rc clone is reached. \
-            Compatibility within 0.32 assumes the same borrowed fields and clone protocol; \
-            0.27.0 owns AccountInfo and remains a different variant."
+            Interface PhantomData do not invoke T::clone."]
       }
     ]
     | .accounts_interface_Interface_deref => [
@@ -10424,14 +8340,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["The source reference, lifetime and projected field are related to the \
-            corresponding mathematical value."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "Interface first exists in 0.27.0. Every body delegates to the contained \
-            concrete Program deref, which projects its stored AccountInfo. The \
-            owned-to-borrowed Program representation change in 0.29.0 changes the stored \
-            reference interpretation, not the effects of this operation. No generic \
-            program ID check or callback runs during the projection."
+            corresponding mathematical value."]
       }
     ]
     | .accounts_interface_Interface_try_accounts => [
@@ -10467,15 +8376,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Consume the head before CheckId, then executable validation; keep empty input \
-            unchanged while constructing AccountNotEnoughKeys. Retain the borrowed record \
-            and actual callback exits. The 0.32.0–0.32.3 files agree. Compatibility within \
-            0.32 assumes the same boxed errors, borrowed fields and reached operation \
-            order."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -10509,15 +8410,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Consume the head before CheckId, then executable validation; keep empty input \
-            unchanged while constructing AccountNotEnoughKeys. Retain the borrowed record \
-            and actual callback exits. The 0.32.0–0.32.3 files agree. Compatibility within \
-            0.32 assumes the same boxed errors, borrowed fields and reached operation \
-            order."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:0",
@@ -10544,11 +8437,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -10569,15 +8457,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes empty-input AccountNotEnoughKeys without \
-            advancing the slice; otherwise consume the first AccountReference, use the \
-            actual CheckId callback and then the executable check. Preserve boxed errors, \
-            callback effects and all remaining-slice, bumps and reallocation state. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -10604,11 +8484,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -10629,15 +8504,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes empty-input AccountNotEnoughKeys without \
-            advancing the slice; otherwise consume the first AccountReference, use the \
-            actual CheckId callback and then the executable check. Preserve boxed errors, \
-            callback effects and all remaining-slice, bumps and reallocation state. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:0",
@@ -10671,23 +8538,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Reviewed source distinctions and \
-            continuation conditions are recorded in source-notes/anchor-lifecycle.md. \
-            Error representation is boxed; AccountInfo fields are borrowed. Preserve the \
-            complete 1.0 operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:1",
@@ -10721,23 +8572,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Reviewed source distinctions and \
-            continuation conditions are recorded in source-notes/anchor-lifecycle.md. \
-            Error representation is boxed; AccountInfo fields are borrowed. Preserve the \
-            complete 1.0 operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            their owned String resources."]
       }
     ]
     | .accounts_interface_account_InterfaceAccount_deref => [
@@ -10769,13 +8604,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["The source reference, lifetime and projected field are related to the \
-            corresponding mathematical value."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "InterfaceAccount first exists in 0.27.0. Every body delegates to the contained \
-            concrete Account deref and returns the payload field reference. The captured \
-            owner is not read or checked. No payload deref/clone, decoder, owner callback, \
-            borrow, or destructor runs."
+            corresponding mathematical value."]
       },
       {
         id := "anchor-lang-reviewed-2",
@@ -10804,13 +8633,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["The source reference, lifetime and projected field are related to the \
-            corresponding mathematical value."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "InterfaceAccount first exists in 0.27.0. Every body delegates to the contained \
-            concrete Account deref and returns the payload field reference. The captured \
-            owner is not read or checked. No payload deref/clone, decoder, owner callback, \
-            borrow, or destructor runs."
+            corresponding mathematical value."]
       }
     ]
     | .accounts_interface_account_InterfaceAccount_exit => [
@@ -10839,10 +8662,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -10855,10 +8674,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -10879,15 +8694,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Use the saved owner for the conditional exit; after the is_closed short \
-            circuit, retain guard, serializer writes and reached cleanup, including \
-            partial writes on failure. The 0.32.0–0.32.3 files agree. Compatibility within \
-            0.32 assumes the same boxed errors, borrowed fields and reached operation \
-            order."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -10914,10 +8721,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -10930,10 +8733,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -10954,15 +8753,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Use the saved owner for the conditional exit; after the is_closed short \
-            circuit, retain guard, serializer writes and reached cleanup, including \
-            partial writes on failure. The 0.32.0–0.32.3 files agree. Compatibility within \
-            0.32 assumes the same boxed errors, borrowed fields and reached operation \
-            order."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:0",
@@ -10989,11 +8780,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -11006,10 +8792,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -11022,10 +8804,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -11046,15 +8824,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes delegation to Account exit using the \
-            saved expected owner, its is_closed short circuit and actual mutable \
-            guard/serializer, including partial writes and cleanup. The later \
-            unowned-account exit path is excluded. This pre-cohort profile stops before \
-            the new 1.2.1 provider/feature selection."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -11081,11 +8851,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -11098,10 +8863,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -11114,10 +8875,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -11138,15 +8895,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes delegation to Account exit using the \
-            saved expected owner, its is_closed short circuit and actual mutable \
-            guard/serializer, including partial writes and cleanup. The later \
-            unowned-account exit path is excluded. This pre-cohort profile stops before \
-            the new 1.2.1 provider/feature selection."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:0",
@@ -11172,11 +8921,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "The reached AccountInfo borrow/Rc and, for close, assign/resize operations \
-              use this reviewed provider. Source layouts and actual shared cells remain \
-              explicit bindings."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -11184,11 +8929,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "The reached borrow, arithmetic and callback errors retain the exact \
-              ProgramError enum of this provider, including String-bearing versus unit \
-              BorshIoError."
+          releases := ["3.0.1"]
         }],
         conditions :=
           ["Bind current AccountInfo metadata, owner references, typed lamports/data cells \
@@ -11205,19 +8946,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Use the saved owner and short-circuit closed-account check before reaching the \
-            actual mutable data borrow and serializer. Preserve partial writes, guard \
-            cleanup and every reached callback outcome; this profile retains borrowed \
-            AccountInfo fields. Preserve the complete 1.0 operation, reached callbacks and \
-            cleanup at the original exact dependency/build gates; adding this alternative \
-            does not replace modern parent alternatives. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:1",
@@ -11243,11 +8972,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "The reached AccountInfo borrow/Rc and, for close, assign/resize operations \
-              use this reviewed provider. Source layouts and actual shared cells remain \
-              explicit bindings."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -11255,11 +8980,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "The reached borrow, arithmetic and callback errors retain the exact \
-              ProgramError enum of this provider, including String-bearing versus unit \
-              BorshIoError."
+          releases := ["3.0.1"]
         }],
         conditions :=
           ["Bind current AccountInfo metadata, owner references, typed lamports/data cells \
@@ -11276,19 +8997,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Use the saved owner and short-circuit closed-account check before reaching the \
-            actual mutable data borrow and serializer. Preserve partial writes, guard \
-            cleanup and every reached callback outcome; this profile retains borrowed \
-            AccountInfo fields. Preserve the complete 1.0 operation, reached callbacks and \
-            cleanup at the original exact dependency/build gates; adding this alternative \
-            does not replace modern parent alternatives. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            their owned String resources."]
       }
     ]
     | .accounts_interface_account_InterfaceAccount_exit_cloned_info => [
@@ -11317,12 +9026,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the current AccountInfo clone, data RefCell \
-              guard and repayment, borrow-error conversion and declaration-ordered owner \
-              cleanup around the actual serializer. The exact borrowed record and \
-              ProgramError representation remain explicit.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -11343,16 +9046,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Delegate conditional exit using the saved \
-            owner, then retain the same cloned-AccountInfo serialization and cleanup \
-            protocol. Preserve the actual mutable guard, partial writer effects and saved \
-            owner rather than recomputing it. Compatibility in [0.29.0, 0.30.0) assumes \
-            this complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -11379,12 +9073,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the current AccountInfo clone, data RefCell \
-              guard and repayment, borrow-error conversion and declaration-ordered owner \
-              cleanup around the actual serializer. The exact borrowed record and \
-              ProgramError representation remain explicit.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -11405,16 +9093,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Delegate conditional exit using the saved \
-            owner, then retain the same cloned-AccountInfo serialization and cleanup \
-            protocol. Preserve the actual mutable guard, partial writer effects and saved \
-            owner rather than recomputing it. Compatibility in [0.29.0, 0.30.0) assumes \
-            this complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       }
     ]
     | .accounts_interface_account_InterfaceAccount_reload => [
@@ -11443,10 +9122,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -11459,10 +9134,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -11485,14 +9156,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             fixed builtin ProgramError injection. The facade fixes inline storage for 0.27 \
             and boxed storage for later releases. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Delegate to the contained Account reload, retaining owner recheck, guard \
-            lifetime, payload replacement and the saved InterfaceAccount owner. The \
-            0.32.0–0.32.3 files agree. Compatibility within 0.32 assumes the same boxed \
-            errors, borrowed fields and reached operation order."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -11519,10 +9183,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -11535,10 +9195,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -11561,14 +9217,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             fixed builtin ProgramError injection. The facade fixes inline storage for 0.27 \
             and boxed storage for later releases. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Delegate to the contained Account reload, retaining owner recheck, guard \
-            lifetime, payload replacement and the saved InterfaceAccount owner. The \
-            0.32.0–0.32.3 files agree. Compatibility within 0.32 assumes the same boxed \
-            errors, borrowed fields and reached operation order."
+            errors.programStrings lists exactly their owned String resources."]
       }
     ]
     | .accounts_interface_account_InterfaceAccount_reload_released_guard => [
@@ -11597,11 +9246,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -11614,10 +9258,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -11630,10 +9270,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -11656,15 +9292,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             fixed builtin ProgramError injection. The facade fixes inline storage for 0.27 \
             and boxed storage for later releases. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes the current-owner recheck and actual \
-            deserializer, release of the shared data guard before set_inner, and then \
-            destruction/replacement of the old payload on the actual state. The held-guard \
-            reload family is not substituted. This pre-cohort profile stops before the new \
-            1.2.1 provider/feature selection."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -11691,11 +9319,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -11708,10 +9331,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -11724,10 +9343,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -11750,15 +9365,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             fixed builtin ProgramError injection. The facade fixes inline storage for 0.27 \
             and boxed storage for later releases. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes the current-owner recheck and actual \
-            deserializer, release of the shared data guard before set_inner, and then \
-            destruction/replacement of the old payload on the actual state. The held-guard \
-            reload family is not substituted. This pre-cohort profile stops before the new \
-            1.2.1 provider/feature selection."
+            errors.programStrings lists exactly their owned String resources."]
       }
     ]
     | .accounts_interface_account_InterfaceAccount_try_accounts => [
@@ -11787,10 +9394,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -11803,10 +9406,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -11831,14 +9430,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Consume the head before initialization/current-owner checks and checked \
-            deserialization. Preserve the borrowed source record, saved owner and guard \
-            cleanup on failure. The 0.32.0–0.32.3 files agree. Compatibility within 0.32 \
-            assumes the same boxed errors, borrowed fields and reached operation order."
+            resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -11865,10 +9457,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -11881,10 +9469,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -11909,14 +9493,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Consume the head before initialization/current-owner checks and checked \
-            deserialization. Preserve the borrowed source record, saved owner and guard \
-            cleanup on failure. The 0.32.0–0.32.3 files agree. Compatibility within 0.32 \
-            assumes the same boxed errors, borrowed fields and reached operation order."
+            resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:0",
@@ -11943,11 +9520,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -11960,10 +9532,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -11976,10 +9544,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -12004,16 +9568,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes consumption of the first AccountReference \
-            before initialization, actual CheckOwner and checked deserialization, \
-            recording the current owner in the resulting InterfaceAccount. Empty input \
-            does not advance; callback outcomes, boxed errors, guard cleanup, bumps and \
-            reallocations remain explicit. This pre-cohort profile stops before the new \
-            1.2.1 provider/feature selection."
+            resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -12040,11 +9595,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -12057,10 +9607,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -12073,10 +9619,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -12101,16 +9643,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes consumption of the first AccountReference \
-            before initialization, actual CheckOwner and checked deserialization, \
-            recording the current owner in the resulting InterfaceAccount. Empty input \
-            does not advance; callback outcomes, boxed errors, guard cleanup, bumps and \
-            reallocations remain explicit. This pre-cohort profile stops before the new \
-            1.2.1 provider/feature selection."
+            resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:0",
@@ -12136,11 +9669,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "The reached AccountInfo borrow/Rc and, for close, assign/resize operations \
-              use this reviewed provider. Source layouts and actual shared cells remain \
-              explicit bindings."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -12148,11 +9677,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "The reached borrow, arithmetic and callback errors retain the exact \
-              ProgramError enum of this provider, including String-bearing versus unit \
-              BorshIoError."
+          releases := ["3.0.1"]
         }],
         conditions :=
           ["Bind current AccountInfo metadata, owner references, typed lamports/data cells \
@@ -12173,23 +9698,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Source-ordered initialization, current-owner validation, selected checked or \
-            unchecked decoder and scoped AccountInfo clone/data-guard cleanup. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Reviewed source distinctions and \
-            continuation conditions are recorded in source-notes/anchor-lifecycle.md. \
-            Error representation is boxed; AccountInfo fields are borrowed. Preserve the \
-            complete 1.0 operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:1",
@@ -12215,11 +9724,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "The reached AccountInfo borrow/Rc and, for close, assign/resize operations \
-              use this reviewed provider. Source layouts and actual shared cells remain \
-              explicit bindings."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -12227,11 +9732,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "The reached borrow, arithmetic and callback errors retain the exact \
-              ProgramError enum of this provider, including String-bearing versus unit \
-              BorshIoError."
+          releases := ["3.0.1"]
         }],
         conditions :=
           ["Bind current AccountInfo metadata, owner references, typed lamports/data cells \
@@ -12252,23 +9753,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Source-ordered initialization, current-owner validation, selected checked or \
-            unchecked decoder and scoped AccountInfo clone/data-guard cleanup. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Reviewed source distinctions and \
-            continuation conditions are recorded in source-notes/anchor-lifecycle.md. \
-            Error representation is boxed; AccountInfo fields are borrowed. Preserve the \
-            complete 1.0 operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:0",
@@ -12295,12 +9780,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the current AccountInfo initialization/owner \
-              observations, actual data borrow and guard repayment around the selected \
-              deserializer, including borrow-error conversion. Source record, Rc/RefCell \
-              policy and error representation remain explicit.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -12325,16 +9804,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Consume the head before \
-            initialization/current-owner checks and guarded deserialization. Retain the \
-            actual borrowed AccountInfo, saved owner, consumed tail and every reached \
-            payload/error cleanup. Compatibility in [0.29.0, 0.30.0) assumes this complete \
-            operation and the scoped dependencies remain unchanged; source/ABI/provider \
-            obligations stay explicit."
+            resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -12361,12 +9831,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the current AccountInfo initialization/owner \
-              observations, actual data borrow and guard repayment around the selected \
-              deserializer, including borrow-error conversion. Source record, Rc/RefCell \
-              policy and error representation remain explicit.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -12391,16 +9855,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage for 0.27 and boxed storage for later releases. Legacy ProgramError \
             values obey the selected release availability predicate and retain owned \
             BorshIoError Strings; errors.programStrings lists exactly their owned String \
-            resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Consume the head before \
-            initialization/current-owner checks and guarded deserialization. Retain the \
-            actual borrowed AccountInfo, saved owner, consumed tail and every reached \
-            payload/error cleanup. Compatibility in [0.29.0, 0.30.0) assumes this complete \
-            operation and the scoped dependencies remain unchanged; source/ABI/provider \
-            obligations stay explicit."
+            resources."]
       }
     ]
     | .accounts_interface_account_InterfaceAccount_try_from => [
@@ -12448,19 +9903,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             unchanged. Admission supplies local continuation without assuming callback, \
             allocation or destructor termination. Concrete trait, resource, reference, \
             lifetime and target interpretations remain separate bindings; a consumed guard \
-            receives no fabricated cleanup."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The full owned constructor corresponds from 0.29.0: initialization, \
-            actual-owner reference passed to arbitrary CheckOwner, checked shared data \
-            borrow and arbitrary decoder exits with release, then capture of the current \
-            owner after successful decoding. 0.27.0 and 0.28.0 instead clone AccountInfo \
-            before decoding and store it by value, and their internally created errors are \
-            unboxed. From 0.29.0 callback Error values remain opaque forwarded resources; \
-            no callback error payload is inspected or destroyed by this constructor. Only \
-            the reached AccountBorrowFailed conversion needs the fixed ProgramError \
-            interpretation. This preserves generic callbacks including old String-bearing \
-            BorshIoError values without extending the distinct concrete observation facet."
+            receives no fabricated cleanup."]
       }
     ]
     | .accounts_interface_account_InterfaceAccount_try_from_observation => [
@@ -12489,20 +9932,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             constructor continuation; no unrelated account-field or source-width validity \
             bundle is imposed.", "This facet omits owned error factories and retains its \
             recorded partial-model gap. Callback termination and concrete source \
-            representation remain separate obligations."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "This supporting observation keeps the existing ConstructorReady callback/guard \
-            contract and its recorded omission of owned error/dependency lifecycle. Unlike \
-            the primary family, AnchorAccount.Error is the concrete AnchorError.Value \
-            ProgramError.Value, including a unit borshIoError. Arbitrary decoder errors \
-            (and arbitrary CheckOwner errors for InterfaceAccount) in every pre-1.0 \
-            release can carry ProgramError::BorshIoError(String); source and native \
-            witnesses preserve the String. Erasing it or restricting callback errors would \
-            change the existing contract. The compatible source set therefore starts at \
-            1.0.0. Initialization, callback sequencing, data guard cleanup and \
-            current-owner capture follow the primary source closure; no resource-lifecycle \
-            completeness is claimed for this facet."
+            representation remain separate obligations."]
       }
     ]
     | .accounts_interface_account_InterfaceAccount_try_from_unchecked => [
@@ -12533,11 +9963,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -12550,10 +9975,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -12566,10 +9987,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -12594,15 +10011,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ProgramError injection. The facade fixes inline storage for 0.27 and boxed \
             storage for later releases. Legacy ProgramError values obey the selected \
             release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes the system-owner/zero-lamports \
-            initialization check, actual CheckOwner and unchecked deserializer under the \
-            real shared data guard, then capture of the current owner. Preserve the \
-            borrowed AccountInfo, boxed errors and callback/cleanup effects. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -12631,11 +10040,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -12648,10 +10052,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -12664,10 +10064,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -12692,15 +10088,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ProgramError injection. The facade fixes inline storage for 0.27 and boxed \
             storage for later releases. Legacy ProgramError values obey the selected \
             release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes the system-owner/zero-lamports \
-            initialization check, actual CheckOwner and unchecked deserializer under the \
-            real shared data guard, then capture of the current owner. Preserve the \
-            borrowed AccountInfo, boxed errors and callback/cleanup effects. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:0",
@@ -12728,11 +10116,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "The reached AccountInfo borrow/Rc and, for close, assign/resize operations \
-              use this reviewed provider. Source layouts and actual shared cells remain \
-              explicit bindings."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -12740,11 +10124,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "The reached borrow, arithmetic and callback errors retain the exact \
-              ProgramError enum of this provider, including String-bearing versus unit \
-              BorshIoError."
+          releases := ["3.0.1"]
         }],
         conditions :=
           ["Bind current AccountInfo metadata, owner references, typed lamports/data cells \
@@ -12765,20 +10145,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ProgramError injection. The facade fixes inline storage for 0.27 and boxed \
             storage for later releases. Legacy ProgramError values obey the selected \
             release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Source-ordered initialization, current-owner validation, selected checked or \
-            unchecked decoder and scoped AccountInfo clone/data-guard cleanup. Reviewed \
-            source distinctions and continuation conditions are recorded in \
-            source-notes/anchor-lifecycle.md. Error representation is boxed; AccountInfo \
-            fields are borrowed. Preserve the complete 1.0 operation, reached callbacks \
-            and cleanup at the original exact dependency/build gates; adding this \
-            alternative does not replace modern parent alternatives. The declared range is \
-            a complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:1",
@@ -12806,11 +10173,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "The reached AccountInfo borrow/Rc and, for close, assign/resize operations \
-              use this reviewed provider. Source layouts and actual shared cells remain \
-              explicit bindings."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -12818,11 +10181,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "The reached borrow, arithmetic and callback errors retain the exact \
-              ProgramError enum of this provider, including String-bearing versus unit \
-              BorshIoError."
+          releases := ["3.0.1"]
         }],
         conditions :=
           ["Bind current AccountInfo metadata, owner references, typed lamports/data cells \
@@ -12843,20 +10202,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ProgramError injection. The facade fixes inline storage for 0.27 and boxed \
             storage for later releases. Legacy ProgramError values obey the selected \
             release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Source-ordered initialization, current-owner validation, selected checked or \
-            unchecked decoder and scoped AccountInfo clone/data-guard cleanup. Reviewed \
-            source distinctions and continuation conditions are recorded in \
-            source-notes/anchor-lifecycle.md. Error representation is boxed; AccountInfo \
-            fields are borrowed. Preserve the complete 1.0 operation, reached callbacks \
-            and cleanup at the original exact dependency/build gates; adding this \
-            alternative does not replace modern parent alternatives. The declared range is \
-            a complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            errors.programStrings lists exactly their owned String resources."]
       }
     ]
     | .accounts_option_Option_exit => [
@@ -12887,13 +10233,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references return Ok(()) for None and delegate Some to its \
-            current inner AccountsExit implementation. Compatibility assumes this case \
-            split and full outcome/state forwarding remain unchanged."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -12922,13 +10262,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references return Ok(()) for None and delegate Some to its \
-            current inner AccountsExit implementation. Compatibility assumes this case \
-            split and full outcome/state forwarding remain unchanged."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-1.0.2:0",
@@ -12957,20 +10291,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Delegate the selected exit/close to the actual current inner payload and \
-            preserve its full outcome and successor state; Option None exit returns Ok \
-            without a callback. Reviewed source distinctions and continuation conditions \
-            are recorded in source-notes/anchor-lifecycle.md. Error representation is \
-            boxed; AccountInfo fields are borrowed. Preserve the complete 1.0 operation, \
-            reached callbacks and cleanup at the original exact dependency/build gates; \
-            adding this alternative does not replace modern parent alternatives. The \
-            declared range is a complete-operation preservation assumption; inspected \
-            releases, native runs, exact ABI observations and source-call implementation \
-            obligations remain separate."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-1.0.2:1",
@@ -12999,20 +10320,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Delegate the selected exit/close to the actual current inner payload and \
-            preserve its full outcome and successor state; Option None exit returns Ok \
-            without a callback. Reviewed source distinctions and continuation conditions \
-            are recorded in source-notes/anchor-lifecycle.md. Error representation is \
-            boxed; AccountInfo fields are borrowed. Preserve the complete 1.0 operation, \
-            reached callbacks and cleanup at the original exact dependency/build gates; \
-            adding this alternative does not replace modern parent alternatives. The \
-            declared range is a complete-operation preservation assumption; inspected \
-            releases, native runs, exact ABI observations and source-call implementation \
-            obligations remain separate."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-0.29.0:0",
@@ -13041,15 +10349,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return directly for None and call only \
-            the actual inner exit for Some, retaining its exact program argument and \
-            effects. Compatibility in [0.29.0, 0.30.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -13078,15 +10378,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Return directly for None and call only \
-            the actual inner exit for Some, retaining its exact program argument and \
-            effects. Compatibility in [0.29.0, 0.30.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            alone does not establish target-memory equivalence."]
       }
     ]
     | .accounts_option_Option_try_accounts => [
@@ -13124,14 +10416,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             enum, actual String/Box operations and fixed builtin ProgramError injection. \
             This 0.32 profile uses boxed storage. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references leave an empty slice unchanged, consume a \
-            program-ID sentinel once, or delegate the original operands to inner Accounts. \
-            Compatibility assumes those branches and the allow-missing-optionals switch of \
-            the defining crate remain unchanged."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -13167,14 +10452,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             enum, actual String/Box operations and fixed builtin ProgramError injection. \
             This 0.32 profile uses boxed storage. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references leave an empty slice unchanged, consume a \
-            program-ID sentinel once, or delegate the original operands to inner Accounts. \
-            Compatibility assumes those branches and the allow-missing-optionals switch of \
-            the defining crate remain unchanged."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:0",
@@ -13201,11 +10479,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -13229,15 +10502,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes the allow-missing-optionals branch on \
-            empty input, consumption of a matching program-ID sentinel into None, and \
-            otherwise the exact inner Accounts call mapped to Some. Retain all callback \
-            state and finite outcomes; the feature remains an explicit family choice. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -13264,11 +10529,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -13292,15 +10552,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes the allow-missing-optionals branch on \
-            empty input, consumption of a matching program-ID sentinel into None, and \
-            otherwise the exact inner Accounts call mapped to Some. Retain all callback \
-            state and finite outcomes; the feature remains an explicit family choice. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:0",
@@ -13337,20 +10589,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Actual optional-account feature branch, program-ID sentinel consumption, \
-            unchanged empty slice and exact inner Accounts delegation. Reviewed source \
-            distinctions and continuation conditions are recorded in \
-            source-notes/anchor-lifecycle.md. Error representation is boxed; AccountInfo \
-            fields are borrowed. Preserve the complete 1.0 operation, reached callbacks \
-            and cleanup at the original exact dependency/build gates; adding this \
-            alternative does not replace modern parent alternatives. The declared range is \
-            a complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:1",
@@ -13387,20 +10626,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Actual optional-account feature branch, program-ID sentinel consumption, \
-            unchanged empty slice and exact inner Accounts delegation. Reviewed source \
-            distinctions and continuation conditions are recorded in \
-            source-notes/anchor-lifecycle.md. Error representation is boxed; AccountInfo \
-            fields are borrowed. Preserve the complete 1.0 operation, reached callbacks \
-            and cleanup at the original exact dependency/build gates; adding this \
-            alternative does not replace modern parent alternatives. The declared range is \
-            a complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:0",
@@ -13437,16 +10663,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Keep empty input unchanged on its error \
-            branch; otherwise test the head program-key sentinel before consuming None or \
-            delegating Some to the actual Accounts implementation. Retain source \
-            consumption and callback outcomes. Compatibility in [0.29.0, 0.30.0) assumes \
-            this complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -13483,16 +10700,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Keep empty input unchanged on its error \
-            branch; otherwise test the head program-key sentinel before consuming None or \
-            delegating Some to the actual Accounts implementation. Retain source \
-            consumption and callback outcomes. Compatibility in [0.29.0, 0.30.0) assumes \
-            this complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       }
     ]
     | .accounts_owned_info_ref => [
@@ -13516,14 +10724,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Return the exact AccountInfo object in the owned receiver field, retaining its \
-            current cells, parent lifetime and repayment obligation. No AccountInfo or \
-            payload copy occurs. Compatibility in [0.27.0, 0.28.0) assumes this operation \
-            and its selected dependency contracts preserve that behavior; the exact \
-            releases remain inspected references."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.27.0:1",
@@ -13545,14 +10746,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Return the exact AccountInfo object in the owned receiver field, retaining its \
-            current cells, parent lifetime and repayment obligation. No AccountInfo or \
-            payload copy occurs. Compatibility in [0.27.0, 0.28.0) assumes this operation \
-            and its selected dependency contracts preserve that behavior; the exact \
-            releases remain inspected references."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.27.0:2",
@@ -13574,14 +10768,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Return the exact AccountInfo object in the owned receiver field, retaining its \
-            current cells, parent lifetime and repayment obligation. No AccountInfo or \
-            payload copy occurs. Compatibility in [0.27.0, 0.28.0) assumes this operation \
-            and its selected dependency contracts preserve that behavior; the exact \
-            releases remain inspected references."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.27.0:3",
@@ -13602,14 +10789,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Return the exact AccountInfo object in the owned receiver field, retaining its \
-            current cells, parent lifetime and repayment obligation. No AccountInfo or \
-            payload copy occurs. Compatibility in [0.27.0, 0.28.0) assumes this operation \
-            and its selected dependency contracts preserve that behavior; the exact \
-            releases remain inspected references."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.27.0:4",
@@ -13631,14 +10811,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Return the exact AccountInfo object in the owned receiver field, retaining its \
-            current cells, parent lifetime and repayment obligation. No AccountInfo or \
-            payload copy occurs. Compatibility in [0.27.0, 0.28.0) assumes this operation \
-            and its selected dependency contracts preserve that behavior; the exact \
-            releases remain inspected references."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.27.0:5",
@@ -13660,14 +10833,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Return the exact AccountInfo object in the owned receiver field, retaining its \
-            current cells, parent lifetime and repayment obligation. No AccountInfo or \
-            payload copy occurs. Compatibility in [0.27.0, 0.28.0) assumes this operation \
-            and its selected dependency contracts preserve that behavior; the exact \
-            releases remain inspected references."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.27.0:6",
@@ -13689,14 +10855,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Return the exact AccountInfo object in the owned receiver field, retaining its \
-            current cells, parent lifetime and repayment obligation. No AccountInfo or \
-            payload copy occurs. Compatibility in [0.27.0, 0.28.0) assumes this operation \
-            and its selected dependency contracts preserve that behavior; the exact \
-            releases remain inspected references."
+            payload resources are interpreted in the auxiliary state."]
       }
     ]
     | .accounts_program_Program_try_accounts => [
@@ -13731,13 +10890,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             enum, actual String/Box operations and fixed builtin ProgramError injection. \
             This 0.32 profile uses boxed storage. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references consume one record, compare its key with Id, then \
-            check executable. Compatibility assumes that order, diagnostic allocation \
-            before the second Id call, and the borrowed-record result remain unchanged."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -13770,13 +10923,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             enum, actual String/Box operations and fixed builtin ProgramError injection. \
             This 0.32 profile uses boxed storage. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references consume one record, compare its key with Id, then \
-            check executable. Compatibility assumes that order, diagnostic allocation \
-            before the second Id call, and the borrowed-record result remain unchanged."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:0",
@@ -13803,11 +10950,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -13830,16 +10972,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             fixes inline storage for 0.27 and boxed storage for later releases. Legacy \
             ProgramError values obey the selected release availability predicate and \
             retain owned BorshIoError Strings; errors.programStrings lists exactly their \
-            owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes empty-input AccountNotEnoughKeys without \
-            advancing the slice; otherwise consume the first AccountReference, invoke the \
-            actual Id provider, then check program key and executable status in source \
-            order. Preserve boxed errors, callback effects and all remaining-slice, bumps \
-            and reallocation state. This pre-cohort profile stops before the new 1.2.1 \
-            provider/feature selection."
+            owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -13866,11 +10999,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -13893,16 +11021,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             fixes inline storage for 0.27 and boxed storage for later releases. Legacy \
             ProgramError values obey the selected release availability predicate and \
             retain owned BorshIoError Strings; errors.programStrings lists exactly their \
-            owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes empty-input AccountNotEnoughKeys without \
-            advancing the slice; otherwise consume the first AccountReference, invoke the \
-            actual Id provider, then check program key and executable status in source \
-            order. Preserve boxed errors, callback effects and all remaining-slice, bumps \
-            and reallocation state. This pre-cohort profile stops before the new 1.2.1 \
-            provider/feature selection."
+            owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:0",
@@ -13936,25 +11055,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Reviewed source distinctions and \
-            continuation conditions are recorded in source-notes/anchor-lifecycle.md. \
-            Error representation is boxed; AccountInfo fields are borrowed. Preserve the \
-            complete 1.0 operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. Exclude 1.0.0/1.0.1: their generic T::id()==zero shortcut skips \
-            the ID check and adds a reached Id call. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:1",
@@ -13988,25 +11089,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Reviewed source distinctions and \
-            continuation conditions are recorded in source-notes/anchor-lifecycle.md. \
-            Error representation is boxed; AccountInfo fields are borrowed. Preserve the \
-            complete 1.0 operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. Exclude 1.0.0/1.0.1: their generic T::id()==zero shortcut skips \
-            the ID check and adds a reached Id call. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:0",
@@ -14040,15 +11123,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Consume one AccountInfo before Program \
-            validation. Preserve Id/key comparison before executable validation and retain \
-            empty-input or callback error effects. Compatibility in [0.29.0, 0.30.0) \
-            assumes this complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -14082,15 +11157,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Consume one AccountInfo before Program \
-            validation. Preserve Id/key comparison before executable validation and retain \
-            empty-input or callback error effects. Compatibility in [0.29.0, 0.30.0) \
-            assumes this complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       }
     ]
     | .accounts_program_Program_try_accounts_inline_error => [
@@ -14119,11 +11186,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -14144,18 +11206,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Compatibility in [0.27.0, 0.28.0) assumes \
-            this operation and its selected dependency contracts preserve that behavior; \
-            the exact releases remain inspected references."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -14182,11 +11233,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -14207,18 +11253,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Compatibility in [0.27.0, 0.28.0) assumes \
-            this operation and its selected dependency contracts preserve that behavior; \
-            the exact releases remain inspected references."
+            their owned String resources."]
       }
     ]
     | .accounts_program_Program_try_from => [
@@ -14254,16 +11289,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Call the selected Id operation before \
-            comparing the current key, then check executable and return the same borrowed \
-            AccountInfo. Preserve branch-specific error construction and callback effects; \
-            equal metadata does not identify distinct records. Compatibility in [0.29.0, \
-            0.30.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -14297,16 +11323,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Call the selected Id operation before \
-            comparing the current key, then check executable and return the same borrowed \
-            AccountInfo. Preserve branch-specific error construction and callback effects; \
-            equal metadata does not identify distinct records. Compatibility in [0.29.0, \
-            0.30.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       }
     ]
     | .accounts_signer_Signer_key => [
@@ -14339,14 +11356,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1, instantiate \
             the crate-root blanket Key implementation at the actual Signer receiver. Its \
             AsRef implementation returns the stored AccountInfo reference without cloning; \
-            arbitrary AsRef callbacks are not this source specialization."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.16.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "Signer first exists in 0.16.0. Direct implementations copy the stored 32-byte \
-            key. In 0.21.0, 0.22.0, and 0.22.1 the blanket Key for T: AsRef<AccountInfo> \
-            reaches the fixed identity-field AsRef of Signer; it makes the same copy \
-            without Rc operations. The change to borrowed AccountInfo storage in 0.29.0 \
-            preserves this selected operation."
+            arbitrary AsRef callbacks are not this source specialization."]
       },
       {
         id := "anchor-lang-reviewed-2",
@@ -14394,14 +11404,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1, instantiate \
             the crate-root blanket Key implementation at the actual Signer receiver. Its \
             AsRef implementation returns the stored AccountInfo reference without cloning; \
-            arbitrary AsRef callbacks are not this source specialization."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.16.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "Signer first exists in 0.16.0. Direct implementations copy the stored 32-byte \
-            key. In 0.21.0, 0.22.0, and 0.22.1 the blanket Key for T: AsRef<AccountInfo> \
-            reaches the fixed identity-field AsRef of Signer; it makes the same copy \
-            without Rc operations. The change to borrowed AccountInfo storage in 0.29.0 \
-            preserves this selected operation."
+            arbitrary AsRef callbacks are not this source specialization."]
       },
       {
         id := "anchor-lang-reviewed-3",
@@ -14426,14 +11429,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1, instantiate \
             the crate-root blanket Key implementation at the actual Signer receiver. Its \
             AsRef implementation returns the stored AccountInfo reference without cloning; \
-            arbitrary AsRef callbacks are not this source specialization."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.16.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "Signer first exists in 0.16.0. Direct implementations copy the stored 32-byte \
-            key. In 0.21.0, 0.22.0, and 0.22.1 the blanket Key for T: AsRef<AccountInfo> \
-            reaches the fixed identity-field AsRef of Signer; it makes the same copy \
-            without Rc operations. The change to borrowed AccountInfo storage in 0.29.0 \
-            preserves this selected operation."
+            arbitrary AsRef callbacks are not this source specialization."]
       },
       {
         id := "anchor-lang-reviewed-4",
@@ -14464,14 +11460,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             corresponding mathematical value.", "At 0.21.0, 0.22.0 and 0.22.1, instantiate \
             the crate-root blanket Key implementation at the actual Signer receiver. Its \
             AsRef implementation returns the stored AccountInfo reference without cloning; \
-            arbitrary AsRef callbacks are not this source specialization."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.16.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "Signer first exists in 0.16.0. Direct implementations copy the stored 32-byte \
-            key. In 0.21.0, 0.22.0, and 0.22.1 the blanket Key for T: AsRef<AccountInfo> \
-            reaches the fixed identity-field AsRef of Signer; it makes the same copy \
-            without Rc operations. The change to borrowed AccountInfo storage in 0.29.0 \
-            preserves this selected operation."
+            arbitrary AsRef callbacks are not this source specialization."]
       }
     ]
     | .accounts_signer_Signer_try_accounts => [
@@ -14506,13 +11495,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             enum, actual String/Box operations and fixed builtin ProgramError injection. \
             This 0.32 profile uses boxed storage. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references consume one record and check only its signer flag. \
-            Compatibility assumes the empty-slice error, AccountNotSigner diagnostic and \
-            borrowed-record result remain unchanged; no writable check is added."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -14545,13 +11528,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             enum, actual String/Box operations and fixed builtin ProgramError injection. \
             This 0.32 profile uses boxed storage. Legacy ProgramError values obey the \
             selected release availability predicate and retain owned BorshIoError Strings; \
-            errors.programStrings lists exactly their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The 0.32.0–0.32.3 references consume one record and check only its signer flag. \
-            Compatibility assumes the empty-slice error, AccountNotSigner diagnostic and \
-            borrowed-record result remain unchanged; no writable check is added."
+            errors.programStrings lists exactly their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:0",
@@ -14578,11 +11555,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -14603,15 +11575,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes empty-input AccountNotEnoughKeys without \
-            advancing the slice; otherwise consumption of the first borrowed \
-            AccountReference before the signer check. Preserve the boxed error or \
-            successful reference and every resulting slice, bumps and reallocation state. \
-            This pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -14638,11 +11602,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -14663,15 +11622,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes empty-input AccountNotEnoughKeys without \
-            advancing the slice; otherwise consumption of the first borrowed \
-            AccountReference before the signer check. Preserve the boxed error or \
-            successful reference and every resulting slice, bumps and reallocation state. \
-            This pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:0",
@@ -14705,23 +11656,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Reviewed source distinctions and \
-            continuation conditions are recorded in source-notes/anchor-lifecycle.md. \
-            Error representation is boxed; AccountInfo fields are borrowed. Preserve the \
-            complete 1.0 operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:1",
@@ -14755,23 +11690,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Reviewed source distinctions and \
-            continuation conditions are recorded in source-notes/anchor-lifecycle.md. \
-            Error representation is boxed; AccountInfo fields are borrowed. Preserve the \
-            complete 1.0 operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:0",
@@ -14805,15 +11724,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Consume one AccountInfo before checking \
-            the signer flag, preserving the consumed tail on validation failure and \
-            retaining the actual borrowed record on success. Compatibility in [0.29.0, \
-            0.30.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -14847,15 +11758,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Consume one AccountInfo before checking \
-            the signer flag, preserving the consumed tail on validation failure and \
-            retaining the actual borrowed record on success. Compatibility in [0.29.0, \
-            0.30.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       }
     ]
     | .accounts_signer_Signer_try_accounts_inline_error => [
@@ -14884,11 +11787,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -14909,18 +11807,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Compatibility in [0.27.0, 0.28.0) assumes \
-            this operation and its selected dependency contracts preserve that behavior; \
-            the exact releases remain inspected references."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -14947,11 +11834,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -14972,18 +11854,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Compatibility in [0.27.0, 0.28.0) assumes \
-            this operation and its selected dependency contracts preserve that behavior; \
-            the exact releases remain inspected references."
+            their owned String resources."]
       }
     ]
     | .accounts_signer_Signer_try_from => [
@@ -15017,15 +11888,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Check the current is_signer flag and \
-            either construct AccountNotSigner or retain the same borrowed AccountInfo. Add \
-            no owner, executable, key or allocation-success premise. Compatibility in \
-            [0.29.0, 0.30.0) assumes this complete operation and the scoped dependencies \
-            remain unchanged; source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.29.0:1",
@@ -15057,15 +11920,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Check the current is_signer flag and \
-            either construct AccountNotSigner or retain the same borrowed AccountInfo. Add \
-            no owner, executable, key or allocation-success premise. Compatibility in \
-            [0.29.0, 0.30.0) assumes this complete operation and the scoped dependencies \
-            remain unchanged; source/ABI/provider obligations stay explicit."
+            their owned String resources."]
       }
     ]
     | .accounts_system_account_SystemAccount_try_accounts => [
@@ -15101,18 +11956,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Preserve empty-slice error without advancement; otherwise advance the actual \
-            slice before the system-owner check and keep advancement on error. Retain the \
-            actual record, bumps, reallocations and reached error resources. The upper \
-            bound scopes this profile to the original diagnostic provider; it is not a \
-            claim that the later wrapper body differs. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:1",
@@ -15146,18 +11990,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Preserve empty-slice error without advancement; otherwise advance the actual \
-            slice before the system-owner check and keep advancement on error. Retain the \
-            actual record, bumps, reallocations and reached error resources. The upper \
-            bound scopes this profile to the original diagnostic provider; it is not a \
-            claim that the later wrapper body differs. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            their owned String resources."]
       }
     ]
     | .accounts_system_account_SystemAccount_try_accounts_inline_error => [
@@ -15186,11 +12019,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -15211,18 +12039,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Compatibility in [0.27.0, 0.28.0) assumes \
-            this operation and its selected dependency contracts preserve that behavior; \
-            the exact releases remain inspected references."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -15249,11 +12066,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -15274,18 +12086,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Compatibility in [0.27.0, 0.28.0) assumes \
-            this operation and its selected dependency contracts preserve that behavior; \
-            the exact releases remain inspected references."
+            their owned String resources."]
       }
     ]
     | .accounts_sysvar_Sysvar_deref => [
@@ -15308,13 +12109,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Return the same shared decoded-field reference with its parent loan and current \
-            payload location. Do not copy the payload or deserialize it. Compatibility in \
-            [0.27.0, 0.28.0) assumes this operation and its selected dependency contracts \
-            preserve that behavior; the exact releases remain inspected references."
+            payload resources are interpreted in the auxiliary state."]
       }
     ]
     | .accounts_sysvar_Sysvar_try_accounts => [
@@ -15343,10 +12138,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -15359,10 +12150,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -15386,14 +12173,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Consume one source record before the Sysvar conversion and preserve its exact \
-            identity; callback errors retain the consumed tail and their effects. The \
-            0.32.0–0.32.3 files agree. Compatibility within 0.32 assumes the same boxed \
-            errors, borrowed fields and reached operation order."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -15420,10 +12200,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -15436,10 +12212,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -15463,14 +12235,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Consume one source record before the Sysvar conversion and preserve its exact \
-            identity; callback errors retain the consumed tail and their effects. The \
-            0.32.0–0.32.3 files agree. Compatibility within 0.32 assumes the same boxed \
-            errors, borrowed fields and reached operation order."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:0",
@@ -15496,11 +12261,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "The reached AccountInfo borrow/Rc and, for close, assign/resize operations \
-              use this reviewed provider. Source layouts and actual shared cells remain \
-              explicit bindings."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -15508,11 +12269,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "The reached borrow, arithmetic and callback errors retain the exact \
-              ProgramError enum of this provider, including String-bearing versus unit \
-              BorshIoError."
+          releases := ["3.0.1"]
         }],
         conditions :=
           ["Bind current AccountInfo metadata, owner references, typed lamports/data cells \
@@ -15532,23 +12289,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Reviewed source distinctions and \
-            continuation conditions are recorded in source-notes/anchor-lifecycle.md. \
-            Error representation is boxed; AccountInfo fields are borrowed. Preserve the \
-            complete 1.0 operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:1",
@@ -15574,11 +12315,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "The reached AccountInfo borrow/Rc and, for close, assign/resize operations \
-              use this reviewed provider. Source layouts and actual shared cells remain \
-              explicit bindings."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -15586,11 +12323,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "The reached borrow, arithmetic and callback errors retain the exact \
-              ProgramError enum of this provider, including String-bearing versus unit \
-              BorshIoError."
+          releases := ["3.0.1"]
         }],
         conditions :=
           ["Bind current AccountInfo metadata, owner references, typed lamports/data cells \
@@ -15610,23 +12343,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Reviewed source distinctions and \
-            continuation conditions are recorded in source-notes/anchor-lifecycle.md. \
-            Error representation is boxed; AccountInfo fields are borrowed. Preserve the \
-            complete 1.0 operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            their owned String resources."]
       }
     ]
     | .accounts_sysvar_Sysvar_try_accounts_inline_error => [
@@ -15655,11 +12372,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -15683,18 +12395,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Compatibility in [0.27.0, 0.28.0) assumes \
-            this operation and its selected dependency contracts preserve that behavior; \
-            the exact releases remain inspected references."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -15721,11 +12422,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -15749,18 +12445,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Compatibility in [0.27.0, 0.28.0) assumes \
-            this operation and its selected dependency contracts preserve that behavior; \
-            the exact releases remain inspected references."
+            their owned String resources."]
       }
     ]
     | .accounts_unchecked_account_UncheckedAccount_try_accounts => [
@@ -15796,14 +12481,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Empty input constructs AccountNotEnoughKeys without consumption; otherwise \
-            consume and retain the head reference without owner, signer or executable \
-            validation. The 0.32.0–0.32.3 files agree. Compatibility within 0.32 assumes \
-            the same boxed errors, borrowed fields and reached operation order."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.32.1:1",
@@ -15837,14 +12515,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Empty input constructs AccountNotEnoughKeys without consumption; otherwise \
-            consume and retain the head reference without owner, signer or executable \
-            validation. The 0.32.0–0.32.3 files agree. Compatibility within 0.32 assumes \
-            the same boxed errors, borrowed fields and reached operation order."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:0",
@@ -15871,11 +12542,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -15896,15 +12562,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes empty-input AccountNotEnoughKeys without \
-            advancing the slice; otherwise consume and retain the first borrowed \
-            AccountReference without validation or Rc cloning, preserving bumps and \
-            reallocation state. This pre-cohort profile stops before the new 1.2.1 \
-            provider/feature selection."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -15931,11 +12589,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -15956,15 +12609,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes empty-input AccountNotEnoughKeys without \
-            advancing the slice; otherwise consume and retain the first borrowed \
-            AccountReference without validation or Rc cloning, preserving bumps and \
-            reallocation state. This pre-cohort profile stops before the new 1.2.1 \
-            provider/feature selection."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:0",
@@ -15998,23 +12643,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Reviewed source distinctions and \
-            continuation conditions are recorded in source-notes/anchor-lifecycle.md. \
-            Error representation is boxed; AccountInfo fields are borrowed. Preserve the \
-            complete 1.0 operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-1.0.2:1",
@@ -16048,23 +12677,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Reviewed source distinctions and \
-            continuation conditions are recorded in source-notes/anchor-lifecycle.md. \
-            Error representation is boxed; AccountInfo fields are borrowed. Preserve the \
-            complete 1.0 operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            their owned String resources."]
       }
     ]
     | .accounts_unchecked_account_UncheckedAccount_try_accounts_inline_error => [
@@ -16093,11 +12706,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -16118,18 +12726,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Compatibility in [0.27.0, 0.28.0) assumes \
-            this operation and its selected dependency contracts preserve that behavior; \
-            the exact releases remain inspected references."
+            their owned String resources."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -16156,11 +12753,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -16181,18 +12773,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             The facade fixes inline storage for 0.27 and boxed storage for later releases. \
             Legacy ProgramError values obey the selected release availability predicate \
             and retain owned BorshIoError Strings; errors.programStrings lists exactly \
-            their owned String resources."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Exact simple-wrapper checks, reached Id/CheckId/Sysvar callback effects, \
-            release-specific error resources and successful AccountInfo retention. Empty \
-            slices retain their position while constructing AccountNotEnoughKeys; nonempty \
-            slices consume the first AccountReference before validation. Every finite \
-            result retains the actual remaining slice, bumps and reallocations; original \
-            record identity is passed to Sysvar. Compatibility in [0.27.0, 0.28.0) assumes \
-            this operation and its selected dependency contracts preserve that behavior; \
-            the exact releases remain inspected references."
+            their owned String resources."]
       }
     ]
     | .accounts_unchecked_account_UncheckedAccount_try_from => [
@@ -16223,13 +12804,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes retention of the exact borrowed \
-            AccountReference without validation, allocation or Rc cloning. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-1.1.2:1",
@@ -16257,13 +12832,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "The declared compatible range assumes retention of the exact borrowed \
-            AccountReference without validation, allocation or Rc cloning. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-1.0.2:0",
@@ -16292,20 +12861,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Direct unchecked wrapping moves the owned 0.27 input or retains the exact \
-            borrowed later AccountReference, without checks or Rc cloning. Reviewed source \
-            distinctions and continuation conditions are recorded in \
-            source-notes/anchor-lifecycle.md. Error representation is boxed; AccountInfo \
-            fields are borrowed. Preserve the complete 1.0 operation, reached callbacks \
-            and cleanup at the original exact dependency/build gates; adding this \
-            alternative does not replace modern parent alternatives. The declared range is \
-            a complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-1.0.2:1",
@@ -16333,20 +12889,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-lifecycle.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Direct unchecked wrapping moves the owned 0.27 input or retains the exact \
-            borrowed later AccountReference, without checks or Rc cloning. Reviewed source \
-            distinctions and continuation conditions are recorded in \
-            source-notes/anchor-lifecycle.md. Error representation is boxed; AccountInfo \
-            fields are borrowed. Preserve the complete 1.0 operation, reached callbacks \
-            and cleanup at the original exact dependency/build gates; adding this \
-            alternative does not replace modern parent alternatives. The declared range is \
-            a complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            alone does not establish target-memory equivalence."]
       }
     ]
     | .accounts_unchecked_account_UncheckedAccount_try_from_owned_info => [
@@ -16377,15 +12920,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Move the supplied owned AccountInfo into UncheckedAccount without checks or an \
-            Rc clone. Preserve its actual cells, owned-field layout and cleanup. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            alone does not establish target-memory equivalence."]
       },
       {
         id := "anchor-lifecycle-0.27.0:1",
@@ -16413,15 +12948,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             returned, error, unwind and terminal effects; mathematical sample callbacks do \
             not establish concrete callback or allocator success.", "Bind the source panic \
             policy, pointer width and physical layout separately. Solana cfg selection \
-            alone does not establish target-memory equivalence."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-lifecycle.md"],
-        argument :=
-          "Move the supplied owned AccountInfo into UncheckedAccount without checks or an \
-            Rc clone. Preserve its actual cells, owned-field layout and cleanup. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            alone does not establish target-memory equivalence."]
       }
     ]
     | .accounts_wrapper_key => [
@@ -16444,17 +12971,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete \
-            Account/InterfaceAccount sources and relevant AccountInfo/Pubkey requirements. \
-            The declared [0.32.1, 0.33.0) range assumes that Account::key copies the \
-            current key through its stored AccountInfo reference, and \
-            InterfaceAccount::key delegates to its contained Account while preserving its \
-            saved owner. The actual nominal Pubkey Copy provider, current record, source \
-            loans and auxiliary world remain unchanged. Neither path adds a RefCell probe, \
-            clone, owner validation, allocation, cleanup or blanket ToAccountInfo callback."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:1",
@@ -16476,17 +12993,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete \
-            Account/InterfaceAccount sources and relevant AccountInfo/Pubkey requirements. \
-            The declared [0.32.1, 0.33.0) range assumes that Account::key copies the \
-            current key through its stored AccountInfo reference, and \
-            InterfaceAccount::key delegates to its contained Account while preserving its \
-            saved owner. The actual nominal Pubkey Copy provider, current record, source \
-            loans and auxiliary world remain unchanged. Neither path adds a RefCell probe, \
-            clone, owner validation, allocation, cleanup or blanket ToAccountInfo callback."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:2",
@@ -16507,17 +13014,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete \
-            Account/InterfaceAccount sources and relevant AccountInfo/Pubkey requirements. \
-            The declared [0.32.1, 0.33.0) range assumes that Account::key copies the \
-            current key through its stored AccountInfo reference, and \
-            InterfaceAccount::key delegates to its contained Account while preserving its \
-            saved owner. The actual nominal Pubkey Copy provider, current record, source \
-            loans and auxiliary world remain unchanged. Neither path adds a RefCell probe, \
-            clone, owner validation, allocation, cleanup or blanket ToAccountInfo callback."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:3",
@@ -16538,17 +13035,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete \
-            Account/InterfaceAccount sources and relevant AccountInfo/Pubkey requirements. \
-            The declared [0.32.1, 0.33.0) range assumes that Account::key copies the \
-            current key through its stored AccountInfo reference, and \
-            InterfaceAccount::key delegates to its contained Account while preserving its \
-            saved owner. The actual nominal Pubkey Copy provider, current record, source \
-            loans and auxiliary world remain unchanged. Neither path adds a RefCell probe, \
-            clone, owner validation, allocation, cleanup or blanket ToAccountInfo callback."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:4",
@@ -16569,17 +13056,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete \
-            Account/InterfaceAccount sources and relevant AccountInfo/Pubkey requirements. \
-            The declared [0.32.1, 0.33.0) range assumes that Account::key copies the \
-            current key through its stored AccountInfo reference, and \
-            InterfaceAccount::key delegates to its contained Account while preserving its \
-            saved owner. The actual nominal Pubkey Copy provider, current record, source \
-            loans and auxiliary world remain unchanged. Neither path adds a RefCell probe, \
-            clone, owner validation, allocation, cleanup or blanket ToAccountInfo callback."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:5",
@@ -16601,17 +13078,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete \
-            Account/InterfaceAccount sources and relevant AccountInfo/Pubkey requirements. \
-            The declared [0.32.1, 0.33.0) range assumes that Account::key copies the \
-            current key through its stored AccountInfo reference, and \
-            InterfaceAccount::key delegates to its contained Account while preserving its \
-            saved owner. The actual nominal Pubkey Copy provider, current record, source \
-            loans and auxiliary world remain unchanged. Neither path adds a RefCell probe, \
-            clone, owner validation, allocation, cleanup or blanket ToAccountInfo callback."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:6",
@@ -16633,17 +13100,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete \
-            Account/InterfaceAccount sources and relevant AccountInfo/Pubkey requirements. \
-            The declared [0.32.1, 0.33.0) range assumes that Account::key copies the \
-            current key through its stored AccountInfo reference, and \
-            InterfaceAccount::key delegates to its contained Account while preserving its \
-            saved owner. The actual nominal Pubkey Copy provider, current record, source \
-            loans and auxiliary world remain unchanged. Neither path adds a RefCell probe, \
-            clone, owner validation, allocation, cleanup or blanket ToAccountInfo callback."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.32.1:7",
@@ -16664,17 +13121,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete \
-            Account/InterfaceAccount sources and relevant AccountInfo/Pubkey requirements. \
-            The declared [0.32.1, 0.33.0) range assumes that Account::key copies the \
-            current key through its stored AccountInfo reference, and \
-            InterfaceAccount::key delegates to its contained Account while preserving its \
-            saved owner. The actual nominal Pubkey Copy provider, current record, source \
-            loans and auxiliary world remain unchanged. Neither path adds a RefCell probe, \
-            clone, owner validation, allocation, cleanup or blanket ToAccountInfo callback."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:0",
@@ -16695,13 +13142,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes copying the current wrapper key while \
-            retaining the complete source loan and auxiliary state, including \
-            InterfaceAccount delegation and its saved owner. This pre-cohort profile stops \
-            before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:1",
@@ -16723,13 +13164,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes copying the current wrapper key while \
-            retaining the complete source loan and auxiliary state, including \
-            InterfaceAccount delegation and its saved owner. This pre-cohort profile stops \
-            before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:2",
@@ -16750,13 +13185,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes copying the current wrapper key while \
-            retaining the complete source loan and auxiliary state, including \
-            InterfaceAccount delegation and its saved owner. This pre-cohort profile stops \
-            before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:3",
@@ -16777,13 +13206,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes copying the current wrapper key while \
-            retaining the complete source loan and auxiliary state, including \
-            InterfaceAccount delegation and its saved owner. This pre-cohort profile stops \
-            before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:4",
@@ -16804,13 +13227,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes copying the current wrapper key while \
-            retaining the complete source loan and auxiliary state, including \
-            InterfaceAccount delegation and its saved owner. This pre-cohort profile stops \
-            before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:5",
@@ -16832,13 +13249,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes copying the current wrapper key while \
-            retaining the complete source loan and auxiliary state, including \
-            InterfaceAccount delegation and its saved owner. This pre-cohort profile stops \
-            before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:6",
@@ -16860,13 +13271,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes copying the current wrapper key while \
-            retaining the complete source loan and auxiliary state, including \
-            InterfaceAccount delegation and its saved owner. This pre-cohort profile stops \
-            before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.1.2:7",
@@ -16887,13 +13292,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes copying the current wrapper key while \
-            retaining the complete source loan and auxiliary state, including \
-            InterfaceAccount delegation and its saved owner. This pre-cohort profile stops \
-            before the new 1.2.1 provider/feature selection."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:0",
@@ -16914,22 +13313,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Copies the current wrapper key and preserves the entire source-loan and \
-            auxiliary state. Each listed immutable release was reviewed separately. Anchor \
-            0.27.0 owns AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared \
-            reference. InterfaceAccount delegates to its contained Account and preserves \
-            the saved owner. Callback identities, source loans, owned payload transfer, \
-            current AccountInfo cells and all finite exits remain explicit at the family \
-            index; no source body, target-layout or dependency implementation proof is \
-            claimed. See source-notes/anchor-views.md. Preserve the complete 1.0 \
-            operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:1",
@@ -16951,22 +13335,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Copies the current wrapper key and preserves the entire source-loan and \
-            auxiliary state. Each listed immutable release was reviewed separately. Anchor \
-            0.27.0 owns AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared \
-            reference. InterfaceAccount delegates to its contained Account and preserves \
-            the saved owner. Callback identities, source loans, owned payload transfer, \
-            current AccountInfo cells and all finite exits remain explicit at the family \
-            index; no source body, target-layout or dependency implementation proof is \
-            claimed. See source-notes/anchor-views.md. Preserve the complete 1.0 \
-            operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:2",
@@ -16987,22 +13356,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Copies the current wrapper key and preserves the entire source-loan and \
-            auxiliary state. Each listed immutable release was reviewed separately. Anchor \
-            0.27.0 owns AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared \
-            reference. InterfaceAccount delegates to its contained Account and preserves \
-            the saved owner. Callback identities, source loans, owned payload transfer, \
-            current AccountInfo cells and all finite exits remain explicit at the family \
-            index; no source body, target-layout or dependency implementation proof is \
-            claimed. See source-notes/anchor-views.md. Preserve the complete 1.0 \
-            operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:3",
@@ -17023,22 +13377,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Copies the current wrapper key and preserves the entire source-loan and \
-            auxiliary state. Each listed immutable release was reviewed separately. Anchor \
-            0.27.0 owns AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared \
-            reference. InterfaceAccount delegates to its contained Account and preserves \
-            the saved owner. Callback identities, source loans, owned payload transfer, \
-            current AccountInfo cells and all finite exits remain explicit at the family \
-            index; no source body, target-layout or dependency implementation proof is \
-            claimed. See source-notes/anchor-views.md. Preserve the complete 1.0 \
-            operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:4",
@@ -17059,22 +13398,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Copies the current wrapper key and preserves the entire source-loan and \
-            auxiliary state. Each listed immutable release was reviewed separately. Anchor \
-            0.27.0 owns AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared \
-            reference. InterfaceAccount delegates to its contained Account and preserves \
-            the saved owner. Callback identities, source loans, owned payload transfer, \
-            current AccountInfo cells and all finite exits remain explicit at the family \
-            index; no source body, target-layout or dependency implementation proof is \
-            claimed. See source-notes/anchor-views.md. Preserve the complete 1.0 \
-            operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:5",
@@ -17096,22 +13420,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Copies the current wrapper key and preserves the entire source-loan and \
-            auxiliary state. Each listed immutable release was reviewed separately. Anchor \
-            0.27.0 owns AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared \
-            reference. InterfaceAccount delegates to its contained Account and preserves \
-            the saved owner. Callback identities, source loans, owned payload transfer, \
-            current AccountInfo cells and all finite exits remain explicit at the family \
-            index; no source body, target-layout or dependency implementation proof is \
-            claimed. See source-notes/anchor-views.md. Preserve the complete 1.0 \
-            operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:6",
@@ -17133,22 +13442,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Copies the current wrapper key and preserves the entire source-loan and \
-            auxiliary state. Each listed immutable release was reviewed separately. Anchor \
-            0.27.0 owns AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared \
-            reference. InterfaceAccount delegates to its contained Account and preserves \
-            the saved owner. Callback identities, source loans, owned payload transfer, \
-            current AccountInfo cells and all finite exits remain explicit at the family \
-            index; no source body, target-layout or dependency implementation proof is \
-            claimed. See source-notes/anchor-views.md. Preserve the complete 1.0 \
-            operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-1.0.2:7",
@@ -17169,22 +13463,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Copies the current wrapper key and preserves the entire source-loan and \
-            auxiliary state. Each listed immutable release was reviewed separately. Anchor \
-            0.27.0 owns AccountInfo, while 0.29.0, 0.32.1, 1.0.2 and 1.1.2 store a shared \
-            reference. InterfaceAccount delegates to its contained Account and preserves \
-            the saved owner. Callback identities, source loans, owned payload transfer, \
-            current AccountInfo cells and all finite exits remain explicit at the family \
-            index; no source body, target-layout or dependency implementation proof is \
-            claimed. See source-notes/anchor-views.md. Preserve the complete 1.0 \
-            operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:0",
@@ -17205,15 +13484,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Read the key through the actual \
-            AccountInfo of the current wrapper and return all key bytes. Retain the \
-            wrapper, record and reference identities without a Clone callback. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:1",
@@ -17235,15 +13506,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Read the key through the actual \
-            AccountInfo of the current wrapper and return all key bytes. Retain the \
-            wrapper, record and reference identities without a Clone callback. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:2",
@@ -17264,15 +13527,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Read the key through the actual \
-            AccountInfo of the current wrapper and return all key bytes. Retain the \
-            wrapper, record and reference identities without a Clone callback. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:3",
@@ -17293,15 +13548,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Read the key through the actual \
-            AccountInfo of the current wrapper and return all key bytes. Retain the \
-            wrapper, record and reference identities without a Clone callback. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:4",
@@ -17322,15 +13569,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Read the key through the actual \
-            AccountInfo of the current wrapper and return all key bytes. Retain the \
-            wrapper, record and reference identities without a Clone callback. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:5",
@@ -17352,15 +13591,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Read the key through the actual \
-            AccountInfo of the current wrapper and return all key bytes. Retain the \
-            wrapper, record and reference identities without a Clone callback. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:6",
@@ -17382,15 +13613,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Read the key through the actual \
-            AccountInfo of the current wrapper and return all key bytes. Retain the \
-            wrapper, record and reference identities without a Clone callback. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.29.0:7",
@@ -17411,15 +13634,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Read the key through the actual \
-            AccountInfo of the current wrapper and return all key bytes. Retain the \
-            wrapper, record and reference identities without a Clone callback. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.27.0:0",
@@ -17440,13 +13655,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Copy the current wrapper key from the actual owned AccountInfo field, \
-            preserving the full source loan and auxiliary state. Compatibility in [0.27.0, \
-            0.28.0) assumes this operation and its selected dependency contracts preserve \
-            that behavior; the exact releases remain inspected references."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.27.0:1",
@@ -17468,13 +13677,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Copy the current wrapper key from the actual owned AccountInfo field, \
-            preserving the full source loan and auxiliary state. Compatibility in [0.27.0, \
-            0.28.0) assumes this operation and its selected dependency contracts preserve \
-            that behavior; the exact releases remain inspected references."
+            payload resources are interpreted in the auxiliary state."]
       },
       {
         id := "anchor-views-0.27.0:2",
@@ -17496,13 +13699,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The logical source-loan store interprets live Rust receiver objects and \
             references. AccountInfo RefCell cells, callback-accessible interiors and owned \
-            payload resources are interpreted in the auxiliary state."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Copy the current wrapper key from the actual owned AccountInfo field, \
-            preserving the full source loan and auxiliary state. Compatibility in [0.27.0, \
-            0.28.0) assumes this operation and its selected dependency contracts preserve \
-            that behavior; the exact releases remain inspected references."
+            payload resources are interpreted in the auxiliary state."]
       }
     ]
     | .bpf_upgradeable_state_UpgradeableLoaderState_try_deserialize_unchecked => [
@@ -17532,10 +13729,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Assume fixed little-endian tag/u64/Option/Pubkey decoding, trailing-byte \
-              acceptance and the actual failure diagnostic/drop behavior for this loader \
-              enum.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -17548,9 +13741,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["6.1.1"],
-          reason :=
-            "Assume the complete four-arm UpgradeableLoaderState enum and its \
-              tag/u64/Option/Pubkey serde representation remain unchanged.",
           compatibleRanges := [{
             lower := "6.1.1",
             upper := "7.0.0"
@@ -17564,14 +13754,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes the fixed little-endian bincode \
-            tag/u64/Option/Pubkey decoder for the four-arm loader-state enum, acceptance \
-            of trailing bytes and retention of the borrowed input slice. Failure boxes \
-            InvalidAccountData before dropping the actual bincode diagnostic. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            a source dependency terminates."]
       }
     ]
     | .bpf_writer_BpfWriter_write_all => [
@@ -17594,10 +13777,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The u64 cursor-to-usize conversion is represented exactly on the reviewed \
-              64-bit target; narrower wrapping casts are not this profile."
+          «exclude» := []
         }],
         conditions :=
           ["A Rust binding must establish the actual value layouts, borrowed references \
@@ -17607,16 +13787,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The declared range [0.32.1, 0.33.0) assumes the behavior of the inspected \
-            0.32.1–0.32.3 sources: call write once, perform one bounded memcpy while \
-            capacity remains, and retain the copied prefix and cursor advance when a short \
-            write returns WriteZero. There is no retry or rollback. An empty input reaches \
-            count-zero memcpy while capacity remains; an exhausted writer skips copying. \
-            The reached copy and diagnostic primitives retain their effects and abnormal \
-            exits."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-1.1.2-writer",
@@ -17637,10 +13808,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The u64 cursor-to-usize conversion is represented exactly on the reviewed \
-              64-bit target; narrower wrapping casts are not this profile."
+          «exclude» := []
         }],
         conditions :=
           ["A Rust binding must establish the actual value layouts, borrowed references \
@@ -17650,15 +13818,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes one write attempt: copy at most remaining \
-            capacity through the actual memcpy provider and advance by that partial count. \
-            A short write allocates WriteZero and retains the prefix mutation without \
-            retry; exhausted capacity skips copying, while empty input with remaining \
-            capacity still reaches a zero-count copy. This pre-cohort profile stops before \
-            the new 1.2.1 provider/feature selection."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-0.29.0-writer",
@@ -17679,10 +13839,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The u64 cursor-to-usize conversion is represented exactly on the reviewed \
-              64-bit target; narrower wrapping casts are not this profile."
+          «exclude» := []
         }],
         conditions :=
           ["A Rust binding must establish the actual value layouts, borrowed references \
@@ -17692,15 +13849,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Write through the actual current cursor, \
-            advance by the copied prefix, and report WriteZero after a short write. \
-            Preserve partial destination mutation and the source 64-bit word \
-            interpretation. Compatibility in [0.29.0, 0.30.0) assumes this complete \
-            operation and the scoped dependencies remain unchanged; source/ABI/provider \
-            obligations stay explicit."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-0.27.0-writer",
@@ -17721,10 +13870,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The u64 cursor-to-usize conversion is represented exactly on the reviewed \
-              64-bit target; narrower wrapping casts are not this profile."
+          «exclude» := []
         }],
         conditions :=
           ["A Rust binding must establish the actual value layouts, borrowed references \
@@ -17734,17 +13880,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "BpfWriter::write_all invokes write once, copies at most the remaining capacity \
-            through the exact memcpy boundary and advances position by that partial count. \
-            A short write returns WriteZero with its allocated diagnostic after preserving \
-            the prefix mutation; it does not retry. At exhausted capacity write returns \
-            zero without copying, while an empty input with remaining capacity still \
-            reaches memcpy with count zero. Compatibility in [0.27.0, 0.28.0) assumes this \
-            operation and its selected dependency contracts preserve that behavior; the \
-            exact releases remain inspected references."
+            a source dependency terminates."]
       }
     ]
     | .context_Context_new => [
@@ -17771,14 +13907,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The declared range [0.32.1, 0.33.0) assumes the behavior of the inspected \
-            0.32.1–0.32.3 sources: move the bumps payload and preserve the borrowed \
-            program, accounts and remaining-account references. Constructing Context does \
-            not call account traits or destroy/project the supplied generic payload; the \
-            associated Bumps representation stays part of the source binding."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-1.1.2-context",
@@ -17803,13 +13932,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes movement of the actual Bumps payload and \
-            retention of the borrowed program, accounts and remaining-account references, \
-            without reaching account trait methods or adding a destructor. This pre-cohort \
-            profile stops before the new 1.2.1 provider/feature selection."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-1.0.2-context",
@@ -17834,18 +13957,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The constructor moves bumps and preserves borrowed program/accounts/remaining \
-            references without reaching ToAccountInfos or other account trait methods. The \
-            older BTreeMap and newer associated Bumps payloads remain the supplied generic \
-            payload; no destructor or projection is added. Preserve the complete 1.0 \
-            operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-0.29.0-context",
@@ -17870,14 +13982,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Store the exact program, mutable \
-            accounts, remaining-account slice and bump fields without callbacks or hidden \
-            cleanup. Retain all source-reference and lifetime obligations. Compatibility \
-            in [0.29.0, 0.30.0) assumes this complete operation and the scoped \
-            dependencies remain unchanged; source/ABI/provider obligations stay explicit."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-0.27.0-context",
@@ -17902,15 +14007,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "The constructor moves bumps and preserves borrowed program/accounts/remaining \
-            references without reaching ToAccountInfos or other account trait methods. The \
-            older BTreeMap and newer associated Bumps payloads remain the supplied generic \
-            payload; no destructor or projection is added. Compatibility in [0.27.0, \
-            0.28.0) assumes this operation and its selected dependency contracts preserve \
-            that behavior; the exact releases remain inspected references."
+            a source dependency terminates."]
       }
     ]
     | .context_CpiContext_AccountInfoProgram_new => [
@@ -17937,15 +14034,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The declared range [0.32.1, 0.33.0) assumes the behavior of the inspected \
-            0.32.1–0.32.3 sources: move accounts and the full owned program AccountInfo, \
-            including its Rc fields; obtain a fresh logical empty remaining-vector owner \
-            without allocating Vec backing storage; and retain an empty borrowed signer \
-            descriptor. No account callback or CPI is reached. The AccountInfo-program \
-            family remains distinct from the copied-pubkey family."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-1.1.2-cpi-new",
@@ -17970,14 +14059,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes movement of all accounts and the copied \
-            program_id, retention of source references and acquisition of one actual empty \
-            remaining-vector owner. The complete generic Program index and the existing \
-            EmptyReady facts are retained. This pre-cohort profile stops before the new \
-            1.2.1 provider/feature selection."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-1.0.2-cpi-new",
@@ -18002,19 +14084,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The constructor moves every accounts field and the full program field, \
-            preserves source references and obtains one empty remaining-vector owner. The \
-            source profile selects an owned AccountInfo through 0.32.1 and copied Pubkey \
-            in 1.x; these are distinct generic Program interpretations, not a key \
-            projection. EmptyReady current/fresh facts support the actual output facts. \
-            Preserve the complete 1.0 operation, reached callbacks and cleanup at the \
-            original exact dependency/build gates; adding this alternative does not \
-            replace modern parent alternatives. The declared range is a complete-operation \
-            preservation assumption; inspected releases, native runs, exact ABI \
-            observations and source-call implementation obligations remain separate."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-0.29.0-cpi-new",
@@ -18039,14 +14109,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Move the supplied owned program \
-            AccountInfo and accounts into the context with empty remaining accounts and \
-            signer seeds. Preserve actual field owners and drop order. Compatibility in \
-            [0.29.0, 0.30.0) assumes this complete operation and the scoped dependencies \
-            remain unchanged; source/ABI/provider obligations stay explicit."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-0.27.0-cpi-new",
@@ -18071,17 +14134,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "The constructor moves every accounts field and the full program field, \
-            preserves source references and obtains one empty remaining-vector owner. The \
-            source profile selects an owned AccountInfo through 0.32.1 and copied Pubkey \
-            in 1.x; these are distinct generic Program interpretations, not a key \
-            projection. EmptyReady current/fresh facts support the actual output facts. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            a source dependency terminates."]
       }
     ]
     | .context_CpiContext_AccountInfoProgram_new_with_signer => [
@@ -18109,14 +14162,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The declared range [0.32.1, 0.33.0) assumes the behavior of the inspected \
-            0.32.1–0.32.3 sources: move accounts and the full owned program AccountInfo, \
-            retain the supplied borrowed nested signer slices, and obtain a fresh logical \
-            empty remaining-vector owner without Vec backing allocation. No account \
-            callback or CPI is reached; the copied-pubkey family is a different contract."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-0.29.0-cpi-signers",
@@ -18142,15 +14188,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Move the supplied program \
-            AccountInfo/accounts and retain the exact borrowed nested signer slices. \
-            Initialize only the remaining-account vector as empty and preserve field \
-            owners. Compatibility in [0.29.0, 0.30.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-0.27.0-cpi-signers",
@@ -18176,15 +14214,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "The older constructor keeps the full owned AccountInfo program and arbitrary \
-            moved accounts, retains the borrowed nested signer slices and obtains one \
-            fresh logical empty-vector owner. It neither allocates backing memory for the \
-            empty Vec nor reaches trait callbacks or CPI. Compatibility in [0.27.0, \
-            0.28.0) assumes this operation and its selected dependency contracts preserve \
-            that behavior; the exact releases remain inspected references."
+            a source dependency terminates."]
       }
     ]
     | .context_CpiContext_AccountInfoProgram_with_signer => [
@@ -18212,13 +14242,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The declared range [0.32.1, 0.33.0) assumes the behavior of the inspected \
-            0.32.1–0.32.3 sources: replace only the borrowed signer-seed descriptor. \
-            Accounts, the full program AccountInfo and the existing remaining-vector \
-            owner/state move unchanged. The old borrowed seed descriptor has no destructor."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-1.1.2-signer",
@@ -18244,13 +14268,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate"],
-        argument :=
-          "The declared compatible range assumes replacement of only the borrowed \
-            signer-seed descriptor. The accounts, copied program_id and remaining-vector \
-            owner move unchanged; the borrowed old descriptor has no destructor. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-1.0.2-signer",
@@ -18276,18 +14294,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Replace only the borrowed signer-seed descriptor. Move the actual accounts, \
-            copied program_id and remaining-vector owner unchanged; the signer descriptor \
-            has no destructor. The old owned-AccountInfo program field is a separate \
-            interpretation of the shared family. Preserve the complete 1.0 operation, \
-            reached callbacks and cleanup at the original exact dependency/build gates; \
-            adding this alternative does not replace modern parent alternatives. The \
-            declared range is a complete-operation preservation assumption; inspected \
-            releases, native runs, exact ABI observations and source-call implementation \
-            obligations remain separate."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-0.29.0-signer",
@@ -18313,14 +14320,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Replace only the signer-seed reference \
-            tree, retaining the current program/accounts/remaining owners and their source \
-            field order. Compatibility in [0.29.0, 0.30.0) assumes this complete operation \
-            and the scoped dependencies remain unchanged; source/ABI/provider obligations \
-            stay explicit."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-0.27.0-signer",
@@ -18346,15 +14346,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Only the borrowed signer-seed descriptor is replaced. The full \
-            accounts/program/remaining-vector owners move unchanged, including the old \
-            AccountInfo Rc fields. Borrowed signer descriptors have no destructor. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            a source dependency terminates."]
       }
     ]
     | .context_CpiContext_new_with_signer => [
@@ -18381,21 +14373,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             pointwise facts to prove the current-empty and freshness postconditions of the \
             constructor; no law for an uncalled vector operation is required.", "Source \
             resource identity, representation and lifetime correspondence remain \
-            implementation bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The current constructor is unchanged from 1.0.0 through 1.2.2: move arbitrary \
-            T, copy/move the supplied Pubkey program_id, preserve the borrowed nested \
-            signer-seed slice and invoke Vec::new once. It does not call \
-            ToAccountInfos/ToAccountMetas, validate seeds or invoke CPI. The fresh \
-            empty-vector owner of the full model is logical ownership identity, not an \
-            allocation or a fresh backing pointer. Releases 0.1.0-0.4.4 lack \
-            remaining_accounts entirely; 0.4.5-0.32.3 store an owned program AccountInfo \
-            instead of a Pubkey program_id, retaining its Rc resources. Both the primary \
-            and copied-value observation use the current program-ID input/output shape. \
-            Replacing the old AccountInfo by its key would add a projection and discard \
-            fields not part of the existing binding, so the older constructor is \
-            incompatible even for this observation."
+            implementation bindings."]
       }
     ]
     | .context_CpiContext_new_with_signer_observation => [
@@ -18420,21 +14398,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting copied-value observation has precondition True and no VectorOps \
             dependency. It preserves the supplied fields with an empty value list, \
             omitting the resource identity and freshness behavior of the primary model.",
-            "Source value and lifetime correspondence remain implementation bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The current constructor is unchanged from 1.0.0 through 1.2.2: move arbitrary \
-            T, copy/move the supplied Pubkey program_id, preserve the borrowed nested \
-            signer-seed slice and invoke Vec::new once. It does not call \
-            ToAccountInfos/ToAccountMetas, validate seeds or invoke CPI. The fresh \
-            empty-vector owner of the full model is logical ownership identity, not an \
-            allocation or a fresh backing pointer. Releases 0.1.0-0.4.4 lack \
-            remaining_accounts entirely; 0.4.5-0.32.3 store an owned program AccountInfo \
-            instead of a Pubkey program_id, retaining its Rc resources. Both the primary \
-            and copied-value observation use the current program-ID input/output shape. \
-            Replacing the old AccountInfo by its key would add a projection and discard \
-            fields not part of the existing binding, so the older constructor is \
-            incompatible even for this observation."
+            "Source value and lifetime correspondence remain implementation bindings."]
       }
     ]
     | .context_CpiContext_with_remaining_accounts => [
@@ -18464,16 +14428,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Preserve the 1.0 CpiContext with its by-value program_id. Destroy the previous \
-            remaining Vec and its actual AccountInfo owners before storing the moved \
-            replacement; retain destructor outcomes. The 0.32 context instead owns a \
-            program AccountInfo, so equal assignment text alone is insufficient. The \
-            declared range is a complete-operation preservation assumption; inspected \
-            releases, native runs, exact ABI observations and source-call implementation \
-            obligations remain separate."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_GenericProgram_with_account_name => [
@@ -18500,14 +14455,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The declared range [0.32.1, 0.33.0) assumes the behavior of the inspected \
-            0.32.1–0.32.3 sources: call the actual ToString conversion, then replace the \
-            origin and drop its old owned account-name String. Preserve comparison fields, \
-            the full ProgramError payload and the same Error box. Destruction of the \
-            source argument and all callback/cleanup exits retain their source order."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-1.0.2-name",
@@ -18532,19 +14480,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "The generic ToString callback returns an owned new account name, then \
-            assignment drops the old origin account-name String and preserves all other \
-            fields. The source local argument is destroyed on normal/unwind exits. The \
-            moved result is the updated inline value in 0.27 and same Box owner later; \
-            callback unwind/terminal effects are preserved. Preserve the complete 1.0 \
-            operation, reached callbacks and cleanup at the original exact \
-            dependency/build gates; adding this alternative does not replace modern parent \
-            alternatives. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-0.29.0-name",
@@ -18569,15 +14505,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Reach the actual ToString conversion \
-            before replacing the current origin and destroying its old payload. Preserve \
-            both error variants and boxed 0.29 storage, including callback failures and \
-            cleanup. Compatibility in [0.29.0, 0.30.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_GenericProgram_with_pubkeys => [
@@ -18604,14 +14532,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The declared range [0.32.1, 0.33.0) assumes the behavior of the inspected \
-            0.32.1–0.32.3 sources: drop replaced comparison Strings and store the two \
-            copied pubkeys in source order, preserving the origin, full ProgramError \
-            payload and Error box identity. This operation performs no ToString callback; \
-            its reached assignment/destruction effects remain explicit."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-0.29.0-pubkeys",
@@ -18636,14 +14557,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Install the ordered compared Pubkeys and \
-            destroy the replaced comparison payload at the source assignment. Preserve all \
-            other current error fields and the boxed representation. Compatibility in \
-            [0.29.0, 0.30.0) assumes this complete operation and the scoped dependencies \
-            remain unchanged; source/ABI/provider obligations stay explicit."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_GenericProgram_with_values => [
@@ -18670,16 +14584,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The declared range [0.32.1, 0.33.0) assumes the behavior of the inspected \
-            0.32.1–0.32.3 sources: convert left then right, retain the first String \
-            through the second conversion, and replace old comparisons only after both \
-            succeed. Preserve operand and temporary cleanup order, callback \
-            unwind/terminal exits and the updated boxed receiver. A destructor panic after \
-            moving the return value retains the existing release-or-leak alternative; it \
-            gains no invented cleanup."
+            a source dependency terminates."]
       },
       {
         id := "anchor-lang-0.29.0-values",
@@ -18704,15 +14609,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Evaluate the first ToString before the \
-            second, then replace the comparison payload and destroy the old value. \
-            Preserve temporary String owners, callback effects and source-ordered failure \
-            cleanup. Compatibility in [0.29.0, 0.30.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_eq => [
@@ -18739,10 +14636,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -18756,14 +14649,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The 0.32.0–0.32.3 references distinguish variants, compare Anchor error numbers \
-            and compare the complete inner ProgramError, including BorshIoError String \
-            content. They borrow payloads without destruction. Compatibility within 0.32 \
-            assumes these comparisons and boxed representations remain unchanged; equal \
-            numeric status alone is insufficient."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_from_anchor_error => [
@@ -18806,21 +14692,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             allocation success.", "The shared Types index carries no full Ops.Laws \
             certificate. Laws for uncalled String allocation, retirement, Box deallocation \
             or payload stores are not part of the admission of this family; concrete \
-            source resource and lifetime interpretation remains separate."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "From<AnchorError> is absent through 0.21.0. Releases 0.22.0/0.22.1 use separate \
-            source and account_name options, which can coexist, and have no \
-            compared_values; their full payload cannot be identified with the current \
-            origin sum and comparison field. From 0.23.0 the complete Anchor payload shape \
-            is stable. However, 0.22.0-0.28.0 store Error variants inline and do not \
-            allocate the Box required by the primary contract. At 0.29.0 exactly one \
-            Box::new is introduced, moving all existing Strings and preserving their \
-            identities, with no extra String allocation. That implementation and full \
-            payload closure persist through 1.2.2. The existing BoxingLaws supply current \
-            payload, fresh identity and preservation of String observations without \
-            assuming allocation success. The ProgramError branch is unreachable in this \
-            conversion and does not narrow its range."
+            source resource and lifetime interpretation remains separate."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.1.1",
@@ -18847,11 +14719,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.1", "1.1.2", "1.2.0", "1.2.1", "1.2.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.1.1",
             upper := "2.0.0"
@@ -18866,22 +14733,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             allocation success.", "The shared Types index carries no full Ops.Laws \
             certificate. Laws for uncalled String allocation, retirement, Box deallocation \
             or payload stores are not part of the admission of this family; concrete \
-            source resource and lifetime interpretation remains separate."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "From<AnchorError> is absent through 0.21.0. Releases 0.22.0/0.22.1 use separate \
-            source and account_name options, which can coexist, and have no \
-            compared_values; their full payload cannot be identified with the current \
-            origin sum and comparison field. From 0.23.0 the complete Anchor payload shape \
-            is stable. However, 0.22.0-0.28.0 store Error variants inline and do not \
-            allocate the Box required by the primary contract. At 0.29.0 exactly one \
-            Box::new is introduced, moving all existing Strings and preserving their \
-            identities, with no extra String allocation. That implementation and full \
-            payload closure persist through 1.2.2. The existing BoxingLaws supply current \
-            payload, fresh identity and preservation of String observations without \
-            assuming allocation success. The ProgramError branch is unreachable in this \
-            conversion and does not narrow its range. Anchor 1.0.0 through 1.0.3 still \
-            define Error locally; the facade begins at 1.1.1."
+            source resource and lifetime interpretation remains separate."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.1.2",
@@ -18908,11 +14760,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "2.0.0"
@@ -18927,22 +14774,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             allocation success.", "The shared Types index carries no full Ops.Laws \
             certificate. Laws for uncalled String allocation, retirement, Box deallocation \
             or payload stores are not part of the admission of this family; concrete \
-            source resource and lifetime interpretation remains separate."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "From<AnchorError> is absent through 0.21.0. Releases 0.22.0/0.22.1 use separate \
-            source and account_name options, which can coexist, and have no \
-            compared_values; their full payload cannot be identified with the current \
-            origin sum and comparison field. From 0.23.0 the complete Anchor payload shape \
-            is stable. However, 0.22.0-0.28.0 store Error variants inline and do not \
-            allocate the Box required by the primary contract. At 0.29.0 exactly one \
-            Box::new is introduced, moving all existing Strings and preserving their \
-            identities, with no extra String allocation. That implementation and full \
-            payload closure persist through 1.2.2. The existing BoxingLaws supply current \
-            payload, fresh identity and preservation of String observations without \
-            assuming allocation success. The ProgramError branch is unreachable in this \
-            conversion and does not narrow its range. Anchor 1.0.0 through 1.0.3 still \
-            define Error locally; the facade begins at 1.1.1."
+            source resource and lifetime interpretation remains separate."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.0",
@@ -18969,11 +14801,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.0"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.0",
             upper := "2.0.0"
@@ -18988,22 +14815,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             allocation success.", "The shared Types index carries no full Ops.Laws \
             certificate. Laws for uncalled String allocation, retirement, Box deallocation \
             or payload stores are not part of the admission of this family; concrete \
-            source resource and lifetime interpretation remains separate."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "From<AnchorError> is absent through 0.21.0. Releases 0.22.0/0.22.1 use separate \
-            source and account_name options, which can coexist, and have no \
-            compared_values; their full payload cannot be identified with the current \
-            origin sum and comparison field. From 0.23.0 the complete Anchor payload shape \
-            is stable. However, 0.22.0-0.28.0 store Error variants inline and do not \
-            allocate the Box required by the primary contract. At 0.29.0 exactly one \
-            Box::new is introduced, moving all existing Strings and preserving their \
-            identities, with no extra String allocation. That implementation and full \
-            payload closure persist through 1.2.2. The existing BoxingLaws supply current \
-            payload, fresh identity and preservation of String observations without \
-            assuming allocation success. The ProgramError branch is unreachable in this \
-            conversion and does not narrow its range. Anchor 1.0.0 through 1.0.3 still \
-            define Error locally; the facade begins at 1.1.1."
+            source resource and lifetime interpretation remains separate."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.1",
@@ -19030,11 +14842,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.1"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.1",
             upper := "2.0.0"
@@ -19049,22 +14856,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             allocation success.", "The shared Types index carries no full Ops.Laws \
             certificate. Laws for uncalled String allocation, retirement, Box deallocation \
             or payload stores are not part of the admission of this family; concrete \
-            source resource and lifetime interpretation remains separate."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "From<AnchorError> is absent through 0.21.0. Releases 0.22.0/0.22.1 use separate \
-            source and account_name options, which can coexist, and have no \
-            compared_values; their full payload cannot be identified with the current \
-            origin sum and comparison field. From 0.23.0 the complete Anchor payload shape \
-            is stable. However, 0.22.0-0.28.0 store Error variants inline and do not \
-            allocate the Box required by the primary contract. At 0.29.0 exactly one \
-            Box::new is introduced, moving all existing Strings and preserving their \
-            identities, with no extra String allocation. That implementation and full \
-            payload closure persist through 1.2.2. The existing BoxingLaws supply current \
-            payload, fresh identity and preservation of String observations without \
-            assuming allocation success. The ProgramError branch is unreachable in this \
-            conversion and does not narrow its range. Anchor 1.0.0 through 1.0.3 still \
-            define Error locally; the facade begins at 1.1.1."
+            source resource and lifetime interpretation remains separate."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.2",
@@ -19091,11 +14883,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.2",
             upper := "2.0.0"
@@ -19110,22 +14897,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             allocation success.", "The shared Types index carries no full Ops.Laws \
             certificate. Laws for uncalled String allocation, retirement, Box deallocation \
             or payload stores are not part of the admission of this family; concrete \
-            source resource and lifetime interpretation remains separate."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "From<AnchorError> is absent through 0.21.0. Releases 0.22.0/0.22.1 use separate \
-            source and account_name options, which can coexist, and have no \
-            compared_values; their full payload cannot be identified with the current \
-            origin sum and comparison field. From 0.23.0 the complete Anchor payload shape \
-            is stable. However, 0.22.0-0.28.0 store Error variants inline and do not \
-            allocate the Box required by the primary contract. At 0.29.0 exactly one \
-            Box::new is introduced, moving all existing Strings and preserving their \
-            identities, with no extra String allocation. That implementation and full \
-            payload closure persist through 1.2.2. The existing BoxingLaws supply current \
-            payload, fresh identity and preservation of String observations without \
-            assuming allocation success. The ProgramError branch is unreachable in this \
-            conversion and does not narrow its range. Anchor 1.0.0 through 1.0.3 still \
-            define Error locally; the facade begins at 1.1.1."
+            source resource and lifetime interpretation remains separate."]
       },
       {
         id := "anchor-lang-error-reviewed",
@@ -19152,18 +14924,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             allocation success.", "The shared Types index carries no full Ops.Laws \
             certificate. Laws for uncalled String allocation, retirement, Box deallocation \
             or payload stores are not part of the admission of this family; concrete \
-            source resource and lifetime interpretation remains separate."],
-        evidence := ["https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.0.1.crate", "https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.2.2.crate"],
-        argument :=
-          "All six stable standalone anchor-lang-error releases preserve the current boxed \
-            Error, AnchorError, ProgramErrorWithOrigin, Source, ErrorOrigin and \
-            ComparedValues closure and the reached method. ProgramError is the 3.0.x \
-            payload domain. The v3/v4 Pubkey aliases in 1.2.1/1.2.2 preserve the copied \
-            key values. Anchor-lang reexports this crate starting at 1.1.1; standalone \
-            1.0.1 is source-only evidence and does not mean anchor-lang 1.0.1 used that \
-            package. The same operation-specific boxing, replacement, callback sequencing \
-            and cleanup argument in the anchor-lang review applies without changing the \
-            listed existing conditions."
+            source resource and lifetime interpretation remains separate."]
       }
     ]
     | .error_Error_from_anchor_error_inline => [
@@ -19192,14 +14953,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Anchor 0.27 wraps the moved AnchorError inline, preserving its String \
-            identities with no Box allocation. It does not collapse the payload to \
-            code/name observations. Compatibility in [0.27.0, 0.28.0) assumes this \
-            operation and its selected dependency contracts preserve that behavior; the \
-            exact releases remain inspected references."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_from_anchor_error_observation => [
@@ -19257,16 +15011,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting value family has precondition True and embeds the complete \
             Anchor payload without String/Box operations or owned-resource readiness laws. \
             Allocation, resource identity and source lifetime behavior remain outside this \
-            recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.23.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The supporting value observation explicitly omits Box/String lifecycle. The \
-            complete Anchor payload is therefore compatible already at 0.23.0, including \
-            the inline Error variants of 0.23.0-0.28.0; it embeds the exact name, u32 \
-            code, message, origin and comparison. The 0.22.0/0.22.1 payload has separate \
-            source/account_name options and no comparison, so it is incompatible. The API \
-            is absent through 0.21.0. ProgramError is not an input or reached branch of \
-            this operation."
+            recorded partial observation facet."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.1.1",
@@ -19293,11 +15038,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.1", "1.1.2", "1.2.0", "1.2.1", "1.2.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.1.1",
             upper := "2.0.0"
@@ -19308,17 +15048,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting value family has precondition True and embeds the complete \
             Anchor payload without String/Box operations or owned-resource readiness laws. \
             Allocation, resource identity and source lifetime behavior remain outside this \
-            recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.23.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The supporting value observation explicitly omits Box/String lifecycle. The \
-            complete Anchor payload is therefore compatible already at 0.23.0, including \
-            the inline Error variants of 0.23.0-0.28.0; it embeds the exact name, u32 \
-            code, message, origin and comparison. The 0.22.0/0.22.1 payload has separate \
-            source/account_name options and no comparison, so it is incompatible. The API \
-            is absent through 0.21.0. ProgramError is not an input or reached branch of \
-            this operation. Anchor 1.0.0 through 1.0.3 still define Error locally; the \
-            facade begins at 1.1.1."
+            recorded partial observation facet."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.1.2",
@@ -19345,11 +15075,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "2.0.0"
@@ -19360,17 +15085,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting value family has precondition True and embeds the complete \
             Anchor payload without String/Box operations or owned-resource readiness laws. \
             Allocation, resource identity and source lifetime behavior remain outside this \
-            recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.23.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The supporting value observation explicitly omits Box/String lifecycle. The \
-            complete Anchor payload is therefore compatible already at 0.23.0, including \
-            the inline Error variants of 0.23.0-0.28.0; it embeds the exact name, u32 \
-            code, message, origin and comparison. The 0.22.0/0.22.1 payload has separate \
-            source/account_name options and no comparison, so it is incompatible. The API \
-            is absent through 0.21.0. ProgramError is not an input or reached branch of \
-            this operation. Anchor 1.0.0 through 1.0.3 still define Error locally; the \
-            facade begins at 1.1.1."
+            recorded partial observation facet."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.0",
@@ -19397,11 +15112,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.0"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.0",
             upper := "2.0.0"
@@ -19412,17 +15122,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting value family has precondition True and embeds the complete \
             Anchor payload without String/Box operations or owned-resource readiness laws. \
             Allocation, resource identity and source lifetime behavior remain outside this \
-            recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.23.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The supporting value observation explicitly omits Box/String lifecycle. The \
-            complete Anchor payload is therefore compatible already at 0.23.0, including \
-            the inline Error variants of 0.23.0-0.28.0; it embeds the exact name, u32 \
-            code, message, origin and comparison. The 0.22.0/0.22.1 payload has separate \
-            source/account_name options and no comparison, so it is incompatible. The API \
-            is absent through 0.21.0. ProgramError is not an input or reached branch of \
-            this operation. Anchor 1.0.0 through 1.0.3 still define Error locally; the \
-            facade begins at 1.1.1."
+            recorded partial observation facet."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.1",
@@ -19449,11 +15149,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.1"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.1",
             upper := "2.0.0"
@@ -19464,17 +15159,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting value family has precondition True and embeds the complete \
             Anchor payload without String/Box operations or owned-resource readiness laws. \
             Allocation, resource identity and source lifetime behavior remain outside this \
-            recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.23.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The supporting value observation explicitly omits Box/String lifecycle. The \
-            complete Anchor payload is therefore compatible already at 0.23.0, including \
-            the inline Error variants of 0.23.0-0.28.0; it embeds the exact name, u32 \
-            code, message, origin and comparison. The 0.22.0/0.22.1 payload has separate \
-            source/account_name options and no comparison, so it is incompatible. The API \
-            is absent through 0.21.0. ProgramError is not an input or reached branch of \
-            this operation. Anchor 1.0.0 through 1.0.3 still define Error locally; the \
-            facade begins at 1.1.1."
+            recorded partial observation facet."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.2",
@@ -19501,11 +15186,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.2",
             upper := "2.0.0"
@@ -19516,17 +15196,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting value family has precondition True and embeds the complete \
             Anchor payload without String/Box operations or owned-resource readiness laws. \
             Allocation, resource identity and source lifetime behavior remain outside this \
-            recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.23.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The supporting value observation explicitly omits Box/String lifecycle. The \
-            complete Anchor payload is therefore compatible already at 0.23.0, including \
-            the inline Error variants of 0.23.0-0.28.0; it embeds the exact name, u32 \
-            code, message, origin and comparison. The 0.22.0/0.22.1 payload has separate \
-            source/account_name options and no comparison, so it is incompatible. The API \
-            is absent through 0.21.0. ProgramError is not an input or reached branch of \
-            this operation. Anchor 1.0.0 through 1.0.3 still define Error locally; the \
-            facade begins at 1.1.1."
+            recorded partial observation facet."]
       },
       {
         id := "anchor-lang-error-reviewed",
@@ -19549,18 +15219,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting value family has precondition True and embeds the complete \
             Anchor payload without String/Box operations or owned-resource readiness laws. \
             Allocation, resource identity and source lifetime behavior remain outside this \
-            recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.0.1.crate", "https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.2.2.crate"],
-        argument :=
-          "All six stable standalone anchor-lang-error releases preserve the current boxed \
-            Error, AnchorError, ProgramErrorWithOrigin, Source, ErrorOrigin and \
-            ComparedValues closure and the reached method. ProgramError is the 3.0.x \
-            payload domain. The v3/v4 Pubkey aliases in 1.2.1/1.2.2 preserve the copied \
-            key values. Anchor-lang reexports this crate starting at 1.1.1; standalone \
-            1.0.1 is source-only evidence and does not mean anchor-lang 1.0.1 used that \
-            package. The same operation-specific boxing, replacement, callback sequencing \
-            and cleanup argument in the anchor-lang review applies without changing the \
-            listed existing conditions."
+            recorded partial observation facet."]
       }
     ]
     | .error_Error_from_error_code => [
@@ -19589,12 +15248,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected anchor-syn 0.32.1–0.32.3 providers support [0.32.1, 0.33.0) \
-              only while the reached parser/attribute expansion preserves the explicit \
-              zero offset, every discriminant, name and message, and the emitted \
-              name/Display/From evaluation order. Cargo matching-version requirements \
-              remain compilation facts.",
           compatibleRanges := [{
             lower := "0.32.1",
             upper := "0.33.0"
@@ -19608,15 +15261,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate", "https://static.crates.io/crates/anchor-syn/anchor-syn-0.32.1.crate", "https://static.crates.io/crates/anchor-syn/anchor-syn-0.32.2.crate", "https://static.crates.io/crates/anchor-syn/anchor-syn-0.32.3.crate", "https://static.crates.io/crates/anchor-attribute-error/anchor-attribute-error-0.32.1.crate", "https://static.crates.io/crates/anchor-attribute-error/anchor-attribute-error-0.32.2.crate", "https://static.crates.io/crates/anchor-attribute-error/anchor-attribute-error-0.32.3.crate"],
-        argument :=
-          "The declared range [0.32.1, 0.33.0) assumes the behavior of the inspected \
-            0.32.1–0.32.3 sources: preserve the full 77-variant code/name/message table \
-            and zero offset, copy the name, convert the code, format the message, then \
-            allocate the Error box. The generated match and reached allocation/formatting \
-            exits must remain the same; equally sized but different tables are separate \
-            profiles."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_from_error_code_account_migration => [
@@ -19644,10 +15289,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.0.2"],
-          reason :=
-            "The resolved macro provider generates this exact variant match, code offset \
-              and name/message conversion."
+          releases := ["1.0.2"]
         }],
         conditions :=
           ["A Rust binding must establish the actual value layouts, borrowed references \
@@ -19657,17 +15299,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Preserve the complete migration-extended ErrorCode variant/code/name/message \
-            table and matching macro expansion. Name allocates one String; From copies the \
-            name, formats the message, then boxes the error in source order. The 0.32 \
-            table lacks these migration variants, and the 1.1 line moves the defining \
-            error module to anchor-lang-error; neither is selected by this profile. The \
-            declared range is a complete-operation preservation assumption; inspected \
-            releases, native runs, exact ABI observations and source-call implementation \
-            obligations remain separate."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_from_error_code_inline => [
@@ -19696,10 +15328,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.27.0"],
-          reason :=
-            "Assume the 0.27 macro reference preserves all 56 ErrorCode variants, numeric \
-              codes, names/messages and generated conversion order. The next compatibility \
-              line is not admitted.",
           compatibleRanges := [{
             lower := "0.27.0",
             upper := "0.28.0"
@@ -19713,14 +15341,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "The 0.27 reference has exactly 56 ErrorCode variants with their full numeric \
-            codes, names and messages. Convert the name, format the message and wrap the \
-            owned payload inline, preserving reached cleanup. Compatibility in [0.27.0, \
-            0.28.0) assumes this operation and its selected dependency contracts preserve \
-            that behavior; the exact releases remain inspected references."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_from_io_error => [
@@ -19748,11 +15369,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0", "2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "Assume the consuming Borsh/std IO conversion preserves user Display/Drop, \
-              formatting allocation and BorshIoError(String), including unwind before \
-              Anchor boxing; Anchor enables the reached borsh feature. The inspected 3.0.0 \
-              carrier/conversion differs.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -19766,15 +15382,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate"],
-        argument :=
-          "The inspected 0.32.0–0.32.3 operation and reached context/error definitions \
-            agree. The declared 0.32 range assumes the complete consuming \
-            IO-to-ProgramError conversion, including user Display/Drop and its actual \
-            unwind state, followed only on normal return by boxed legacy ProgramError \
-            allocation. Actual provider, layout and finite-exit obligations remain \
-            unchanged."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_from_legacy_error_code => [
@@ -19803,12 +15411,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.29.0"],
-          reason :=
-            "Reference 0.29.0; [0.29.0, 0.30.0) assumes the following used contract \
-              remains unchanged. Preserve the generated 0.29 name/message table and \
-              numeric offset used by From<ErrorCode>, including the String construction \
-              and boxed Error conversion. Formatting and allocation implementations remain \
-              separate providers.",
           compatibleRanges := [{
             lower := "0.29.0",
             upper := "0.30.0"
@@ -19822,15 +15424,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Use the 0.29 ErrorCode name, numeric \
-            offset and message table to construct the boxed Anchor error with no origin or \
-            compared values. Preserve actual String/Box effects; later diagnostic tables \
-            are distinct complete families. Compatibility in [0.29.0, 0.30.0) assumes this \
-            complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_from_program_error_inline => [
@@ -19859,11 +15453,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -19877,15 +15466,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Anchor 0.27 wraps the full Solana 1.15.2 ProgramError inline with empty \
-            origin/compared fields. BorshIoError retains its owned String, and source enum \
-            availability excludes later builtin variants. Numeric status is never used as \
-            the owned error representation. Compatibility in [0.27.0, 0.28.0) assumes this \
-            operation and its selected dependency contracts preserve that behavior; the \
-            exact releases remain inspected references."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_log => [
@@ -19912,12 +15493,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.2"],
-          reason :=
-            "Reference solana-program-error 2.2.2 supports [2.2.2, 3.0.0) only while the \
-              full builtin/custom payloads and tags, exact Debug/Display text, derived \
-              clone and consuming u64 conversion are preserved. BorshIoError remains an \
-              owned String whose clone and destruction effects are retained. The \
-              payloadless 3.x representation is excluded.",
           compatibleRanges := [{
             lower := "2.2.2",
             upper := "3.0.0"
@@ -19931,16 +15506,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate", "https://static.crates.io/crates/solana-program-error/solana-program-error-2.2.2.crate"],
-        argument :=
-          "The declared range [0.32.1, 0.33.0) assumes the behavior of the inspected \
-            0.32.1–0.32.3 sources: borrow the actual error/origin/comparison variants, \
-            preserve exact formatting and log order, and retain each temporary String \
-            through its log call and subsequent cleanup. ProgramError logging clones the \
-            owned payload before consuming that clone for status conversion. Host-logger \
-            unwind and the separately indexed non-unwinding Solana logger retain their \
-            existing effects; the original error stays borrowed."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_log_inline => [
@@ -19967,11 +15533,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -19985,18 +15546,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "The source matches actual Error/origin/comparison variants and performs the \
-            exact formatting/logging sequence. Old ProgramError clones its Borsh String \
-            before numeric conversion consumes that clone. The original error is only \
-            borrowed. Each temporary format String is dropped after normal logging or host \
-            logger unwind; a Solana syscall-only non-unwinding logger is a separate \
-            allowed index. Full Debug and Display arguments, including old wording, are \
-            retained. Compatibility in [0.27.0, 0.28.0) assumes this operation and its \
-            selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_log_legacy_program => [
@@ -20023,11 +15573,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the complete legacy ProgramError variant/text \
-              table and its owned BorshIoError String formatting, clone and destruction. \
-              RefCell and AccountInfo operations are not reached by this logger.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -20041,16 +15586,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Follow the selected Anchor/Program branch \
-            and origin/compared-value logging order. Retain the old ProgramError payloads, \
-            Borsh String formatting/clone/drop and temporary cleanup. Logger effects and \
-            terminal outcomes remain explicit; later error tables are separate. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_log_modern => [
@@ -20076,10 +15612,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "The complete ProgramError payload, builtin availability, Debug/Display and \
-              consuming conversion behavior are selected at this resolved release."
+          releases := ["3.0.1"]
         }],
         conditions :=
           ["A Rust binding must establish the actual value layouts, borrowed references \
@@ -20089,17 +15622,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Preserve exact Error/origin/comparison branching, message bytes, \
-            formatting/logging order, temporary cleanup and all finite provider exits for \
-            the unit-Borsh ProgramError dependency. Rust string continuations do not \
-            change rendered messages. The old owned Borsh String protocol and the later \
-            defining error crate remain separate profiles. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_with_account_name_inline => [
@@ -20126,16 +15649,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "The generic ToString callback returns an owned new account name, then \
-            assignment drops the old origin account-name String and preserves all other \
-            fields. The source local argument is destroyed on normal/unwind exits. The \
-            moved result is the updated inline value in 0.27 and same Box owner later; \
-            callback unwind/terminal effects are preserved. Compatibility in [0.27.0, \
-            0.28.0) assumes this operation and its selected dependency contracts preserve \
-            that behavior; the exact releases remain inspected references."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_with_pubkeys => [
@@ -20165,23 +15679,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             that exact local assignment continuation or passes through the same terminal \
             cleanup exit. It does not assert opaque destructor termination or require \
             unrelated allocation/Box-retirement laws. Physical ownership and source \
-            correspondence remain external bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The top-level method body is byte-identical from 0.23.0 through 1.2.2, but the \
-            complete contract is not. Inline Error variants before 0.29.0 lack the \
-            retained Box identity of the full model. Throughout 0.23.0-0.32.3 the reached \
-            ProgramError has BorshIoError(String), and some historical versions also lack \
-            later variants. The current fixed ProgramError.Value contains unit \
-            borshIoError and no owned message; an arbitrary old message cannot be silently \
-            forgotten in the stated complete payload, and its ownership/retirement is \
-            absent from the current primary resources. The observation also retains this \
-            concrete payload domain; restricting to common variants or adding message \
-            erasure would be a new contract/binding. From 1.0.0 all payloads fit: preserve \
-            the receiver variant, Box identity, error/origin fields, retire old \
-            compared-value Strings left then right, and install the supplied key pair. The \
-            exact existing ComparisonLaws and reached ComparisonStoreReady remain the \
-            admission conditions. This API is absent through 0.22.1."
+            correspondence remain external bindings."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.1.1",
@@ -20206,11 +15704,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.1", "1.1.2", "1.2.0", "1.2.1", "1.2.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.1.1",
             upper := "2.0.0"
@@ -20228,24 +15721,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             that exact local assignment continuation or passes through the same terminal \
             cleanup exit. It does not assert opaque destructor termination or require \
             unrelated allocation/Box-retirement laws. Physical ownership and source \
-            correspondence remain external bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The top-level method body is byte-identical from 0.23.0 through 1.2.2, but the \
-            complete contract is not. Inline Error variants before 0.29.0 lack the \
-            retained Box identity of the full model. Throughout 0.23.0-0.32.3 the reached \
-            ProgramError has BorshIoError(String), and some historical versions also lack \
-            later variants. The current fixed ProgramError.Value contains unit \
-            borshIoError and no owned message; an arbitrary old message cannot be silently \
-            forgotten in the stated complete payload, and its ownership/retirement is \
-            absent from the current primary resources. The observation also retains this \
-            concrete payload domain; restricting to common variants or adding message \
-            erasure would be a new contract/binding. From 1.0.0 all payloads fit: preserve \
-            the receiver variant, Box identity, error/origin fields, retire old \
-            compared-value Strings left then right, and install the supplied key pair. The \
-            exact existing ComparisonLaws and reached ComparisonStoreReady remain the \
-            admission conditions. This API is absent through 0.22.1. Anchor 1.0.0 through \
-            1.0.3 still define Error locally; the facade begins at 1.1.1."
+            correspondence remain external bindings."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.1.2",
@@ -20270,11 +15746,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "2.0.0"
@@ -20292,24 +15763,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             that exact local assignment continuation or passes through the same terminal \
             cleanup exit. It does not assert opaque destructor termination or require \
             unrelated allocation/Box-retirement laws. Physical ownership and source \
-            correspondence remain external bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The top-level method body is byte-identical from 0.23.0 through 1.2.2, but the \
-            complete contract is not. Inline Error variants before 0.29.0 lack the \
-            retained Box identity of the full model. Throughout 0.23.0-0.32.3 the reached \
-            ProgramError has BorshIoError(String), and some historical versions also lack \
-            later variants. The current fixed ProgramError.Value contains unit \
-            borshIoError and no owned message; an arbitrary old message cannot be silently \
-            forgotten in the stated complete payload, and its ownership/retirement is \
-            absent from the current primary resources. The observation also retains this \
-            concrete payload domain; restricting to common variants or adding message \
-            erasure would be a new contract/binding. From 1.0.0 all payloads fit: preserve \
-            the receiver variant, Box identity, error/origin fields, retire old \
-            compared-value Strings left then right, and install the supplied key pair. The \
-            exact existing ComparisonLaws and reached ComparisonStoreReady remain the \
-            admission conditions. This API is absent through 0.22.1. Anchor 1.0.0 through \
-            1.0.3 still define Error locally; the facade begins at 1.1.1."
+            correspondence remain external bindings."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.0",
@@ -20334,11 +15788,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.0"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.0",
             upper := "2.0.0"
@@ -20356,24 +15805,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             that exact local assignment continuation or passes through the same terminal \
             cleanup exit. It does not assert opaque destructor termination or require \
             unrelated allocation/Box-retirement laws. Physical ownership and source \
-            correspondence remain external bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The top-level method body is byte-identical from 0.23.0 through 1.2.2, but the \
-            complete contract is not. Inline Error variants before 0.29.0 lack the \
-            retained Box identity of the full model. Throughout 0.23.0-0.32.3 the reached \
-            ProgramError has BorshIoError(String), and some historical versions also lack \
-            later variants. The current fixed ProgramError.Value contains unit \
-            borshIoError and no owned message; an arbitrary old message cannot be silently \
-            forgotten in the stated complete payload, and its ownership/retirement is \
-            absent from the current primary resources. The observation also retains this \
-            concrete payload domain; restricting to common variants or adding message \
-            erasure would be a new contract/binding. From 1.0.0 all payloads fit: preserve \
-            the receiver variant, Box identity, error/origin fields, retire old \
-            compared-value Strings left then right, and install the supplied key pair. The \
-            exact existing ComparisonLaws and reached ComparisonStoreReady remain the \
-            admission conditions. This API is absent through 0.22.1. Anchor 1.0.0 through \
-            1.0.3 still define Error locally; the facade begins at 1.1.1."
+            correspondence remain external bindings."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.1",
@@ -20398,11 +15830,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.1"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.1",
             upper := "2.0.0"
@@ -20420,24 +15847,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             that exact local assignment continuation or passes through the same terminal \
             cleanup exit. It does not assert opaque destructor termination or require \
             unrelated allocation/Box-retirement laws. Physical ownership and source \
-            correspondence remain external bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The top-level method body is byte-identical from 0.23.0 through 1.2.2, but the \
-            complete contract is not. Inline Error variants before 0.29.0 lack the \
-            retained Box identity of the full model. Throughout 0.23.0-0.32.3 the reached \
-            ProgramError has BorshIoError(String), and some historical versions also lack \
-            later variants. The current fixed ProgramError.Value contains unit \
-            borshIoError and no owned message; an arbitrary old message cannot be silently \
-            forgotten in the stated complete payload, and its ownership/retirement is \
-            absent from the current primary resources. The observation also retains this \
-            concrete payload domain; restricting to common variants or adding message \
-            erasure would be a new contract/binding. From 1.0.0 all payloads fit: preserve \
-            the receiver variant, Box identity, error/origin fields, retire old \
-            compared-value Strings left then right, and install the supplied key pair. The \
-            exact existing ComparisonLaws and reached ComparisonStoreReady remain the \
-            admission conditions. This API is absent through 0.22.1. Anchor 1.0.0 through \
-            1.0.3 still define Error locally; the facade begins at 1.1.1."
+            correspondence remain external bindings."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.2",
@@ -20462,11 +15872,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.2",
             upper := "2.0.0"
@@ -20484,24 +15889,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             that exact local assignment continuation or passes through the same terminal \
             cleanup exit. It does not assert opaque destructor termination or require \
             unrelated allocation/Box-retirement laws. Physical ownership and source \
-            correspondence remain external bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The top-level method body is byte-identical from 0.23.0 through 1.2.2, but the \
-            complete contract is not. Inline Error variants before 0.29.0 lack the \
-            retained Box identity of the full model. Throughout 0.23.0-0.32.3 the reached \
-            ProgramError has BorshIoError(String), and some historical versions also lack \
-            later variants. The current fixed ProgramError.Value contains unit \
-            borshIoError and no owned message; an arbitrary old message cannot be silently \
-            forgotten in the stated complete payload, and its ownership/retirement is \
-            absent from the current primary resources. The observation also retains this \
-            concrete payload domain; restricting to common variants or adding message \
-            erasure would be a new contract/binding. From 1.0.0 all payloads fit: preserve \
-            the receiver variant, Box identity, error/origin fields, retire old \
-            compared-value Strings left then right, and install the supplied key pair. The \
-            exact existing ComparisonLaws and reached ComparisonStoreReady remain the \
-            admission conditions. This API is absent through 0.22.1. Anchor 1.0.0 through \
-            1.0.3 still define Error locally; the facade begins at 1.1.1."
+            correspondence remain external bindings."]
       },
       {
         id := "anchor-lang-error-reviewed",
@@ -20529,18 +15917,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             that exact local assignment continuation or passes through the same terminal \
             cleanup exit. It does not assert opaque destructor termination or require \
             unrelated allocation/Box-retirement laws. Physical ownership and source \
-            correspondence remain external bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.0.1.crate", "https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.2.2.crate"],
-        argument :=
-          "All six stable standalone anchor-lang-error releases preserve the current boxed \
-            Error, AnchorError, ProgramErrorWithOrigin, Source, ErrorOrigin and \
-            ComparedValues closure and the reached method. ProgramError is the 3.0.x \
-            payload domain. The v3/v4 Pubkey aliases in 1.2.1/1.2.2 preserve the copied \
-            key values. Anchor-lang reexports this crate starting at 1.1.1; standalone \
-            1.0.1 is source-only evidence and does not mean anchor-lang 1.0.1 used that \
-            package. The same operation-specific boxing, replacement, callback sequencing \
-            and cleanup argument in the anchor-lang review applies without changing the \
-            listed existing conditions."
+            correspondence remain external bindings."]
       }
     ]
     | .error_Error_with_pubkeys_inline => [
@@ -20567,14 +15944,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Assignment drops only old owned comparison strings, writes both copied Pubkeys \
-            in order and returns the same inline payload or Box identity. Origin and \
-            underlying old/new ProgramError are preserved. Compatibility in [0.27.0, \
-            0.28.0) assumes this operation and its selected dependency contracts preserve \
-            that behavior; the exact releases remain inspected references."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_with_pubkeys_observation => [
@@ -20597,23 +15967,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting value family has precondition True and replaces the comparison \
             values without String/Box operations or heap-readiness laws. Resource \
             identity, destruction and source lifetime behavior remain outside this \
-            recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The top-level method body is byte-identical from 0.23.0 through 1.2.2, but the \
-            complete contract is not. Inline Error variants before 0.29.0 lack the \
-            retained Box identity of the full model. Throughout 0.23.0-0.32.3 the reached \
-            ProgramError has BorshIoError(String), and some historical versions also lack \
-            later variants. The current fixed ProgramError.Value contains unit \
-            borshIoError and no owned message; an arbitrary old message cannot be silently \
-            forgotten in the stated complete payload, and its ownership/retirement is \
-            absent from the current primary resources. The observation also retains this \
-            concrete payload domain; restricting to common variants or adding message \
-            erasure would be a new contract/binding. From 1.0.0 all payloads fit: preserve \
-            the receiver variant, Box identity, error/origin fields, retire old \
-            compared-value Strings left then right, and install the supplied key pair. The \
-            exact existing ComparisonLaws and reached ComparisonStoreReady remain the \
-            admission conditions. This API is absent through 0.22.1."
+            recorded partial observation facet."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.1.1",
@@ -20638,11 +15992,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.1", "1.1.2", "1.2.0", "1.2.1", "1.2.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.1.1",
             upper := "2.0.0"
@@ -20653,24 +16002,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting value family has precondition True and replaces the comparison \
             values without String/Box operations or heap-readiness laws. Resource \
             identity, destruction and source lifetime behavior remain outside this \
-            recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The top-level method body is byte-identical from 0.23.0 through 1.2.2, but the \
-            complete contract is not. Inline Error variants before 0.29.0 lack the \
-            retained Box identity of the full model. Throughout 0.23.0-0.32.3 the reached \
-            ProgramError has BorshIoError(String), and some historical versions also lack \
-            later variants. The current fixed ProgramError.Value contains unit \
-            borshIoError and no owned message; an arbitrary old message cannot be silently \
-            forgotten in the stated complete payload, and its ownership/retirement is \
-            absent from the current primary resources. The observation also retains this \
-            concrete payload domain; restricting to common variants or adding message \
-            erasure would be a new contract/binding. From 1.0.0 all payloads fit: preserve \
-            the receiver variant, Box identity, error/origin fields, retire old \
-            compared-value Strings left then right, and install the supplied key pair. The \
-            exact existing ComparisonLaws and reached ComparisonStoreReady remain the \
-            admission conditions. This API is absent through 0.22.1. Anchor 1.0.0 through \
-            1.0.3 still define Error locally; the facade begins at 1.1.1."
+            recorded partial observation facet."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.1.2",
@@ -20695,11 +16027,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "2.0.0"
@@ -20710,24 +16037,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting value family has precondition True and replaces the comparison \
             values without String/Box operations or heap-readiness laws. Resource \
             identity, destruction and source lifetime behavior remain outside this \
-            recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The top-level method body is byte-identical from 0.23.0 through 1.2.2, but the \
-            complete contract is not. Inline Error variants before 0.29.0 lack the \
-            retained Box identity of the full model. Throughout 0.23.0-0.32.3 the reached \
-            ProgramError has BorshIoError(String), and some historical versions also lack \
-            later variants. The current fixed ProgramError.Value contains unit \
-            borshIoError and no owned message; an arbitrary old message cannot be silently \
-            forgotten in the stated complete payload, and its ownership/retirement is \
-            absent from the current primary resources. The observation also retains this \
-            concrete payload domain; restricting to common variants or adding message \
-            erasure would be a new contract/binding. From 1.0.0 all payloads fit: preserve \
-            the receiver variant, Box identity, error/origin fields, retire old \
-            compared-value Strings left then right, and install the supplied key pair. The \
-            exact existing ComparisonLaws and reached ComparisonStoreReady remain the \
-            admission conditions. This API is absent through 0.22.1. Anchor 1.0.0 through \
-            1.0.3 still define Error locally; the facade begins at 1.1.1."
+            recorded partial observation facet."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.0",
@@ -20752,11 +16062,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.0"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.0",
             upper := "2.0.0"
@@ -20767,24 +16072,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting value family has precondition True and replaces the comparison \
             values without String/Box operations or heap-readiness laws. Resource \
             identity, destruction and source lifetime behavior remain outside this \
-            recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The top-level method body is byte-identical from 0.23.0 through 1.2.2, but the \
-            complete contract is not. Inline Error variants before 0.29.0 lack the \
-            retained Box identity of the full model. Throughout 0.23.0-0.32.3 the reached \
-            ProgramError has BorshIoError(String), and some historical versions also lack \
-            later variants. The current fixed ProgramError.Value contains unit \
-            borshIoError and no owned message; an arbitrary old message cannot be silently \
-            forgotten in the stated complete payload, and its ownership/retirement is \
-            absent from the current primary resources. The observation also retains this \
-            concrete payload domain; restricting to common variants or adding message \
-            erasure would be a new contract/binding. From 1.0.0 all payloads fit: preserve \
-            the receiver variant, Box identity, error/origin fields, retire old \
-            compared-value Strings left then right, and install the supplied key pair. The \
-            exact existing ComparisonLaws and reached ComparisonStoreReady remain the \
-            admission conditions. This API is absent through 0.22.1. Anchor 1.0.0 through \
-            1.0.3 still define Error locally; the facade begins at 1.1.1."
+            recorded partial observation facet."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.1",
@@ -20809,11 +16097,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.1"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.1",
             upper := "2.0.0"
@@ -20824,24 +16107,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting value family has precondition True and replaces the comparison \
             values without String/Box operations or heap-readiness laws. Resource \
             identity, destruction and source lifetime behavior remain outside this \
-            recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The top-level method body is byte-identical from 0.23.0 through 1.2.2, but the \
-            complete contract is not. Inline Error variants before 0.29.0 lack the \
-            retained Box identity of the full model. Throughout 0.23.0-0.32.3 the reached \
-            ProgramError has BorshIoError(String), and some historical versions also lack \
-            later variants. The current fixed ProgramError.Value contains unit \
-            borshIoError and no owned message; an arbitrary old message cannot be silently \
-            forgotten in the stated complete payload, and its ownership/retirement is \
-            absent from the current primary resources. The observation also retains this \
-            concrete payload domain; restricting to common variants or adding message \
-            erasure would be a new contract/binding. From 1.0.0 all payloads fit: preserve \
-            the receiver variant, Box identity, error/origin fields, retire old \
-            compared-value Strings left then right, and install the supplied key pair. The \
-            exact existing ComparisonLaws and reached ComparisonStoreReady remain the \
-            admission conditions. This API is absent through 0.22.1. Anchor 1.0.0 through \
-            1.0.3 still define Error locally; the facade begins at 1.1.1."
+            recorded partial observation facet."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.2",
@@ -20866,11 +16132,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.2",
             upper := "2.0.0"
@@ -20881,24 +16142,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting value family has precondition True and replaces the comparison \
             values without String/Box operations or heap-readiness laws. Resource \
             identity, destruction and source lifetime behavior remain outside this \
-            recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The top-level method body is byte-identical from 0.23.0 through 1.2.2, but the \
-            complete contract is not. Inline Error variants before 0.29.0 lack the \
-            retained Box identity of the full model. Throughout 0.23.0-0.32.3 the reached \
-            ProgramError has BorshIoError(String), and some historical versions also lack \
-            later variants. The current fixed ProgramError.Value contains unit \
-            borshIoError and no owned message; an arbitrary old message cannot be silently \
-            forgotten in the stated complete payload, and its ownership/retirement is \
-            absent from the current primary resources. The observation also retains this \
-            concrete payload domain; restricting to common variants or adding message \
-            erasure would be a new contract/binding. From 1.0.0 all payloads fit: preserve \
-            the receiver variant, Box identity, error/origin fields, retire old \
-            compared-value Strings left then right, and install the supplied key pair. The \
-            exact existing ComparisonLaws and reached ComparisonStoreReady remain the \
-            admission conditions. This API is absent through 0.22.1. Anchor 1.0.0 through \
-            1.0.3 still define Error locally; the facade begins at 1.1.1."
+            recorded partial observation facet."]
       },
       {
         id := "anchor-lang-error-reviewed",
@@ -20919,18 +16163,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The supporting value family has precondition True and replaces the comparison \
             values without String/Box operations or heap-readiness laws. Resource \
             identity, destruction and source lifetime behavior remain outside this \
-            recorded partial observation facet."],
-        evidence := ["https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.0.1.crate", "https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.2.2.crate"],
-        argument :=
-          "All six stable standalone anchor-lang-error releases preserve the current boxed \
-            Error, AnchorError, ProgramErrorWithOrigin, Source, ErrorOrigin and \
-            ComparedValues closure and the reached method. ProgramError is the 3.0.x \
-            payload domain. The v3/v4 Pubkey aliases in 1.2.1/1.2.2 preserve the copied \
-            key values. Anchor-lang reexports this crate starting at 1.1.1; standalone \
-            1.0.1 is source-only evidence and does not mean anchor-lang 1.0.1 used that \
-            package. The same operation-specific boxing, replacement, callback sequencing \
-            and cleanup argument in the anchor-lang review applies without changing the \
-            listed existing conditions."
+            recorded partial observation facet."]
       }
     ]
     | .error_Error_with_source_inline => [
@@ -20957,14 +16190,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "The borrowed static filename/line replaces origin; an old owned account-name \
-            String is dropped before the inline payload is updated. No new String or Box \
-            is allocated. Compatibility in [0.27.0, 0.28.0) assumes this operation and its \
-            selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_with_values => [
@@ -21001,24 +16227,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             continuations from supplied finite dependency exits; they do not require \
             opaque callbacks or destructors to terminate. Actual resource ownership, \
             lifetimes, provider semantics and Rust correspondence remain separate source \
-            bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The method body is byte-identical from 0.23.0 through 1.2.2. It accepts two \
-            independent impl ToString types, calls the left conversion before the right at \
-            their actual states, replaces the old comparison only after both return, and \
-            drops operands left then right. Conversion unwind cleans any first returned \
-            String, then operands and the current receiver; a second unwind terminates. \
-            The existing callback readiness/store premises retain needed current resources \
-            without assuming callback success or termination. On a destructor panic after \
-            moving self into the return place, the fixed compiler exhibits the leak \
-            described in rustc#47949; the existing primary model explicitly admits both \
-            the release and leak choices. Pre-0.29.0 inline variants violate Box identity; \
-            all 0.23.0-0.32.3 arbitrary ProgramError payloads include \
-            BorshIoError(String), incompatible with the current concrete unit variant in \
-            both the primary and observation models. No new no-panic, common-variant or \
-            message-erasure restriction is introduced. The API is absent through 0.22.1; \
-            both facets are compatible from 1.0.0."
+            bindings."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.1.1",
@@ -21043,11 +16252,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.1", "1.1.2", "1.2.0", "1.2.1", "1.2.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.1.1",
             upper := "2.0.0"
@@ -21072,25 +16276,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             continuations from supplied finite dependency exits; they do not require \
             opaque callbacks or destructors to terminate. Actual resource ownership, \
             lifetimes, provider semantics and Rust correspondence remain separate source \
-            bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The method body is byte-identical from 0.23.0 through 1.2.2. It accepts two \
-            independent impl ToString types, calls the left conversion before the right at \
-            their actual states, replaces the old comparison only after both return, and \
-            drops operands left then right. Conversion unwind cleans any first returned \
-            String, then operands and the current receiver; a second unwind terminates. \
-            The existing callback readiness/store premises retain needed current resources \
-            without assuming callback success or termination. On a destructor panic after \
-            moving self into the return place, the fixed compiler exhibits the leak \
-            described in rustc#47949; the existing primary model explicitly admits both \
-            the release and leak choices. Pre-0.29.0 inline variants violate Box identity; \
-            all 0.23.0-0.32.3 arbitrary ProgramError payloads include \
-            BorshIoError(String), incompatible with the current concrete unit variant in \
-            both the primary and observation models. No new no-panic, common-variant or \
-            message-erasure restriction is introduced. The API is absent through 0.22.1; \
-            both facets are compatible from 1.0.0. Anchor 1.0.0 through 1.0.3 still define \
-            Error locally; the facade begins at 1.1.1."
+            bindings."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.1.2",
@@ -21115,11 +16301,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "2.0.0"
@@ -21144,25 +16325,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             continuations from supplied finite dependency exits; they do not require \
             opaque callbacks or destructors to terminate. Actual resource ownership, \
             lifetimes, provider semantics and Rust correspondence remain separate source \
-            bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The method body is byte-identical from 0.23.0 through 1.2.2. It accepts two \
-            independent impl ToString types, calls the left conversion before the right at \
-            their actual states, replaces the old comparison only after both return, and \
-            drops operands left then right. Conversion unwind cleans any first returned \
-            String, then operands and the current receiver; a second unwind terminates. \
-            The existing callback readiness/store premises retain needed current resources \
-            without assuming callback success or termination. On a destructor panic after \
-            moving self into the return place, the fixed compiler exhibits the leak \
-            described in rustc#47949; the existing primary model explicitly admits both \
-            the release and leak choices. Pre-0.29.0 inline variants violate Box identity; \
-            all 0.23.0-0.32.3 arbitrary ProgramError payloads include \
-            BorshIoError(String), incompatible with the current concrete unit variant in \
-            both the primary and observation models. No new no-panic, common-variant or \
-            message-erasure restriction is introduced. The API is absent through 0.22.1; \
-            both facets are compatible from 1.0.0. Anchor 1.0.0 through 1.0.3 still define \
-            Error locally; the facade begins at 1.1.1."
+            bindings."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.0",
@@ -21187,11 +16350,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.0"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.0",
             upper := "2.0.0"
@@ -21216,25 +16374,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             continuations from supplied finite dependency exits; they do not require \
             opaque callbacks or destructors to terminate. Actual resource ownership, \
             lifetimes, provider semantics and Rust correspondence remain separate source \
-            bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The method body is byte-identical from 0.23.0 through 1.2.2. It accepts two \
-            independent impl ToString types, calls the left conversion before the right at \
-            their actual states, replaces the old comparison only after both return, and \
-            drops operands left then right. Conversion unwind cleans any first returned \
-            String, then operands and the current receiver; a second unwind terminates. \
-            The existing callback readiness/store premises retain needed current resources \
-            without assuming callback success or termination. On a destructor panic after \
-            moving self into the return place, the fixed compiler exhibits the leak \
-            described in rustc#47949; the existing primary model explicitly admits both \
-            the release and leak choices. Pre-0.29.0 inline variants violate Box identity; \
-            all 0.23.0-0.32.3 arbitrary ProgramError payloads include \
-            BorshIoError(String), incompatible with the current concrete unit variant in \
-            both the primary and observation models. No new no-panic, common-variant or \
-            message-erasure restriction is introduced. The API is absent through 0.22.1; \
-            both facets are compatible from 1.0.0. Anchor 1.0.0 through 1.0.3 still define \
-            Error locally; the facade begins at 1.1.1."
+            bindings."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.1",
@@ -21259,11 +16399,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.1"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.1",
             upper := "2.0.0"
@@ -21288,25 +16423,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             continuations from supplied finite dependency exits; they do not require \
             opaque callbacks or destructors to terminate. Actual resource ownership, \
             lifetimes, provider semantics and Rust correspondence remain separate source \
-            bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The method body is byte-identical from 0.23.0 through 1.2.2. It accepts two \
-            independent impl ToString types, calls the left conversion before the right at \
-            their actual states, replaces the old comparison only after both return, and \
-            drops operands left then right. Conversion unwind cleans any first returned \
-            String, then operands and the current receiver; a second unwind terminates. \
-            The existing callback readiness/store premises retain needed current resources \
-            without assuming callback success or termination. On a destructor panic after \
-            moving self into the return place, the fixed compiler exhibits the leak \
-            described in rustc#47949; the existing primary model explicitly admits both \
-            the release and leak choices. Pre-0.29.0 inline variants violate Box identity; \
-            all 0.23.0-0.32.3 arbitrary ProgramError payloads include \
-            BorshIoError(String), incompatible with the current concrete unit variant in \
-            both the primary and observation models. No new no-panic, common-variant or \
-            message-erasure restriction is introduced. The API is absent through 0.22.1; \
-            both facets are compatible from 1.0.0. Anchor 1.0.0 through 1.0.3 still define \
-            Error locally; the facade begins at 1.1.1."
+            bindings."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.2",
@@ -21331,11 +16448,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.2",
             upper := "2.0.0"
@@ -21360,25 +16472,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             continuations from supplied finite dependency exits; they do not require \
             opaque callbacks or destructors to terminate. Actual resource ownership, \
             lifetimes, provider semantics and Rust correspondence remain separate source \
-            bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The method body is byte-identical from 0.23.0 through 1.2.2. It accepts two \
-            independent impl ToString types, calls the left conversion before the right at \
-            their actual states, replaces the old comparison only after both return, and \
-            drops operands left then right. Conversion unwind cleans any first returned \
-            String, then operands and the current receiver; a second unwind terminates. \
-            The existing callback readiness/store premises retain needed current resources \
-            without assuming callback success or termination. On a destructor panic after \
-            moving self into the return place, the fixed compiler exhibits the leak \
-            described in rustc#47949; the existing primary model explicitly admits both \
-            the release and leak choices. Pre-0.29.0 inline variants violate Box identity; \
-            all 0.23.0-0.32.3 arbitrary ProgramError payloads include \
-            BorshIoError(String), incompatible with the current concrete unit variant in \
-            both the primary and observation models. No new no-panic, common-variant or \
-            message-erasure restriction is introduced. The API is absent through 0.22.1; \
-            both facets are compatible from 1.0.0. Anchor 1.0.0 through 1.0.3 still define \
-            Error locally; the facade begins at 1.1.1."
+            bindings."]
       },
       {
         id := "anchor-lang-error-reviewed",
@@ -21413,18 +16507,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             continuations from supplied finite dependency exits; they do not require \
             opaque callbacks or destructors to terminate. Actual resource ownership, \
             lifetimes, provider semantics and Rust correspondence remain separate source \
-            bindings."],
-        evidence := ["https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.0.1.crate", "https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.2.2.crate"],
-        argument :=
-          "All six stable standalone anchor-lang-error releases preserve the current boxed \
-            Error, AnchorError, ProgramErrorWithOrigin, Source, ErrorOrigin and \
-            ComparedValues closure and the reached method. ProgramError is the 3.0.x \
-            payload domain. The v3/v4 Pubkey aliases in 1.2.1/1.2.2 preserve the copied \
-            key values. Anchor-lang reexports this crate starting at 1.1.1; standalone \
-            1.0.1 is source-only evidence and does not mean anchor-lang 1.0.1 used that \
-            package. The same operation-specific boxing, replacement, callback sequencing \
-            and cleanup argument in the anchor-lang review applies without changing the \
-            listed existing conditions."
+            bindings."]
       }
     ]
     | .error_Error_with_values_inline => [
@@ -21451,17 +16534,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "Convert left then right with the actual user ToString callbacks, protect the \
-            first String during second-conversion unwind, then drop replaced comparison \
-            Strings and store the new pair. Source local destructors run in order. Later \
-            cleanup unwind retains the actual updated receiver/drop behavior, including \
-            the pinned edition-2021 moved-return-place alternative; terminal paths stop \
-            without invented cleanup. Compatibility in [0.27.0, 0.28.0) assumes this \
-            operation and its selected dependency contracts preserve that behavior; the \
-            exact releases remain inspected references."
+            a source dependency terminates."]
       }
     ]
     | .error_Error_with_values_observation => [
@@ -21486,24 +16559,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             states, without owned-heap readiness or String/Box-law premises.", "The \
             returned text and abnormal exits of the callbacks remain explicit; this \
             recorded partial observation facet does not establish owned-resource \
-            allocation, retirement or Rust implementation correctness."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The method body is byte-identical from 0.23.0 through 1.2.2. It accepts two \
-            independent impl ToString types, calls the left conversion before the right at \
-            their actual states, replaces the old comparison only after both return, and \
-            drops operands left then right. Conversion unwind cleans any first returned \
-            String, then operands and the current receiver; a second unwind terminates. \
-            The existing callback readiness/store premises retain needed current resources \
-            without assuming callback success or termination. On a destructor panic after \
-            moving self into the return place, the fixed compiler exhibits the leak \
-            described in rustc#47949; the existing primary model explicitly admits both \
-            the release and leak choices. Pre-0.29.0 inline variants violate Box identity; \
-            all 0.23.0-0.32.3 arbitrary ProgramError payloads include \
-            BorshIoError(String), incompatible with the current concrete unit variant in \
-            both the primary and observation models. No new no-panic, common-variant or \
-            message-erasure restriction is introduced. The API is absent through 0.22.1; \
-            both facets are compatible from 1.0.0."
+            allocation, retirement or Rust implementation correctness."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.1.1",
@@ -21528,11 +16584,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.1", "1.1.2", "1.2.0", "1.2.1", "1.2.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.1.1",
             upper := "2.0.0"
@@ -21545,25 +16596,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             states, without owned-heap readiness or String/Box-law premises.", "The \
             returned text and abnormal exits of the callbacks remain explicit; this \
             recorded partial observation facet does not establish owned-resource \
-            allocation, retirement or Rust implementation correctness."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The method body is byte-identical from 0.23.0 through 1.2.2. It accepts two \
-            independent impl ToString types, calls the left conversion before the right at \
-            their actual states, replaces the old comparison only after both return, and \
-            drops operands left then right. Conversion unwind cleans any first returned \
-            String, then operands and the current receiver; a second unwind terminates. \
-            The existing callback readiness/store premises retain needed current resources \
-            without assuming callback success or termination. On a destructor panic after \
-            moving self into the return place, the fixed compiler exhibits the leak \
-            described in rustc#47949; the existing primary model explicitly admits both \
-            the release and leak choices. Pre-0.29.0 inline variants violate Box identity; \
-            all 0.23.0-0.32.3 arbitrary ProgramError payloads include \
-            BorshIoError(String), incompatible with the current concrete unit variant in \
-            both the primary and observation models. No new no-panic, common-variant or \
-            message-erasure restriction is introduced. The API is absent through 0.22.1; \
-            both facets are compatible from 1.0.0. Anchor 1.0.0 through 1.0.3 still define \
-            Error locally; the facade begins at 1.1.1."
+            allocation, retirement or Rust implementation correctness."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.1.2",
@@ -21588,11 +16621,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "2.0.0"
@@ -21605,25 +16633,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             states, without owned-heap readiness or String/Box-law premises.", "The \
             returned text and abnormal exits of the callbacks remain explicit; this \
             recorded partial observation facet does not establish owned-resource \
-            allocation, retirement or Rust implementation correctness."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The method body is byte-identical from 0.23.0 through 1.2.2. It accepts two \
-            independent impl ToString types, calls the left conversion before the right at \
-            their actual states, replaces the old comparison only after both return, and \
-            drops operands left then right. Conversion unwind cleans any first returned \
-            String, then operands and the current receiver; a second unwind terminates. \
-            The existing callback readiness/store premises retain needed current resources \
-            without assuming callback success or termination. On a destructor panic after \
-            moving self into the return place, the fixed compiler exhibits the leak \
-            described in rustc#47949; the existing primary model explicitly admits both \
-            the release and leak choices. Pre-0.29.0 inline variants violate Box identity; \
-            all 0.23.0-0.32.3 arbitrary ProgramError payloads include \
-            BorshIoError(String), incompatible with the current concrete unit variant in \
-            both the primary and observation models. No new no-panic, common-variant or \
-            message-erasure restriction is introduced. The API is absent through 0.22.1; \
-            both facets are compatible from 1.0.0. Anchor 1.0.0 through 1.0.3 still define \
-            Error locally; the facade begins at 1.1.1."
+            allocation, retirement or Rust implementation correctness."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.0",
@@ -21648,11 +16658,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.0"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.0",
             upper := "2.0.0"
@@ -21665,25 +16670,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             states, without owned-heap readiness or String/Box-law premises.", "The \
             returned text and abnormal exits of the callbacks remain explicit; this \
             recorded partial observation facet does not establish owned-resource \
-            allocation, retirement or Rust implementation correctness."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The method body is byte-identical from 0.23.0 through 1.2.2. It accepts two \
-            independent impl ToString types, calls the left conversion before the right at \
-            their actual states, replaces the old comparison only after both return, and \
-            drops operands left then right. Conversion unwind cleans any first returned \
-            String, then operands and the current receiver; a second unwind terminates. \
-            The existing callback readiness/store premises retain needed current resources \
-            without assuming callback success or termination. On a destructor panic after \
-            moving self into the return place, the fixed compiler exhibits the leak \
-            described in rustc#47949; the existing primary model explicitly admits both \
-            the release and leak choices. Pre-0.29.0 inline variants violate Box identity; \
-            all 0.23.0-0.32.3 arbitrary ProgramError payloads include \
-            BorshIoError(String), incompatible with the current concrete unit variant in \
-            both the primary and observation models. No new no-panic, common-variant or \
-            message-erasure restriction is introduced. The API is absent through 0.22.1; \
-            both facets are compatible from 1.0.0. Anchor 1.0.0 through 1.0.3 still define \
-            Error locally; the facade begins at 1.1.1."
+            allocation, retirement or Rust implementation correctness."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.1",
@@ -21708,11 +16695,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.1"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.1",
             upper := "2.0.0"
@@ -21725,25 +16707,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             states, without owned-heap readiness or String/Box-law premises.", "The \
             returned text and abnormal exits of the callbacks remain explicit; this \
             recorded partial observation facet does not establish owned-resource \
-            allocation, retirement or Rust implementation correctness."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The method body is byte-identical from 0.23.0 through 1.2.2. It accepts two \
-            independent impl ToString types, calls the left conversion before the right at \
-            their actual states, replaces the old comparison only after both return, and \
-            drops operands left then right. Conversion unwind cleans any first returned \
-            String, then operands and the current receiver; a second unwind terminates. \
-            The existing callback readiness/store premises retain needed current resources \
-            without assuming callback success or termination. On a destructor panic after \
-            moving self into the return place, the fixed compiler exhibits the leak \
-            described in rustc#47949; the existing primary model explicitly admits both \
-            the release and leak choices. Pre-0.29.0 inline variants violate Box identity; \
-            all 0.23.0-0.32.3 arbitrary ProgramError payloads include \
-            BorshIoError(String), incompatible with the current concrete unit variant in \
-            both the primary and observation models. No new no-panic, common-variant or \
-            message-erasure restriction is introduced. The API is absent through 0.22.1; \
-            both facets are compatible from 1.0.0. Anchor 1.0.0 through 1.0.3 still define \
-            Error locally; the facade begins at 1.1.1."
+            allocation, retirement or Rust implementation correctness."]
       },
       {
         id := "anchor-lang-reviewed-error-facade-1.2.2",
@@ -21768,11 +16732,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.2.2"],
-          reason :=
-            "The selected defining error crate is assumed to preserve the reference Error \
-              payloads, boxing, replacement and cleanup. Use its actual resolved version \
-              for the facade identity. Cargo matching-version requirements are compilation \
-              facts, not additional behavior restrictions.",
           compatibleRanges := [{
             lower := "1.2.2",
             upper := "2.0.0"
@@ -21785,25 +16744,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             states, without owned-heap readiness or String/Box-law premises.", "The \
             returned text and abnormal exits of the callbacks remain explicit; this \
             recorded partial observation facet does not establish owned-resource \
-            allocation, retirement or Rust implementation correctness."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "The method body is byte-identical from 0.23.0 through 1.2.2. It accepts two \
-            independent impl ToString types, calls the left conversion before the right at \
-            their actual states, replaces the old comparison only after both return, and \
-            drops operands left then right. Conversion unwind cleans any first returned \
-            String, then operands and the current receiver; a second unwind terminates. \
-            The existing callback readiness/store premises retain needed current resources \
-            without assuming callback success or termination. On a destructor panic after \
-            moving self into the return place, the fixed compiler exhibits the leak \
-            described in rustc#47949; the existing primary model explicitly admits both \
-            the release and leak choices. Pre-0.29.0 inline variants violate Box identity; \
-            all 0.23.0-0.32.3 arbitrary ProgramError payloads include \
-            BorshIoError(String), incompatible with the current concrete unit variant in \
-            both the primary and observation models. No new no-panic, common-variant or \
-            message-erasure restriction is introduced. The API is absent through 0.22.1; \
-            both facets are compatible from 1.0.0. Anchor 1.0.0 through 1.0.3 still define \
-            Error locally; the facade begins at 1.1.1."
+            allocation, retirement or Rust implementation correctness."]
       },
       {
         id := "anchor-lang-error-reviewed",
@@ -21826,18 +16767,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             states, without owned-heap readiness or String/Box-law premises.", "The \
             returned text and abnormal exits of the callbacks remain explicit; this \
             recorded partial observation facet does not establish owned-resource \
-            allocation, retirement or Rust implementation correctness."],
-        evidence := ["https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.0.1.crate", "https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.2.2.crate"],
-        argument :=
-          "All six stable standalone anchor-lang-error releases preserve the current boxed \
-            Error, AnchorError, ProgramErrorWithOrigin, Source, ErrorOrigin and \
-            ComparedValues closure and the reached method. ProgramError is the 3.0.x \
-            payload domain. The v3/v4 Pubkey aliases in 1.2.1/1.2.2 preserve the copied \
-            key values. Anchor-lang reexports this crate starting at 1.1.1; standalone \
-            1.0.1 is source-only evidence and does not mean anchor-lang 1.0.1 used that \
-            package. The same operation-specific boxing, replacement, callback sequencing \
-            and cleanup argument in the anchor-lang review applies without changing the \
-            listed existing conditions."
+            allocation, retirement or Rust implementation correctness."]
       }
     ]
     | .error_ErrorCode_name => [
@@ -21864,11 +16794,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected anchor-syn 0.32.1–0.32.3 providers support [0.32.1, 0.33.0) \
-              only while the reached parser/attribute expansion and emitted variant-name \
-              match preserve this operation. IDL helper generation does not replace the \
-              method; no condition on unused Display or numeric conversion is added.",
           compatibleRanges := [{
             lower := "0.32.1",
             upper := "0.33.0"
@@ -21882,14 +16807,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate", "https://static.crates.io/crates/anchor-syn/anchor-syn-0.32.1.crate", "https://static.crates.io/crates/anchor-syn/anchor-syn-0.32.2.crate", "https://static.crates.io/crates/anchor-syn/anchor-syn-0.32.3.crate", "https://static.crates.io/crates/anchor-attribute-error/anchor-attribute-error-0.32.1.crate", "https://static.crates.io/crates/anchor-attribute-error/anchor-attribute-error-0.32.2.crate", "https://static.crates.io/crates/anchor-attribute-error/anchor-attribute-error-0.32.3.crate"],
-        argument :=
-          "The declared range [0.32.1, 0.33.0) assumes the behavior of the inspected \
-            0.32.1–0.32.3 sources: select the exact variant name and construct one owned \
-            String through the reached string primitive. The 77-name match and its exits \
-            are preserved; this method does not format an error message or allocate an \
-            Error box."
+            a source dependency terminates."]
       }
     ]
     | .error_ErrorCode_name_account_migration => [
@@ -21915,10 +16833,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.0.2"],
-          reason :=
-            "The resolved macro provider generates this exact variant match, code offset \
-              and name/message conversion."
+          releases := ["1.0.2"]
         }],
         conditions :=
           ["A Rust binding must establish the actual value layouts, borrowed references \
@@ -21928,17 +16843,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Preserve the complete migration-extended ErrorCode variant/code/name/message \
-            table and matching macro expansion. Name allocates one String; From copies the \
-            name, formats the message, then boxes the error in source order. The 0.32 \
-            table lacks these migration variants, and the 1.1 line moves the defining \
-            error module to anchor-lang-error; neither is selected by this profile. The \
-            declared range is a complete-operation preservation assumption; inspected \
-            releases, native runs, exact ABI observations and source-call implementation \
-            obligations remain separate."
+            a source dependency terminates."]
       }
     ]
     | .error_ErrorCode_name_legacy => [
@@ -21965,12 +16870,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.29.0"],
-          reason :=
-            "Reference 0.29.0; [0.29.0, 0.30.0) assumes the following used contract \
-              remains unchanged. Preserve the complete 0.29 variant-to-name method and \
-              actual String construction of the selected error macro. A matching macro \
-              release does not prove allocator behavior or admit a different diagnostic \
-              name table.",
           compatibleRanges := [{
             lower := "0.29.0",
             upper := "0.30.0"
@@ -21984,15 +16883,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Use the complete 0.29 ErrorCode \
-            variant-to-name table generated by the matching error macro. Construct the \
-            actual name String with its allocation and cleanup effects; no later table or \
-            infallible formatter is substituted. Compatibility in [0.29.0, 0.30.0) assumes \
-            this complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            a source dependency terminates."]
       }
     ]
     | .error_ErrorCode_name_pre_token_program_checks => [
@@ -22019,10 +16910,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.27.0"],
-          reason :=
-            "Assume the 0.27 macro reference preserves all 56 ErrorCode variants, numeric \
-              codes, names/messages and generated conversion order. The next compatibility \
-              line is not admitted.",
           compatibleRanges := [{
             lower := "0.27.0",
             upper := "0.28.0"
@@ -22036,14 +16923,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "The 0.27 reference has exactly 56 ErrorCode variants with their full numeric \
-            codes, names and messages. Return the exact generated owned name for each \
-            variant. Compatibility in [0.27.0, 0.28.0) assumes this operation and its \
-            selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            a source dependency terminates."]
       }
     ]
     | .idl_IdlInstruction_deserialize => [
@@ -22070,10 +16950,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["0.9.3"],
-          reason :=
-            "The older fixed-slice decoder and derive preserve this exact short-read \
-              cursor and InvalidInput behavior."
+          releases := ["0.9.3"]
         }],
         conditions :=
           ["A Rust binding must establish the actual value layouts, borrowed references \
@@ -22083,17 +16960,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             finite exits. Bind only the operations actually reached by this function; no \
             whole-function callback is assumed.", "Error construction follows the shared \
             diagnostic-allocation boundary. A finite reference sample is not evidence that \
-            a source dependency terminates."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate"],
-        argument :=
-          "The Borsh 0.9.3 derive reads one tag then the selected fields in declaration \
-            order. Scalar short reads preserve the failed field cursor; earlier consumed \
-            fields remain consumed. Write owns its decoded Vec, including an empty Vec for \
-            length zero; invalid tags and short input allocate exact InvalidInput \
-            diagnostics. This predecessor decoder is not the newer reader method. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            a source dependency terminates."]
       }
     ]
     | .solana_program_instruction_get_stack_height => [
@@ -22116,15 +16983,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -22138,15 +17001,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "Preserve the target_os=solana u64 syscall result cast to 64-bit usize and the \
-            fixed runtime frame-count interpretation. The inspected later change only \
-            redirects the excluded host stub; no host execution or runtime registration \
-            follows from this source range. The declared range is a complete-operation \
-            preservation assumption; inspected releases, native runs, exact ABI \
-            observations and source-call implementation obligations remain separate."
+            interpretation."]
       }
     ]
     | .solana_program_log_sol_log_data => [
@@ -22172,23 +17027,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["The source cfg and actual syscall sink interpretation are supplied; no logging \
-            success or display encoding is invented."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.2.2.crate"],
-        argument :=
-          "From 0.32.0 the Anchor-owned wrapper implements both existing target branches: \
-            Solana forwards the original outer slice pointer and field count once to the \
-            declared sink; other targets evaluate black_box(data) with no sink call. The \
-            1.2.1/1.2.2 compat-module indirection selects equivalent v3/v4 declarations. \
-            Prior releases reexport solana-program::log::sol_log_data where present. Every \
-            reviewed API-bearing historical wrapper calls a mutable host stub on the host, \
-            rather than the required host no-op, so the whole two-target contract is \
-            incompatible. solana-program 1.8.0 and earlier inspected pins have no such \
-            API; 1.8.1 first introduces it. Anchor releases exactly pinning 1.5.0, 1.7.8 \
-            or 1.7.11 are classified API-absent. Earlier caret dependencies can select an \
-            API-absent version or an available-but-incompatible wrapper; the incompatible \
-            array means no compatible executable resolution, with this absence nuance \
-            retained. No native SBF/static-syscall execution, display encoding or runtime \
-            logging success is claimed."
+            success or display encoding is invented."]
       }
     ]
     | .system_program_System_id => [
@@ -22207,14 +17046,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           lower := "0.32.0",
           upper := "0.33.0"
         }],
-        conditions := ["The source result is interpreted as its exact 32 bytes."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "The inspected 0.32.0–0.32.3 operation and reached context/error definitions \
-            agree. The declared 0.32 range assumes all 32 bytes of the fixed System ID, \
-            with no allocation, syscall or source-state change. Actual provider, layout \
-            and finite-exit obligations remain unchanged."
+        conditions := ["The source result is interpreted as its exact 32 bytes."]
       }
     ]
     | .system_program_allocate => [
@@ -22241,10 +17073,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.0.0"],
-          reason :=
-            "Assume the selected constructor preserves its fixed System ID, ordered metas, \
-              bincode enum fields and metadata-before-serialization allocation/cleanup \
-              protocol.",
           compatibleRanges := [{
             lower := "1.0.0",
             upper := "2.0.0"
@@ -22257,10 +17085,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the referenced AccountInfo carrier preserves its Rc aliases and \
-              declaration-order lamports/data destruction; moved occurrences and current \
-              resource contents remain distinct.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -22273,10 +17097,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "These inspected enums are identical, including BorshIoError(String). Assume \
-              preservation of the complete variants and owned payload; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -22289,9 +17109,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.4.0"],
-          reason :=
-            "Assume the 32-byte key carrier, copied key values and serde encoding used by \
-              the System fields remain unchanged; no PDA or curve operation is required.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -22304,10 +17121,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Assume the reference serializer preserves fixed-width little-endian enum/u64 \
-              encoding, 32-byte owner encoding and the reached allocation/error/unwrap \
-              effects.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -22327,15 +17140,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "Anchor Lang 0.32.0–0.32.3 have identical System wrapper, context and \
-            error-conversion files. The declared 0.32 range assumes the same tag 8 and \
-            copied space, with one writable signer, moved account array, owned context \
-            program and boxed legacy error cleanup. The 0.32.0 prelude-only change is \
-            outside these calls; 1.0.0 changes the program carrier."
+            edge."]
       },
       {
         id := "anchor-system-0-29-0",
@@ -22360,12 +17165,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the selected SystemInstruction constructor and \
-              account order, owned stable-instruction clone, AccountInfo preflight and \
-              legacy error conversion around opaque invocation. Retain source allocation \
-              and cleanup order; no callee execution is proved.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -22378,12 +17177,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Reference 1.3.3; [1.3.3, 2.0.0) assumes the following used contract remains \
-              unchanged. Preserve the reached default little-endian SystemInstruction \
-              serialization, enum/field order and Vec result, including the seed String \
-              encoding where present. Retain allocation, owned error and reached \
-              unwrap/cleanup behavior; unrelated decoder operations are not required.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -22403,16 +17196,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Construct the allocate instruction before \
-            invoking with the exact ordered account and signer-seed slices. Preserve \
-            current context owners, constructor/CPI outcomes and cleanup; invocation stays \
-            opaque. Compatibility in [0.29.0, 0.30.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            edge."]
       }
     ]
     | .system_program_allocate_inline_borsh => [
@@ -22439,11 +17223,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -22455,10 +17234,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.3.3"],
-          reason :=
-            "Fixed integer/enum little-endian serializer used by the actual System \
-              constructor."
+          releases := ["1.3.3"]
         }],
         conditions :=
           ["Bind constructor allocation, bincode serialization, Vec/Rc cleanup, current \
@@ -22474,20 +17250,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "Construct fixed system ID, exact metadata order/flags and little-endian bincode \
-            data before moving accounts; remaining accounts are not forwarded. \
-            Edition-2021 cleanup drops instruction metadata/data, tail-expression account \
-            array, then remaining accounts and the owned context program AccountInfo. \
-            ProgramError converts inline. Review covers full context/error dependencies, \
-            not equal wrapper text alone. Projected-wrapper tests retain exact source and \
-            real context/constructors, replacing only the whole invocation signature. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            edge."]
       }
     ]
     | .system_program_allocate_unit_borsh => [
@@ -22514,10 +17277,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.0.0"],
-          reason :=
-            "Assume the reached System constructor retains fixed program ID, metadata \
-              order/flags and exact variant/argument bytes, with its actual moves and \
-              allocation failures.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -22530,10 +17289,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -22546,10 +17301,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -22562,10 +17313,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.0"],
-          reason :=
-            "Assume the selected Pubkey facade retains its defining Address identity, \
-              complete key representation and the reached copy/PDA operation; the concrete \
-              provider and full ABI join remain separate.",
           compatibleRanges := [{
             lower := "3.0.0",
             upper := "4.0.0"
@@ -22578,11 +17325,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -22595,10 +17337,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Assume fixed little-endian enum-tag/integer/Pubkey encoding for this System \
-              constructor and retain its actual serializer allocation, failures and \
-              cleanup.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -22618,18 +17356,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "The declared compatible range assumes the fixed System ID, writable metadata in \
-            source order (the account-to-allocate signer) and little-endian Bincode \
-            variant 8 with the actual arguments before account moves. Remaining accounts \
-            are retained only for cleanup. Box the complete modern unit-Borsh ProgramError \
-            before Edition-2021 destruction of instruction metadata/data, the \
-            tail-expression account array and remaining accounts; copied program_id has no \
-            destructor. The invocation provider retains its full result and state. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            edge."]
       },
       {
         id := "anchor-system-1-0-2",
@@ -22653,10 +17380,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.0.0"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["2.0.0"]
         }, {
           package := "solana-account-info",
           source := some {
@@ -22664,10 +17388,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -22675,10 +17396,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["3.0.1"]
         }, {
           package := "solana-pubkey",
           source := some {
@@ -22686,10 +17404,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.0"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["3.0.0"]
         }, {
           package := "bincode",
           source := some {
@@ -22697,10 +17412,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.3.3"],
-          reason :=
-            "Fixed integer/enum little-endian serializer used by the actual System \
-              constructor."
+          releases := ["1.3.3"]
         }],
         conditions :=
           ["Bind constructor allocation, bincode serialization, Vec/Rc cleanup, current \
@@ -22716,23 +17428,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-system.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Construct fixed system ID, exact metadata order/flags and little-endian bincode \
-            data before moving accounts; remaining accounts are not forwarded. \
-            Edition-2021 cleanup drops instruction metadata/data, tail-expression account \
-            array, then remaining accounts; copied program_id has no destructor. \
-            ProgramError is boxed before cleanup. Review covers full context/error \
-            dependencies, not equal wrapper text alone. Projected-wrapper tests retain \
-            exact source and real context/constructors, replacing only the whole \
-            invocation signature. Preserve the complete 1.0 operation, reached callbacks \
-            and cleanup at the original exact dependency/build gates; adding this \
-            alternative does not replace modern parent alternatives. The declared range is \
-            a complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            edge."]
       }
     ]
     | .system_program_assign => [
@@ -22759,10 +17455,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.0.0"],
-          reason :=
-            "Assume the selected constructor preserves its fixed System ID, ordered metas, \
-              bincode enum fields and metadata-before-serialization allocation/cleanup \
-              protocol.",
           compatibleRanges := [{
             lower := "1.0.0",
             upper := "2.0.0"
@@ -22775,10 +17467,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the referenced AccountInfo carrier preserves its Rc aliases and \
-              declaration-order lamports/data destruction; moved occurrences and current \
-              resource contents remain distinct.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -22791,10 +17479,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "These inspected enums are identical, including BorshIoError(String). Assume \
-              preservation of the complete variants and owned payload; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -22807,9 +17491,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.4.0"],
-          reason :=
-            "Assume the 32-byte key carrier, copied key values and serde encoding used by \
-              the System fields remain unchanged; no PDA or curve operation is required.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -22822,10 +17503,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Assume the reference serializer preserves fixed-width little-endian enum/u64 \
-              encoding, 32-byte owner encoding and the reached allocation/error/unwrap \
-              effects.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -22845,15 +17522,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "Anchor Lang 0.32.0–0.32.3 have identical System wrapper, context and \
-            error-conversion files. The declared 0.32 range assumes the same tag 1 and all \
-            owner bytes, with one writable signer, moved account array, owned context \
-            program and boxed legacy error cleanup. The 0.32.0 prelude-only change is \
-            outside these calls; 1.0.0 changes the program carrier."
+            edge."]
       },
       {
         id := "anchor-system-0-29-0",
@@ -22878,12 +17547,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the selected SystemInstruction constructor and \
-              account order, owned stable-instruction clone, AccountInfo preflight and \
-              legacy error conversion around opaque invocation. Retain source allocation \
-              and cleanup order; no callee execution is proved.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -22896,12 +17559,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Reference 1.3.3; [1.3.3, 2.0.0) assumes the following used contract remains \
-              unchanged. Preserve the reached default little-endian SystemInstruction \
-              serialization, enum/field order and Vec result, including the seed String \
-              encoding where present. Retain allocation, owned error and reached \
-              unwrap/cleanup behavior; unrelated decoder operations are not required.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -22921,15 +17578,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Construct the assign instruction with the \
-            supplied owner before opaque invocation. Preserve exact account order, signer \
-            seeds, owned context fields and all reached cleanup. Compatibility in [0.29.0, \
-            0.30.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            edge."]
       }
     ]
     | .system_program_assign_inline_borsh => [
@@ -22956,11 +17605,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -22972,10 +17616,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.3.3"],
-          reason :=
-            "Fixed integer/enum little-endian serializer used by the actual System \
-              constructor."
+          releases := ["1.3.3"]
         }],
         conditions :=
           ["Bind constructor allocation, bincode serialization, Vec/Rc cleanup, current \
@@ -22991,20 +17632,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "Construct fixed system ID, exact metadata order/flags and little-endian bincode \
-            data before moving accounts; remaining accounts are not forwarded. \
-            Edition-2021 cleanup drops instruction metadata/data, tail-expression account \
-            array, then remaining accounts and the owned context program AccountInfo. \
-            ProgramError converts inline. Review covers full context/error dependencies, \
-            not equal wrapper text alone. Projected-wrapper tests retain exact source and \
-            real context/constructors, replacing only the whole invocation signature. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            edge."]
       }
     ]
     | .system_program_assign_unit_borsh => [
@@ -23031,10 +17659,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.0.0"],
-          reason :=
-            "Assume the reached System constructor retains fixed program ID, metadata \
-              order/flags and exact variant/argument bytes, with its actual moves and \
-              allocation failures.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -23047,10 +17671,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -23063,10 +17683,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -23079,10 +17695,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.0"],
-          reason :=
-            "Assume the selected Pubkey facade retains its defining Address identity, \
-              complete key representation and the reached copy/PDA operation; the concrete \
-              provider and full ABI join remain separate.",
           compatibleRanges := [{
             lower := "3.0.0",
             upper := "4.0.0"
@@ -23095,11 +17707,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -23112,10 +17719,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Assume fixed little-endian enum-tag/integer/Pubkey encoding for this System \
-              constructor and retain its actual serializer allocation, failures and \
-              cleanup.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -23135,18 +17738,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "The declared compatible range assumes the fixed System ID, writable metadata in \
-            source order (the account-to-assign signer) and little-endian Bincode variant \
-            1 with the actual arguments before account moves. Remaining accounts are \
-            retained only for cleanup. Box the complete modern unit-Borsh ProgramError \
-            before Edition-2021 destruction of instruction metadata/data, the \
-            tail-expression account array and remaining accounts; copied program_id has no \
-            destructor. The invocation provider retains its full result and state. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            edge."]
       },
       {
         id := "anchor-system-1-0-2",
@@ -23170,10 +17762,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.0.0"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["2.0.0"]
         }, {
           package := "solana-account-info",
           source := some {
@@ -23181,10 +17770,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -23192,10 +17778,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["3.0.1"]
         }, {
           package := "solana-pubkey",
           source := some {
@@ -23203,10 +17786,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.0"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["3.0.0"]
         }, {
           package := "bincode",
           source := some {
@@ -23214,10 +17794,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.3.3"],
-          reason :=
-            "Fixed integer/enum little-endian serializer used by the actual System \
-              constructor."
+          releases := ["1.3.3"]
         }],
         conditions :=
           ["Bind constructor allocation, bincode serialization, Vec/Rc cleanup, current \
@@ -23233,23 +17810,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-system.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Construct fixed system ID, exact metadata order/flags and little-endian bincode \
-            data before moving accounts; remaining accounts are not forwarded. \
-            Edition-2021 cleanup drops instruction metadata/data, tail-expression account \
-            array, then remaining accounts; copied program_id has no destructor. \
-            ProgramError is boxed before cleanup. Review covers full context/error \
-            dependencies, not equal wrapper text alone. Projected-wrapper tests retain \
-            exact source and real context/constructors, replacing only the whole \
-            invocation signature. Preserve the complete 1.0 operation, reached callbacks \
-            and cleanup at the original exact dependency/build gates; adding this \
-            alternative does not replace modern parent alternatives. The declared range is \
-            a complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            edge."]
       }
     ]
     | .system_program_create_account => [
@@ -23276,10 +17837,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.0.0"],
-          reason :=
-            "Assume the selected constructor preserves its fixed System ID, ordered metas, \
-              bincode enum fields and metadata-before-serialization allocation/cleanup \
-              protocol.",
           compatibleRanges := [{
             lower := "1.0.0",
             upper := "2.0.0"
@@ -23292,10 +17849,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the referenced AccountInfo carrier preserves its Rc aliases and \
-              declaration-order lamports/data destruction; moved occurrences and current \
-              resource contents remain distinct.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -23308,10 +17861,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "These inspected enums are identical, including BorshIoError(String). Assume \
-              preservation of the complete variants and owned payload; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -23324,9 +17873,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.4.0"],
-          reason :=
-            "Assume the 32-byte key carrier, copied key values and serde encoding used by \
-              the System fields remain unchanged; no PDA or curve operation is required.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -23339,10 +17885,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Assume the reference serializer preserves fixed-width little-endian enum/u64 \
-              encoding, 32-byte owner encoding and the reached allocation/error/unwrap \
-              effects.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -23362,15 +17904,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "Anchor Lang 0.32.0–0.32.3 have identical System wrapper, context and \
-            error-conversion files. The declared 0.32 range assumes the same tag 0 and \
-            lamports/space/owner, with ordered from/to writable signers, moved account \
-            array, owned context program and boxed legacy error cleanup. The 0.32.0 \
-            prelude-only change is outside these calls; 1.0.0 changes the program carrier."
+            edge."]
       },
       {
         id := "anchor-system-0-29-0",
@@ -23395,12 +17929,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the selected SystemInstruction constructor and \
-              account order, owned stable-instruction clone, AccountInfo preflight and \
-              legacy error conversion around opaque invocation. Retain source allocation \
-              and cleanup order; no callee execution is proved.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -23413,12 +17941,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Reference 1.3.3; [1.3.3, 2.0.0) assumes the following used contract remains \
-              unchanged. Preserve the reached default little-endian SystemInstruction \
-              serialization, enum/field order and Vec result, including the seed String \
-              encoding where present. Retain allocation, owned error and reached \
-              unwrap/cleanup behavior; unrelated decoder operations are not required.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -23438,15 +17960,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Construct the transfer/new-owner data and \
-            exact from/to metas before opaque invocation. Retain the source account order, \
-            lamports/space/owner arguments and context cleanup. Compatibility in [0.29.0, \
-            0.30.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            edge."]
       }
     ]
     | .system_program_create_account_inline_borsh => [
@@ -23473,11 +17987,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -23489,10 +17998,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.3.3"],
-          reason :=
-            "Fixed integer/enum little-endian serializer used by the actual System \
-              constructor."
+          releases := ["1.3.3"]
         }],
         conditions :=
           ["Bind constructor allocation, bincode serialization, Vec/Rc cleanup, current \
@@ -23508,20 +18014,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "Construct fixed system ID, exact metadata order/flags and little-endian bincode \
-            data before moving accounts; remaining accounts are not forwarded. \
-            Edition-2021 cleanup drops instruction metadata/data, tail-expression account \
-            array, then remaining accounts and the owned context program AccountInfo. \
-            ProgramError converts inline. Review covers full context/error dependencies, \
-            not equal wrapper text alone. Projected-wrapper tests retain exact source and \
-            real context/constructors, replacing only the whole invocation signature. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            edge."]
       }
     ]
     | .system_program_create_account_unit_borsh => [
@@ -23548,10 +18041,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.0.0"],
-          reason :=
-            "Assume the reached System constructor retains fixed program ID, metadata \
-              order/flags and exact variant/argument bytes, with its actual moves and \
-              allocation failures.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -23564,10 +18053,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -23580,10 +18065,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -23596,10 +18077,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.0"],
-          reason :=
-            "Assume the selected Pubkey facade retains its defining Address identity, \
-              complete key representation and the reached copy/PDA operation; the concrete \
-              provider and full ABI join remain separate.",
           compatibleRanges := [{
             lower := "3.0.0",
             upper := "4.0.0"
@@ -23612,11 +18089,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -23629,10 +18101,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Assume fixed little-endian enum-tag/integer/Pubkey encoding for this System \
-              constructor and retain its actual serializer allocation, failures and \
-              cleanup.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -23652,18 +18120,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "The declared compatible range assumes the fixed System ID, writable metadata in \
-            source order (from then to, both signers) and little-endian Bincode variant 0 \
-            with the actual arguments before account moves. Remaining accounts are \
-            retained only for cleanup. Box the complete modern unit-Borsh ProgramError \
-            before Edition-2021 destruction of instruction metadata/data, the \
-            tail-expression account array and remaining accounts; copied program_id has no \
-            destructor. The invocation provider retains its full result and state. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            edge."]
       },
       {
         id := "anchor-system-1-0-2",
@@ -23687,10 +18144,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.0.0"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["2.0.0"]
         }, {
           package := "solana-account-info",
           source := some {
@@ -23698,10 +18152,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -23709,10 +18160,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["3.0.1"]
         }, {
           package := "solana-pubkey",
           source := some {
@@ -23720,10 +18168,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.0"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["3.0.0"]
         }, {
           package := "bincode",
           source := some {
@@ -23731,10 +18176,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.3.3"],
-          reason :=
-            "Fixed integer/enum little-endian serializer used by the actual System \
-              constructor."
+          releases := ["1.3.3"]
         }],
         conditions :=
           ["Bind constructor allocation, bincode serialization, Vec/Rc cleanup, current \
@@ -23750,23 +18192,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-system.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Construct fixed system ID, exact metadata order/flags and little-endian bincode \
-            data before moving accounts; remaining accounts are not forwarded. \
-            Edition-2021 cleanup drops instruction metadata/data, tail-expression account \
-            array, then remaining accounts; copied program_id has no destructor. \
-            ProgramError is boxed before cleanup. Review covers full context/error \
-            dependencies, not equal wrapper text alone. Projected-wrapper tests retain \
-            exact source and real context/constructors, replacing only the whole \
-            invocation signature. Preserve the complete 1.0 operation, reached callbacks \
-            and cleanup at the original exact dependency/build gates; adding this \
-            alternative does not replace modern parent alternatives. The declared range is \
-            a complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            edge."]
       }
     ]
     | .system_program_transfer => [
@@ -23793,10 +18219,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.0.0"],
-          reason :=
-            "Assume the selected constructor preserves its fixed System ID, ordered metas, \
-              bincode enum fields and metadata-before-serialization allocation/cleanup \
-              protocol.",
           compatibleRanges := [{
             lower := "1.0.0",
             upper := "2.0.0"
@@ -23809,10 +18231,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the referenced AccountInfo carrier preserves its Rc aliases and \
-              declaration-order lamports/data destruction; moved occurrences and current \
-              resource contents remain distinct.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -23825,10 +18243,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "These inspected enums are identical, including BorshIoError(String). Assume \
-              preservation of the complete variants and owned payload; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -23841,9 +18255,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.4.0"],
-          reason :=
-            "Assume the 32-byte key carrier, copied key values and serde encoding used by \
-              the System fields remain unchanged; no PDA or curve operation is required.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -23856,10 +18267,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Assume the reference serializer preserves fixed-width little-endian enum/u64 \
-              encoding, 32-byte owner encoding and the reached allocation/error/unwrap \
-              effects.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -23879,16 +18286,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.2.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-0.32.3.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "Anchor Lang 0.32.0–0.32.3 have identical System wrapper, context and \
-            error-conversion files. The declared 0.32 range assumes the same tag 2 and \
-            lamports, with a writable signer source and writable nonsigner destination, \
-            moved account array, owned context program and boxed legacy error cleanup. The \
-            0.32.0 prelude-only change is outside these calls; 1.0.0 changes the program \
-            carrier."
+            edge."]
       },
       {
         id := "anchor-system-0-29-0",
@@ -23913,12 +18311,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the selected SystemInstruction constructor and \
-              account order, owned stable-instruction clone, AccountInfo preflight and \
-              legacy error conversion around opaque invocation. Retain source allocation \
-              and cleanup order; no callee execution is proved.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -23931,12 +18323,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Reference 1.3.3; [1.3.3, 2.0.0) assumes the following used contract remains \
-              unchanged. Preserve the reached default little-endian SystemInstruction \
-              serialization, enum/field order and Vec result, including the seed String \
-              encoding where present. Retain allocation, owned error and reached \
-              unwrap/cleanup behavior; unrelated decoder operations are not required.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -23956,15 +18342,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.29.0.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "Reference source: anchor-lang 0.29.0. Construct transfer with the exact \
-            lamports and from/to order before opaque invocation. Retain signer seeds, \
-            context owners and all ordinary/abnormal callback exits. Compatibility in \
-            [0.29.0, 0.30.0) assumes this complete operation and the scoped dependencies \
-            remain unchanged; source/ABI/provider obligations stay explicit."
+            edge."]
       }
     ]
     | .system_program_transfer_inline_borsh => [
@@ -23991,11 +18369,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -24007,10 +18380,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.3.3"],
-          reason :=
-            "Fixed integer/enum little-endian serializer used by the actual System \
-              constructor."
+          releases := ["1.3.3"]
         }],
         conditions :=
           ["Bind constructor allocation, bincode serialization, Vec/Rc cleanup, current \
@@ -24026,20 +18396,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-0.27.0.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "Construct fixed system ID, exact metadata order/flags and little-endian bincode \
-            data before moving accounts; remaining accounts are not forwarded. \
-            Edition-2021 cleanup drops instruction metadata/data, tail-expression account \
-            array, then remaining accounts and the owned context program AccountInfo. \
-            ProgramError converts inline. Review covers full context/error dependencies, \
-            not equal wrapper text alone. Projected-wrapper tests retain exact source and \
-            real context/constructors, replacing only the whole invocation signature. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            edge."]
       }
     ]
     | .system_program_transfer_unit_borsh => [
@@ -24066,10 +18423,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.0.0"],
-          reason :=
-            "Assume the reached System constructor retains fixed program ID, metadata \
-              order/flags and exact variant/argument bytes, with its actual moves and \
-              allocation failures.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -24082,10 +18435,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -24098,10 +18447,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -24114,10 +18459,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.0"],
-          reason :=
-            "Assume the selected Pubkey facade retains its defining Address identity, \
-              complete key representation and the reached copy/PDA operation; the concrete \
-              provider and full ABI join remain separate.",
           compatibleRanges := [{
             lower := "3.0.0",
             upper := "4.0.0"
@@ -24130,11 +18471,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the reached existing error factories keep exact numbers/messages, \
-              boxed modern payloads and diagnostic cleanup. Unreached enum additions do \
-              not change these factories; the 1.2.1 provider cohort is outside this \
-              selection.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -24147,10 +18483,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Assume fixed little-endian enum-tag/integer/Pubkey encoding for this System \
-              constructor and retain its actual serializer allocation, failures and \
-              cleanup.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -24170,18 +18502,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.1.2.crate",
-          "source-notes/anchor-system.md"],
-        argument :=
-          "The declared compatible range assumes the fixed System ID, writable metadata in \
-            source order (from signer then to nonsigner) and little-endian Bincode variant \
-            2 with the actual arguments before account moves. Remaining accounts are \
-            retained only for cleanup. Box the complete modern unit-Borsh ProgramError \
-            before Edition-2021 destruction of instruction metadata/data, the \
-            tail-expression account array and remaining accounts; copied program_id has no \
-            destructor. The invocation provider retains its full result and state. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            edge."]
       },
       {
         id := "anchor-system-1-0-2",
@@ -24205,10 +18526,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.0.0"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["2.0.0"]
         }, {
           package := "solana-account-info",
           source := some {
@@ -24216,10 +18534,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -24227,10 +18542,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["3.0.1"]
         }, {
           package := "solana-pubkey",
           source := some {
@@ -24238,10 +18550,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.0"],
-          reason :=
-            "This resolved provider determines constructor bytes, AccountInfo/context \
-              ownership or ProgramError/Anchor error representation."
+          releases := ["3.0.0"]
         }, {
           package := "bincode",
           source := some {
@@ -24249,10 +18558,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.3.3"],
-          reason :=
-            "Fixed integer/enum little-endian serializer used by the actual System \
-              constructor."
+          releases := ["1.3.3"]
         }],
         conditions :=
           ["Bind constructor allocation, bincode serialization, Vec/Rc cleanup, current \
@@ -24268,23 +18574,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             status.", "Target-unit dependency edges are source binding evidence, not \
             target-layout equivalence. Ambiguous whole-build lookup stays unresolved; do \
             not substitute a filtered build for an exact source-owned per-call dependency \
-            edge."],
-        evidence := ["https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.2.crate",
-          "source-notes/anchor-system.md", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.0.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.1.crate", "https://static.crates.io/crates/anchor-lang/anchor-lang-1.0.3.crate"],
-        argument :=
-          "Construct fixed system ID, exact metadata order/flags and little-endian bincode \
-            data before moving accounts; remaining accounts are not forwarded. \
-            Edition-2021 cleanup drops instruction metadata/data, tail-expression account \
-            array, then remaining accounts; copied program_id has no destructor. \
-            ProgramError is boxed before cleanup. Review covers full context/error \
-            dependencies, not equal wrapper text alone. Projected-wrapper tests retain \
-            exact source and real context/constructors, replacing only the whole \
-            invocation signature. Preserve the complete 1.0 operation, reached callbacks \
-            and cleanup at the original exact dependency/build gates; adding this \
-            alternative does not replace modern parent alternatives. The declared range is \
-            a complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            edge."]
       }
     ]
   applicabilityConsumers := fun key => match key with

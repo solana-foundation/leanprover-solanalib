@@ -76,15 +76,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             separate bindings.", "Direct releases before 4.0.0 take self by value; 4.x and \
             the 3.1.0 facade take &self. Preserve that receiver/ownership binding. \
             Optional Copy on 4.x does not gate to_bytes or alter its 32-byte value \
-            equation."],
-        evidence := ["https://static.crates.io/crates/solana-hash/solana-hash-0.0.2.crate", "https://static.crates.io/crates/solana-hash/solana-hash-4.7.0.crate"],
-        argument :=
-          "Every direct real release has HASH_BYTES=32, transparent [u8;32] storage and \
-            returns self.0 without callees or cfg branches. Releases through 3.0.0 consume \
-            self (3.0.0 adds const); 4.x borrow &self. Both realize the unchanged pure \
-            value-copy contract, while their physical receiver bindings differ. 3.1.0 \
-            reexports Hash from solana-hash ^4.0, whose entire published 4.0.0–4.7.0 \
-            resolution set is reviewed. 0.0.1 is a placeholder with no Hash API."
+            equation."]
       },
       {
         id := "solana-hash-reviewed-hash-v4-facade",
@@ -111,10 +103,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["4.0.0", "4.0.1", "4.1.0", "4.2.0", "4.3.0", "4.4.0", "4.5.0",
             "4.6.0",
             "4.7.0"],
-          reason :=
-            "Hash 3.1.0 reexports solana-hash ^4.0 through its v4 alias. The selected \
-              defining package must preserve the reference 32-byte to_bytes projection; \
-              its actual version supplies the Rust identity.",
           compatibleRanges := [{
             lower := "4.0.0",
             upper := "5.0.0"
@@ -127,15 +115,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             separate bindings.", "Direct releases before 4.0.0 take self by value; 4.x and \
             the 3.1.0 facade take &self. Preserve that receiver/ownership binding. \
             Optional Copy on 4.x does not gate to_bytes or alter its 32-byte value \
-            equation."],
-        evidence := ["https://static.crates.io/crates/solana-hash/solana-hash-0.0.2.crate", "https://static.crates.io/crates/solana-hash/solana-hash-4.7.0.crate"],
-        argument :=
-          "Every direct real release has HASH_BYTES=32, transparent [u8;32] storage and \
-            returns self.0 without callees or cfg branches. Releases through 3.0.0 consume \
-            self (3.0.0 adds const); 4.x borrow &self. Both realize the unchanged pure \
-            value-copy contract, while their physical receiver bindings differ. 3.1.0 \
-            reexports Hash from solana-hash ^4.0, whose entire published 4.0.0–4.7.0 \
-            resolution set is reviewed. 0.0.1 is a placeholder with no Hash API."
+            equation."]
       }
     ]
   applicabilityConsumers := fun key => match key with

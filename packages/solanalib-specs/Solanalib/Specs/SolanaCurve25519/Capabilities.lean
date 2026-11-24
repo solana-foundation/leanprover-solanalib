@@ -87,29 +87,14 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "This profile reaches the curve syscall provider; the host dalek \
-              implementation is a separate interpretation."
+          «exclude» := []
         }],
         conditions :=
           ["Select target_os=\"solana\"; host dalek decompression is a different \
             interpretation. Supply the actual finite-exit syscall provider without \
             assuming successful status.", "Relate point/scratch memory, curve selector 0, \
             ABI dispatch, runtime admission, features, metering and cryptographic \
-            agreement separately."],
-        evidence := ["https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.0.crate", "https://static.crates.io/crates/solana-curve25519/solana-curve25519-4.0.1.crate"],
-        argument :=
-          "All 110 real stable releases use transparent PodEdwardsPoint([u8;32]), selector \
-            CURVE25519_EDWARDS=0, a non-null one-byte scratch initialized to zero, and \
-            return whether the syscall register equals zero while ignoring final scratch. \
-            2.0/2.1 reach exact matching solana-program versions; every one of these 45 \
-            dependency archives has the same selected declaration/cfg closure within its \
-            generation. 2.2+ reach solana-define-syscall; all admitted 2.x/3.x/5.x \
-            declarations and macro generations preserve the argument/result transport, \
-            with dynamic versus static dispatch remaining the provider binding. No \
-            callback effects or finite exits are replaced by host curve validity. 0.0.0 is \
-            a placeholder without this API."
+            agreement separately."]
       }
     ]
   applicabilityConsumers := fun key => match key with

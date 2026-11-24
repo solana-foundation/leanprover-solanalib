@@ -4,7 +4,7 @@
       "order": 161,
       "modules": {
         "Solanalib.Specs.SplMemo": "ce15553c45c489cb349624bd47d7a600e01e647f51fdf3f372b33bb309c51b6e",
-        "Solanalib.Specs.SplMemo.Capabilities": "f684daf6e8070453a0b9e242264aa4308aae9219a0f50f72ad9bbab46dfa67f8",
+        "Solanalib.Specs.SplMemo.Capabilities": "d7314c0c31184464d60afd6e87acf258086bf6dcc95cbb1586f63f54c82a48d1",
         "Solanalib.Specs.SplMemo.Ids": "2910f5addd43764049215cb4d1744dee05831f897f687368b04eeadba01b57fb"
       },
       "source_ids": [

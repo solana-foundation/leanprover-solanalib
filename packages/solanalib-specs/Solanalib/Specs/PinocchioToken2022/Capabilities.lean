@@ -173,26 +173,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             relation.", "Bind AccountView 2.0.0 or 2.1.0, Address as the represented \
             32-byte key and the reviewed raw-header initializer. Provider normal \
             completion is unit; no token-callee success or state-preservation guarantee \
-            follows."],
-        evidence := ["https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.3.0.crate", "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.3.1.crate"],
-        argument :=
-          "0.3.0 and 0.3.1 have byte-identical local wrapper files and the same \
-            InstructionView ^2.1 dependency. Close constructs three ordered metas with \
-            byte 9; transfer constructs four ordered metas with byte 12, little-endian u64 \
-            amount and u8 decimals. Unsigned transfer delegates with an empty signer list. \
-            All retain the caller-selected token_program address. DirectV2 checks writable \
-            borrow flags, retains readonly exclusive borrows, initializes exact raw \
-            four-byte headers, preserves account multiplicity and forwards the complete \
-            request to the opaque unit boundary. 0.1.0 reaches Pinocchio ^0.9 AccountInfo \
-            preparation with separate seven-reference borrow categories and normalized CPI \
-            fields; 0.2.0 reaches InstructionView 1.0, whose readonly borrow checks and \
-            normalized three flag bytes differ, while fourth-byte padding is \
-            uninitialized. 0.4.0/0.5.0 replace local structs by TokenProgram-generic \
-            implementations reexported from pinocchio-token 0.7.0/0.8.0 as \
-            Token2022Program aliases, with multisig fields and no runtime token_program \
-            field. Their default-ID empty-multisig paths pass 22 native cases each, but \
-            the full former arbitrary-program API contract cannot be assigned to those \
-            methods. The 0.0.0 placeholder has no API."
+            follows."]
       }
     ]
     | .instructions_transfer_checked_TransferChecked_invoke => [
@@ -226,26 +207,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             relation.", "Bind AccountView 2.0.0 or 2.1.0, Address as the represented \
             32-byte key and the reviewed raw-header initializer. Provider normal \
             completion is unit; no token-callee success or state-preservation guarantee \
-            follows."],
-        evidence := ["https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.3.0.crate", "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.3.1.crate"],
-        argument :=
-          "0.3.0 and 0.3.1 have byte-identical local wrapper files and the same \
-            InstructionView ^2.1 dependency. Close constructs three ordered metas with \
-            byte 9; transfer constructs four ordered metas with byte 12, little-endian u64 \
-            amount and u8 decimals. Unsigned transfer delegates with an empty signer list. \
-            All retain the caller-selected token_program address. DirectV2 checks writable \
-            borrow flags, retains readonly exclusive borrows, initializes exact raw \
-            four-byte headers, preserves account multiplicity and forwards the complete \
-            request to the opaque unit boundary. 0.1.0 reaches Pinocchio ^0.9 AccountInfo \
-            preparation with separate seven-reference borrow categories and normalized CPI \
-            fields; 0.2.0 reaches InstructionView 1.0, whose readonly borrow checks and \
-            normalized three flag bytes differ, while fourth-byte padding is \
-            uninitialized. 0.4.0/0.5.0 replace local structs by TokenProgram-generic \
-            implementations reexported from pinocchio-token 0.7.0/0.8.0 as \
-            Token2022Program aliases, with multisig fields and no runtime token_program \
-            field. Their default-ID empty-multisig paths pass 22 native cases each, but \
-            the full former arbitrary-program API contract cannot be assigned to those \
-            methods. The 0.0.0 placeholder has no API."
+            follows."]
       }
     ]
     | .instructions_transfer_checked_TransferChecked_invoke_signed => [
@@ -279,26 +241,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             relation.", "Bind AccountView 2.0.0 or 2.1.0, Address as the represented \
             32-byte key and the reviewed raw-header initializer. Provider normal \
             completion is unit; no token-callee success or state-preservation guarantee \
-            follows."],
-        evidence := ["https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.3.0.crate", "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.3.1.crate"],
-        argument :=
-          "0.3.0 and 0.3.1 have byte-identical local wrapper files and the same \
-            InstructionView ^2.1 dependency. Close constructs three ordered metas with \
-            byte 9; transfer constructs four ordered metas with byte 12, little-endian u64 \
-            amount and u8 decimals. Unsigned transfer delegates with an empty signer list. \
-            All retain the caller-selected token_program address. DirectV2 checks writable \
-            borrow flags, retains readonly exclusive borrows, initializes exact raw \
-            four-byte headers, preserves account multiplicity and forwards the complete \
-            request to the opaque unit boundary. 0.1.0 reaches Pinocchio ^0.9 AccountInfo \
-            preparation with separate seven-reference borrow categories and normalized CPI \
-            fields; 0.2.0 reaches InstructionView 1.0, whose readonly borrow checks and \
-            normalized three flag bytes differ, while fourth-byte padding is \
-            uninitialized. 0.4.0/0.5.0 replace local structs by TokenProgram-generic \
-            implementations reexported from pinocchio-token 0.7.0/0.8.0 as \
-            Token2022Program aliases, with multisig fields and no runtime token_program \
-            field. Their default-ID empty-multisig paths pass 22 native cases each, but \
-            the full former arbitrary-program API contract cannot be assigned to those \
-            methods. The 0.0.0 placeholder has no API."
+            follows."]
       }
     ]
     | .state_account_Account_amount => [
@@ -327,18 +270,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             correspondence is conditional on the existing representation/provider bindings.",
             "Keep the existing live readable 165-byte Account or 82-byte Mint guard \
             condition where required. Field-descriptor equalities themselves add no lease \
-            or readability permission."],
-        evidence := ["https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.1.0.crate", "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.5.0.crate"],
-        argument :=
-          "The payload bytes 64..72 are read without changing storage, borrow state, or \
-            guard identity. Token 0.1.0 uses an owned pointer wrapper; 0.2.0–0.3.0 use \
-            repr(C) raw views but still read a native-endian unaligned u64. On the \
-            intended little-endian Solana target these match the existing little-endian \
-            amount projection; big-endian behavior is not admitted for those releases. \
-            Token 0.4.0 onward uses u64::from_le_bytes. Token-2022 uses u64::from_le_bytes \
-            in every non-placeholder release. A valid pointer/guard-to-payload \
-            interpretation remains separate from the mathematical value result; the broken \
-            direct checked cast in Token 0.1.0 is not evidence for such a binding."
+            or readability permission."]
       },
       {
         id := "pinocchio-token-2022-reviewed-2",
@@ -368,18 +300,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             correspondence is conditional on the existing representation/provider bindings.",
             "Keep the existing live readable 165-byte Account or 82-byte Mint guard \
             condition where required. Field-descriptor equalities themselves add no lease \
-            or readability permission."],
-        evidence := ["https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.1.0.crate", "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.5.0.crate"],
-        argument :=
-          "The payload bytes 64..72 are read without changing storage, borrow state, or \
-            guard identity. Token 0.1.0 uses an owned pointer wrapper; 0.2.0–0.3.0 use \
-            repr(C) raw views but still read a native-endian unaligned u64. On the \
-            intended little-endian Solana target these match the existing little-endian \
-            amount projection; big-endian behavior is not admitted for those releases. \
-            Token 0.4.0 onward uses u64::from_le_bytes. Token-2022 uses u64::from_le_bytes \
-            in every non-placeholder release. A valid pointer/guard-to-payload \
-            interpretation remains separate from the mathematical value result; the broken \
-            direct checked cast in Token 0.1.0 is not evidence for such a binding."
+            or readability permission."]
       }
     ]
     | .state_account_Account_from_account_view => [
@@ -408,19 +329,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             correspondence is conditional on the existing representation/provider bindings.",
             "Bind the actual shared-borrow policy and header/backing interpretation. \
             AccountView 1.0.0/2.0.0/2.1.0/3.0.0 have the same 254-reference shared \
-            protocol and guard map/drop lifecycle for these reads."],
-        evidence := ["https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.3.0.crate", "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.4.0.crate"],
-        argument :=
-          "The complete extensible parser checks fixed Token-2022 ownership, acquires a \
-            shared guard, then validates layout: exact 165-byte base, or length > 165 \
-            excluding 355 with type byte 2 at offset 165. Layout failure releases the \
-            temporary guard; success maps it. Existing unrelated guards and all bytes are \
-            preserved. No initialization, option-tag, padding or TLV validation is added. \
-            0.2.0 TokenAccount instead checks minimum length before owner/borrow and \
-            accepts arbitrary tails without type or multisig validation. 0.3.0 introduces \
-            the modeled layout/order; 0.4.0 leaves this closure unchanged. 0.5.0 changes \
-            wrong-owner error to IncorrectProgramId. 0.1.0 only has the AccountInfo \
-            receiver predecessor; 0.0.0 is empty."
+            protocol and guard map/drop lifecycle for these reads."]
       }
     ]
     | .state_account_Account_mint => [
@@ -449,16 +358,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             correspondence is conditional on the existing representation/provider bindings.",
             "The field-descriptor equality has no readability premise and grants no lease \
             or dereference permission. Valid source references and the guard-to-payload \
-            interpretation are separate binding obligations."],
-        evidence := ["https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.1.0.crate", "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.5.0.crate"],
-        argument :=
-          "The complete contract returns a borrowed field descriptor at offset 0, \
-            retaining the parent guard and all state. Token 0.1.0 returns an owned Pubkey \
-            copy and is incompatible. Token 0.2.0 onward and every non-placeholder \
-            Token-2022 release return &Pubkey / &Address into the original payload; \
-            changing the name TokenAccount to Account and changing [u8; 32] to transparent \
-            Address do not change the borrowed range, lifetime dependency or allocation \
-            behavior."
+            interpretation are separate binding obligations."]
       },
       {
         id := "pinocchio-token-2022-reviewed-2",
@@ -488,16 +388,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             correspondence is conditional on the existing representation/provider bindings.",
             "The field-descriptor equality has no readability premise and grants no lease \
             or dereference permission. Valid source references and the guard-to-payload \
-            interpretation are separate binding obligations."],
-        evidence := ["https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.1.0.crate", "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.5.0.crate"],
-        argument :=
-          "The complete contract returns a borrowed field descriptor at offset 0, \
-            retaining the parent guard and all state. Token 0.1.0 returns an owned Pubkey \
-            copy and is incompatible. Token 0.2.0 onward and every non-placeholder \
-            Token-2022 release return &Pubkey / &Address into the original payload; \
-            changing the name TokenAccount to Account and changing [u8; 32] to transparent \
-            Address do not change the borrowed range, lifetime dependency or allocation \
-            behavior."
+            interpretation are separate binding obligations."]
       }
     ]
     | .state_account_Account_owner => [
@@ -526,16 +417,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             correspondence is conditional on the existing representation/provider bindings.",
             "The field-descriptor equality has no readability premise and grants no lease \
             or dereference permission. Valid source references and the guard-to-payload \
-            interpretation are separate binding obligations."],
-        evidence := ["https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.1.0.crate", "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.5.0.crate"],
-        argument :=
-          "The complete contract returns a borrowed field descriptor at offset 32, \
-            retaining the parent guard and all state. The predecessor Token 0.1.0 method \
-            is named authority and returns an owned Pubkey; it is incompatible with this \
-            descriptor contract. Token 0.2.0 onward and every non-placeholder Token-2022 \
-            release return &Pubkey / &Address into the current original payload. The \
-            explicit predecessor names are recorded separately from exact callable \
-            bindings."
+            interpretation are separate binding obligations."]
       },
       {
         id := "pinocchio-token-2022-reviewed-2",
@@ -565,16 +447,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             correspondence is conditional on the existing representation/provider bindings.",
             "The field-descriptor equality has no readability premise and grants no lease \
             or dereference permission. Valid source references and the guard-to-payload \
-            interpretation are separate binding obligations."],
-        evidence := ["https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.1.0.crate", "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.5.0.crate"],
-        argument :=
-          "The complete contract returns a borrowed field descriptor at offset 32, \
-            retaining the parent guard and all state. The predecessor Token 0.1.0 method \
-            is named authority and returns an owned Pubkey; it is incompatible with this \
-            descriptor contract. Token 0.2.0 onward and every non-placeholder Token-2022 \
-            release return &Pubkey / &Address into the current original payload. The \
-            explicit predecessor names are recorded separately from exact callable \
-            bindings."
+            interpretation are separate binding obligations."]
       }
     ]
     | .state_account_Account_state => [
@@ -603,19 +476,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             correspondence is conditional on the existing representation/provider bindings.",
             "Keep the existing live readable 165-byte Account or 82-byte Mint guard \
             condition where required. Field-descriptor equalities themselves add no lease \
-            or readability permission."],
-        evidence := ["https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.1.0.crate", "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.3.1.crate"],
-        argument :=
-          "Token 0.2.0–0.7.0 and Token-2022 0.1.0–0.3.1 use the same From<u8> match: 0/1/2 \
-            return enum values; every other byte panics with the byte in its diagnostic. \
-            The existing arbitrary target panic provider retains every finite \
-            unwind/terminal effect and has no normal result. Token 0.1.0 instead loads \
-            AccountState directly through a pointer, with no repr(u8) declaration and \
-            undefined behavior for invalid enum bytes; the model admits those raw bytes \
-            and demands a panic, so it does not apply. Token 0.8.0 and Token-2022 \
-            0.4.0/0.5.0 change the return type to Result and return InvalidAccountData on \
-            invalid bytes. Restricting to valid enum bytes would not preserve the complete \
-            existing contract."
+            or readability permission."]
       },
       {
         id := "pinocchio-token-2022-reviewed-2",
@@ -639,19 +500,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             correspondence is conditional on the existing representation/provider bindings.",
             "Keep the existing live readable 165-byte Account or 82-byte Mint guard \
             condition where required. Field-descriptor equalities themselves add no lease \
-            or readability permission."],
-        evidence := ["https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.1.0.crate", "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.3.1.crate"],
-        argument :=
-          "Token 0.2.0–0.7.0 and Token-2022 0.1.0–0.3.1 use the same From<u8> match: 0/1/2 \
-            return enum values; every other byte panics with the byte in its diagnostic. \
-            The existing arbitrary target panic provider retains every finite \
-            unwind/terminal effect and has no normal result. Token 0.1.0 instead loads \
-            AccountState directly through a pointer, with no repr(u8) declaration and \
-            undefined behavior for invalid enum bytes; the model admits those raw bytes \
-            and demands a panic, so it does not apply. Token 0.8.0 and Token-2022 \
-            0.4.0/0.5.0 change the return type to Result and return InvalidAccountData on \
-            invalid bytes. Restricting to valid enum bytes would not preserve the complete \
-            existing contract."
+            or readability permission."]
       }
     ]
     | .state_mint_Mint_decimals => [
@@ -689,17 +538,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             correspondence is conditional on the existing representation/provider bindings.",
             "Keep the existing live readable 165-byte Account or 82-byte Mint guard \
             condition where required. Field-descriptor equalities themselves add no lease \
-            or readability permission."],
-        evidence := ["https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.1.0.crate", "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.5.0.crate"],
-        argument :=
-          "The current payload byte at offset 44 is returned without validation, \
-            allocation or mutation. Every non-placeholder release has this projection. \
-            Token 0.1.0 stores a pointer rather than a direct 82-byte repr(C) view; \
-            correspondence requires that its pointer denote the same live guarded payload \
-            under the existing source representation obligation. It does not justify the \
-            0.1.0 checked parser, which casts the data bytes to the pointer wrapper. Token \
-            0.2.0 onward and all Token-2022 releases use direct alignment-1 82-byte raw \
-            mint fields."
+            or readability permission."]
       }
     ]
     | .state_mint_Mint_from_account_view => [
@@ -728,19 +567,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             correspondence is conditional on the existing representation/provider bindings.",
             "Bind the actual shared-borrow policy and header/backing interpretation. \
             AccountView 1.0.0/2.0.0/2.1.0/3.0.0 have the same 254-reference shared \
-            protocol and guard map/drop lifecycle for these reads."],
-        evidence := ["https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.3.1.crate", "https://static.crates.io/crates/pinocchio-token-2022/pinocchio-token-2022-0.4.0.crate"],
-        argument :=
-          "The full mint parser checks fixed Token-2022 owner (InvalidAccountOwner), \
-            acquires a shared guard, then accepts exact 82 bytes or the extensible account \
-            layout (length > 165, not 355, type byte 1 at offset 165). Invalid layout \
-            drops only the temporary guard. Nonzero mint padding and arbitrary tails \
-            remain admitted. 0.2.0 uses minimum-length/owner/borrow checks and no \
-            extension-type validation. 0.3.0 adds layout validation but omits the owner \
-            check entirely and rejects short data before borrowing. 0.3.1 replaces that \
-            early length check with the modeled owner check; 0.4.0 preserves it. 0.5.0 \
-            changes wrong-owner error to IncorrectProgramId. Earlier AccountInfo APIs and \
-            the empty 0.0.0 placeholder are distinct."
+            protocol and guard map/drop lifecycle for these reads."]
       }
     ]
   applicabilityConsumers := fun key => match key with

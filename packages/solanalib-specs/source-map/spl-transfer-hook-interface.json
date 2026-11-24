@@ -5,7 +5,7 @@
       "modules": {
         "Solanalib.Specs.SplTransferHookInterface.Onchain": "df186484d1c557546e6b31154652efe3b70d11411b55459c197f17911a187f7e",
         "Solanalib.Specs.SplTransferHookInterface": "8e525b2cdf1aec594bfa8d4eb3aeb93e9623eaa7ae5f1674276ca216f64fe0a8",
-        "Solanalib.Specs.SplTransferHookInterface.Capabilities": "d0f12c8ffe6a46a7159af914d5ca2127264b8dcc16955eb886bac9df53bc9e13"
+        "Solanalib.Specs.SplTransferHookInterface.Capabilities": "e7982397f5b24ec4ff4867f4853fe7753fcc27d93819d6d5c4ff48ea4c520052"
       },
       "source_ids": [
         "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::src/onchain.rs",

@@ -57,16 +57,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         compatibleRanges := [{
           lower := "3.0.0",
           upper := "4.0.0"
-        }],
-        evidence := ["https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-3.0.0.crate", "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-3.1.0.crate", "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-3.1.1.crate", "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-3.2.0.crate", "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-3.3.0.crate", "https://static.crates.io/crates/solana-epoch-schedule/solana-epoch-schedule-3.4.0.crate"],
-        argument :=
-          "Preserve the <= first-normal-epoch branch, truncating u32 cast, saturating \
-            power/subtraction/multiplication and the saturating normal-epoch formula for \
-            arbitrary public schedule fields. No schedule-consistency, warmup-flag or \
-            nonzero-length precondition is introduced. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+        }]
       }
     ]
   applicabilityConsumers := fun key => match key with

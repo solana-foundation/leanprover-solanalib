@@ -120,15 +120,27 @@ class CapabilityGenerationTests(unittest.TestCase):
             'source := { kind := "registry", url := "https://github.com/rust-lang/crates.io-index", '
             'revision := "" }, releases := ["1.1.0"], item := "example::Old::call", '
             'implementation := "example::Old::call", '
-            'conditions := ["Use the original indexed callback interpretation."], '
-            'evidence := ["Immutable source closure."], '
-            'argument := "The predecessor has the same complete contract." }')
+            'conditions := ["Use the original indexed callback interpretation."] }')
         tokens = r'"(?:\\.|[^"\\])*"|[^\s]'
         compact = f"    | .Example_call => [{expected}]"
         clause = text.split("  applicability := fun key => match key with\n", 1)[1].split(
             "\n  applicabilityConsumers", 1)[0]
         self.assertEqual(re.findall(tokens, clause), re.findall(tokens, compact))
         self.assertIn("    | .Example_call => [\n      {\n", clause)
+
+    def test_catalog_keeps_conditions_and_selection_without_copied_review_prose(self):
+        profile = self.add_applicability()
+        profile['target'] = [{'field': 'arch', 'include': ['x86_64'], 'reason': 'Target explanation.'}]
+        profile['features'] = {'all': ['decode'], 'reason': 'Feature explanation.'}
+        profile['dependencies'] = [{'package': 'provider', 'releases': ['2.0.0'],
+                                    'reason': 'Dependency explanation.'}]
+        [(_, source)] = generator.generated_files()
+        source = ungap(source)
+        for text in ['Target explanation.', 'Feature explanation.', 'Dependency explanation.',
+                     profile['argument'], *profile['evidence']]:
+            self.assertNotIn(text, source)
+        for text in [*profile['conditions'], 'x86_64', 'decode', 'provider', '2.0.0']:
+            self.assertIn(json.dumps(text), source)
 
     def test_multiline_profiles_preserve_all_tokens_and_string_escapes(self):
         profile = self.add_applicability()
@@ -152,7 +164,7 @@ class CapabilityGenerationTests(unittest.TestCase):
         [(_, multiline)] = generator.generated_files()
         render_profile = generator.lean_profile
         with patch.object(generator, "lean_profile",
-                          side_effect=lambda profile, **_: render_profile(profile, multiline=False)):
+                          side_effect=lambda profile, **_: render_profile(profile, multiline=False, review=False)):
             [(_, compact)] = generator.generated_files()
         # Compare every non-whitespace character, preserving complete string literals.
         tokens = r'"(?:\\.|[^"\\])*"|[^\s]'

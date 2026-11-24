@@ -100,15 +100,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             interpretation; no allocation or invocation occurs in the modeled entry.",
             "Use a buildable exact dependency/feature profile with the key, error and \
             Instruction interpretations reviewed here; this does not quantify over every \
-            possible future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-interface/spl-token-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-interface/spl-token-interface-3.0.0.crate"],
-        argument :=
-          "The declared base58 literal is unchanged in every API-bearing release. The \
-            reached declare_id macro returns the exact 32-byte constant. Pubkey 2.4.0 is a \
-            transparent [u8; 32]; Pubkey 3 and 4 reexport Address through the recorded \
-            dependency profiles. Address macros distinguish a bpf static ID from a non-bpf \
-            const ID, but id() returns the same constant bytes in both branches and \
-            performs no allocation. The 0.0.0 release lacks the selected root-level API."
+            possible future resolution of the published Cargo semver ranges."]
       }
     ]
     | .instruction_initialize_account3 => [
@@ -151,18 +143,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             to the full existing outcome/current-resource/ownership/frame laws.",
             "Use a buildable exact dependency/feature profile with the key, error and \
             Instruction interpretations reviewed here; this does not quantify over every \
-            possible future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-interface/spl-token-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-interface/spl-token-interface-3.0.0.crate"],
-        argument :=
-          "The crate-specific program check runs first: legacy-only for \
-            spl-token-interface, either token program for spl-token-2022-interface. The \
-            builder packs tag 18 by a single push followed by one owner-byte extend, then \
-            constructs a two-entry metadata literal (writable nonsigner account, readonly \
-            nonsigner mint); owner appears only in the data. The body and selected packing \
-            branch match in all API-bearing releases modulo key-type spelling. The full \
-            family retains data-before-metadata allocation, target enumSize reservation, \
-            actual vector identities, dependency outcomes and cleanup. The 0.0.0 API is \
-            absent."
+            possible future resolution of the published Cargo semver ranges."]
       }
     ]
     | .instruction_initialize_account3_value => [
@@ -196,21 +177,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             outcome; do not add a successful-allocation precondition.", "Use a buildable \
             exact dependency/feature profile with the key, error and Instruction \
             interpretations reviewed here; this does not quantify over every possible \
-            future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-interface/spl-token-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-interface/spl-token-interface-3.0.0.crate"],
-        argument :=
-          "The crate-specific program check runs first: legacy-only for \
-            spl-token-interface, either token program for spl-token-2022-interface. The \
-            builder packs tag 18 by a single push followed by one owner-byte extend, then \
-            constructs a two-entry metadata literal (writable nonsigner account, readonly \
-            nonsigner mint); owner appears only in the data. The body and selected packing \
-            branch match in all API-bearing releases modulo key-type spelling. The full \
-            family retains data-before-metadata allocation, target enumSize reservation, \
-            actual vector identities, dependency outcomes and cleanup. The 0.0.0 API is \
-            absent. This entry is only the existing value observation; compatible releases \
-            share admission and returned values, while allocation, owned-resource \
-            lifecycle and abnormal exits remain covered by the separately registered full \
-            family."
+            future resolution of the published Cargo semver ranges."]
       }
     ]
     | .instruction_transfer => [
@@ -253,19 +220,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             to the full existing outcome/current-resource/ownership/frame laws.",
             "Use a buildable exact dependency/feature profile with the key, error and \
             Instruction interpretations reviewed here; this does not quantify over every \
-            possible future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-interface/spl-token-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-interface/spl-token-interface-3.0.0.crate"],
-        argument :=
-          "Every API-bearing spl-token-interface release first rejects nonlegacy program \
-            IDs, packs tag 3 with one byte push and one eight-byte little-endian amount \
-            extension, then reserves 3 + signer count metadata entries and pushes \
-            source/destination/authority/signers in order. Authority signs exactly for the \
-            empty signer list; duplicates and lists beyond the multisig limit are \
-            retained. There is no execution-balance/signature validation. The selected \
-            body and pack arm are identical; unrelated new enum variants in 3.0.0 do not \
-            change this arm and enumSize remains an explicit layout parameter. Full \
-            allocation/unwind/terminal cleanup sequencing is preserved. The 0.0.0 builder \
-            is absent."
+            possible future resolution of the published Cargo semver ranges."]
       }
     ]
     | .instruction_transfer_value => [
@@ -299,22 +254,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             outcome; do not add a successful-allocation precondition.", "Use a buildable \
             exact dependency/feature profile with the key, error and Instruction \
             interpretations reviewed here; this does not quantify over every possible \
-            future resolution of the published Cargo semver ranges."],
-        evidence := ["https://static.crates.io/crates/spl-token-interface/spl-token-interface-1.0.0.crate", "https://static.crates.io/crates/spl-token-interface/spl-token-interface-3.0.0.crate"],
-        argument :=
-          "Every API-bearing spl-token-interface release first rejects nonlegacy program \
-            IDs, packs tag 3 with one byte push and one eight-byte little-endian amount \
-            extension, then reserves 3 + signer count metadata entries and pushes \
-            source/destination/authority/signers in order. Authority signs exactly for the \
-            empty signer list; duplicates and lists beyond the multisig limit are \
-            retained. There is no execution-balance/signature validation. The selected \
-            body and pack arm are identical; unrelated new enum variants in 3.0.0 do not \
-            change this arm and enumSize remains an explicit layout parameter. Full \
-            allocation/unwind/terminal cleanup sequencing is preserved. The 0.0.0 builder \
-            is absent. This entry is only the existing value observation; compatible \
-            releases share admission and returned values, while allocation, owned-resource \
-            lifecycle and abnormal exits remain covered by the separately registered full \
-            family."
+            future resolution of the published Cargo semver ranges."]
       }
     ]
   applicabilityConsumers := fun key => match key with

@@ -4,7 +4,7 @@
       "order": 162,
       "modules": {
         "Solanalib.Specs.SplTokenMetadataInterface": "edfe401da5c886753524b2550f13f2c6fd6a42ff19b365f464d42ee7369faf5c",
-        "Solanalib.Specs.SplTokenMetadataInterface.Capabilities": "bdcba47b1d4fa4c532947aa6fb0672bffed3ef21fc75cc46d94d84a3c3520606",
+        "Solanalib.Specs.SplTokenMetadataInterface.Capabilities": "e7ab64c3c2a3e80ddb5bcd4d0a49f8238fb026366e8ec8016ff5311b5db33534",
         "Solanalib.Specs.SplTokenMetadataInterface.State": "73200738beeb8dccbfbe2f5f23517ca9b240f96fd0923f07b4bf55795766954e",
         "Solanalib.Specs.SplTokenMetadataInterface.Initialize": "5a61b9022395116c9aaae11f39210d61e46c2dcfa4d83b238eed7bf91f769eec"
       },

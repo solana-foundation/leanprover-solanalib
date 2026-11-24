@@ -340,15 +340,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             destruction of ArrayDropGuard of already decoded elements on an error path are \
             not represented; the binding establishes that they have no observable effect \
             in the model state.", "The shared package boundary excludes custom-allocator \
-            failure during construction of errors and diagnostics."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "All 22 recorded stable 1.x releases have the same arbitrary-N body and u8 \
-            reader helper, including the InvalidData short-input error. The existing \
-            u8/default-hidden-method split and ArrayDropGuard effect boundary are \
-            unchanged. Older arrays have different length/type bounds, zero-padding \
-            behavior or errors. Error-construction allocation failure is outside the \
-            shared model boundary."
+            failure during construction of errors and diagnostics."]
       }
     ]
     | .Array_serialize => [
@@ -370,10 +362,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["const-generics"],
           any := [],
-          none := [],
-          reason :=
-            "These releases expose arbitrary array length N only through const-generics; \
-              their ungated implementations cover fixed lengths only."
+          none := []
         },
         conditions :=
           ["The index writer interprets the actual W::write_all, including ordinary io \
@@ -382,18 +371,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "The index element selects u8 (u8_slice returns Some) or an implementation \
             with the default u8_slice (None).", "For the full arbitrary-N operation in \
             0.9.1–0.9.3, enable the released const-generics feature. Without it only the \
-            published fixed-length instances exist."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.9.1.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete arbitrary-N family corresponds from 0.9.1, with const-generics \
-            enabled for 0.9.1–0.9.3; it is unconditional from 0.10.0. N=0 does nothing; \
-            the actual u8 override gives one write_all of the original slice; a default \
-            hidden-method element is serialized in order, retaining every callback exit. \
-            The generic body and u8_slice override are byte-identical throughout this set. \
-            0.2.2–0.2.4 provide only u8 lengths 32/64/65 and use write ignoring count. \
-            0.2.5–0.6.0 emit per-element chunks. 0.6.1–0.9.0 bulk-write supported byte \
-            lengths via is_u8, but the fixed-length macro does not supply the current \
-            arbitrary-N family. These restricted overlaps are not silently promoted."
+            published fixed-length instances exist."]
       },
       {
         id := "borsh-reviewed-direct",
@@ -425,18 +403,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "The index element selects u8 (u8_slice returns Some) or an implementation \
             with the default u8_slice (None).", "For the full arbitrary-N operation in \
             0.9.1–0.9.3, enable the released const-generics feature. Without it only the \
-            published fixed-length instances exist."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.9.1.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete arbitrary-N family corresponds from 0.9.1, with const-generics \
-            enabled for 0.9.1–0.9.3; it is unconditional from 0.10.0. N=0 does nothing; \
-            the actual u8 override gives one write_all of the original slice; a default \
-            hidden-method element is serialized in order, retaining every callback exit. \
-            The generic body and u8_slice override are byte-identical throughout this set. \
-            0.2.2–0.2.4 provide only u8 lengths 32/64/65 and use write ignoring count. \
-            0.2.5–0.6.0 emit per-element chunks. 0.6.1–0.9.0 bulk-write supported byte \
-            lengths via is_u8, but the fixed-length macro does not supply the current \
-            arbitrary-N family. These restricted overlaps are not silently promoted."
+            published fixed-length instances exist."]
       }
     ]
     | .Option_invalid_data_deserialize_reader => [
@@ -464,14 +431,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             BorshDeserialize>::deserialize_reader::<&[u8]> (or Self::deserialize) \
             implementation, including its result, remaining slice, state effects, unwind \
             and terminal exits.", "The shared package boundary excludes custom-allocator \
-            failure during construction of errors and diagnostics."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "All 22 recorded stable 1.x releases share the InvalidData error profile, exact \
-            invalid-tag message and element-callback sequencing. The 0.x predecessors use \
-            InvalidInput or still older permissive-tag/UnexpectedEof behavior. \
-            Source-operation name changes are mapped explicitly. Error-construction \
-            allocation failure is outside the shared model boundary."
+            failure during construction of errors and diagnostics."]
       }
     ]
     | .Option_invalid_input_deserialize_reader => [
@@ -512,16 +472,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             construction of errors and diagnostics.", "Through 0.9.3 the source operation \
             is the fixed-slice deserialize method and reaches the actual T::deserialize \
             callback; 0.10.0 onward uses deserialize_reader. These are explicit \
-            predecessor mappings, not availability of the later symbol at older versions."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.6.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete slice-decoder and element-callback behavior corresponds from 0.6.0 \
-            through 0.10.4 and also in yanked 0.11.0, with explicit predecessor \
-            Option::deserialize mappings. Before 0.2.10 nonzero tags are accepted; before \
-            0.6.0 short input propagates UnexpectedEof; all 1.x use InvalidData instead of \
-            InvalidInput. Tag 1 invokes the actual element implementation exactly once and \
-            propagates its finite outcomes; tag 0 does not invoke it. Error-construction \
-            allocation failure is outside the shared model boundary."
+            predecessor mappings, not availability of the later symbol at older versions."]
       },
       {
         id := "borsh-reviewed-2",
@@ -550,16 +501,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             construction of errors and diagnostics.", "Through 0.9.3 the source operation \
             is the fixed-slice deserialize method and reaches the actual T::deserialize \
             callback; 0.10.0 onward uses deserialize_reader. These are explicit \
-            predecessor mappings, not availability of the later symbol at older versions."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.6.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete slice-decoder and element-callback behavior corresponds from 0.6.0 \
-            through 0.10.4 and also in yanked 0.11.0, with explicit predecessor \
-            Option::deserialize mappings. Before 0.2.10 nonzero tags are accepted; before \
-            0.6.0 short input propagates UnexpectedEof; all 1.x use InvalidData instead of \
-            InvalidInput. Tag 1 invokes the actual element implementation exactly once and \
-            propagates its finite outcomes; tag 0 does not invoke it. Error-construction \
-            allocation failure is outside the shared model boundary."
+            predecessor mappings, not availability of the later symbol at older versions."]
       }
     ]
     | .Option_serialize => [
@@ -618,17 +560,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The index writer interprets the actual W::write_all, including ordinary io \
             errors, partial writes, unwind state and terminal reasons; element callbacks \
-            interpret <T as BorshSerialize>::serialize::<W> at the same writer."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.2.7.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "From 0.2.7 onward None calls the actual write_all of the writer on [0]; Some \
-            calls it on [1], then calls the actual element serializer only after tag \
-            success. All callback effects, errors, unwind and terminal exits propagate in \
-            source order. The top-level body of Option already looked similar in 0.2.4, \
-            but the reached u8 serializer used write and ignored its count until 0.2.5; \
-            0.2.7 is the first write_all release. The 0.1.0 Serializable::write \
-            predecessor and all 0.2.0–0.2.5 releases are therefore incompatible. No own \
-            diagnostic construction is added by this wrapper."
+            interpret <T as BorshSerialize>::serialize::<W> at the same writer."]
       }
     ]
     | .Vec_invalid_input_deserialize_reader => [
@@ -671,25 +603,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             bound. Only the separate pure/returning adapter requires the substantive proof \
             size = 0 or size % 2^32 != 0, so its division-panic branch is unreachable; \
             that adapter condition does not restrict the family or its compatible release \
-            set."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.10.4.crate"],
-        argument :=
-          "The complete family corresponds exactly to Borsh 0.10.4 among all 55 assessed \
-            stable releases. It rejects zero-sized elements before reading, reports \
-            length-read errors before the hint, returns an empty vector for zero length, \
-            preserves the u8 reader specialization, and otherwise applies cautious after \
-            the length read and before allocation/element callbacks. The model represents \
-            the truncating cast and its panic: positive size 2^32 with nonzero length \
-            consumes the header then invokes the panic callback without allocation or \
-            element calls; size 2^32 + 1 computes capacity using divisor 1. No upper bound \
-            is added. Earlier implementations differ in zero-sized-element handling and/or \
-            byte-buffer allocation; 0.10.0–0.10.3 and 0.11.0 allow zero-sized elements and \
-            decode one such element for nonzero length, while 0.10.4 rejects them before \
-            reading. All 1.x use the different InvalidData/Collections zero-sized error \
-            profile. Existing callback, allocation and cleanup boundaries are preserved. \
-            The diagnostic-allocation exclusion is shared with other library models. The \
-            singleton is the result of the complete release/source review, not a baseline \
-            pin."
+            set."]
       }
     ]
     | .bool_invalid_data_deserialize_reader => [
@@ -714,11 +628,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -731,26 +641,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete bool slice-decoder operation corresponds in all 22 stable 1.x \
-            releases under the shared error-construction boundary. One read_exact reads \
-            the fixed scalar width; the reached helper translates UnexpectedEof to \
-            InvalidData, \"Unexpected length of input\". Every 0.x operation differs: \
-            versions before 0.6.0 expose UnexpectedEof or older permissive bool behavior; \
-            0.6.0–0.9.3 use the explicit fixed-slice deserialize predecessor and \
-            0.10.x/0.11.0 use deserialize_reader, with InvalidInput rather than \
-            InvalidData. Exactly one byte is consumed. Tags 0 and 1 decode to false and \
-            true; any other tag returns \"Invalid bool representation: N\" with the \
-            decimal byte N and the profile-specific error kind. Before 0.2.10 every non-1 \
-            byte is accepted as false; through 0.2.5 even empty input returns false. \
-            Success advances the slice by the scalar width. The contract deliberately \
-            leaves the remaining slice after an error unconstrained: the pinned std \
-            read_exact empties a short slice, while the predecessor and Borsh no_std \
-            implementation retain it. No additional reader callback domain is admitted by \
-            the predecessor mapping, and it does not create a registered older callable \
-            binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -773,11 +664,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -790,26 +677,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete bool slice-decoder operation corresponds in all 22 stable 1.x \
-            releases under the shared error-construction boundary. One read_exact reads \
-            the fixed scalar width; the reached helper translates UnexpectedEof to \
-            InvalidData, \"Unexpected length of input\". Every 0.x operation differs: \
-            versions before 0.6.0 expose UnexpectedEof or older permissive bool behavior; \
-            0.6.0–0.9.3 use the explicit fixed-slice deserialize predecessor and \
-            0.10.x/0.11.0 use deserialize_reader, with InvalidInput rather than \
-            InvalidData. Exactly one byte is consumed. Tags 0 and 1 decode to false and \
-            true; any other tag returns \"Invalid bool representation: N\" with the \
-            decimal byte N and the profile-specific error kind. Before 0.2.10 every non-1 \
-            byte is accepted as false; through 0.2.5 even empty input returns false. \
-            Success advances the slice by the scalar width. The contract deliberately \
-            leaves the remaining slice after an error unconstrained: the pinned std \
-            read_exact empties a short slice, while the predecessor and Borsh no_std \
-            implementation retain it. No additional reader callback domain is admitted by \
-            the predecessor mapping, and it does not create a registered older callable \
-            binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .bool_invalid_input_deserialize_reader => [
@@ -841,11 +709,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -858,26 +722,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.6.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete bool slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Exactly one byte is consumed. Tags 0 and 1 decode to false and \
-            true; any other tag returns \"Invalid bool representation: N\" with the \
-            decimal byte N and the profile-specific error kind. Before 0.2.10 every non-1 \
-            byte is accepted as false; through 0.2.5 even empty input returns false. \
-            Success advances the slice by the scalar width. The contract deliberately \
-            leaves the remaining slice after an error unconstrained: the pinned std \
-            read_exact empties a short slice, while the predecessor and Borsh no_std \
-            implementation retain it. No additional reader callback domain is admitted by \
-            the predecessor mapping, and it does not create a registered older callable \
-            binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "std-2",
@@ -897,11 +742,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -914,26 +755,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.6.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete bool slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Exactly one byte is consumed. Tags 0 and 1 decode to false and \
-            true; any other tag returns \"Invalid bool representation: N\" with the \
-            decimal byte N and the profile-specific error kind. Before 0.2.10 every non-1 \
-            byte is accepted as false; through 0.2.5 even empty input returns false. \
-            Success advances the slice by the scalar width. The contract deliberately \
-            leaves the remaining slice after an error unconstrained: the pinned std \
-            read_exact empties a short slice, while the predecessor and Borsh no_std \
-            implementation retain it. No additional reader callback domain is admitted by \
-            the predecessor mapping, and it does not create a registered older callable \
-            binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -959,11 +781,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -976,26 +794,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete bool slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Exactly one byte is consumed. Tags 0 and 1 decode to false and \
-            true; any other tag returns \"Invalid bool representation: N\" with the \
-            decimal byte N and the profile-specific error kind. Before 0.2.10 every non-1 \
-            byte is accepted as false; through 0.2.5 even empty input returns false. \
-            Success advances the slice by the scalar width. The contract deliberately \
-            leaves the remaining slice after an error unconstrained: the pinned std \
-            read_exact empties a short slice, while the predecessor and Borsh no_std \
-            implementation retain it. No additional reader callback domain is admitted by \
-            the predecessor mapping, and it does not create a registered older callable \
-            binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd-2",
@@ -1015,11 +814,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -1032,26 +827,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete bool slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Exactly one byte is consumed. Tags 0 and 1 decode to false and \
-            true; any other tag returns \"Invalid bool representation: N\" with the \
-            decimal byte N and the profile-specific error kind. Before 0.2.10 every non-1 \
-            byte is accepted as false; through 0.2.5 even empty input returns false. \
-            Success advances the slice by the scalar width. The contract deliberately \
-            leaves the remaining slice after an error unconstrained: the pinned std \
-            read_exact empties a short slice, while the predecessor and Borsh no_std \
-            implementation retain it. No additional reader callback domain is admitted by \
-            the predecessor mapping, and it does not create a registered older callable \
-            binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .bool_serialize => [
@@ -1109,11 +885,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The index writer interprets the actual W::write_all, including ordinary io \
@@ -1125,19 +897,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature. Usable Borsh no_std IO profiles disable default features and leave \
             std disabled after Cargo feature unification; they start at 0.8.0 and exclude \
             the published 0.9.2 compile failure. No scalar operation here requires \
-            const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.2.7.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "Every listed compatible release, all 48 stable releases from 0.2.7 onward, \
-            performs exactly one call to the actual W::write_all for bool, forwarding its \
-            success, ordinary error, partial effects, unwind state or terminal reason \
-            under the shared error-construction boundary. u8 writes its single byte; bool \
-            writes 0 for false and 1 for true; u32/u64/i64 write their fixed-width \
-            little-endian bytes, with signed binary radix-complement conversion. Syntactic \
-            IO/slice-import changes and bool delegation to u8 from 0.10.0 preserve that \
-            sequence. The seven earlier releases call write once and discard its count, so \
-            an overridden write_all or positive short write distinguishes them; Borsh \
-            0.1.0 also reverses bool encoding. No writer-success premise is introduced."
+            const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -1175,11 +935,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The index writer interprets the actual W::write_all, including ordinary io \
@@ -1191,19 +947,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature. Usable Borsh no_std IO profiles disable default features and leave \
             std disabled after Cargo feature unification; they start at 0.8.0 and exclude \
             the published 0.9.2 compile failure. No scalar operation here requires \
-            const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "Every listed compatible release, all 48 stable releases from 0.2.7 onward, \
-            performs exactly one call to the actual W::write_all for bool, forwarding its \
-            success, ordinary error, partial effects, unwind state or terminal reason \
-            under the shared error-construction boundary. u8 writes its single byte; bool \
-            writes 0 for false and 1 for true; u32/u64/i64 write their fixed-width \
-            little-endian bytes, with signed binary radix-complement conversion. Syntactic \
-            IO/slice-import changes and bool delegation to u8 from 0.10.0 preserve that \
-            sequence. The seven earlier releases call write once and discard its count, so \
-            an overridden write_all or positive short write distinguishes them; Borsh \
-            0.1.0 also reverses bool encoding. No writer-success premise is introduced."
+            const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .de_BorshDeserialize_deserialize => [
@@ -1234,15 +978,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The index callback interprets the actual <T as \
             BorshDeserialize>::deserialize_reader::<&[u8]> (or Self::deserialize) \
             implementation, including its result, remaining slice, state effects, unwind \
-            and terminal exits."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.10.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The provided forwarding wrapper first appears in 0.10.0 and is byte-identical \
-            through 1.8.1, including 0.11.0: Self::deserialize_reader(&mut *buf). It calls \
-            the actual reader implementation once and returns its full outcome and \
-            remainder, with no own diagnostic construction or allocation. Earlier methods \
-            named deserialize are required implementations of the decoding operation, not \
-            this provided wrapper; there is no equivalent provided predecessor to alias."
+            and terminal exits."]
       },
       {
         id := "borsh-reviewed-2",
@@ -1271,15 +1007,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The index callback interprets the actual <T as \
             BorshDeserialize>::deserialize_reader::<&[u8]> (or Self::deserialize) \
             implementation, including its result, remaining slice, state effects, unwind \
-            and terminal exits."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.10.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "This is the same provided forwarding operation as the 0.10.4 registered \
-            wrapper. Its complete callback-sensitive body is byte-identical in all 28 \
-            releases from 0.10.0 through 1.8.1. Its supplied callback owns any \
-            primitive/element diagnostic failures, so those failures do not invalidate \
-            this wrapper when the existing actual-callback premise is satisfied. Earlier \
-            deserialize implementations are not this provided body."
+            and terminal exits."]
       }
     ]
     | .de_BorshDeserialize_try_from_slice => [
@@ -1325,17 +1053,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             exits.", "Destructors of decoded values dropped on error paths are not \
             represented; the binding establishes that they have no observable effect in \
             the model state.", "The shared package boundary excludes custom-allocator \
-            failure during construction of errors and diagnostics."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.6.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete slice-wrapper/callback behavior exists from 0.6.0. The wrapper \
-            calls the actual Self::deserialize override exactly once and tests its \
-            resulting local slice; leftover bytes produce the stated error. 0.1.0–0.2.3 do \
-            not reject trailing input; 0.2.4–0.5.0 inspect Cursor.position instead of the \
-            resulting slice of the callback and can disagree for a valid callback that \
-            replaces the Cursor. Destructors of the discarded successful value retain the \
-            existing unobservability obligation. Error-construction allocation failure is \
-            outside the shared model boundary."
+            failure during construction of errors and diagnostics."]
       }
     ]
     | .de_BorshDeserialize_vec_from_reader => [
@@ -1354,15 +1072,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           lower := "0.9.1",
           upper := "0.10.0"
         }],
-        conditions := ["The reader is R = &[u8]; the slice is returned unchanged."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.9.1.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The provided method returns Ok(None) without reading, callbacks or allocation \
-            at every index. Explicit predecessor mapping admits vec_from_bytes(len, &mut \
-            &[u8]) in 0.9.1–0.9.3; the reader-named version exists from 0.10.0. Both \
-            bodies ignore length and reader and preserve the complete slice. Earlier is_u8 \
-            metadata helpers are not equivalent provided decoding operations. u8 overrides \
-            returning Some are outside this default-method contract."
+        conditions := ["The reader is R = &[u8]; the slice is returned unchanged."]
       },
       {
         id := "borsh-reviewed-2",
@@ -1387,15 +1097,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           lower := "1.0.0",
           upper := "2.0.0"
         }],
-        conditions := ["The reader is R = &[u8]; the slice is returned unchanged."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.9.1.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The provided method returns Ok(None) without reading, callbacks or allocation \
-            at every index. Explicit predecessor mapping admits vec_from_bytes(len, &mut \
-            &[u8]) in 0.9.1–0.9.3; the reader-named version exists from 0.10.0. Both \
-            bodies ignore length and reader and preserve the complete slice. Earlier is_u8 \
-            metadata helpers are not equivalent provided decoding operations. u8 overrides \
-            returning Some are outside this default-method contract."
+        conditions := ["The reader is R = &[u8]; the slice is returned unchanged."]
       }
     ]
     | .de_hint_cautious => [
@@ -1456,17 +1158,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             Its Empty return value rules out returning normally.", "The family has no size \
             precondition: it reduces size modulo 2^32 and invokes the panic callback for \
             every zero divisor, including size zero and positive multiples of 2^32, even \
-            when hint is zero."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.2.8.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "All 47 helper-present stable releases correspond to the unrestricted family. \
-            Every published src/de/hint.rs body casts size_of::<T>() to u32 before \
-            evaluating 4096 / divisor, then min with the u32 hint and max with 1. The \
-            model represents that cast as size % 2^32 and represents division-by-zero \
-            through an explicit panic callback, so size 2^32 panics and size 2^32 + 1 uses \
-            divisor 1. There is no size < 2^32 premise. The helper is absent in the eight \
-            enumerated earlier releases. The three retained source-closure groups differ \
-            only in imports/formatting and share this arithmetic and order."
+            when hint is zero."]
       }
     ]
     | .f64_invalid_data_deserialize_reader => [
@@ -1491,11 +1183,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -1508,26 +1196,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete f64 slice-decoder operation corresponds in all 22 stable 1.x \
-            releases under the shared error-construction boundary. One read_exact reads \
-            the fixed scalar width; the reached helper translates UnexpectedEof to \
-            InvalidData, \"Unexpected length of input\". Every 0.x operation differs: \
-            versions before 0.6.0 expose UnexpectedEof or older permissive bool behavior; \
-            0.6.0–0.9.3 use the explicit fixed-slice deserialize predecessor and \
-            0.10.x/0.11.0 use deserialize_reader, with InvalidInput rather than \
-            InvalidData. Non-NaN IEEE-754 bits are preserved, including signed zeros, \
-            subnormals and infinities. Every NaN sign/payload returns InvalidData, \"For \
-            portability reasons we do not allow to deserialize NaNs.\", after consuming \
-            eight bytes. Pre-0.2.4 float decoding intentionally panics on NaN; later 0.x \
-            returns InvalidInput. The intentional panic remains in scope. Success advances \
-            the slice by the scalar width. The contract deliberately leaves the remaining \
-            slice after an error unconstrained: the pinned std read_exact empties a short \
-            slice, while the predecessor and Borsh no_std implementation retain it. No \
-            additional reader callback domain is admitted by the predecessor mapping, and \
-            it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -1550,11 +1219,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -1567,26 +1232,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete f64 slice-decoder operation corresponds in all 22 stable 1.x \
-            releases under the shared error-construction boundary. One read_exact reads \
-            the fixed scalar width; the reached helper translates UnexpectedEof to \
-            InvalidData, \"Unexpected length of input\". Every 0.x operation differs: \
-            versions before 0.6.0 expose UnexpectedEof or older permissive bool behavior; \
-            0.6.0–0.9.3 use the explicit fixed-slice deserialize predecessor and \
-            0.10.x/0.11.0 use deserialize_reader, with InvalidInput rather than \
-            InvalidData. Non-NaN IEEE-754 bits are preserved, including signed zeros, \
-            subnormals and infinities. Every NaN sign/payload returns InvalidData, \"For \
-            portability reasons we do not allow to deserialize NaNs.\", after consuming \
-            eight bytes. Pre-0.2.4 float decoding intentionally panics on NaN; later 0.x \
-            returns InvalidInput. The intentional panic remains in scope. Success advances \
-            the slice by the scalar width. The contract deliberately leaves the remaining \
-            slice after an error unconstrained: the pinned std read_exact empties a short \
-            slice, while the predecessor and Borsh no_std implementation retain it. No \
-            additional reader callback domain is admitted by the predecessor mapping, and \
-            it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .f64_serialize => [
@@ -1611,11 +1257,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The index writer interprets the actual W::write_all, including ordinary io \
@@ -1627,21 +1269,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature. Usable Borsh no_std IO profiles disable default features and leave \
             std disabled after Cargo feature unification; they start at 0.8.0 and exclude \
             the published 0.9.2 compile failure. No scalar operation here requires \
-            const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete f64 serializer family corresponds in all 22 stable 1.x releases \
-            under the shared error-construction boundary. Every NaN sign/payload returns \
-            InvalidData, \"For portability reasons we do not allow to serialize NaNs.\", \
-            before any writer call. Other IEEE-754 bits, including signed zero, subnormals \
-            and infinities, are passed unchanged as one eight-byte little-endian chunk to \
-            the actual W::write_all. The indexed provider retains every other ordinary \
-            error, partial effect, unwind state and terminal reason. Every 0.x release \
-            intentionally panics on NaN; that panic is in scope and makes the complete \
-            family incompatible. Additionally, 0.1.0–0.2.5 call write once and discard its \
-            short count on non-NaNs. Custom-allocator failure during NaN error \
-            construction lies outside the shared model boundary and does not determine \
-            version incompatibility."
+            const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -1664,11 +1292,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The index writer interprets the actual W::write_all, including ordinary io \
@@ -1680,21 +1304,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature. Usable Borsh no_std IO profiles disable default features and leave \
             std disabled after Cargo feature unification; they start at 0.8.0 and exclude \
             the published 0.9.2 compile failure. No scalar operation here requires \
-            const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete f64 serializer family corresponds in all 22 stable 1.x releases \
-            under the shared error-construction boundary. Every NaN sign/payload returns \
-            InvalidData, \"For portability reasons we do not allow to serialize NaNs.\", \
-            before any writer call. Other IEEE-754 bits, including signed zero, subnormals \
-            and infinities, are passed unchanged as one eight-byte little-endian chunk to \
-            the actual W::write_all. The indexed provider retains every other ordinary \
-            error, partial effect, unwind state and terminal reason. Every 0.x release \
-            intentionally panics on NaN; that panic is in scope and makes the complete \
-            family incompatible. Additionally, 0.1.0–0.2.5 call write once and discard its \
-            short count on non-NaNs. Custom-allocator failure during NaN error \
-            construction lies outside the shared model boundary and does not determine \
-            version incompatibility."
+            const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .i32_invalid_data_deserialize_reader => [
@@ -1719,11 +1329,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -1736,24 +1342,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete i32 slice-decoder operation corresponds in all 22 stable 1.x \
-            releases under the shared error-construction boundary. One read_exact reads \
-            the fixed scalar width; the reached helper translates UnexpectedEof to \
-            InvalidData, \"Unexpected length of input\". Every 0.x operation differs: \
-            versions before 0.6.0 expose UnexpectedEof or older permissive bool behavior; \
-            0.6.0–0.9.3 use the explicit fixed-slice deserialize predecessor and \
-            0.10.x/0.11.0 use deserialize_reader, with InvalidInput rather than \
-            InvalidData. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -1776,11 +1365,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -1793,24 +1378,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete i32 slice-decoder operation corresponds in all 22 stable 1.x \
-            releases under the shared error-construction boundary. One read_exact reads \
-            the fixed scalar width; the reached helper translates UnexpectedEof to \
-            InvalidData, \"Unexpected length of input\". Every 0.x operation differs: \
-            versions before 0.6.0 expose UnexpectedEof or older permissive bool behavior; \
-            0.6.0–0.9.3 use the explicit fixed-slice deserialize predecessor and \
-            0.10.x/0.11.0 use deserialize_reader, with InvalidInput rather than \
-            InvalidData. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .i64_invalid_data_deserialize_reader => [
@@ -1835,11 +1403,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -1852,24 +1416,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete i64 slice-decoder operation corresponds in all 22 stable 1.x \
-            releases under the shared error-construction boundary. One read_exact reads \
-            the fixed scalar width; the reached helper translates UnexpectedEof to \
-            InvalidData, \"Unexpected length of input\". Every 0.x operation differs: \
-            versions before 0.6.0 expose UnexpectedEof or older permissive bool behavior; \
-            0.6.0–0.9.3 use the explicit fixed-slice deserialize predecessor and \
-            0.10.x/0.11.0 use deserialize_reader, with InvalidInput rather than \
-            InvalidData. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -1892,11 +1439,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -1909,24 +1452,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete i64 slice-decoder operation corresponds in all 22 stable 1.x \
-            releases under the shared error-construction boundary. One read_exact reads \
-            the fixed scalar width; the reached helper translates UnexpectedEof to \
-            InvalidData, \"Unexpected length of input\". Every 0.x operation differs: \
-            versions before 0.6.0 expose UnexpectedEof or older permissive bool behavior; \
-            0.6.0–0.9.3 use the explicit fixed-slice deserialize predecessor and \
-            0.10.x/0.11.0 use deserialize_reader, with InvalidInput rather than \
-            InvalidData. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .i64_serialize => [
@@ -1984,11 +1510,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The index writer interprets the actual W::write_all, including ordinary io \
@@ -2000,19 +1522,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature. Usable Borsh no_std IO profiles disable default features and leave \
             std disabled after Cargo feature unification; they start at 0.8.0 and exclude \
             the published 0.9.2 compile failure. No scalar operation here requires \
-            const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.2.7.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "Every listed compatible release, all 48 stable releases from 0.2.7 onward, \
-            performs exactly one call to the actual W::write_all for i64, forwarding its \
-            success, ordinary error, partial effects, unwind state or terminal reason \
-            under the shared error-construction boundary. u8 writes its single byte; bool \
-            writes 0 for false and 1 for true; u32/u64/i64 write their fixed-width \
-            little-endian bytes, with signed binary radix-complement conversion. Syntactic \
-            IO/slice-import changes and bool delegation to u8 from 0.10.0 preserve that \
-            sequence. The seven earlier releases call write once and discard its count, so \
-            an overridden write_all or positive short write distinguishes them; Borsh \
-            0.1.0 also reverses bool encoding. No writer-success premise is introduced."
+            const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -2050,11 +1560,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The index writer interprets the actual W::write_all, including ordinary io \
@@ -2066,19 +1572,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature. Usable Borsh no_std IO profiles disable default features and leave \
             std disabled after Cargo feature unification; they start at 0.8.0 and exclude \
             the published 0.9.2 compile failure. No scalar operation here requires \
-            const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "Every listed compatible release, all 48 stable releases from 0.2.7 onward, \
-            performs exactly one call to the actual W::write_all for i64, forwarding its \
-            success, ordinary error, partial effects, unwind state or terminal reason \
-            under the shared error-construction boundary. u8 writes its single byte; bool \
-            writes 0 for false and 1 for true; u32/u64/i64 write their fixed-width \
-            little-endian bytes, with signed binary radix-complement conversion. Syntactic \
-            IO/slice-import changes and bool delegation to u8 from 0.10.0 preserve that \
-            sequence. The seven earlier releases call write once and discard its count, so \
-            an overridden write_all or positive short write distinguishes them; Borsh \
-            0.1.0 also reverses bool encoding. No writer-success premise is introduced."
+            const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .i8_invalid_input_deserialize_reader => [
@@ -2110,11 +1604,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -2127,24 +1617,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.6.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete i8 slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "std-2",
@@ -2164,11 +1637,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -2181,24 +1650,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.6.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete i8 slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -2224,11 +1676,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -2241,24 +1689,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete i8 slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd-2",
@@ -2278,11 +1709,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -2295,24 +1722,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete i8 slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .nostd_io_Write_write_all => [
@@ -2352,10 +1762,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "With std enabled the public IO path calls std::io::Write instead of this \
-              provided nostd_io method."
+          none := ["std"]
         },
         conditions :=
           ["The index write callback interprets the actual <W as \
@@ -2371,20 +1778,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             borsh::io is nostd_io; with std, the io of borsh is std::io and this provided \
             method is not called.", "Retain the existing BINDINGS.md boundary for dropping \
             an Interrupted error: its destructor/deallocation effects are unrepresented \
-            and must be unobservable or accounted for by the binding."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The provided no_std loop corresponds in 35 source releases from 0.8.0; 34 have \
-            a usable unmodified no_std build. It offers the current suffix to write; \
-            retries Interrupted unchanged after dropping the error; maps Ok(0) to \
-            WriteZero through the explicitly indexed String-allocation callback; handles \
-            count > length through the explicitly indexed slice-panic callback; and \
-            propagates every other callback exit. The method is not used with borsh std or \
-            a Write::write_all override. Error construction/kind/display and feature \
-            re-exports were reviewed along with the loop. 0.9.2 has source correspondence \
-            but its published no_std crate cannot build because of an unrelated missing \
-            vec macro import; its source correspondence does not provide a usable build \
-            and this profile excludes it."
+            and must be unobservable or accounted for by the binding."]
       }
     ]
     | .u32_invalid_data_deserialize_reader => [
@@ -2409,11 +1803,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -2426,24 +1816,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete u32 slice-decoder operation corresponds in all 22 stable 1.x \
-            releases under the shared error-construction boundary. One read_exact reads \
-            the fixed scalar width; the reached helper translates UnexpectedEof to \
-            InvalidData, \"Unexpected length of input\". Every 0.x operation differs: \
-            versions before 0.6.0 expose UnexpectedEof or older permissive bool behavior; \
-            0.6.0–0.9.3 use the explicit fixed-slice deserialize predecessor and \
-            0.10.x/0.11.0 use deserialize_reader, with InvalidInput rather than \
-            InvalidData. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -2466,11 +1839,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -2483,24 +1852,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete u32 slice-decoder operation corresponds in all 22 stable 1.x \
-            releases under the shared error-construction boundary. One read_exact reads \
-            the fixed scalar width; the reached helper translates UnexpectedEof to \
-            InvalidData, \"Unexpected length of input\". Every 0.x operation differs: \
-            versions before 0.6.0 expose UnexpectedEof or older permissive bool behavior; \
-            0.6.0–0.9.3 use the explicit fixed-slice deserialize predecessor and \
-            0.10.x/0.11.0 use deserialize_reader, with InvalidInput rather than \
-            InvalidData. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .u32_invalid_input_deserialize_reader => [
@@ -2532,11 +1884,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -2549,24 +1897,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.6.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete u32 slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "std-2",
@@ -2586,11 +1917,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -2603,24 +1930,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.6.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete u32 slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -2646,11 +1956,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -2663,24 +1969,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete u32 slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd-2",
@@ -2700,11 +1989,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -2717,24 +2002,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete u32 slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .u32_serialize => [
@@ -2792,11 +2060,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The index writer interprets the actual W::write_all, including ordinary io \
@@ -2808,19 +2072,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature. Usable Borsh no_std IO profiles disable default features and leave \
             std disabled after Cargo feature unification; they start at 0.8.0 and exclude \
             the published 0.9.2 compile failure. No scalar operation here requires \
-            const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.2.7.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "Every listed compatible release, all 48 stable releases from 0.2.7 onward, \
-            performs exactly one call to the actual W::write_all for u32, forwarding its \
-            success, ordinary error, partial effects, unwind state or terminal reason \
-            under the shared error-construction boundary. u8 writes its single byte; bool \
-            writes 0 for false and 1 for true; u32/u64/i64 write their fixed-width \
-            little-endian bytes, with signed binary radix-complement conversion. Syntactic \
-            IO/slice-import changes and bool delegation to u8 from 0.10.0 preserve that \
-            sequence. The seven earlier releases call write once and discard its count, so \
-            an overridden write_all or positive short write distinguishes them; Borsh \
-            0.1.0 also reverses bool encoding. No writer-success premise is introduced."
+            const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -2858,11 +2110,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The index writer interprets the actual W::write_all, including ordinary io \
@@ -2874,19 +2122,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature. Usable Borsh no_std IO profiles disable default features and leave \
             std disabled after Cargo feature unification; they start at 0.8.0 and exclude \
             the published 0.9.2 compile failure. No scalar operation here requires \
-            const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "Every listed compatible release, all 48 stable releases from 0.2.7 onward, \
-            performs exactly one call to the actual W::write_all for u32, forwarding its \
-            success, ordinary error, partial effects, unwind state or terminal reason \
-            under the shared error-construction boundary. u8 writes its single byte; bool \
-            writes 0 for false and 1 for true; u32/u64/i64 write their fixed-width \
-            little-endian bytes, with signed binary radix-complement conversion. Syntactic \
-            IO/slice-import changes and bool delegation to u8 from 0.10.0 preserve that \
-            sequence. The seven earlier releases call write once and discard its count, so \
-            an overridden write_all or positive short write distinguishes them; Borsh \
-            0.1.0 also reverses bool encoding. No writer-success premise is introduced."
+            const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .u64_invalid_data_deserialize_reader => [
@@ -2911,11 +2147,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -2928,26 +2160,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The declared 1.x range assumes preservation of this R = &[u8] contract, \
-            including exact errors and the successful eight-byte advance. The complete u64 \
-            slice-decoder operation corresponds in all 22 stable 1.x releases under the \
-            shared error-construction boundary. One read_exact reads the fixed scalar \
-            width; the reached helper translates UnexpectedEof to InvalidData, \
-            \"Unexpected length of input\". Every 0.x operation differs: versions before \
-            0.6.0 expose UnexpectedEof or older permissive bool behavior; 0.6.0–0.9.3 use \
-            the explicit fixed-slice deserialize predecessor and 0.10.x/0.11.0 use \
-            deserialize_reader, with InvalidInput rather than InvalidData. Fixed-width \
-            little-endian conversion yields the exact unsigned value or signed binary \
-            radix-complement interpretation; the fixed-length conversion cannot fail after \
-            the length check or successful read. Success advances the slice by the scalar \
-            width. The contract deliberately leaves the remaining slice after an error \
-            unconstrained: the pinned std read_exact empties a short slice, while the \
-            predecessor and Borsh no_std implementation retain it. No additional reader \
-            callback domain is admitted by the predecessor mapping, and it does not create \
-            a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -2970,11 +2183,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -2987,26 +2196,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The declared 1.x range assumes preservation of this R = &[u8] contract, \
-            including exact errors and the successful eight-byte advance. The complete u64 \
-            slice-decoder operation corresponds in all 22 stable 1.x releases under the \
-            shared error-construction boundary. One read_exact reads the fixed scalar \
-            width; the reached helper translates UnexpectedEof to InvalidData, \
-            \"Unexpected length of input\". Every 0.x operation differs: versions before \
-            0.6.0 expose UnexpectedEof or older permissive bool behavior; 0.6.0–0.9.3 use \
-            the explicit fixed-slice deserialize predecessor and 0.10.x/0.11.0 use \
-            deserialize_reader, with InvalidInput rather than InvalidData. Fixed-width \
-            little-endian conversion yields the exact unsigned value or signed binary \
-            radix-complement interpretation; the fixed-length conversion cannot fail after \
-            the length check or successful read. Success advances the slice by the scalar \
-            width. The contract deliberately leaves the remaining slice after an error \
-            unconstrained: the pinned std read_exact empties a short slice, while the \
-            predecessor and Borsh no_std implementation retain it. No additional reader \
-            callback domain is admitted by the predecessor mapping, and it does not create \
-            a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .u64_invalid_input_deserialize_reader => [
@@ -3038,11 +2228,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -3055,24 +2241,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.6.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete u64 slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "std-2",
@@ -3092,11 +2261,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -3109,27 +2274,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.6.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The declared 0.10.x range assumes preservation of this R = &[u8] contract, \
-            including exact errors and the successful eight-byte advance; the independent \
-            0.11.0 reference does not admit future 0.11.x releases. The complete u64 \
-            slice-decoder operation corresponds in all 19 listed releases under the shared \
-            error-construction boundary: Borsh 0.6.0–0.9.3 uses the explicit fixed-slice \
-            BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 and 0.11.0 use \
-            deserialize_reader with R = &[u8]. Both return InvalidInput, \"Unexpected \
-            length of input\", on short input. Before 0.6.0 the reached operation exposes \
-            UnexpectedEof, \"failed to fill whole buffer\", or older permissive bool \
-            behavior. Every stable 1.x release uses InvalidData instead of InvalidInput. \
-            Fixed-width little-endian conversion yields the exact unsigned value or signed \
-            binary radix-complement interpretation; the fixed-length conversion cannot \
-            fail after the length check or successful read. Success advances the slice by \
-            the scalar width. The contract deliberately leaves the remaining slice after \
-            an error unconstrained: the pinned std read_exact empties a short slice, while \
-            the predecessor and Borsh no_std implementation retain it. No additional \
-            reader callback domain is admitted by the predecessor mapping, and it does not \
-            create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -3155,11 +2300,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -3172,24 +2313,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete u64 slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd-2",
@@ -3209,11 +2333,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -3226,27 +2346,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The declared 0.10.x range assumes preservation of this R = &[u8] contract, \
-            including exact errors and the successful eight-byte advance; the independent \
-            0.11.0 reference does not admit future 0.11.x releases. The complete u64 \
-            slice-decoder operation corresponds in all 19 listed releases under the shared \
-            error-construction boundary: Borsh 0.6.0–0.9.3 uses the explicit fixed-slice \
-            BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 and 0.11.0 use \
-            deserialize_reader with R = &[u8]. Both return InvalidInput, \"Unexpected \
-            length of input\", on short input. Before 0.6.0 the reached operation exposes \
-            UnexpectedEof, \"failed to fill whole buffer\", or older permissive bool \
-            behavior. Every stable 1.x release uses InvalidData instead of InvalidInput. \
-            Fixed-width little-endian conversion yields the exact unsigned value or signed \
-            binary radix-complement interpretation; the fixed-length conversion cannot \
-            fail after the length check or successful read. Success advances the slice by \
-            the scalar width. The contract deliberately leaves the remaining slice after \
-            an error unconstrained: the pinned std read_exact empties a short slice, while \
-            the predecessor and Borsh no_std implementation retain it. No additional \
-            reader callback domain is admitted by the predecessor mapping, and it does not \
-            create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .u64_serialize => [
@@ -3304,11 +2404,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The index writer interprets the actual W::write_all, including ordinary io \
@@ -3320,19 +2416,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature. Usable Borsh no_std IO profiles disable default features and leave \
             std disabled after Cargo feature unification; they start at 0.8.0 and exclude \
             the published 0.9.2 compile failure. No scalar operation here requires \
-            const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.2.7.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "Every listed compatible release, all 48 stable releases from 0.2.7 onward, \
-            performs exactly one call to the actual W::write_all for u64, forwarding its \
-            success, ordinary error, partial effects, unwind state or terminal reason \
-            under the shared error-construction boundary. u8 writes its single byte; bool \
-            writes 0 for false and 1 for true; u32/u64/i64 write their fixed-width \
-            little-endian bytes, with signed binary radix-complement conversion. Syntactic \
-            IO/slice-import changes and bool delegation to u8 from 0.10.0 preserve that \
-            sequence. The seven earlier releases call write once and discard its count, so \
-            an overridden write_all or positive short write distinguishes them; Borsh \
-            0.1.0 also reverses bool encoding. No writer-success premise is introduced."
+            const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -3370,11 +2454,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The index writer interprets the actual W::write_all, including ordinary io \
@@ -3386,19 +2466,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature. Usable Borsh no_std IO profiles disable default features and leave \
             std disabled after Cargo feature unification; they start at 0.8.0 and exclude \
             the published 0.9.2 compile failure. No scalar operation here requires \
-            const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "Every listed compatible release, all 48 stable releases from 0.2.7 onward, \
-            performs exactly one call to the actual W::write_all for u64, forwarding its \
-            success, ordinary error, partial effects, unwind state or terminal reason \
-            under the shared error-construction boundary. u8 writes its single byte; bool \
-            writes 0 for false and 1 for true; u32/u64/i64 write their fixed-width \
-            little-endian bytes, with signed binary radix-complement conversion. Syntactic \
-            IO/slice-import changes and bool delegation to u8 from 0.10.0 preserve that \
-            sequence. The seven earlier releases call write once and discard its count, so \
-            an overridden write_all or positive short write distinguishes them; Borsh \
-            0.1.0 also reverses bool encoding. No writer-success premise is introduced."
+            const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .u8_invalid_data_array_from_reader => [
@@ -3423,11 +2491,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The index is the const generic N; the reader is R = &[u8]; the remaining slice \
@@ -3439,20 +2503,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             profiles disable default features and leave std disabled after Cargo feature \
             unification; they start at 0.8.0 and exclude the published 0.9.2 compile \
             failure. No scalar operation here requires const-generics, derive or another \
-            optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete u8 array_from_reader family corresponds in all 22 stable 1.x \
-            releases under the shared error-construction boundary. For every const N the \
-            source creates [0u8; N], calls read_exact once, and returns Ok(Some(array)); N \
-            = 0 consumes no input. The reached short-input helper returns InvalidData, \
-            \"Unexpected length of input\". The method exists from 0.10.0, but 0.10.x and \
-            0.11.0 use InvalidInput and are incompatible. Before 0.10.0 this complete \
-            operation is absent: the 0.9.1–0.9.3 copy_from_bytes helper instead mutates a \
-            caller-supplied output slice and returns bool. Success consumes exactly N \
-            bytes; the existing contract permits either retained or emptied error \
-            remainders. The array fast-path method itself is not feature-gated by \
-            const-generics."
+            optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -3475,11 +2526,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The index is the const generic N; the reader is R = &[u8]; the remaining slice \
@@ -3491,20 +2538,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             profiles disable default features and leave std disabled after Cargo feature \
             unification; they start at 0.8.0 and exclude the published 0.9.2 compile \
             failure. No scalar operation here requires const-generics, derive or another \
-            optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete u8 array_from_reader family corresponds in all 22 stable 1.x \
-            releases under the shared error-construction boundary. For every const N the \
-            source creates [0u8; N], calls read_exact once, and returns Ok(Some(array)); N \
-            = 0 consumes no input. The reached short-input helper returns InvalidData, \
-            \"Unexpected length of input\". The method exists from 0.10.0, but 0.10.x and \
-            0.11.0 use InvalidInput and are incompatible. Before 0.10.0 this complete \
-            operation is absent: the 0.9.1–0.9.3 copy_from_bytes helper instead mutates a \
-            caller-supplied output slice and returns bool. Success consumes exactly N \
-            bytes; the existing contract permits either retained or emptied error \
-            remainders. The array fast-path method itself is not feature-gated by \
-            const-generics."
+            optional Borsh feature."]
       }
     ]
     | .u8_invalid_data_deserialize_reader => [
@@ -3529,11 +2563,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -3546,24 +2576,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete u8 slice-decoder operation corresponds in all 22 stable 1.x \
-            releases under the shared error-construction boundary. One read_exact reads \
-            the fixed scalar width; the reached helper translates UnexpectedEof to \
-            InvalidData, \"Unexpected length of input\". Every 0.x operation differs: \
-            versions before 0.6.0 expose UnexpectedEof or older permissive bool behavior; \
-            0.6.0–0.9.3 use the explicit fixed-slice deserialize predecessor and \
-            0.10.x/0.11.0 use deserialize_reader, with InvalidInput rather than \
-            InvalidData. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -3586,11 +2599,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -3603,24 +2612,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-1.0.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "The complete u8 slice-decoder operation corresponds in all 22 stable 1.x \
-            releases under the shared error-construction boundary. One read_exact reads \
-            the fixed scalar width; the reached helper translates UnexpectedEof to \
-            InvalidData, \"Unexpected length of input\". Every 0.x operation differs: \
-            versions before 0.6.0 expose UnexpectedEof or older permissive bool behavior; \
-            0.6.0–0.9.3 use the explicit fixed-slice deserialize predecessor and \
-            0.10.x/0.11.0 use deserialize_reader, with InvalidInput rather than \
-            InvalidData. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .u8_invalid_input_deserialize_reader => [
@@ -3652,11 +2644,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -3669,24 +2657,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.6.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete u8 slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "std-2",
@@ -3706,11 +2677,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -3723,24 +2690,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.6.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete u8 slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -3766,11 +2716,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -3783,24 +2729,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete u8 slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd-2",
@@ -3820,11 +2749,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The reader is R = &[u8]; argument and result observe the slice contents, the \
@@ -3837,24 +2762,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-0.11.0.crate"],
-        argument :=
-          "The complete u8 slice-decoder operation corresponds in all 19 listed releases \
-            under the shared error-construction boundary: Borsh 0.6.0–0.9.3 uses the \
-            explicit fixed-slice BorshDeserialize::deserialize predecessor; 0.10.0–0.10.4 \
-            and 0.11.0 use deserialize_reader with R = &[u8]. Both return InvalidInput, \
-            \"Unexpected length of input\", on short input. Before 0.6.0 the reached \
-            operation exposes UnexpectedEof, \"failed to fill whole buffer\", or older \
-            permissive bool behavior. Every stable 1.x release uses InvalidData instead of \
-            InvalidInput. Fixed-width little-endian conversion yields the exact unsigned \
-            value or signed binary radix-complement interpretation; the fixed-length \
-            conversion cannot fail after the length check or successful read. Success \
-            advances the slice by the scalar width. The contract deliberately leaves the \
-            remaining slice after an error unconstrained: the pinned std read_exact \
-            empties a short slice, while the predecessor and Borsh no_std implementation \
-            retain it. No additional reader callback domain is admitted by the predecessor \
-            mapping, and it does not create a registered older callable binding."
+            here requires const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .u8_serialize => [
@@ -3912,11 +2820,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The index writer interprets the actual W::write_all, including ordinary io \
@@ -3928,19 +2832,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature. Usable Borsh no_std IO profiles disable default features and leave \
             std disabled after Cargo feature unification; they start at 0.8.0 and exclude \
             the published 0.9.2 compile failure. No scalar operation here requires \
-            const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.2.7.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "Every listed compatible release, all 48 stable releases from 0.2.7 onward, \
-            performs exactly one call to the actual W::write_all for u8, forwarding its \
-            success, ordinary error, partial effects, unwind state or terminal reason \
-            under the shared error-construction boundary. u8 writes its single byte; bool \
-            writes 0 for false and 1 for true; u32/u64/i64 write their fixed-width \
-            little-endian bytes, with signed binary radix-complement conversion. Syntactic \
-            IO/slice-import changes and bool delegation to u8 from 0.10.0 preserve that \
-            sequence. The seven earlier releases call write once and discard its count, so \
-            an overridden write_all or positive short write distinguishes them; Borsh \
-            0.1.0 also reverses bool encoding. No writer-success premise is introduced."
+            const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -3978,11 +2870,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The index writer interprets the actual W::write_all, including ordinary io \
@@ -3994,19 +2882,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature. Usable Borsh no_std IO profiles disable default features and leave \
             std disabled after Cargo feature unification; they start at 0.8.0 and exclude \
             the published 0.9.2 compile failure. No scalar operation here requires \
-            const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.8.0.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "Every listed compatible release, all 48 stable releases from 0.2.7 onward, \
-            performs exactly one call to the actual W::write_all for u8, forwarding its \
-            success, ordinary error, partial effects, unwind state or terminal reason \
-            under the shared error-construction boundary. u8 writes its single byte; bool \
-            writes 0 for false and 1 for true; u32/u64/i64 write their fixed-width \
-            little-endian bytes, with signed binary radix-complement conversion. Syntactic \
-            IO/slice-import changes and bool delegation to u8 from 0.10.0 preserve that \
-            sequence. The seven earlier releases call write once and discard its count, so \
-            an overridden write_all or positive short write distinguishes them; Borsh \
-            0.1.0 also reverses bool encoding. No writer-success premise is introduced."
+            const-generics, derive or another optional Borsh feature."]
       }
     ]
     | .u8_u8_slice => [
@@ -4039,11 +2915,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["std"],
           any := [],
-          none := [],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := []
         },
         conditions :=
           ["The argument and result observe slice contents; Some(slice) is the same slice, \
@@ -4054,16 +2926,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.9.1.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "All 31 stable releases from 0.9.1 onward implement the u8_slice override as \
-            exactly Some(slice). The original pointer, length, contents and borrow are \
-            retained, with no copy, allocation or callback. The method is not gated by \
-            const-generics. Earlier is_u8 predicates do not perform this borrowed-slice \
-            operation, so the API is absent before 0.9.1. Native pointer and length \
-            equality assertions supplement the source argument in every buildable \
-            std/no_std profile."
+            here requires const-generics, derive or another optional Borsh feature."]
       },
       {
         id := "nostd",
@@ -4098,11 +2961,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := [],
           any := [],
-          none := ["std"],
-          reason :=
-            "The std and nostd_io slice readers have explicitly reviewed error and \
-              input-remainder behavior; these are the exact usable source profiles. Borsh \
-              0.9.2 without std does not compile."
+          none := ["std"]
         },
         conditions :=
           ["The argument and result observe slice contents; Some(slice) is the same slice, \
@@ -4113,16 +2972,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the default std feature. Usable Borsh no_std IO profiles disable default \
             features and leave std disabled after Cargo feature unification; they start at \
             0.8.0 and exclude the published 0.9.2 compile failure. No scalar operation \
-            here requires const-generics, derive or another optional Borsh feature."],
-        evidence := ["https://static.crates.io/crates/borsh/borsh-0.9.1.crate", "https://static.crates.io/crates/borsh/borsh-1.8.1.crate"],
-        argument :=
-          "All 31 stable releases from 0.9.1 onward implement the u8_slice override as \
-            exactly Some(slice). The original pointer, length, contents and borrow are \
-            retained, with no copy, allocation or callback. The method is not gated by \
-            const-generics. Earlier is_u8 predicates do not perform this borrowed-slice \
-            operation, so the API is absent before 0.9.1. Native pointer and length \
-            equality assertions supplement the source argument in every buildable \
-            std/no_std profile."
+            here requires const-generics, derive or another optional Borsh feature."]
       }
     ]
   applicabilityConsumers := fun key => match key with

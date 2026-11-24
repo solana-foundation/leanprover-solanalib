@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Generate the complete function-version table and contract-equality controls.
 
---check checks generated files. --fetch-index independently checks the full
+--check checks committed Lean and documentation, and validates a temporary machine export.
+--manifest-output writes the machine export to a chosen path, also when checking.
+--fetch-index independently checks the full
 release census and every published stable version inside the binding windows.
 Neither operation admits new source identities or changes a contract.
 """
@@ -11,6 +13,7 @@ from collections import defaultdict
 import json
 from pathlib import Path
 import sys
+import tempfile
 
 PACKAGE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PACKAGE.parents[1] / "tools/model-audit"))
@@ -21,7 +24,7 @@ from generate_capabilities import declaration_modules
 from lean_format import format_source, HEADER
 from solana_specs_config import module_root  # noqa: E402
 from solana_applicability import normalized_applicability, verify_source_census  # noqa: E402
-from applicability import source_identity, version_choices  # noqa: E402
+from applicability import load_manifest, source_identity, version_choices  # noqa: E402
 
 
 def cell(text):
@@ -87,7 +90,7 @@ def applicability_markdown(document, manifest):
              "Missing facts required by a profile produce `unresolved`; a known mismatch produces `unsupported`.", "",
              "```bash", "python3 tools/lookup_applicability.py --build build.json", "```", "",
              "Run from this package directory. Use `--model <registered-model-id>` to select one operation.",
-             "The command also works in an installed specification bundle without repository tooling.",
+             "A checkout reads the current source registry; an exported manifest also supports standalone lookup.",
              "It returns model, contract and catalog names, matching source item mappings, reasons for",
              "rejection and the existing interpretation conditions. See [the build and result schema](BINDINGS.md#selecting-a-reviewed-build).", "",
              "In Lean, `catalog.forBuild build` preserves the same keys, families, indices, roles and",
@@ -95,8 +98,8 @@ def applicability_markdown(document, manifest):
              "Members without an existing source-call registration remain mathematical capabilities and",
              "receive no callable identity. The six source-less helpers inherit applicability through named consumers.", "",
              "The [curated source registry](source-map.json) records immutable archive checksums,",
-             "exact git revisions and per-function source arguments. The [installed manifest](applicability.json)",
-             "is generated from that registry. Neither matching nor source review supplies a Rust implementation proof."]
+             "exact git revisions and per-function source arguments. `just generate-specs` exports the machine-readable",
+             "`applicability.json`; it is not committed. Neither matching nor source review supplies a Rust implementation proof."]
     if manifest["scope"]:
         lines += ["", "The shared interpretation boundary is:", ""]
         lines += ["- " + condition for condition in manifest["scope"]]
@@ -243,6 +246,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--fetch-index", action="store_true")
+    parser.add_argument("--manifest-output", type=Path, help="destination for the untracked machine manifest")
     args = parser.parse_args()
     document = load_source_map(PACKAGE)
     groups = compatibility_groups(document)
@@ -253,14 +257,24 @@ def main():
             verify_source_census(document)
     generated = {PACKAGE / "VERSION_COMPATIBILITY.md": markdown(document, groups, manifest),
                  PACKAGE / "SolanalibTest/Specs/Core/VersionCompatibility.lean": equality_controls(document, groups)}
-    if manifest is not None:
-        generated[PACKAGE / "applicability.json"] = json.dumps(manifest, indent=2, ensure_ascii=False) + "\n"
     for path, text in generated.items():
         if args.check:
             if not path.is_file() or path.read_text() != text:
                 raise SystemExit(f"Stale version compatibility output: {path.relative_to(PACKAGE)}")
         else:
             path.write_text(text)
+    if manifest is not None:
+        contents = json.dumps(manifest, indent=2, ensure_ascii=False) + "\n"
+        # Exercise the standalone reader even when no export exists in the checkout.
+        with tempfile.TemporaryDirectory(prefix='solanalib-applicability-') as directory:
+            staging = Path(directory) / 'applicability.json'
+            staging.write_text(contents)
+            if load_manifest(staging) != manifest:
+                raise ValueError('The standalone applicability export differs from the registry')
+        if args.manifest_output is not None or not args.check:
+            destination = args.manifest_output or PACKAGE / 'applicability.json'
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(contents)
     print(f"{'Checked' if args.check else 'Generated'} compatibility for {len(document['models'])} models; "
           f"{len(groups)} exact binding reviews; "
           f"{sum(len(row['profiles']) for row in manifest['models']) if manifest else 0} build profiles")

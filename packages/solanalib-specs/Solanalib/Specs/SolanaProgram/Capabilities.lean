@@ -864,15 +864,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "OwnerRef identifies the actual writable owner storage behind the shared \
             reference. The finite store bound establishes the new current value through \
-            every alias; runtime reassignment authorization is separate."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Copy all owner bytes through the \
-            existing owner reference with the source volatile write, preserving the record \
-            identity and caller storage. This unsafe setter adds no owner, signer or \
-            writable validation. Compatibility in [1.18.26, 2.0.0) assumes this complete \
-            operation and the scoped dependencies remain unchanged; source/ABI/provider \
-            obligations stay explicit."
+            every alias; runtime reassignment authorization is separate."]
       },
       {
         id := "sdk-account-info-solana-program-1.18.26:1",
@@ -894,15 +886,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "OwnerRef identifies the actual writable owner storage behind the shared \
             reference. The finite store bound establishes the new current value through \
-            every alias; runtime reassignment authorization is separate."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Copy all owner bytes through the \
-            existing owner reference with the source volatile write, preserving the record \
-            identity and caller storage. This unsafe setter adds no owner, signer or \
-            writable validation. Compatibility in [1.18.26, 2.0.0) assumes this complete \
-            operation and the scoped dependencies remain unchanged; source/ABI/provider \
-            obligations stay explicit."
+            every alias; runtime reassignment authorization is separate."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:0",
@@ -924,15 +908,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "OwnerRef identifies the actual writable owner storage behind the shared \
             reference. The finite store bound establishes the new current value through \
-            every alias; runtime reassignment authorization is separate."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Volatile current owner update at shared storage identity, preserving every \
-            borrow and buffer. Preserve the reference non-repr(C) record, current \
-            Rc/RefCell identities and the reached borrow/drop effects; physical layouts \
-            remain separately bound. Compatibility in [1.15.2, 1.16.0) assumes this \
-            operation and its selected dependency contracts preserve that behavior; the \
-            exact releases remain inspected references."
+            every alias; runtime reassignment authorization is separate."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:1",
@@ -954,15 +930,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "OwnerRef identifies the actual writable owner storage behind the shared \
             reference. The finite store bound establishes the new current value through \
-            every alias; runtime reassignment authorization is separate."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Volatile current owner update at shared storage identity, preserving every \
-            borrow and buffer. Preserve the reference non-repr(C) record, current \
-            Rc/RefCell identities and the reached borrow/drop effects; physical layouts \
-            remain separately bound. Compatibility in [1.15.2, 1.16.0) assumes this \
-            operation and its selected dependency contracts preserve that behavior; the \
-            exact releases remain inspected references."
+            every alias; runtime reassignment authorization is separate."]
       }
     ]
     | .account_info_AccountInfo_clone => [
@@ -984,15 +952,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Clone the two Rc owners in \
-            declaration order and copy the remaining metadata/references. Preserve actual \
-            alias counters, reached clone failures, first-field cleanup and distinct \
-            source-record identities. Compatibility in [1.18.26, 2.0.0) assumes this \
-            complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.18.26:1",
@@ -1012,15 +972,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Clone the two Rc owners in \
-            declaration order and copy the remaining metadata/references. Preserve actual \
-            alias counters, reached clone failures, first-field cleanup and distinct \
-            source-record identities. Compatibility in [1.18.26, 2.0.0) assumes this \
-            complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:0",
@@ -1040,15 +992,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Derived Clone retains both Rc operations, source order, aliases and dependency \
-            terminal exits. Preserve the reference non-repr(C) record, current Rc/RefCell \
-            identities and the reached borrow/drop effects; physical layouts remain \
-            separately bound. Compatibility in [1.15.2, 1.16.0) assumes this operation and \
-            its selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:1",
@@ -1068,15 +1012,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Derived Clone retains both Rc operations, source order, aliases and dependency \
-            terminal exits. Preserve the reference non-repr(C) record, current Rc/RefCell \
-            identities and the reached borrow/drop effects; physical layouts remain \
-            separately bound. Compatibility in [1.15.2, 1.16.0) assumes this operation and \
-            its selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            layout and legal memory access remain explicit source-call assumptions."]
       }
     ]
     | .account_info_AccountInfo_data_is_empty => [
@@ -1100,15 +1036,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "ObservationReady supplies only the selected current typed data projection. \
             RefCell conflict or saturation follows the explicit panic strategy, with no \
-            invented ordinary error return."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Acquire the current shared data \
-            borrow, observe whether its length is zero and release that same guard. A \
-            conflicting borrow follows the selected panic policy; it is not a returned \
-            ProgramError. Compatibility in [1.18.26, 2.0.0) assumes this complete \
-            operation and the scoped dependencies remain unchanged; source/ABI/provider \
-            obligations stay explicit."
+            invented ordinary error return."]
       },
       {
         id := "sdk-account-info-solana-program-1.18.26:1",
@@ -1130,15 +1058,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "ObservationReady supplies only the selected current typed data projection. \
             RefCell conflict or saturation follows the explicit panic strategy, with no \
-            invented ordinary error return."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Acquire the current shared data \
-            borrow, observe whether its length is zero and release that same guard. A \
-            conflicting borrow follows the selected panic policy; it is not a returned \
-            ProgramError. Compatibility in [1.18.26, 2.0.0) assumes this complete \
-            operation and the scoped dependencies remain unchanged; source/ABI/provider \
-            obligations stay explicit."
+            invented ordinary error return."]
       }
     ]
     | .account_info_AccountInfo_data_len => [
@@ -1159,15 +1079,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Acquire the current shared data \
-            borrow, return the full current slice length and release the same guard. \
-            Preserve a conflicting borrow panic and the actual data-cell identity. \
-            Compatibility in [1.18.26, 2.0.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.18.26:1",
@@ -1186,15 +1098,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Acquire the current shared data \
-            borrow, return the full current slice length and release the same guard. \
-            Preserve a conflicting borrow panic and the actual data-cell identity. \
-            Compatibility in [1.18.26, 2.0.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:0",
@@ -1213,15 +1117,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Current data length with temporary shared borrow, panic and release. Preserve \
-            the reference non-repr(C) record, current Rc/RefCell identities and the \
-            reached borrow/drop effects; physical layouts remain separately bound. \
-            Compatibility in [1.15.2, 1.16.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:1",
@@ -1240,15 +1136,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Current data length with temporary shared borrow, panic and release. Preserve \
-            the reference non-repr(C) record, current Rc/RefCell identities and the \
-            reached borrow/drop effects; physical layouts remain separately bound. \
-            Compatibility in [1.15.2, 1.16.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            layout and legal memory access remain explicit source-call assumptions."]
       }
     ]
     | .account_info_AccountInfo_lamports => [
@@ -1269,15 +1157,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Read the current lamports through its \
-            shared RefCell guard and release that guard before returning. Preserve alias \
-            counters and the selected panic behavior on a conflicting borrow. \
-            Compatibility in [1.18.26, 2.0.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.18.26:1",
@@ -1296,15 +1176,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Read the current lamports through its \
-            shared RefCell guard and release that guard before returning. Preserve alias \
-            counters and the selected panic behavior on a conflicting borrow. \
-            Compatibility in [1.18.26, 2.0.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:0",
@@ -1323,15 +1195,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Current lamports with temporary shared borrow, panic and release. Preserve the \
-            reference non-repr(C) record, current Rc/RefCell identities and the reached \
-            borrow/drop effects; physical layouts remain separately bound. Compatibility \
-            in [1.15.2, 1.16.0) assumes this operation and its selected dependency \
-            contracts preserve that behavior; the exact releases remain inspected \
-            references."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:1",
@@ -1350,15 +1214,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Current lamports with temporary shared borrow, panic and release. Preserve the \
-            reference non-repr(C) record, current Rc/RefCell identities and the reached \
-            borrow/drop effects; physical layouts remain separately bound. Compatibility \
-            in [1.15.2, 1.16.0) assumes this operation and its selected dependency \
-            contracts preserve that behavior; the exact releases remain inspected \
-            references."
+            layout and legal memory access remain explicit source-call assumptions."]
       }
     ]
     | .account_info_AccountInfo_realloc => [
@@ -1380,10 +1236,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The Solana memory syscall has no user-defined unwind callback; legacy host \
-              SyscallStubs are separately replaceable and are not modeled here."
+          «exclude» := []
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
@@ -1396,16 +1249,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "The Solana memory syscall writes exactly the reached new tail on a normal \
             return and may terminate without a post-state. Legacy replaceable host \
             SyscallStubs are outside this profile.", "The explicit zero_init flag is \
-            retained; false preserves stale bytes on shrink/regrow."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Borrow data and return early for \
-            equal length before reading the original serialized length or checking growth. \
-            Otherwise update the prefix and slice descriptor, then zero only an admitted \
-            growing suffix when requested. Preserve stale bytes and allocation geometry; \
-            replaceable host memset is excluded. Compatibility in [1.18.26, 2.0.0) assumes \
-            this complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            retained; false preserves stale bytes on shrink/regrow."]
       },
       {
         id := "sdk-account-info-solana-program-1.18.26:1",
@@ -1425,10 +1269,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The Solana memory syscall has no user-defined unwind callback; legacy host \
-              SyscallStubs are separately replaceable and are not modeled here."
+          «exclude» := []
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
@@ -1441,16 +1282,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "The Solana memory syscall writes exactly the reached new tail on a normal \
             return and may terminate without a post-state. Legacy replaceable host \
             SyscallStubs are outside this profile.", "The explicit zero_init flag is \
-            retained; false preserves stale bytes on shrink/regrow."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Borrow data and return early for \
-            equal length before reading the original serialized length or checking growth. \
-            Otherwise update the prefix and slice descriptor, then zero only an admitted \
-            growing suffix when requested. Preserve stale bytes and allocation geometry; \
-            replaceable host memset is excluded. Compatibility in [1.18.26, 2.0.0) assumes \
-            this complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            retained; false preserves stale bytes on shrink/regrow."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:0",
@@ -1470,10 +1302,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The Solana memory syscall has no user-defined unwind callback; legacy host \
-              SyscallStubs are separately replaceable and are not modeled here."
+          «exclude» := []
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
@@ -1486,15 +1315,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "The Solana memory syscall writes exactly the reached new tail on a normal \
             return and may terminate without a post-state. Legacy replaceable host \
             SyscallStubs are outside this profile.", "The explicit zero_init flag is \
-            retained; false preserves stale bytes on shrink/regrow."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Source-ordered borrow/equality/growth checks, optional zero-tail syscall, \
-            retained spare bytes and guard cleanup. Preserve the reference non-repr(C) \
-            record, current Rc/RefCell identities and the reached borrow/drop effects; \
-            physical layouts remain separately bound. Compatibility in [1.15.2, 1.16.0) \
-            assumes this operation and its selected dependency contracts preserve that \
-            behavior; the exact releases remain inspected references."
+            retained; false preserves stale bytes on shrink/regrow."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:1",
@@ -1514,10 +1335,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The Solana memory syscall has no user-defined unwind callback; legacy host \
-              SyscallStubs are separately replaceable and are not modeled here."
+          «exclude» := []
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
@@ -1530,15 +1348,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "The Solana memory syscall writes exactly the reached new tail on a normal \
             return and may terminate without a post-state. Legacy replaceable host \
             SyscallStubs are outside this profile.", "The explicit zero_init flag is \
-            retained; false preserves stale bytes on shrink/regrow."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Source-ordered borrow/equality/growth checks, optional zero-tail syscall, \
-            retained spare bytes and guard cleanup. Preserve the reference non-repr(C) \
-            record, current Rc/RefCell identities and the reached borrow/drop effects; \
-            physical layouts remain separately bound. Compatibility in [1.15.2, 1.16.0) \
-            assumes this operation and its selected dependency contracts preserve that \
-            behavior; the exact releases remain inspected references."
+            retained; false preserves stale bytes on shrink/regrow."]
       }
     ]
     | .account_info_AccountInfo_try_borrow_data => [
@@ -1559,15 +1369,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Acquire one shared guard for the \
-            actual data cell, or return AccountBorrowFailed without replacing that cell. \
-            The returned guard retains its exact current range, counter and repayment \
-            obligation. Compatibility in [1.18.26, 2.0.0) assumes this complete operation \
-            and the scoped dependencies remain unchanged; source/ABI/provider obligations \
-            stay explicit."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.18.26:1",
@@ -1586,15 +1388,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Acquire one shared guard for the \
-            actual data cell, or return AccountBorrowFailed without replacing that cell. \
-            The returned guard retains its exact current range, counter and repayment \
-            obligation. Compatibility in [1.18.26, 2.0.0) assumes this complete operation \
-            and the scoped dependencies remain unchanged; source/ABI/provider obligations \
-            stay explicit."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:0",
@@ -1613,15 +1407,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Checked current data guard with shared leases, aliasing and source error. \
-            Preserve the reference non-repr(C) record, current Rc/RefCell identities and \
-            the reached borrow/drop effects; physical layouts remain separately bound. \
-            Compatibility in [1.15.2, 1.16.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:1",
@@ -1640,15 +1426,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Checked current data guard with shared leases, aliasing and source error. \
-            Preserve the reference non-repr(C) record, current Rc/RefCell identities and \
-            the reached borrow/drop effects; physical layouts remain separately bound. \
-            Compatibility in [1.15.2, 1.16.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            layout and legal memory access remain explicit source-call assumptions."]
       }
     ]
     | .account_info_AccountInfo_try_borrow_lamports => [
@@ -1674,15 +1452,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "LamportsBorrowReady supplies a typed selected cell and protocol-valid lease \
             world. The current cell policy, guard lifetime and counter bounds interpret \
             the actual RefCell. No account writability or unrelated-cell condition is \
-            assumed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Acquire one shared guard for the \
-            actual lamports cell, or return AccountBorrowFailed without changing the cell. \
-            Preserve actual aliases, counter limits, value type and guard repayment. \
-            Compatibility in [1.18.26, 2.0.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            assumed."]
       },
       {
         id := "sdk-account-info-solana-program-1.18.26:1",
@@ -1706,15 +1476,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "LamportsBorrowReady supplies a typed selected cell and protocol-valid lease \
             world. The current cell policy, guard lifetime and counter bounds interpret \
             the actual RefCell. No account writability or unrelated-cell condition is \
-            assumed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Acquire one shared guard for the \
-            actual lamports cell, or return AccountBorrowFailed without changing the cell. \
-            Preserve actual aliases, counter limits, value type and guard repayment. \
-            Compatibility in [1.18.26, 2.0.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            assumed."]
       }
     ]
     | .account_info_AccountInfo_try_borrow_mut_data => [
@@ -1736,15 +1498,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Acquire an exclusive guard for the \
-            actual data slice only when its borrow counter permits it. Preserve conflicts \
-            as AccountBorrowFailed and retain the current range, aliases and exclusive \
-            repayment. Compatibility in [1.18.26, 2.0.0) assumes this complete operation \
-            and the scoped dependencies remain unchanged; source/ABI/provider obligations \
-            stay explicit."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.18.26:1",
@@ -1764,15 +1518,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Acquire an exclusive guard for the \
-            actual data slice only when its borrow counter permits it. Preserve conflicts \
-            as AccountBorrowFailed and retain the current range, aliases and exclusive \
-            repayment. Compatibility in [1.18.26, 2.0.0) assumes this complete operation \
-            and the scoped dependencies remain unchanged; source/ABI/provider obligations \
-            stay explicit."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:0",
@@ -1792,15 +1538,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Checked current mutable data guard with exclusive leases, aliasing and source \
-            error. Preserve the reference non-repr(C) record, current Rc/RefCell \
-            identities and the reached borrow/drop effects; physical layouts remain \
-            separately bound. Compatibility in [1.15.2, 1.16.0) assumes this operation and \
-            its selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            layout and legal memory access remain explicit source-call assumptions."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:1",
@@ -1820,15 +1558,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         }],
         conditions :=
           ["Rust implementation, source reference/lifetime/alias interpretation, compiler \
-            layout and legal memory access remain explicit source-call assumptions."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Checked current mutable data guard with exclusive leases, aliasing and source \
-            error. Preserve the reference non-repr(C) record, current Rc/RefCell \
-            identities and the reached borrow/drop effects; physical layouts remain \
-            separately bound. Compatibility in [1.15.2, 1.16.0) assumes this operation and \
-            its selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            layout and legal memory access remain explicit source-call assumptions."]
       }
     ]
     | .account_info_AccountInfo_try_borrow_mut_lamports => [
@@ -1854,15 +1584,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "LamportsBorrowReady supplies a typed selected cell and protocol-valid lease \
             world. The current cell policy, guard lifetime and counter bounds interpret \
             the actual RefCell. No account writability or unrelated-cell condition is \
-            assumed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Checked exclusive lamports guard, typed current value, aliases and RefCell \
-            failure. Preserve the reference non-repr(C) record, current Rc/RefCell \
-            identities and the reached borrow/drop effects; physical layouts remain \
-            separately bound. Compatibility in [1.15.2, 1.16.0) assumes this operation and \
-            its selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            assumed."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:1",
@@ -1886,15 +1608,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "LamportsBorrowReady supplies a typed selected cell and protocol-valid lease \
             world. The current cell policy, guard lifetime and counter bounds interpret \
             the actual RefCell. No account writability or unrelated-cell condition is \
-            assumed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Checked exclusive lamports guard, typed current value, aliases and RefCell \
-            failure. Preserve the reference non-repr(C) record, current Rc/RefCell \
-            identities and the reached borrow/drop effects; physical layouts remain \
-            separately bound. Compatibility in [1.15.2, 1.16.0) assumes this operation and \
-            its selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            assumed."]
       }
     ]
     | .account_info_AccountInfo_try_data_len => [
@@ -1918,15 +1632,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "ObservationReady supplies only the selected current typed data projection and \
             excludes malformed mathematical paths; borrow conflicts map to \
-            AccountBorrowFailed and a successful temporary shared guard is released."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Use the fallible current-data borrow, \
-            return AccountBorrowFailed on conflict and otherwise read the length before \
-            releasing that same shared guard. No writable or owner check is added. \
-            Compatibility in [1.18.26, 2.0.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            AccountBorrowFailed and a successful temporary shared guard is released."]
       },
       {
         id := "sdk-account-info-solana-program-1.18.26:1",
@@ -1948,15 +1654,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "ObservationReady supplies only the selected current typed data projection and \
             excludes malformed mathematical paths; borrow conflicts map to \
-            AccountBorrowFailed and a successful temporary shared guard is released."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Use the fallible current-data borrow, \
-            return AccountBorrowFailed on conflict and otherwise read the length before \
-            releasing that same shared guard. No writable or owner check is added. \
-            Compatibility in [1.18.26, 2.0.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            AccountBorrowFailed and a successful temporary shared guard is released."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:0",
@@ -1978,15 +1676,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "ObservationReady supplies only the selected current typed data projection and \
             excludes malformed mathematical paths; borrow conflicts map to \
-            AccountBorrowFailed and a successful temporary shared guard is released."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Checked current length with temporary shared acquisition/release and \
-            AccountBorrowFailed. Preserve the reference non-repr(C) record, current \
-            Rc/RefCell identities and the reached borrow/drop effects; physical layouts \
-            remain separately bound. Compatibility in [1.15.2, 1.16.0) assumes this \
-            operation and its selected dependency contracts preserve that behavior; the \
-            exact releases remain inspected references."
+            AccountBorrowFailed and a successful temporary shared guard is released."]
       },
       {
         id := "sdk-account-info-solana-program-1.15.2:1",
@@ -2008,15 +1698,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             layout and legal memory access remain explicit source-call assumptions.",
             "ObservationReady supplies only the selected current typed data projection and \
             excludes malformed mathematical paths; borrow conflicts map to \
-            AccountBorrowFailed and a successful temporary shared guard is released."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Checked current length with temporary shared acquisition/release and \
-            AccountBorrowFailed. Preserve the reference non-repr(C) record, current \
-            Rc/RefCell identities and the reached borrow/drop effects; physical layouts \
-            remain separately bound. Compatibility in [1.15.2, 1.16.0) assumes this \
-            operation and its selected dependency contracts preserve that behavior; the \
-            exact releases remain inspected references."
+            AccountBorrowFailed and a successful temporary shared guard is released."]
       }
     ]
     | .address_lookup_table_state_AddressLookupTable_deserialize => [
@@ -2047,12 +1729,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Reference 1.3.3; [1.3.3, 2.0.0) assumes the following used contract remains \
-              unchanged. Preserve the reached fixed little-endian ProgramState decode, \
-              trailing-byte policy and metadata enum/field order. Retain boxed \
-              decode-error allocation and destruction before error mapping; allocator and \
-              decoder providers remain explicit.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -2065,12 +1741,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.21.0"],
-          reason :=
-            "Reference 1.21.0; [1.21.0, 2.0.0) assumes the following used contract remains \
-              unchanged. Preserve the reached borrowed slice cast, its alignment and \
-              whole-element length checks, error result and unchanged provenance. No \
-              copying, allocation, validity of uninitialized data or arbitrary Pod \
-              instance is inferred.",
           compatibleRanges := [{
             lower := "1.21.0",
             upper := "2.0.0"
@@ -2089,16 +1759,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             GlobalAlloc no-unwind requirement of Rust. For errors reached by this fixed \
             decoder, bind their normal owned-resource destruction; generic cleanup-unwind \
             witnesses do not establish a source destructor unwind. Allocation failure \
-            follows the selected terminal policy."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Decode ProgramState first and destroy \
-            a reached owned decoder error before InvalidAccountData. Uninitialized \
-            precedes the 56-byte suffix check. Borrow the full aligned suffix as 32-byte \
-            keys; retain padding/trailing metadata and impose no 256-key or liveness \
-            check. Compatibility in [1.18.26, 2.0.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            follows the selected terminal policy."]
       },
       {
         id := "exact-reviewed:1",
@@ -2127,12 +1788,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Reference 1.3.3; [1.3.3, 2.0.0) assumes the following used contract remains \
-              unchanged. Preserve the reached fixed little-endian ProgramState decode, \
-              trailing-byte policy and metadata enum/field order. Retain boxed \
-              decode-error allocation and destruction before error mapping; allocator and \
-              decoder providers remain explicit.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -2145,12 +1800,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.21.0"],
-          reason :=
-            "Reference 1.21.0; [1.21.0, 2.0.0) assumes the following used contract remains \
-              unchanged. Preserve the reached borrowed slice cast, its alignment and \
-              whole-element length checks, error result and unchanged provenance. No \
-              copying, allocation, validity of uninitialized data or arbitrary Pod \
-              instance is inferred.",
           compatibleRanges := [{
             lower := "1.21.0",
             upper := "2.0.0"
@@ -2169,16 +1818,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             GlobalAlloc no-unwind requirement of Rust. For errors reached by this fixed \
             decoder, bind their normal owned-resource destruction; generic cleanup-unwind \
             witnesses do not establish a source destructor unwind. Allocation failure \
-            follows the selected terminal policy."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Decode ProgramState first and destroy \
-            a reached owned decoder error before InvalidAccountData. Uninitialized \
-            precedes the 56-byte suffix check. Borrow the full aligned suffix as 32-byte \
-            keys; retain padding/trailing metadata and impose no 256-key or liveness \
-            check. Compatibility in [1.18.26, 2.0.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            follows the selected terminal policy."]
       }
     ]
     | .borsh0_10_get_instance_packed_len => [
@@ -2205,12 +1845,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.10.4"],
-          reason :=
-            "Reference 0.10.4; [0.10.4, 0.11.0) assumes the following used contract \
-              remains unchanged. Preserve the v0_10 serializer trait and its actual calls \
-              into WriteCounter, including full-buffer counts, flush, checked/wrapping \
-              overflow and IO error ownership. No particular serialized type or total \
-              serializer is inferred.",
           compatibleRanges := [{
             lower := "0.10.4",
             upper := "0.11.0"
@@ -2223,16 +1857,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind wordBits and checkedOverflow to the target usize width and \
             overflow-check configuration. A checked overflow uses the selected panic \
             callback before updating the count; unchecked addition wraps. Keep serializer \
-            IO error resources and external state."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Run the actual Borsh serializer \
-            against a fresh zero WriteCounter. Full-buffer writes count bytes, flush is \
-            inert, and only serializer success returns the count. Preserve \
-            checked-overflow panic before mutation, unchecked wrapping, error ownership \
-            and all callback effects. Compatibility in [1.18.26, 2.0.0) assumes this \
-            complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            IO error resources and external state."]
       }
     ]
     | .epoch_schedule_EpochSchedule_get_last_slot_in_epoch => [
@@ -2251,19 +1876,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         compatibleRanges := [{
           lower := "1.15.2",
           upper := "1.16.0"
-        }],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "The complete query uses arbitrary public schedule fields. firstSlot selects \
-            epoch <= first_normal_epoch, truncates epoch to u32 before saturating_pow, \
-            then saturating-subtracts 1 and multiplies by 32. Its other branch subtracts \
-            first_normal_epoch, multiplies slots_per_epoch and adds first_normal_slot with \
-            saturation. lastSlot calls firstSlot, adds get_slots_in_epoch with saturation \
-            and subtracts 1; warmup slots use a separate strict < test and saturating u32 \
-            exponent addition by 5. No schedule invariant or warmup-flag premise is \
-            imposed. Compatibility in [1.15.2, 1.16.0) assumes this operation and its \
-            selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+        }]
       }
     ]
     | .hash_Hash_to_bytes => [
@@ -2281,14 +1894,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         compatibleRanges := [{
           lower := "1.18.26",
           upper := "2.0.0"
-        }],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Copy the entire 32-byte Hash array in \
-            order without allocation or state change. The source codec still supplies the \
-            actual complete Hash layout and initialized bytes. Compatibility in [1.18.26, \
-            2.0.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+        }]
       }
     ]
     | .hash_hash => [
@@ -2310,10 +1916,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Only the target_os = solana branch performs the zero-initialized syscall \
-              protocol."
+          «exclude» := []
         }],
         conditions :=
           ["The explicit provider interprets the actual runtime syscall, host stub or \
@@ -2322,15 +1925,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             target_os = solana is selected. Interpret the nested slice descriptors, u64 \
             count and initialized 32-byte destination with actual memory and lifetime; the \
             provider reply is the final complete buffer. Cryptographic agreement is an \
-            additional provider law."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Pass the single input slice through \
-            hashv to the Solana SHA-256 syscall with a zero-initialized 32-byte \
-            destination. Preserve the actual reply bytes and effects; the wrapper ignores \
-            the integer return. Host hashing remains a separate path. Compatibility in \
-            [1.18.26, 2.0.0) assumes this complete operation and the scoped dependencies \
-            remain unchanged; source/ABI/provider obligations stay explicit."
+            additional provider law."]
       }
     ]
     | .instruction_AccountMeta_clone => [
@@ -2355,14 +1950,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compiler or application body correctness is supplied.", "Bind \
             reference/current-resource identities to legal source borrows and owned \
             allocations in one shared memory interpretation, with the exact selected \
-            layouts and scalar/Boolean widths."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Copy the complete key and \
-            signer/writable flags without cloning an owned buffer or allocating. Preserve \
-            the actual field order and current input record. Compatibility in [1.18.26, \
-            2.0.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            layouts and scalar/Boolean widths."]
       }
     ]
     | .instruction_AccountMeta_new => [
@@ -2386,15 +1974,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compiler or application body correctness is supplied.", "Bind \
             reference/current-resource identities to legal source borrows and owned \
             allocations in one shared memory interpretation, with the exact selected \
-            layouts and scalar/Boolean widths."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Construct the supplied key and signer \
-            bit with writable set to true, without allocation or validation. The complete \
-            source AccountMeta layout and nominal key remain separate ABI obligations. \
-            Compatibility in [1.18.26, 2.0.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            layouts and scalar/Boolean widths."]
       }
     ]
     | .instruction_AccountMeta_new_readonly => [
@@ -2418,14 +1998,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compiler or application body correctness is supplied.", "Bind \
             reference/current-resource identities to legal source borrows and owned \
             allocations in one shared memory interpretation, with the exact selected \
-            layouts and scalar/Boolean widths."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Construct the supplied key and signer \
-            bit with writable set to false, without allocation or validation. Retain the \
-            complete source AccountMeta layout and nominal key obligations. Compatibility \
-            in [1.18.26, 2.0.0) assumes this complete operation and the scoped \
-            dependencies remain unchanged; source/ABI/provider obligations stay explicit."
+            layouts and scalar/Boolean widths."]
       }
     ]
     | .instruction_Instruction_clone => [
@@ -2450,17 +2023,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compiler or application body correctness is supplied.", "Bind \
             reference/current-resource identities to legal source borrows and owned \
             allocations in one shared memory interpretation, with the exact selected \
-            layouts and scalar/Boolean widths."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "The reviewed derived Instruction Clone fields have program ID, \
-            Vec<AccountMeta>, Vec<u8> in that order. Primitive clones preserve exact \
-            order/duplicates and data; failure while cloning bytes drops only newly cloned \
-            accounts. Original vectors are borrowed, not consumed. Vec source layouts and \
-            allocator/cleanup correspondence remain separate; complete provider outcomes \
-            and useful exact-current laws are retained. Compatibility in [1.15.2, 1.16.0) \
-            assumes this operation and its selected dependency contracts preserve that \
-            behavior; the exact releases remain inspected references."
+            layouts and scalar/Boolean widths."]
       }
     ]
     | .log_sol_log => [
@@ -2482,15 +2045,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The explicit provider interprets the actual runtime syscall, host stub or \
             library operation with its normal results, state changes, unwind and terminal \
-            exits; no termination or validator implementation is assumed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.15.2, 1.18.26. Forward the current UTF-8 \
-            bytes and byte length to sol_log_ on Solana or the installed replaceable host \
-            logging stub. Preserve actual sink effects and abnormal exits; the host stub \
-            is not identified with stdout. Compatibility in [1.15.2, 2.0.0) assumes this \
-            complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            exits; no termination or validator implementation is assumed."]
       }
     ]
     | .log_sol_log_compute_units => [
@@ -2512,17 +2067,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["The explicit provider interprets the actual runtime syscall, host stub or \
             library operation with its normal results, state changes, unwind and terminal \
-            exits; no termination or validator implementation is assumed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "The legacy SDK log function forwards UTF-8 bytes and byte length to sol_log_ on \
-            Solana; on the host it calls the installed program_stubs implementation, which \
-            is replaceable and is not identified with stdout. The compute-unit logger \
-            calls sol_log_compute_units_ with no integer return or the corresponding host \
-            stub. Exact sink effects and finite abnormal exits are retained. Compatibility \
-            in [1.15.2, 1.16.0) assumes this operation and its selected dependency \
-            contracts preserve that behavior; the exact releases remain inspected \
-            references."
+            exits; no termination or validator implementation is assumed."]
       }
     ]
     | .log_sol_log_data => [
@@ -2599,20 +2144,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             projection, not a base64/rendering guarantee.", "target_os=solana selects the \
             syscall; its negation selects the separately supplied host stub. Preserve \
             nested slices, including empty and repeated fields, and the complete provider \
-            relation."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.11.0.crate", "https://static.crates.io/crates/solana-program/solana-program-5.2.0.crate"],
-        argument :=
-          "The API is absent in the same 91 early solana-program releases as \
-            set_return_data. The same 92 releases use target_arch=bpf and disagree with \
-            the existing OS-based target binding. The 183 compatible releases have one \
-            byte-identical top-level body: target_os=solana passes the nested slice \
-            descriptor pointer and field count to crate::syscalls::sol_log_data; other \
-            targets pass the borrowed nested slice to the actual host stub. The reached \
-            re-exports, syscall declarations and macro selection were reviewed, including \
-            local program definitions, the split define-syscall macro and later direct \
-            re-exports. Empty fields, repeated fields and field boundaries are preserved. \
-            Rendering, base64, memory translation, resource costs and provider exits \
-            remain in the supplied sink; flattening is only a coarse projection."
+            relation."]
       }
     ]
     | .program_invoke => [
@@ -2634,39 +2166,24 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The on-chain invocation branch is selected; native stubs and the black_box \
-              host branch of Pinocchio have different behavior."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The reviewed source pointers, lengths, RefCell borrow counts and runtime \
-              layouts are 64-bit."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The reviewed stable/C layouts and the source memory codec use little-endian \
-              integer fields."
+          «exclude» := []
         }, {
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The selected invocation signature has terminal local panic/allocation \
-              behavior and no unwind exit."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static syscall features replace the registered external declaration with a \
-              function thunk."
+          none := ["static-syscalls"]
         },
         dependencies := [{
           package := "solana-account-info",
@@ -2676,10 +2193,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0"],
-          reason :=
-            "Assume the rent_epoch carrier, shared Rc/RefCell identities, \
-              acquisition/conflict behavior and lamports-before-data clone/drop order \
-              remain unchanged; use the actual compiled layout separately.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2692,10 +2205,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "Assume the reached Instruction/AccountMeta fields, ordered metadata flags and \
-              key copying, Vec ownership, Clone allocation effects and declaration-order \
-              destruction are preserved; source layouts remain separately bound.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2708,10 +2217,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1"],
-          reason :=
-            "Assume conversion from the cloned Instruction retains the exact owned \
-              StableVec fields, descriptor widths and destruction protocol; this is the \
-              owned storage variant.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2724,10 +2229,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.2.2"],
-          reason :=
-            "Assume the complete legacy ProgramError variants, Custom codes and owned \
-              BorshIoError(String) representation are preserved; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2740,10 +2241,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1"],
-          reason :=
-            "Assume first-match lamports-before-data preflight, owned Instruction \
-              cloning/conversion and post-success cleanup remain unchanged; the full CPI \
-              signature remains opaque and runtime errors remain terminal.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2780,15 +2277,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             selected source release. It returns a fresh owner with the exact ordered \
             instruction, retains the current allocator state, and destroys that owner \
             after successful CPI. Allocation and cleanup terminal outcomes are preserved; \
-            no custom allocator success is assumed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-2.2.1.crate", "https://static.crates.io/crates/solana-program/solana-program-2.3.0.crate"],
-        argument :=
-          "The inspected 2.2.1/2.3.0 wrappers delegate to the owned-clone CPI path. This \
-            incoming range assumes first-match lamports/data preflight, ordered signer \
-            forwarding, Instruction clone/StableInstruction ownership and post-success \
-            destruction. Local borrow failure remains an ordinary error; runtime failure \
-            remains terminal and CPI opaque. Existing 2.3.0 invoke_signed profiles retain \
-            their own ranges."
+            no custom allocator success is assumed."]
       }
     ]
     | .program_invoke_forwarded_inputs => []
@@ -2811,39 +2300,24 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The on-chain invocation branch is selected; native stubs and the black_box \
-              host branch of Pinocchio have different behavior."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The reviewed source pointers, lengths, RefCell borrow counts and runtime \
-              layouts are 64-bit."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The reviewed stable/C layouts and the source memory codec use little-endian \
-              integer fields."
+          «exclude» := []
         }, {
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The selected invocation signature has terminal local panic/allocation \
-              behavior and no unwind exit."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static syscall features replace the registered external declaration with a \
-              function thunk."
+          none := ["static-syscalls"]
         },
         dependencies := [{
           package := "solana-account-info",
@@ -2853,13 +2327,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Reference 2.3.0; [2.3.0, 3.0.0) assumes preservation of the actual SDK 2 \
-              AccountInfo record, current key and independent lamports/data RefCell \
-              identities. The used shared/exclusive acquisitions, AccountBorrowFailed \
-              mapping, counter effects and temporary-guard cleanup remain compatible with \
-              the recorded policy and complete emitted record. SDK 3 representation is \
-              excluded.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -2872,12 +2339,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "References 2.2.1 and 2.3.3; [2.2.1, 3.0.0) assumes preservation of complete \
-              ordered Instruction/AccountMeta fields, nominal Pubkey/key comparison, \
-              signer/writable flags and instruction bytes. The reached Instruction::clone \
-              must additionally preserve field order, fresh vectors, allocator effects and \
-              finite failure behavior before ownership transfer to StableInstruction.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2890,12 +2351,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1"],
-          reason :=
-            "Reference 2.2.1; [2.2.1, 3.0.0) assumes preservation of the repr(C) \
-              StableInstruction accounts/data/program_id order and 64-bit StableVec \
-              address/capacity/length descriptors. From<Instruction> transfers the owned \
-              vectors; destruction reconstructs the same Vec owners, preserving allocator \
-              state, element/buffer cleanup and terminal outcomes.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2908,12 +2363,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.2"],
-          reason :=
-            "Reference 2.2.2; [2.2.2, 3.0.0) assumes preservation of the ProgramResult \
-              identity and complete compiled layout used for Ok(()) and local \
-              AccountBorrowFailed. The unchanged canonical-runtime premise excludes other \
-              ordinary errors. Older String payloads and later enum variants are not \
-              silently identified by this result codec.",
           compatibleRanges := [{
             lower := "2.2.2",
             upper := "3.0.0"
@@ -2926,13 +2375,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1"],
-          reason :=
-            "Reference 2.2.1; [2.2.1, 3.0.0) assumes that the reached on-chain unchecked \
-              path clones Instruction into owned StableInstruction, forwards the complete \
-              signed call in order, treats canonical zero as Ok and destroys the owner \
-              after successful return. Its local zero constant, allocation/cleanup effects \
-              and terminal outcomes stay unchanged; the host Ok-only stub and \
-              borrowed-buffer route are excluded.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2969,18 +2411,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             selected source release. It returns a fresh owner with the exact ordered \
             instruction, retains the current allocator state, and destroys that owner \
             after successful CPI. Allocation and cleanup terminal outcomes are preserved; \
-            no custom allocator success is assumed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-2.3.0.crate"],
-        argument :=
-          "Reference: solana-program 2.3.0. The declared [2.3.0, 3.0.0) range assumes \
-            preservation of the ordered first-match RefCell preflight and Solana-target \
-            delegation of the checked wrapper to solana-cpi::invoke_signed_unchecked. Its \
-            storage provider clones the complete Instruction into a fresh owner, transfers \
-            its vectors into StableInstruction and destroys that owner after successful \
-            opaque CPI. Clone order, allocator state, ownership transfer, cleanup effects \
-            and terminal outcomes remain explicit; allocation success is not assumed. \
-            Borrowed-buffer invocation and replaceable host stubs retain separate \
-            contracts/profiles."
+            no custom allocator success is assumed."]
       },
       {
         id := "program-2.2.1-owned-invoke_signed",
@@ -3000,39 +2431,24 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The on-chain invocation branch is selected; native stubs and the black_box \
-              host branch of Pinocchio have different behavior."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The reviewed source pointers, lengths, RefCell borrow counts and runtime \
-              layouts are 64-bit."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The reviewed stable/C layouts and the source memory codec use little-endian \
-              integer fields."
+          «exclude» := []
         }, {
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The selected invocation signature has terminal local panic/allocation \
-              behavior and no unwind exit."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static syscall features replace the registered external declaration with a \
-              function thunk."
+          none := ["static-syscalls"]
         },
         dependencies := [{
           package := "solana-account-info",
@@ -3042,10 +2458,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0"],
-          reason :=
-            "Assume the rent_epoch carrier, shared Rc/RefCell identities, \
-              acquisition/conflict behavior and lamports-before-data clone/drop order \
-              remain unchanged; use the actual compiled layout separately.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -3058,10 +2470,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "Assume the reached Instruction/AccountMeta fields, ordered metadata flags and \
-              key copying, Vec ownership, Clone allocation effects and declaration-order \
-              destruction are preserved; source layouts remain separately bound.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -3074,10 +2482,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1"],
-          reason :=
-            "Assume conversion from the cloned Instruction retains the exact owned \
-              StableVec fields, descriptor widths and destruction protocol; this is the \
-              owned storage variant.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -3090,10 +2494,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.2.2"],
-          reason :=
-            "Assume the complete legacy ProgramError variants, Custom codes and owned \
-              BorshIoError(String) representation are preserved; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -3106,10 +2506,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1"],
-          reason :=
-            "Assume first-match lamports-before-data preflight, owned Instruction \
-              cloning/conversion and post-success cleanup remain unchanged; the full CPI \
-              signature remains opaque and runtime errors remain terminal.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -3146,15 +2542,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             selected source release. It returns a fresh owner with the exact ordered \
             instruction, retains the current allocator state, and destroys that owner \
             after successful CPI. Allocation and cleanup terminal outcomes are preserved; \
-            no custom allocator success is assumed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-2.2.1.crate"],
-        argument :=
-          "The inspected 2.2.1/2.3.0 wrappers delegate to the owned-clone CPI path. This \
-            incoming range assumes first-match lamports/data preflight, ordered signer \
-            forwarding, Instruction clone/StableInstruction ownership and post-success \
-            destruction. Local borrow failure remains an ordinary error; runtime failure \
-            remains terminal and CPI opaque. Existing 2.3.0 invoke_signed profiles retain \
-            their own ranges."
+            no custom allocator success is assumed."]
       },
       {
         id := "program-1.18.26-owned-invoke_signed",
@@ -3174,39 +2562,24 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The on-chain invocation branch is selected; native stubs and the black_box \
-              host branch of Pinocchio have different behavior."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The reviewed source pointers, lengths, RefCell borrow counts and runtime \
-              layouts are 64-bit."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The reviewed stable/C layouts and the source memory codec use little-endian \
-              integer fields."
+          «exclude» := []
         }, {
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The selected invocation signature has terminal local panic/allocation \
-              behavior and no unwind exit."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static syscall features replace the registered external declaration with a \
-              function thunk."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["Bind the runtime index to the separately pinned Agave 4.3.2 configuration with \
@@ -3239,16 +2612,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             selected source release. It returns a fresh owner with the exact ordered \
             instruction, retains the current allocator state, and destroys that owner \
             after successful CPI. Allocation and cleanup terminal outcomes are preserved; \
-            no custom allocator success is assumed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Probe the first matching AccountInfo \
-            for each meta, lamports before data, and release each temporary guard. Then \
-            clone Instruction into an owned StableInstruction before opaque signed \
-            invocation and destroy it after success. Retain local borrow errors, allocator \
-            state, source decoding/copyback and terminal outcomes. Compatibility in \
-            [1.18.26, 2.0.0) assumes this complete operation and the scoped dependencies \
-            remain unchanged; source/ABI/provider obligations stay explicit."
+            no custom allocator success is assumed."]
       }
     ]
     | .program_invoke_signed_forwarded_inputs => []
@@ -3334,23 +2698,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "target_os=solana selects the syscall helper; BPF architecture alone is \
             insufficient. The raw model precondition remains True; exact mathematical \
             length separately requires the existing 64-bit length bound. The 1024-byte \
-            limit belongs only to the interpreted canonical runtime."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.11.0.crate", "https://static.crates.io/crates/solana-program/solana-program-5.2.0.crate"],
-        argument :=
-          "The 91 releases through 1.8.0 have no public helper. The 92 published releases \
-            in 1.8.1 through 1.10.41 and in 1.13.0 through 1.13.7 select by \
-            target_arch=bpf, which disagrees with the existing target_os=solana binding. \
-            The ten published 1.11.x releases and all published 1.14.0 through 5.2.0 \
-            releases, 183 in total, select by target_os=solana. The first 154 compatible \
-            releases directly pass the slice pointer and length-as-u64 to the syscall; the \
-            remaining 29, starting at 2.1.0, call solana_cpi::set_return_data on Solana. \
-            Every real reviewed solana-cpi release retains that same pointer/length \
-            forwarding helper. The non-Solana branch retains the separately overridable \
-            solana-program host stub. No compatible wrapper truncates, validates, or \
-            limits length to 1024. The source includes a genuine 1.13.x cfg regression, so \
-            an endpoint interval would be wrong. Pointer representation and all actual \
-            provider finite outcomes and state effects remain explicit source/provider \
-            obligations."
+            limit belongs only to the interpreted canonical runtime."]
       }
     ]
     | .program_option_COption_contains => [
@@ -3376,13 +2724,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             mathematical precondition.", "The index supplies the actual reached callbacks, \
             their state and finite outcomes. A FnOnce provider consumes its closure and \
             payload and includes their internal cleanup. Empty callback relations admit no \
-            finite exit and do not fabricate a result."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "None returns false without a callback. Some calls U::eq(query, payload), in \
-            this exact order, with callback effects and exits intact. Compatibility in \
-            [1.15.2, 1.16.0) assumes this operation and its selected dependency contracts \
-            preserve that behavior; the exact releases remain inspected references."
+            finite exit and do not fabricate a result."]
       },
       {
         id := "reviewed-key",
@@ -3402,14 +2744,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             preserve the full emitted COption layout and actual shared references. Key \
             equality is derived byte equality, key Default is the all-zero key, and these \
             key/Boolean payloads have trivial drop. This profile does not admit arbitrary \
-            same-layout nominal types or callback implementations."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Exact 1.15.2 only: instantiate the complete COption family at the nominal \
-            Program Pubkey/Boolean behavior fixed by the selected concrete payload \
-            profile, retaining the emitted layout, shared references, byte equality, zero \
-            Default and trivial payload drop. The generic profile has a separate \
-            compatibility assumption; it does not extend this concrete source or its ABI."
+            same-layout nominal types or callback implementations."]
       }
     ]
     | .program_option_COption_into_option => [
@@ -3435,16 +2770,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Interpret the COption discriminant and nominal payload identities in the \
             source values. For borrowed operations, the observed values refer to the \
             actual live shared borrows. This is a source representation obligation, not a \
-            mathematical precondition."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Change only the outer enum and move a \
-            Some payload unchanged. No Clone, Default, comparison or Drop callback is \
-            invoked. Preserve the C representation and the exact nominal payload \
-            obligation of the concrete-key companion separately from this generic value \
-            fact. Compatibility in [1.18.26, 2.0.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            mathematical precondition."]
       },
       {
         id := "reviewed-key",
@@ -3471,16 +2797,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             Rust binding must preserve the full emitted COption layout and actual shared \
             references. Key equality is derived byte equality, key Default is the all-zero \
             key, and these key/Boolean payloads have trivial drop. This profile does not \
-            admit arbitrary same-layout nominal types or callback implementations."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Change only the outer enum and move a \
-            Some payload unchanged. No Clone, Default, comparison or Drop callback is \
-            invoked. Preserve the C representation and the exact nominal payload \
-            obligation of the concrete-key companion separately from this generic value \
-            fact. Compatibility in [1.18.26, 2.0.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            admit arbitrary same-layout nominal types or callback implementations."]
       }
     ]
     | .program_option_COption_is_none => [
@@ -3503,13 +2820,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Interpret the COption discriminant and nominal payload identities in the \
             source values. For borrowed operations, the observed values refer to the \
             actual live shared borrows. This is a source representation obligation, not a \
-            mathematical precondition."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Return the negation of is_some, without payload movement, callbacks or \
-            destruction. Compatibility in [1.15.2, 1.16.0) assumes this operation and its \
-            selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            mathematical precondition."]
       },
       {
         id := "reviewed-key",
@@ -3529,14 +2840,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             preserve the full emitted COption layout and actual shared references. Key \
             equality is derived byte equality, key Default is the all-zero key, and these \
             key/Boolean payloads have trivial drop. This profile does not admit arbitrary \
-            same-layout nominal types or callback implementations."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Exact 1.15.2 only: instantiate the complete COption family at the nominal \
-            Program Pubkey/Boolean behavior fixed by the selected concrete payload \
-            profile, retaining the emitted layout, shared references, byte equality, zero \
-            Default and trivial payload drop. The generic profile has a separate \
-            compatibility assumption; it does not extend this concrete source or its ABI."
+            same-layout nominal types or callback implementations."]
       }
     ]
     | .program_option_COption_unwrap_or_default => [
@@ -3562,13 +2866,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             mathematical precondition.", "The index supplies the actual reached callbacks, \
             their state and finite outcomes. A FnOnce provider consumes its closure and \
             payload and includes their internal cleanup. Empty callback relations admit no \
-            finite exit and do not fabricate a result."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Some returns its payload and never calls Default. None delegates to the actual \
-            Default callback and forwards its effects and every exit. Compatibility in \
-            [1.15.2, 1.16.0) assumes this operation and its selected dependency contracts \
-            preserve that behavior; the exact releases remain inspected references."
+            finite exit and do not fabricate a result."]
       },
       {
         id := "reviewed-key",
@@ -3588,14 +2886,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             preserve the full emitted COption layout and actual shared references. Key \
             equality is derived byte equality, key Default is the all-zero key, and these \
             key/Boolean payloads have trivial drop. This profile does not admit arbitrary \
-            same-layout nominal types or callback implementations."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Exact 1.15.2 only: instantiate the complete COption family at the nominal \
-            Program Pubkey/Boolean behavior fixed by the selected concrete payload \
-            profile, retaining the emitted layout, shared references, byte equality, zero \
-            Default and trivial payload drop. The generic profile has a separate \
-            compatibility assumption; it does not extend this concrete source or its ABI."
+            same-layout nominal types or callback implementations."]
       }
     ]
     | .program_pack_Pack_unpack => [
@@ -3619,20 +2910,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             actual type, with its complete state, error (including owned BorshIoError \
             payload), unwind and terminal representations. Use defaultUnchecked only if \
             source resolution selects that provided method; the generic Pack method does \
-            not impose LEN itself."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Call the selected overridable unpack_unchecked; propagate a decode error before \
-            initialization; query a decoded value once; return it if initialized or drop \
-            it before UninitializedAccount. A query unwind drops the value, and a drop \
-            unwind during unwinding follows the double-unwind callback. Resolve \
-            Self::unpack_unchecked, Self::is_initialized and Self drop for the actual \
-            type, with its complete state, error (including owned BorshIoError payload), \
-            unwind and terminal representations. Use defaultUnchecked only if source \
-            resolution selects that provided method; the generic Pack method does not \
-            impose LEN itself. Compatibility in [1.15.2, 1.16.0) assumes this operation \
-            and its selected dependency contracts preserve that behavior; the exact \
-            releases remain inspected references."
+            not impose LEN itself."]
       }
     ]
     | .pubkey_Pubkey_as_ref => [
@@ -3658,15 +2936,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.15.2, 1.18.26. Return the same initialized \
-            32-byte key array as a borrowed byte slice, retaining its actual provenance \
-            and lifetime. No copy, allocation or new owner is implied by the value \
-            observation. Compatibility in [1.15.2, 2.0.0) assumes this complete operation \
-            and the scoped dependencies remain unchanged; source/ABI/provider obligations \
-            stay explicit."
+            prove them."]
       }
     ]
     | .pubkey_Pubkey_clone => [
@@ -3691,15 +2961,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.15.2, 1.18.26. Copy all 32 Pubkey bytes \
-            without allocation, callback or state change. Exact nominal source identity \
-            and the complete emitted key layout remain separate from byte equality. \
-            Compatibility in [1.15.2, 2.0.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            prove them."]
       }
     ]
     | .pubkey_Pubkey_create_program_address_solana => [
@@ -3721,15 +2983,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "The selected source passes 64-bit slice counts to the runtime ABI."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Select the reviewed runtime syscall branch; the host retry/crypto branch is \
-              separate."
+          «exclude» := []
         }],
         conditions :=
           ["The concrete source values contain exactly 32 initialized bytes; references, \
@@ -3739,15 +2997,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             implementations remain open; source identity and native scripted checks do not \
             prove them.", "The source initializes [0; 32], so absent or partial output \
             writes still leave a fully initialized result; this profile has no MaybeUninit \
-            success premise."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.15.2, 1.18.26. Check seed count and each \
-            seed length before the Solana syscall. Start with a zero key destination; \
-            retain the syscall status conversion, bytes and effects. The host curve/hash \
-            implementation is a distinct source path. Compatibility in [1.15.2, 2.0.0) \
-            assumes this complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            success premise."]
       }
     ]
     | .pubkey_Pubkey_create_with_seed => [
@@ -3769,15 +3019,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "The selected source passes 64-bit slice counts to the runtime ABI."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Select the reviewed runtime syscall branch; the host retry/crypto branch is \
-              separate."
+          «exclude» := []
         }],
         conditions :=
           ["The concrete source values contain exactly 32 initialized bytes; references, \
@@ -3787,15 +3033,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             implementations remain open; source identity and native scripted checks do not \
             prove them.", "Each indexed callback interprets the actual reached source \
             operation with its full state, return, unwind and terminal outcomes; no \
-            termination or successful reply is assumed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.15.2, 1.18.26. Check the UTF-8 seed byte \
-            bound and illegal owner suffix in source order, then hash the ordered base, \
-            seed and owner bytes. Retain the selected Solana hashing protocol and its \
-            zeroed destination and effects. Compatibility in [1.15.2, 2.0.0) assumes this \
-            complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            termination or successful reply is assumed."]
       }
     ]
     | .pubkey_Pubkey_default => [
@@ -3821,14 +3059,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.15.2, 1.18.26. Return exactly the all-zero \
-            32-byte Pubkey without allocation or a runtime callback. The value fact does \
-            not identify another same-layout nominal key type. Compatibility in [1.15.2, \
-            2.0.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            prove them."]
       }
     ]
     | .pubkey_Pubkey_deserialize => [
@@ -3855,10 +3086,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["0.9.3"],
-          reason :=
-            "The exact selected Borsh trait implementation reaches this fixed-byte-array \
-              specialization; another linked generation is not a substitute."
+          releases := ["0.9.3"]
         }, {
           package := "borsh-derive",
           source := some {
@@ -3866,9 +3094,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["0.9.3"],
-          reason := "The inspected derive emits the single unannotated byte-array field \
-            call."
+          releases := ["0.9.3"]
         }],
         conditions :=
           ["The concrete source values contain exactly 32 initialized bytes; references, \
@@ -3879,15 +3105,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             prove them.", "When multiple Borsh generations are linked, bind the exact \
             retained trait item and implementation (including its resolved arguments and \
             disambiguating description) to the stated generation; bare display names and \
-            dependency presence do not establish this selection."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://static.crates.io/crates/borsh/borsh-0.9.3.crate"],
-        argument :=
-          "Borsh 0.9.3 copies the first 32 bytes and advances the mutable slice by 32 on \
-            success. A short input returns InvalidInput/Unexpected length of input before \
-            changing the slice. Fixed-array and const-generics paths have the same byte \
-            specialization. Compatibility in [1.15.2, 1.16.0) assumes this operation and \
-            its selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            dependency presence do not establish this selection."]
       }
     ]
     | .pubkey_Pubkey_deserialize_reader => [
@@ -3916,12 +3134,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.10.4"],
-          reason :=
-            "Reference 0.10.4; [0.10.4, 0.11.0) assumes the following used contract \
-              remains unchanged. Preserve the v0_10 reader trait and exact 32-byte key \
-              read, including the selected read_exact consumption, EOF replacement error \
-              and incoming-error destruction. The v0_9 slice method and Borsh 1.x remain \
-              separate.",
           compatibleRanges := [{
             lower := "0.10.4",
             upper := "0.11.0"
@@ -3936,15 +3148,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             prove them.", "When multiple Borsh generations are linked, bind the exact \
             retained trait item and implementation (including its resolved arguments and \
             disambiguating description) to the stated generation; bare display names and \
-            dependency presence do not establish this selection."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate", "https://static.crates.io/crates/borsh/borsh-0.10.4.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Use the Borsh 0.10 reader operation \
-            for the entire 32-byte key. Retain the partial consumption, EOF replacement \
-            error construction/destruction and abnormal effects of the selected reader; \
-            this is not the older slice-deserialize method. Compatibility in [1.18.26, \
-            2.0.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            dependency presence do not establish this selection."]
       }
     ]
     | .pubkey_Pubkey_eq => [
@@ -3969,15 +3173,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.15.2, 1.18.26. Compare every byte of both \
-            32-byte Pubkeys and return exact array equality, preserving both source \
-            borrows. No numeric-status or pointer-equality surrogate is used. \
-            Compatibility in [1.15.2, 2.0.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            prove them."]
       }
     ]
     | .pubkey_Pubkey_find_program_address_solana => [
@@ -3999,15 +3195,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "The selected source passes 64-bit slice counts to the runtime ABI."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Select the reviewed runtime syscall branch; the host retry/crypto branch is \
-              separate."
+          «exclude» := []
         }],
         conditions :=
           ["The concrete source values contain exactly 32 initialized bytes; references, \
@@ -4015,15 +3207,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.15.2, 1.18.26. Use the Solana try-find \
-            syscall protocol with zero-initialized key and bump destinations, preserve \
-            status conversion, and retain the reached failure behavior of the wrapper. \
-            Host retry/curve arithmetic stays outside this selected branch. Compatibility \
-            in [1.15.2, 2.0.0) assumes this complete operation and the scoped dependencies \
-            remain unchanged; source/ABI/provider obligations stay explicit."
+            prove them."]
       }
     ]
     | .pubkey_Pubkey_serialize => [
@@ -4051,11 +3235,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.10.4"],
-          reason :=
-            "Reference 0.10.4; [0.10.4, 0.11.0) assumes the following used contract \
-              remains unchanged. Preserve the v0_10 serializer trait and exact 32-byte \
-              write_all protocol, including partial writes, IO errors and callback state. \
-              No generic writer implementation is assumed total.",
           compatibleRanges := [{
             lower := "0.10.4",
             upper := "0.11.0"
@@ -4070,15 +3249,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             prove them.", "When multiple Borsh generations are linked, bind the exact \
             retained trait item and implementation (including its resolved arguments and \
             disambiguating description) to the stated generation; bare display names and \
-            dependency presence do not establish this selection."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate", "https://static.crates.io/crates/borsh/borsh-0.10.4.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Forward the complete current 32-byte \
-            array to the selected Borsh 0.10 Write interface. Preserve partial writes, \
-            errors, callback state and cleanup; no total-writer or allocation-success \
-            assumption is added. Compatibility in [1.18.26, 2.0.0) assumes this complete \
-            operation and the scoped dependencies remain unchanged; source/ABI/provider \
-            obligations stay explicit."
+            dependency presence do not establish this selection."]
       },
       {
         id := "solana-program-1.15.2-serialize",
@@ -4103,10 +3274,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["0.9.3"],
-          reason :=
-            "The exact selected Borsh trait implementation reaches this fixed-byte-array \
-              specialization; another linked generation is not a substitute."
+          releases := ["0.9.3"]
         }, {
           package := "borsh-derive",
           source := some {
@@ -4114,9 +3282,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["0.9.3"],
-          reason := "The inspected derive emits the single unannotated byte-array field \
-            call."
+          releases := ["0.9.3"]
         }],
         conditions :=
           ["The concrete source values contain exactly 32 initialized bytes; references, \
@@ -4127,15 +3293,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             prove them.", "When multiple Borsh generations are linked, bind the exact \
             retained trait item and implementation (including its resolved arguments and \
             disambiguating description) to the stated generation; bare display names and \
-            dependency presence do not establish this selection."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://static.crates.io/crates/borsh/borsh-0.9.3.crate"],
-        argument :=
-          "The reached Borsh implementation serializes the single nonempty [u8; 32] field \
-            through one actual W::write_all. Its result, partial writer state, error, \
-            unwind and terminal outcome are retained. No successful-writer or rollback \
-            assumption is introduced. Compatibility in [1.15.2, 1.16.0) assumes this \
-            operation and its selected dependency contracts preserve that behavior; the \
-            exact releases remain inspected references."
+            dependency presence do not establish this selection."]
       }
     ]
     | .pubkey_Pubkey_to_bytes => [
@@ -4160,14 +3318,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.15.2, 1.18.26. Return all 32 current key \
-            bytes in their original order without allocation or state change. The nominal \
-            Pubkey and its full source representation remain explicit. Compatibility in \
-            [1.15.2, 2.0.0) assumes this complete operation and the scoped dependencies \
-            remain unchanged; source/ABI/provider obligations stay explicit."
+            prove them."]
       }
     ]
     | .rent_Rent_is_exempt => [
@@ -4189,25 +3340,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The mathematical length and source usize use the reviewed 64-bit width before \
-              the u64 integer/binary64 calculation."
+          «exclude» := []
         }],
         conditions :=
           ["Interpret usize as 64 bits and binary64 with round-to-nearest ties-to-even and \
             gradual underflow. Preserve the selected checked/wrapping integer overflow and \
             unwind/abort profile; NaN payloads are unobserved by the final saturating u64 \
-            cast."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.15.2, 1.18.26. Compare balance against \
-            minimum_balance using the same account-storage overhead, u64 arithmetic and \
-            binary64 threshold conversion. Retain the actual checked/wrapping overflow \
-            profile and 64-bit length interpretation, including unusual float bit \
-            patterns. Compatibility in [1.15.2, 2.0.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            cast."]
       }
     ]
     | .rent_Rent_minimum_balance => [
@@ -4229,24 +3368,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The mathematical length and source usize use the reviewed 64-bit width before \
-              the u64 integer/binary64 calculation."
+          «exclude» := []
         }],
         conditions :=
           ["Interpret usize as 64 bits and binary64 with round-to-nearest ties-to-even and \
             gradual underflow. Preserve the selected checked/wrapping integer overflow and \
             unwind/abort profile; NaN payloads are unobserved by the final saturating u64 \
-            cast."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.15.2, 1.18.26. Add account-storage overhead, \
-            multiply the selected rate and length, convert to binary64, apply the \
-            threshold and use the saturating float-to-u64 result of Rust. Preserve checked \
-            versus wrapping integer behavior and all threshold bits. Compatibility in \
-            [1.15.2, 2.0.0) assumes this complete operation and the scoped dependencies \
-            remain unchanged; source/ABI/provider obligations stay explicit."
+            cast."]
       }
     ]
     | .stake_instruction_authorize => [
@@ -4272,10 +3400,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.3.3"],
-          reason :=
-            "The selected Instruction::new_with_bincode fixes enum tag width, integer byte \
-              order, and Option encoding."
+          releases := ["1.3.3"]
         }],
         conditions :=
           ["Interpret the index providers as the actual metadata vectors, bincode bytes, \
@@ -4284,22 +3409,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             transition.", "Bincode framing uses the reviewed fixed bytes, while \
             size/serialize, byte buffer allocation, metadata push, outer allocation and \
             cleanup effects remain indexed interfaces. The emitted instructions do not \
-            execute CPI."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Construct authorize with the exact instruction discriminant, ordered account \
-            metadata, signer/writable flags and optional fields. Split returns \
-            allocate(200), assign(stake program), split in order; merge allocates its \
-            metadata before its outer array. Temporary ownership and unwind/terminal \
-            cleanup follow the generic owned providers. Interpret the index providers as \
-            the actual metadata vectors, bincode bytes, outer fixed array/vector storage, \
-            selected allocator, panic strategy and destructors, retaining aliases, caller \
-            ownership and every callback state transition. Bincode framing uses the \
-            reviewed fixed bytes, while size/serialize, byte buffer allocation, metadata \
-            push, outer allocation and cleanup effects remain indexed interfaces. The \
-            emitted instructions do not execute CPI. Compatibility in [1.15.2, 1.16.0) \
-            assumes this operation and its selected dependency contracts preserve that \
-            behavior; the exact releases remain inspected references."
+            execute CPI."]
       }
     ]
     | .stake_instruction_delegate_stake => [
@@ -4325,10 +3435,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.3.3"],
-          reason :=
-            "The selected Instruction::new_with_bincode fixes enum tag width, integer byte \
-              order, and Option encoding."
+          releases := ["1.3.3"]
         }],
         conditions :=
           ["Interpret the index providers as the actual metadata vectors, bincode bytes, \
@@ -4337,22 +3444,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             transition.", "Bincode framing uses the reviewed fixed bytes, while \
             size/serialize, byte buffer allocation, metadata push, outer allocation and \
             cleanup effects remain indexed interfaces. The emitted instructions do not \
-            execute CPI."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Construct delegate_stake with the exact instruction discriminant, ordered \
-            account metadata, signer/writable flags and optional fields. Split returns \
-            allocate(200), assign(stake program), split in order; merge allocates its \
-            metadata before its outer array. Temporary ownership and unwind/terminal \
-            cleanup follow the generic owned providers. Interpret the index providers as \
-            the actual metadata vectors, bincode bytes, outer fixed array/vector storage, \
-            selected allocator, panic strategy and destructors, retaining aliases, caller \
-            ownership and every callback state transition. Bincode framing uses the \
-            reviewed fixed bytes, while size/serialize, byte buffer allocation, metadata \
-            push, outer allocation and cleanup effects remain indexed interfaces. The \
-            emitted instructions do not execute CPI. Compatibility in [1.15.2, 1.16.0) \
-            assumes this operation and its selected dependency contracts preserve that \
-            behavior; the exact releases remain inspected references."
+            execute CPI."]
       }
     ]
     | .stake_instruction_initialize => [
@@ -4378,10 +3470,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.3.3"],
-          reason :=
-            "The selected Instruction::new_with_bincode fixes enum tag width, integer byte \
-              order, and Option encoding."
+          releases := ["1.3.3"]
         }],
         conditions :=
           ["Interpret the index providers as the actual metadata vectors, bincode bytes, \
@@ -4390,22 +3479,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             transition.", "Bincode framing uses the reviewed fixed bytes, while \
             size/serialize, byte buffer allocation, metadata push, outer allocation and \
             cleanup effects remain indexed interfaces. The emitted instructions do not \
-            execute CPI."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Construct initialize with the exact instruction discriminant, ordered account \
-            metadata, signer/writable flags and optional fields. Split returns \
-            allocate(200), assign(stake program), split in order; merge allocates its \
-            metadata before its outer array. Temporary ownership and unwind/terminal \
-            cleanup follow the generic owned providers. Interpret the index providers as \
-            the actual metadata vectors, bincode bytes, outer fixed array/vector storage, \
-            selected allocator, panic strategy and destructors, retaining aliases, caller \
-            ownership and every callback state transition. Bincode framing uses the \
-            reviewed fixed bytes, while size/serialize, byte buffer allocation, metadata \
-            push, outer allocation and cleanup effects remain indexed interfaces. The \
-            emitted instructions do not execute CPI. Compatibility in [1.15.2, 1.16.0) \
-            assumes this operation and its selected dependency contracts preserve that \
-            behavior; the exact releases remain inspected references."
+            execute CPI."]
       }
     ]
     | .stake_instruction_merge => [
@@ -4431,10 +3505,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.3.3"],
-          reason :=
-            "The selected Instruction::new_with_bincode fixes enum tag width, integer byte \
-              order, and Option encoding."
+          releases := ["1.3.3"]
         }],
         conditions :=
           ["Interpret the index providers as the actual metadata vectors, bincode bytes, \
@@ -4443,22 +3514,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             transition.", "Bincode framing uses the reviewed fixed bytes, while \
             size/serialize, byte buffer allocation, metadata push, outer allocation and \
             cleanup effects remain indexed interfaces. The emitted instructions do not \
-            execute CPI."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Construct merge with the exact instruction discriminant, ordered account \
-            metadata, signer/writable flags and optional fields. Split returns \
-            allocate(200), assign(stake program), split in order; merge allocates its \
-            metadata before its outer array. Temporary ownership and unwind/terminal \
-            cleanup follow the generic owned providers. Interpret the index providers as \
-            the actual metadata vectors, bincode bytes, outer fixed array/vector storage, \
-            selected allocator, panic strategy and destructors, retaining aliases, caller \
-            ownership and every callback state transition. Bincode framing uses the \
-            reviewed fixed bytes, while size/serialize, byte buffer allocation, metadata \
-            push, outer allocation and cleanup effects remain indexed interfaces. The \
-            emitted instructions do not execute CPI. Compatibility in [1.15.2, 1.16.0) \
-            assumes this operation and its selected dependency contracts preserve that \
-            behavior; the exact releases remain inspected references."
+            execute CPI."]
       }
     ]
     | .stake_instruction_set_lockup => [
@@ -4484,10 +3540,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.3.3"],
-          reason :=
-            "The selected Instruction::new_with_bincode fixes enum tag width, integer byte \
-              order, and Option encoding."
+          releases := ["1.3.3"]
         }],
         conditions :=
           ["Interpret the index providers as the actual metadata vectors, bincode bytes, \
@@ -4496,22 +3549,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             transition.", "Bincode framing uses the reviewed fixed bytes, while \
             size/serialize, byte buffer allocation, metadata push, outer allocation and \
             cleanup effects remain indexed interfaces. The emitted instructions do not \
-            execute CPI."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Construct set_lockup with the exact instruction discriminant, ordered account \
-            metadata, signer/writable flags and optional fields. Split returns \
-            allocate(200), assign(stake program), split in order; merge allocates its \
-            metadata before its outer array. Temporary ownership and unwind/terminal \
-            cleanup follow the generic owned providers. Interpret the index providers as \
-            the actual metadata vectors, bincode bytes, outer fixed array/vector storage, \
-            selected allocator, panic strategy and destructors, retaining aliases, caller \
-            ownership and every callback state transition. Bincode framing uses the \
-            reviewed fixed bytes, while size/serialize, byte buffer allocation, metadata \
-            push, outer allocation and cleanup effects remain indexed interfaces. The \
-            emitted instructions do not execute CPI. Compatibility in [1.15.2, 1.16.0) \
-            assumes this operation and its selected dependency contracts preserve that \
-            behavior; the exact releases remain inspected references."
+            execute CPI."]
       }
     ]
     | .stake_instruction_split => [
@@ -4537,10 +3575,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.3.3"],
-          reason :=
-            "The selected Instruction::new_with_bincode fixes enum tag width, integer byte \
-              order, and Option encoding."
+          releases := ["1.3.3"]
         }],
         conditions :=
           ["Interpret the index providers as the actual metadata vectors, bincode bytes, \
@@ -4549,22 +3584,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             transition.", "Bincode framing uses the reviewed fixed bytes, while \
             size/serialize, byte buffer allocation, metadata push, outer allocation and \
             cleanup effects remain indexed interfaces. The emitted instructions do not \
-            execute CPI."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Construct split with the exact instruction discriminant, ordered account \
-            metadata, signer/writable flags and optional fields. Split returns \
-            allocate(200), assign(stake program), split in order; merge allocates its \
-            metadata before its outer array. Temporary ownership and unwind/terminal \
-            cleanup follow the generic owned providers. Interpret the index providers as \
-            the actual metadata vectors, bincode bytes, outer fixed array/vector storage, \
-            selected allocator, panic strategy and destructors, retaining aliases, caller \
-            ownership and every callback state transition. Bincode framing uses the \
-            reviewed fixed bytes, while size/serialize, byte buffer allocation, metadata \
-            push, outer allocation and cleanup effects remain indexed interfaces. The \
-            emitted instructions do not execute CPI. Compatibility in [1.15.2, 1.16.0) \
-            assumes this operation and its selected dependency contracts preserve that \
-            behavior; the exact releases remain inspected references."
+            execute CPI."]
       }
     ]
     | .stake_state_Lockup_default => [
@@ -4587,15 +3607,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Preserve the legacy four-variant StakeState representation and every copied \
             integer, key and binary64 bit. No decoder, float validation or allocation is \
-            performed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Derived Default returns zero timestamp, zero epoch and the zero Pubkey. \
-            Preserve the legacy four-variant StakeState representation and every copied \
-            integer, key and binary64 bit. No decoder, float validation or allocation is \
-            performed. Compatibility in [1.15.2, 1.16.0) assumes this operation and its \
-            selected dependency contracts preserve that behavior; the exact releases \
-            remain inspected references."
+            performed."]
       }
     ]
     | .stake_state_Lockup_is_in_force => [
@@ -4617,16 +3629,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Preserve the legacy four-variant StakeState representation and every copied \
             integer, key and binary64 bit. No decoder, float validation or allocation is \
-            performed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Equal custodian bypasses the lockup; otherwise compare strict future timestamp \
-            or epoch with short-circuiting, retaining source signedness. Preserve the \
-            legacy four-variant StakeState representation and every copied integer, key \
-            and binary64 bit. No decoder, float validation or allocation is performed. \
-            Compatibility in [1.15.2, 1.16.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            performed."]
       }
     ]
     | .stake_state_StakeState_delegation => [
@@ -4648,16 +3651,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Preserve the legacy four-variant StakeState representation and every copied \
             integer, key and binary64 bit. No decoder, float validation or allocation is \
-            performed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Copy the selected optional delegation from legacy StakeState, preserving all \
-            fields and returning None in the source variants. Preserve the legacy \
-            four-variant StakeState representation and every copied integer, key and \
-            binary64 bit. No decoder, float validation or allocation is performed. \
-            Compatibility in [1.15.2, 1.16.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            performed."]
       }
     ]
     | .stake_state_StakeState_lockup => [
@@ -4679,15 +3673,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Preserve the legacy four-variant StakeState representation and every copied \
             integer, key and binary64 bit. No decoder, float validation or allocation is \
-            performed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Copy the selected optional lockup from legacy StakeState, preserving all fields \
-            and returning None in the source variants. Preserve the legacy four-variant \
-            StakeState representation and every copied integer, key and binary64 bit. No \
-            decoder, float validation or allocation is performed. Compatibility in \
-            [1.15.2, 1.16.0) assumes this operation and its selected dependency contracts \
-            preserve that behavior; the exact releases remain inspected references."
+            performed."]
       }
     ]
     | .stake_state_StakeState_meta => [
@@ -4709,15 +3695,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Preserve the legacy four-variant StakeState representation and every copied \
             integer, key and binary64 bit. No decoder, float validation or allocation is \
-            performed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Copy the selected optional meta from legacy StakeState, preserving all fields \
-            and returning None in the source variants. Preserve the legacy four-variant \
-            StakeState representation and every copied integer, key and binary64 bit. No \
-            decoder, float validation or allocation is performed. Compatibility in \
-            [1.15.2, 1.16.0) assumes this operation and its selected dependency contracts \
-            preserve that behavior; the exact releases remain inspected references."
+            performed."]
       }
     ]
     | .syscalls_definitions_sol_create_program_address => [
@@ -4740,23 +3718,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -4770,15 +3741,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Preserve the extern-C seed/address \
-            pointer and length order and integer status. The provider interprets only the \
-            admitted runtime memory and status contract, with actual returned key bytes \
-            and effects. Compatibility in [1.18.26, 2.0.0) assumes this complete operation \
-            and the scoped dependencies remain unchanged; source/ABI/provider obligations \
-            stay explicit."
+            interpretation."]
       },
       {
         id := "raw-runtime-solana-program-1.15.2",
@@ -4799,23 +3762,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -4829,15 +3785,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "Preserve this checksum-pinned Program extern-C declaration, including its exact \
-            argument order, result type and dynamic syscall gates. Macro expansion does \
-            not change the defining crate or supply a runtime implementation. \
-            Compatibility in [1.15.2, 1.16.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            interpretation."]
       }
     ]
     | .syscalls_definitions_sol_get_clock_sysvar => [
@@ -4859,23 +3807,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -4889,15 +3830,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Preserve the extern-C destination \
-            pointer and u64 status, actual initialized writes and finite runtime effects. \
-            This raw boundary neither manufactures a Clock value nor folds failures into a \
-            typed getter result. Compatibility in [1.18.26, 2.0.0) assumes this complete \
-            operation and the scoped dependencies remain unchanged; source/ABI/provider \
-            obligations stay explicit."
+            interpretation."]
       }
     ]
     | .syscalls_definitions_sol_get_rent_sysvar => [
@@ -4919,23 +3852,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -4949,15 +3875,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Preserve the extern-C destination \
-            pointer and u64 status, actual initialized writes and finite runtime effects. \
-            The typed Rent initialization and status conversion belong to the separate \
-            wrapper. Compatibility in [1.18.26, 2.0.0) assumes this complete operation and \
-            the scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            interpretation."]
       },
       {
         id := "raw-runtime-solana-program-1.15.2",
@@ -4977,23 +3895,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -5007,15 +3918,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "Preserve this checksum-pinned Program extern-C declaration, including its exact \
-            argument order, result type and dynamic syscall gates. Macro expansion does \
-            not change the defining crate or supply a runtime implementation. \
-            Compatibility in [1.15.2, 1.16.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            interpretation."]
       }
     ]
     | .syscalls_definitions_sol_invoke_signed_rust => [
@@ -5037,39 +3940,24 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The on-chain invocation branch is selected; native stubs and the black_box \
-              host branch of Pinocchio have different behavior."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The reviewed source pointers, lengths, RefCell borrow counts and runtime \
-              layouts are 64-bit."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The reviewed stable/C layouts and the source memory codec use little-endian \
-              integer fields."
+          «exclude» := []
         }, {
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The selected invocation signature has terminal local panic/allocation \
-              behavior and no unwind exit."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static syscall features replace the registered external declaration with a \
-              function thunk."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["Bind the runtime index to the separately pinned Agave 4.3.2 configuration with \
@@ -5091,16 +3979,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             instruction/account/seed data layouts; both declarations have extern-C \
             function calling convention.", "Only the dynamic external declaration is \
             bound. Exclude static-syscalls; for define-syscall 5.1.0 also exclude \
-            unstable-static-syscalls on BPF. No raw implementation body is traversed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Preserve the complete Rust \
-            instruction, account-info array and nested signer-tree ABI. The selected \
-            canonical provider returns only on successful invocation; decode, copyback, \
-            privilege/error order and terminal effects remain explicit. Invocation and \
-            callee execution stay opaque. Compatibility in [1.18.26, 2.0.0) assumes this \
-            complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            unstable-static-syscalls on BPF. No raw implementation body is traversed."]
       },
       {
         id := "raw-cpi-rust-solana-program-1.15.2",
@@ -5120,39 +3999,24 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The on-chain invocation branch is selected; native stubs and the black_box \
-              host branch of Pinocchio have different behavior."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The reviewed source pointers, lengths, RefCell borrow counts and runtime \
-              layouts are 64-bit."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The reviewed stable/C layouts and the source memory codec use little-endian \
-              integer fields."
+          «exclude» := []
         }, {
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The selected invocation signature has terminal local panic/allocation \
-              behavior and no unwind exit."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static syscall features replace the registered external declaration with a \
-              function thunk."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["Bind the runtime index to the separately pinned Agave 4.3.2 configuration with \
@@ -5174,14 +4038,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             instruction/account/seed data layouts; both declarations have extern-C \
             function calling convention.", "Only the dynamic external declaration is \
             bound. Exclude static-syscalls; for define-syscall 5.1.0 also exclude \
-            unstable-static-syscalls on BPF. No raw implementation body is traversed."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Preserve the dynamic unsafe extern-C declaration (*const u8, *const u8, u64, \
-            *const u8, u64) -> u64 and its actual Program defining identity. C/Rust \
-            pointer layout and opaque runtime behavior remain separate. Compatibility in \
-            [1.15.2, 1.16.0) assumes this operation and its selected dependency contracts \
-            preserve that behavior; the exact releases remain inspected references."
+            unstable-static-syscalls on BPF. No raw implementation body is traversed."]
       }
     ]
     | .syscalls_definitions_sol_memcpy_ => [
@@ -5203,23 +4060,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -5233,15 +4083,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Preserve the extern-C \
-            destination/source/count order and nonoverlapping initialized memory-copy \
-            contract. Retain the complete selected write effects and runtime failures; \
-            overlapping regions require their separate source obligations. Compatibility \
-            in [1.18.26, 2.0.0) assumes this complete operation and the scoped \
-            dependencies remain unchanged; source/ABI/provider obligations stay explicit."
+            interpretation."]
       },
       {
         id := "raw-runtime-solana-program-1.15.2",
@@ -5261,23 +4103,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -5291,15 +4126,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "Preserve this checksum-pinned Program extern-C declaration, including its exact \
-            argument order, result type and dynamic syscall gates. Macro expansion does \
-            not change the defining crate or supply a runtime implementation. \
-            Compatibility in [1.15.2, 1.16.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            interpretation."]
       }
     ]
     | .syscalls_definitions_sol_memset_ => [
@@ -5321,23 +4148,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -5351,15 +4171,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Preserve the extern-C destination, \
-            byte value and count order and the exact admitted destination writes. Runtime \
-            failures and source memory/provenance conditions remain explicit. \
-            Compatibility in [1.18.26, 2.0.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            interpretation."]
       },
       {
         id := "raw-runtime-solana-program-1.15.2",
@@ -5379,23 +4191,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -5409,15 +4214,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "Preserve this checksum-pinned Program extern-C declaration, including its exact \
-            argument order, result type and dynamic syscall gates. Macro expansion does \
-            not change the defining crate or supply a runtime implementation. \
-            Compatibility in [1.15.2, 1.16.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            interpretation."]
       }
     ]
     | .syscalls_definitions_sol_sha256 => [
@@ -5439,23 +4236,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["The index provider interprets the answers of the actual syscall environment \
@@ -5483,15 +4273,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             together with feature=unstable-static-syscalls. There is no target_os gate on \
             the definitions module itself.", "Retain the full existing provider, \
             terminal-outcome, status-width and memory-interpretation assumptions. Crate \
-            signature compatibility does not expand the Agave runtime version set."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Preserve the extern-C ordered slice \
-            descriptors, count and result pointer with the u64 status. The provider \
-            supplies the admitted cryptographic result and writes; no SDK or validator \
-            hash implementation is proved. Compatibility in [1.18.26, 2.0.0) assumes this \
-            complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            signature compatibility does not expand the Agave runtime version set."]
       },
       {
         id := "raw-runtime-solana-program-1.15.2",
@@ -5511,23 +4293,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["The index provider interprets the answers of the actual syscall environment \
@@ -5555,15 +4330,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             together with feature=unstable-static-syscalls. There is no target_os gate on \
             the definitions module itself.", "Retain the full existing provider, \
             terminal-outcome, status-width and memory-interpretation assumptions. Crate \
-            signature compatibility does not expand the Agave runtime version set."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "Preserve this checksum-pinned Program extern-C declaration, including its exact \
-            argument order, result type and dynamic syscall gates. Macro expansion does \
-            not change the defining crate or supply a runtime implementation. \
-            Compatibility in [1.15.2, 1.16.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            signature compatibility does not expand the Agave runtime version set."]
       }
     ]
     | .syscalls_definitions_sol_try_find_program_address => [
@@ -5586,23 +4353,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -5616,15 +4376,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Preserve the extern-C seed \
-            descriptors, program key, address destination and bump destination in order. \
-            Retain actual status, writes and runtime effects; no host search or uniqueness \
-            theorem is substituted. Compatibility in [1.18.26, 2.0.0) assumes this \
-            complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            interpretation."]
       },
       {
         id := "raw-runtime-solana-program-1.15.2",
@@ -5645,23 +4397,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -5675,15 +4420,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "Preserve this checksum-pinned Program extern-C declaration, including its exact \
-            argument order, result type and dynamic syscall gates. Macro expansion does \
-            not change the defining crate or supply a runtime implementation. \
-            Compatibility in [1.15.2, 1.16.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            interpretation."]
       }
     ]
     | .system_instruction_create_account_with_seed => [
@@ -5710,12 +4447,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.3.3"],
-          reason :=
-            "Reference 1.3.3; [1.3.3, 2.0.0) assumes the following used contract remains \
-              unchanged. Preserve the reached default little-endian SystemInstruction \
-              serialization, enum/field order and Vec result, including the seed String \
-              encoding where present. Retain allocation, owned error and reached \
-              unwrap/cleanup behavior; unrelated decoder operations are not required.",
           compatibleRanges := [{
             lower := "1.3.3",
             upper := "2.0.0"
@@ -5726,16 +4457,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compiler or application body correctness is supplied.", "Bind \
             reference/current-resource identities to legal source borrows and owned \
             allocations in one shared memory interpretation, with the exact selected \
-            layouts and scalar/Boolean widths."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate", "https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.15.2, 1.18.26. Build three ordered metas: \
-            writable signing funder, writable nonsigning new account, and readonly signing \
-            base, retaining duplicates. Then serialize the SystemInstruction fields with \
-            bincode. Preserve seed String bytes, metadata/data allocation order and \
-            reached error, unwind and cleanup effects. Compatibility in [1.15.2, 2.0.0) \
-            assumes this complete operation and the scoped dependencies remain unchanged; \
-            source/ABI/provider obligations stay explicit."
+            layouts and scalar/Boolean widths."]
       }
     ]
     | .sysvar_clock_Clock_get => [
@@ -5763,16 +4485,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             consumes initialization of every actual reply classified as successful to \
             retain its forwarding continuation; value validity is a separate provider \
             interpretation and no provider termination is assumed. Defaults are zero Clock \
-            and Rent(rate 3480, threshold bits for 2.0, burn 50)."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Initialize the actual Clock \
-            destination with Default before the selected syscall or host stub. Status zero \
-            returns its current initialized value; nonzero uses the legacy ProgramError \
-            table, including owned BorshIoError(\"Unknown\") and unknown-status low-word \
-            truncation. Compatibility in [1.18.26, 2.0.0) assumes this complete operation \
-            and the scoped dependencies remain unchanged; source/ABI/provider obligations \
-            stay explicit."
+            and Rent(rate 3480, threshold bits for 2.0, burn 50)."]
       }
     ]
     | .sysvar_rent_Rent_get => [
@@ -5800,15 +4513,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             consumes initialization of every actual reply classified as successful to \
             retain its forwarding continuation; value validity is a separate provider \
             interpretation and no provider termination is assumed. Defaults are zero Clock \
-            and Rent(rate 3480, threshold bits for 2.0, burn 50)."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.18.26.crate"],
-        argument :=
-          "Reference source: solana-program 1.18.26. Initialize the actual Rent \
-            destination with its rate, threshold and burn defaults before the selected \
-            syscall or host stub. Status zero returns its current value; nonzero retains \
-            the legacy ProgramError table and owned diagnostic behavior. Compatibility in \
-            [1.18.26, 2.0.0) assumes this complete operation and the scoped dependencies \
-            remain unchanged; source/ABI/provider obligations stay explicit."
+            and Rent(rate 3480, threshold bits for 2.0, burn 50)."]
       }
     ]
     | .sysvar_rent_Rent_get_legacy_error_table => [
@@ -5836,16 +4541,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             consumes initialization of every actual reply classified as successful to \
             retain its forwarding continuation; value validity is a separate provider \
             interpretation and no provider termination is assumed. Defaults are zero Clock \
-            and Rent(rate 3480, threshold bits for 2.0, burn 50)."],
-        evidence := ["https://static.crates.io/crates/solana-program/solana-program-1.15.2.crate"],
-        argument :=
-          "Default-initialize the typed destination, call the selected typed syscall or \
-            replaceable host stub, and return its current value on status zero. Nonzero \
-            statuses use the exact ProgramError conversion: the 1.15.2 builtin table ends \
-            at tag 21, tag 15 owns BorshIoError(\"Unknown\"), and unknown codes retain \
-            low-word truncation. Compatibility in [1.15.2, 1.16.0) assumes this operation \
-            and its selected dependency contracts preserve that behavior; the exact \
-            releases remain inspected references."
+            and Rent(rate 3480, threshold bits for 2.0, burn 50)."]
       }
     ]
   applicabilityConsumers := fun key => match key with

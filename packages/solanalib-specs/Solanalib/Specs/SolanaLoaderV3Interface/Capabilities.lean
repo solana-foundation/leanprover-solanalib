@@ -60,15 +60,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "The selected source passes 64-bit slice counts to the runtime ABI."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Select the reviewed runtime syscall branch; the host retry/crypto branch is \
-              separate."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -78,10 +74,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["4.2.0"],
-          reason :=
-            "Assume the selected Pubkey facade retains its defining Address identity, \
-              complete key representation and the reached copy/PDA operation; the concrete \
-              provider and full ABI join remain separate.",
           compatibleRanges := [{
             lower := "4.2.0",
             upper := "5.0.0"
@@ -94,10 +86,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.6.0", "2.6.1"],
-          reason :=
-            "Assume the defining Address retains the complete 32-byte representation and \
-              selected Solana PDA search, including MaybeUninit output, ordered seeds, \
-              status/panic behavior and actual callback effects.",
           compatibleRanges := [{
             lower := "2.6.0",
             upper := "3.0.0"
@@ -110,9 +98,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.0"],
-          reason :=
-            "Assume the exact declared instructions/sysvar or program key bytes reached by \
-              this call remain unchanged.",
           compatibleRanges := [{
             lower := "3.1.0",
             upper := "4.0.0"
@@ -125,13 +110,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
             prove them.", "The actual status-zero PDA reply initializes the address \
-            destination. This premise is imposed only at the reached call."],
-        evidence := ["https://static.crates.io/crates/solana-loader-v3-interface/solana-loader-v3-interface-6.1.1.crate"],
-        argument :=
-          "The declared compatible range assumes one PDA seed containing the complete \
-            program address and the fixed upgradeable-loader ID, the actual dependency PDA \
-            search and discarding only its returned bump. Keep MaybeUninit output \
-            obligations, reached panic state and all abnormal exits."
+            destination. This premise is imposed only at the reached call."]
       }
     ]
   applicabilityConsumers := fun key => match key with

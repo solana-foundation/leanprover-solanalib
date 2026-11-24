@@ -102,17 +102,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compiler or application body correctness is supplied.", "Bind \
             reference/current-resource identities to legal source borrows and owned \
             allocations in one shared memory interpretation, with the exact selected \
-            layouts and scalar/Boolean widths."],
-        evidence := ["https://static.crates.io/crates/solana-instruction/solana-instruction-2.3.3.crate", "https://static.crates.io/crates/solana-instruction/solana-instruction-3.4.0.crate"],
-        argument :=
-          "Reference: solana-instruction 2.3.3. Compatibility in [2.3.3, 3.0.0) assumes \
-            that the defining operation and its reached dependencies preserve this \
-            behavior: Preserve derived field cloning and the reached canonical key clone: \
-            copy all key bytes and both Boolean fields from the live current shared \
-            borrow, preserve the existing source state and borrow, and add no allocation, \
-            mutation, validation or borrow guard. Bind the selected release to its actual \
-            legal source representation separately; the frozen 2.3.3 physical clone/ABI \
-            fixture is not generalized by a catalog range."
+            layouts and scalar/Boolean widths."]
       }
     ]
     | .AccountMeta_new => [
@@ -146,15 +136,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Canonical 32-byte Pubkey/Address observation with the source Boolean flags.",
           "Use a coherent published dependency/feature profile with the same canonical \
-            32-byte key type and applicable serializer trait."],
-        evidence := ["https://static.crates.io/crates/solana-instruction/solana-instruction-0.0.2.crate", "https://static.crates.io/crates/solana-instruction/solana-instruction-4.0.0.crate"],
-        argument :=
-          "0.0.1 is a placeholder without the API. Every direct implementation from 0.0.2 \
-            through 4.0.0 has byte-identical relevant AccountMeta fields and constructor \
-            body: preserve pubkey and is_signer, set is_writable to true. 3.5.1 reexports \
-            solana-instruction-v4 ^4.0; its only published target 4.0.0 was reviewed and \
-            natively executed. Renamed key wrappers/reexports preserve the canonical value \
-            observation. No deduplication, address validation or allocation occurs."
+            32-byte key type and applicable serializer trait."]
       },
       {
         id := "solana-instruction-reviewed-facade-v4",
@@ -179,10 +161,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["4.0.0"],
-          reason :=
-            "The 3.5.1 facade reexports solana-instruction-v4. The selected defining \
-              package is assumed to preserve the reference constructor, fields and \
-              serializer delegation; its actual version supplies the Rust identity.",
           compatibleRanges := [{
             lower := "4.0.0",
             upper := "5.0.0"
@@ -192,15 +170,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Canonical 32-byte Pubkey/Address observation with the source Boolean flags.",
           "Use a coherent published dependency/feature profile with the same canonical \
-            32-byte key type and applicable serializer trait."],
-        evidence := ["https://static.crates.io/crates/solana-instruction/solana-instruction-0.0.2.crate", "https://static.crates.io/crates/solana-instruction/solana-instruction-4.0.0.crate"],
-        argument :=
-          "0.0.1 is a placeholder without the API. Every direct implementation from 0.0.2 \
-            through 4.0.0 has byte-identical relevant AccountMeta fields and constructor \
-            body: preserve pubkey and is_signer, set is_writable to true. 3.5.1 reexports \
-            solana-instruction-v4 ^4.0; its only published target 4.0.0 was reviewed and \
-            natively executed. Renamed key wrappers/reexports preserve the canonical value \
-            observation. No deduplication, address validation or allocation occurs."
+            32-byte key type and applicable serializer trait."]
       }
     ]
     | .AccountMeta_new_readonly => [
@@ -234,15 +204,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Canonical 32-byte Pubkey/Address observation with the source Boolean flags.",
           "Use a coherent published dependency/feature profile with the same canonical \
-            32-byte key type and applicable serializer trait."],
-        evidence := ["https://static.crates.io/crates/solana-instruction/solana-instruction-0.0.2.crate", "https://static.crates.io/crates/solana-instruction/solana-instruction-4.0.0.crate"],
-        argument :=
-          "0.0.1 is a placeholder without the API. Every direct implementation from 0.0.2 \
-            through 4.0.0 has byte-identical relevant AccountMeta fields and constructor \
-            body: preserve pubkey and is_signer, set is_writable to false. 3.5.1 reexports \
-            solana-instruction-v4 ^4.0; its only published target 4.0.0 was reviewed and \
-            natively executed. Renamed key wrappers/reexports preserve the canonical value \
-            observation. No deduplication, address validation or allocation occurs."
+            32-byte key type and applicable serializer trait."]
       },
       {
         id := "solana-instruction-reviewed-facade-v4",
@@ -267,10 +229,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["4.0.0"],
-          reason :=
-            "The 3.5.1 facade reexports solana-instruction-v4. The selected defining \
-              package is assumed to preserve the reference constructor, fields and \
-              serializer delegation; its actual version supplies the Rust identity.",
           compatibleRanges := [{
             lower := "4.0.0",
             upper := "5.0.0"
@@ -280,15 +238,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         conditions :=
           ["Canonical 32-byte Pubkey/Address observation with the source Boolean flags.",
           "Use a coherent published dependency/feature profile with the same canonical \
-            32-byte key type and applicable serializer trait."],
-        evidence := ["https://static.crates.io/crates/solana-instruction/solana-instruction-0.0.2.crate", "https://static.crates.io/crates/solana-instruction/solana-instruction-4.0.0.crate"],
-        argument :=
-          "0.0.1 is a placeholder without the API. Every direct implementation from 0.0.2 \
-            through 4.0.0 has byte-identical relevant AccountMeta fields and constructor \
-            body: preserve pubkey and is_signer, set is_writable to false. 3.5.1 reexports \
-            solana-instruction-v4 ^4.0; its only published target 4.0.0 was reviewed and \
-            natively executed. Renamed key wrappers/reexports preserve the canonical value \
-            observation. No deduplication, address validation or allocation occurs."
+            32-byte key type and applicable serializer trait."]
       }
     ]
     | .Instruction_new_with_bincode => [
@@ -322,10 +272,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["bincode"],
           any := [],
-          none := [],
-          reason :=
-            "The named serializer constructor is compiled only with its matching feature; \
-              its actual generic serializer remains an explicit family dependency."
+          none := []
         },
         conditions :=
           ["Enable the named bincode/wincode feature and bind the actual monomorphized \
@@ -335,18 +282,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             dependency/feature profile with the same canonical 32-byte key type and \
             applicable serializer trait.", "Vec/Instruction resource representation and \
             source storage observations remain explicit binding obligations; no extra \
-            source validation is inferred."],
-        evidence := ["https://static.crates.io/crates/solana-instruction/solana-instruction-0.0.2.crate", "https://static.crates.io/crates/solana-instruction/solana-instruction-4.0.0.crate"],
-        argument :=
-          "Only placeholder 0.0.1 lacks the API. All direct implementations with the API \
-            have identical Instruction fields, generic bounds and body: call the selected \
-            serializer on &T, unwrap, then move program_id, the supplied accounts Vec and \
-            returned data Vec into Instruction. Serializer error therefore unwinds through \
-            unwrap rather than becoming an ordinary Result error; the retained accounts \
-            Vec is dropped at the actual reached state. Internal partial-data cleanup \
-            belongs to the serializer dependency, and terminal exits skip subsequent \
-            cleanup. 3.5.1 forwards the feature and public item to reviewed 4.0.0. Generic \
-            stateful/panicking serializers remain in scope; tests include them."
+            source validation is inferred."]
       },
       {
         id := "solana-instruction-reviewed-facade-v4",
@@ -366,10 +302,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["bincode"],
           any := [],
-          none := [],
-          reason :=
-            "The named serializer constructor is compiled only with its matching feature; \
-              its actual generic serializer remains an explicit family dependency."
+          none := []
         },
         dependencies := [{
           package := "solana-instruction",
@@ -379,10 +312,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["4.0.0"],
-          reason :=
-            "The 3.5.1 facade reexports solana-instruction-v4. The selected defining \
-              package is assumed to preserve the reference constructor, fields and \
-              serializer delegation; its actual version supplies the Rust identity.",
           compatibleRanges := [{
             lower := "4.0.0",
             upper := "5.0.0"
@@ -397,18 +326,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             dependency/feature profile with the same canonical 32-byte key type and \
             applicable serializer trait.", "Vec/Instruction resource representation and \
             source storage observations remain explicit binding obligations; no extra \
-            source validation is inferred."],
-        evidence := ["https://static.crates.io/crates/solana-instruction/solana-instruction-0.0.2.crate", "https://static.crates.io/crates/solana-instruction/solana-instruction-4.0.0.crate"],
-        argument :=
-          "Only placeholder 0.0.1 lacks the API. All direct implementations with the API \
-            have identical Instruction fields, generic bounds and body: call the selected \
-            serializer on &T, unwrap, then move program_id, the supplied accounts Vec and \
-            returned data Vec into Instruction. Serializer error therefore unwinds through \
-            unwrap rather than becoming an ordinary Result error; the retained accounts \
-            Vec is dropped at the actual reached state. Internal partial-data cleanup \
-            belongs to the serializer dependency, and terminal exits skip subsequent \
-            cleanup. 3.5.1 forwards the feature and public item to reviewed 4.0.0. Generic \
-            stateful/panicking serializers remain in scope; tests include them."
+            source validation is inferred."]
       }
     ]
     | .Instruction_new_with_wincode => [
@@ -433,10 +351,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["wincode"],
           any := [],
-          none := [],
-          reason :=
-            "The named serializer constructor is compiled only with its matching feature; \
-              its actual generic serializer remains an explicit family dependency."
+          none := []
         },
         conditions :=
           ["Enable the named bincode/wincode feature and bind the actual monomorphized \
@@ -446,19 +361,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             dependency/feature profile with the same canonical 32-byte key type and \
             applicable serializer trait.", "Vec/Instruction resource representation and \
             source storage observations remain explicit binding obligations; no extra \
-            source validation is inferred."],
-        evidence := ["https://static.crates.io/crates/solana-instruction/solana-instruction-3.2.0.crate", "https://static.crates.io/crates/solana-instruction/solana-instruction-4.0.0.crate"],
-        argument :=
-          "The API first appears in 3.2.0; every earlier stable release lacks it. All \
-            direct implementations with the API have identical Instruction fields, generic \
-            bounds and body: call the selected serializer on &T, unwrap, then move \
-            program_id, the supplied accounts Vec and returned data Vec into Instruction. \
-            Serializer error therefore unwinds through unwrap rather than becoming an \
-            ordinary Result error; the retained accounts Vec is dropped at the actual \
-            reached state. Internal partial-data cleanup belongs to the serializer \
-            dependency, and terminal exits skip subsequent cleanup. 3.5.1 forwards the \
-            feature and public item to reviewed 4.0.0. Generic stateful/panicking \
-            serializers remain in scope; tests include them."
+            source validation is inferred."]
       },
       {
         id := "solana-instruction-reviewed-facade-v4",
@@ -478,10 +381,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["wincode"],
           any := [],
-          none := [],
-          reason :=
-            "The named serializer constructor is compiled only with its matching feature; \
-              its actual generic serializer remains an explicit family dependency."
+          none := []
         },
         dependencies := [{
           package := "solana-instruction",
@@ -491,10 +391,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["4.0.0"],
-          reason :=
-            "The 3.5.1 facade reexports solana-instruction-v4. The selected defining \
-              package is assumed to preserve the reference constructor, fields and \
-              serializer delegation; its actual version supplies the Rust identity.",
           compatibleRanges := [{
             lower := "4.0.0",
             upper := "5.0.0"
@@ -509,19 +405,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             dependency/feature profile with the same canonical 32-byte key type and \
             applicable serializer trait.", "Vec/Instruction resource representation and \
             source storage observations remain explicit binding obligations; no extra \
-            source validation is inferred."],
-        evidence := ["https://static.crates.io/crates/solana-instruction/solana-instruction-3.2.0.crate", "https://static.crates.io/crates/solana-instruction/solana-instruction-4.0.0.crate"],
-        argument :=
-          "The API first appears in 3.2.0; every earlier stable release lacks it. All \
-            direct implementations with the API have identical Instruction fields, generic \
-            bounds and body: call the selected serializer on &T, unwrap, then move \
-            program_id, the supplied accounts Vec and returned data Vec into Instruction. \
-            Serializer error therefore unwinds through unwrap rather than becoming an \
-            ordinary Result error; the retained accounts Vec is dropped at the actual \
-            reached state. Internal partial-data cleanup belongs to the serializer \
-            dependency, and terminal exits skip subsequent cleanup. 3.5.1 forwards the \
-            feature and public item to reviewed 4.0.0. Generic stateful/panicking \
-            serializers remain in scope; tests include them."
+            source validation is inferred."]
       }
     ]
   applicabilityConsumers := fun key => match key with

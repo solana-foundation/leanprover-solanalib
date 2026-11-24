@@ -69,15 +69,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "The selected source passes 64-bit slice counts to the runtime ABI."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Select the reviewed runtime syscall branch; the host retry/crypto branch is \
-              separate."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -86,10 +82,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1", "2.4.0"],
-          reason :=
-            "Both inspected releases start zeroed PDA output; the facade Address \
-              generation would change this observable request."
+          releases := ["2.2.1", "2.4.0"]
         }],
         conditions :=
           ["The concrete source values contain exactly 32 initialized bytes; references, \
@@ -97,14 +90,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/spl-associated-token-account-client/spl-associated-token-account-client-2.0.0.crate"],
-        argument :=
-          "The 2.0.0 reference searches the fixed ATA program with wallet, token-program \
-            and mint byte seeds in that order, then discards only the bump. Compatibility \
-            within 2.x assumes this seed order, zero-initialized Pubkey search output and \
-            all reached failure effects remain unchanged under the selected dependency \
-            profile."
+            prove them."]
       }
     ]
   applicabilityConsumers := fun key => match key with

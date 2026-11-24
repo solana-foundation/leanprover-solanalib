@@ -92,24 +92,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             Pod representation, bytemuck helper feature branch, physical references and \
             typed-field observations separately.", "Shared mode, a positive 64-bit slice \
             address, isize-bounded length and a nonoverflowing extent remain separate Rust \
-            argument bindings, not additional Ready premises."],
-        evidence := ["https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.7.0.crate", "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.13.0.crate"],
-        argument :=
-          "The checked Ref<&mut [u8]> parser appears in 0.7.0 and its body is identical \
-            through 0.13.0 (26 stable releases). It rejects missing or wrong discriminator \
-            [196, 27, 108, 196, 10, 215, 219, 40] before short total length, then checks a \
-            3200-byte payload with bytemuck::try_from_bytes before Ref::map/from_bytes. \
-            Exact failure order is discriminator, size, alignment. Successful mapping \
-            returns the original payload address + 8 and bytes without allocation while \
-            transferring the existing shared lease; errors retire the input lease and \
-            preserve an independent sibling. All 26 payload layouts are 3200 bytes for \
-            both supported i128 alignments; the 0.11.2 \
-            padding-byte-to-permit_write_by_authority change preserves every \
-            parser-observed byte and offset. 0.1.0-0.1.2 instead accept AccountInfo and \
-            acquire a borrow, 0.1.3 accepts Ref<[u8]>, and the later pre-0.7.0 parser \
-            panics after a valid discriminator on short or misaligned data. 0.1.11 has no \
-            PullFeedAccountData::parse at all. No precondition is strengthened to discard \
-            the old panic cases."
+            argument bindings, not additional Ready premises."]
       },
       {
         id := "switchboard-on-demand-git-f75b1ef63e10",
@@ -133,15 +116,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             Pod representation, bytemuck helper feature branch, physical references and \
             typed-field observations separately.", "Shared mode, a positive 64-bit slice \
             address, isize-bounded length and a nonoverflowing extent remain separate Rust \
-            argument bindings, not additional Ready premises."],
-        evidence := ["https://github.com/switchboard-xyz/switchboard-sdk/blob/f75b1ef63e10eda35d046b1838810ec2935d7f39/solana/rust/switchboard-on-demand/src/on_demand/accounts/pull_feed.rs", "https://github.com/switchboard-xyz/switchboard-sdk/blob/f75b1ef63e10eda35d046b1838810ec2935d7f39/solana/rust/switchboard-on-demand/src/on_demand/error.rs", "https://github.com/switchboard-xyz/switchboard-sdk/blob/f75b1ef63e10eda35d046b1838810ec2935d7f39/solana/rust/switchboard-on-demand/Cargo.toml", "https://static.crates.io/crates/switchboard-on-demand/switchboard-on-demand-0.12.1.crate",
-          "source-map.json", "../../tools/library-conformance/corpus/manifests/instructions\
-          -3-4-0-bincode.json"],
-        argument :=
-          "This exact Git source has the same pull_feed.rs and error.rs as crates.io \
-            0.12.1. Its Cargo differences do not affect parse or its bytemuck helpers. The \
-            existing parser contract and separate representation obligations apply; see \
-            source-notes/other-sdk-functions.md#switchboard-feed-parsing."
+            argument bindings, not additional Ready premises."]
       }
     ]
   applicabilityConsumers := fun key => match key with

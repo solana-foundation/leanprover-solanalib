@@ -371,11 +371,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The source usize lengths, slice offsets and saturating arithmetic are \
-              interpreted at the reviewed 64-bit width; source cfg selection alone does \
-              not prove SBF layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "spl-pod",
@@ -384,10 +380,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["0.5.1"],
-          reason :=
-            "Reviewed unsigned little-endian fields, nullable key and Pod conversion \
-              definitions consumed by this function."
+          releases := ["0.5.1"]
         }, {
           package := "bytemuck",
           source := some {
@@ -395,25 +388,14 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.22.0", "1.24.0"],
-          reason :=
-            "The provided typed extension getter consumes this exact size/alignment \
-              checked Pod cast."
+          releases := ["1.22.0", "1.24.0"]
         }],
         conditions :=
           ["Ordinary dependency compilation with cfg(test) unset; no test-only extension \
             enum variants.", "Interpret the indexed accessors, borrowed source ranges, \
             vector allocation/push/drop, base Pack and owned-base destruction at their \
             reached source call sites. Finite unwind and terminal exits retain their \
-            effects; no callback success or whole-call result is assumed."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate"],
-        argument :=
-          "The provided getter first calls the actual get_extension_bytes implementation, \
-            then performs the selected Pod view of that same borrowed slice. Preserve \
-            provider effects and size/alignment errors; default scanning is supplied \
-            separately. The inspected 8.0.0/8.0.1 references agree. Compatibility within \
-            8.x assumes this operation and its selected dependencies preserve the complete \
-            contract."
+            effects; no callback success or whole-call result is assumed."]
       }
     ]
     | .extension_BaseStateWithExtensions_get_extension_types => [
@@ -436,25 +418,14 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The source usize lengths, slice offsets and saturating arithmetic are \
-              interpreted at the reviewed 64-bit width; source cfg selection alone does \
-              not prove SBF layout."
+          «exclude» := []
         }],
         conditions :=
           ["Ordinary dependency compilation with cfg(test) unset; no test-only extension \
             enum variants.", "Interpret the indexed accessors, borrowed source ranges, \
             vector allocation/push/drop, base Pack and owned-base destruction at their \
             reached source call sites. Finite unwind and terminal exits retain their \
-            effects; no callback success or whole-call result is assumed."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate"],
-        argument :=
-          "Allocate after the accessor, decode types and stop at sentinel/spare byte. Push \
-            each type before checking payload bounds, and destroy the vector on a reached \
-            error; retain ordered first-class ownership on success. The inspected \
-            8.0.0/8.0.1 references agree. Compatibility within 8.x assumes this operation \
-            and its selected dependencies preserve the complete contract."
+            effects; no callback success or whole-call result is assumed."]
       }
     ]
     | .extension_BaseStateWithExtensions_try_get_new_account_len_for_variable_len_extension => [
@@ -482,26 +453,14 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The source usize lengths, slice offsets and saturating arithmetic are \
-              interpreted at the reviewed 64-bit width; source cfg selection alone does \
-              not prove SBF layout."
+          «exclude» := []
         }],
         conditions :=
           ["Ordinary dependency compilation with cfg(test) unset; no test-only extension \
             enum variants.", "Interpret the indexed accessors, borrowed source ranges, \
             vector allocation/push/drop, base Pack and owned-base destruction at their \
             reached source call sites. Finite unwind and terminal exits retain their \
-            effects; no callback success or whole-call result is assumed."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate"],
-        argument :=
-          "Evaluate the accessor before packed length, then scan into an owned vector. Use \
-            the current used prefix, mask only ordinary existing-extension lookup errors, \
-            apply saturating arithmetic/multisig adjustment and retain cleanup at those \
-            stages. The inspected 8.0.0/8.0.1 references agree. Compatibility within 8.x \
-            assumes this operation and its selected dependencies preserve the complete \
-            contract."
+            effects; no callback success or whole-call result is assumed."]
       }
     ]
     | .extension_ExtensionType_try_calculate_account_len => [
@@ -524,11 +483,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The source usize lengths, slice offsets and saturating arithmetic are \
-              interpreted at the reviewed 64-bit width; source cfg selection alone does \
-              not prove SBF layout."
+          «exclude» := []
         }],
         conditions :=
           ["Ordinary dependency compilation with cfg(test) unset; no test-only extension \
@@ -539,15 +494,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             manages internal iterator/vector child borrowing and repays the original input \
             region on continuing outcomes; equal addresses do not supply child access \
             permission. The concrete Mint and Account bindings use 82 and 165 \
-            respectively. This method does not parse or destroy a base-state value."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate"],
-        argument :=
-          "Deduplicate source references before fixed-length calculation, preserving each \
-            first occurrence and all allocation/push failures before variable-length \
-            rejection. Retain header/base/multisig arithmetic and destruction; the \
-            existing bound theorem needs no added precondition. The inspected 8.0.0/8.0.1 \
-            references agree. Compatibility within 8.x assumes this operation and its \
-            selected dependencies preserve the complete contract."
+            respectively. This method does not parse or destroy a base-state value."]
       }
     ]
     | .extension_StateWithExtensions_get_tlv_data => [
@@ -567,13 +514,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         compatibleRanges := [{
           lower := "8.0.0",
           upper := "9.0.0"
-        }],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes the current borrowed TLV slice, including its exact \
-            extent/reference identity, without parsing, allocation or mutation. Source \
-            layout and any reached provider assumptions remain separate."
+        }]
       }
     ]
     | .extension_StateWithExtensions_unpack => [
@@ -596,25 +537,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The source usize lengths, slice offsets and saturating arithmetic are \
-              interpreted at the reviewed 64-bit width; source cfg selection alone does \
-              not prove SBF layout."
+          «exclude» := []
         }],
         conditions :=
           ["Interpret the indexed accessors, borrowed source ranges, vector \
             allocation/push/drop, base Pack and owned-base destruction at their reached \
             source call sites. Finite unwind and terminal exits retain their effects; no \
-            callback success or whole-call result is assumed."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate"],
-        argument :=
-          "Check base size/multisig, call Pack::unpack, then validate the tail using a \
-            zero-vector padding comparison and current marker read. Preserve \
-            base/temporary destruction and reject the exact marker-only tail; 9.0.0 \
-            changes that boundary and is excluded. The inspected 8.0.0/8.0.1 references \
-            agree. Compatibility within 8.x assumes this operation and its selected \
-            dependencies preserve the complete contract."
+            callback success or whole-call result is assumed."]
       }
     ]
     | .extension_metadata_pointer_instruction_initialize => [
@@ -637,20 +566,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -659,10 +583,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1"],
-          reason :=
-            "Exact reviewed resolved 32-byte key implementation and declare_id/check_id \
-              expansion."
+          releases := ["2.2.1"]
         }, {
           package := "solana-instruction",
           source := some {
@@ -670,10 +591,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1"],
-          reason :=
-            "Actual Instruction and AccountMeta representation; borrowed source access and \
-              owned Vec layouts are separately bound."
+          releases := ["2.2.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -682,10 +600,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -697,10 +611,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["0.5.1"],
-          reason :=
-            "OptionalNonZeroPubkey rejects Some(zero); None and nonzero values use exact \
-              32-byte POD representations."
+          releases := ["0.5.1"]
         }, {
           package := "bytemuck",
           source := some {
@@ -708,8 +619,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.22.0"],
-          reason := "The reached POD byte conversion of the two adjacent 32-byte fields."
+          releases := ["1.22.0"]
         }],
         conditions :=
           ["Bind keys to 32 bytes, amounts to u64, decimals to u8, the actual released \
@@ -718,15 +628,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "Check Token-2022 before metadata allocation; validate authority before metadata \
-            address. Preserve tags 39/0, reject Some(zero), and retain reached owners and \
-            allocation/error cleanup. The inspected 8.0.0/8.0.1 references agree. \
-            Compatibility within 8.x assumes this operation and its selected dependencies \
-            preserve the complete contract."
+            do not supply freshness, framing or nested ownership."]
       },
       {
         id := "spl-token-2022-8.0.1-pubkey-2-4-solana",
@@ -747,20 +649,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -769,10 +666,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.4.0"],
-          reason :=
-            "Exact reviewed resolved 32-byte key implementation and declare_id/check_id \
-              expansion."
+          releases := ["2.4.0"]
         }, {
           package := "solana-instruction",
           source := some {
@@ -780,10 +674,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.3.3"],
-          reason :=
-            "Actual Instruction and AccountMeta representation; borrowed source access and \
-              owned Vec layouts are separately bound."
+          releases := ["2.3.3"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -792,10 +683,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -807,10 +694,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["0.5.1"],
-          reason :=
-            "OptionalNonZeroPubkey rejects Some(zero); None and nonzero values use exact \
-              32-byte POD representations."
+          releases := ["0.5.1"]
         }, {
           package := "bytemuck",
           source := some {
@@ -818,8 +702,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.24.0"],
-          reason := "The reached POD byte conversion of the two adjacent 32-byte fields."
+          releases := ["1.24.0"]
         }],
         conditions :=
           ["Bind keys to 32 bytes, amounts to u64, decimals to u8, the actual released \
@@ -828,15 +711,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "Check Token-2022 before metadata allocation; validate authority before metadata \
-            address. Preserve tags 39/0, reject Some(zero), and retain reached owners and \
-            allocation/error cleanup. The inspected 8.0.0/8.0.1 references agree. \
-            Compatibility within 8.x assumes this operation and its selected dependencies \
-            preserve the complete contract."
+            do not supply freshness, framing or nested ownership."]
       }
     ]
     | .extension_permanent_delegate_get_permanent_delegate => [
@@ -863,10 +738,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["0.5.1"],
-          reason :=
-            "Reviewed unsigned little-endian fields, nullable key and Pod conversion \
-              definitions consumed by this function."
+          releases := ["0.5.1"]
         }, {
           package := "solana-pubkey",
           source := some {
@@ -874,23 +746,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.4.0"],
-          reason :=
-            "The reached concrete key default and zero comparison use the reviewed 32-byte \
-              Pubkey representation."
+          releases := ["2.4.0"]
         }],
         conditions :=
           ["Interpret the indexed accessors, borrowed source ranges, vector \
             allocation/push/drop, base Pack and owned-base destruction at their reached \
             source call sites. Finite unwind and terminal exits retain their effects; no \
-            callback success or whole-call result is assumed."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate"],
-        argument :=
-          "Call the selected typed getter once; decode its zero-or-key field, or destroy \
-            an ordinary owned error before returning None. Retain Borsh String \
-            destruction, unwind and terminal effects; no CPI is invoked. The inspected \
-            8.0.0/8.0.1 references agree. Compatibility within 8.x assumes this operation \
-            and its selected dependencies preserve the complete contract."
+            callback success or whole-call result is assumed."]
       }
     ]
     | .extension_transfer_fee_TransferFee_calculate_fee => [
@@ -918,21 +780,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.5.1"],
-          reason :=
-            "Assume the reached unsigned little-endian integer fields and nonzero-key \
-              sentinel preserve their full byte decoding; native reference is 0.5.1.",
           compatibleRanges := [{
             lower := "0.5.1",
             upper := "0.6.0"
           }]
-        }],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes little-endian POD decoding, checked u128 multiplication and \
-            ceiling division, u64 narrowing before maximum-fee capping, and all raw \
-            basis-point values including rates above 10000. Source layout and any reached \
-            provider assumptions remain separate."
+        }]
       }
     ]
     | .extension_transfer_fee_TransferFee_calculate_inverse_fee => [
@@ -962,21 +814,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.5.1"],
-          reason :=
-            "Assume the reached unsigned little-endian integer fields and nonzero-key \
-              sentinel preserve their full byte decoding; native reference is 0.5.1.",
           compatibleRanges := [{
             lower := "0.5.1",
             upper := "0.6.0"
           }]
-        }],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes the zero amount/rate and full-rate cap branches, checked \
-            denominator/subtraction/addition, then the fee of the derived gross amount; \
-            invalid raw rates may return None and narrowing precedes capping. Source \
-            layout and any reached provider assumptions remain separate."
+        }]
       }
     ]
     | .extension_transfer_fee_TransferFeeConfig_calculate_epoch_fee => [
@@ -1005,18 +847,8 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["0.5.1"],
-          reason :=
-            "Reviewed unsigned little-endian fields, nullable key and Pod conversion \
-              definitions consumed by this function."
-        }],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate"],
-        argument :=
-          "Select the newer fee at epoch equality. Decode POD fields and retain checked \
-            arithmetic and u64 narrowing before capping, including None for invalid raw \
-            rates/overflow; do not assume a rate bound. The inspected 8.0.0/8.0.1 \
-            references agree. Compatibility within 8.x assumes this operation and its \
-            selected dependencies preserve the complete contract."
+          releases := ["0.5.1"]
+        }]
       }
     ]
     | .extension_transfer_fee_TransferFeeConfig_calculate_inverse_epoch_fee => [
@@ -1048,18 +880,8 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["0.5.1"],
-          reason :=
-            "Reviewed unsigned little-endian fields, nullable key and Pod conversion \
-              definitions consumed by this function."
-        }],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate"],
-        argument :=
-          "Select the newer fee at epoch equality. Retain zero/full/excess-rate branches, \
-            checked inverse subtraction/addition and the fee of the derived gross amount, \
-            including None; do not assume a rate bound. The inspected 8.0.0/8.0.1 \
-            references agree. Compatibility within 8.x assumes this operation and its \
-            selected dependencies preserve the complete contract."
+          releases := ["0.5.1"]
+        }]
       }
     ]
     | .extension_transfer_fee_TransferFeeConfig_get_epoch_fee => [
@@ -1087,20 +909,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.5.1"],
-          reason :=
-            "Assume the reached unsigned little-endian integer fields and nonzero-key \
-              sentinel preserve their full byte decoding; native reference is 0.5.1.",
           compatibleRanges := [{
             lower := "0.5.1",
             upper := "0.6.0"
           }]
-        }],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes selecting the newer fee at epoch equality and the older fee \
-            below it, while preserving the borrowed field identity and receiver. Source \
-            layout and any reached provider assumptions remain separate."
+        }]
       }
     ]
     | .extension_transfer_hook_get_program_id => [
@@ -1127,9 +940,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.5.1"],
-          reason :=
-            "Assume the reached unsigned little-endian integer fields and nonzero-key \
-              sentinel preserve their full byte decoding; native reference is 0.5.1.",
           compatibleRanges := [{
             lower := "0.5.1",
             upper := "0.6.0"
@@ -1142,10 +952,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0", "2.4.0"],
-          reason :=
-            "Assume the defining Pubkey carrier preserves all 32 bytes and the reached key \
-              copies/equality/declare_id comparisons; 3.0.0 reexports a different defining \
-              Address carrier.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1155,14 +961,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Interpret the indexed accessors, borrowed source ranges, vector \
             allocation/push/drop, base Pack and owned-base destruction at their reached \
             source call sites. Finite unwind and terminal exits retain their effects; no \
-            callback success or whole-call result is assumed."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes the reached extension lookup and errors, all-byte optional-key \
-            sentinel and unchanged borrowed state; missing or invalid extensions keep \
-            their existing result. Source layout and any reached provider assumptions \
-            remain separate."
+            callback success or whole-call result is assumed."]
       }
     ]
     | .id => [
@@ -1184,20 +983,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -1206,21 +1000,10 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1"],
-          reason :=
-            "Exact reviewed resolved 32-byte key implementation and declare_id/check_id \
-              expansion."
+          releases := ["2.2.1"]
         }],
         conditions := ["Exact key and source value representation; no allocation or \
-          runtime call."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "Return the declared Token-2022 program key by value without allocation or \
-            syscall; preserve the actual defining crate and the exact Pubkey dependency \
-            variants. The inspected 8.0.0/8.0.1 references agree. Compatibility within 8.x \
-            assumes this operation and its selected dependencies preserve the complete \
-            contract."
+          runtime call."]
       },
       {
         id := "spl-token-2022-8.0.1-pubkey-2-4-solana",
@@ -1240,20 +1023,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -1262,21 +1040,10 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.4.0"],
-          reason :=
-            "Exact reviewed resolved 32-byte key implementation and declare_id/check_id \
-              expansion."
+          releases := ["2.4.0"]
         }],
         conditions := ["Exact key and source value representation; no allocation or \
-          runtime call."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "Return the declared Token-2022 program key by value without allocation or \
-            syscall; preserve the actual defining crate and the exact Pubkey dependency \
-            variants. The inspected 8.0.0/8.0.1 references agree. Compatibility within 8.x \
-            assumes this operation and its selected dependencies preserve the complete \
-            contract."
+          runtime call."]
       }
     ]
     | .instruction_burn_checked => [
@@ -1298,20 +1065,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -1321,10 +1083,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0", "2.4.0"],
-          reason :=
-            "Assume the defining Pubkey carrier preserves all 32 bytes and the reached key \
-              copies/equality/declare_id comparisons; 3.0.0 reexports a different defining \
-              Address carrier.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1337,10 +1095,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "Assume the reached Instruction/AccountMeta fields, ordered metadata flags and \
-              key copying, Vec ownership, Clone allocation effects and declaration-order \
-              destruction are preserved; source layouts remain separately bound.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1353,10 +1107,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.2.2"],
-          reason :=
-            "Assume the complete legacy ProgramError variants, Custom codes and owned \
-              BorshIoError(String) representation are preserved; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1369,16 +1119,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes tag 15, amount and decimals bytes, source/mint/authority/signers \
-            in order, checking either token ID before allocation, preserving actual \
-            enum-size reservation, duplicates/signers, owned vectors and \
-            allocation/cleanup order. Every finite primitive failure and partial state \
-            remains; native references are unchanged."
+            do not supply freshness, framing or nested ownership."]
       }
     ]
     | .instruction_close_account => [
@@ -1400,20 +1141,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -1423,10 +1159,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0", "2.4.0"],
-          reason :=
-            "Assume the defining Pubkey carrier preserves all 32 bytes and the reached key \
-              copies/equality/declare_id comparisons; 3.0.0 reexports a different defining \
-              Address carrier.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1439,10 +1171,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "Assume the reached Instruction/AccountMeta fields, ordered metadata flags and \
-              key copying, Vec ownership, Clone allocation effects and declaration-order \
-              destruction are preserved; source layouts remain separately bound.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1455,10 +1183,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.2.2"],
-          reason :=
-            "Assume the complete legacy ProgramError variants, Custom codes and owned \
-              BorshIoError(String) representation are preserved; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1471,16 +1195,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes tag 9 and source/destination/authority/signers in order, \
-            checking either token ID before allocation, preserving actual enum-size \
-            reservation, duplicates/signers, owned vectors and allocation/cleanup order. \
-            Every finite primitive failure and partial state remains; native references \
-            are unchanged."
+            do not supply freshness, framing or nested ownership."]
       }
     ]
     | .instruction_freeze_account => [
@@ -1502,20 +1217,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -1525,10 +1235,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0", "2.4.0"],
-          reason :=
-            "Assume the defining Pubkey carrier preserves all 32 bytes and the reached key \
-              copies/equality/declare_id comparisons; 3.0.0 reexports a different defining \
-              Address carrier.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1541,10 +1247,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "Assume the reached Instruction/AccountMeta fields, ordered metadata flags and \
-              key copying, Vec ownership, Clone allocation effects and declaration-order \
-              destruction are preserved; source layouts remain separately bound.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1557,10 +1259,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.2.2"],
-          reason :=
-            "Assume the complete legacy ProgramError variants, Custom codes and owned \
-              BorshIoError(String) representation are preserved; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1573,15 +1271,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes tag 10 and account/mint/authority/signers in order, checking \
-            either token ID before allocation, preserving actual enum-size reservation, \
-            duplicates/signers, owned vectors and allocation/cleanup order. Every finite \
-            primitive failure and partial state remains; native references are unchanged."
+            do not supply freshness, framing or nested ownership."]
       }
     ]
     | .instruction_initialize_account3 => [
@@ -1603,20 +1293,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -1626,10 +1311,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0", "2.4.0"],
-          reason :=
-            "Assume the defining Pubkey carrier preserves all 32 bytes and the reached key \
-              copies/equality/declare_id comparisons; 3.0.0 reexports a different defining \
-              Address carrier.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1642,10 +1323,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "Assume the reached Instruction/AccountMeta fields, ordered metadata flags and \
-              key copying, Vec ownership, Clone allocation effects and declaration-order \
-              destruction are preserved; source layouts remain separately bound.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1658,10 +1335,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.2.2"],
-          reason :=
-            "Assume the complete legacy ProgramError variants, Custom codes and owned \
-              BorshIoError(String) representation are preserved; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1674,16 +1347,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes tag 18, owner key bytes and account/mint metadata order, \
-            checking either token ID before allocation, preserving actual enum-size \
-            reservation, duplicates/signers, owned vectors and allocation/cleanup order. \
-            Every finite primitive failure and partial state remains; native references \
-            are unchanged."
+            do not supply freshness, framing or nested ownership."]
       }
     ]
     | .instruction_initialize_immutable_owner => [
@@ -1705,20 +1369,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -1728,10 +1387,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0", "2.4.0"],
-          reason :=
-            "Assume the defining Pubkey carrier preserves all 32 bytes and the reached key \
-              copies/equality/declare_id comparisons; 3.0.0 reexports a different defining \
-              Address carrier.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1744,10 +1399,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "Assume the reached Instruction/AccountMeta fields, ordered metadata flags and \
-              key copying, Vec ownership, Clone allocation effects and declaration-order \
-              destruction are preserved; source layouts remain separately bound.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1760,10 +1411,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.2.2"],
-          reason :=
-            "Assume the complete legacy ProgramError variants, Custom codes and owned \
-              BorshIoError(String) representation are preserved; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1776,16 +1423,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes metadata-before-data allocation, tag 22 and one writable \
-            account, checking either token ID before allocation, preserving actual \
-            enum-size reservation, duplicates/signers, owned vectors and \
-            allocation/cleanup order. Every finite primitive failure and partial state \
-            remains; native references are unchanged."
+            do not supply freshness, framing or nested ownership."]
       }
     ]
     | .instruction_initialize_mint2 => [
@@ -1807,20 +1445,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -1830,10 +1463,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0", "2.4.0"],
-          reason :=
-            "Assume the defining Pubkey carrier preserves all 32 bytes and the reached key \
-              copies/equality/declare_id comparisons; 3.0.0 reexports a different defining \
-              Address carrier.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1846,10 +1475,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "Assume the reached Instruction/AccountMeta fields, ordered metadata flags and \
-              key copying, Vec ownership, Clone allocation effects and declaration-order \
-              destruction are preserved; source layouts remain separately bound.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1862,10 +1487,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.2.2"],
-          reason :=
-            "Assume the complete legacy ProgramError variants, Custom codes and owned \
-              BorshIoError(String) representation are preserved; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -1878,16 +1499,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes tag 20, decimals, mint authority and optional freeze authority, \
-            followed by one writable mint, checking either token ID before allocation, \
-            preserving actual enum-size reservation, duplicates/signers, owned vectors and \
-            allocation/cleanup order. Every finite primitive failure and partial state \
-            remains; native references are unchanged."
+            do not supply freshness, framing or nested ownership."]
       }
     ]
     | .instruction_initialize_mint_close_authority => [
@@ -1909,20 +1521,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -1931,10 +1538,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1"],
-          reason :=
-            "Exact reviewed resolved 32-byte key implementation and declare_id/check_id \
-              expansion."
+          releases := ["2.2.1"]
         }, {
           package := "solana-instruction",
           source := some {
@@ -1942,10 +1546,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1"],
-          reason :=
-            "Actual Instruction and AccountMeta representation; borrowed source access and \
-              owned Vec layouts are separately bound."
+          releases := ["2.2.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -1954,10 +1555,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -1970,15 +1567,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "Check Token-2022, allocate the writable mint meta, then encode tag 25 and the \
-            one-byte COption/key fields. Some(zero) stays valid; preserve \
-            metadata-before-data allocation and partial cleanup. The inspected 8.0.0/8.0.1 \
-            references agree. Compatibility within 8.x assumes this operation and its \
-            selected dependencies preserve the complete contract."
+            do not supply freshness, framing or nested ownership."]
       },
       {
         id := "spl-token-2022-8.0.1-pubkey-2-4-solana",
@@ -1998,20 +1587,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -2020,10 +1604,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.4.0"],
-          reason :=
-            "Exact reviewed resolved 32-byte key implementation and declare_id/check_id \
-              expansion."
+          releases := ["2.4.0"]
         }, {
           package := "solana-instruction",
           source := some {
@@ -2031,10 +1612,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.3.3"],
-          reason :=
-            "Actual Instruction and AccountMeta representation; borrowed source access and \
-              owned Vec layouts are separately bound."
+          releases := ["2.3.3"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -2043,10 +1621,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -2059,15 +1633,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "Check Token-2022, allocate the writable mint meta, then encode tag 25 and the \
-            one-byte COption/key fields. Some(zero) stays valid; preserve \
-            metadata-before-data allocation and partial cleanup. The inspected 8.0.0/8.0.1 \
-            references agree. Compatibility within 8.x assumes this operation and its \
-            selected dependencies preserve the complete contract."
+            do not supply freshness, framing or nested ownership."]
       }
     ]
     | .instruction_initialize_non_transferable_mint => [
@@ -2089,20 +1655,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -2112,10 +1673,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0", "2.4.0"],
-          reason :=
-            "Assume the defining Pubkey carrier preserves all 32 bytes and the reached key \
-              copies/equality/declare_id comparisons; 3.0.0 reexports a different defining \
-              Address carrier.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2128,10 +1685,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "Assume the reached Instruction/AccountMeta fields, ordered metadata flags and \
-              key copying, Vec ownership, Clone allocation effects and declaration-order \
-              destruction are preserved; source layouts remain separately bound.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2144,10 +1697,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.2.2"],
-          reason :=
-            "Assume the complete legacy ProgramError variants, Custom codes and owned \
-              BorshIoError(String) representation are preserved; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2160,16 +1709,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes metadata-before-data allocation, tag 32 and one writable mint, \
-            checking Token-2022 only before allocation, preserving actual enum-size \
-            reservation, duplicates/signers, owned vectors and allocation/cleanup order. \
-            Every finite primitive failure and partial state remains; native references \
-            are unchanged."
+            do not supply freshness, framing or nested ownership."]
       }
     ]
     | .instruction_mint_to => [
@@ -2191,20 +1731,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -2214,10 +1749,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0", "2.4.0"],
-          reason :=
-            "Assume the defining Pubkey carrier preserves all 32 bytes and the reached key \
-              copies/equality/declare_id comparisons; 3.0.0 reexports a different defining \
-              Address carrier.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2230,10 +1761,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "Assume the reached Instruction/AccountMeta fields, ordered metadata flags and \
-              key copying, Vec ownership, Clone allocation effects and declaration-order \
-              destruction are preserved; source layouts remain separately bound.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2246,10 +1773,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.2.2"],
-          reason :=
-            "Assume the complete legacy ProgramError variants, Custom codes and owned \
-              BorshIoError(String) representation are preserved; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2262,16 +1785,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes tag 7, little-endian amount and \
-            mint/destination/authority/signers in order, checking either token ID before \
-            allocation, preserving actual enum-size reservation, duplicates/signers, owned \
-            vectors and allocation/cleanup order. Every finite primitive failure and \
-            partial state remains; native references are unchanged."
+            do not supply freshness, framing or nested ownership."]
       }
     ]
     | .instruction_set_authority => [
@@ -2293,20 +1807,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -2316,10 +1825,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0", "2.4.0"],
-          reason :=
-            "Assume the defining Pubkey carrier preserves all 32 bytes and the reached key \
-              copies/equality/declare_id comparisons; 3.0.0 reexports a different defining \
-              Address carrier.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2332,10 +1837,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "Assume the reached Instruction/AccountMeta fields, ordered metadata flags and \
-              key copying, Vec ownership, Clone allocation effects and declaration-order \
-              destruction are preserved; source layouts remain separately bound.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2348,10 +1849,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.2.2"],
-          reason :=
-            "Assume the complete legacy ProgramError variants, Custom codes and owned \
-              BorshIoError(String) representation are preserved; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2364,17 +1861,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes tag 6, the exact authority enum byte and optional key, 3 + N \
-            reserved but 2 + N initialized metadata slots, checking either token ID before \
-            allocation, preserving actual enum-size reservation, duplicates/signers, owned \
-            vectors and allocation/cleanup order, including seventeen authority variants \
-            and distinct None/Some(zero). Every finite primitive failure and partial state \
-            remains; native references are unchanged."
+            do not supply freshness, framing or nested ownership."]
       }
     ]
     | .instruction_thaw_account => [
@@ -2396,20 +1883,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -2419,10 +1901,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0", "2.4.0"],
-          reason :=
-            "Assume the defining Pubkey carrier preserves all 32 bytes and the reached key \
-              copies/equality/declare_id comparisons; 3.0.0 reexports a different defining \
-              Address carrier.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2435,10 +1913,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "Assume the reached Instruction/AccountMeta fields, ordered metadata flags and \
-              key copying, Vec ownership, Clone allocation effects and declaration-order \
-              destruction are preserved; source layouts remain separately bound.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2451,10 +1925,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.2.2"],
-          reason :=
-            "Assume the complete legacy ProgramError variants, Custom codes and owned \
-              BorshIoError(String) representation are preserved; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2467,15 +1937,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes tag 11 and account/mint/authority/signers in order, checking \
-            either token ID before allocation, preserving actual enum-size reservation, \
-            duplicates/signers, owned vectors and allocation/cleanup order. Every finite \
-            primitive failure and partial state remains; native references are unchanged."
+            do not supply freshness, framing or nested ownership."]
       }
     ]
     | .instruction_transfer_checked => [
@@ -2497,20 +1959,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -2520,10 +1977,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0", "2.4.0"],
-          reason :=
-            "Assume the defining Pubkey carrier preserves all 32 bytes and the reached key \
-              copies/equality/declare_id comparisons; 3.0.0 reexports a different defining \
-              Address carrier.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2536,10 +1989,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "Assume the reached Instruction/AccountMeta fields, ordered metadata flags and \
-              key copying, Vec ownership, Clone allocation effects and declaration-order \
-              destruction are preserved; source layouts remain separately bound.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2552,10 +2001,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.2.2"],
-          reason :=
-            "Assume the complete legacy ProgramError variants, Custom codes and owned \
-              BorshIoError(String) representation are preserved; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -2568,16 +2013,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Bind each actual vector allocation, literal, push, extend and drop to its \
             outcome/current-content/ownership and needed frame laws. Resource identities \
             and actual callback states are retained; primitive current-content laws alone \
-            do not supply freshness, framing or nested ownership."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes tag 12, amount/decimals bytes and \
-            source/mint/destination/authority/signers in order, checking either token ID \
-            before allocation, preserving actual enum-size reservation, \
-            duplicates/signers, owned vectors and allocation/cleanup order. Every finite \
-            primitive failure and partial state remains; native references are unchanged."
+            do not supply freshness, framing or nested ownership."]
       }
     ]
     | .native_mint_check_id => [
@@ -2599,20 +2035,15 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Reviewed production source cfg; this condition alone does not establish SBF \
-              layout equivalence."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "Reviewed source usize arithmetic and pointer-width interpretation."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason := "Reviewed target scalar and POD layout."
+          «exclude» := []
         }],
         dependencies := [{
           package := "solana-pubkey",
@@ -2622,24 +2053,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0", "2.4.0"],
-          reason :=
-            "Assume the defining Pubkey carrier preserves all 32 bytes and the reached key \
-              copies/equality/declare_id comparisons; 3.0.0 reexports a different defining \
-              Address carrier.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
           }]
         }],
         conditions := ["Exact key and source value representation; no allocation or \
-          runtime call."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate",
-          "source-notes/token-instruction-builders.md"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes comparison of every key byte with the fixed Token-2022 \
-            native-mint ID, without allocation or state change. Source layout and any \
-            reached provider assumptions remain separate."
+          runtime call."]
       }
     ]
     | .onchain_invoke_transfer_checked => [
@@ -2666,10 +2086,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0"],
-          reason :=
-            "The selected interface preserves the reference Mint parsing, extension lookup \
-              and transfer construction, including the repeated-zero padding allocation. \
-              The 3.1.0 allocation removal is outside this full contract.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -2682,10 +2098,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0"],
-          reason :=
-            "The selected hook preparation preserves the reference ordered accounts, \
-              signer handling, borrowed extension views and error order; its actual TLV \
-              resolver is constrained separately.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -2698,11 +2110,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.11.1"],
-          reason :=
-            "The resolver preserves the reference account ordering, cleared extra-account \
-              signer flags and borrow/error order. Version 0.11.0 has a signer \
-              counterexample; 0.11.4 adds a conflicting data borrow before CPI. Both are \
-              excluded.",
           compatibleRanges := [{
             lower := "0.11.1",
             upper := "0.11.4"
@@ -2715,9 +2122,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.9.1"],
-          reason :=
-            "The selected TLV helpers preserve the reference entry scan, lengths, bounds \
-              failures and error order at the types used by hook account resolution.",
           compatibleRanges := [{
             lower := "0.9.1",
             upper := "0.10.0"
@@ -2730,9 +2134,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.7.3"],
-          reason :=
-            "The selected POD helpers preserve the reference field layouts, byte \
-              interpretations and cast errors at the types used by hook account resolution.",
           compatibleRanges := [{
             lower := "0.7.3",
             upper := "0.8.0"
@@ -2754,32 +2155,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Retain the actual Admission, ResourceReady, BorrowReady, literal/collection, \
             PDA and cleanup conditions of the primary family; the value observation \
             retains PreparationReady and its explicitly omitted vector/Rc and stateful-PDA \
-            effects."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-10.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-11.0.0.crate"],
-        argument :=
-          "No onchain module/API exists through 0.6.1. Versions 0.7.0–7.0.0 append every \
-            additional signer and do not perform the current multisig owner/size/key \
-            filter or clear authority signer status. Versions 8.0.0/8.0.1/9.0.0 have the \
-            modern local multisig wrapper, but their hook 0.10/resolver 0.10 profile \
-            preserves the signer flag of a new extra account; the model always clears it. \
-            Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
-            0.11.1 profile: its PodMultisig pod_from_bytes helper is exactly \
-            try_from_bytes.map_err(InvalidArgument), and its interface 2.1.0 Mint \
-            parsing/getter and instruction closures correspond. Version 11.0.0 has the \
-            same full ordinary preparation under the baseline interface 3.0.0 profile. \
-            Version 11.1.0 requires interface>=3.1.0, which removes the 83-byte \
-            repeated-zero padding allocation from extended Mint parsing. The full family \
-            includes that allocation, its possible exits and retirement; the native 4-case \
-            padding probes expose 1/1 events at 10.0/11.0 versus 0/0 at 11.1. Thus 11.1.0 \
-            and 12.0.0 do not fit the complete family despite identical top-level wrapper \
-            source and passing ordinary corpus samples. Version 12.0.0 also makes \
-            pinocchio-transfer-hook-interface 0.1.0 mandatory, forcing resolver>=0.11.4. \
-            That resolver retains one collected data-Ref vector, accumulates pending \
-            AccountInfos and borrows each resolved extra, including the last. A final \
-            extra account with exclusively held data succeeds in resolver 0.11.1 \
-            preparation but fails AccountBorrowFailed in 0.11.4 before CPI. The old \
-            profile is rejected by Cargo; this is an incompatibility for both facets, not \
-            an optional dependency choice."
+            effects."]
       },
       {
         id := "spl-token-2022-reviewed-interface-and-resolver-11.0.0",
@@ -2804,10 +2180,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.0"],
-          reason :=
-            "The selected interface preserves the reference Mint parsing, extension lookup \
-              and transfer construction, including the repeated-zero padding allocation. \
-              The 3.1.0 allocation removal is outside this full contract.",
           compatibleRanges := [{
             lower := "3.0.0",
             upper := "3.1.0"
@@ -2820,10 +2192,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0"],
-          reason :=
-            "The selected hook preparation preserves the reference ordered accounts, \
-              signer handling, borrowed extension views and error order; its actual TLV \
-              resolver is constrained separately.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -2836,11 +2204,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.11.1"],
-          reason :=
-            "The resolver preserves the reference account ordering, cleared extra-account \
-              signer flags and borrow/error order. Version 0.11.0 has a signer \
-              counterexample; 0.11.4 adds a conflicting data borrow before CPI. Both are \
-              excluded.",
           compatibleRanges := [{
             lower := "0.11.1",
             upper := "0.11.4"
@@ -2853,9 +2216,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.9.1"],
-          reason :=
-            "The selected TLV helpers preserve the reference entry scan, lengths, bounds \
-              failures and error order at the types used by hook account resolution.",
           compatibleRanges := [{
             lower := "0.9.1",
             upper := "0.10.0"
@@ -2868,9 +2228,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.7.3"],
-          reason :=
-            "The selected POD helpers preserve the reference field layouts, byte \
-              interpretations and cast errors at the types used by hook account resolution.",
           compatibleRanges := [{
             lower := "0.7.3",
             upper := "0.8.0"
@@ -2892,32 +2249,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Retain the actual Admission, ResourceReady, BorrowReady, literal/collection, \
             PDA and cleanup conditions of the primary family; the value observation \
             retains PreparationReady and its explicitly omitted vector/Rc and stateful-PDA \
-            effects."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-10.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-11.0.0.crate"],
-        argument :=
-          "No onchain module/API exists through 0.6.1. Versions 0.7.0–7.0.0 append every \
-            additional signer and do not perform the current multisig owner/size/key \
-            filter or clear authority signer status. Versions 8.0.0/8.0.1/9.0.0 have the \
-            modern local multisig wrapper, but their hook 0.10/resolver 0.10 profile \
-            preserves the signer flag of a new extra account; the model always clears it. \
-            Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
-            0.11.1 profile: its PodMultisig pod_from_bytes helper is exactly \
-            try_from_bytes.map_err(InvalidArgument), and its interface 2.1.0 Mint \
-            parsing/getter and instruction closures correspond. Version 11.0.0 has the \
-            same full ordinary preparation under the baseline interface 3.0.0 profile. \
-            Version 11.1.0 requires interface>=3.1.0, which removes the 83-byte \
-            repeated-zero padding allocation from extended Mint parsing. The full family \
-            includes that allocation, its possible exits and retirement; the native 4-case \
-            padding probes expose 1/1 events at 10.0/11.0 versus 0/0 at 11.1. Thus 11.1.0 \
-            and 12.0.0 do not fit the complete family despite identical top-level wrapper \
-            source and passing ordinary corpus samples. Version 12.0.0 also makes \
-            pinocchio-transfer-hook-interface 0.1.0 mandatory, forcing resolver>=0.11.4. \
-            That resolver retains one collected data-Ref vector, accumulates pending \
-            AccountInfos and borrows each resolved extra, including the last. A final \
-            extra account with exclusively held data succeeds in resolver 0.11.1 \
-            preparation but fails AccountBorrowFailed in 0.11.4 before CPI. The old \
-            profile is rejected by Cargo; this is an incompatibility for both facets, not \
-            an optional dependency choice."
+            effects."]
       }
     ]
     | .onchain_invoke_transfer_checked_value => [
@@ -2944,11 +2276,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0"],
-          reason :=
-            "The selected interface preserves the reference Mint parsing results, \
-              extension lookup, transfer construction and errors. The 3.1.0 allocation \
-              removal is within the stated omission of this observation contract of \
-              allocation effects.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -2961,10 +2288,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0"],
-          reason :=
-            "The selected hook preparation preserves the reference ordered accounts, \
-              signer handling, borrowed extension views and error order; its actual TLV \
-              resolver is constrained separately.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -2977,11 +2300,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.11.1"],
-          reason :=
-            "The resolver preserves the reference account ordering, cleared extra-account \
-              signer flags and borrow/error order. Version 0.11.0 has a signer \
-              counterexample; 0.11.4 adds a conflicting data borrow before CPI. Both are \
-              excluded.",
           compatibleRanges := [{
             lower := "0.11.1",
             upper := "0.11.4"
@@ -2994,9 +2312,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.9.1"],
-          reason :=
-            "The selected TLV helpers preserve the reference entry scan, lengths, bounds \
-              failures and error order at the types used by hook account resolution.",
           compatibleRanges := [{
             lower := "0.9.1",
             upper := "0.10.0"
@@ -3009,9 +2324,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.7.3"],
-          reason :=
-            "The selected POD helpers preserve the reference field layouts, byte \
-              interpretations and cast errors at the types used by hook account resolution.",
           compatibleRanges := [{
             lower := "0.7.3",
             upper := "0.8.0"
@@ -3033,29 +2345,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Retain the actual Admission, ResourceReady, BorrowReady, literal/collection, \
             PDA and cleanup conditions of the primary family; the value observation \
             retains PreparationReady and its explicitly omitted vector/Rc and stateful-PDA \
-            effects."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-10.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-11.1.0.crate"],
-        argument :=
-          "No onchain module/API exists through 0.6.1. Versions 0.7.0–7.0.0 append every \
-            additional signer and do not perform the current multisig owner/size/key \
-            filter or clear authority signer status. Versions 8.0.0/8.0.1/9.0.0 have the \
-            modern local multisig wrapper, but their hook 0.10/resolver 0.10 profile \
-            preserves the signer flag of a new extra account; the model always clears it. \
-            Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
-            0.11.1 profile: its PodMultisig pod_from_bytes helper is exactly \
-            try_from_bytes.map_err(InvalidArgument), and its interface 2.1.0 Mint \
-            parsing/getter and instruction closures correspond. Version 11.0.0 has the \
-            same full ordinary preparation under the baseline interface 3.0.0 profile. \
-            Version 11.1.0 requires interface>=3.1.0; removing the temporary padding \
-            vector is within the explicitly omitted allocation effects, so the \
-            value/borrow/error preparation still corresponds under resolver 0.11.1. \
-            Version 12.0.0 also makes pinocchio-transfer-hook-interface 0.1.0 mandatory, \
-            forcing resolver>=0.11.4. That resolver retains one collected data-Ref vector, \
-            accumulates pending AccountInfos and borrows each resolved extra, including \
-            the last. A final extra account with exclusively held data succeeds in \
-            resolver 0.11.1 preparation but fails AccountBorrowFailed in 0.11.4 before \
-            CPI. The old profile is rejected by Cargo; this is an incompatibility for both \
-            facets, not an optional dependency choice."
+            effects."]
       },
       {
         id := "spl-token-2022-reviewed-interface-and-resolver-11.0.0",
@@ -3080,11 +2370,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.0"],
-          reason :=
-            "The selected interface preserves the reference Mint parsing results, \
-              extension lookup, transfer construction and errors. The 3.1.0 allocation \
-              removal is within the stated omission of this observation contract of \
-              allocation effects.",
           compatibleRanges := [{
             lower := "3.0.0",
             upper := "4.0.0"
@@ -3097,10 +2382,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0"],
-          reason :=
-            "The selected hook preparation preserves the reference ordered accounts, \
-              signer handling, borrowed extension views and error order; its actual TLV \
-              resolver is constrained separately.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -3113,11 +2394,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.11.1"],
-          reason :=
-            "The resolver preserves the reference account ordering, cleared extra-account \
-              signer flags and borrow/error order. Version 0.11.0 has a signer \
-              counterexample; 0.11.4 adds a conflicting data borrow before CPI. Both are \
-              excluded.",
           compatibleRanges := [{
             lower := "0.11.1",
             upper := "0.11.4"
@@ -3130,9 +2406,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.9.1"],
-          reason :=
-            "The selected TLV helpers preserve the reference entry scan, lengths, bounds \
-              failures and error order at the types used by hook account resolution.",
           compatibleRanges := [{
             lower := "0.9.1",
             upper := "0.10.0"
@@ -3145,9 +2418,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.7.3"],
-          reason :=
-            "The selected POD helpers preserve the reference field layouts, byte \
-              interpretations and cast errors at the types used by hook account resolution.",
           compatibleRanges := [{
             lower := "0.7.3",
             upper := "0.8.0"
@@ -3169,29 +2439,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Retain the actual Admission, ResourceReady, BorrowReady, literal/collection, \
             PDA and cleanup conditions of the primary family; the value observation \
             retains PreparationReady and its explicitly omitted vector/Rc and stateful-PDA \
-            effects."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-10.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-11.1.0.crate"],
-        argument :=
-          "No onchain module/API exists through 0.6.1. Versions 0.7.0–7.0.0 append every \
-            additional signer and do not perform the current multisig owner/size/key \
-            filter or clear authority signer status. Versions 8.0.0/8.0.1/9.0.0 have the \
-            modern local multisig wrapper, but their hook 0.10/resolver 0.10 profile \
-            preserves the signer flag of a new extra account; the model always clears it. \
-            Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
-            0.11.1 profile: its PodMultisig pod_from_bytes helper is exactly \
-            try_from_bytes.map_err(InvalidArgument), and its interface 2.1.0 Mint \
-            parsing/getter and instruction closures correspond. Version 11.0.0 has the \
-            same full ordinary preparation under the baseline interface 3.0.0 profile. \
-            Version 11.1.0 requires interface>=3.1.0; removing the temporary padding \
-            vector is within the explicitly omitted allocation effects, so the \
-            value/borrow/error preparation still corresponds under resolver 0.11.1. \
-            Version 12.0.0 also makes pinocchio-transfer-hook-interface 0.1.0 mandatory, \
-            forcing resolver>=0.11.4. That resolver retains one collected data-Ref vector, \
-            accumulates pending AccountInfos and borrows each resolved extra, including \
-            the last. A final extra account with exclusively held data succeeds in \
-            resolver 0.11.1 preparation but fails AccountBorrowFailed in 0.11.4 before \
-            CPI. The old profile is rejected by Cargo; this is an incompatibility for both \
-            facets, not an optional dependency choice."
+            effects."]
       },
       {
         id := "spl-token-2022-reviewed-interface-and-resolver-11.1.0",
@@ -3216,11 +2464,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.0"],
-          reason :=
-            "The selected interface preserves the reference Mint parsing results, \
-              extension lookup, transfer construction and errors. The 3.1.0 allocation \
-              removal is within the stated omission of this observation contract of \
-              allocation effects.",
           compatibleRanges := [{
             lower := "3.1.0",
             upper := "4.0.0"
@@ -3233,10 +2476,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0"],
-          reason :=
-            "The selected hook preparation preserves the reference ordered accounts, \
-              signer handling, borrowed extension views and error order; its actual TLV \
-              resolver is constrained separately.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -3249,11 +2488,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.11.1"],
-          reason :=
-            "The resolver preserves the reference account ordering, cleared extra-account \
-              signer flags and borrow/error order. Version 0.11.0 has a signer \
-              counterexample; 0.11.4 adds a conflicting data borrow before CPI. Both are \
-              excluded.",
           compatibleRanges := [{
             lower := "0.11.1",
             upper := "0.11.4"
@@ -3266,9 +2500,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.9.1"],
-          reason :=
-            "The selected TLV helpers preserve the reference entry scan, lengths, bounds \
-              failures and error order at the types used by hook account resolution.",
           compatibleRanges := [{
             lower := "0.9.1",
             upper := "0.10.0"
@@ -3281,9 +2512,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.7.3"],
-          reason :=
-            "The selected POD helpers preserve the reference field layouts, byte \
-              interpretations and cast errors at the types used by hook account resolution.",
           compatibleRanges := [{
             lower := "0.7.3",
             upper := "0.8.0"
@@ -3305,29 +2533,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Retain the actual Admission, ResourceReady, BorrowReady, literal/collection, \
             PDA and cleanup conditions of the primary family; the value observation \
             retains PreparationReady and its explicitly omitted vector/Rc and stateful-PDA \
-            effects."],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-10.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-11.1.0.crate"],
-        argument :=
-          "No onchain module/API exists through 0.6.1. Versions 0.7.0–7.0.0 append every \
-            additional signer and do not perform the current multisig owner/size/key \
-            filter or clear authority signer status. Versions 8.0.0/8.0.1/9.0.0 have the \
-            modern local multisig wrapper, but their hook 0.10/resolver 0.10 profile \
-            preserves the signer flag of a new extra account; the model always clears it. \
-            Version 10.0.0 is compatible under the executed allowed hook 2.1/resolver \
-            0.11.1 profile: its PodMultisig pod_from_bytes helper is exactly \
-            try_from_bytes.map_err(InvalidArgument), and its interface 2.1.0 Mint \
-            parsing/getter and instruction closures correspond. Version 11.0.0 has the \
-            same full ordinary preparation under the baseline interface 3.0.0 profile. \
-            Version 11.1.0 requires interface>=3.1.0; removing the temporary padding \
-            vector is within the explicitly omitted allocation effects, so the \
-            value/borrow/error preparation still corresponds under resolver 0.11.1. \
-            Version 12.0.0 also makes pinocchio-transfer-hook-interface 0.1.0 mandatory, \
-            forcing resolver>=0.11.4. That resolver retains one collected data-Ref vector, \
-            accumulates pending AccountInfos and borrows each resolved extra, including \
-            the last. A final extra account with exclusively held data succeeds in \
-            resolver 0.11.1 preparation but fails AccountBorrowFailed in 0.11.4 before \
-            CPI. The old profile is rejected by Cargo; this is an incompatibility for both \
-            facets, not an optional dependency choice."
+            effects."]
       }
     ]
     | .state_Account_is_frozen => [
@@ -3345,13 +2551,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         compatibleRanges := [{
           lower := "8.0.0",
           upper := "9.0.0"
-        }],
-        evidence := ["https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.0.crate", "https://static.crates.io/crates/spl-token-2022/spl-token-2022-8.0.1.crate"],
-        argument :=
-          "The inspected 8.0.0/8.0.1 operation and reached helpers agree. The declared 8.x \
-            range assumes the exact AccountState equality test, including initialized and \
-            uninitialized values, with unchanged receiver. Source layout and any reached \
-            provider assumptions remain separate."
+        }]
       }
     ]
   applicabilityConsumers := fun key => match key with

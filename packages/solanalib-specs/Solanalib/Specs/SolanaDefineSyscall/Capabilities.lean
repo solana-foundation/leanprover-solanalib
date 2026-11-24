@@ -226,16 +226,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "The unstable-static-syscalls crate feature affects only BPF \
-            architecture."
+          «exclude» := ["bpf"]
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason := "The registered direct extern boundary is the dynamic-dispatch \
-            declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["The index provider interprets the terminal exits of the actual syscall \
@@ -249,15 +245,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature=unstable-static-syscalls. There is no target_os gate on the \
             definitions module itself.", "Retain the full existing provider, \
             terminal-outcome, status-width and memory-interpretation assumptions. Crate \
-            signature compatibility does not expand the Agave runtime version set."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.4.0.crate"],
-        argument :=
-          "No abort definition exists through 3.0.0 (26 releases). All seven releases from \
-            4.0.0 through 5.4.0 declare the same dynamic extern-C fn abort() -> !, \
-            including through the 5.4.0 generation macro. Its only modeled outcomes are \
-            actual provider terminal exits; an answering provider does not create a return \
-            value of !. The crate supplies a declaration, not an abort runtime \
-            implementation."
+            signature compatibility does not expand the Agave runtime version set."]
       },
       {
         id := "solana-define-syscall-reviewed-modern-dispatch-bpf",
@@ -280,23 +268,17 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason := "On BPF the extra static-dispatch crate feature must be excluded."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := [],
-          none := ["unstable-static-syscalls"],
-          reason :=
-            "BPF plus unstable-static-syscalls selects the hash-addressed wrapper instead \
-              of this direct extern boundary."
+          none := ["unstable-static-syscalls"]
         },
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason := "The registered direct extern boundary is the dynamic-dispatch \
-            declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["The index provider interprets the terminal exits of the actual syscall \
@@ -310,15 +292,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature=unstable-static-syscalls. There is no target_os gate on the \
             definitions module itself.", "Retain the full existing provider, \
             terminal-outcome, status-width and memory-interpretation assumptions. Crate \
-            signature compatibility does not expand the Agave runtime version set."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.4.0.crate"],
-        argument :=
-          "No abort definition exists through 3.0.0 (26 releases). All seven releases from \
-            4.0.0 through 5.4.0 declare the same dynamic extern-C fn abort() -> !, \
-            including through the 5.4.0 generation macro. Its only modeled outcomes are \
-            actual provider terminal exits; an answering provider does not create a return \
-            value of !. The crate supplies a declaration, not an abort runtime \
-            implementation."
+            signature compatibility does not expand the Agave runtime version set."]
       }
     ]
     | .definitions_sol_create_program_address => [
@@ -340,18 +314,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -365,17 +333,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.3.0.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The checksum-pinned solana-define-syscall 2.3.0 source defines this exact item \
-            with the recorded argument order and result type. The source supplies an \
-            extern-C declaration, not a runtime implementation. The reviewed macro/module \
-            gates are recorded explicitly; macro expansion does not transfer \
-            defining-crate ownership. The declared compatible range assumes preservation \
-            of this defining identity, argument order, pointer types, return type and \
-            dynamic-declaration gates. It does not broaden runtime registration, feature \
-            behavior or memory configuration."
+            interpretation."]
       },
       {
         id := "raw-runtime-solana-define-syscall-5.1.0-non-bpf",
@@ -395,23 +353,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "The unstable-static-syscalls feature changes dispatch only on BPF."
+          «exclude» := ["bpf"]
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -425,14 +376,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.1.0.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The declared compatible range assumes the exact extern-C declaration of \
-            sol_create_program_address, including argument order, widths, return type and \
-            the recorded module/macro gates. Static thunks remain excluded; a declaration \
-            does not establish its runtime implementation or transfer defining-crate \
-            identity."
+            interpretation."]
       },
       {
         id := "raw-runtime-solana-define-syscall-5.1.0-bpf",
@@ -452,29 +396,21 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason := "The unstable-static-syscalls feature changes dispatch only on BPF."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := [],
-          none := ["unstable-static-syscalls"],
-          reason := "BPF plus this crate feature selects a static thunk."
+          none := ["unstable-static-syscalls"]
         },
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -488,14 +424,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.1.0.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The declared compatible range assumes the exact extern-C declaration of \
-            sol_create_program_address, including argument order, widths, return type and \
-            the recorded module/macro gates. Static thunks remain excluded; a declaration \
-            does not establish its runtime implementation or transfer defining-crate \
-            identity."
+            interpretation."]
       }
     ]
     | .definitions_sol_curve_multiscalar_mul => [
@@ -520,18 +449,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason := "The registered direct extern boundary is the dynamic-dispatch \
-            declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["Assume 0 with 32 bytes or 1 without output, scoped MsmWidth and InterfaceSpec; \
-            supply the separate-result footprint required by the binding."],
-        evidence := ["source-notes/raw-syscalls.md#supported-releases-and-dispatch",
-          "source-notes/raw-syscalls.md#multiscalar-multiplication"],
-        argument :=
-          "The eleven published releases from 2.2.0 through 5.4.0 share this dynamic \
-            paired-array/count ABI; the dispatch filters follow each release."
+            supply the separate-result footprint required by the binding."]
       },
       {
         id := "solana-define-syscall-dynamic-non-bpf",
@@ -554,25 +476,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "The unstable-static-syscalls crate feature affects only BPF \
-            architecture."
+          «exclude» := ["bpf"]
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason := "The registered direct extern boundary is the dynamic-dispatch \
-            declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["Assume 0 with 32 bytes or 1 without output, scoped MsmWidth and InterfaceSpec; \
-            supply the separate-result footprint required by the binding."],
-        evidence := ["source-notes/raw-syscalls.md#supported-releases-and-dispatch",
-          "source-notes/raw-syscalls.md#multiscalar-multiplication"],
-        argument :=
-          "The eleven published releases from 2.2.0 through 5.4.0 share this dynamic \
-            paired-array/count ABI; the dispatch filters follow each release."
+            supply the separate-result footprint required by the binding."]
       },
       {
         id := "solana-define-syscall-dynamic-bpf",
@@ -595,32 +508,21 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason := "On BPF the extra static-dispatch crate feature must be excluded."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := [],
-          none := ["unstable-static-syscalls"],
-          reason :=
-            "BPF plus unstable-static-syscalls selects the hash-addressed wrapper instead \
-              of this direct extern boundary."
+          none := ["unstable-static-syscalls"]
         },
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason := "The registered direct extern boundary is the dynamic-dispatch \
-            declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["Assume 0 with 32 bytes or 1 without output, scoped MsmWidth and InterfaceSpec; \
-            supply the separate-result footprint required by the binding."],
-        evidence := ["source-notes/raw-syscalls.md#supported-releases-and-dispatch",
-          "source-notes/raw-syscalls.md#multiscalar-multiplication"],
-        argument :=
-          "The eleven published releases from 2.2.0 through 5.4.0 share this dynamic \
-            paired-array/count ABI; the dispatch filters follow each release."
+            supply the separate-result footprint required by the binding."]
       }
     ]
     | .definitions_sol_get_clock_sysvar => [
@@ -642,18 +544,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -667,17 +563,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.3.0.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The checksum-pinned solana-define-syscall 2.3.0 source defines this exact item \
-            with the recorded argument order and result type. The source supplies an \
-            extern-C declaration, not a runtime implementation. The reviewed macro/module \
-            gates are recorded explicitly; macro expansion does not transfer \
-            defining-crate ownership. The declared compatible range assumes preservation \
-            of this defining identity, argument order, pointer types, return type and \
-            dynamic-declaration gates. It does not broaden runtime registration, feature \
-            behavior or memory configuration."
+            interpretation."]
       }
     ]
     | .definitions_sol_get_epoch_schedule_sysvar => [
@@ -700,23 +586,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "The unstable-static-syscalls feature changes dispatch only on BPF."
+          «exclude» := ["bpf"]
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -730,17 +609,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.1.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.0.crate"],
-        argument :=
-          "Preserve the literal defining item, extern-C argument/result types and \
-            dynamic-declaration gates. Both static-syscalls target features and BPF \
-            unstable-static-syscalls remain excluded. Trailing-comma macro support and a \
-            later declaration-group macro do not change these declarations. The range does \
-            not change the fixed runtime profile, registration or memory configuration. \
-            The declared range is a complete-operation preservation assumption; inspected \
-            releases, native runs, exact ABI observations and source-call implementation \
-            obligations remain separate."
+            interpretation."]
       },
       {
         id := "raw-runtime-solana-define-syscall-4.0.1-bpf",
@@ -761,29 +630,21 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason := "The unstable-static-syscalls feature changes dispatch only on BPF."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := [],
-          none := ["unstable-static-syscalls"],
-          reason := "BPF plus this crate feature selects a static thunk."
+          none := ["unstable-static-syscalls"]
         },
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -797,17 +658,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.1.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.0.crate"],
-        argument :=
-          "Preserve the literal defining item, extern-C argument/result types and \
-            dynamic-declaration gates. Both static-syscalls target features and BPF \
-            unstable-static-syscalls remain excluded. Trailing-comma macro support and a \
-            later declaration-group macro do not change these declarations. The range does \
-            not change the fixed runtime profile, registration or memory configuration. \
-            The declared range is a complete-operation preservation assumption; inspected \
-            releases, native runs, exact ABI observations and source-call implementation \
-            obligations remain separate."
+            interpretation."]
       }
     ]
     | .definitions_sol_get_rent_sysvar => [
@@ -829,18 +680,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -854,17 +699,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.3.0.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The checksum-pinned solana-define-syscall 2.3.0 source defines this exact item \
-            with the recorded argument order and result type. The source supplies an \
-            extern-C declaration, not a runtime implementation. The reviewed macro/module \
-            gates are recorded explicitly; macro expansion does not transfer \
-            defining-crate ownership. The declared compatible range assumes preservation \
-            of this defining identity, argument order, pointer types, return type and \
-            dynamic-declaration gates. It does not broaden runtime registration, feature \
-            behavior or memory configuration."
+            interpretation."]
       }
     ]
     | .definitions_sol_get_stack_height => [
@@ -886,23 +721,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "The unstable-static-syscalls feature changes dispatch only on BPF."
+          «exclude» := ["bpf"]
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -916,17 +744,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.1.0.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.0.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.2.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.3.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.4.0.crate"],
-        argument :=
-          "Preserve the literal defining item, extern-C argument/result types and \
-            dynamic-declaration gates. Both static-syscalls target features and BPF \
-            unstable-static-syscalls remain excluded. Trailing-comma macro support and a \
-            later declaration-group macro do not change these declarations. The range does \
-            not change the fixed runtime profile, registration or memory configuration. \
-            The declared range is a complete-operation preservation assumption; inspected \
-            releases, native runs, exact ABI observations and source-call implementation \
-            obligations remain separate."
+            interpretation."]
       },
       {
         id := "raw-runtime-solana-define-syscall-5.1.0-bpf",
@@ -946,29 +764,21 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason := "The unstable-static-syscalls feature changes dispatch only on BPF."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := [],
-          none := ["unstable-static-syscalls"],
-          reason := "BPF plus this crate feature selects a static thunk."
+          none := ["unstable-static-syscalls"]
         },
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -982,17 +792,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.1.0.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.0.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.2.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.3.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.4.0.crate"],
-        argument :=
-          "Preserve the literal defining item, extern-C argument/result types and \
-            dynamic-declaration gates. Both static-syscalls target features and BPF \
-            unstable-static-syscalls remain excluded. Trailing-comma macro support and a \
-            later declaration-group macro do not change these declarations. The range does \
-            not change the fixed runtime profile, registration or memory configuration. \
-            The declared range is a complete-operation preservation assumption; inspected \
-            releases, native runs, exact ABI observations and source-call implementation \
-            obligations remain separate."
+            interpretation."]
       }
     ]
     | .definitions_sol_invoke_signed_rust => [
@@ -1014,39 +814,24 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The on-chain invocation branch is selected; native stubs and the black_box \
-              host branch of Pinocchio have different behavior."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The reviewed source pointers, lengths, RefCell borrow counts and runtime \
-              layouts are 64-bit."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The reviewed stable/C layouts and the source memory codec use little-endian \
-              integer fields."
+          «exclude» := []
         }, {
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The selected invocation signature has terminal local panic/allocation \
-              behavior and no unwind exit."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static syscall features replace the registered external declaration with a \
-              function thunk."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["Bind the runtime index to the separately pinned Agave 4.3.2 configuration with \
@@ -1068,17 +853,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             instruction/account/seed data layouts; both declarations have extern-C \
             function calling convention.", "Only the dynamic external declaration is \
             bound. Exclude static-syscalls; for define-syscall 5.1.0 also exclude \
-            unstable-static-syscalls on BPF. No raw implementation body is traversed."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.3.0.crate"],
-        argument :=
-          "Reference: solana-define-syscall 2.3.0. The declared [2.3.0, 3.0.0) range \
-            assumes preservation of the dynamic unsafe extern-C declaration, its three \
-            *const u8 pointers and two interleaved u64 counts in the exact recorded order, \
-            u64 result and module/macro dispatch gates. The Rust-suffixed name selects \
-            Rust instruction/account/seed data layouts; its calling convention remains C. \
-            CPI stays opaque under the unchanged runtime, successful-zero-only return and \
-            canonical translated copy-back conditions. Static thunks and nonzero-returning \
-            host stubs are separate behaviors."
+            unstable-static-syscalls on BPF. No raw implementation body is traversed."]
       },
       {
         id := "raw-cpi-rust-solana-define-syscall-3.0.0",
@@ -1098,39 +873,24 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The on-chain invocation branch is selected; native stubs and the black_box \
-              host branch of Pinocchio have different behavior."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The reviewed source pointers, lengths, RefCell borrow counts and runtime \
-              layouts are 64-bit."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The reviewed stable/C layouts and the source memory codec use little-endian \
-              integer fields."
+          «exclude» := []
         }, {
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The selected invocation signature has terminal local panic/allocation \
-              behavior and no unwind exit."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static syscall features replace the registered external declaration with a \
-              function thunk."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["Bind the runtime index to the separately pinned Agave 4.3.2 configuration with \
@@ -1152,13 +912,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             instruction/account/seed data layouts; both declarations have extern-C \
             function calling convention.", "Only the dynamic external declaration is \
             bound. Exclude static-syscalls; for define-syscall 5.1.0 also exclude \
-            unstable-static-syscalls on BPF. No raw implementation body is traversed."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-3.0.0.crate"],
-        argument :=
-          "The declared compatible range assumes the exact extern-C declaration of \
-            sol_invoke_signed_rust, including argument order, widths, return type and the \
-            recorded module/macro gates. Static thunks remain excluded; a declaration does \
-            not establish its runtime implementation or transfer defining-crate identity."
+            unstable-static-syscalls on BPF. No raw implementation body is traversed."]
       }
     ]
     | .definitions_sol_log_ => [
@@ -1183,10 +937,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "The registered direct extern boundary is the dynamic-dispatch declaration; \
-              static-syscalls replaces it with a hash-addressed call wrapper."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["The index provider interprets the answers and terminal exits of the actual \
@@ -1203,17 +954,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             together with feature=unstable-static-syscalls. There is no target_os gate on \
             the definitions module itself.", "Retain the full existing provider, \
             terminal-outcome, status-width and memory-interpretation assumptions. Crate \
-            signature compatibility does not expand the Agave runtime version set."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.2.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.4.0.crate"],
-        argument :=
-          "The definitions module is absent in the 22 releases through 2.1.21. All 11 \
-            releases from 2.2.0 through 5.4.0 have the same dynamic extern-C signature: fn \
-            sol_log_(message: *const u8, len: u64). The extra generation macro in 5.4.0 \
-            preserves the declaration. The declaration neither validates UTF-8 nor defines \
-            rendering or runtime effects. The generic provider may answer any byte \
-            message; the separately pinned canonical runtime terminates on invalid UTF-8. \
-            Native malformed-byte cases exercise that generic-provider boundary, not \
-            canonical-runtime UTF-8 acceptance."
+            signature compatibility does not expand the Agave runtime version set."]
       },
       {
         id := "solana-define-syscall-reviewed-modern-dispatch-non-bpf",
@@ -1236,16 +977,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "The unstable-static-syscalls crate feature affects only BPF \
-            architecture."
+          «exclude» := ["bpf"]
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason := "The registered direct extern boundary is the dynamic-dispatch \
-            declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["The index provider interprets the answers and terminal exits of the actual \
@@ -1262,17 +999,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             together with feature=unstable-static-syscalls. There is no target_os gate on \
             the definitions module itself.", "Retain the full existing provider, \
             terminal-outcome, status-width and memory-interpretation assumptions. Crate \
-            signature compatibility does not expand the Agave runtime version set."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.2.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.4.0.crate"],
-        argument :=
-          "The definitions module is absent in the 22 releases through 2.1.21. All 11 \
-            releases from 2.2.0 through 5.4.0 have the same dynamic extern-C signature: fn \
-            sol_log_(message: *const u8, len: u64). The extra generation macro in 5.4.0 \
-            preserves the declaration. The declaration neither validates UTF-8 nor defines \
-            rendering or runtime effects. The generic provider may answer any byte \
-            message; the separately pinned canonical runtime terminates on invalid UTF-8. \
-            Native malformed-byte cases exercise that generic-provider boundary, not \
-            canonical-runtime UTF-8 acceptance."
+            signature compatibility does not expand the Agave runtime version set."]
       },
       {
         id := "solana-define-syscall-reviewed-modern-dispatch-bpf",
@@ -1295,23 +1022,17 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason := "On BPF the extra static-dispatch crate feature must be excluded."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := [],
-          none := ["unstable-static-syscalls"],
-          reason :=
-            "BPF plus unstable-static-syscalls selects the hash-addressed wrapper instead \
-              of this direct extern boundary."
+          none := ["unstable-static-syscalls"]
         },
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason := "The registered direct extern boundary is the dynamic-dispatch \
-            declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["The index provider interprets the answers and terminal exits of the actual \
@@ -1328,17 +1049,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             together with feature=unstable-static-syscalls. There is no target_os gate on \
             the definitions module itself.", "Retain the full existing provider, \
             terminal-outcome, status-width and memory-interpretation assumptions. Crate \
-            signature compatibility does not expand the Agave runtime version set."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.2.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.4.0.crate"],
-        argument :=
-          "The definitions module is absent in the 22 releases through 2.1.21. All 11 \
-            releases from 2.2.0 through 5.4.0 have the same dynamic extern-C signature: fn \
-            sol_log_(message: *const u8, len: u64). The extra generation macro in 5.4.0 \
-            preserves the declaration. The declaration neither validates UTF-8 nor defines \
-            rendering or runtime effects. The generic provider may answer any byte \
-            message; the separately pinned canonical runtime terminates on invalid UTF-8. \
-            Native malformed-byte cases exercise that generic-provider boundary, not \
-            canonical-runtime UTF-8 acceptance."
+            signature compatibility does not expand the Agave runtime version set."]
       }
     ]
     | .definitions_sol_memcpy_ => [
@@ -1360,18 +1071,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -1385,17 +1090,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.3.0.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The checksum-pinned solana-define-syscall 2.3.0 source defines this exact item \
-            with the recorded argument order and result type. The source supplies an \
-            extern-C declaration, not a runtime implementation. The reviewed macro/module \
-            gates are recorded explicitly; macro expansion does not transfer \
-            defining-crate ownership. The declared compatible range assumes preservation \
-            of this defining identity, argument order, pointer types, return type and \
-            dynamic-declaration gates. It does not broaden runtime registration, feature \
-            behavior or memory configuration."
+            interpretation."]
       },
       {
         id := "raw-runtime-solana-define-syscall-4.0.1-non-bpf",
@@ -1415,23 +1110,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "The unstable-static-syscalls feature changes dispatch only on BPF."
+          «exclude» := ["bpf"]
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -1445,13 +1133,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.1.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The declared compatible range assumes the exact extern-C declaration of \
-            sol_memcpy_, including argument order, widths, return type and the recorded \
-            module/macro gates. Static thunks remain excluded; a declaration does not \
-            establish its runtime implementation or transfer defining-crate identity."
+            interpretation."]
       },
       {
         id := "raw-runtime-solana-define-syscall-4.0.1-bpf",
@@ -1471,29 +1153,21 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason := "The unstable-static-syscalls feature changes dispatch only on BPF."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := [],
-          none := ["unstable-static-syscalls"],
-          reason := "BPF plus this crate feature selects a static thunk."
+          none := ["unstable-static-syscalls"]
         },
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -1507,13 +1181,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.1.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The declared compatible range assumes the exact extern-C declaration of \
-            sol_memcpy_, including argument order, widths, return type and the recorded \
-            module/macro gates. Static thunks remain excluded; a declaration does not \
-            establish its runtime implementation or transfer defining-crate identity."
+            interpretation."]
       }
     ]
     | .definitions_sol_memset_ => [
@@ -1535,18 +1203,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -1560,17 +1222,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.3.0.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The checksum-pinned solana-define-syscall 2.3.0 source defines this exact item \
-            with the recorded argument order and result type. The source supplies an \
-            extern-C declaration, not a runtime implementation. The reviewed macro/module \
-            gates are recorded explicitly; macro expansion does not transfer \
-            defining-crate ownership. The declared compatible range assumes preservation \
-            of this defining identity, argument order, pointer types, return type and \
-            dynamic-declaration gates. It does not broaden runtime registration, feature \
-            behavior or memory configuration."
+            interpretation."]
       },
       {
         id := "raw-runtime-solana-define-syscall-4.0.1-non-bpf",
@@ -1590,23 +1242,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "The unstable-static-syscalls feature changes dispatch only on BPF."
+          «exclude» := ["bpf"]
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -1620,13 +1265,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.1.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The declared compatible range assumes the exact extern-C declaration of \
-            sol_memset_, including argument order, widths, return type and the recorded \
-            module/macro gates. Static thunks remain excluded; a declaration does not \
-            establish its runtime implementation or transfer defining-crate identity."
+            interpretation."]
       },
       {
         id := "raw-runtime-solana-define-syscall-4.0.1-bpf",
@@ -1646,29 +1285,21 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason := "The unstable-static-syscalls feature changes dispatch only on BPF."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := [],
-          none := ["unstable-static-syscalls"],
-          reason := "BPF plus this crate feature selects a static thunk."
+          none := ["unstable-static-syscalls"]
         },
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -1682,13 +1313,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.1.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The declared compatible range assumes the exact extern-C declaration of \
-            sol_memset_, including argument order, widths, return type and the recorded \
-            module/macro gates. Static thunks remain excluded; a declaration does not \
-            establish its runtime implementation or transfer defining-crate identity."
+            interpretation."]
       }
     ]
     | .definitions_sol_panic_ => [
@@ -1713,16 +1338,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "The unstable-static-syscalls crate feature affects only BPF \
-            architecture."
+          «exclude» := ["bpf"]
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason := "The registered direct extern boundary is the dynamic-dispatch \
-            declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["The index provider interprets the terminal exits of the actual syscall \
@@ -1737,19 +1358,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature=unstable-static-syscalls. There is no target_os gate on the \
             definitions module itself.", "Retain the full existing provider, \
             terminal-outcome, status-width and memory-interpretation assumptions. Crate \
-            signature compatibility does not expand the Agave runtime version set."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.4.0.crate"],
-        argument :=
-          "There is no definition through 2.3.0 (25 releases). Version 3.0.0 introduces \
-            the four-argument declaration with no return annotation, so its return type is \
-            unit. A native returning provider was called twice and the call returned \
-            normally with the exact file bytes, line and column preserved. It is therefore \
-            incompatible with the existing never-returning family, even though the \
-            canonical runtime itself terminates. All seven releases from 4.0.0 through \
-            5.4.0 declare the same dynamic extern-C four-argument function returning !; \
-            the 5.4.0 generation macro preserves it. Only provider terminal exits are \
-            outcomes of this family. These declarations do not establish a panic-runtime \
-            implementation theorem."
+            signature compatibility does not expand the Agave runtime version set."]
       },
       {
         id := "solana-define-syscall-reviewed-modern-dispatch-bpf",
@@ -1772,23 +1381,17 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason := "On BPF the extra static-dispatch crate feature must be excluded."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := [],
-          none := ["unstable-static-syscalls"],
-          reason :=
-            "BPF plus unstable-static-syscalls selects the hash-addressed wrapper instead \
-              of this direct extern boundary."
+          none := ["unstable-static-syscalls"]
         },
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason := "The registered direct extern boundary is the dynamic-dispatch \
-            declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["The index provider interprets the terminal exits of the actual syscall \
@@ -1803,19 +1406,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             feature=unstable-static-syscalls. There is no target_os gate on the \
             definitions module itself.", "Retain the full existing provider, \
             terminal-outcome, status-width and memory-interpretation assumptions. Crate \
-            signature compatibility does not expand the Agave runtime version set."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.4.0.crate"],
-        argument :=
-          "There is no definition through 2.3.0 (25 releases). Version 3.0.0 introduces \
-            the four-argument declaration with no return annotation, so its return type is \
-            unit. A native returning provider was called twice and the call returned \
-            normally with the exact file bytes, line and column preserved. It is therefore \
-            incompatible with the existing never-returning family, even though the \
-            canonical runtime itself terminates. All seven releases from 4.0.0 through \
-            5.4.0 declare the same dynamic extern-C four-argument function returning !; \
-            the 5.4.0 generation macro preserves it. Only provider terminal exits are \
-            outcomes of this family. These declarations do not establish a panic-runtime \
-            implementation theorem."
+            signature compatibility does not expand the Agave runtime version set."]
       }
     ]
     | .definitions_sol_set_return_data => [
@@ -1837,23 +1428,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "The unstable-static-syscalls feature changes dispatch only on BPF."
+          «exclude» := ["bpf"]
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -1867,13 +1451,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.1.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The declared compatible range assumes the exact extern-C declaration of \
-            sol_set_return_data, including argument order, widths, return type and the \
-            recorded module/macro gates. Static thunks remain excluded; a declaration does \
-            not establish its runtime implementation or transfer defining-crate identity."
+            interpretation."]
       },
       {
         id := "raw-runtime-solana-define-syscall-4.0.1-bpf",
@@ -1893,29 +1471,21 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason := "The unstable-static-syscalls feature changes dispatch only on BPF."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := [],
-          none := ["unstable-static-syscalls"],
-          reason := "BPF plus this crate feature selects a static thunk."
+          none := ["unstable-static-syscalls"]
         },
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -1929,13 +1499,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.1.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The declared compatible range assumes the exact extern-C declaration of \
-            sol_set_return_data, including argument order, widths, return type and the \
-            recorded module/macro gates. Static thunks remain excluded; a declaration does \
-            not establish its runtime implementation or transfer defining-crate identity."
+            interpretation."]
       }
     ]
     | .definitions_sol_sha256 => [
@@ -1960,10 +1524,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "The registered direct extern boundary is the dynamic-dispatch declaration; \
-              static-syscalls replaces it with a hash-addressed call wrapper."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["The index provider interprets the answers of the actual syscall environment \
@@ -1991,18 +1552,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             together with feature=unstable-static-syscalls. There is no target_os gate on \
             the definitions module itself.", "Retain the full existing provider, \
             terminal-outcome, status-width and memory-interpretation assumptions. Crate \
-            signature compatibility does not expand the Agave runtime version set."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.2.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.4.0.crate"],
-        argument :=
-          "The definitions module is absent in the 22 releases through 2.1.21. All 11 \
-            releases from 2.2.0 through 5.4.0 have the same dynamic extern-C signature: fn \
-            sol_sha256(vals: *const u8, val_len: u64, hash_result: *mut u8) -> u64. \
-            Release 5.4.0 generates it through an additional define_syscalls! macro, which \
-            expands to the same define_syscall! invocation. This is declaration and \
-            call-boundary compatibility only. The crate does not implement the hash, \
-            slice-count check, translated-host alignment check, output-shape law or \
-            runtime state effects. All those remain requirements of the existing \
-            index/provider interpretation and the separately pinned Agave runtime binding."
+            signature compatibility does not expand the Agave runtime version set."]
       },
       {
         id := "solana-define-syscall-reviewed-modern-dispatch-non-bpf",
@@ -2025,16 +1575,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "The unstable-static-syscalls crate feature affects only BPF \
-            architecture."
+          «exclude» := ["bpf"]
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason := "The registered direct extern boundary is the dynamic-dispatch \
-            declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["The index provider interprets the answers of the actual syscall environment \
@@ -2062,18 +1608,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             together with feature=unstable-static-syscalls. There is no target_os gate on \
             the definitions module itself.", "Retain the full existing provider, \
             terminal-outcome, status-width and memory-interpretation assumptions. Crate \
-            signature compatibility does not expand the Agave runtime version set."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.2.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.4.0.crate"],
-        argument :=
-          "The definitions module is absent in the 22 releases through 2.1.21. All 11 \
-            releases from 2.2.0 through 5.4.0 have the same dynamic extern-C signature: fn \
-            sol_sha256(vals: *const u8, val_len: u64, hash_result: *mut u8) -> u64. \
-            Release 5.4.0 generates it through an additional define_syscalls! macro, which \
-            expands to the same define_syscall! invocation. This is declaration and \
-            call-boundary compatibility only. The crate does not implement the hash, \
-            slice-count check, translated-host alignment check, output-shape law or \
-            runtime state effects. All those remain requirements of the existing \
-            index/provider interpretation and the separately pinned Agave runtime binding."
+            signature compatibility does not expand the Agave runtime version set."]
       },
       {
         id := "solana-define-syscall-reviewed-modern-dispatch-bpf",
@@ -2096,23 +1631,17 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason := "On BPF the extra static-dispatch crate feature must be excluded."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := [],
-          none := ["unstable-static-syscalls"],
-          reason :=
-            "BPF plus unstable-static-syscalls selects the hash-addressed wrapper instead \
-              of this direct extern boundary."
+          none := ["unstable-static-syscalls"]
         },
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason := "The registered direct extern boundary is the dynamic-dispatch \
-            declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["The index provider interprets the answers of the actual syscall environment \
@@ -2140,18 +1669,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             together with feature=unstable-static-syscalls. There is no target_os gate on \
             the definitions module itself.", "Retain the full existing provider, \
             terminal-outcome, status-width and memory-interpretation assumptions. Crate \
-            signature compatibility does not expand the Agave runtime version set."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.2.0.crate", "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.4.0.crate"],
-        argument :=
-          "The definitions module is absent in the 22 releases through 2.1.21. All 11 \
-            releases from 2.2.0 through 5.4.0 have the same dynamic extern-C signature: fn \
-            sol_sha256(vals: *const u8, val_len: u64, hash_result: *mut u8) -> u64. \
-            Release 5.4.0 generates it through an additional define_syscalls! macro, which \
-            expands to the same define_syscall! invocation. This is declaration and \
-            call-boundary compatibility only. The crate does not implement the hash, \
-            slice-count check, translated-host alignment check, output-shape law or \
-            runtime state effects. All those remain requirements of the existing \
-            index/provider interpretation and the separately pinned Agave runtime binding."
+            signature compatibility does not expand the Agave runtime version set."]
       }
     ]
     | .definitions_sol_sha512 => [
@@ -2173,25 +1691,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "The unstable-static-syscalls crate feature affects only BPF \
-            architecture."
+          «exclude» := ["bpf"]
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason := "The registered direct extern boundary is the dynamic-dispatch \
-            declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["Assume 64-byte success/no-output failure and InterfaceSpec; supply the \
-            descriptor and separate-output footprint required by the binding."],
-        evidence := ["source-notes/raw-syscalls.md#supported-releases-and-dispatch",
-          "source-notes/raw-syscalls.md#sha-512"],
-        argument :=
-          "The four published releases from 5.1.0 through 5.4.0 share this dynamic \
-            descriptor/output ABI; see the per-release source review."
+            descriptor and separate-output footprint required by the binding."]
       },
       {
         id := "solana-define-syscall-dynamic-bpf",
@@ -2211,32 +1720,21 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason := "On BPF the extra static-dispatch crate feature must be excluded."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := [],
-          none := ["unstable-static-syscalls"],
-          reason :=
-            "BPF plus unstable-static-syscalls selects the hash-addressed wrapper instead \
-              of this direct extern boundary."
+          none := ["unstable-static-syscalls"]
         },
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason := "The registered direct extern boundary is the dynamic-dispatch \
-            declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["Assume 64-byte success/no-output failure and InterfaceSpec; supply the \
-            descriptor and separate-output footprint required by the binding."],
-        evidence := ["source-notes/raw-syscalls.md#supported-releases-and-dispatch",
-          "source-notes/raw-syscalls.md#sha-512"],
-        argument :=
-          "The four published releases from 5.1.0 through 5.4.0 share this dynamic \
-            descriptor/output ABI; see the per-release source review."
+            descriptor and separate-output footprint required by the binding."]
       }
     ]
     | .definitions_sol_try_find_program_address => [
@@ -2258,18 +1756,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -2283,17 +1775,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.3.0.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The checksum-pinned solana-define-syscall 2.3.0 source defines this exact item \
-            with the recorded argument order and result type. The source supplies an \
-            extern-C declaration, not a runtime implementation. The reviewed macro/module \
-            gates are recorded explicitly; macro expansion does not transfer \
-            defining-crate ownership. The declared compatible range assumes preservation \
-            of this defining identity, argument order, pointer types, return type and \
-            dynamic-declaration gates. It does not broaden runtime registration, feature \
-            behavior or memory configuration."
+            interpretation."]
       }
     ]
   applicabilityConsumers := fun key => match key with

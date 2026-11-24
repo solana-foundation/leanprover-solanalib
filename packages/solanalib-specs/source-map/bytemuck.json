@@ -5,7 +5,7 @@
       "modules": {
         "Solanalib.Specs.Bytemuck": "61c55ebdd5ac6ccd4d66d0ed321ac1caec8b0836fc6737122748cf7ebeddb764",
         "Solanalib.Specs.Bytemuck.Bytes": "faac0ac03c487236360ac7957b0cb21031afdaf87f7bf5dea837dd86dc2a37c3",
-        "Solanalib.Specs.Bytemuck.Capabilities": "1dec5bc7c678c0d8aa22c6a569a3112e3d7bed3dbe2e8321dbf199ade8dc0c5e"
+        "Solanalib.Specs.Bytemuck.Capabilities": "5e515228e4810011b406022bd85ce9bebc45024d624eff3591dd334fa51b554c"
       },
       "source_ids": [
         "bytemuck-1.25.2-lib",

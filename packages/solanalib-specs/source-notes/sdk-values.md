@@ -1,7 +1,7 @@
 # Small SDK values
 
 The [source registry](../source-map.json) records exact source references for
-the following operations. Their [applicability profiles](../applicability.json)
+the following operations. Their [applicability profiles](../source-map.json)
 separately declare compatible ranges and preserve each defining type,
 source origin and dependency condition. Selection retains the actual
 defining version; these ranges do not widen concrete source bindings or

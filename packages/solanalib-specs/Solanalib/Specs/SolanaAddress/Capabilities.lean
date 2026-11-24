@@ -221,15 +221,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The argument/return observations are canonical 32-byte address values; \
             borrowed storage correspondence is separate.", "The value observation is of \
             the unchanged transparent [u8; 32] field. At 1.1.0 the actual resolved 2.x \
-            Address implementation and forced Copy feature must be recorded."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "Every direct API release returns &self.0 as &[u8; 32], preserving all 32 bytes \
-            and borrowing the same field. The body is byte-identical; the mathematical \
-            model observes contents only, and storage/lifetime correspondence remains \
-            separate. Address 0.0.0 is a placeholder without Address. Address 1.1.0 \
-            reexports the 2.x public API, whose entire released dependency range was \
-            reviewed."
+            Address implementation and forced Copy feature must be recorded."]
       },
       {
         id := "solana-address-reviewed-facade",
@@ -256,10 +248,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -270,15 +258,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The argument/return observations are canonical 32-byte address values; \
             borrowed storage correspondence is separate.", "The value observation is of \
             the unchanged transparent [u8; 32] field. At 1.1.0 the actual resolved 2.x \
-            Address implementation and forced Copy feature must be recorded."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "Every direct API release returns &self.0 as &[u8; 32], preserving all 32 bytes \
-            and borrowing the same field. The body is byte-identical; the mathematical \
-            model observes contents only, and storage/lifetime correspondence remains \
-            separate. Address 0.0.0 is a placeholder without Address. Address 1.1.0 \
-            reexports the 2.x public API, whose entire released dependency range was \
-            reviewed."
+            Address implementation and forced Copy feature must be recorded."]
       }
     ]
     | .Address_as_ref => [
@@ -305,14 +285,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The argument/return observations are canonical 32-byte address values; \
             borrowed storage correspondence is separate.", "The value observation is of \
             the unchanged transparent [u8; 32] field. At 1.1.0 the actual resolved 2.x \
-            Address implementation and forced Copy feature must be recorded."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "Every direct API release implements AsRef<[u8]> by &self.0[..], preserving \
-            length 32 and the same borrowed storage. The body is byte-identical; this \
-            concrete Address implementation introduces no arbitrary callback. Address \
-            0.0.0 is a placeholder without Address. Address 1.1.0 reexports the 2.x public \
-            API, whose entire released dependency range was reviewed."
+            Address implementation and forced Copy feature must be recorded."]
       },
       {
         id := "solana-address-reviewed-facade",
@@ -339,10 +312,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -353,14 +322,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The argument/return observations are canonical 32-byte address values; \
             borrowed storage correspondence is separate.", "The value observation is of \
             the unchanged transparent [u8; 32] field. At 1.1.0 the actual resolved 2.x \
-            Address implementation and forced Copy feature must be recorded."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "Every direct API release implements AsRef<[u8]> by &self.0[..], preserving \
-            length 32 and the same borrowed storage. The body is byte-identical; this \
-            concrete Address implementation introduces no arbitrary callback. Address \
-            0.0.0 is a placeholder without Address. Address 1.1.0 reexports the 2.x public \
-            API, whose entire released dependency range was reviewed."
+            Address implementation and forced Copy feature must be recorded."]
       }
     ]
     | .Address_cmp => [
@@ -385,15 +347,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "The source binding must select the exact Address Ord implementation by full \
             callable identity and ABI; generic artifacts must additionally agree on the \
             recorded source and implementation arguments. The source compiler, Rust body, \
-            standard-library bodies and target equivalence remain explicit boundaries."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-2.6.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.6.1.crate", "https://static.crates.io/crates/solana-address/solana-address-2.7.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.8.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "The reviewed sources derive Ord for the sole [u8; 32] field. Array ordering \
-            compares unsigned bytes from index zero: the first difference determines Less \
-            or Greater, and identical arrays produce Equal. The declared compatible range \
-            assumes preservation of this ordering, shared-reference validity, unchanged \
-            inputs and state, and absence of allocation or callbacks. The 2.8.0 stable-abi \
-            derive change does not alter Ord."
+            standard-library bodies and target equivalence remain explicit boundaries."]
       }
     ]
     | .Address_create_program_address_solana => [
@@ -417,21 +371,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "The selected source passes 64-bit slice counts to the runtime ABI."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Select the reviewed runtime syscall branch; the host retry/crypto branch is \
-              separate."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "This API is in the feature-gated syscall module."
+          none := []
         },
         conditions :=
           ["The concrete source values contain exactly 32 initialized bytes; references, \
@@ -442,14 +391,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             prove them.", "The actual status-zero create reply must initialize all 32 \
             MaybeUninit bytes. Failure and abnormal exits need no address output. Status 1 \
             returns InvalidSeeds, status 2 returns IllegalOwner, and other nonzero \
-            statuses reach Unsupported AddressError."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-2.6.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.6.1.crate"],
-        argument :=
-          "The declared compatible range assumes the selected Solana syscall branch, \
-            ordered seed slices and program key, a MaybeUninit output whose initialization \
-            is required only on syscall success, exact status conversion and every \
-            callback state or abnormal exit. The host hashing/retry implementation is a \
-            separate branch."
+            statuses reach Unsupported AddressError."]
       }
     ]
     | .Address_default => [
@@ -476,15 +418,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The argument/return observations are canonical 32-byte address values; \
             borrowed storage correspondence is separate.", "The value observation is of \
             the unchanged transparent [u8; 32] field. At 1.1.0 the actual resolved 2.x \
-            Address implementation and forced Copy feature must be recorded."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "Every direct API release derives Default over the sole [u8; 32] field, \
-            therefore returns 32 zero bytes. Transparent representation is unchanged. \
-            Optional Copy/frozen-abi/stable-abi/wincode/serde derives do not change this \
-            field or the Default operation. Address 0.0.0 is a placeholder without \
-            Address. Address 1.1.0 reexports the 2.x public API, whose entire released \
-            dependency range was reviewed."
+            Address implementation and forced Copy feature must be recorded."]
       },
       {
         id := "solana-address-reviewed-facade",
@@ -511,10 +445,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -525,15 +455,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The argument/return observations are canonical 32-byte address values; \
             borrowed storage correspondence is separate.", "The value observation is of \
             the unchanged transparent [u8; 32] field. At 1.1.0 the actual resolved 2.x \
-            Address implementation and forced Copy feature must be recorded."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "Every direct API release derives Default over the sole [u8; 32] field, \
-            therefore returns 32 zero bytes. Transparent representation is unchanged. \
-            Optional Copy/frozen-abi/stable-abi/wincode/serde derives do not change this \
-            field or the Default operation. Address 0.0.0 is a placeholder without \
-            Address. Address 1.1.0 reexports the 2.x public API, whose entire released \
-            dependency range was reviewed."
+            Address implementation and forced Copy feature must be recorded."]
       }
     ]
     | .Address_deserialize_reader => [
@@ -560,8 +482,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["borsh"],
           any := [],
-          none := [],
-          reason := "The Borsh trait implementations are feature-gated."
+          none := []
         },
         dependencies := [{
           package := "borsh",
@@ -571,10 +492,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 implementation is assumed to preserve the reference \
-              fixed-array read or ordered write_all operation, including exact errors and \
-              actual writer effects.",
           compatibleRanges := [{
             lower := "1.6.1",
             upper := "2.0.0"
@@ -587,9 +504,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 derive is assumed to preserve delegation for the \
-              unannotated single [u8; 32] field, without added callbacks or effects.",
           compatibleRanges := [{
             lower := "1.6.1",
             upper := "2.0.0"
@@ -605,21 +519,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             may use std or nostd_io.", "The review scope excludes custom-allocator failure \
             during error or diagnostic construction. Ordinary errors, exact error \
             kinds/messages, empty-input behavior and all other modeled effects remain in \
-            scope; the model preconditions are unchanged."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "All direct releases derive BorshDeserialize on the sole unannotated [u8; 32] \
-            field. Borsh 1.6.1 derive emits Ok(Self(<[u8; \
-            32]>::deserialize_reader(reader)?)); its u8 array specialization reads exactly \
-            32 bytes. Every 32-byte value is valid; no curve validation occurs. Success \
-            returns input.take 32 with input.drop 32 and preserves the success remainder \
-            pointer. Short input yields InvalidData / \"Unexpected length of input\". The \
-            contract uses DecodeMatches, leaving the error remainder unconstrained: std \
-            empties it while Borsh nostd_io retains it. This is not an arbitrary Read \
-            callback contract. The 1.1.0 facade forwards to the same implementation in \
-            every published 2.x dependency release. The retained source closure and \
-            ordinary decoding checks establish correspondence for all API-bearing releases \
-            under the common error-construction scope."
+            scope; the model preconditions are unchanged."]
       },
       {
         id := "solana-address-reviewed-facade",
@@ -640,8 +540,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["borsh"],
           any := [],
-          none := [],
-          reason := "The Borsh trait implementations are feature-gated."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -653,10 +552,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -669,10 +564,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 implementation is assumed to preserve the reference \
-              fixed-array read or ordered write_all operation, including exact errors and \
-              actual writer effects.",
           compatibleRanges := [{
             lower := "1.6.1",
             upper := "2.0.0"
@@ -685,9 +576,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 derive is assumed to preserve delegation for the \
-              unannotated single [u8; 32] field, without added callbacks or effects.",
           compatibleRanges := [{
             lower := "1.6.1",
             upper := "2.0.0"
@@ -704,21 +592,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             may use std or nostd_io.", "The review scope excludes custom-allocator failure \
             during error or diagnostic construction. Ordinary errors, exact error \
             kinds/messages, empty-input behavior and all other modeled effects remain in \
-            scope; the model preconditions are unchanged."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "All direct releases derive BorshDeserialize on the sole unannotated [u8; 32] \
-            field. Borsh 1.6.1 derive emits Ok(Self(<[u8; \
-            32]>::deserialize_reader(reader)?)); its u8 array specialization reads exactly \
-            32 bytes. Every 32-byte value is valid; no curve validation occurs. Success \
-            returns input.take 32 with input.drop 32 and preserves the success remainder \
-            pointer. Short input yields InvalidData / \"Unexpected length of input\". The \
-            contract uses DecodeMatches, leaving the error remainder unconstrained: std \
-            empties it while Borsh nostd_io retains it. This is not an arbitrary Read \
-            callback contract. The 1.1.0 facade forwards to the same implementation in \
-            every published 2.x dependency release. The retained source closure and \
-            ordinary decoding checks establish correspondence for all API-bearing releases \
-            under the common error-construction scope."
+            scope; the model preconditions are unchanged."]
       }
     ]
     | .Address_deserialize_reader_read_exact => [
@@ -741,8 +615,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["borsh"],
           any := [],
-          none := [],
-          reason := "The selected Borsh implementations are feature-gated."
+          none := []
         },
         dependencies := [{
           package := "borsh",
@@ -752,10 +625,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.0"],
-          reason :=
-            "Assume the selected Borsh 1 generation retains one read_exact and its exact \
-              UnexpectedEof-to-InvalidData diagnostic mapping, preserving other errors and \
-              reader effects.",
           compatibleRanges := [{
             lower := "1.6.0",
             upper := "2.0.0"
@@ -768,9 +637,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.0"],
-          reason :=
-            "Assume the derive retains the single unannotated [u8; 32] field call for this \
-              exact trait implementation, with no added callbacks.",
           compatibleRanges := [{
             lower := "1.6.0",
             upper := "2.0.0"
@@ -785,14 +651,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             prove them.", "When multiple Borsh generations are linked, bind the exact \
             retained trait item and implementation (including its resolved arguments and \
             disambiguating description) to the stated generation; bare display names and \
-            dependency presence do not establish this selection."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-2.6.1.crate", "https://static.crates.io/crates/borsh/borsh-1.6.0.crate"],
-        argument :=
-          "The declared compatible range assumes zero-initialization of the local 32-byte \
-            array followed by one actual R::read_exact, including user overrides. Success \
-            returns the entire resulting array; UnexpectedEof becomes the Borsh 1 \
-            InvalidData error with the exact Unexpected length of input text, while other \
-            errors, reader state and abnormal exits are retained."
+            dependency presence do not establish this selection."]
       }
     ]
     | .Address_eq => [
@@ -819,15 +678,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The argument/return observations are canonical 32-byte address values; \
             borrowed storage correspondence is separate.", "The value observation is of \
             the unchanged transparent [u8; 32] field. At 1.1.0 the actual resolved 2.x \
-            Address implementation and forced Copy feature must be recorded."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "Every direct API release derives PartialEq for the sole [u8; 32] field, so \
-            equality compares all 32 bytes. The separate address_eq helper introduced in \
-            2.0.0 is not the registered PartialEq operation. Copy feature changes do not \
-            change equality. Address 0.0.0 is a placeholder without Address. Address 1.1.0 \
-            reexports the 2.x public API, whose entire released dependency range was \
-            reviewed."
+            Address implementation and forced Copy feature must be recorded."]
       },
       {
         id := "solana-address-reviewed-facade",
@@ -854,10 +705,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -868,15 +715,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The argument/return observations are canonical 32-byte address values; \
             borrowed storage correspondence is separate.", "The value observation is of \
             the unchanged transparent [u8; 32] field. At 1.1.0 the actual resolved 2.x \
-            Address implementation and forced Copy feature must be recorded."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "Every direct API release derives PartialEq for the sole [u8; 32] field, so \
-            equality compares all 32 bytes. The separate address_eq helper introduced in \
-            2.0.0 is not the registered PartialEq operation. Copy feature changes do not \
-            change equality. Address 0.0.0 is a placeholder without Address. Address 1.1.0 \
-            reexports the 2.x public API, whose entire released dependency range was \
-            reviewed."
+            Address implementation and forced Copy feature must be recorded."]
       }
     ]
     | .Address_find_program_address => [
@@ -904,21 +743,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason := "This profile observes the host algorithm."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "BPF selects the separate syscall branch."
+          «exclude» := ["bpf"]
         }],
         features := {
           all := ["curve25519"],
           any := [],
-          none := [],
-          reason :=
-            "The pure observation uses the ordinary host hash/curve implementation; the \
-              syscalls-only host branch does not implement this observation."
+          none := []
         },
         conditions :=
           ["Explicit pure hash and curve functions have no hash-length proof field. The \
@@ -929,21 +763,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ordinary host branch with curve25519; interpret Crypto as the reached \
             hash/curve primitives and retain separate 32-byte hash output correspondence. \
             Target returned-value projection additionally requires the existing \
-            NormalPdaAgreement law."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "Every API-bearing release implements the same pure host search result: seed \
-            limits count the added bump; try 255 down through 1, never 0; hash \
-            concatenated ordered seeds, bump, 32-byte program ID and \
-            ProgramDerivedAddress; accept the first digest whose explicit curve predicate \
-            is false; return no answer for invalid seed limits or exhaustion, reaching the \
-            fixed no-viable-address panic site. 2.9.0 replaces a fresh Vec/retry with a \
-            fixed 16-slice array and an early count check, preserving this mathematical \
-            facet while changing host allocations. 1.0.0 uses by-value Hash AsRef rather \
-            than Hash.as_ref(), with the same 32 bytes under the reviewed dependency \
-            representation. 1.1.0 delegates to its resolved 2.x implementation. This is \
-            the existing observation role; it is not complete host or target operational \
-            coverage."
+            NormalPdaAgreement law."]
       },
       {
         id := "solana-address-reviewed-facade",
@@ -965,21 +785,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason := "This profile observes the host algorithm."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "BPF selects the separate syscall branch."
+          «exclude» := ["bpf"]
         }],
         features := {
           all := ["curve25519"],
           any := [],
-          none := [],
-          reason :=
-            "The pure observation uses the ordinary host hash/curve implementation; the \
-              syscalls-only host branch does not implement this observation."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -991,10 +806,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -1010,21 +821,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             ordinary host branch with curve25519; interpret Crypto as the reached \
             hash/curve primitives and retain separate 32-byte hash output correspondence. \
             Target returned-value projection additionally requires the existing \
-            NormalPdaAgreement law."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "Every API-bearing release implements the same pure host search result: seed \
-            limits count the added bump; try 255 down through 1, never 0; hash \
-            concatenated ordered seeds, bump, 32-byte program ID and \
-            ProgramDerivedAddress; accept the first digest whose explicit curve predicate \
-            is false; return no answer for invalid seed limits or exhaustion, reaching the \
-            fixed no-viable-address panic site. 2.9.0 replaces a fresh Vec/retry with a \
-            fixed 16-slice array and an early count check, preserving this mathematical \
-            facet while changing host allocations. 1.0.0 uses by-value Hash AsRef rather \
-            than Hash.as_ref(), with the same 32 bytes under the reviewed dependency \
-            representation. 1.1.0 delegates to its resolved 2.x implementation. This is \
-            the existing observation role; it is not complete host or target operational \
-            coverage."
+            NormalPdaAgreement law."]
       },
       {
         id := "solana-address-reviewed-direct-2",
@@ -1050,21 +847,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason := "This profile observes the host algorithm."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "BPF selects the separate syscall branch."
+          «exclude» := ["bpf"]
         }],
         features := {
           all := ["curve25519"],
           any := [],
-          none := [],
-          reason :=
-            "The pure observation uses the ordinary host hash/curve implementation; the \
-              syscalls-only host branch does not implement this observation."
+          none := []
         },
         conditions :=
           ["Explicit pure hash and curve functions. A source interpretation must \
@@ -1075,21 +867,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             syscall.", "Select the ordinary host branch with curve25519; interpret Crypto \
             as the reached hash/curve primitives and retain separate 32-byte hash output \
             correspondence. Target returned-value projection additionally requires the \
-            existing NormalPdaAgreement law."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "Every API-bearing release implements the same pure host search result: seed \
-            limits count the added bump; try 255 down through 1, never 0; hash \
-            concatenated ordered seeds, bump, 32-byte program ID and \
-            ProgramDerivedAddress; accept the first digest whose explicit curve predicate \
-            is false; return no answer for invalid seed limits or exhaustion, reaching the \
-            fixed no-viable-address panic site. 2.9.0 replaces a fresh Vec/retry with a \
-            fixed 16-slice array and an early count check, preserving this mathematical \
-            facet while changing host allocations. 1.0.0 uses by-value Hash AsRef rather \
-            than Hash.as_ref(), with the same 32 bytes under the reviewed dependency \
-            representation. 1.1.0 delegates to its resolved 2.x implementation. This is \
-            the existing observation role; it is not complete host or target operational \
-            coverage."
+            existing NormalPdaAgreement law."]
       },
       {
         id := "solana-address-reviewed-facade-2",
@@ -1111,21 +889,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason := "This profile observes the host algorithm."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "BPF selects the separate syscall branch."
+          «exclude» := ["bpf"]
         }],
         features := {
           all := ["curve25519"],
           any := [],
-          none := [],
-          reason :=
-            "The pure observation uses the ordinary host hash/curve implementation; the \
-              syscalls-only host branch does not implement this observation."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -1137,10 +910,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -1156,21 +925,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             syscall.", "Select the ordinary host branch with curve25519; interpret Crypto \
             as the reached hash/curve primitives and retain separate 32-byte hash output \
             correspondence. Target returned-value projection additionally requires the \
-            existing NormalPdaAgreement law."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "Every API-bearing release implements the same pure host search result: seed \
-            limits count the added bump; try 255 down through 1, never 0; hash \
-            concatenated ordered seeds, bump, 32-byte program ID and \
-            ProgramDerivedAddress; accept the first digest whose explicit curve predicate \
-            is false; return no answer for invalid seed limits or exhaustion, reaching the \
-            fixed no-viable-address panic site. 2.9.0 replaces a fresh Vec/retry with a \
-            fixed 16-slice array and an early count check, preserving this mathematical \
-            facet while changing host allocations. 1.0.0 uses by-value Hash AsRef rather \
-            than Hash.as_ref(), with the same 32 bytes under the reviewed dependency \
-            representation. 1.1.0 delegates to its resolved 2.x implementation. This is \
-            the existing observation role; it is not complete host or target operational \
-            coverage."
+            existing NormalPdaAgreement law."]
       }
     ]
     | .Address_find_program_address_solana => [
@@ -1195,23 +950,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         conditions :=
           ["The selected Solana/bpf family requires SuccessInitialized at the actual call \
@@ -1237,22 +985,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             syscall exits need no panic execution.", "Select target_os=\"solana\" or \
             target_arch=\"bpf\" with source 64-bit slice counts and the syscalls API \
             enabled; record the actual solana-define-syscall provider/dispatch profile. \
-            Address 1.1.0 must resolve to an enumerated 2.x release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            Address 1.1.0 must resolve to an enumerated 2.x release."]
       },
       {
         id := "solana-address-reviewed-direct-bpf",
@@ -1275,30 +1008,20 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         conditions :=
           ["The selected Solana/bpf family requires SuccessInitialized at the actual call \
@@ -1324,22 +1047,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             syscall exits need no panic execution.", "Select target_os=\"solana\" or \
             target_arch=\"bpf\" with source 64-bit slice counts and the syscalls API \
             enabled; record the actual solana-define-syscall provider/dispatch profile. \
-            Address 1.1.0 must resolve to an enumerated 2.x release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            Address 1.1.0 must resolve to an enumerated 2.x release."]
       },
       {
         id := "solana-address-reviewed-facade-solana",
@@ -1361,23 +1069,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -1389,10 +1090,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -1423,22 +1120,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             syscall exits need no panic execution.", "Select target_os=\"solana\" or \
             target_arch=\"bpf\" with source 64-bit slice counts and the syscalls API \
             enabled; record the actual solana-define-syscall provider/dispatch profile. \
-            Address 1.1.0 must resolve to an enumerated 2.x release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            Address 1.1.0 must resolve to an enumerated 2.x release."]
       },
       {
         id := "solana-address-reviewed-facade-bpf",
@@ -1460,30 +1142,20 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -1495,10 +1167,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -1529,22 +1197,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             syscall exits need no panic execution.", "Select target_os=\"solana\" or \
             target_arch=\"bpf\" with source 64-bit slice counts and the syscalls API \
             enabled; record the actual solana-define-syscall provider/dispatch profile. \
-            Address 1.1.0 must resolve to an enumerated 2.x release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            Address 1.1.0 must resolve to an enumerated 2.x release."]
       },
       {
         id := "solana-address-reviewed-direct-solana-2",
@@ -1567,23 +1220,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         conditions :=
           ["The mathematical profile selects target_os=solana or target_arch=bpf with \
@@ -1604,22 +1250,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             called after syscall unwind or termination.", "Select target_os=\"solana\" or \
             target_arch=\"bpf\" with source 64-bit slice counts and the syscalls API \
             enabled; record the actual solana-define-syscall provider/dispatch profile. \
-            Address 1.1.0 must resolve to an enumerated 2.x release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            Address 1.1.0 must resolve to an enumerated 2.x release."]
       },
       {
         id := "solana-address-reviewed-direct-bpf-2",
@@ -1642,30 +1273,20 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         conditions :=
           ["The mathematical profile selects target_os=solana or target_arch=bpf with \
@@ -1686,22 +1307,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             called after syscall unwind or termination.", "Select target_os=\"solana\" or \
             target_arch=\"bpf\" with source 64-bit slice counts and the syscalls API \
             enabled; record the actual solana-define-syscall provider/dispatch profile. \
-            Address 1.1.0 must resolve to an enumerated 2.x release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            Address 1.1.0 must resolve to an enumerated 2.x release."]
       },
       {
         id := "solana-address-reviewed-facade-solana-2",
@@ -1723,23 +1329,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -1751,10 +1350,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -1780,22 +1375,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             called after syscall unwind or termination.", "Select target_os=\"solana\" or \
             target_arch=\"bpf\" with source 64-bit slice counts and the syscalls API \
             enabled; record the actual solana-define-syscall provider/dispatch profile. \
-            Address 1.1.0 must resolve to an enumerated 2.x release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            Address 1.1.0 must resolve to an enumerated 2.x release."]
       },
       {
         id := "solana-address-reviewed-facade-bpf-2",
@@ -1817,30 +1397,20 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -1852,10 +1422,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -1881,22 +1447,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             called after syscall unwind or termination.", "Select target_os=\"solana\" or \
             target_arch=\"bpf\" with source 64-bit slice counts and the syscalls API \
             enabled; record the actual solana-define-syscall provider/dispatch profile. \
-            Address 1.1.0 must resolve to an enumerated 2.x release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            Address 1.1.0 must resolve to an enumerated 2.x release."]
       }
     ]
     | .Address_is_on_curve => [
@@ -1922,21 +1473,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason := "This profile observes the host algorithm."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "BPF selects the separate syscall branch."
+          «exclude» := ["bpf"]
         }],
         features := {
           all := ["curve25519"],
           any := [],
-          none := [],
-          reason :=
-            "The pure observation uses the ordinary host hash/curve implementation; the \
-              syscalls-only host branch does not implement this observation."
+          none := []
         },
         conditions :=
           ["An explicit mathematical curve predicate; its normal-return projection \
@@ -1945,17 +1491,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             curve observation on host with curve25519. Selected-target primitive \
             projection requires NormalCurveAgreement and the operational syscall path \
             present only in 2.2.0+ (or 1.1.0 resolving there). With only syscalls on host, \
-            2.2.0+ instead panics; that configuration is not this predicate observation."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "At every API-bearing release, the host curve25519 branch passes the exact 32 \
-            Address bytes to CompressedEdwardsY::from_slice and returns whether \
-            decompress() is Some. Its local Address::is_on_curve body is byte-identical, \
-            but the reached target helper changes at 2.2.0; that helper difference is not \
-            hidden by this host observation classification. 1.1.0 follows the resolved 2.x \
-            type. The explicit mathematical curve predicate and optional normal-register \
-            correspondence remain interpretation obligations, not a full SDK postcondition \
-            or a cryptography proof."
+            2.2.0+ instead panics; that configuration is not this predicate observation."]
       },
       {
         id := "solana-address-reviewed-facade",
@@ -1975,21 +1511,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason := "This profile observes the host algorithm."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := [],
-          «exclude» := ["bpf"],
-          reason := "BPF selects the separate syscall branch."
+          «exclude» := ["bpf"]
         }],
         features := {
           all := ["curve25519"],
           any := [],
-          none := [],
-          reason :=
-            "The pure observation uses the ordinary host hash/curve implementation; the \
-              syscalls-only host branch does not implement this observation."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -2001,10 +1532,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -2018,17 +1545,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             curve observation on host with curve25519. Selected-target primitive \
             projection requires NormalCurveAgreement and the operational syscall path \
             present only in 2.2.0+ (or 1.1.0 resolving there). With only syscalls on host, \
-            2.2.0+ instead panics; that configuration is not this predicate observation."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "At every API-bearing release, the host curve25519 branch passes the exact 32 \
-            Address bytes to CompressedEdwardsY::from_slice and returns whether \
-            decompress() is Some. Its local Address::is_on_curve body is byte-identical, \
-            but the reached target helper changes at 2.2.0; that helper difference is not \
-            hidden by this host observation classification. 1.1.0 follows the resolved 2.x \
-            type. The explicit mathematical curve predicate and optional normal-register \
-            correspondence remain interpretation obligations, not a full SDK postcondition \
-            or a cryptography proof."
+            2.2.0+ instead panics; that configuration is not this predicate observation."]
       }
     ]
     | .Address_is_on_curve_solana => [
@@ -2051,18 +1568,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := ["syscalls", "curve25519"],
-          none := [],
-          reason :=
-            "These features expose the curve syscall implementation from Address 2.2.0 \
-              onward."
+          none := []
         },
         conditions :=
           ["The selected Solana/bpf source path and concrete Address AsRef over all 32 \
@@ -2073,17 +1584,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             a separate optional primitive register-value law for the pure predicate \
             projection; it imposes no constraint on abnormal exits.", "Select \
             target_os=\"solana\" or target_arch=\"bpf\" and enable syscalls (or \
-            curve25519). For 1.1.0 the resolved 2.x implementation must be 2.2.0 or later."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "1.0.0 and 2.0.0/2.1.0 have a callable selected-target is_on_curve but reach \
-            unimplemented!(), make no curve syscall and cannot match this family. 2.2.0 \
-            introduces the curve syscall helper and reexport; every subsequent released \
-            closure passes selector 0, the concrete Address full 32-byte AsRef, and \
-            null_mut() output to sol_curve_validate_point, returning exactly status == 0 \
-            while retaining provider effects and abnormal outcomes. A non-null scratch \
-            destination would be a different contract. 1.1.0 follows the chosen 2.x \
-            dependency: compatible only at 2.2.0 or later, incompatible at 2.0.0/2.1.0."
+            curve25519). For 1.1.0 the resolved 2.x implementation must be 2.2.0 or later."]
       },
       {
         id := "solana-address-reviewed-direct-bpf",
@@ -2104,25 +1605,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := ["syscalls", "curve25519"],
-          none := [],
-          reason :=
-            "These features expose the curve syscall implementation from Address 2.2.0 \
-              onward."
+          none := []
         },
         conditions :=
           ["The selected Solana/bpf source path and concrete Address AsRef over all 32 \
@@ -2133,17 +1625,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             a separate optional primitive register-value law for the pure predicate \
             projection; it imposes no constraint on abnormal exits.", "Select \
             target_os=\"solana\" or target_arch=\"bpf\" and enable syscalls (or \
-            curve25519). For 1.1.0 the resolved 2.x implementation must be 2.2.0 or later."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "1.0.0 and 2.0.0/2.1.0 have a callable selected-target is_on_curve but reach \
-            unimplemented!(), make no curve syscall and cannot match this family. 2.2.0 \
-            introduces the curve syscall helper and reexport; every subsequent released \
-            closure passes selector 0, the concrete Address full 32-byte AsRef, and \
-            null_mut() output to sol_curve_validate_point, returning exactly status == 0 \
-            while retaining provider effects and abnormal outcomes. A non-null scratch \
-            destination would be a different contract. 1.1.0 follows the chosen 2.x \
-            dependency: compatible only at 2.2.0 or later, incompatible at 2.0.0/2.1.0."
+            curve25519). For 1.1.0 the resolved 2.x implementation must be 2.2.0 or later."]
       },
       {
         id := "solana-address-reviewed-facade-solana",
@@ -2163,18 +1645,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := ["syscalls", "curve25519"],
-          none := [],
-          reason :=
-            "These features expose the curve syscall implementation from Address 2.2.0 \
-              onward."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -2186,10 +1662,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0", "2.6.1", "2.7.0",
             "2.8.0",
             "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -2205,17 +1677,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             a separate optional primitive register-value law for the pure predicate \
             projection; it imposes no constraint on abnormal exits.", "Select \
             target_os=\"solana\" or target_arch=\"bpf\" and enable syscalls (or \
-            curve25519). For 1.1.0 the resolved 2.x implementation must be 2.2.0 or later."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "1.0.0 and 2.0.0/2.1.0 have a callable selected-target is_on_curve but reach \
-            unimplemented!(), make no curve syscall and cannot match this family. 2.2.0 \
-            introduces the curve syscall helper and reexport; every subsequent released \
-            closure passes selector 0, the concrete Address full 32-byte AsRef, and \
-            null_mut() output to sol_curve_validate_point, returning exactly status == 0 \
-            while retaining provider effects and abnormal outcomes. A non-null scratch \
-            destination would be a different contract. 1.1.0 follows the chosen 2.x \
-            dependency: compatible only at 2.2.0 or later, incompatible at 2.0.0/2.1.0."
+            curve25519). For 1.1.0 the resolved 2.x implementation must be 2.2.0 or later."]
       },
       {
         id := "solana-address-reviewed-facade-bpf",
@@ -2235,25 +1697,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := [],
           any := ["syscalls", "curve25519"],
-          none := [],
-          reason :=
-            "These features expose the curve syscall implementation from Address 2.2.0 \
-              onward."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -2265,10 +1718,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0", "2.6.1", "2.7.0",
             "2.8.0",
             "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -2284,17 +1733,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             a separate optional primitive register-value law for the pure predicate \
             projection; it imposes no constraint on abnormal exits.", "Select \
             target_os=\"solana\" or target_arch=\"bpf\" and enable syscalls (or \
-            curve25519). For 1.1.0 the resolved 2.x implementation must be 2.2.0 or later."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "1.0.0 and 2.0.0/2.1.0 have a callable selected-target is_on_curve but reach \
-            unimplemented!(), make no curve syscall and cannot match this family. 2.2.0 \
-            introduces the curve syscall helper and reexport; every subsequent released \
-            closure passes selector 0, the concrete Address full 32-byte AsRef, and \
-            null_mut() output to sol_curve_validate_point, returning exactly status == 0 \
-            while retaining provider effects and abnormal outcomes. A non-null scratch \
-            destination would be a different contract. 1.1.0 follows the chosen 2.x \
-            dependency: compatible only at 2.2.0 or later, incompatible at 2.0.0/2.1.0."
+            curve25519). For 1.1.0 the resolved 2.x implementation must be 2.2.0 or later."]
       }
     ]
     | .Address_new_from_array => [
@@ -2321,14 +1760,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The argument/return observations are canonical 32-byte address values; \
             borrowed storage correspondence is separate.", "The value observation is of \
             the unchanged transparent [u8; 32] field. At 1.1.0 the actual resolved 2.x \
-            Address implementation and forced Copy feature must be recorded."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "Every direct API release constructs the one private [u8; 32] field from the \
-            exact input array. No padding, truncation, curve check or allocation is \
-            inserted. The function body is byte-identical from 1.0.0 through 2.9.0. \
-            Address 0.0.0 is a placeholder without Address. Address 1.1.0 reexports the \
-            2.x public API, whose entire released dependency range was reviewed."
+            Address implementation and forced Copy feature must be recorded."]
       },
       {
         id := "solana-address-reviewed-facade",
@@ -2355,10 +1787,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -2369,14 +1797,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The argument/return observations are canonical 32-byte address values; \
             borrowed storage correspondence is separate.", "The value observation is of \
             the unchanged transparent [u8; 32] field. At 1.1.0 the actual resolved 2.x \
-            Address implementation and forced Copy feature must be recorded."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "Every direct API release constructs the one private [u8; 32] field from the \
-            exact input array. No padding, truncation, curve check or allocation is \
-            inserted. The function body is byte-identical from 1.0.0 through 2.9.0. \
-            Address 0.0.0 is a placeholder without Address. Address 1.1.0 reexports the \
-            2.x public API, whose entire released dependency range was reviewed."
+            Address implementation and forced Copy feature must be recorded."]
       }
     ]
     | .Address_serialize => [
@@ -2403,8 +1824,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["borsh"],
           any := [],
-          none := [],
-          reason := "The Borsh trait implementations are feature-gated."
+          none := []
         },
         dependencies := [{
           package := "borsh",
@@ -2414,10 +1834,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 implementation is assumed to preserve the reference \
-              fixed-array read or ordered write_all operation, including exact errors and \
-              actual writer effects.",
           compatibleRanges := [{
             lower := "1.6.1",
             upper := "2.0.0"
@@ -2430,9 +1846,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 derive is assumed to preserve delegation for the \
-              unannotated single [u8; 32] field, without added callbacks or effects.",
           compatibleRanges := [{
             lower := "1.6.1",
             upper := "2.0.0"
@@ -2445,18 +1858,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             serializer at T = u8, N = 32 (nonempty u8_slice path) followed by the derived \
             `?` and Ok(()).", "Enable feature borsh and retain the existing Borsh 1.6.1 \
             array/write_all interpretation (borsh and borsh-derive 1.6.1); do not infer \
-            arbitrary Serde coverage."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "All direct releases derive BorshSerialize on the sole unannotated [u8; 32] \
-            field. Under the existing Borsh 1.6.1 interpretation, the inspected derive \
-            emits one field serializer followed by ? and Ok(()); the nonempty u8 array \
-            serializer performs exactly one actual W::write_all over all 32 bytes. \
-            Ordinary errors, partial writer state, unwind and terminal exits are \
-            propagated; the source introduces neither rollback nor a successful-writer \
-            assumption. Address 1.0.0 enables Borsh std; 2.x permits nostd_io. 1.1.0 \
-            forwards the borsh feature to its resolved 2.x type. Optional Serde is not \
-            this operation."
+            arbitrary Serde coverage."]
       },
       {
         id := "solana-address-reviewed-facade",
@@ -2477,8 +1879,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["borsh"],
           any := [],
-          none := [],
-          reason := "The Borsh trait implementations are feature-gated."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -2490,10 +1891,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -2506,10 +1903,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 implementation is assumed to preserve the reference \
-              fixed-array read or ordered write_all operation, including exact errors and \
-              actual writer effects.",
           compatibleRanges := [{
             lower := "1.6.1",
             upper := "2.0.0"
@@ -2522,9 +1915,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 derive is assumed to preserve delegation for the \
-              unannotated single [u8; 32] field, without added callbacks or effects.",
           compatibleRanges := [{
             lower := "1.6.1",
             upper := "2.0.0"
@@ -2538,18 +1928,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             serializer at T = u8, N = 32 (nonempty u8_slice path) followed by the derived \
             `?` and Ok(()).", "Enable feature borsh and retain the existing Borsh 1.6.1 \
             array/write_all interpretation (borsh and borsh-derive 1.6.1); do not infer \
-            arbitrary Serde coverage."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "All direct releases derive BorshSerialize on the sole unannotated [u8; 32] \
-            field. Under the existing Borsh 1.6.1 interpretation, the inspected derive \
-            emits one field serializer followed by ? and Ok(()); the nonempty u8 array \
-            serializer performs exactly one actual W::write_all over all 32 bytes. \
-            Ordinary errors, partial writer state, unwind and terminal exits are \
-            propagated; the source introduces neither rollback nor a successful-writer \
-            assumption. Address 1.0.0 enables Borsh std; 2.x permits nostd_io. 1.1.0 \
-            forwards the borsh feature to its resolved 2.x type. Optional Serde is not \
-            this operation."
+            arbitrary Serde coverage."]
       },
       {
         id := "solana-address-2.6.1-serialize",
@@ -2570,8 +1949,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["borsh"],
           any := [],
-          none := [],
-          reason := "The selected Borsh implementations are feature-gated."
+          none := []
         },
         dependencies := [{
           package := "borsh",
@@ -2581,9 +1959,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.0"],
-          reason :=
-            "Assume the selected Borsh 1 generation retains the nonempty fixed-array \
-              write_all specialization and all writer outcomes.",
           compatibleRanges := [{
             lower := "1.6.0",
             upper := "2.0.0"
@@ -2596,9 +1971,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.0"],
-          reason :=
-            "Assume the derive retains the single unannotated [u8; 32] field call for this \
-              exact trait implementation, with no added callbacks.",
           compatibleRanges := [{
             lower := "1.6.0",
             upper := "2.0.0"
@@ -2613,13 +1985,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             prove them.", "When multiple Borsh generations are linked, bind the exact \
             retained trait item and implementation (including its resolved arguments and \
             disambiguating description) to the stated generation; bare display names and \
-            dependency presence do not establish this selection."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-2.6.1.crate", "https://static.crates.io/crates/borsh/borsh-1.6.0.crate"],
-        argument :=
-          "The declared compatible range assumes one derived call to the selected Borsh \
-            serializer for the sole nonempty [u8; 32] field, reaching exactly one actual \
-            W::write_all and preserving its partial writer state, ordinary error, unwind \
-            and terminal result without retry or rollback."
+            dependency presence do not establish this selection."]
       }
     ]
     | .Address_to_bytes => [
@@ -2646,16 +2012,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The argument/return observations are canonical 32-byte address values; \
             borrowed storage correspondence is separate.", "The value observation is of \
             the unchanged transparent [u8; 32] field. At 1.1.0 the actual resolved 2.x \
-            Address implementation and forced Copy feature must be recorded."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "1.0.0 takes self by value and has unconditional Copy; 2.0.0 and later take \
-            &self with Copy opt-in. Both bodies return self.0, with identical 32-byte \
-            value observation and no destructor on Address. The receiver/ownership \
-            difference is preserved as a separate Rust binding obligation; this conclusion \
-            does not equate their callable signatures. Address 0.0.0 is a placeholder \
-            without Address. Address 1.1.0 reexports the 2.x public API, whose entire \
-            released dependency range was reviewed."
+            Address implementation and forced Copy feature must be recorded."]
       },
       {
         id := "solana-address-reviewed-facade",
@@ -2682,10 +2039,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -2696,16 +2049,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["The argument/return observations are canonical 32-byte address values; \
             borrowed storage correspondence is separate.", "The value observation is of \
             the unchanged transparent [u8; 32] field. At 1.1.0 the actual resolved 2.x \
-            Address implementation and forced Copy feature must be recorded."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "1.0.0 takes self by value and has unconditional Copy; 2.0.0 and later take \
-            &self with Copy opt-in. Both bodies return self.0, with identical 32-byte \
-            value observation and no destructor on Address. The receiver/ownership \
-            difference is preserved as a separate Rust binding obligation; this conclusion \
-            does not equate their callable signatures. Address 0.0.0 is a placeholder \
-            without Address. Address 1.1.0 reexports the 2.x public API, whose entire \
-            released dependency range was reviewed."
+            Address implementation and forced Copy feature must be recorded."]
       }
     ]
     | .Address_try_find_program_address_solana => [
@@ -2732,23 +2076,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         conditions :=
           ["The selected Solana/bpf family requires SuccessInitialized at the actual call \
@@ -2768,22 +2105,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             function postcondition.", "Select target_os=\"solana\" or target_arch=\"bpf\" \
             with source 64-bit slice counts and the syscalls API enabled; record the \
             actual solana-define-syscall provider/dispatch profile. Address 1.1.0 must \
-            resolve to an enumerated 2.x release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            resolve to an enumerated 2.x release."]
       },
       {
         id := "solana-address-reviewed-direct-bpf",
@@ -2808,30 +2130,20 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         conditions :=
           ["The selected Solana/bpf family requires SuccessInitialized at the actual call \
@@ -2851,22 +2163,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             function postcondition.", "Select target_os=\"solana\" or target_arch=\"bpf\" \
             with source 64-bit slice counts and the syscalls API enabled; record the \
             actual solana-define-syscall provider/dispatch profile. Address 1.1.0 must \
-            resolve to an enumerated 2.x release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            resolve to an enumerated 2.x release."]
       },
       {
         id := "solana-address-reviewed-facade-solana",
@@ -2890,23 +2187,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -2918,10 +2208,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -2946,22 +2232,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             function postcondition.", "Select target_os=\"solana\" or target_arch=\"bpf\" \
             with source 64-bit slice counts and the syscalls API enabled; record the \
             actual solana-define-syscall provider/dispatch profile. Address 1.1.0 must \
-            resolve to an enumerated 2.x release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            resolve to an enumerated 2.x release."]
       },
       {
         id := "solana-address-reviewed-facade-bpf",
@@ -2985,30 +2256,20 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -3020,10 +2281,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -3048,22 +2305,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             function postcondition.", "Select target_os=\"solana\" or target_arch=\"bpf\" \
             with source 64-bit slice counts and the syscalls API enabled; record the \
             actual solana-define-syscall provider/dispatch profile. Address 1.1.0 must \
-            resolve to an enumerated 2.x release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            resolve to an enumerated 2.x release."]
       },
       {
         id := "solana-address-reviewed-direct-solana-2",
@@ -3088,23 +2330,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         conditions :=
           ["The mathematical profile selects target_os=solana or target_arch=bpf with \
@@ -3123,22 +2358,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Select target_os=\"solana\" or target_arch=\"bpf\" with source 64-bit slice \
             counts and the syscalls API enabled; record the actual solana-define-syscall \
             provider/dispatch profile. Address 1.1.0 must resolve to an enumerated 2.x \
-            release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            release."]
       },
       {
         id := "solana-address-reviewed-direct-bpf-2",
@@ -3163,30 +2383,20 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         conditions :=
           ["The mathematical profile selects target_os=solana or target_arch=bpf with \
@@ -3205,22 +2415,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Select target_os=\"solana\" or target_arch=\"bpf\" with source 64-bit slice \
             counts and the syscalls API enabled; record the actual solana-define-syscall \
             provider/dispatch profile. Address 1.1.0 must resolve to an enumerated 2.x \
-            release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            release."]
       },
       {
         id := "solana-address-reviewed-facade-solana-2",
@@ -3244,23 +2439,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -3272,10 +2460,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -3299,22 +2483,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Select target_os=\"solana\" or target_arch=\"bpf\" with source 64-bit slice \
             counts and the syscalls API enabled; record the actual solana-define-syscall \
             provider/dispatch profile. Address 1.1.0 must resolve to an enumerated 2.x \
-            release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            release."]
       },
       {
         id := "solana-address-reviewed-facade-bpf-2",
@@ -3338,30 +2507,20 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The profile uses 64-bit source slice counts and the existing u64 syscall \
-              descriptor interpretation."
+          «exclude» := []
         }, {
           field := "os",
           «include» := [],
-          «exclude» := ["solana"],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := ["solana"]
         }, {
           field := "arch",
           «include» := ["bpf"],
-          «exclude» := [],
-          reason :=
-            "The source syscall branch is selected by target_os=solana OR target_arch=bpf; \
-              the host retry/curve implementation is a different profile."
+          «exclude» := []
         }],
         features := {
           all := ["syscalls"],
           any := [],
-          none := [],
-          reason := "The reviewed PDA wrapper belongs to the syscalls API."
+          none := []
         },
         dependencies := [{
           package := "solana-address",
@@ -3373,10 +2532,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           releases := ["2.0.0", "2.1.0", "2.2.0", "2.3.0", "2.4.0", "2.5.0", "2.6.0",
             "2.6.1",
             "2.7.0", "2.8.0", "2.9.0"],
-          reason :=
-            "The facade uses this actually resolved Address 2 implementation. The declared \
-              range preserves the reference operation and its recorded target branch; \
-              syscall-dependent curve validation starts at 2.2.0.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -3400,22 +2555,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Select target_os=\"solana\" or target_arch=\"bpf\" with source 64-bit slice \
             counts and the syscalls API enabled; record the actual solana-define-syscall \
             provider/dispatch profile. Address 1.1.0 must resolve to an enumerated 2.x \
-            release."],
-        evidence := ["https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate", "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate"],
-        argument :=
-          "From 2.0.0 through 2.9.0 the selected target branch starts \
-            MaybeUninit<Address>, bump 255, passes ordered slices with u64 count and \
-            program ID, invokes the actual provider once without local seed-limit checks, \
-            reads address/bump only after status zero, and returns None on every nonzero \
-            u64 status. The find wrapper reaches its fixed panic provider only after \
-            ordinary None, from the actual returned state; abnormal syscall exits bypass \
-            it. The host-only 2.9.0 retry-allocation change does not alter this branch. \
-            1.1.0 reexports compatible 2.x wrappers. 1.0.0 starts [0; 32], corresponding \
-            to an initialized Some(zero) request, whereas the existing pdaRequest supplies \
-            addressOutput = none; an arbitrary indexed provider can distinguish these \
-            requests. This request mismatch independently excludes 1.0.0. Its \
-            no/partial-write status zero successes are outside current SuccessInitialized, \
-            not in-precondition counterexamples."
+            release."]
       }
     ]
   applicabilityConsumers := fun key => match key with

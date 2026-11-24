@@ -66,16 +66,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         compatibleRanges := [{
           lower := "3.0.1",
           upper := "4.0.0"
-        }],
-        evidence := ["https://static.crates.io/crates/solana-program-error/solana-program-error-3.0.1.crate"],
-        argument :=
-          "Reference 3.0.1 recognizes complete builtin status words with tags 2 through 26 \
-            and the custom-zero sentinel 2^32. Other u64 values are truncated to \
-            Custom(error as u32), including raw zero; a nonzero low word prevents a \
-            builtin match. The declared compatible range assumes preservation of the \
-            complete payloadless-Borsh error domain, this conversion table and the \
-            allocation-free, state-preserving operation. Runtime success policy is \
-            separate."
+        }]
       }
     ]
     | .ProgramError_into_u64 => [
@@ -95,15 +86,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         compatibleRanges := [{
           lower := "3.0.1",
           upper := "4.0.0"
-        }],
-        evidence := ["https://static.crates.io/crates/solana-program-error/solana-program-error-3.0.1.crate"],
-        argument :=
-          "Reference 3.0.1 encodes builtin tags 2 through 26 in the upper word and uses \
-            2^32 for Custom(0); other custom u32 values are unchanged. BorshIoError is \
-            payloadless. The declared compatible range assumes preservation of the \
-            complete 26-variant domain, this exact conversion table, and the \
-            allocation-free, state-preserving operation. Runtime success policy is \
-            separate."
+        }]
       }
     ]
   applicabilityConsumers := fun key => match key with

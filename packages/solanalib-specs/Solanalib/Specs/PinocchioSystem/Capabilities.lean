@@ -102,29 +102,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             helper, representation and boundary correspondences.", "The family still \
             requires True and encodes arbitrary natural space/lamports with its existing \
             u64 little-endian helper. Correspondence to the source u64 input is a separate \
-            representation binding, not a new mathematical precondition."],
-        evidence := ["https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.6.0.crate", "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.7.0.crate"],
-        argument :=
-          "Allocate retains one writable signer account, System program ID, discriminator \
-            8 encoded as u32 little endian, space encoded as u64 little endian, and every \
-            nested signer group/seed in order. Only the local borrow error can return \
-            ordinarily before the opaque call. 0.6.0 follows Pinocchio 0.11.x reexports to \
-            InstructionView 2.1.0. 0.6.1 and 0.7.0 replace generic checked preparation \
-            with equivalent local is_borrowed checks, fully initialized MaybeUninit arrays \
-            and the same raw CpiAccount initializer. The self-key/count checks removed in \
-            0.6.1 are tautologies for these fixed arrays; omitted AsRef calls are the \
-            existing pure identity binding. Transfer eagerly reads both borrow bytes, but \
-            both are pure legal reads, the failure is the same AccountBorrowFailed and no \
-            stateful initialization/callback intervenes. 0.7.0 changes the dependency to \
-            Pinocchio 0.12.0 / InstructionView 3.0.0 / AccountView 3.0.0, whose reached \
-            local closure remains equivalent. Earlier 0.0.0–0.4.0 use Pinocchio \
-            AccountInfo and normalize descriptor flags; 0.5.0 uses \
-            AccountView/InstructionView 1.0.0 and also normalizes. The current full \
-            contract explicitly preserves arbitrary source flag bytes and copied padding, \
-            so these releases are incompatible even where canonical-header samples agree. \
-            Every release has the named wrapper; API absence is not the reason. Yanked \
-            0.0.0 is included; its broad ^0 dependency also admits source-incompatible API \
-            resolutions."
+            representation binding, not a new mathematical precondition."]
       }
     ]
     | .instructions_assign_Assign_invoke_signed => [
@@ -162,28 +140,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             remain, with no callee success, rollback, authorization or \
             account-preservation guarantee.", "Public crate versions do not fix every \
             Cargo dependency. Alternate dependency resolutions require the same reached \
-            helper, representation and boundary correspondences."],
-        evidence := ["https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.6.0.crate", "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.7.0.crate"],
-        argument :=
-          "Assign retains one writable signer account, System program ID, discriminator 1 \
-            as u32 little endian, the exact 32 owner bytes and all ordered nested signer \
-            groups. It does not validate the proposed owner or caller authorization. 0.6.0 \
-            follows Pinocchio 0.11.x reexports to InstructionView 2.1.0. 0.6.1 and 0.7.0 \
-            replace generic checked preparation with equivalent local is_borrowed checks, \
-            fully initialized MaybeUninit arrays and the same raw CpiAccount initializer. \
-            The self-key/count checks removed in 0.6.1 are tautologies for these fixed \
-            arrays; omitted AsRef calls are the existing pure identity binding. Transfer \
-            eagerly reads both borrow bytes, but both are pure legal reads, the failure is \
-            the same AccountBorrowFailed and no stateful initialization/callback \
-            intervenes. 0.7.0 changes the dependency to Pinocchio 0.12.0 / InstructionView \
-            3.0.0 / AccountView 3.0.0, whose reached local closure remains equivalent. \
-            Earlier 0.0.0–0.4.0 use Pinocchio AccountInfo and normalize descriptor flags; \
-            0.5.0 uses AccountView/InstructionView 1.0.0 and also normalizes. The current \
-            full contract explicitly preserves arbitrary source flag bytes and copied \
-            padding, so these releases are incompatible even where canonical-header \
-            samples agree. Every release has the named wrapper; API absence is not the \
-            reason. Yanked 0.0.0 is included; its broad ^0 dependency also admits \
-            source-incompatible API resolutions."
+            helper, representation and boundary correspondences."]
       }
     ]
     | .instructions_transfer_Transfer_invoke => [
@@ -223,30 +180,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             helper, representation and boundary correspondences.", "The family still \
             requires True and encodes arbitrary natural space/lamports with its existing \
             u64 little-endian helper. Correspondence to the source u64 input is a separate \
-            representation binding, not a new mathematical precondition."],
-        evidence := ["https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.6.0.crate", "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.7.0.crate"],
-        argument :=
-          "Transfer::invoke delegates with an empty signer tree. It retains ordered \
-            funding/destination identities (including aliases), writable signer/writable \
-            metadata, discriminator 2 as u32 little endian and the exact u64 little-endian \
-            lamports. It performs no balance, owner, source-data, signer-flag or \
-            writable-flag validation beyond the writable borrow checks. 0.6.0 follows \
-            Pinocchio 0.11.x reexports to InstructionView 2.1.0. 0.6.1 and 0.7.0 replace \
-            generic checked preparation with equivalent local is_borrowed checks, fully \
-            initialized MaybeUninit arrays and the same raw CpiAccount initializer. The \
-            self-key/count checks removed in 0.6.1 are tautologies for these fixed arrays; \
-            omitted AsRef calls are the existing pure identity binding. Transfer eagerly \
-            reads both borrow bytes, but both are pure legal reads, the failure is the \
-            same AccountBorrowFailed and no stateful initialization/callback intervenes. \
-            0.7.0 changes the dependency to Pinocchio 0.12.0 / InstructionView 3.0.0 / \
-            AccountView 3.0.0, whose reached local closure remains equivalent. Earlier \
-            0.0.0–0.4.0 use Pinocchio AccountInfo and normalize descriptor flags; 0.5.0 \
-            uses AccountView/InstructionView 1.0.0 and also normalizes. The current full \
-            contract explicitly preserves arbitrary source flag bytes and copied padding, \
-            so these releases are incompatible even where canonical-header samples agree. \
-            Every release has the named wrapper; API absence is not the reason. Yanked \
-            0.0.0 is included; its broad ^0 dependency also admits source-incompatible API \
-            resolutions."
+            representation binding, not a new mathematical precondition."]
       }
     ]
   applicabilityConsumers := fun key => match key with

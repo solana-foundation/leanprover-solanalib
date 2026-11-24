@@ -82,24 +82,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             remain, with no callee success, rollback, authorization or \
             account-preservation guarantee.", "Public crate versions do not fix every \
             Cargo dependency. Alternate dependency resolutions require the same reached \
-            helper, representation and boundary correspondences."],
-        evidence := ["https://static.crates.io/crates/pinocchio-associated-token-account/pinocchio-associated-token-account-0.4.0.crate", "https://static.crates.io/crates/pinocchio-associated-token-account/pinocchio-associated-token-account-0.5.0.crate"],
-        argument :=
-          "CreateIdempotent::invoke delegates with an empty signer tree; preserves the six \
-            ordered funding/account/wallet/mint/System/Token identities including aliases; \
-            uses writable signer/writable/readonly/readonly/readonly/readonly metadata, \
-            the associated-token program ID and data [1]. Supplied System/Token account \
-            keys are used directly, without replacement or validation. Only the first two \
-            positions are borrow checked. The wrapper file is byte-identical in 0.4.0 and \
-            0.5.0. The latter changes AccountView ^2.0 / InstructionView ^2.1 to \
-            AccountView ^3.0 / InstructionView ^3.0. InstructionView 2.1.0 and 3.0.0 \
-            cpi.rs and lib.rs are byte-identical; the AccountView 3 owner() \
-            return-by-value change is bypassed by direct raw-header/owner-field-pointer \
-            initialization. The named wrapper exists in every release. Releases \
-            0.1.0/0.1.1/0.2.0 reach old Pinocchio AccountInfo helpers, and 0.3.0 reaches \
-            InstructionView 1.0.0. They normalize descriptor flags and reject readonly \
-            exclusive borrows. Both differences violate the existing full v2 relation; no \
-            extra canonical-header or no-borrow premise is added."
+            helper, representation and boundary correspondences."]
       }
     ]
   applicabilityConsumers := fun key => match key with

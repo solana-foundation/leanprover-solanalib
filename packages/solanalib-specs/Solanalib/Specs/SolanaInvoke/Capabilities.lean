@@ -68,39 +68,24 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The on-chain invocation branch is selected; native stubs and the black_box \
-              host branch of Pinocchio have different behavior."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The reviewed source pointers, lengths, RefCell borrow counts and runtime \
-              layouts are 64-bit."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The reviewed stable/C layouts and the source memory codec use little-endian \
-              integer fields."
+          «exclude» := []
         }, {
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The selected invocation signature has terminal local panic/allocation \
-              behavior and no unwind exit."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static syscall features replace the registered external declaration with a \
-              function thunk."
+          none := ["static-syscalls"]
         },
         dependencies := [{
           package := "solana-account-info",
@@ -110,10 +95,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -125,10 +106,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "These exact instruction/meta representations and Clone dependencies were \
-              reviewed."
+          releases := ["2.2.1", "2.3.3"]
         }, {
           package := "solana-stable-layout",
           source := some {
@@ -136,9 +114,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1"],
-          reason := "The selected stable Vec and instruction ownership/layout dependency \
-            is exact."
+          releases := ["2.2.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -147,10 +123,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -162,10 +134,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.3.0"],
-          reason :=
-            "The ProgramResult alias and SUCCESS constant belong to this exact resolved \
-              crate."
+          releases := ["2.3.0"]
         }, {
           package := "solana-define-syscall",
           source := some {
@@ -173,9 +142,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.3.0"],
-          reason := "The exact dynamic raw declaration used by this invocation source is \
-            reviewed."
+          releases := ["2.3.0"]
         }],
         conditions :=
           ["Bind the runtime index to the separately pinned Agave 4.3.2 configuration with \
@@ -207,14 +174,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             instruction buffers throughout. For solana-invoke the temporary stable header \
             uses ManuallyDrop and must not acquire ownership of or destroy the source Vec \
             buffers; monolithic 1.15.2 passes the original instruction layout. These \
-            distinct pointer origins are separate physical memory interpretations."],
-        evidence := ["https://static.crates.io/crates/solana-invoke/solana-invoke-0.4.0.crate"],
-        argument :=
-          "The 0.4.0 reference delegates to invoke_signed with empty seeds and retains \
-            ordered RefCell probes and the ManuallyDrop borrowed StableInstruction \
-            descriptors. Compatibility within 0.4 assumes this borrow/effect protocol and \
-            selected SDK 2.x representations remain unchanged. Version 0.5.0 changes \
-            resolved SDK providers; invocation remains opaque."
+            distinct pointer origins are separate physical memory interpretations."]
       },
       {
         id := "invoke-0.5.0-borrowed-invoke",
@@ -234,39 +194,24 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The on-chain invocation branch is selected; native stubs and the black_box \
-              host branch of Pinocchio have different behavior."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The reviewed source pointers, lengths, RefCell borrow counts and runtime \
-              layouts are 64-bit."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The reviewed stable/C layouts and the source memory codec use little-endian \
-              integer fields."
+          «exclude» := []
         }, {
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The selected invocation signature has terminal local panic/allocation \
-              behavior and no unwind exit."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static syscall features replace the registered external declaration with a \
-              function thunk."
+          none := ["static-syscalls"]
         },
         dependencies := [{
           package := "solana-account-info",
@@ -275,10 +220,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "The selected account representation and RefCell identities are from this \
-              resolved crate."
+          releases := ["3.1.1"]
         }, {
           package := "solana-instruction",
           source := some {
@@ -286,9 +228,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.4.0"],
-          reason := "The instruction and meta representation is this exact resolved \
-            dependency."
+          releases := ["3.4.0"]
         }, {
           package := "solana-stable-layout",
           source := some {
@@ -296,9 +236,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.0", "3.0.1"],
-          reason := "Both explicit stable-layout releases were reviewed; no interval is \
-            admitted."
+          releases := ["3.0.0", "3.0.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -306,9 +244,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason := "ProgramResult and AccountBorrowFailed use this concrete enum \
-            representation."
+          releases := ["3.0.1"]
         }, {
           package := "solana-program-entrypoint",
           source := some {
@@ -316,10 +252,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason :=
-            "The ProgramResult alias and SUCCESS constant belong to this exact resolved \
-              crate."
+          releases := ["3.1.1"]
         }, {
           package := "solana-define-syscall",
           source := some {
@@ -327,9 +260,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.0"],
-          reason := "The exact dynamic raw declaration used by this invocation source is \
-            reviewed."
+          releases := ["3.0.0"]
         }],
         conditions :=
           ["Bind the runtime index to the separately pinned Agave 4.3.2 configuration with \
@@ -361,16 +292,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             instruction buffers throughout. For solana-invoke the temporary stable header \
             uses ManuallyDrop and must not acquire ownership of or destroy the source Vec \
             buffers; monolithic 1.15.2 passes the original instruction layout. These \
-            distinct pointer origins are separate physical memory interpretations."],
-        evidence := ["https://static.crates.io/crates/solana-invoke/solana-invoke-0.5.0.crate"],
-        argument :=
-          "The two checked signatures perform the same ordered RefCell probes. The private \
-            StableInstructionBorrowed has a ManuallyDrop stable instruction and borrowed \
-            Vec descriptors, so its temporary header does not clone or destroy caller \
-            buffers. Exact dependencies differ between major SDK generations and are \
-            selected below. The declared range is a complete-operation preservation \
-            assumption; inspected releases, native runs, exact ABI observations and \
-            source-call implementation obligations remain separate."
+            distinct pointer origins are separate physical memory interpretations."]
       }
     ]
     | .invoke_signed => [
@@ -392,39 +314,24 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The on-chain invocation branch is selected; native stubs and the black_box \
-              host branch of Pinocchio have different behavior."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The reviewed source pointers, lengths, RefCell borrow counts and runtime \
-              layouts are 64-bit."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The reviewed stable/C layouts and the source memory codec use little-endian \
-              integer fields."
+          «exclude» := []
         }, {
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The selected invocation signature has terminal local panic/allocation \
-              behavior and no unwind exit."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static syscall features replace the registered external declaration with a \
-              function thunk."
+          none := ["static-syscalls"]
         },
         dependencies := [{
           package := "solana-account-info",
@@ -434,13 +341,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Reference 2.3.0; [2.3.0, 3.0.0) assumes preservation of the actual SDK 2 \
-              AccountInfo record, current key and independent lamports/data RefCell \
-              identities. The used shared/exclusive acquisitions, AccountBorrowFailed \
-              mapping, counter effects and temporary-guard cleanup remain compatible with \
-              the recorded policy and complete emitted record. SDK 3 representation is \
-              excluded.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -453,12 +353,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.3"],
-          reason :=
-            "References 2.2.1 and 2.3.3; [2.2.1, 3.0.0) assumes preservation of complete \
-              ordered Instruction/AccountMeta fields, nominal Pubkey/key comparison, \
-              signer/writable flags and instruction bytes. Borrowed invocation only reads \
-              these values and lends the original buffers; it performs no Clone or buffer \
-              allocation/destruction.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -471,11 +365,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1"],
-          reason :=
-            "Reference 2.2.1; [2.2.1, 3.0.0) assumes preservation of the repr(C) \
-              StableInstruction accounts/data/program_id order and 64-bit StableVec \
-              address/capacity/length descriptors. The borrowed ManuallyDrop header \
-              retains caller addresses and suppresses ownership acquisition/destruction.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -488,12 +377,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.2"],
-          reason :=
-            "Reference 2.2.2; [2.2.2, 3.0.0) assumes preservation of the ProgramResult \
-              identity and complete compiled layout used for Ok(()) and local \
-              AccountBorrowFailed. The unchanged canonical-runtime premise excludes other \
-              ordinary errors. Older String payloads and later enum variants are not \
-              silently identified by this result codec.",
           compatibleRanges := [{
             lower := "2.2.2",
             upper := "3.0.0"
@@ -506,11 +389,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Reference 2.3.0; [2.3.0, 3.0.0) assumes that the used ProgramResult re-export \
-              continues to denote the selected solana-program-error Result<(), \
-              ProgramError> alias and SUCCESS remains u64 zero. No loader, allocation or \
-              entrypoint-dispatch operation is reached.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -523,11 +401,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Reference 2.3.0; [2.3.0, 3.0.0) assumes preservation of the dynamic \
-              sol_invoke_signed_rust declaration, exact pointer/count/result types and \
-              extern-C convention. Keep the existing static-syscalls exclusion and \
-              separate data-layout interpretation; the invocation body remains opaque.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -563,19 +436,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             instruction buffers throughout. For solana-invoke the temporary stable header \
             uses ManuallyDrop and must not acquire ownership of or destroy the source Vec \
             buffers; monolithic 1.15.2 passes the original instruction layout. These \
-            distinct pointer origins are separate physical memory interpretations."],
-        evidence := ["https://static.crates.io/crates/solana-invoke/solana-invoke-0.4.0.crate"],
-        argument :=
-          "Reference: solana-invoke 0.4.0. The declared [0.4.0, 0.5.0) range assumes the \
-            same checked borrowed-buffer path: ordered instruction metas, first matching \
-            AccountInfo, writable/shared RefCell choice, lamports before data and \
-            immediate release of each temporary guard. Local AccountBorrowFailed remains \
-            an ordinary error; missing accounts reach the opaque runtime checks. \
-            StableInstructionBorrowed uses a ManuallyDrop header over the original ordered \
-            Vec descriptors of the caller, acquiring and destroying no buffer ownership. \
-            The scoped providers below preserve those used operations and representations; \
-            no Instruction::clone is required. The owned-clone and SDK 3 routes stay \
-            separate."
+            distinct pointer origins are separate physical memory interpretations."]
       },
       {
         id := "invoke-0.5.0-borrowed-invoke_signed",
@@ -595,39 +456,24 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "The on-chain invocation branch is selected; native stubs and the black_box \
-              host branch of Pinocchio have different behavior."
+          «exclude» := []
         }, {
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The reviewed source pointers, lengths, RefCell borrow counts and runtime \
-              layouts are 64-bit."
+          «exclude» := []
         }, {
           field := "endian",
           «include» := ["little"],
-          «exclude» := [],
-          reason :=
-            "The reviewed stable/C layouts and the source memory codec use little-endian \
-              integer fields."
+          «exclude» := []
         }, {
           field := "panic",
           «include» := ["abort"],
-          «exclude» := [],
-          reason :=
-            "The selected invocation signature has terminal local panic/allocation \
-              behavior and no unwind exit."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static syscall features replace the registered external declaration with a \
-              function thunk."
+          none := ["static-syscalls"]
         },
         dependencies := [{
           package := "solana-account-info",
@@ -637,10 +483,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -653,10 +495,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.4.0"],
-          reason :=
-            "Assume complete Instruction/AccountMeta values retain source metadata \
-              order/flags, owned buffers and move/drop behavior; no projected instruction \
-              replaces the actual value.",
           compatibleRanges := [{
             lower := "3.4.0",
             upper := "4.0.0"
@@ -669,9 +507,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.0", "3.0.1"],
-          reason :=
-            "Assume the ManuallyDrop stable instruction header retains original buffer \
-              pointers/lengths/capacities and introduces no buffer clone or destructor.",
           compatibleRanges := [{
             lower := "3.0.0",
             upper := "4.0.0"
@@ -684,10 +519,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -700,9 +531,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume ProgramResult remains the exact Result<(), ProgramError> alias and \
-              SUCCESS remains zero for this status conversion.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -715,9 +543,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.0"],
-          reason :=
-            "Assume the selected dynamic extern-C invoke declaration retains its full raw \
-              signature and calling convention; no runtime implementation claim follows.",
           compatibleRanges := [{
             lower := "3.0.0",
             upper := "4.0.0"
@@ -753,14 +578,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             instruction buffers throughout. For solana-invoke the temporary stable header \
             uses ManuallyDrop and must not acquire ownership of or destroy the source Vec \
             buffers; monolithic 1.15.2 passes the original instruction layout. These \
-            distinct pointer origins are separate physical memory interpretations."],
-        evidence := ["https://static.crates.io/crates/solana-invoke/solana-invoke-0.5.0.crate"],
-        argument :=
-          "The declared compatible range assumes the Solana forwarding path: move the \
-            instruction into its ManuallyDrop stable header, preserve borrowed account and \
-            nested signer descriptors, call the exact raw invoke signature and convert its \
-            full status without cloning or dropping the moved buffers. CPI behavior \
-            remains supplied by the existing invocation interpretation."
+            distinct pointer origins are separate physical memory interpretations."]
       }
     ]
   applicabilityConsumers := fun key => match key with

@@ -91,10 +91,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.0"],
-          reason :=
-            "The defining optional-key conversion uses this Pubkey reexport and its \
-              concrete zero Default/equality behavior."
+          releases := ["3.0.0"]
         }, {
           package := "solana-address",
           source := some {
@@ -102,11 +99,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.6.0"],
-          reason :=
-            "Pubkey 3.0.0 forwards to solana-address 1.1.0, whose complete reexport \
-              forwards to this reviewed solana-address 2.6.0; the defining Address is the \
-              same canonical 32-byte value."
+          releases := ["2.6.0"]
         }],
         conditions :=
           ["Interpret the transparent OptionalNonZeroPubkey wrapper and its resolved \
@@ -114,17 +107,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             the zero Default key are the reviewed dependency operations; no general \
             address API model is claimed.", "The solana-pubkey 3.0.0 dependency resolves \
             its solana-address 1.x provider to 1.1.0, whose solana-address-v2 reexport \
-            resolves to 2.6.0. Both forwarding layers are reviewed and sealed here."],
-        evidence := ["https://static.crates.io/crates/spl-pod/spl-pod-0.7.3.crate", "https://static.crates.io/crates/spl-pod/spl-pod-0.7.1.crate", "https://static.crates.io/crates/spl-pod/spl-pod-0.7.4.crate"],
-        argument :=
-          "Preserve the infallible move: zero key becomes None and every nonzero key \
-            becomes Some unchanged. This is not TryFrom<Option<Pubkey>>, which rejects \
-            Some(zero). Keep the exact nominal Pubkey/Address provider chain and original \
-            dependency gates. Release 0.7.2 was not inspected; its inclusion in the \
-            interval relies solely on this preservation assumption. The declared range is \
-            a complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            resolves to 2.6.0. Both forwarding layers are reviewed and sealed here."]
       }
     ]
     | .primitives_PodU16_into_u16 => [
@@ -144,13 +127,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         compatibleRanges := [{
           lower := "0.5.0",
           upper := "0.6.0"
-        }],
-        evidence := ["https://static.crates.io/crates/spl-pod/spl-pod-0.5.0.crate", "https://static.crates.io/crates/spl-pod/spl-pod-0.5.1.crate"],
-        argument :=
-          "The inspected 0.5.0/0.5.1 integer-conversion macro is identical. The declared \
-            0.5 range assumes unsigned little-endian decoding of the complete two stored \
-            bytes, unchanged source state and the same primitive result; later reexported \
-            defining items are not inferred."
+        }]
       }
     ]
     | .primitives_PodU64_into_u64 => [
@@ -170,13 +147,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         compatibleRanges := [{
           lower := "0.5.0",
           upper := "0.6.0"
-        }],
-        evidence := ["https://static.crates.io/crates/spl-pod/spl-pod-0.5.0.crate", "https://static.crates.io/crates/spl-pod/spl-pod-0.5.1.crate"],
-        argument :=
-          "The inspected 0.5.0/0.5.1 integer-conversion macro is identical. The declared \
-            0.5 range assumes unsigned little-endian decoding of the complete eight stored \
-            bytes, unchanged source state and the same primitive result; later reexported \
-            defining items are not inferred."
+        }]
       }
     ]
   applicabilityConsumers := fun key => match key with

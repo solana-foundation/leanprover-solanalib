@@ -484,18 +484,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "This profile selects the direct Solana syscall/signature boundary; \
-              replaceable host syscall stub behavior is not inferred."
+          «exclude» := []
         }],
         features := {
           all := ["associated_token"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -505,10 +499,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -520,8 +510,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["7.0.0"],
-          reason := "The reexport resolves the client constructor used by this release."
+          releases := ["7.0.0"]
         }, {
           package := "spl-associated-token-account-client",
           source := some {
@@ -529,9 +518,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.0.0"],
-          reason := "The actual ATA constructor builds six metas and one discriminator \
-            byte."
+          releases := ["2.0.0"]
         }, {
           package := "solana-pubkey",
           source := some {
@@ -539,10 +526,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.2.1", "2.4.0"],
-          reason :=
-            "Both exact resolved Pubkey versions initialize the PDA address output to \
-              [0;32], with initial bump 255."
+          releases := ["2.2.1", "2.4.0"]
         }],
         conditions :=
           ["Source correctness remains an explicit assumed call interface. Bind exact \
@@ -554,15 +538,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             current/frame and literal-control conditions, not a completed-wrapper or \
             termination premise.", "The complete invocation signature is an explicit \
             CpiRequest.Invocation boundary with actual request, \
-            return/error/unwind/terminal state effects. No invocation body is traversed."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-support.md"],
-        argument :=
-          "The 0.32 references build fixed ATA/System metas from wallet, token-program and \
-            mint seeds, forward the supplied account even if its key differs from the \
-            derived meta, and retain remaining accounts for cleanup. Compatibility within \
-            0.32 assumes this local protocol and the selected dependency contracts remain \
-            unchanged; invocation stays opaque."
+            return/error/unwind/terminal state effects. No invocation body is traversed."]
       }
     ]
     | .associated_token_create_idempotent => [
@@ -584,18 +560,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "This profile selects the direct Solana syscall/signature boundary; \
-              replaceable host syscall stub behavior is not inferred."
+          «exclude» := []
         }],
         features := {
           all := ["associated_token"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -605,11 +575,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the pre-cohort Context keeps copied program_id, the exact \
-              accounts/remaining-vector owners, signer loans and cleanup order; 1.2.1 \
-              introduces a new provider/feature cohort requiring a separate selection \
-              review.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -622,10 +587,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.0.0"],
-          reason :=
-            "Assume the exact ATA constructor retains fixed IDs, ordered PDA seeds, \
-              metadata flags and create/idempotent byte, including actual allocation and \
-              PDA-provider effects.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -638,10 +599,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.0"],
-          reason :=
-            "Assume the selected Pubkey facade retains its defining Address identity, \
-              complete key representation and the reached copy/PDA operation; the concrete \
-              provider and full ABI join remain separate.",
           compatibleRanges := [{
             lower := "3.0.0",
             upper := "4.0.0"
@@ -654,10 +611,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.6.1"],
-          reason :=
-            "Assume the defining Address retains the complete 32-byte representation and \
-              selected Solana PDA search, including MaybeUninit output, ordered seeds, \
-              status/panic behavior and actual callback effects.",
           compatibleRanges := [{
             lower := "2.6.1",
             upper := "3.0.0"
@@ -673,17 +626,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             current/frame and literal-control conditions, not a completed-wrapper or \
             termination premise.", "The complete invocation signature is an explicit \
             CpiRequest.Invocation boundary with actual request, \
-            return/error/unwind/terminal state effects. No invocation body is traversed."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.1.2.crate",
-          "source-notes/anchor-spl-support.md"],
-        argument :=
-          "The declared compatible range assumes ATA/System IDs, ordered \
-            wallet/token-program/mint PDA seeds, canonical metadata flags and create byte \
-            1. Forward the supplied associated AccountInfo even if its key differs from \
-            the derived meta; remaining accounts participate only in cleanup. Preserve \
-            MaybeUninit Address output, copied program_id, nested signer seeds, boxed \
-            modern errors and every invocation/cleanup effect. This pre-cohort profile \
-            stops before the new 1.2.1 provider/feature selection."
+            return/error/unwind/terminal state effects. No invocation body is traversed."]
       },
       {
         id := "anchor-spl-support-1.0.2-associated_token-create_idempotent",
@@ -703,18 +646,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "This profile selects the direct Solana syscall/signature boundary; \
-              replaceable host syscall stub behavior is not inferred."
+          «exclude» := []
         }],
         features := {
           all := ["associated_token"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -723,10 +660,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.0.2"],
-          reason :=
-            "CpiContext owns an AccountInfo program before 1.0 and a Pubkey in 1.x; error \
-              storage is inline at 0.27 and boxed at later selected releases."
+          releases := ["1.0.2"]
         }, {
           package := "spl-associated-token-account-interface",
           source := some {
@@ -734,10 +668,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.0.0"],
-          reason :=
-            "The actual ATA interface constructor and fixed program IDs match the selected \
-              release."
+          releases := ["2.0.0"]
         }, {
           package := "solana-pubkey",
           source := some {
@@ -745,9 +676,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.0"],
-          reason := "The public key facade forwards PDA derivation to the Address \
-            implementation."
+          releases := ["3.0.0"]
         }, {
           package := "solana-address",
           source := some {
@@ -755,10 +684,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.6.0"],
-          reason :=
-            "The actual resolved Address implementation uses MaybeUninit PDA address \
-              output and initial bump 255."
+          releases := ["2.6.0"]
         }],
         conditions :=
           ["Source correctness remains an explicit assumed call interface. Bind exact \
@@ -770,24 +696,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             current/frame and literal-control conditions, not a completed-wrapper or \
             termination premise.", "The complete invocation signature is an explicit \
             CpiRequest.Invocation boundary with actual request, \
-            return/error/unwind/terminal state effects. No invocation body is traversed."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.2.crate",
-          "source-notes/anchor-spl-support.md", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.3.crate"],
-        argument :=
-          "The instruction uses fixed ATA and System IDs, wallet/token-program/mint PDA \
-            seeds, canonical metadata flags, and source create byte 0 or idempotent byte \
-            1. The supplied associated AccountInfo is forwarded even when its key differs \
-            from the PDA-derived instruction meta. Remaining accounts are retained for \
-            context cleanup, not appended to the request. Nested signer seeds and every \
-            returned invocation state are retained. In 0.32.1 the Pubkey syscall output \
-            begins as zero bytes; in 1.x the Address output is MaybeUninit. The old \
-            context owns a program AccountInfo; the modern context owns a Pubkey only. \
-            Error values use the complete release-specific payload and actual allocated \
-            box. Preserve the complete 1.0 operation, reached callbacks and cleanup at the \
-            original exact dependency/build gates; adding this alternative does not \
-            replace modern parent alternatives. The declared range is a complete-operation \
-            preservation assumption; inspected releases, native runs, exact ABI \
-            observations and source-call implementation obligations remain separate."
+            return/error/unwind/terminal state effects. No invocation body is traversed."]
       }
     ]
     | .associated_token_create_program_id => [
@@ -809,18 +718,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "This profile selects the direct Solana syscall/signature boundary; \
-              replaceable host syscall stub behavior is not inferred."
+          «exclude» := []
         }],
         features := {
           all := ["associated_token"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -830,11 +733,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the pre-cohort Context keeps copied program_id, the exact \
-              accounts/remaining-vector owners, signer loans and cleanup order; 1.2.1 \
-              introduces a new provider/feature cohort requiring a separate selection \
-              review.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -847,10 +745,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.0.0"],
-          reason :=
-            "Assume the exact ATA constructor retains fixed IDs, ordered PDA seeds, \
-              metadata flags and create/idempotent byte, including actual allocation and \
-              PDA-provider effects.",
           compatibleRanges := [{
             lower := "2.0.0",
             upper := "3.0.0"
@@ -863,10 +757,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.0"],
-          reason :=
-            "Assume the selected Pubkey facade retains its defining Address identity, \
-              complete key representation and the reached copy/PDA operation; the concrete \
-              provider and full ABI join remain separate.",
           compatibleRanges := [{
             lower := "3.0.0",
             upper := "4.0.0"
@@ -879,10 +769,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.6.1"],
-          reason :=
-            "Assume the defining Address retains the complete 32-byte representation and \
-              selected Solana PDA search, including MaybeUninit output, ordered seeds, \
-              status/panic behavior and actual callback effects.",
           compatibleRanges := [{
             lower := "2.6.1",
             upper := "3.0.0"
@@ -898,17 +784,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             current/frame and literal-control conditions, not a completed-wrapper or \
             termination premise.", "The complete invocation signature is an explicit \
             CpiRequest.Invocation boundary with actual request, \
-            return/error/unwind/terminal state effects. No invocation body is traversed."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.1.2.crate",
-          "source-notes/anchor-spl-support.md"],
-        argument :=
-          "The declared compatible range assumes ATA/System IDs, ordered \
-            wallet/token-program/mint PDA seeds, canonical metadata flags and create byte \
-            0. Forward the supplied associated AccountInfo even if its key differs from \
-            the derived meta; remaining accounts participate only in cleanup. Preserve \
-            MaybeUninit Address output, copied program_id, nested signer seeds, boxed \
-            modern errors and every invocation/cleanup effect. This pre-cohort profile \
-            stops before the new 1.2.1 provider/feature selection."
+            return/error/unwind/terminal state effects. No invocation body is traversed."]
       }
     ]
     | .memo_build_memo => [
@@ -930,18 +806,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "This profile selects the direct Solana syscall/signature boundary; \
-              replaceable host syscall stub behavior is not inferred."
+          «exclude» := []
         }],
         features := {
           all := ["memo"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -951,10 +821,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "Assume the owned program AccountInfo, boxed legacy error carrier, reached \
-              CpiContext reads and declaration-order cleanup remain unchanged; the \
-              inspected 0.32 context/error sources agree.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -967,10 +833,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["6.0.0"],
-          reason :=
-            "Assume the constructor copies arbitrary memo bytes and preserves ordered \
-              duplicate signer/read-only metadata, allocation order and cleanup; native \
-              conformance remains at 6.0.0.",
           compatibleRanges := [{
             lower := "6.0.0",
             upper := "7.0.0"
@@ -986,15 +848,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             current/frame and literal-control conditions, not a completed-wrapper or \
             termination premise.", "The complete invocation signature is an explicit \
             CpiRequest.Invocation boundary with actual request, \
-            return/error/unwind/terminal state effects. No invocation body is traversed."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-support.md"],
-        argument :=
-          "The inspected 0.32.0–0.32.3 Memo wrapper agrees. The declared range assumes \
-            ordered remaining-account key collection, arbitrary memo bytes and \
-            signer/read-only metas, temporary-key cleanup before opaque invoke_signed, \
-            duplicate occurrences and the owned program AccountInfo context. Reached \
-            reads, allocation and cleanup retain their actual finite effects."
+            return/error/unwind/terminal state effects. No invocation body is traversed."]
       }
     ]
     | .metadata_create_metadata_accounts_v3 => [
@@ -1016,18 +870,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "This profile selects the direct Solana syscall/signature boundary; \
-              replaceable host syscall stub behavior is not inferred."
+          «exclude» := []
         }],
         features := {
           all := ["metadata"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -1037,10 +885,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -1052,10 +896,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["5.1.1"],
-          reason :=
-            "The reached DataV2, CollectionDetails and CreateMetadataAccountV3 \
-              constructors/serializers define exact bytes, allocations and metadata order."
+          releases := ["5.1.1"]
         }],
         conditions :=
           ["Source correctness remains an explicit assumed call interface. Bind exact \
@@ -1067,15 +908,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             current/frame and literal-control conditions, not a completed-wrapper or \
             termination premise.", "The complete invocation signature is an explicit \
             CpiRequest.Invocation boundary with actual request, \
-            return/error/unwind/terminal state effects. No invocation body is traversed."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-support.md"],
-        argument :=
-          "The 0.32 references retain the six metadata metas, seven cloned context fields, \
-            remaining/program account order, capacity-seven allocation, discriminator 33, \
-            UTF-8 Borsh fields and owned error cleanup. Compatibility within 0.32 assumes \
-            this local protocol and the selected dependency contracts remain unchanged; \
-            invocation stays opaque."
+            return/error/unwind/terminal state effects. No invocation body is traversed."]
       }
     ]
     | .stake_StakeAccount_deref => [
@@ -1098,10 +931,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["stake"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "solana-program",
@@ -1111,11 +941,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -1125,16 +950,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Source correctness remains an explicit assumed call interface. Bind exact \
             emitted argument/result types, generic arguments, lifetimes, pointer \
             provenance and current source ownership; no Rust implementation or SBF layout \
-            refinement is proved."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.27.0.crate",
-          "source-notes/anchor-spl-support.md"],
-        argument :=
-          "Return &self.0 with the original reference tag and parent repayment; do not \
-            deserialize, check ownership, allocate or clean up. Preserve the complete \
-            emitted pointee representation separately from packed serialization. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            refinement is proved."]
       }
     ]
     | .stake_deactivate_stake => [
@@ -1156,18 +972,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "This profile selects the direct Solana syscall/signature boundary; \
-              replaceable host syscall stub behavior is not inferred."
+          «exclude» := []
         }],
         features := {
           all := ["stake"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -1177,10 +987,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.27.0"],
-          reason :=
-            "Assume the 0.27 reference retains the owned AccountInfo CpiContext, inline \
-              error payload and exact reached account conversion, CPI forwarding and \
-              cleanup within the same compatibility line.",
           compatibleRanges := [{
             lower := "0.27.0",
             upper := "0.28.0"
@@ -1193,11 +999,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -1213,20 +1014,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             current/frame and literal-control conditions, not a completed-wrapper or \
             termination premise.", "The complete invocation signature is an explicit \
             CpiRequest.Invocation boundary with actual request, \
-            return/error/unwind/terminal state effects. No invocation body is traversed."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.27.0.crate",
-          "source-notes/anchor-spl-support.md"],
-        argument :=
-          "The 0.27 wrapper uses solana-program 1.15.2 stake instruction constructors. \
-            Deactivate encodes little-endian u32 tag 5 and stake/clock/staker; withdraw \
-            encodes tag 4 and the complete u64 amount, with \
-            stake/destination/clock/stake-history/withdrawer and an optional custodian \
-            signer. Count-5 literal construction owns moved AccountInfos before an \
-            optional push. Source cleanup preserves the order of infos-vector, instruction \
-            and context drops, including unwinds. Anchor 0.27 converts arbitrary complete \
-            legacy ProgramErrors inline, including owned Borsh Strings. Compatibility in \
-            [0.27.0, 0.28.0) assumes this operation and its selected dependency contracts \
-            preserve that behavior; the exact releases remain inspected references."
+            return/error/unwind/terminal state effects. No invocation body is traversed."]
       }
     ]
     | .stake_withdraw => [
@@ -1248,18 +1036,12 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "This profile selects the direct Solana syscall/signature boundary; \
-              replaceable host syscall stub behavior is not inferred."
+          «exclude» := []
         }],
         features := {
           all := ["stake"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -1269,10 +1051,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.27.0"],
-          reason :=
-            "Assume the 0.27 reference retains the owned AccountInfo CpiContext, inline \
-              error payload and exact reached account conversion, CPI forwarding and \
-              cleanup within the same compatibility line.",
           compatibleRanges := [{
             lower := "0.27.0",
             upper := "0.28.0"
@@ -1285,11 +1063,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -1305,20 +1078,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             current/frame and literal-control conditions, not a completed-wrapper or \
             termination premise.", "The complete invocation signature is an explicit \
             CpiRequest.Invocation boundary with actual request, \
-            return/error/unwind/terminal state effects. No invocation body is traversed."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.27.0.crate",
-          "source-notes/anchor-spl-support.md"],
-        argument :=
-          "The 0.27 wrapper uses solana-program 1.15.2 stake instruction constructors. \
-            Deactivate encodes little-endian u32 tag 5 and stake/clock/staker; withdraw \
-            encodes tag 4 and the complete u64 amount, with \
-            stake/destination/clock/stake-history/withdrawer and an optional custodian \
-            signer. Count-5 literal construction owns moved AccountInfos before an \
-            optional push. Source cleanup preserves the order of infos-vector, instruction \
-            and context drops, including unwinds. Anchor 0.27 converts arbitrary complete \
-            legacy ProgramErrors inline, including owned Borsh Strings. Compatibility in \
-            [0.27.0, 0.28.0) assumes this operation and its selected dependency contracts \
-            preserve that behavior; the exact releases remain inspected references."
+            return/error/unwind/terminal state effects. No invocation body is traversed."]
       }
     ]
     | .token_Mint_deref => [
@@ -1400,15 +1160,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Use the reviewed compatible anchor-lang context/error and AccountInfo \
             dependency interpretations.", "The returned reference/lifetime and projected \
             field use the existing source-to-mathematical relation; this does not claim a \
-            Rust Mint decoder proof."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.1.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.2.2.crate"],
-        argument :=
-          "All 65 stable releases have the byte-identical Deref implementation (hash \
-            db15e5b8a77c0c20468213bdc0b240acebea7c93d92b542b4fc55efca7acb139): &self.0 \
-            with Target=spl_token::state::Mint. The source relation is a borrowed field \
-            projection with no parsing, allocation or callback. Legacy-token/interface \
-            alias and feature migrations retain the represented Mint fields; state.rs is \
-            identical between the selected token-interface 2.0.0 and 3.0.0 cohorts."
+            Rust Mint decoder proof."]
       },
       {
         id := "anchor-spl-reviewed-token",
@@ -1479,10 +1231,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token"],
           any := [],
-          none := [],
-          reason :=
-            "The containing source module is compiled only when this Anchor SPL feature is \
-              enabled."
+          none := []
         },
         conditions :=
           ["Keep the existing source reference/lifetime, scalar and resource \
@@ -1492,15 +1241,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Use the reviewed compatible anchor-lang context/error and AccountInfo \
             dependency interpretations.", "The returned reference/lifetime and projected \
             field use the existing source-to-mathematical relation; this does not claim a \
-            Rust Mint decoder proof."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.1.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.2.2.crate"],
-        argument :=
-          "All 65 stable releases have the byte-identical Deref implementation (hash \
-            db15e5b8a77c0c20468213bdc0b240acebea7c93d92b542b4fc55efca7acb139): &self.0 \
-            with Target=spl_token::state::Mint. The source relation is a borrowed field \
-            projection with no parsing, allocation or callback. Legacy-token/interface \
-            alias and feature migrations retain the represented Mint fields; state.rs is \
-            identical between the selected token-interface 2.0.0 and 3.0.0 cohorts."
+            Rust Mint decoder proof."]
       }
     ]
     | .token_Token_id => [
@@ -1522,10 +1263,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "spl-token",
@@ -1534,23 +1272,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["8.0.0"],
-          reason :=
-            "The exact defining dependency supplies the canonical copied/static SPL \
-              program ID."
+          releases := ["8.0.0"]
         }],
         conditions :=
           ["Source correctness remains an explicit assumed call interface. Bind exact \
             emitted argument/result types, generic arguments, lifetimes, pointer \
             provenance and current source ownership; no Rust implementation or SBF layout \
-            refinement is proved."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-support.md"],
-        argument :=
-          "The 0.32 references return the selected SPL Token program ID by value; the \
-            context cannot substitute a different ID. Compatibility within 0.32 assumes \
-            this local protocol and the selected dependency contracts remain unchanged; \
-            invocation stays opaque."
+            refinement is proved."]
       },
       {
         id := "anchor-spl-support-1.0.2-token-Token-id",
@@ -1570,10 +1298,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "spl-token-interface",
@@ -1582,27 +1307,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.0.0"],
-          reason :=
-            "The exact defining dependency supplies the canonical copied/static SPL \
-              program ID."
+          releases := ["2.0.0"]
         }],
         conditions :=
           ["Source correctness remains an explicit assumed call interface. Bind exact \
             emitted argument/result types, generic arguments, lifetimes, pointer \
             provenance and current source ownership; no Rust implementation or SBF layout \
-            refinement is proved."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.2.crate",
-          "source-notes/anchor-spl-support.md", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.3.crate"],
-        argument :=
-          "The marker Id implementation returns the selected dependency ID by value. The \
-            complete 32-byte key is preserved and the source result is the exact \
-            Pubkey/Address tuple wrapper; no context-supplied program can override it. \
-            Preserve the complete 1.0 operation, reached callbacks and cleanup at the \
-            original exact dependency/build gates; adding this alternative does not \
-            replace modern parent alternatives. The declared range is a complete-operation \
-            preservation assumption; inspected releases, native runs, exact ABI \
-            observations and source-call implementation obligations remain separate."
+            refinement is proved."]
       }
     ]
     | .token_TokenAccount_deref => [
@@ -1625,10 +1336,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "spl-token",
@@ -1637,24 +1345,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["8.0.0"],
-          reason :=
-            "The actual dependency defines the emitted Account layout and complete decoded \
-              fields."
+          releases := ["8.0.0"]
         }],
         conditions :=
           ["Source correctness remains an explicit assumed call interface. Bind exact \
             emitted argument/result types, generic arguments, lifetimes, pointer \
             provenance and current source ownership; no Rust implementation or SBF layout \
-            refinement is proved."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-support.md"],
-        argument :=
-          "The 0.32 references return the contained Token.Account field of the same live \
-            wrapper without deserialization, validation or allocation; all optional fields \
-            and the actual reference identity remain available. Compatibility within 0.32 \
-            assumes this local protocol and the selected dependency contracts remain \
-            unchanged; invocation stays opaque."
+            refinement is proved."]
       },
       {
         id := "anchor-spl-support-1.0.2-token-TokenAccount-deref",
@@ -1675,10 +1372,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "spl-token-interface",
@@ -1687,28 +1381,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.0.0"],
-          reason :=
-            "The interface crate defines this source Target and its complete decoded \
-              fields."
+          releases := ["2.0.0"]
         }],
         conditions :=
           ["Source correctness remains an explicit assumed call interface. Bind exact \
             emitted argument/result types, generic arguments, lifetimes, pointer \
             provenance and current source ownership; no Rust implementation or SBF layout \
-            refinement is proved."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.2.crate",
-          "source-notes/anchor-spl-support.md", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.3.crate"],
-        argument :=
-          "Return &self.0 from the same live wrapper, with no decoding, owner check, \
-            allocation or cleanup. Retain all Token Account fields, the actual child tag \
-            and modal parent repayment. The full emitted pointee codec remains separate \
-            from packed serialization. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            refinement is proved."]
       },
       {
         id := "anchor-spl-support-0.27.0-token-TokenAccount-deref",
@@ -1729,10 +1408,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "spl-token",
@@ -1741,24 +1417,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.5.0"],
-          reason := "The source Target is the complete decoded state::Account of this \
-            dependency."
+          releases := ["3.5.0"]
         }],
         conditions :=
           ["Source correctness remains an explicit assumed call interface. Bind exact \
             emitted argument/result types, generic arguments, lifetimes, pointer \
             provenance and current source ownership; no Rust implementation or SBF layout \
-            refinement is proved."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.27.0.crate",
-          "source-notes/anchor-spl-support.md"],
-        argument :=
-          "Return &self.0 with the original reference tag and parent repayment; do not \
-            deserialize, check ownership, allocate or clean up. Preserve the complete \
-            emitted pointee representation separately from packed serialization. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            refinement is proved."]
       }
     ]
     | .token_accessor_amount => [
@@ -1795,10 +1460,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token"],
           any := [],
-          none := [],
-          reason :=
-            "The containing source module is compiled only when this Anchor SPL feature is \
-              enabled."
+          none := []
         },
         conditions :=
           ["Keep the existing source reference/lifetime, scalar and resource \
@@ -1809,21 +1471,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             dependency interpretations.", "Keep the existing reached \
             AccountInfo.DataBorrow.Ready premise, configured short-slice panic behavior \
             and release relation; do not add whole-account validity, owner, codec or \
-            scalar-width gates."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.29.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.2.2.crate"],
-        argument :=
-          "The amount accessor appears in 0.4.5. Checked shared borrowing precedes a \
-            64..72 byte read and little-endian conversion; the acquired guard drops on \
-            return or unwind and the conflicting guard of the caller remains held. There \
-            is no owner/full-codec validation. The complete family includes allocation of \
-            the returned ProgramError box. Bare errors through 0.21.0 and inline wrappers \
-            through 0.28.0 therefore do not correspond. From 0.29.0 onward the actual \
-            From<ProgramError> Box::new closure is unchanged, including the later \
-            anchor-lang-error split (hash \
-            0d2ff72ff7608e507ee73a434bcaef545d097691e5a89758df619c8c17d3df4f). Native \
-            0.28/0.29 observes exactly 0/1 error allocations. The older payload-bearing \
-            Borsh error variant is irrelevant to this reached AccountBorrowFailed \
-            conversion."
+            scalar-width gates."]
       }
     ]
     | .token_accessor_amount_observation => [
@@ -1897,19 +1545,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             dependency interpretations.", "Keep the existing reached \
             AccountInfo.DataBorrow.Ready premise, configured short-slice panic behavior \
             and release relation; do not add whole-account validity, owner, codec or \
-            scalar-width gates."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.4.5.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.2.2.crate"],
-        argument :=
-          "The amount accessor appears in 0.4.5. Checked shared borrowing precedes a \
-            64..72 byte read and little-endian conversion; the acquired guard drops on \
-            return or unwind and the conflicting guard of the caller remains held. There \
-            is no owner/full-codec validation. The observation deliberately forgets owned \
-            error allocation. Its only reached program error is AccountBorrowFailed, so \
-            the exact bare error (0.4.5–0.21.0), inline Anchor wrapper (0.22.0–0.28.0), \
-            and boxed wrapper (0.29.0+) project to AnchorAccount.programError with absent \
-            origin/compared values. No arbitrary CPI error is abstracted here. Earlier \
-            lifetime spelling and empty-origin representation changes do not change this \
-            actual observation."
+            scalar-width gates."]
       },
       {
         id := "anchor-spl-reviewed-token",
@@ -1980,10 +1616,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token"],
           any := [],
-          none := [],
-          reason :=
-            "The containing source module is compiled only when this Anchor SPL feature is \
-              enabled."
+          none := []
         },
         conditions :=
           ["Keep the existing source reference/lifetime, scalar and resource \
@@ -1994,19 +1627,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             dependency interpretations.", "Keep the existing reached \
             AccountInfo.DataBorrow.Ready premise, configured short-slice panic behavior \
             and release relation; do not add whole-account validity, owner, codec or \
-            scalar-width gates."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.4.5.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.2.2.crate"],
-        argument :=
-          "The amount accessor appears in 0.4.5. Checked shared borrowing precedes a \
-            64..72 byte read and little-endian conversion; the acquired guard drops on \
-            return or unwind and the conflicting guard of the caller remains held. There \
-            is no owner/full-codec validation. The observation deliberately forgets owned \
-            error allocation. Its only reached program error is AccountBorrowFailed, so \
-            the exact bare error (0.4.5–0.21.0), inline Anchor wrapper (0.22.0–0.28.0), \
-            and boxed wrapper (0.29.0+) project to AnchorAccount.programError with absent \
-            origin/compared values. No arbitrary CPI error is abstracted here. Earlier \
-            lifetime spelling and empty-origin representation changes do not change this \
-            actual observation."
+            scalar-width gates."]
       }
     ]
     | .token_burn => [
@@ -2028,8 +1649,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -2039,10 +1659,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.27.0"],
-          reason :=
-            "Assume the 0.27 reference retains the owned AccountInfo CpiContext, inline \
-              error payload and exact reached account conversion, CPI forwarding and \
-              cleanup within the same compatibility line.",
           compatibleRanges := [{
             lower := "0.27.0",
             upper := "0.28.0"
@@ -2054,9 +1670,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.5.0"],
-          reason := "Reviewed legacy instruction encoding/allocation and old ProgramError \
-            provider."
+          releases := ["3.5.0"]
         }, {
           package := "solana-program",
           source := some {
@@ -2065,11 +1679,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -2089,18 +1698,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.27.0.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "Reviewed exact immutable wrapper, account aggregate and constructor source. The \
-            selected Binding preserves the program owner of this release, move/clone \
-            profile, full ProgramError and source cleanup; no version-range inference is \
-            used. See source-notes/anchor-spl-token-operations.md for the per-wrapper \
-            account orders, size/extension branches and boundary limitations. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_mint_to => [
@@ -2122,8 +1720,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -2133,10 +1730,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.27.0"],
-          reason :=
-            "Assume the 0.27 reference retains the owned AccountInfo CpiContext, inline \
-              error payload and exact reached account conversion, CPI forwarding and \
-              cleanup within the same compatibility line.",
           compatibleRanges := [{
             lower := "0.27.0",
             upper := "0.28.0"
@@ -2148,9 +1741,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.5.0"],
-          reason := "Reviewed legacy instruction encoding/allocation and old ProgramError \
-            provider."
+          releases := ["3.5.0"]
         }, {
           package := "solana-program",
           source := some {
@@ -2159,11 +1750,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -2183,18 +1769,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.27.0.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "Reviewed exact immutable wrapper, account aggregate and constructor source. The \
-            selected Binding preserves the program owner of this release, move/clone \
-            profile, full ProgramError and source cleanup; no version-range inference is \
-            used. See source-notes/anchor-spl-token-operations.md for the per-wrapper \
-            account orders, size/extension branches and boundary limitations. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_transfer => [
@@ -2217,10 +1792,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token"],
           any := [],
-          none := [],
-          reason :=
-            "The containing source module is compiled only when this Anchor SPL feature is \
-              enabled."
+          none := []
         },
         conditions :=
           ["Keep the existing source reference/lifetime, scalar and resource \
@@ -2230,21 +1802,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Use the reviewed compatible anchor-lang context/error and AccountInfo \
             dependency interpretations.", "The context program key does not override the \
             fixed legacy ID and remaining accounts are not appended to the CPI. Every \
-            supplied invocation result and state effect is retained."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.2.2.crate"],
-        argument :=
-          "All releases build the same fixed legacy-token transfer bytes and three \
-            metadata entries with no multisig keys and preserve nested seeds. Through \
-            0.19.0 the actual CPI info list additionally contains ctx.program. From 0.20.0 \
-            it has three infos; through 0.28.0 they are cloned and from 0.29.0 they are \
-            moved. Until 1.0.0 CpiContext still owns a separate program AccountInfo. Only \
-            1.0.0+ removes the extra program owner and matches the existing source-ordered \
-            move/error/cleanup trace. Every such release is edition 2021: drop instruction \
-            metadata, bytes, the tail-expression moved-account array, then the \
-            remaining-accounts vector. Builder failures occur before moves, and returned \
-            CPI errors are boxed before cleanup. Existing BuildReady/current-vector, Rc \
-            and conditional non-unwind bindings are retained; no success or termination is \
-            assumed."
+            supplied invocation result and state effect is retained."]
       }
     ]
     | .token_transfer_inline_error => [
@@ -2266,8 +1824,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -2277,10 +1834,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.27.0"],
-          reason :=
-            "Assume the 0.27 reference retains the owned AccountInfo CpiContext, inline \
-              error payload and exact reached account conversion, CPI forwarding and \
-              cleanup within the same compatibility line.",
           compatibleRanges := [{
             lower := "0.27.0",
             upper := "0.28.0"
@@ -2292,9 +1845,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.5.0"],
-          reason := "Reviewed legacy instruction encoding/allocation and old ProgramError \
-            provider."
+          releases := ["3.5.0"]
         }, {
           package := "solana-program",
           source := some {
@@ -2303,11 +1854,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.15.2"],
-          reason :=
-            "Assume the 1.15.2 reference preserves the reached monolithic \
-              AccountInfo/Pubkey, owned ProgramError, local instruction and borrow/cleanup \
-              operations within 1.15. The 1.16 AccountInfo repr(C)/field-order change is \
-              outside this range; actual emitted layouts remain separately bound.",
           compatibleRanges := [{
             lower := "1.15.2",
             upper := "1.16.0"
@@ -2327,18 +1873,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.27.0.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "Reviewed exact immutable wrapper, account aggregate and constructor source. The \
-            selected Binding preserves the program owner of this release, move/clone \
-            profile, full ProgramError and source cleanup; no version-range inference is \
-            used. See source-notes/anchor-spl-token-operations.md for the per-wrapper \
-            account orders, size/extension branches and boundary limitations. \
-            Compatibility in [0.27.0, 0.28.0) assumes this operation and its selected \
-            dependency contracts preserve that behavior; the exact releases remain \
-            inspected references."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_transfer_observation => [
@@ -2361,10 +1896,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token"],
           any := [],
-          none := [],
-          reason :=
-            "The containing source module is compiled only when this Anchor SPL feature is \
-              enabled."
+          none := []
         },
         conditions :=
           ["Keep the existing source reference/lifetime, scalar and resource \
@@ -2374,20 +1906,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "Use the reviewed compatible anchor-lang context/error and AccountInfo \
             dependency interpretations.", "The context program key does not override the \
             fixed legacy ID and remaining accounts are not appended to the CPI. Every \
-            supplied invocation result and state effect is retained."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.2.2.crate"],
-        argument :=
-          "All releases build the same fixed legacy-token transfer bytes and three \
-            metadata entries with no multisig keys and preserve nested seeds. Through \
-            0.19.0 the actual CPI info list additionally contains ctx.program. From 0.20.0 \
-            it has three infos; through 0.28.0 they are cloned and from 0.29.0 they are \
-            moved. Until 1.0.0 CpiContext still owns a separate program AccountInfo. For \
-            0.20.0–0.32.3, request values agree after the intentional ownership \
-            projection, but the unrestricted CPI ProgramError output of the model cannot \
-            preserve the old BorshIoError(String) payload using the selected unit-payload \
-            vocabulary. The partial role omits ownership, not arbitrary error data. We do \
-            not add a no-Borsh-error assumption to widen it. From 1.0.0 the complete \
-            current value request and error vocabulary agree."
+            supplied invocation result and state effect is retained."]
       }
     ]
     | .token_transfer_with_program_owner => [
@@ -2409,8 +1928,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -2420,10 +1938,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -2435,10 +1949,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["8.0.0"],
-          reason :=
-            "The exact resolved local constructor profile determines tags, enums, option \
-              validation and allocation order."
+          releases := ["8.0.0"]
         }, {
           package := "solana-account-info",
           source := some {
@@ -2447,10 +1958,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -2463,10 +1970,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -2486,15 +1989,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 transfer wrapper retains its owned program AccountInfo, ordered \
-            request accounts, exact moves/clones and boxed legacy ProgramError cleanup. \
-            This complete ownership variant remains distinct from the copied-program-ID \
-            wrapper. Compatibility within 0.32 assumes this local protocol and the \
-            selected dependency contracts remain unchanged; invocation stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_Token2022_id => [
@@ -2516,10 +2011,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "spl-token-2022-interface",
@@ -2528,29 +2020,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.1.0"],
-          reason :=
-            "The exact defining dependency supplies the canonical copied/static SPL \
-              program ID."
+          releases := ["2.1.0"]
         }],
         conditions :=
           ["Source correctness remains an explicit assumed call interface. Bind exact \
             emitted argument/result types, generic arguments, lifetimes, pointer \
             provenance and current source ownership; no Rust implementation or SBF layout \
-            refinement is proved."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.2.crate",
-          "source-notes/anchor-spl-support.md", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.3.crate"],
-        argument :=
-          "Preserve the exact token_2022 feature and resolved dependency gates. \
-            Token2022::id returns the fixed interface program ID. The wrappers pass \
-            ctx.program_id, retain the reviewed account order and move/cleanup effects, \
-            and preserve every builder/invocation/error-conversion exit. The older \
-            ctx.program.key owner and the later diagnostic-provider family are not \
-            relabeled. CPI remains an explicit assumed interface; the range proves no \
-            token processor or rollback behavior. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            refinement is proved."]
       }
     ]
     | .token_2022_burn => [
@@ -2572,8 +2048,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -2583,10 +2058,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -2599,11 +2070,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -2616,10 +2082,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -2632,10 +2094,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -2655,15 +2113,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references retain burn constructor-before-invocation order, exact \
-            account moves/clones, owned program AccountInfo, boxed legacy ProgramError and \
-            continuing/terminal cleanup. Compatibility within 0.32 assumes this local \
-            protocol and the selected dependency contracts remain unchanged; invocation \
-            stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_burn_checked => [
@@ -2685,8 +2135,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -2696,11 +2145,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the pre-cohort Context keeps copied program_id, the exact \
-              accounts/remaining-vector owners, signer loans and cleanup order; 1.2.1 \
-              introduces a new provider/feature cohort requiring a separate selection \
-              review.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -2713,10 +2157,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0"],
-          reason :=
-            "Assume the reached Token-2022 constructor preserves program IDs, exact \
-              argument encoding, metadata/signature order and all 17 AuthorityType cases \
-              where reached, together with allocation/cleanup effects.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -2729,10 +2169,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -2745,10 +2181,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -2768,17 +2200,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.1.2.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The declared compatible range assumes the selected Token-2022 constructor with \
-            amount and decimals, source metadata/signature flags and account order source, \
-            mint, authority. Keep the actual copied program_id, complete context and \
-            instruction ownership, nested signer seeds, modern unit-Borsh ProgramError \
-            boxing and all invocation/cleanup exits. Remaining accounts are not silently \
-            appended; the older owned-program AccountInfo family is distinct. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_close_account => [
@@ -2800,8 +2222,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -2811,10 +2232,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -2827,11 +2244,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -2844,10 +2256,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -2860,10 +2268,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -2883,15 +2287,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references retain close_account constructor-before-invocation order, \
-            exact account moves/clones, owned program AccountInfo, boxed legacy \
-            ProgramError and continuing/terminal cleanup. Compatibility within 0.32 \
-            assumes this local protocol and the selected dependency contracts remain \
-            unchanged; invocation stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_get_account_data_size => [
@@ -2913,8 +2309,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -2924,10 +2319,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -2940,11 +2331,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -2957,10 +2343,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -2973,10 +2355,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -3000,15 +2378,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             "At every actual matching-program getter return, the returned byte owner is \
             current. Nonmatching program IDs need no byte read. Key comparison precedes \
             exact eight-byte validation, and both error and success paths drop the owned \
-            return vector at the source site."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references preserve constructor and CPI/getter effects, compare the \
-            returned program ID before requiring exactly eight bytes, and drop the owned \
-            return vector at each reached success/error site. Compatibility within 0.32 \
-            assumes this local protocol and the selected dependency contracts remain \
-            unchanged; invocation stays opaque."
+            return vector at the source site."]
       }
     ]
     | .token_2022_initialize_account3 => [
@@ -3030,8 +2400,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -3041,10 +2410,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -3057,11 +2422,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -3074,10 +2434,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -3090,10 +2446,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -3113,15 +2465,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references retain initialize_account3 constructor-before-invocation \
-            order, exact account moves/clones, owned program AccountInfo, boxed legacy \
-            ProgramError and continuing/terminal cleanup. Compatibility within 0.32 \
-            assumes this local protocol and the selected dependency contracts remain \
-            unchanged; invocation stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_initialize_account3_program_id => [
@@ -3143,8 +2487,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -3153,10 +2496,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.0.2"],
-          reason :=
-            "The resolved context owner and inline/boxed error representation are \
-              version-specific."
+          releases := ["1.0.2"]
         }, {
           package := "spl-token-2022-interface",
           source := some {
@@ -3164,10 +2504,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.1.0"],
-          reason :=
-            "Reviewed interface instruction constructors and seventeen AuthorityType \
-              variants."
+          releases := ["2.1.0"]
         }, {
           package := "solana-account-info",
           source := some {
@@ -3175,8 +2512,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason := "Reviewed modern context account owners."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -3184,8 +2520,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason := "Modern BorshIoError is a unit variant."
+          releases := ["3.0.1"]
         }],
         conditions :=
           ["Use one fixed Types interpretation and actual shared before/after state for \
@@ -3201,20 +2536,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.2.crate",
-          "source-notes/anchor-spl-token-operations.md", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.3.crate"],
-        argument :=
-          "Preserve the exact token_2022 feature and resolved dependency gates. \
-            Token2022::id returns the fixed interface program ID. The wrappers pass \
-            ctx.program_id, retain the reviewed account order and move/cleanup effects, \
-            and preserve every builder/invocation/error-conversion exit. The older \
-            ctx.program.key owner and the later diagnostic-provider family are not \
-            relabeled. CPI remains an explicit assumed interface; the range proves no \
-            token processor or rollback behavior. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_initialize_immutable_owner => [
@@ -3236,8 +2558,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -3247,10 +2568,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -3263,11 +2580,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -3280,10 +2592,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -3296,10 +2604,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -3319,15 +2623,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references retain initialize_immutable_owner \
-            constructor-before-invocation order, exact account moves/clones, owned program \
-            AccountInfo, boxed legacy ProgramError and continuing/terminal cleanup. \
-            Compatibility within 0.32 assumes this local protocol and the selected \
-            dependency contracts remain unchanged; invocation stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_initialize_mint2 => [
@@ -3349,8 +2645,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -3360,10 +2655,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -3376,11 +2667,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -3393,10 +2679,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -3409,10 +2691,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -3432,15 +2710,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references retain initialize_mint2 constructor-before-invocation \
-            order, exact account moves/clones, owned program AccountInfo, boxed legacy \
-            ProgramError and continuing/terminal cleanup. Compatibility within 0.32 \
-            assumes this local protocol and the selected dependency contracts remain \
-            unchanged; invocation stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_mint_to => [
@@ -3462,8 +2732,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -3473,10 +2742,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -3489,11 +2754,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -3506,10 +2766,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -3522,10 +2778,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -3545,15 +2797,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references retain mint_to constructor-before-invocation order, exact \
-            account moves/clones, owned program AccountInfo, boxed legacy ProgramError and \
-            continuing/terminal cleanup. Compatibility within 0.32 assumes this local \
-            protocol and the selected dependency contracts remain unchanged; invocation \
-            stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_mint_to_checked => [
@@ -3575,8 +2819,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -3586,11 +2829,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the pre-cohort Context keeps copied program_id, the exact \
-              accounts/remaining-vector owners, signer loans and cleanup order; 1.2.1 \
-              introduces a new provider/feature cohort requiring a separate selection \
-              review.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -3603,10 +2841,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0"],
-          reason :=
-            "Assume the reached Token-2022 constructor preserves program IDs, exact \
-              argument encoding, metadata/signature order and all 17 AuthorityType cases \
-              where reached, together with allocation/cleanup effects.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -3619,10 +2853,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -3635,10 +2865,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -3658,17 +2884,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.1.2.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The declared compatible range assumes the selected Token-2022 constructor with \
-            amount and decimals, source metadata/signature flags and account order mint, \
-            destination, authority. Keep the actual copied program_id, complete context \
-            and instruction ownership, nested signer seeds, modern unit-Borsh ProgramError \
-            boxing and all invocation/cleanup exits. Remaining accounts are not silently \
-            appended; the older owned-program AccountInfo family is distinct. This \
-            pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_set_authority => [
@@ -3690,8 +2906,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -3701,10 +2916,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -3717,11 +2928,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -3734,10 +2940,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -3750,10 +2952,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -3773,15 +2971,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references retain set_authority constructor-before-invocation order, \
-            exact account moves/clones, owned program AccountInfo, boxed legacy \
-            ProgramError and continuing/terminal cleanup. Compatibility within 0.32 \
-            assumes this local protocol and the selected dependency contracts remain \
-            unchanged; invocation stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_set_authority_program_id => [
@@ -3803,8 +2993,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -3814,11 +3003,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the pre-cohort Context keeps copied program_id, the exact \
-              accounts/remaining-vector owners, signer loans and cleanup order; 1.2.1 \
-              introduces a new provider/feature cohort requiring a separate selection \
-              review.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -3831,10 +3015,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0"],
-          reason :=
-            "Assume the reached Token-2022 constructor preserves program IDs, exact \
-              argument encoding, metadata/signature order and all 17 AuthorityType cases \
-              where reached, together with allocation/cleanup effects.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -3847,10 +3027,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -3863,10 +3039,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -3886,18 +3058,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.1.2.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The declared compatible range assumes the selected Token-2022 constructor with \
-            the exact 17-case AuthorityType and optional new authority, source \
-            metadata/signature flags and account order account_or_mint, current_authority. \
-            Keep the actual copied program_id, complete context and instruction ownership, \
-            nested signer seeds, modern unit-Borsh ProgramError boxing and all \
-            invocation/cleanup exits. Remaining accounts are not silently appended; the \
-            older owned-program AccountInfo family is distinct. This pre-cohort profile \
-            stops before the new 1.2.1 provider/feature selection."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_transfer_checked => [
@@ -3919,8 +3080,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -3930,10 +3090,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy ProgramError conversion and edition-2021 cleanup \
-              remain unchanged; 1.0.0 instead stores a copied program ID.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -3946,11 +3102,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected checked-transfer constructor, full packing implementation and \
-              enum are identical. Assume both accepted program IDs, tag 12, \
-              amount/decimals bytes, enum-size reservation and ordered \
-              metas/error-before-allocation remain unchanged.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -3963,10 +3114,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the referenced AccountInfo carrier preserves its Rc aliases and \
-              declaration-order lamports/data destruction; moved occurrences and current \
-              resource contents remain distinct.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -3979,10 +3126,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "These inspected enums are identical, including BorshIoError(String). Assume \
-              preservation of the complete variants and owned payload; 3.0.0 changes that \
-              variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -4002,15 +3145,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "Anchor SPL 0.32.0–0.32.3 have identical token_2022 source, including this \
-            wrapper and account aggregate. The range assumes the same owned context \
-            program, from/mint/to/authority move order, reached signer-seed read, boxed \
-            legacy error conversion and cleanup. The 1.0.0 copied-program variant stays \
-            separate."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_transfer_checked_legacy_interface => [
@@ -4032,8 +3167,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -4043,12 +3177,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.29.0"],
-          reason :=
-            "Reference 0.29.0; [0.29.0, 0.30.0) assumes the following used contract \
-              remains unchanged. Preserve the 0.29 owned program AccountInfo context, \
-              borrowed seed/remaining slices, boxed Error and old ProgramError \
-              conversion/destruction at the reached wrapper operations. Later \
-              context/error carriers remain distinct.",
           compatibleRanges := [{
             lower := "0.29.0",
             upper := "0.30.0"
@@ -4061,12 +3189,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.9.0"],
-          reason :=
-            "Reference 0.9.0; [0.9.0, 0.10.0) assumes the following used contract remains \
-              unchanged. Preserve the old transfer_checked program-ID check, \
-              tag/amount/decimals encoding and ordered account metadata, including \
-              multisigner policy and constructor allocation/error effects. Later \
-              Token-2022 instruction generations are excluded.",
           compatibleRanges := [{
             lower := "0.9.0",
             upper := "0.10.0"
@@ -4079,12 +3201,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.18.26"],
-          reason :=
-            "Reference 1.18.26; [1.18.26, 2.0.0) assumes the following used contract \
-              remains unchanged. Preserve the monolithic AccountInfo and Pubkey \
-              identities, source account moves/clones, borrow preflight and legacy \
-              ProgramError conversion/destruction around opaque signed invocation. The \
-              actual decoder, copyback and resource providers remain explicit.",
           compatibleRanges := [{
             lower := "1.18.26",
             upper := "2.0.0"
@@ -4104,17 +3220,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.29.0.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "Reference source: anchor-spl 0.29.0. Construct the 0.9 Token-2022 \
-            transfer_checked instruction before opaque invocation, using the supplied \
-            program and ordered from/mint/to/authority accounts. Retain the old context \
-            program owner, AccountInfo moves/clones, borrowed signer seeds, boxed Anchor \
-            errors and owned legacy ProgramError cleanup. Compatibility in [0.29.0, \
-            0.30.0) assumes this complete operation and the scoped dependencies remain \
-            unchanged; source/ABI/provider obligations stay explicit."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_transfer_checked_program_id => [
@@ -4136,8 +3242,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -4147,11 +3252,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.1.2"],
-          reason :=
-            "Assume the pre-cohort Context keeps copied program_id, the exact \
-              accounts/remaining-vector owners, signer loans and cleanup order; 1.2.1 \
-              introduces a new provider/feature cohort requiring a separate selection \
-              review.",
           compatibleRanges := [{
             lower := "1.1.2",
             upper := "1.2.1"
@@ -4164,10 +3264,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0"],
-          reason :=
-            "Assume the reached Token-2022 constructor preserves program IDs, exact \
-              argument encoding, metadata/signature order and all 17 AuthorityType cases \
-              where reached, together with allocation/cleanup effects.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -4180,10 +3276,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.1.1"],
-          reason :=
-            "Assume the actual AccountInfo retains its borrowed key/owner, shared \
-              Rc/RefCell cells, checked borrow errors, alias-visible state and the \
-              borrow/resize/drop operations reached by this call.",
           compatibleRanges := [{
             lower := "3.1.1",
             upper := "4.0.0"
@@ -4196,10 +3288,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.1"],
-          reason :=
-            "Assume the reached modern ProgramError variants, unit BorshIoError and exact \
-              numeric/status/formatting conversions retain their complete payload and \
-              cleanup behavior.",
           compatibleRanges := [{
             lower := "3.0.1",
             upper := "4.0.0"
@@ -4219,17 +3307,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.1.2.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The declared compatible range assumes the selected Token-2022 constructor with \
-            amount and decimals, source metadata/signature flags and account order source, \
-            mint, destination, authority. Keep the actual copied program_id, complete \
-            context and instruction ownership, nested signer seeds, modern unit-Borsh \
-            ProgramError boxing and all invocation/cleanup exits. Remaining accounts are \
-            not silently appended; the older owned-program AccountInfo family is distinct. \
-            This pre-cohort profile stops before the new 1.2.1 provider/feature selection."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_transfer_checked_program_id_interface => [
@@ -4251,8 +3329,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -4261,10 +3338,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["1.0.2"],
-          reason :=
-            "The resolved context owner and inline/boxed error representation are \
-              version-specific."
+          releases := ["1.0.2"]
         }, {
           package := "spl-token-2022-interface",
           source := some {
@@ -4272,10 +3346,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.1.0"],
-          reason :=
-            "Reviewed interface instruction constructors and seventeen AuthorityType \
-              variants."
+          releases := ["2.1.0"]
         }, {
           package := "solana-account-info",
           source := some {
@@ -4283,8 +3354,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.1.1"],
-          reason := "Reviewed modern context account owners."
+          releases := ["3.1.1"]
         }, {
           package := "solana-program-error",
           source := some {
@@ -4292,8 +3362,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["3.0.1"],
-          reason := "Modern BorshIoError is a unit variant."
+          releases := ["3.0.1"]
         }],
         conditions :=
           ["Use one fixed Types interpretation and actual shared before/after state for \
@@ -4309,20 +3378,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.2.crate",
-          "source-notes/anchor-spl-token-operations.md", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.3.crate"],
-        argument :=
-          "Preserve the exact token_2022 feature and resolved dependency gates. \
-            Token2022::id returns the fixed interface program ID. The wrappers pass \
-            ctx.program_id, retain the reviewed account order and move/cleanup effects, \
-            and preserve every builder/invocation/error-conversion exit. The older \
-            ctx.program.key owner and the later diagnostic-provider family are not \
-            relabeled. CPI remains an explicit assumed interface; the range proves no \
-            token processor or rollback behavior. The declared range is a \
-            complete-operation preservation assumption; inspected releases, native runs, \
-            exact ABI observations and source-call implementation obligations remain \
-            separate."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_extensions_group_member_pointer_group_member_pointer_initialize => [
@@ -4348,8 +3404,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022_extensions"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -4359,10 +3414,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -4375,11 +3426,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -4392,10 +3438,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -4408,10 +3450,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -4431,15 +3469,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references retain group_member_pointer_initialize \
-            constructor-before-invocation order, exact account moves/clones, owned program \
-            AccountInfo, boxed legacy ProgramError and continuing/terminal cleanup. \
-            Compatibility within 0.32 assumes this local protocol and the selected \
-            dependency contracts remain unchanged; invocation stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_extensions_group_pointer_group_pointer_initialize => [
@@ -4462,8 +3492,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022_extensions"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -4473,10 +3502,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -4489,11 +3514,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -4506,10 +3526,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -4522,10 +3538,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -4545,15 +3557,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references retain group_pointer_initialize \
-            constructor-before-invocation order, exact account moves/clones, owned program \
-            AccountInfo, boxed legacy ProgramError and continuing/terminal cleanup. \
-            Compatibility within 0.32 assumes this local protocol and the selected \
-            dependency contracts remain unchanged; invocation stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_extensions_metadata_pointer_metadata_pointer_initialize => [
@@ -4577,8 +3581,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022_extensions"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -4588,10 +3591,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -4604,11 +3603,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -4621,10 +3615,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -4637,10 +3627,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -4660,15 +3646,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references retain metadata_pointer_initialize \
-            constructor-before-invocation order, exact account moves/clones, owned program \
-            AccountInfo, boxed legacy ProgramError and continuing/terminal cleanup. \
-            Compatibility within 0.32 assumes this local protocol and the selected \
-            dependency contracts remain unchanged; invocation stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_extensions_mint_close_authority_mint_close_authority_initialize => [
@@ -4694,8 +3672,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022_extensions"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -4705,10 +3682,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -4721,11 +3694,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -4738,10 +3706,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -4754,10 +3718,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -4777,15 +3737,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references retain mint_close_authority_initialize \
-            constructor-before-invocation order, exact account moves/clones, owned program \
-            AccountInfo, boxed legacy ProgramError and continuing/terminal cleanup. \
-            Compatibility within 0.32 assumes this local protocol and the selected \
-            dependency contracts remain unchanged; invocation stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_extensions_non_transferable_non_transferable_mint_initialize => [
@@ -4811,8 +3763,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022_extensions"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -4822,10 +3773,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -4838,11 +3785,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -4855,10 +3797,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -4871,10 +3809,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -4894,15 +3828,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references retain non_transferable_mint_initialize \
-            constructor-before-invocation order, exact account moves/clones, owned program \
-            AccountInfo, boxed legacy ProgramError and continuing/terminal cleanup. \
-            Compatibility within 0.32 assumes this local protocol and the selected \
-            dependency contracts remain unchanged; invocation stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_extensions_permanent_delegate_permanent_delegate_initialize => [
@@ -4928,8 +3854,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022_extensions"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -4939,10 +3864,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -4955,11 +3876,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -4972,10 +3888,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -4988,10 +3900,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -5011,15 +3919,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references retain permanent_delegate_initialize \
-            constructor-before-invocation order, exact account moves/clones, owned program \
-            AccountInfo, boxed legacy ProgramError and continuing/terminal cleanup. \
-            Compatibility within 0.32 assumes this local protocol and the selected \
-            dependency contracts remain unchanged; invocation stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_2022_extensions_transfer_hook_transfer_hook_initialize => [
@@ -5042,8 +3942,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022_extensions"],
           any := [],
-          none := [],
-          reason := "The exact containing Anchor SPL module must be compiled."
+          none := []
         },
         dependencies := [{
           package := "anchor-lang",
@@ -5053,10 +3952,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.32.0", "0.32.1", "0.32.2", "0.32.3"],
-          reason :=
-            "The inspected context/error files are identical. Assume the owned program \
-              AccountInfo, boxed legacy errors and reached context cleanup remain \
-              unchanged within 0.32; 1.x uses different carriers.",
           compatibleRanges := [{
             lower := "0.32.0",
             upper := "0.33.0"
@@ -5069,11 +3964,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.0", "8.0.1"],
-          reason :=
-            "The inspected local constructors and packing retain their tags, enum/option \
-              encoding, account order and reached allocation/error cleanup (mint authority \
-              parameter spelling is immaterial). Assume that exact operation protocol \
-              remains unchanged within 8.x.",
           compatibleRanges := [{
             lower := "8.0.0",
             upper := "9.0.0"
@@ -5086,10 +3976,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.3.0"],
-          reason :=
-            "Assume the 2.3.0 reference preserves current metadata, borrowed records, Rc \
-              aliases, checked RefCell operations and reached declaration-order \
-              lamports/data destruction within the declared 2.x range.",
           compatibleRanges := [{
             lower := "2.3.0",
             upper := "3.0.0"
@@ -5102,10 +3988,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.0", "2.2.1", "2.2.2"],
-          reason :=
-            "The inspected enums agree, including BorshIoError(String). Assume complete \
-              variants and owned payload/equality/destruction remain unchanged within 2.x; \
-              3.0.0 changes that variant to a unit value.",
           compatibleRanges := [{
             lower := "2.2.0",
             upper := "3.0.0"
@@ -5125,15 +4007,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             boxed representation.", "Every supplied invocation/getter result and effect is \
             retained. No token processor, rollback, CPI success, global heap validity or \
             arbitrary final-state premise is supplied by opacity. Cleanup uses actual \
-            finite destructor exits and retains terminal outcomes without an after state."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate",
-          "source-notes/anchor-spl-token-operations.md"],
-        argument :=
-          "The 0.32 references retain transfer_hook_initialize \
-            constructor-before-invocation order, exact account moves/clones, owned program \
-            AccountInfo, boxed legacy ProgramError and continuing/terminal cleanup. \
-            Compatibility within 0.32 assumes this local protocol and the selected \
-            dependency contracts remain unchanged; invocation stays opaque."
+            finite destructor exits and retains terminal outcomes without an after state."]
       }
     ]
     | .token_interface_Mint_deref => [
@@ -5177,10 +4051,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason :=
-            "The containing source module is compiled only when this Anchor SPL feature is \
-              enabled."
+          none := []
         },
         conditions :=
           ["Keep the existing source reference/lifetime, scalar and resource \
@@ -5189,14 +4060,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             token_2022. In 1.2.1/1.2.2 choose exactly one of solana-v3 and solana-v4.",
             "Use the reviewed compatible anchor-lang context/error and AccountInfo \
             dependency interpretations.", "Deref is a projection on an already represented \
-            wrapper; it imposes no account owner or byte-decoding precondition."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.27.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.2.2.crate"],
-        argument :=
-          "The API first appears in 0.27.0. Every published implementation has the \
-            identical &self.0 projection and the same Target=spl_token_2022::state::Mint \
-            alias. The wrapper/inner mint relation preserves the five decoded fields and \
-            the same borrowed object. Package/interface and Pubkey/Address alias changes \
-            affect binding identities, not this projection. No decoder is reached by deref."
+            wrapper; it imposes no account owner or byte-decoding precondition."]
       }
     ]
     | .token_interface_TokenAccount_deref => [
@@ -5219,10 +4083,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "spl-token-2022",
@@ -5232,13 +4093,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["8.0.1"],
-          reason :=
-            "Reference 8.0.1; [8.0.1, 9.0.0) assumes preservation of the complete decoded \
-              state::Account: mint, owner, amount, delegate, AccountState, native reserve, \
-              delegated amount and close authority, including every COption \
-              discriminant/payload and emitted field type/layout. Dereference only lends \
-              this existing field; packed-wire decoding and token-program behavior are not \
-              reached.",
           compatibleRanges := [{
             lower := "8.0.1",
             upper := "9.0.0"
@@ -5248,18 +4102,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Source correctness remains an explicit assumed call interface. Bind exact \
             emitted argument/result types, generic arguments, lifetimes, pointer \
             provenance and current source ownership; no Rust implementation or SBF layout \
-            refinement is proved."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.1.crate",
-          "source-notes/anchor-spl-support.md", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.2.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-0.32.3.crate"],
-        argument :=
-          "References: 0.32.1, 0.32.2 and 0.32.3, with identical complete \
-            token_interface.rs/token.rs/lib.rs files, token_2022 feature expansion and \
-            relevant spl-token-2022 8 requirement. The declared [0.32.1, 0.33.0) range \
-            assumes preservation of &self.0: the complete decoded Account field is lent \
-            through the same live parent with its permission, provenance and repayment. \
-            The provider constraint below retains its emitted fields and layout, \
-            separately from the packed 165-byte wire format. No deserialization, owner \
-            validation, RefCell borrow, token-program call, allocation or cleanup occurs."
+            refinement is proved."]
       },
       {
         id := "anchor-spl-support-1.1.2-token_interface-TokenAccount-deref",
@@ -5280,10 +4123,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "spl-token-2022-interface",
@@ -5293,9 +4133,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.1.0"],
-          reason :=
-            "Assume the full Account target, field representations and shared-reference \
-              dereference remain unchanged.",
           compatibleRanges := [{
             lower := "2.1.0",
             upper := "3.0.0"
@@ -5305,15 +4142,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Source correctness remains an explicit assumed call interface. Bind exact \
             emitted argument/result types, generic arguments, lifetimes, pointer \
             provenance and current source ownership; no Rust implementation or SBF layout \
-            refinement is proved."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.1.2.crate",
-          "source-notes/anchor-spl-support.md"],
-        argument :=
-          "The declared compatible range assumes return of the same shared reference to \
-            the complete underlying Token-2022 Account value, with its original lifetime \
-            and state. The dependency type is not replaced by a projected key or a \
-            same-layout type. This pre-cohort profile stops before the new 1.2.1 \
-            provider/feature selection."
+            refinement is proved."]
       },
       {
         id := "anchor-spl-support-1.0.2-token_interface-TokenAccount-deref",
@@ -5334,10 +4163,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "spl-token-2022-interface",
@@ -5346,28 +4172,13 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.1.0"],
-          reason :=
-            "The interface crate defines this source Target and its complete decoded \
-              fields."
+          releases := ["2.1.0"]
         }],
         conditions :=
           ["Source correctness remains an explicit assumed call interface. Bind exact \
             emitted argument/result types, generic arguments, lifetimes, pointer \
             provenance and current source ownership; no Rust implementation or SBF layout \
-            refinement is proved."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.2.crate",
-          "source-notes/anchor-spl-support.md", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.0.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.1.crate", "https://static.crates.io/crates/anchor-spl/anchor-spl-1.0.3.crate"],
-        argument :=
-          "Return &self.0 from the same live wrapper, with no decoding, owner check, \
-            allocation or cleanup. Retain all Token Account fields, the actual child tag \
-            and modal parent repayment. The full emitted pointee codec remains separate \
-            from packed serialization. Preserve the complete 1.0 operation, reached \
-            callbacks and cleanup at the original exact dependency/build gates; adding \
-            this alternative does not replace modern parent alternatives. The declared \
-            range is a complete-operation preservation assumption; inspected releases, \
-            native runs, exact ABI observations and source-call implementation obligations \
-            remain separate."
+            refinement is proved."]
       },
       {
         id := "anchor-spl-support-0.29.0-token_interface-TokenAccount-deref",
@@ -5388,10 +4199,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "spl-token-2022",
@@ -5401,11 +4209,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.9.0"],
-          reason :=
-            "Reference 0.9.0; [0.9.0, 0.10.0) assumes the following used contract remains \
-              unchanged. Preserve the complete old Token-2022 Account payload type and the \
-              current field reference returned by the wrapper. No instruction, decoder, \
-              ownership check or allocation is reached by Deref.",
           compatibleRanges := [{
             lower := "0.9.0",
             upper := "0.10.0"
@@ -5415,16 +4218,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Source correctness remains an explicit assumed call interface. Bind exact \
             emitted argument/result types, generic arguments, lifetimes, pointer \
             provenance and current source ownership; no Rust implementation or SBF layout \
-            refinement is proved."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.29.0.crate",
-          "source-notes/anchor-spl-support.md"],
-        argument :=
-          "Reference source: anchor-spl 0.29.0. Return the contained old Token-2022 \
-            Account payload from the same live TokenAccount wrapper, preserving the actual \
-            field reference. Perform no deserialization, owner check or allocation. \
-            Compatibility in [0.29.0, 0.30.0) assumes this complete operation and the \
-            scoped dependencies remain unchanged; source/ABI/provider obligations stay \
-            explicit."
+            refinement is proved."]
       }
     ]
     | .token_interface_TokenInterface_ids => [
@@ -5447,10 +4241,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["token_2022"],
           any := [],
-          none := [],
-          reason :=
-            "The selected source module is compiled only under this exact Anchor SPL \
-              feature."
+          none := []
         },
         dependencies := [{
           package := "spl-token",
@@ -5460,11 +4251,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["4.0.0"],
-          reason :=
-            "Reference 4.0.0; [4.0.0, 5.0.0) assumes the following used contract remains \
-              unchanged. Preserve the fixed SPL Token program ID as the first element and \
-              its exact nominal Pubkey type. Token account decoding and token instruction \
-              behavior are not reached by this ID-array accessor.",
           compatibleRanges := [{
             lower := "4.0.0",
             upper := "5.0.0"
@@ -5477,11 +4263,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.9.0"],
-          reason :=
-            "Reference 0.9.0; [0.9.0, 0.10.0) assumes the following used contract remains \
-              unchanged. Preserve the fixed Token-2022 program ID as the second element \
-              and its exact nominal Pubkey type. This accessor does not reach token \
-              account decoding or transfer construction.",
           compatibleRanges := [{
             lower := "0.9.0",
             upper := "0.10.0"
@@ -5491,16 +4272,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Source correctness remains an explicit assumed call interface. Bind exact \
             emitted argument/result types, generic arguments, lifetimes, pointer \
             provenance and current source ownership; no Rust implementation or SBF layout \
-            refinement is proved."],
-        evidence := ["https://static.crates.io/crates/anchor-spl/anchor-spl-0.29.0.crate",
-          "source-notes/anchor-spl-support.md"],
-        argument :=
-          "Reference source: anchor-spl 0.29.0. Return the fixed two-element [SPL Token, \
-            Token-2022] ID array in that order. Retain the 0.29 token_2022 feature and the \
-            old nominal Pubkey dependencies; no caller-supplied program key replaces \
-            either constant. Compatibility in [0.29.0, 0.30.0) assumes this complete \
-            operation and the scoped dependencies remain unchanged; source/ABI/provider \
-            obligations stay explicit."
+            refinement is proved."]
       }
     ]
   applicabilityConsumers := fun key => match key with

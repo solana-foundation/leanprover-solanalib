@@ -22,7 +22,7 @@ python3 tools/lookup_applicability.py --build build.json
 ```
 
 Run from this package directory. Use `--model <registered-model-id>` to select one operation.
-The command also works in an installed specification bundle without repository tooling.
+A checkout reads the current source registry; an exported manifest also supports standalone lookup.
 It returns model, contract and catalog names, matching source item mappings, reasons for
 rejection and the existing interpretation conditions. See [the build and result schema](BINDINGS.md#selecting-a-reviewed-build).
 
@@ -32,8 +32,8 @@ Members without an existing source-call registration remain mathematical capabil
 receive no callable identity. The six source-less helpers inherit applicability through named consumers.
 
 The [curated source registry](source-map.json) records immutable archive checksums,
-exact git revisions and per-function source arguments. The [installed manifest](applicability.json)
-is generated from that registry. Neither matching nor source review supplies a Rust implementation proof.
+exact git revisions and per-function source arguments. `just generate-specs` exports the machine-readable
+`applicability.json`; it is not committed. Neither matching nor source review supplies a Rust implementation proof.
 
 The shared interpretation boundary is:
 

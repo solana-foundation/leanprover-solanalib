@@ -4,7 +4,7 @@
       "order": 153,
       "modules": {
         "Solanalib.Specs.SplTokenInterface": "4f488a64f1eb297bc2e8f4ef015d5b78199884b08de9feb1b620703b7c784e81",
-        "Solanalib.Specs.SplTokenInterface.Capabilities": "ee13c6bf998362c1c40c84856c8b2a1fc8096dd5cdfeb89d28fa775d4e6fb6f2",
+        "Solanalib.Specs.SplTokenInterface.Capabilities": "f2b64c56a63bf3c5166892dedb3e0a56f9575a9dcc431dad8b6ce60ab3b1568a",
         "Solanalib.Specs.SplTokenInterface.Instructions": "50b4b127d0457d48eeea51e243db70b6ee255914cbdbea244150ead137ee4e75"
       },
       "source_ids": ["spl-token-interface-2.0.0-lib", "spl-token-interface-2.0.0-instruction"],

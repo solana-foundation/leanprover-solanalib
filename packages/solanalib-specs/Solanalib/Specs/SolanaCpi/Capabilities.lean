@@ -67,15 +67,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -89,13 +85,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-cpi/solana-cpi-3.1.0.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The declared compatible range assumes the 64-bit Solana forwarding call with \
-            the original data pointer and length and the existing return-data state \
-            interpretation. The host stub and runtime implementation are separate \
-            boundaries."
+            interpretation."]
       }
     ]
     | .syscalls_sol_get_return_data => [
@@ -117,23 +107,16 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason :=
-            "The pointer-width assumption requires 64-bit layouts for pointers, usize \
-              values and syscall descriptors."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason := "This source branch/module is compiled only under target_os=solana."
+          «exclude» := []
         }],
         targetFeatures := {
           all := [],
           any := [],
-          none := ["static-syscalls"],
-          reason :=
-            "Static dispatch defines a different callable body instead of the registered \
-              extern-C declaration."
+          none := ["static-syscalls"]
         },
         dependencies := [{
           package := "solana-define-syscall",
@@ -142,10 +125,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             url := "https://github.com/rust-lang/crates.io-index",
             revision := ""
           },
-          releases := ["2.3.0"],
-          reason :=
-            "The inventory expansion uses the reviewed 2.3.0 dynamic macro; the resulting \
-              declaration is still owned by solana-cpi."
+          releases := ["2.3.0"]
         }],
         conditions :=
           ["A runtime binding must use one fixed world and invocation context for the \
@@ -159,14 +139,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             compute exhaustion, deployment and compiler correctness are not proved.",
             "Copying-mode runtime interpretation is retained. Directly mapped account \
             memory may have additional state effects and is outside this physical memory \
-            interpretation."],
-        evidence := ["https://static.crates.io/crates/solana-cpi/solana-cpi-2.2.0.crate", "https://static.crates.io/crates/solana-cpi/solana-cpi-2.2.1.crate", "https://github.com/anza-xyz/agave/blob/a203300045b405f86c9c84308b2eae76af69ac3b/syscalls/src/lib.rs"],
-        argument :=
-          "The inspected 2.2.0 and 2.2.1 declarations have the same extern-C argument \
-            order and u64 result. Compatibility within 2.x assumes that declaration and \
-            selected macro expansion remain unchanged under the existing Solana cfg/ABI \
-            gates. The defining item belongs to solana-cpi; the macro provider supplies no \
-            runtime implementation."
+            interpretation."]
       }
     ]
   applicabilityConsumers := fun key => match key with

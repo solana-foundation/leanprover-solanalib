@@ -2,9 +2,9 @@
 """Select reviewed function models for one resolved package/build description.
 
 Exit status: 0 at least one eligible model; 1 unsupported; 2 malformed input;
-3 unresolved build facts. Input and output are JSON. The default generated
-manifest ships beside the specification package, so repository tools are not
-needed. Use --model repeatedly to limit the result to named registry models.
+3 unresolved build facts. Input and output are JSON. A checkout reads its current
+registry; a standalone bundle reads its exported applicability.json. An explicit
+--manifest selects an export. Use --model repeatedly to limit the result to named models.
 """
 
 import argparse
@@ -18,7 +18,7 @@ from applicability import load_manifest, lookup, read_json
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--build", required=True, help="resolved build JSON path, or - for stdin")
-    parser.add_argument("--manifest", type=Path, help="override the installed applicability manifest")
+    parser.add_argument("--manifest", type=Path, help="read an exported applicability manifest instead of the registry")
     parser.add_argument("--model", action="append", help="exact registered model ID")
     args = parser.parse_args()
     try:

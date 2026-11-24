@@ -4,7 +4,7 @@
       "order": 147,
       "modules": {
         "Solanalib.Specs.SolanaStakeInterface": "dd5c8f1b68d749e86cb94778b5dc7fe97b70640fe09fbaa17a78827f32de9da7",
-        "Solanalib.Specs.SolanaStakeInterface.Capabilities": "70685801feaa6154a727708c3b9765fa18b9f7b8562c7c6de80ad7b6c0c2ed95",
+        "Solanalib.Specs.SolanaStakeInterface.Capabilities": "8cd4e3e4cde2f129325f289b445967e352fbee9380e09a7210082975546918c8",
         "Solanalib.Specs.SolanaStakeInterface.State": "c61a9f18f45d5ac3d87d6eac8b13549664c7fa3c70eab005105e43d61c56b5d9"
       },
       "source_ids": [

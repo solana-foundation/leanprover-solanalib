@@ -5,7 +5,7 @@
       "modules": {
         "Solanalib.Specs.SolanaAccountView": "22e2bb9344715a99316e3126cce9efc7a235b97989db0213f409e911f356748e",
         "Solanalib.Specs.SolanaAccountView.Basic": "a17f37e4096bc3379577bb25f8c34bd4e43ef78dde18efa47cfbe380b7a0f77d",
-        "Solanalib.Specs.SolanaAccountView.Capabilities": "35d9688fbb1bb4e2d0e1f7c9c0e1972ec6f3daa7cc5089e1fd6500073f825252",
+        "Solanalib.Specs.SolanaAccountView.Capabilities": "807d2e41f6b907b0db93f68bb67c1d8e7907f4aa0f68fed766421764f23dc0dc",
         "Solanalib.Specs.SolanaAccountView.Guard": "1bdc623fd35179b598177fa750575ad77b781972a12dea568e60722c1057a686",
         "Solanalib.Specs.SolanaAccountView.Observation": "466d30ce3cc6aff0de74ed14e133ddbf310f8481c74efb775a8dbdec4d67b6a5"
       },

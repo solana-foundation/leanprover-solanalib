@@ -206,8 +206,8 @@ def verify_source_census(document, fetch=None):
                 raise ValueError(f"Published archive digest differs: {source['package']}@{version}")
 
 
-def lean_profile(profile, *, multiline=False):
-    """Emit the normalized Versioning.Profile without reconstructing conditions."""
+def lean_profile(profile, *, multiline=False, review=True):
+    """Emit exact selection data and conditions, optionally including the review explanation."""
     def literal(value):
         return json.dumps(text(value, "Lean string", empty=True), ensure_ascii=False)
 
@@ -227,16 +227,19 @@ def lean_profile(profile, *, multiline=False):
 
     def target(value):
         return record([("field", literal(value["field"])), ("«include»", array(value["include"])),
-                       ("«exclude»", array(value["exclude"])), ("reason", literal(value["reason"]))])
+                       ("«exclude»", array(value["exclude"]))]
+                      + ([("reason", literal(value["reason"]))] if review else []))
 
     def features(value):
         return record([(key, array(value[key])) for key in ("all", "any", "none")]
-                      + [("reason", literal(value["reason"]))])
+                      + ([("reason", literal(value["reason"]))] if review else []))
 
     def dependency(value):
         origin = "none" if value["source"] is None else "some " + source(value["source"])
         fields = [("package", literal(value["package"])), ("source", origin),
-                  ("releases", array(value["releases"])), ("reason", literal(value["reason"]))]
+                  ("releases", array(value["releases"]))]
+        if review:
+            fields.append(("reason", literal(value["reason"])))
         if value.get("compatible_ranges"):
             fields.append(("compatibleRanges", array(value["compatible_ranges"], interval)))
         return record(fields)
@@ -258,8 +261,9 @@ def lean_profile(profile, *, multiline=False):
         fields.append(("dependencies", array(profile["dependencies"], dependency)))
     if profile["identity_dependency"] is not None:
         fields.append(("identityDependency", "some " + literal(profile["identity_dependency"])))
-    for field in ("conditions", "evidence"):
+    for field in (("conditions", "evidence") if review else ("conditions",)):
         if profile[field]:
             fields.append((field, array(profile[field])))
-    fields.append(("argument", literal(profile["argument"])))
+    if review:
+        fields.append(("argument", literal(profile["argument"])))
     return record(fields)

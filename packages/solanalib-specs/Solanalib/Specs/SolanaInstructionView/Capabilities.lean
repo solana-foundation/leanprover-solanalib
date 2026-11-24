@@ -142,14 +142,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             not assert a physical ABI or allocate/copy the borrowed bytes.", "Enable the \
             cpi feature for Seed/Signer conversions; readonly_signer is available without \
             cpi. No seed-count or seed-length PDA validation is imposed by these \
-            constructors."],
-        evidence := ["https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-1.0.0.crate", "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-3.0.0.crate"],
-        argument :=
-          "InstructionAccount fields and readonly_signer/new bodies are byte-identical in \
-            1.0.0, 2.0.0, 2.1.0 and 3.0.0. readonly_signer retains the borrowed address \
-            and constructs writable=false, signer=true. InstructionAccount::new takes \
-            flags in writable, signer order; AccountMeta uses a different signature. \
-            Placeholder 0.0.0 exports no API."
+            constructors."]
       }
     ]
     | .cpi_Seed_from_array => [
@@ -176,9 +169,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["cpi"],
           any := [],
-          none := [],
-          reason := "The source cpi module, conversions and invocation wrappers are \
-            feature-gated."
+          none := []
         },
         conditions :=
           ["Bind legal borrowed source storage, pointer identity, lifetime and \
@@ -186,14 +177,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             not assert a physical ABI or allocate/copy the borrowed bytes.", "Enable the \
             cpi feature for Seed/Signer conversions; readonly_signer is available without \
             cpi. No seed-count or seed-length PDA validation is imposed by these \
-            constructors."],
-        evidence := ["https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-1.0.0.crate", "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-3.0.0.crate"],
-        argument :=
-          "The From implementation borrows the original byte array, directly retains its \
-            pointer and records the exact length. Zero length, lengths above PDA limits, \
-            repeated seeds, and nested empty signer groups are not rejected here. 2.1.0 \
-            renames the lifetimes; the pointer/length observation is unchanged through \
-            3.0.0. All four nonplaceholder releases match the full existing value contract."
+            constructors."]
       },
       {
         id := "solana-instruction-view-reviewed-2",
@@ -218,9 +202,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["cpi"],
           any := [],
-          none := [],
-          reason := "The source cpi module, conversions and invocation wrappers are \
-            feature-gated."
+          none := []
         },
         conditions :=
           ["Bind legal borrowed source storage, pointer identity, lifetime and \
@@ -228,14 +210,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             not assert a physical ABI or allocate/copy the borrowed bytes.", "Enable the \
             cpi feature for Seed/Signer conversions; readonly_signer is available without \
             cpi. No seed-count or seed-length PDA validation is imposed by these \
-            constructors."],
-        evidence := ["https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-1.0.0.crate", "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-3.0.0.crate"],
-        argument :=
-          "The From implementation borrows the original byte array, directly retains its \
-            pointer and records the exact length. Zero length, lengths above PDA limits, \
-            repeated seeds, and nested empty signer groups are not rejected here. 2.1.0 \
-            renames the lifetimes; the pointer/length observation is unchanged through \
-            3.0.0. All four nonplaceholder releases match the full existing value contract."
+            constructors."]
       }
     ]
     | .cpi_Seed_from_slice => [
@@ -261,9 +236,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["cpi"],
           any := [],
-          none := [],
-          reason := "The source cpi module, conversions and invocation wrappers are \
-            feature-gated."
+          none := []
         },
         conditions :=
           ["Bind legal borrowed source storage, pointer identity, lifetime and \
@@ -271,14 +244,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             not assert a physical ABI or allocate/copy the borrowed bytes.", "Enable the \
             cpi feature for Seed/Signer conversions; readonly_signer is available without \
             cpi. No seed-count or seed-length PDA validation is imposed by these \
-            constructors."],
-        evidence := ["https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-1.0.0.crate", "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-3.0.0.crate"],
-        argument :=
-          "The From implementation borrows the original byte slice, directly retains its \
-            pointer and records the exact length. Zero length, lengths above PDA limits, \
-            repeated seeds, and nested empty signer groups are not rejected here. 2.1.0 \
-            renames the lifetimes; the pointer/length observation is unchanged through \
-            3.0.0. All four nonplaceholder releases match the full existing value contract."
+            constructors."]
       },
       {
         id := "solana-instruction-view-reviewed-2",
@@ -303,9 +269,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["cpi"],
           any := [],
-          none := [],
-          reason := "The source cpi module, conversions and invocation wrappers are \
-            feature-gated."
+          none := []
         },
         conditions :=
           ["Bind legal borrowed source storage, pointer identity, lifetime and \
@@ -313,14 +277,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             not assert a physical ABI or allocate/copy the borrowed bytes.", "Enable the \
             cpi feature for Seed/Signer conversions; readonly_signer is available without \
             cpi. No seed-count or seed-length PDA validation is imposed by these \
-            constructors."],
-        evidence := ["https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-1.0.0.crate", "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-3.0.0.crate"],
-        argument :=
-          "The From implementation borrows the original byte slice, directly retains its \
-            pointer and records the exact length. Zero length, lengths above PDA limits, \
-            repeated seeds, and nested empty signer groups are not rejected here. 2.1.0 \
-            renames the lifetimes; the pointer/length observation is unchanged through \
-            3.0.0. All four nonplaceholder releases match the full existing value contract."
+            constructors."]
       }
     ]
     | .cpi_Signer_from_array => [
@@ -347,9 +304,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["cpi"],
           any := [],
-          none := [],
-          reason := "The source cpi module, conversions and invocation wrappers are \
-            feature-gated."
+          none := []
         },
         conditions :=
           ["Bind legal borrowed source storage, pointer identity, lifetime and \
@@ -357,15 +312,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             not assert a physical ABI or allocate/copy the borrowed bytes.", "Enable the \
             cpi feature for Seed/Signer conversions; readonly_signer is available without \
             cpi. No seed-count or seed-length PDA validation is imposed by these \
-            constructors."],
-        evidence := ["https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-1.0.0.crate", "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-3.0.0.crate"],
-        argument :=
-          "The From implementation borrows the original ordered Seed array, directly \
-            retains its pointer and records the exact length. Zero length, lengths above \
-            PDA limits, repeated seeds, and nested empty signer groups are not rejected \
-            here. 2.1.0 renames the lifetimes; the pointer/length observation is unchanged \
-            through 3.0.0. All four nonplaceholder releases match the full existing value \
-            contract."
+            constructors."]
       },
       {
         id := "solana-instruction-view-reviewed-2",
@@ -391,9 +338,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["cpi"],
           any := [],
-          none := [],
-          reason := "The source cpi module, conversions and invocation wrappers are \
-            feature-gated."
+          none := []
         },
         conditions :=
           ["Bind legal borrowed source storage, pointer identity, lifetime and \
@@ -401,15 +346,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             not assert a physical ABI or allocate/copy the borrowed bytes.", "Enable the \
             cpi feature for Seed/Signer conversions; readonly_signer is available without \
             cpi. No seed-count or seed-length PDA validation is imposed by these \
-            constructors."],
-        evidence := ["https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-1.0.0.crate", "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-3.0.0.crate"],
-        argument :=
-          "The From implementation borrows the original ordered Seed array, directly \
-            retains its pointer and records the exact length. Zero length, lengths above \
-            PDA limits, repeated seeds, and nested empty signer groups are not rejected \
-            here. 2.1.0 renames the lifetimes; the pointer/length observation is unchanged \
-            through 3.0.0. All four nonplaceholder releases match the full existing value \
-            contract."
+            constructors."]
       }
     ]
     | .cpi_Signer_from_slice => [
@@ -436,9 +373,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["cpi"],
           any := [],
-          none := [],
-          reason := "The source cpi module, conversions and invocation wrappers are \
-            feature-gated."
+          none := []
         },
         conditions :=
           ["Bind legal borrowed source storage, pointer identity, lifetime and \
@@ -446,15 +381,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             not assert a physical ABI or allocate/copy the borrowed bytes.", "Enable the \
             cpi feature for Seed/Signer conversions; readonly_signer is available without \
             cpi. No seed-count or seed-length PDA validation is imposed by these \
-            constructors."],
-        evidence := ["https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-1.0.0.crate", "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-3.0.0.crate"],
-        argument :=
-          "The From implementation borrows the original ordered Seed slice, directly \
-            retains its pointer and records the exact length. Zero length, lengths above \
-            PDA limits, repeated seeds, and nested empty signer groups are not rejected \
-            here. 2.1.0 renames the lifetimes; the pointer/length observation is unchanged \
-            through 3.0.0. All four nonplaceholder releases match the full existing value \
-            contract."
+            constructors."]
       },
       {
         id := "solana-instruction-view-reviewed-2",
@@ -480,9 +407,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["cpi"],
           any := [],
-          none := [],
-          reason := "The source cpi module, conversions and invocation wrappers are \
-            feature-gated."
+          none := []
         },
         conditions :=
           ["Bind legal borrowed source storage, pointer identity, lifetime and \
@@ -490,15 +415,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             not assert a physical ABI or allocate/copy the borrowed bytes.", "Enable the \
             cpi feature for Seed/Signer conversions; readonly_signer is available without \
             cpi. No seed-count or seed-length PDA validation is imposed by these \
-            constructors."],
-        evidence := ["https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-1.0.0.crate", "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-3.0.0.crate"],
-        argument :=
-          "The From implementation borrows the original ordered Seed slice, directly \
-            retains its pointer and records the exact length. Zero length, lengths above \
-            PDA limits, repeated seeds, and nested empty signer groups are not rejected \
-            here. 2.1.0 renames the lifetimes; the pointer/length observation is unchanged \
-            through 3.0.0. All four nonplaceholder releases match the full existing value \
-            contract."
+            constructors."]
       }
     ]
     | .cpi_invoke_signed => [
@@ -523,9 +440,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["cpi"],
           any := [],
-          none := [],
-          reason := "The source cpi module, conversions and invocation wrappers are \
-            feature-gated."
+          none := []
         },
         conditions :=
           ["Enable cpi; bind the actual generic AsRef implementation including each call, \
@@ -537,26 +452,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             initializer copies all four flag/padding bytes from its own final AsRef result.",
             "Bind the opaque unchecked unit-returning invocation relation without \
             inspecting its implementation or assuming success, unchanged state, rollback, \
-            or callee semantics."],
-        evidence := ["https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-2.1.0.crate", "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-3.0.0.crate"],
-        argument :=
-          "2.1.0 and 3.0.0 have byte-identical cpi.rs, including the checked \
-            wrapper/helper and raw-header initializer. Count failure occurs before any \
-            AsRef. For each instruction position, AsRef/address matching precedes a second \
-            AsRef/check_borrow_mut only when writable; a distinct final AsRef initializes \
-            the descriptor. Thus readonly positions make two calls and writable positions \
-            three; extra supplied suffix entries are ignored, duplicates stay positional, \
-            and only the initialized prefix reaches the opaque unit invocation before \
-            Ok(()). Readonly exclusive borrowing is ignored and the four raw \
-            signer/writable/executable/padding bytes are copied exactly. 2.0.0 has the \
-            same top-level wrapper body but a different reached helper: it makes three \
-            AsRef calls even when readonly, rejects readonly exclusive borrow, and \
-            normalizes flags. 1.0.0 lacks the arbitrary AsRef genericity and also uses the \
-            old borrow/normalization behavior. Placeholder 0.0.0 lacks the API. \
-            AccountView 3.0 changes owner() to an owned Address, but this initializer \
-            reads the RuntimeAccount owner field through account_ptr; its reached \
-            address/check_borrow_mut/raw-header operations are unchanged from AccountView \
-            2.x."
+            or callee semantics."]
       }
     ]
     | .cpi_invoke_signed_with_slice => [
@@ -578,9 +474,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["cpi"],
           any := [],
-          none := [],
-          reason := "The source cpi module, conversions and invocation wrappers are \
-            feature-gated."
+          none := []
         },
         conditions :=
           ["Enable slice-cpi (including cpi/alloc). Bind legal current fixed AccountView \
@@ -590,25 +484,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             behavior and every reachable partially initialized descriptor prefix.",
             "The unchecked invocation remains an opaque unit-returning relation; normal \
             completion becomes Ok(()), without a success/rollback/unchanged-state \
-            assumption."],
-        evidence := ["https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-1.0.0.crate"],
-        argument :=
-          "1.0.0 first rejects more than 128 instruction metas with InvalidArgument before \
-            allocation, then allocates Box<[MaybeUninit<CpiAccount>]> for exactly the meta \
-            count, and only then checks the supplied count. It traverses positions in \
-            order, compares the address before borrow checks, rejects any writable borrow \
-            and readonly exclusive borrow, and normalizes descriptor flags. Duplicates are \
-            preserved and only the prepared prefix reaches the opaque invocation. Its \
-            normal unit return becomes Ok(()). Box destruction is interpreted from the \
-            actual state on ordinary/error/unwind exits; terminal exits skip cleanup. \
-            2.0.0 replaces fixed AccountView references with arbitrary AsRef input \
-            elements. The full newer API permits stateful or rebinding callbacks absent \
-            from this V1 family; accepting it would require a new purity/identity \
-            specialization. The reference-only specialization was tested diagnostically, \
-            but is not promoted to full-contract compatibility. 2.1.0 and 3.0.0 also \
-            change readonly borrow behavior and copy exact raw header bytes, which \
-            diverges even for ordinary reference inputs. 0.0.0 is a placeholder without \
-            the API."
+            assumption."]
       }
     ]
     | .cpi_invoke_with_slice => [
@@ -630,9 +506,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["cpi"],
           any := [],
-          none := [],
-          reason := "The source cpi module, conversions and invocation wrappers are \
-            feature-gated."
+          none := []
         },
         conditions :=
           ["Enable slice-cpi (including cpi/alloc). Bind legal current fixed AccountView \
@@ -642,25 +516,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             behavior and every reachable partially initialized descriptor prefix.",
             "The unchecked invocation remains an opaque unit-returning relation; normal \
             completion becomes Ok(()), without a success/rollback/unchanged-state \
-            assumption."],
-        evidence := ["https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-1.0.0.crate"],
-        argument :=
-          "1.0.0 first rejects more than 128 instruction metas with InvalidArgument before \
-            allocation, then allocates Box<[MaybeUninit<CpiAccount>]> for exactly the meta \
-            count, and only then checks the supplied count. It traverses positions in \
-            order, compares the address before borrow checks, rejects any writable borrow \
-            and readonly exclusive borrow, and normalizes descriptor flags. Duplicates are \
-            preserved and only the prepared prefix reaches the opaque invocation. Its \
-            normal unit return becomes Ok(()). Box destruction is interpreted from the \
-            actual state on ordinary/error/unwind exits; terminal exits skip cleanup. The \
-            unsigned entry delegates with an empty signer slice. 2.0.0 replaces fixed \
-            AccountView references with arbitrary AsRef input elements. The full newer API \
-            permits stateful or rebinding callbacks absent from this V1 family; accepting \
-            it would require a new purity/identity specialization. The reference-only \
-            specialization was tested diagnostically, but is not promoted to full-contract \
-            compatibility. 2.1.0 and 3.0.0 also change readonly borrow behavior and copy \
-            exact raw header bytes, which diverges even for ordinary reference inputs. \
-            0.0.0 is a placeholder without the API."
+            assumption."]
       }
     ]
   applicabilityConsumers := fun key => match key with

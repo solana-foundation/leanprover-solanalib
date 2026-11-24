@@ -4,7 +4,7 @@
       "order": 149,
       "modules": {
         "Solanalib.Specs.SolanaSysvar": "bc118d36acf0a7439e3b85a8b13e4136afaf1b8bba9e8c2528debb622560148a",
-        "Solanalib.Specs.SolanaSysvar.Capabilities": "d0bc8404fb98ba4b9d99b4e621411ebefee07cf0671c7095695429a8167867f7",
+        "Solanalib.Specs.SolanaSysvar.Capabilities": "d64cfad5d632e37c1fcd7adbbcd1c9f8603b99f2cf50b2079d29b890f9a1832a",
         "Solanalib.Specs.SolanaSysvar.Get": "ff861549f9341d85a62e675ed43c1f0a94322ff4a40255528135bafe7601ff97",
         "Solanalib.Specs.SolanaSysvar.GetStringError": "aae9e342c017e10d205f1c3ebaa520b7e1ab8e5d73ed49ae13e5a4e9de43f802",
         "Solanalib.Specs.SolanaSysvar.EpochSchedule": "125bbc3ebf918d0dbfe2cd88eca65bff41410669fe37676ea7d01c5430d76afb"

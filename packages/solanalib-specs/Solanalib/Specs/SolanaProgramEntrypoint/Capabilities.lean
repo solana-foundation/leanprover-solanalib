@@ -63,10 +63,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["2.2.1", "2.3.0"],
-          reason :=
-            "Assume the rent_epoch carrier, shared Rc/RefCell identities, \
-              acquisition/conflict behavior and lamports-before-data clone/drop order \
-              remain unchanged; use the actual compiled layout separately.",
           compatibleRanges := [{
             lower := "2.2.1",
             upper := "3.0.0"
@@ -99,15 +95,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             storage in the execution representation. Logical vector/cell IDs record \
             identity, not physical ownership. All input references live for the source \
             lifetime a, and returned owners obey the ordinary destruction and borrowing \
-            protocol."],
-        evidence := ["https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.2.1.crate", "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.3.0.crate"],
-        argument :=
-          "The inspected 2.2.1/2.3.0 parser and account/instruction helpers are identical. \
-            The declared range assumes vector reservation, lamports Rc allocation, \
-            original-length write then data Rc allocation, exact duplicate aliases, \
-            reserve/padding and rent epoch. Loader admission, actual allocation effects \
-            and terminal exits remain explicit; 3.0.0 changes the reached allocation and \
-            metadata protocol."
+            protocol."]
       }
     ]
   applicabilityConsumers := fun key => match key with

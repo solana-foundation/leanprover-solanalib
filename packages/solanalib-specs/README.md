@@ -17,7 +17,7 @@ The [model and test standard](../../docs/model-standard.md) describes how to reg
 Import the library root, such as `Solanalib.Specs.SolanaHash`, and use the declaration for the
 Rust item, such as `Solanalib.Specs.SolanaHash.Hash.to_bytes_contract`. Identical behavior across
 reviewed releases shares one declaration; different behavior has a named variant.
-[VERSION_COMPATIBILITY.md](VERSION_COMPATIBILITY.md) and `applicability.json`
+[VERSION_COMPATIBILITY.md](VERSION_COMPATIBILITY.md) and the [source registry](source-map.json)
 record the supported releases and build conditions. Select the matching catalog
 with the [build lookup](BINDINGS.md#selecting-a-reviewed-build); `Catalog.forBuild`
 retains the same contracts while selecting their applicable source identities.
@@ -66,11 +66,10 @@ The runtime has its own [Agave comparisons](../../tools/runtime-conformance/READ
 
 ## Build and audit
 
-Use the recorded Lean toolchain and Python 3.12. From the repository root:
+Ordinary Lean builds use the committed source and catalogs; they require no Python or generation hook. Source audits and generators use Python 3.12. From the repository root:
 
 ```sh
-python3.12 packages/solanalib-specs/tools/generate_capabilities.py --check
-python3.12 packages/solanalib-specs/tools/version_compatibility.py --check
+just check-generated
 python3.12 tools/model-audit/check_solana_specs.py --fetch-sdk
 python3.12 tools/model-audit/import_tiers.py
 SOLANA_SPECS_INTEGRATION_TESTS=1 python3.12 -B -m unittest discover -s tools/model-audit -p 'test_solana_*.py'
@@ -78,8 +77,7 @@ SOLANA_SPECS_INTEGRATION_TESTS=1 python3.12 -B -m unittest discover -s tools/mod
 
 The audit checks source anchors and hashes, exact contract/reference/sample
 witnesses, all registered modules and standard axiom dependencies. After changing
-registration, run the two generators without `--check`; do not edit generated
-catalogs, applicability data or tables manually.
+registration, use `just generate-specs`; do not edit generated catalogs, applicability data or tables manually. Keep generated Lean and human-readable guides committed. The machine-readable `applicability.json` is an ignored export for standalone lookup and documentation. Lookup in a checkout reads the current registry directly, even if an export is present. Catalogs retain the interpretation conditions and selection facts; full review arguments remain in the registry and source notes.
 
 For release-census maintenance, add `--fetch-index` to the version check. This
 compares the frozen source census against the live registry and reports new

@@ -4,7 +4,7 @@
       "order": 131,
       "modules": {
         "Solanalib.Specs.PythnetSdk": "1ea5a2ccddc3e5377f1a5d1f11200d23a1f9a9606ba0c0039b6f55f42b01c754",
-        "Solanalib.Specs.PythnetSdk.Capabilities": "f672ef59148353c894961dca11a26b9c9e002d8d637e251f5a562080970b53f3",
+        "Solanalib.Specs.PythnetSdk.Capabilities": "d07eb79dcf3f2d4c56bbbe223f07d8ec89cd1ad616e1dd4c616ffe3d1e510235",
         "Solanalib.Specs.PythnetSdk.Messages": "45e1b12c9636285c020763de017d67654f3cb3235ae76d34dd7726380622820f"
       },
       "source_ids": ["root-extra::pythnet-sdk-3.0.0::src/messages.rs", "codecs::borsh-1.6.1::src/de/mod.rs"],

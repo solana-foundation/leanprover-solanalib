@@ -63,10 +63,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["borsh"],
           any := [],
-          none := [],
-          reason :=
-            "This feature selects the reviewed trait implementation; other feature \
-              branches may select a different decoder or omit the API."
+          none := []
         },
         dependencies := [{
           package := "borsh",
@@ -76,10 +73,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 reader and derive are assumed to preserve the reference \
-              field order, values, NaN rejection, exact InvalidData diagnostics and \
-              success remainder.",
           compatibleRanges := [{
             lower := "1.6.1",
             upper := "2.0.0"
@@ -92,10 +85,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 reader and derive are assumed to preserve the reference \
-              field order, values, NaN rejection, exact InvalidData diagnostics and \
-              success remainder.",
           compatibleRanges := [{
             lower := "1.6.1",
             upper := "2.0.0"
@@ -109,26 +98,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             available in 1.x is a different source profile.", "Retain the existing \
             callee-decoder interpretation; the concrete profiles use Borsh/derive 1.6.1 \
             and the actual Pubkey/Address dependency chain. Their 32-byte address decoding \
-            is included in the source review, with no Rust identity aliases."],
-        evidence := ["https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-1.0.0.crate", "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-1.2.1.crate"],
-        argument :=
-          "All 18 releases have the same four-byte little-endian tag dispatcher. Tags \
-            0/1/2/3 select Uninitialized, Initialized(Meta), Stake(Meta, Stake, \
-            StakeFlags) and RewardsPool, with widths 4/124/197/4. Other tags return \
-            InvalidData / Invalid enum value before reading a body; error construction is \
-            interpreted under the shared scope boundary. Through 3.1.0 the complete nested \
-            field order, integer/address decoding, every flag byte and success remainder \
-            match the model. Delegation warmup_cooldown_rate is f64, and NaNs fail with \
-            InvalidData / For portability reasons we do not allow to deserialize NaNs. \
-            before credits_observed and the trailing flag. Version 4.0.0 replaces this \
-            field with _reserved: [u8; 8], so NaN-shaped bytes are accepted and a \
-            truncated tail after them returns the short-input error instead. Retained \
-            native cases at 4.0.0 and 5.1.1 confirm these functional differences. \
-            Accordingly the nine releases through 3.1.0 are compatible and the nine later \
-            releases are incompatible, without excluding NaNs from the input domain or \
-            adding diagnostic-allocation premises. StakeStateV2 Borsh 1 trait \
-            implementation with Borsh/derive 1.6.1 and solana-pubkey 2.4.0. The f64 \
-            delegation field is retained."
+            is included in the source review, with no Rust identity aliases."]
       },
       {
         id := "stake-2.x-borsh-1.6.1",
@@ -150,10 +120,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["borsh"],
           any := [],
-          none := [],
-          reason :=
-            "This feature selects the reviewed trait implementation; other feature \
-              branches may select a different decoder or omit the API."
+          none := []
         },
         dependencies := [{
           package := "borsh",
@@ -163,10 +130,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 reader and derive are assumed to preserve the reference \
-              field order, values, NaN rejection, exact InvalidData diagnostics and \
-              success remainder.",
           compatibleRanges := [{
             lower := "1.6.1",
             upper := "2.0.0"
@@ -179,10 +142,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 reader and derive are assumed to preserve the reference \
-              field order, values, NaN rejection, exact InvalidData diagnostics and \
-              success remainder.",
           compatibleRanges := [{
             lower := "1.6.1",
             upper := "2.0.0"
@@ -196,27 +155,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             available in 1.x is a different source profile.", "Retain the existing \
             callee-decoder interpretation; the concrete profiles use Borsh/derive 1.6.1 \
             and the actual Pubkey/Address dependency chain. Their 32-byte address decoding \
-            is included in the source review, with no Rust identity aliases."],
-        evidence := ["https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-2.0.0.crate", "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-2.0.2.crate"],
-        argument :=
-          "All 18 releases have the same four-byte little-endian tag dispatcher. Tags \
-            0/1/2/3 select Uninitialized, Initialized(Meta), Stake(Meta, Stake, \
-            StakeFlags) and RewardsPool, with widths 4/124/197/4. Other tags return \
-            InvalidData / Invalid enum value before reading a body; error construction is \
-            interpreted under the shared scope boundary. Through 3.1.0 the complete nested \
-            field order, integer/address decoding, every flag byte and success remainder \
-            match the model. Delegation warmup_cooldown_rate is f64, and NaNs fail with \
-            InvalidData / For portability reasons we do not allow to deserialize NaNs. \
-            before credits_observed and the trailing flag. Version 4.0.0 replaces this \
-            field with _reserved: [u8; 8], so NaN-shaped bytes are accepted and a \
-            truncated tail after them returns the short-input error instead. Retained \
-            native cases at 4.0.0 and 5.1.1 confirm these functional differences. \
-            Accordingly the nine releases through 3.1.0 are compatible and the nine later \
-            releases are incompatible, without excluding NaNs from the input domain or \
-            adding diagnostic-allocation premises. StakeStateV2 Borsh 1 trait \
-            implementation with Borsh/derive 1.6.1 and solana-pubkey 3.0.0; its dependency \
-            chain resolves the same 32-byte address representation. The f64 delegation \
-            field is retained."
+            is included in the source review, with no Rust identity aliases."]
       },
       {
         id := "stake-3.x-borsh-1.6.1",
@@ -238,10 +177,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["borsh"],
           any := [],
-          none := [],
-          reason :=
-            "This feature selects the reviewed trait implementation; other feature \
-              branches may select a different decoder or omit the API."
+          none := []
         },
         dependencies := [{
           package := "borsh",
@@ -251,10 +187,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 reader and derive are assumed to preserve the reference \
-              field order, values, NaN rejection, exact InvalidData diagnostics and \
-              success remainder.",
           compatibleRanges := [{
             lower := "1.6.1",
             upper := "2.0.0"
@@ -267,10 +199,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 reader and derive are assumed to preserve the reference \
-              field order, values, NaN rejection, exact InvalidData diagnostics and \
-              success remainder.",
           compatibleRanges := [{
             lower := "1.6.1",
             upper := "2.0.0"
@@ -284,26 +212,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             available in 1.x is a different source profile.", "Retain the existing \
             callee-decoder interpretation; the concrete profiles use Borsh/derive 1.6.1 \
             and the actual Pubkey/Address dependency chain. Their 32-byte address decoding \
-            is included in the source review, with no Rust identity aliases."],
-        evidence := ["https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-3.0.0.crate", "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-3.1.0.crate"],
-        argument :=
-          "All 18 releases have the same four-byte little-endian tag dispatcher. Tags \
-            0/1/2/3 select Uninitialized, Initialized(Meta), Stake(Meta, Stake, \
-            StakeFlags) and RewardsPool, with widths 4/124/197/4. Other tags return \
-            InvalidData / Invalid enum value before reading a body; error construction is \
-            interpreted under the shared scope boundary. Through 3.1.0 the complete nested \
-            field order, integer/address decoding, every flag byte and success remainder \
-            match the model. Delegation warmup_cooldown_rate is f64, and NaNs fail with \
-            InvalidData / For portability reasons we do not allow to deserialize NaNs. \
-            before credits_observed and the trailing flag. Version 4.0.0 replaces this \
-            field with _reserved: [u8; 8], so NaN-shaped bytes are accepted and a \
-            truncated tail after them returns the short-input error instead. Retained \
-            native cases at 4.0.0 and 5.1.1 confirm these functional differences. \
-            Accordingly the nine releases through 3.1.0 are compatible and the nine later \
-            releases are incompatible, without excluding NaNs from the input domain or \
-            adding diagnostic-allocation premises. StakeStateV2 Borsh 1 trait \
-            implementation with Borsh/derive 1.6.1 and solana-pubkey 4.4.0 / \
-            solana-address 2.9.0. The f64 delegation field is retained."
+            is included in the source review, with no Rust identity aliases."]
       }
     ]
   applicabilityConsumers := fun key => match key with

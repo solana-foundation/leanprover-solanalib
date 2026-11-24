@@ -5,7 +5,7 @@
       "modules": {
         "Solanalib.Specs.SolanaProgramOption": "a485880cb47c1257fb795862f26fb0981457add229874b322866824e096a5afe",
         "Solanalib.Specs.SolanaProgramOption.COption": "11937e54df1a5b4f11698d7687f9bcc6877bbd1e1c70251946324c5fd2fb4b9c",
-        "Solanalib.Specs.SolanaProgramOption.Capabilities": "14cb4ff973e93ea19648e322d01483773ac16d2e1d99d23cff461648b082a6e2",
+        "Solanalib.Specs.SolanaProgramOption.Capabilities": "30cd30b4f4f37ffe37f56bb18bbf342e3cb7fbc72f88d8f6e985e89dd0fda049",
         "Solanalib.Specs.SolanaProgramOption.Operations": "6467fdae16ac53a37286004c42bae1a8f0efe139d22f27aa7a627f98e9b96a68"
       },
       "source_ids": [

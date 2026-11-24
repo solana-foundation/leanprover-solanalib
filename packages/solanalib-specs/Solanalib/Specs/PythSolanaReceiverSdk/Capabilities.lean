@@ -98,10 +98,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.0.2"],
-          reason :=
-            "The selected Anchor 1 derive expansion is assumed to preserve \
-              declaration-order fields, enum tags and delegation to Borsh 1; Anchor 0.x \
-              selects observably different Borsh errors.",
           compatibleRanges := [{
             lower := "1.0.2",
             upper := "2.0.0"
@@ -114,10 +110,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.0.2"],
-          reason :=
-            "The selected Anchor 1 derive expansion is assumed to preserve \
-              declaration-order fields, enum tags and delegation to Borsh 1; Anchor 0.x \
-              selects observably different Borsh errors.",
           compatibleRanges := [{
             lower := "1.0.2",
             upper := "2.0.0"
@@ -130,10 +122,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.0.2"],
-          reason :=
-            "The selected Anchor 1 derive expansion is assumed to preserve \
-              declaration-order fields, enum tags and delegation to Borsh 1; Anchor 0.x \
-              selects observably different Borsh errors.",
           compatibleRanges := [{
             lower := "1.0.2",
             upper := "2.0.0"
@@ -146,10 +134,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 slice decoder and derive expansion are assumed to \
-              preserve values, success remainders and exact InvalidData diagnostics of the \
-              reference; no error remainder is required.",
           compatibleRanges := [{
             lower := "1.5.3",
             upper := "2.0.0"
@@ -162,10 +146,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 slice decoder and derive expansion are assumed to \
-              preserve values, success remainders and exact InvalidData diagnostics of the \
-              reference; no error remainder is required.",
           compatibleRanges := [{
             lower := "1.5.3",
             upper := "2.0.0"
@@ -178,10 +158,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["3.0.0"],
-          reason :=
-            "The selected Pythnet 3 PriceFeedMessage decoder is assumed to preserve its \
-              84-byte field encoding and Borsh 1 error delegation. The receiver enables \
-              its solana-program feature.",
           compatibleRanges := [{
             lower := "3.0.0",
             upper := "4.0.0"
@@ -195,28 +171,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             Pythnet 3.0.0 with solana-program.", "Dependency behavior is included in the \
             Pyth reader specification and source review. Callers use the Pyth operation \
             without additional Borsh premises. Account discriminator, owner, authority, \
-            signature and freshness checks are outside these payload decoders."],
-        evidence := ["https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-2.0.0.crate"],
-        argument :=
-          "Reference: receiver 2.0.0, Anchor and macros 1.0.2, Borsh and derive 1.6.1, \
-            Pythnet 3.0.0. The declared registry ranges assume preservation of this \
-            decoder contract at the used field types, including exact errors; SemVer is \
-            compatibility evidence, not a proof of those details. Receiver Cargo \
-            requirements allow Anchor ^1.0.2, Borsh ^1.5.3 and Pythnet ^3.0.0. Pyth \
-            PriceUpdateV2 decodes write_authority [u8; 32], VerificationLevel (one or two \
-            bytes), the complete 84-byte PriceFeedMessage and posted_slot u64 in order. It \
-            returns all fields and the exact suffix, stops at the first field error, and \
-            neither consumes nor checks an account discriminator. The published 2.0.0 \
-            reference provides the current InvalidData and variant-tag diagnostics; the \
-            complete Pyth operation includes the behavior of its reached field readers. \
-            Published 1.2.0 uses an Anchor 0.32/Borsh 0.10 dependency graph that produces \
-            observably different errors. Older published 1.x pins Anchor 0.x; 0.x has \
-            BorshSchema coupling to the Pythnet 0.10 schema despite its broad Anchor \
-            constraint. All malformed-input and error-order behavior is retained. \
-            Diagnostic error allocations fall under the shared scope boundary and impose \
-            no extra Pyth caller premise. Pyth-generated VerificationLevel and \
-            PriceUpdateV2 readers; AnchorDeserialize re-emits BorshDeserialize through \
-            Anchor 1.0.2 with derive/account macros 1.0.2 and Borsh/derive 1.6.1."
+            signature and freshness checks are outside these payload decoders."]
       }
     ]
     | .price_update_PriceUpdateV2_get_price_no_older_than_with_custom_verification_level => [
@@ -269,19 +224,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             a runtime check or new family gate. Anchor error representation, Rust integer \
             operations and source version identities remain separate bindings.",
             "The getter checks no ownership, authority or signatures. No \
-            oracle-authentication premise is inferred from the returned price."],
-        evidence := ["https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-0.1.0.crate", "https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-2.0.0.crate"],
-        argument :=
-          "All 14 published versions have the same getter, verification ordering, \
-            unchecked feed lookup, output fields and relevant integer expressions. The \
-            order is insufficient verification, mismatched feed, fallible u64-to-i64 age \
-            conversion (panic at age >= 2^63), then signed saturating publish_time + age \
-            with an inclusive freshness comparison. Full dominates every level; Partial \
-            compares signature counts and cannot satisfy Full. Future publication times \
-            are accepted. Added unused error variants and formatting/attributes do not \
-            change these branches, and all unreturned update/message/clock observations \
-            are framed. This source correspondence does not create a registered callable \
-            binding for a different published version."
+            oracle-authentication premise is inferred from the returned price."]
       }
     ]
     | .price_update_VerificationLevel_deserialize_reader => [
@@ -310,10 +253,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.0.2"],
-          reason :=
-            "The selected Anchor 1 derive expansion is assumed to preserve \
-              declaration-order fields, enum tags and delegation to Borsh 1; Anchor 0.x \
-              selects observably different Borsh errors.",
           compatibleRanges := [{
             lower := "1.0.2",
             upper := "2.0.0"
@@ -326,10 +265,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.0.2"],
-          reason :=
-            "The selected Anchor 1 derive expansion is assumed to preserve \
-              declaration-order fields, enum tags and delegation to Borsh 1; Anchor 0.x \
-              selects observably different Borsh errors.",
           compatibleRanges := [{
             lower := "1.0.2",
             upper := "2.0.0"
@@ -342,10 +277,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 slice decoder and derive expansion are assumed to \
-              preserve values, success remainders and exact InvalidData diagnostics of the \
-              reference; no error remainder is required.",
           compatibleRanges := [{
             lower := "1.5.3",
             upper := "2.0.0"
@@ -358,10 +289,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["1.6.1"],
-          reason :=
-            "The selected Borsh 1 slice decoder and derive expansion are assumed to \
-              preserve values, success remainders and exact InvalidData diagnostics of the \
-              reference; no error remainder is required.",
           compatibleRanges := [{
             lower := "1.5.3",
             upper := "2.0.0"
@@ -375,29 +302,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             Pythnet 3.0.0 with solana-program.", "Dependency behavior is included in the \
             Pyth reader specification and source review. Callers use the Pyth operation \
             without additional Borsh premises. Account discriminator, owner, authority, \
-            signature and freshness checks are outside these payload decoders."],
-        evidence := ["https://static.crates.io/crates/pyth-solana-receiver-sdk/pyth-solana-receiver-sdk-2.0.0.crate"],
-        argument :=
-          "Reference: receiver 2.0.0, Anchor and macros 1.0.2, Borsh and derive 1.6.1, \
-            Pythnet 3.0.0. The declared registry ranges assume preservation of this \
-            decoder contract at the used field types, including exact errors; SemVer is \
-            compatibility evidence, not a proof of those details. Receiver Cargo \
-            requirements allow Anchor ^1.0.2, Borsh ^1.5.3 and Pythnet ^3.0.0. Pyth \
-            VerificationLevel reads a u8 tag: 0 reads a further u8 signature count and \
-            returns Partial; 1 returns Full without reading a count; all other tags return \
-            InvalidData with Unexpected variant tag: N, rendering N in decimal. Truncation \
-            returns InvalidData / Unexpected length of input. The published 2.0.0 \
-            reference has exactly this Pyth behavior through its reviewed Anchor/Borsh \
-            derives, including field/error order and success remainder. Every tag byte was \
-            exercised by the retained ordinary tests. The 13 older publications have the \
-            0.10-based Pyth profile: InvalidInput on truncation and Unexpected variant \
-            index: N for an unknown tag. Receiver 0.x retains BorshSchema coupling to the \
-            0.10 schema of Pythnet despite a broad Anchor bound, and published 1.x pins \
-            Anchor 0.x. The source distinctions determine the released-version partition; \
-            diagnostic-allocation failure remains outside the shared model boundary. \
-            Pyth-generated VerificationLevel and PriceUpdateV2 readers; AnchorDeserialize \
-            re-emits BorshDeserialize through Anchor 1.0.2 with derive/account macros \
-            1.0.2 and Borsh/derive 1.6.1."
+            signature and freshness checks are outside these payload decoders."]
       }
     ]
   applicabilityConsumers := fun key => match key with

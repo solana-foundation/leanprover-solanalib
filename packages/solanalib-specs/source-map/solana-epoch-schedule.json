@@ -12,7 +12,7 @@
       "modules": {
         "Solanalib.Specs.SolanaEpochSchedule.EpochSchedule": "9a67efd982296a391211b4f025b64750d4bb9c5574c317941f9d2b1457452be7",
         "Solanalib.Specs.SolanaEpochSchedule": "54c32bcc6ee23a3125c2a26840045838bdb908a9fe0d66c03be5ea8d9a1cfa46",
-        "Solanalib.Specs.SolanaEpochSchedule.Capabilities": "0eaec7d31ee3d3d74f3465448f38febc03b306437fb15ae082ce9aaeae05c6e5"
+        "Solanalib.Specs.SolanaEpochSchedule.Capabilities": "2db33d9d2f1f20422ba770f3d11dfd3dd05f8e06de59bdea48f2c8745db5647d"
       }
     }
   },

@@ -5,7 +5,7 @@
       "modules": {
         "Solanalib.Specs.SplPod.Primitives": "9129f527365aae7ea07b332069f10238fa7c87ff2fd9bd22336e73838216bc5d",
         "Solanalib.Specs.SplPod": "c4c5cea4cf94b582c50f6550d6ded75905277b64c69ad591a2b3517e71c3450f",
-        "Solanalib.Specs.SplPod.Capabilities": "e50194150faf27da361a0782929848bfc02af1e46aadf431c8d20fff972287f8",
+        "Solanalib.Specs.SplPod.Capabilities": "5f0125de5a415ec8eeb86e1e853759c8cc77b8647ca0104a52b575c0a105f1b3",
         "Solanalib.Specs.SplPod.OptionalKeys": "213a5c76cc0e271139f37ca2b2835e98b2c53e9084a4a3cc7eb7b5317b7de653"
       },
       "source_ids": ["sdk-values::spl-pod-0.5.1::src/primitives.rs", "sdk-values::spl-pod-0.7.3::src/optional_keys.rs"],

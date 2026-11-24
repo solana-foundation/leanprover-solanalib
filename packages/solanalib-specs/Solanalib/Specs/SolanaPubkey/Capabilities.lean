@@ -185,14 +185,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.1.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.4.0.crate"],
-        argument :=
-          "Reference: solana-pubkey 2.4.0. Compatibility in [2.4.0, 3.0.0) assumes that \
-            the defining operation and its reached dependencies preserve this behavior: \
-            Observe all 32 initialized bytes in order and preserve the observed state. The \
-            returned pointer, legal shared borrow, source allocation and lifetime remain \
-            separate memory interpretation obligations."
+            prove them."]
       }
     ]
     | .Pubkey_clone => [
@@ -217,14 +210,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.1.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.4.0.crate"],
-        argument :=
-          "Reference: solana-pubkey 2.4.0. Compatibility in [2.4.0, 3.0.0) assumes that \
-            the defining operation and its reached dependencies preserve this behavior: \
-            The defining derived Clone implementation and reached core array copy preserve \
-            every one of the 32 initialized bytes, the source value and observed state; do \
-            not add allocation, mutation, validation or borrow acquisition."
+            prove them."]
       }
     ]
     | .Pubkey_cmp => [
@@ -249,13 +235,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.1.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.3.0.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.4.0.crate"],
-        argument :=
-          "The inspected 2.2.1, 2.3.0 and 2.4.0 definitions derive unsigned lexicographic \
-            ordering of the same 32-byte array. Compatibility within the declared 2.x \
-            range assumes this value comparison and borrowed input preservation remain \
-            unchanged; 3.0.0 reexports an Address defined elsewhere."
+            prove them."]
       }
     ]
     | .Pubkey_create_program_address_solana => [
@@ -277,15 +257,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "The selected source passes 64-bit slice counts to the runtime ABI."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Select the reviewed runtime syscall branch; the host retry/crypto branch is \
-              separate."
+          «exclude» := []
         }],
         conditions :=
           ["The concrete source values contain exactly 32 initialized bytes; references, \
@@ -295,21 +271,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             implementations remain open; source identity and native scripted checks do not \
             prove them.", "The source initializes [0; 32], so absent or partial output \
             writes still leave a fully initialized result; this profile has no MaybeUninit \
-            success premise."],
-        evidence := ["https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.1.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.4.0.crate"],
-        argument :=
-          "Reference: solana-pubkey 2.4.0. Compatibility in [2.4.0, 3.0.0) assumes that \
-            the defining operation and its reached dependencies preserve this behavior: \
-            Preserve the Solana wrapper and reached runtime interface: check seed count \
-            above 16 before any per-seed length above 32, return MaxSeedLengthExceeded \
-            before the provider on guard failure, then forward the complete ordered \
-            slices/program ID once with a zero-initialized 32-byte destination. Status 0 \
-            returns its actual bytes, including retained zero bytes after partial writes; \
-            status 1 maps to InvalidSeeds, status 2 to IllegalOwner, and other nonzero \
-            statuses reach the same Unsupported PubkeyError panic from the reached state. \
-            Retain callback effects and every returned, unwound and terminal outcome. Do \
-            not replace this family with an uninitialized-output or legacy-status Address \
-            family."
+            success premise."]
       }
     ]
     | .Pubkey_create_with_seed => [
@@ -331,15 +293,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "The selected source passes 64-bit slice counts to the runtime ABI."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Select the reviewed runtime syscall branch; the host retry/crypto branch is \
-              separate."
+          «exclude» := []
         }],
         conditions :=
           ["The concrete source values contain exactly 32 initialized bytes; references, \
@@ -349,17 +307,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             implementations remain open; source identity and native scripted checks do not \
             prove them.", "Each indexed callback interprets the actual reached source \
             operation with its full state, return, unwind and terminal outcomes; no \
-            termination or successful reply is assumed."],
-        evidence := ["https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.1.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.4.0.crate"],
-        argument :=
-          "Reference: solana-pubkey 2.4.0. Compatibility in [2.4.0, 3.0.0) assumes that \
-            the defining operation and its reached dependencies preserve this behavior: \
-            Preserve the reached hashv boundary and wrapper order: count UTF-8 bytes, \
-            reject length above 32 before the owner ProgramDerivedAddress suffix test, \
-            hash exactly [base bytes, seed bytes, owner bytes] once, and wrap the returned \
-            32 bytes without a curve test. Keep state, error and abnormal outcomes. The \
-            actual hash callback remains indexed, with no termination, successful-hash or \
-            cryptographic body assumption."
+            termination or successful reply is assumed."]
       }
     ]
     | .Pubkey_default => [
@@ -384,15 +332,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.1.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.4.0.crate"],
-        argument :=
-          "Reference: solana-pubkey 2.4.0. Compatibility in [2.4.0, 3.0.0) assumes that \
-            the defining operation and its reached dependencies preserve this behavior: \
-            The defining derived Default implementation and reached core byte-array \
-            initialization return exactly 32 initialized zero bytes and preserve the \
-            observed source state, without adding allocation, callbacks, validation or \
-            abnormal exits."
+            prove them."]
       }
     ]
     | .Pubkey_deserialize_reader => [
@@ -415,8 +355,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["borsh"],
           any := [],
-          none := [],
-          reason := "The selected Borsh implementations are feature-gated."
+          none := []
         },
         dependencies := [{
           package := "borsh",
@@ -426,14 +365,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.10.4"],
-          reason :=
-            "Reference: 0.10.4. Compatibility in [0.10.4, 0.11.0) assumes the actual \
-              selected 0.10 BorshDeserialize implementation and fixed-array specialization \
-              still call the reached R::read_exact override once on a zeroed array, \
-              preserve the complete result/partial state, and translate UnexpectedEof to \
-              InvalidInput with Unexpected length of input while preserving other error \
-              ownership/cleanup and abnormal outcomes. The Borsh 1.x InvalidData reader \
-              remains excluded.",
           compatibleRanges := [{
             lower := "0.10.4",
             upper := "0.11.0"
@@ -448,17 +379,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             prove them.", "When multiple Borsh generations are linked, bind the exact \
             retained trait item and implementation (including its resolved arguments and \
             disambiguating description) to the stated generation; bare display names and \
-            dependency presence do not establish this selection."],
-        evidence := ["https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.1.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.4.0.crate", "https://static.crates.io/crates/borsh/borsh-0.10.4.crate"],
-        argument :=
-          "Reference: solana-pubkey 2.4.0. Compatibility in [2.4.0, 3.0.0) assumes that \
-            the defining operation and its reached dependencies preserve this behavior: \
-            Preserve the actual Borsh 0.10 trait implementation and fixed-array \
-            specialization: start with a zeroed [u8; 32], invoke the reached R::read_exact \
-            override once, return its complete resulting array on success, and translate \
-            UnexpectedEof to InvalidInput with Unexpected length of input. Preserve all \
-            other errors, partial reader state, owned error cleanup, unwind and terminal \
-            outcomes. Borsh 1.x InvalidData and the older slice-reader API remain distinct."
+            dependency presence do not establish this selection."]
       }
     ]
     | .Pubkey_eq => [
@@ -483,15 +404,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.1.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.4.0.crate"],
-        argument :=
-          "Reference: solana-pubkey 2.4.0. Compatibility in [2.4.0, 3.0.0) assumes that \
-            the defining operation and its reached dependencies preserve this behavior: \
-            The defining PartialEq implementation and reached core array equality compare \
-            the entire pair of 32-byte arrays and return true exactly when every byte is \
-            equal, preserving the observed state without prefix-only comparison or extra \
-            effects."
+            prove them."]
       }
     ]
     | .Pubkey_find_program_address_solana => [
@@ -513,15 +426,11 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         target := [{
           field := "pointer_width",
           «include» := ["64"],
-          «exclude» := [],
-          reason := "The selected source passes 64-bit slice counts to the runtime ABI."
+          «exclude» := []
         }, {
           field := "os",
           «include» := ["solana"],
-          «exclude» := [],
-          reason :=
-            "Select the reviewed runtime syscall branch; the host retry/crypto branch is \
-              separate."
+          «exclude» := []
         }],
         conditions :=
           ["The concrete source values contain exactly 32 initialized bytes; references, \
@@ -529,18 +438,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.1.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.4.0.crate"],
-        argument :=
-          "Reference: solana-pubkey 2.4.0. Compatibility in [2.4.0, 3.0.0) assumes that \
-            the defining operation and its reached dependencies preserve this behavior: \
-            Preserve the Solana try-find wrapper and actual runtime callback: no local \
-            seed guard, ordered seeds and UInt64 count, the complete program ID, a zeroed \
-            32-byte output and initial bump 255. Status 0 returns the actual buffer and \
-            bump including bump 0; every nonzero status reaches Unable to find a viable \
-            program address bump seed from the reached state. Unwind and terminal outcomes \
-            bypass later callbacks. The host retry loop is a different branch and is not \
-            selected."
+            prove them."]
       }
     ]
     | .Pubkey_from => [
@@ -565,14 +463,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.1.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.3.0.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.4.0.crate"],
-        argument :=
-          "The inspected 2.2.1/2.3.0/2.4.0 definitions agree on copying the complete input \
-            [u8; 32] into the defining Pubkey carrier. The declared 2.x range assumes that \
-            value behavior; reference identity, layout and any exact Borsh call binding \
-            remain separate. Pubkey 3.0.0 reexports Address and is outside this \
-            defining-item range."
+            prove them."]
       }
     ]
     | .Pubkey_new_from_array => [
@@ -597,14 +488,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.1.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.3.0.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.4.0.crate"],
-        argument :=
-          "The inspected 2.2.1/2.3.0/2.4.0 definitions agree on constructing the defining \
-            Pubkey from all 32 input bytes. The declared 2.x range assumes that value \
-            behavior; reference identity, layout and any exact Borsh call binding remain \
-            separate. Pubkey 3.0.0 reexports Address and is outside this defining-item \
-            range."
+            prove them."]
       }
     ]
     | .Pubkey_serialize => [
@@ -626,8 +510,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
         features := {
           all := ["borsh"],
           any := [],
-          none := [],
-          reason := "The selected Borsh implementations are feature-gated."
+          none := []
         },
         dependencies := [{
           package := "borsh",
@@ -637,13 +520,6 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             revision := ""
           },
           releases := ["0.10.4"],
-          reason :=
-            "Reference: 0.10.4. Compatibility in [0.10.4, 0.11.0) assumes the actual \
-              selected 0.10 BorshSerialize implementation and fixed-array specialization \
-              still invoke the reached W::write_all once for all 32 bytes and preserve its \
-              complete result, partial state, owned IO error, unwind and terminal \
-              behavior. Preserve exact trait/implementation/generic dispatch; another \
-              linked generation is not this edge.",
           compatibleRanges := [{
             lower := "0.10.4",
             upper := "0.11.0"
@@ -658,17 +534,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             prove them.", "When multiple Borsh generations are linked, bind the exact \
             retained trait item and implementation (including its resolved arguments and \
             disambiguating description) to the stated generation; bare display names and \
-            dependency presence do not establish this selection."],
-        evidence := ["https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.1.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.4.0.crate", "https://static.crates.io/crates/borsh/borsh-0.10.4.crate"],
-        argument :=
-          "Reference: solana-pubkey 2.4.0. Compatibility in [2.4.0, 3.0.0) assumes that \
-            the defining operation and its reached dependencies preserve this behavior: \
-            Preserve the actual Borsh 0.10 trait implementation and fixed-array \
-            specialization: serialize the single nonempty [u8; 32] through one reached \
-            W::write_all, retaining the complete result, partial writer state, errors, \
-            unwind and terminal outcomes. Preserve the selected receiver, both generic \
-            argument lists and reached callback identity; no success, rollback, other \
-            Borsh generation or merely present dependency substitutes for that selection."
+            dependency presence do not establish this selection."]
       }
     ]
     | .Pubkey_to_bytes => [
@@ -693,14 +559,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             source/memory obligations.", "Rust/SDK/standard-library bodies, compiler \
             correctness, target-layout equivalence and runtime/cryptographic \
             implementations remain open; source identity and native scripted checks do not \
-            prove them."],
-        evidence := ["https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.2.1.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.4.0.crate", "https://static.crates.io/crates/solana-pubkey/solana-pubkey-2.3.0.crate"],
-        argument :=
-          "The inspected 2.2.1/2.3.0/2.4.0 definitions agree on returning every stored \
-            byte without changing source state. The declared 2.x range assumes that value \
-            behavior; reference identity, layout and any exact Borsh call binding remain \
-            separate. Pubkey 3.0.0 reexports Address and is outside this defining-item \
-            range."
+            prove them."]
       }
     ]
   applicabilityConsumers := fun key => match key with

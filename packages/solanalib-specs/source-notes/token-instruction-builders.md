@@ -2,7 +2,7 @@
 
 The [source registry](../source-map.json) selects these exact construction and
 constant operations. Source hashes, anchors and resolved dependencies remain
-per API in its [profiles](../applicability.json).
+per API in its [profiles](../source-map.json).
 
 | Native/source reference crate | Registered operations covered here |
 | --- | --- |

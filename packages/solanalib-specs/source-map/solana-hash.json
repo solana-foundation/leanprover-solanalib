@@ -4,7 +4,7 @@
       "order": 138,
       "modules": {
         "Solanalib.Specs.SolanaHash": "a4e50bc1f1ca6922922f55f57722eca4b309c8bcdfe00dc3a3ae69db891b9117",
-        "Solanalib.Specs.SolanaHash.Capabilities": "b65566ff34604df3dc2f64842a1aa2f00ec47b614ab844f91e372df78473e782",
+        "Solanalib.Specs.SolanaHash.Capabilities": "6ccd92f51f4762cbd723186e8a13c03a13b059b370d60f9404a9ee5dc056b6d6",
         "Solanalib.Specs.SolanaHash.Hash": "c318c6daece3b01e9db996bc1a747d2ab57229d704b39784e03715ad1f49a8be"
       },
       "source_ids": [

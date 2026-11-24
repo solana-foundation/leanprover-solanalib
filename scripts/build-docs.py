@@ -128,6 +128,9 @@ def documentation_warnings(modules, logs):
 
 
 def main():
+    export = BUILD / 'doc-applicability.json'
+    subprocess.run([sys.executable, 'packages/solanalib-specs/tools/version_compatibility.py',
+                    '--check', '--manifest-output', str(export)], cwd=ROOT, check=True)
     modules = public_sources()
     subprocess.run(['lake', '-R', '-Kenv=dev', 'build', 'doc-gen4/coreDocs',
                     'doc-gen4/bibPrepass', *('+' + name for name in modules)], cwd=ROOT, check=True)
@@ -171,6 +174,7 @@ def main():
         raise SystemExit('Missing generated module documentation: ' + ', '.join(missing))
     (BUILD / 'doc/solanalib-warnings.json').write_text(json.dumps(warnings, indent=2) + '\n')
     subprocess.run([sys.executable, 'scripts/postprocess-docs.py'], cwd=ROOT, check=True)
+    shutil.copyfile(export, BUILD / 'doc/applicability.json')
     print(f'Documentation coverage: {len(expected)} production modules; '
           f'{len(sources)} modules in the non-core import closure; one rendered site')
 

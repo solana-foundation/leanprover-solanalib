@@ -124,7 +124,7 @@ Generate the capability module and applicability outputs first. They may change 
 just generate-specs
 ```
 
-Review the changes to [Capabilities.lean](../packages/solanalib-specs/Solanalib/Specs/SolanaSystemInterface/Capabilities.lean), [applicability.json](../packages/solanalib-specs/applicability.json), [VERSION_COMPATIBILITY.md](../packages/solanalib-specs/VERSION_COMPATIBILITY.md), and [SolanalibTest/Specs/Core/VersionCompatibility.lean](../packages/solanalib-specs/SolanalibTest/Specs/Core/VersionCompatibility.lean). These preserve complete family identities and generate equality and rejection controls. Use the [SDK seal tool](../tools/model-audit/refresh_sdk_abstraction.py) to refresh only the module hashes of the reviewed abstraction after reviewing those outputs:
+Review the changes to [Capabilities.lean](../packages/solanalib-specs/Solanalib/Specs/SolanaSystemInterface/Capabilities.lean), [VERSION_COMPATIBILITY.md](../packages/solanalib-specs/VERSION_COMPATIBILITY.md), and [SolanalibTest/Specs/Core/VersionCompatibility.lean](../packages/solanalib-specs/SolanalibTest/Specs/Core/VersionCompatibility.lean). These preserve complete family identities and generate equality and rejection controls. The ignored `packages/solanalib-specs/applicability.json` export contains the complete machine lookup data; keep it out of Git. Use the [SDK seal tool](../tools/model-audit/refresh_sdk_abstraction.py) to refresh only the module hashes of the reviewed abstraction after reviewing those outputs:
 
 ```sh
 just refresh-sdk-seal 'library::solana_system_interface'
@@ -190,7 +190,7 @@ just lint
 just check-all
 ```
 
-Keep the generated `docs/model-gaps.md` and `docs/tests.md` with the source, catalog, scenario, checker and recording changes. Cite the resulting checks and remaining limits in the review description.
+Keep generated Lean, `VERSION_COMPATIBILITY.md`, `docs/model-gaps.md` and `docs/tests.md` with the source, scenario, checker and recording changes. `just check-generated` rejects stale committed outputs and validates a temporary machine export. Lean builds consume the committed catalogs without running Python. Cite the resulting checks and remaining limits in the review description.
 
 ## Adding a new crate
 

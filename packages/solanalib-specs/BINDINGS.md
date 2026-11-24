@@ -50,9 +50,7 @@ Each profile fixes the relevant source and build choices. Physical layout
 correspondence and the behavior of invoked library operations remain separate
 source-interface obligations.
 
-Each model has source/version/configuration profiles in
-`applicability.json`. The installed tool requires only the standard
-library of Python:
+Each model has source/version/configuration profiles in the [source registry](source-map.json). Lookup in a checkout reads those reviewed inputs directly. `just generate-specs` also produces an ignored `applicability.json` export; a standalone bundle containing that file and the lookup tools needs only the Python standard library:
 
 ```sh
 python3.12 packages/solanalib-specs/tools/lookup_applicability.py \

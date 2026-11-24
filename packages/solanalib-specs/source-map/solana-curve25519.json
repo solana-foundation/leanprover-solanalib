@@ -4,7 +4,7 @@
       "order": 136,
       "modules": {
         "Solanalib.Specs.SolanaCurve25519": "e98543e1aed86d312d1ec4fb3aedf3e8e4e0b890d45abce090c2a9dae79bc07d",
-        "Solanalib.Specs.SolanaCurve25519.Capabilities": "b9564165bb96ac877c9c77b2d0bf0ae3350b36070e6f8a1d059ef90982686050",
+        "Solanalib.Specs.SolanaCurve25519.Capabilities": "fa2e83ab7b043b0115f13bd1b88194c08e35a0130e3e01dd739f69e97a6775dd",
         "Solanalib.Specs.SolanaCurve25519.Edwards": "b1662273d93d3c8b6bf1d748cb3fcb0a9529ba58855aa6a713fac6c90572f2b5"
       },
       "source_ids": [

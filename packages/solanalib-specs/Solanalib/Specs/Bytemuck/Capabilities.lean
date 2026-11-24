@@ -74,17 +74,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Selected T satisfies its actual NoUninit safety contract; the index supplies \
             its real layout and initialized in-memory encoding on the selected target.",
             "Input/returned shared-reference validity, provenance, lifetime and aliasing \
-            are separate bindings; the modeled address equality includes zero-sized types."],
-        evidence := ["https://static.crates.io/crates/bytemuck/bytemuck-1.16.3.crate", "https://static.crates.io/crates/bytemuck/bytemuck-1.25.2.crate"],
-        argument :=
-          "1.16.3 removes the literal empty-slice shortcut and changes reached \
-            try_cast_slice to accept zero input bytes. For target u8, alignment and slop \
-            errors are impossible; all sized and zero-sized cases keep the input address \
-            and expose exactly size_of<T>() bytes. Every later published release has the \
-            same reached behavior, with equivalent modulo/align_offset branches. Earlier \
-            releases violate complete ZST behavior: 1.2.0–1.5.0 panic; other earlier \
-            releases return literal &[] at an unrelated address. Before 1.9.0 the public \
-            bound is additionally Pod rather than the full NoUninit domain."
+            are separate bindings; the modeled address equality includes zero-sized types."]
       }
     ]
     | .try_from_bytes => [
@@ -114,16 +104,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
             and decoding. The argument supplies the real slice address.", "Slice/reference \
             validity, provenance, lifetime and aliasing remain bindings. Alignment is a \
             nonzero power of two; target endianness is supplied by the decoding, not fixed \
-            by this model."],
-        evidence := ["https://static.crates.io/crates/bytemuck/bytemuck-1.9.0.crate", "https://static.crates.io/crates/bytemuck/bytemuck-1.25.2.crate"],
-        argument :=
-          "From 1.9.0 onward the public AnyBitPattern entry calls the reached internal \
-            routine, which checks exact length before alignment and returns the \
-            input-address reference on success. Before 1.14.0 alignment is integer modulo; \
-            1.14.0+ adds the equivalent align_offset feature branch. The ZST still needs \
-            alignment. 1.1.0/1.2.0 use AlignmentMismatch, and 1.3.0–1.8.0 retain the \
-            narrower Pod domain despite matching equations on that subset. API absent \
-            through 1.0.1."
+            by this model."]
       }
     ]
     | .zeroable_Zeroable_zeroed => [
@@ -159,14 +140,7 @@ def catalog : Solanalib.Contracts.Model.Capabilities.Catalog where
           ["Selected T satisfies Zeroable, including inhabitedness and validity of its \
             all-zero pattern; its implementation uses the default zeroed method.",
             "The index supplies real layout and all-zero decoding, which ignores padding; \
-            core::mem::zeroed and the physical binding remain open."],
-        evidence := ["https://static.crates.io/crates/bytemuck/bytemuck-0.1.0.crate", "https://static.crates.io/crates/bytemuck/bytemuck-1.25.2.crate"],
-        argument :=
-          "The default trait body is unsafe { core::mem::zeroed() } throughout every \
-            published stable release. It has no target or feature branch and does not \
-            require Pod, NoUninit or AnyBitPattern. Existing restrictions to the default \
-            method and a valid Zeroable implementation are preserved, so custom overrides \
-            are outside this contract throughout."
+            core::mem::zeroed and the physical binding remain open."]
       }
     ]
   applicabilityConsumers := fun key => match key with

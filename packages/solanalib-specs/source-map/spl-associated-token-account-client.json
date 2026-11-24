@@ -5,7 +5,7 @@
       "modules": {
         "Solanalib.Specs.SplAssociatedTokenAccountClient.address": "5f80a940d1bfd0d1c98e635c451700b62361f71b4fe96ab86d129cb5a813c04f",
         "Solanalib.Specs.SplAssociatedTokenAccountClient": "912ef796894635ca7783291fcc92816bb3830c595d1756b8c9ad6fab33118dc6",
-        "Solanalib.Specs.SplAssociatedTokenAccountClient.Capabilities": "8996fc70a6cf4e04f5670682afdc549ec0ab8fa3f46ac2404333892a7fe65630"
+        "Solanalib.Specs.SplAssociatedTokenAccountClient.Capabilities": "bb7750417fe7ea87914dd535702cb3702d41391447cf32c146cf1aa3549b5e9a"
       },
       "source_ids": [
         "addresses::solana-pubkey-2.2.1::src/lib.rs",

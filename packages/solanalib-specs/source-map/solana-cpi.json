@@ -45,7 +45,7 @@
       "modules": {
         "Solanalib.Specs.SolanaCpi": "c2efc073e18a8b4dd3902b633a814309da849943cdf8f8bb6c30b2899c7e8bf1",
         "Solanalib.Specs.SolanaCpi.syscalls": "8c3d6e78ad777ce984dd8239d21f1368b3f69edf575a6d7d3ab95573dbb379e3",
-        "Solanalib.Specs.SolanaCpi.Capabilities": "1c82a09055765f6b84f3e8b3cdeaedd00118a86b6c471b5c6922bc8d1686618b",
+        "Solanalib.Specs.SolanaCpi.Capabilities": "a85e0d21010b490d94ac0ae7d0b88cd122fd2e751dbe9c96d517067177ee550a",
         "Solanalib.Specs.SolanaCpi.ReturnData": "22e599193827f54531d427530c67cc2ef037ee4995f69e0bec9abc8611d1d3e7"
       }
     }
