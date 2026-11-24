@@ -3,11 +3,11 @@
   "reviewed_on": "2026-11-24",
   "scope": "Review of model limitations, the release census, test records, links and classifications, including runtime types and transfer conservation; the pinned source reviews provide the per-model arguments.",
   "inputs": {
-    "Solanalib/SBPF/Interpreter.lean": "7975fb8162575ef25e9a4d035db315cf33d4fa5fba63242ee91bf760119de33e",
     "docs/release-census.json": "f0ec356362f782e064a9a05712a08a3f4d34e246106c86c9e8a2931647872ae5",
     "packages/solanalib-runtime/Solanalib/Runtime/Exec.lean": "0e4ca653257dc9590331f6538898cfd564ba4ae428746848cc29f570bac23d9b",
     "packages/solanalib-runtime/Solanalib/Runtime/Transfer.lean": "b8c9ed7a1981ba3bddd79f246dd9b7b61deb1379df370c5ccd9840daae12046e",
     "packages/solanalib-runtime/source-map/sources.json": "8834c78d201f47c5f179e5bac5abbae2e69a3230cbdc119737973475fe48942c",
+    "packages/solanalib-sbpf/Solanalib/SBPF/Interpreter.lean": "7975fb8162575ef25e9a4d035db315cf33d4fa5fba63242ee91bf760119de33e",
     "packages/solanalib-specs/BINDINGS.md": "a45952d1fc43d32c341832cf3168281997c1bdfba27b8c5c6f0bf0b9b663890c",
     "packages/solanalib-specs/source-map/anchor-lang-error.json": "f263a4edee03388234d7d04e3ebb51cc3a0ed4b2515de479636162781131cc57",
     "packages/solanalib-specs/source-map/anchor-lang.json": "802207c93213ceb83086cc74a6bbdd3f1d4aac3c3fa52d4f1cb839262ca629c9",
@@ -156,7 +156,7 @@
         "Solanalib.Runtime.Exec"
       ],
       "sources": [
-        "Solanalib/SBPF/Interpreter.lean",
+        "packages/solanalib-sbpf/Solanalib/SBPF/Interpreter.lean",
         "packages/solanalib-runtime/Solanalib/Runtime/Exec.lean",
         "packages/solanalib-runtime/Solanalib/Runtime/Transfer.lean"
       ],
@@ -168,7 +168,7 @@
         "scope": "The exact selected source revision; memory, syscall, outcome and compute correspondence remain explicit."
       },
       "tests": [
-        "SolanalibTest/SBPF/VerifierTest.lean",
+        "packages/solanalib-sbpf/SolanalibTest/SBPF/VerifierTest.lean",
         "tools/runtime-conformance/README.md"
       ],
       "test_scope": "These tests cover the separate layers; they do not validate the missing execution connection."

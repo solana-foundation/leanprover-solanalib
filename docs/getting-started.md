@@ -11,7 +11,7 @@ just setup
 just test-examples
 ```
 
-Setup fetches the committed dependencies and the small Mathlib cache used by the root library. It also prepares Python 3.12 through uv. It does not run a dependency update. The first build downloads more than a warm build needs.
+Setup fetches the committed dependencies and a small Mathlib cache. It also prepares Python 3.12 through uv. It does not run a dependency update. The first build downloads more than a warm build needs.
 
 All libraries belong to one Lake package, `solanalib`, and share one build directory. The package includes Mathlib. Choose a library target for the work you need:
 
@@ -21,7 +21,6 @@ All libraries belong to one Lake package, `solanalib`, and share one build direc
 | Contract and outcome vocabulary | `Solanalib.Contracts` | `Solanalib.Contracts` |
 | System instruction constructors | `Solanalib.Specs.SolanaSystemInterface` | `Solanalib.Specs.SolanaSystemInterface` |
 | Pinocchio token operations | `Solanalib.Specs.PinocchioToken` | `Solanalib.Specs.PinocchioToken` |
-| The sBPF machine model | `Solanalib` | `Solanalib` |
 
 For example, build the System interface and its scenarios:
 

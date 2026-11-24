@@ -27,13 +27,13 @@ class ModuleOwnershipTests(unittest.TestCase):
 
     def test_library_test_and_executable_roots(self):
         names = [self.source(name) for name in (
-            'Solanalib.lean', 'packages/runtime/Solanalib/Runtime.lean',
-            'examples/SolanalibTest/Example.lean', 'Oracle.lean')]
+            'packages/runtime/Solanalib/Runtime.lean', 'examples/SolanalibTest/Example.lean',
+            'packages/sbpf/SolanalibTest/SBPFOracle.lean')]
         self.assertEqual(set(CHECK.source_inventory(self.root, names)),
-                         {'Solanalib', 'Solanalib.Runtime', 'SolanalibTest.Example', 'Oracle'})
+                         {'Solanalib.Runtime', 'SolanalibTest.Example', 'SolanalibTest.SBPFOracle'})
 
     def test_stray_module_outside_globs_is_rejected(self):
-        for name in ('Unexpected.lean', 'packages/runtime/Unexpected/Basic.lean'):
+        for name in ('Unexpected.lean', 'Oracle.lean', 'packages/runtime/Unexpected/Basic.lean'):
             with self.subTest(name=name), self.assertRaisesRegex(ValueError, 'outside the public roots'):
                 CHECK.source_inventory(self.root, [self.source(name)])
 

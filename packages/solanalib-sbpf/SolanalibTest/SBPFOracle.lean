@@ -10,7 +10,7 @@ import Solanalib.SBPF.Interpreter
 
 A thin command-line wrapper that runs `Solanalib.SBPF.bpfInterp` on test vectors
 read from standard input, so the Lean semantics can be differentially tested
-against an external sBPF VM (see the `spinoza validate` harness).
+against an external sBPF VM.
 
 ## Protocol
 

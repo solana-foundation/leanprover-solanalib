@@ -11,10 +11,8 @@ import SolanalibTest.SBPF.SyntaxTest
 import SolanalibTest.SBPF.VerifierTest
 
 /-!
-# SolanalibTest
+# sBPF regressions
 
-Regression tests for Solanalib. Each test file lives under `SolanalibTest/`
-and uses `example` declarations so the test passes iff the file
-type-checks. Run with `lake test` (which builds the `SolanalibTest` library
-via the package's `testDriver`).
+Decoder, memory, syntax, interpreter and verifier checks for the exploratory
+sBPF model. The interpreter and lifting tests evaluate with `native_decide`.
 -/

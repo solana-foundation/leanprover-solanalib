@@ -22,10 +22,10 @@ def lean_modules(base):
 
 def render():
     sections = [
-        ('Root regression tests', 'just test', lean_modules(ROOT)),
         ('Worked example', 'just test-examples', lean_modules(ROOT / 'examples')),
         ('Runtime scenarios', 'just test-runtime', lean_modules(ROOT / 'packages/solanalib-runtime')),
         ('SDK scenarios', 'just test-specs', lean_modules(ROOT / 'packages/solanalib-specs')),
+        ('sBPF exploration', 'just test-sbpf', lean_modules(ROOT / 'packages/solanalib-sbpf')),
         ('Runtime replay harness', 'just test-conformance', lean_modules(ROOT / 'tools/runtime-conformance')),
         ('SDK checkers and replay harness', 'just test-conformance', lean_modules(ROOT / 'tools/library-conformance')),
     ]
