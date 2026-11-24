@@ -1,19 +1,16 @@
+# Modeled dependencies use exact constraints; incidental packages resolve afresh.
+
 [package]
 name = "conformance-address-2-6-1"
 version = "0.1.0"
 edition = "2021"
 publish = false
 description = "Records solana-address 2.6.1 on the selected Solana branch (host build, --cfg target_os=\"solana\")"
-
-# The library and every transitive dependency are fixed by Cargo.lock.
+workspace = "../workspaces/profile-03"
 
 [dependencies]
 conformance-recorder = { path = "../recorder" }
 conformance-shim = { path = "../shim" }
 solana-address = { version = "=2.6.1", default-features = false, features = ["syscalls"] }
-
-[profile.dev]
-panic = "unwind"
-
-[profile.release]
-panic = "unwind"
+pin-solana-define-syscall-5-2-0 = { package = "solana-define-syscall", version = "=5.2.0", default-features = false, optional = true }
+pin-solana-program-error-3-0-1 = { package = "solana-program-error", version = "=3.0.1", default-features = false, optional = true }

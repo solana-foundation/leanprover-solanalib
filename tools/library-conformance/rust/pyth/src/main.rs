@@ -1,6 +1,6 @@
 //! Records pyth-solana-receiver-sdk 2.0.0 `PriceUpdateV2` Borsh decoding and
 //! the pythnet-sdk 3.0.0 `PriceFeedMessage` decoder it calls, from crates.io
-//! with dependencies pinned in Cargo.lock (borsh 1.6.1 through anchor-lang 1.0.2).
+//! with exact dependency pins (borsh 1.6.1 through anchor-lang 1.0.2).
 //!
 //! The caller checks the 8-byte Anchor discriminator before calling
 //! `BorshDeserialize::deserialize::<PriceUpdateV2>(&mut &data[8..])`; the

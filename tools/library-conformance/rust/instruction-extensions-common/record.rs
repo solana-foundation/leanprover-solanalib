@@ -1,4 +1,4 @@
-//! Exact source calls shared by six independently locked drivers.
+//! Exact source calls shared by six independently pinned drivers.
 
 use crate::{
     allocator, AccountMeta, Instruction, Pubkey, INSTRUCTION_CLONE, META_CLONE, META_NEW,

@@ -434,8 +434,8 @@ pub struct Corpus {
 }
 
 impl Corpus {
-    /// `crates`: the (name, version) pairs under test, checked against
-    /// `Cargo.lock` by `run.py`.
+    /// `crates`: the (name, version) pairs under test, checked against the
+    /// compiler-selected dependencies by `run.py`.
     pub fn new(name: &'static str, crates: &[(&'static str, &'static str)]) -> Self {
         Corpus { name, crates: crates.to_vec(), records: Vec::new(), ids: BTreeSet::new() }
     }

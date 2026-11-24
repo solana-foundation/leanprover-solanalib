@@ -154,8 +154,14 @@ def main():
             return f'{name}: {logs / (name + ".log")}'
         return None
 
-    # Bound concurrency explicitly: these processes import full Lean environments.
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    processors = len(os.sched_getaffinity(0)) if hasattr(os, 'sched_getaffinity') else (os.cpu_count() or 1)
+    try:
+        jobs = int(os.environ.get('SOLANALIB_DOC_JOBS', processors))
+        if jobs <= 0:
+            raise ValueError
+    except ValueError:
+        raise SystemExit('SOLANALIB_DOC_JOBS must be a positive integer') from None
+    with ThreadPoolExecutor(max_workers=jobs) as pool:
         failures = [failure for failure in pool.map(generate, sources) if failure]
     if failures:
         raise SystemExit('Documentation extraction failed:\n' + '\n'.join(failures))

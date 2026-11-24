@@ -12,7 +12,8 @@ describes them. Syscall replies are controlled test inputs.
 - [Family modules](SolanalibTest/Conformance/Library/Families) connect Rust functions and type
   instantiations to the model declarations they check.
 - Each [`driver.toml` of a native driver](rust) names its corpus files; its
-  `Cargo.toml`, lockfile and configuration fix the tested versions and build.
+  `Cargo.toml` pins modeled dependency versions; its workspace and configuration
+  fix the compiler profile. The recording manifest identifies the compiled providers.
   These file names remain versioned even when several releases share one model.
 
 [Value-operation cases](REFERENCE.md#value-operations) cover Address comparison,
@@ -111,6 +112,13 @@ removed a whole corpus file; those directories are retained without compaction.
 Use the `nightly-2026-05-01` Rust pin of this suite in `rust-toolchain.toml`. Recording updates `corpus/` and its
 manifests, so use a separate checkout if the committed fixtures should stay untouched.
 
+Each recording resolves dependencies afresh. Exact modeled-provider pins stay in
+the driver manifests; incidental dependencies may resolve to newer compatible
+releases. Temporary Cargo lockfiles are ignored and are not recording inputs.
+The scheduled native workflow records every driver twice and rejects any change
+to the complete corpus bytes. [Dependency and workspace rules](REFERENCE.md#native-dependencies)
+describe the selected-package receipts and compatible driver groups.
+
 ```sh
 # Record every driver twice and require matching results, then replay the registered functions.
 python3.12 -B tools/library-conformance/run.py --record --twice \
@@ -126,7 +134,7 @@ python3.12 -B tools/library-conformance/run.py --model-only \
 ```
 
 Recording accepts `--target-dir` for an existing Cargo target root and `--offline`
-when the locked crate sources are cached. Test profiles, source identities, observed fields and
+when the registry metadata, crate sources and exact-pin checksums are cached. Test profiles, source identities, observed fields and
 case-selection details are in the [reference guide](REFERENCE.md).
 The separate [Agave suite](../runtime-conformance/README.md) tests the runtime model.
 

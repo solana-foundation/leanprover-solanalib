@@ -42,7 +42,7 @@
         "stake-codecs::bincode-1.3.3::src/de/read.rs"
       ],
       "argument": "@review:source-notes/owned-dependencies.md#review-f29d0d5500d16b0f",
-      "limitations": "@shared:limitations-9d9d7bc5cb785b88"
+      "limitations": "@shared:limitations-ed529cd25f065940"
     }
   },
   "packages": {

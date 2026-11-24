@@ -1,18 +1,12 @@
+# The runner resolves this exact yanked release with its public archive checksum.
+
 [package]
 name = "conformance-versions-solana-zero-copy-1-1-0"
 version = "0.1.0"
 edition = "2021"
 publish = false
+workspace = "../workspaces/profile-00"
 
 [dependencies]
 conformance-recorder = { path = "../recorder" }
-# This release is yanked. Regenerate its lock with a temporary "1.1" requirement,
-# `cargo -Z unstable-options update -p solana-zero-copy --precise 1.1.0`, then
-# restore the exact requirement below. The recorded build always uses --locked.
 solana-zero-copy = { version = "=1.1.0", default-features = false }
-
-[profile.dev]
-panic = "unwind"
-
-[profile.release]
-panic = "unwind"

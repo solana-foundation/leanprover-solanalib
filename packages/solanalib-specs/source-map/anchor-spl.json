@@ -94,7 +94,7 @@
         "token-instructions::spl-token-2022-8.0.1::src/lib.rs",
         "token-instructions::spl-token-8.0.0::src/instruction.rs"
       ],
-      "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-4d1479e6a4ae5597",
+      "argument": "@review:source-notes/anchor-spl-1.0.2.md#review-875b9f409934a07a",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",

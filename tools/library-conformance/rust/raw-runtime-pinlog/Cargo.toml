@@ -3,11 +3,9 @@ name = "conformance-raw-runtime-pinlog"
 version = "0.1.0"
 edition = "2021"
 publish = false
+workspace = "../workspaces/profile-00"
+
 [dependencies]
 conformance-raw-runtime-common = { path = "../raw-runtime-common" }
 conformance-recorder = { path = "../recorder" }
 pinocchio-log = { version = "=0.5.1", default-features = false }
-[profile.dev]
-panic = "unwind"
-[profile.release]
-panic = "unwind"

@@ -1,10 +1,12 @@
+# Modeled dependencies use exact constraints; incidental packages resolve afresh.
+
 [package]
 name = "conformance-stake-codecs-interface"
 version = "0.1.0"
 edition = "2021"
 publish = false
+workspace = "../workspaces/profile-15"
 
-# The lockfile fixes the reviewed transitive versions.
 [dependencies]
 conformance-recorder = { path = "../recorder" }
 conformance-shim = { path = "../shim" }
@@ -13,9 +15,25 @@ solana-borsh = "=2.2.1"
 solana-pubkey = "=2.4.0"
 bincode = "=1.3.3"
 borsh = "=0.10.4"
-
-[profile.dev]
-panic = "unwind"
-
-[profile.release]
-panic = "unwind"
+pin-borsh-1-6-0 = { package = "borsh", version = "=1.6.0", default-features = false, optional = true }
+pin-borsh-derive-0-10-4 = { package = "borsh-derive", version = "=0.10.4", default-features = false, optional = true }
+pin-borsh-derive-1-6-0 = { package = "borsh-derive", version = "=1.6.0", default-features = false, optional = true }
+pin-borsh-derive-internal-0-10-4 = { package = "borsh-derive-internal", version = "=0.10.4", default-features = false, optional = true }
+pin-borsh-schema-derive-internal-0-10-4 = { package = "borsh-schema-derive-internal", version = "=0.10.4", default-features = false, optional = true }
+pin-bs58-0-5-1 = { package = "bs58", version = "=0.5.1", default-features = false, optional = true }
+pin-bytemuck-1-24-0 = { package = "bytemuck", version = "=1.24.0", default-features = false, optional = true }
+pin-bytemuck_derive-1-10-2 = { package = "bytemuck_derive", version = "=1.10.2", default-features = false, optional = true }
+pin-curve25519-dalek-4-1-3 = { package = "curve25519-dalek", version = "=4.1.3", default-features = false, optional = true }
+pin-curve25519-dalek-derive-0-1-1 = { package = "curve25519-dalek-derive", version = "=0.1.1", default-features = false, optional = true }
+pin-digest-0-10-7 = { package = "digest", version = "=0.10.7", default-features = false, optional = true }
+pin-serde-1-0-228 = { package = "serde", version = "=1.0.228", default-features = false, optional = true }
+pin-serde_core-1-0-228 = { package = "serde_core", version = "=1.0.228", default-features = false, optional = true }
+pin-serde_derive-1-0-228 = { package = "serde_derive", version = "=1.0.228", default-features = false, optional = true }
+pin-sha2-0-10-9 = { package = "sha2", version = "=0.10.9", default-features = false, optional = true }
+pin-solana-clock-2-2-2 = { package = "solana-clock", version = "=2.2.2", default-features = false, optional = true }
+pin-solana-define-syscall-2-3-0 = { package = "solana-define-syscall", version = "=2.3.0", default-features = false, optional = true }
+pin-solana-hash-2-3-0 = { package = "solana-hash", version = "=2.3.0", default-features = false, optional = true }
+pin-solana-instruction-2-3-3 = { package = "solana-instruction", version = "=2.3.3", default-features = false, optional = true }
+pin-solana-sanitize-2-2-1 = { package = "solana-sanitize", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-sdk-ids-2-2-1 = { package = "solana-sdk-ids", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-sha256-hasher-2-3-0 = { package = "solana-sha256-hasher", version = "=2.3.0", default-features = false, optional = true }

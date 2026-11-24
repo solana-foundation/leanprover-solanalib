@@ -1,12 +1,14 @@
+# Modeled dependencies use exact constraints; incidental packages resolve afresh.
+# This native observation profile uses panic=unwind. A source binding that uses
+# panic=abort must justify that strategy and the selected Solana cfg separately.
+
 [package]
 name = "conformance-instruction-extensions-legacy-15"
 version = "0.1.0"
 edition = "2021"
 publish = false
+workspace = "../workspaces/profile-12"
 
-# Exact library and dependency selections retained from a reviewed source lock.
-# This native observation profile uses panic=unwind. A source binding that uses
-# panic=abort must justify that strategy and the selected Solana cfg separately.
 [features]
 default = ["seeded"]
 seeded = []
@@ -16,12 +18,23 @@ prefund = []
 conformance-recorder = { path = "../recorder" }
 serde = "=1.0.159"
 solana-program = "=1.15.2"
-
-[profile.dev]
-panic = "unwind"
-
-[profile.release]
-panic = "unwind"
-
-[patch.crates-io]
-ahash = { version = "=0.7.6", path = "../prepared/ahash-0.7.6" }
+pin-base64-0-12-3 = { package = "base64", version = "=0.12.3", default-features = false, optional = true }
+pin-base64-0-13-1 = { package = "base64", version = "=0.13.1", default-features = false, optional = true }
+pin-bincode-1-3-3 = { package = "bincode", version = "=1.3.3", default-features = false, optional = true }
+pin-blake3-1-3-3 = { package = "blake3", version = "=1.3.3", default-features = false, optional = true }
+pin-borsh-0-9-3 = { package = "borsh", version = "=0.9.3", default-features = false, optional = true }
+pin-borsh-derive-0-9-3 = { package = "borsh-derive", version = "=0.9.3", default-features = false, optional = true }
+pin-borsh-derive-internal-0-9-3 = { package = "borsh-derive-internal", version = "=0.9.3", default-features = false, optional = true }
+pin-borsh-schema-derive-internal-0-9-3 = { package = "borsh-schema-derive-internal", version = "=0.9.3", default-features = false, optional = true }
+pin-bs58-0-4-0 = { package = "bs58", version = "=0.4.0", default-features = false, optional = true }
+pin-bytemuck-1-13-1 = { package = "bytemuck", version = "=1.13.1", default-features = false, optional = true }
+pin-bytemuck_derive-1-4-1 = { package = "bytemuck_derive", version = "=1.4.1", default-features = false, optional = true }
+pin-curve25519-dalek-3-2-1 = { package = "curve25519-dalek", version = "=3.2.1", default-features = false, optional = true }
+pin-digest-0-9-0 = { package = "digest", version = "=0.9.0", default-features = false, optional = true }
+pin-digest-0-10-6 = { package = "digest", version = "=0.10.6", default-features = false, optional = true }
+pin-keccak-0-1-3 = { package = "keccak", version = "=0.1.3", default-features = false, optional = true }
+pin-serde_derive-1-0-159 = { package = "serde_derive", version = "=1.0.159", default-features = false, optional = true }
+pin-sha2-0-9-9 = { package = "sha2", version = "=0.9.9", default-features = false, optional = true }
+pin-sha2-0-10-6 = { package = "sha2", version = "=0.10.6", default-features = false, optional = true }
+pin-sha3-0-10-6 = { package = "sha3", version = "=0.10.6", default-features = false, optional = true }
+pin-ahash-0-7-9 = { package = "ahash", version = "=0.7.9", default-features = false, optional = true }

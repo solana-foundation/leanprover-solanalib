@@ -84,20 +84,23 @@ jobs:
         with:
           python-version: '3.12'
       - id: groups
-        name: Partition every discovered native driver into bounded batches
+        name: Group every native driver by its Cargo workspace
         run: |
           python3 - <<'PY'
           import json, os, sys
           sys.path.insert(0, 'tools/library-conformance')
-          import run
+          import run, native_dependencies
           drivers = sorted(run.discover_drivers())
           assert drivers
-          batches = [drivers[start:start + 10] for start in range(0, len(drivers), 10)]
-          assert [driver for batch in batches for driver in batch] == drivers
-          matrix = {'include': [{'batch': number, 'drivers': batch} for number, batch in enumerate(batches)]}
+          workspaces = {}
+          for driver in drivers:
+              name = native_dependencies.workspace(run.RUST / driver).name
+              workspaces.setdefault(name, []).append(driver)
+          assert sorted(driver for members in workspaces.values() for driver in members) == drivers
+          matrix = {'include': [{'workspace': name, 'drivers': members} for name, members in sorted(workspaces.items())]}
           with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
               print('matrix=' + json.dumps(matrix), file=output)
-          print(f'{len(drivers)} pinned drivers in {len(batches)} batches')
+          print(f'{len(drivers)} pinned drivers in {len(workspaces)} Cargo workspaces')
           PY
 
   native-library:
@@ -115,7 +118,7 @@ jobs:
           python-version: '3.12'
       - name: Install the separate frozen compiler of the library oracle
         run: rustup toolchain install nightly-2026-05-01 --profile minimal
-      - name: Record every selected driver twice and compare complete corpus bytes
+      - name: Resolve dependencies afresh, record twice and compare complete corpus bytes
         env:
           NATIVE_DRIVERS: ${{ toJSON(matrix.drivers) }}
         run: |
@@ -149,7 +152,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: native-library-${{ matrix.batch }}
+          name: native-library-${{ matrix.workspace }}
           path: |
             ${{ runner.temp }}/native-library/**
             !${{ runner.temp }}/native-library/target/**

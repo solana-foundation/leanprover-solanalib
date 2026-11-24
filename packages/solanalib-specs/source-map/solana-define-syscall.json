@@ -80,7 +80,7 @@
         "cpi-signatures::solana-program-entrypoint-2.3.0::src/lib.rs",
         "cpi-signatures::solana-program-entrypoint-3.1.1::src/lib.rs"
       ],
-      "argument": "@review:source-notes/raw-syscalls.md#review-c844eb88f56763d7",
+      "argument": "@review:source-notes/raw-syscalls.md#review-85ad56313a32ba6d",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",

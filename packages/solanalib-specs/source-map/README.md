@@ -150,7 +150,8 @@ checksums as review evidence rather than manufacturing entries for the range.
 The profile argument and dependency reasons identify the behaviors assumed
 compatible: operations at the used types, results, errors and relevant effects.
 SemVer is evidence for that assumption, not a guarantee of unspecified details
-such as diagnostic text. Native fixtures retain their exact tested lockfiles.
+such as diagnostic text. Native fixtures record the exact compiled model providers
+and check them against explicit dependency pins.
 No new callee contract is imposed on the modeled caller of the API.
 
 Registry item ranges preserve every classification in the recorded release

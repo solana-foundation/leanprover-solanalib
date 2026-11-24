@@ -3,13 +3,8 @@ name = "conformance-versions-solana-hash-4-4-0"
 version = "0.1.0"
 edition = "2021"
 publish = false
+workspace = "../workspaces/profile-07"
 
 [dependencies]
 conformance-recorder = { path = "../recorder" }
 solana-hash = { version = "=4.4.0", default-features = false }
-
-[profile.dev]
-panic = "unwind"
-
-[profile.release]
-panic = "unwind"

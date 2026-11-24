@@ -230,12 +230,15 @@ this is a valid 64-bit Rust layout, and observes division panic, the consumed
 length header, no element call and no vector-sized allocation. Controls cover
 zero length, a short header, zero-sized elements and the `u8` specialization.
 No `Huge` value is constructed. Run it with optimization to avoid an unused
-huge return slot in the generic decoder:
+huge return slot in the generic decoder. From the repository root, first resolve
+and record the driver, then run the control in the driver directory:
 
 ```sh
-CARGO_BUILD_JOBS=2 cargo +nightly-2026-05-01 test --locked --release \
-  --manifest-path tools/library-conformance/rust/codecs-borsh-0-10-4-bytemuck-1-25-2/Cargo.toml \
-  --test cautious_truncation
+just test-native-library codecs-borsh-0-10-4-bytemuck-1-25-2 "$(mktemp -d)"
+(
+  cd tools/library-conformance/rust/codecs-borsh-0-10-4-bytemuck-1-25-2
+  cargo test --locked --release --test cautious_truncation
+)
 ```
 
 This is host execution evidence, including when the Solana source `cfg` is
@@ -245,20 +248,20 @@ selected; it does not establish an sBPF ABI or compiler correspondence.
 
 The crate records reference the following exact clauses by their stable identifiers.
 
-<!-- registry:review:1075a161670073c4 -->
-<a id="review-1075a161670073c4"></a>
+<!-- registry:review:27704596fdc7ebff -->
+<a id="review-27704596fdc7ebff"></a>
 
-Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact test lockfile into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
+Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact native reference into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
 
 borsh 0.10.4 instantiates the shared vocabulary with Profile (InvalidInput, "Vectors of zero-sized types ..."). Its u8/integer/bool/Option/Vec decoders, default deserialize, try_from_slice and vec_from_reader and hint::cautious match the shared programs statement for statement (src/de/mod.rs 38-52, 65-69, 128-185, 187-210, 290-339, 374-401; src/de/hint.rs 1-5).
 
 borsh 1.6.1 instantiates the shared vocabulary with Profile (InvalidData, ERROR_ZST_FORBIDDEN). Its u8/u32/i32/u64/i64/f64/bool decoders, u8::array_from_reader, Option and [T; N] decoders and default deserialize (src/de/mod.rs 39-41, 138-195, 197-220, 275-298, 300-336, 768-824) and its u8/bool/u32/u64/i64/f64/Option/[T; N] serializers and u8_slice (src/ser/mod.rs 16, 65-96, 136-174, 576-593) match the shared programs statement for statement. Its nostd_io Write::write_all (src/nostd_io.rs 545-560) matches the shared write_all relation case for case, with the write of the writer, the slice panic and the String allocation of Error::new as index callbacks and the io::Error observed as its kind and message.
 <!-- /registry -->
 
-<!-- registry:review:1d18dc7136746b3c -->
-<a id="review-1d18dc7136746b3c"></a>
+<!-- registry:review:3d1dd074404b2133 -->
+<a id="review-3d1dd074404b2133"></a>
 
-Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact test lockfile into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
+Typed selections collect the exact existing model families at every index; nongeneric contracts use a singleton embedding. A fixed operation assignment is shared by subset restriction and union. Tagged catalog composition retains native model state types, identities and scope. Each member lists the Rust identities derived from its APIs: source crate name and version, called item path and registered implementation path. Generated reference_spec theorems consume the already registered closed reference witnesses. Conditional clients derive read-after-write and mapped-guard cleanup from requested assumptions, including a real Err callback effect; negative controls reject incorrect observations and a mismatched generic index. Per-function applicability profiles separate exact reviewed references from declared registry compatibility ranges, retaining source origins, behavior-changing build constraints and known exceptions. Range eligibility assumes preservation of the reference operation and its relevant dependency behavior; it does not turn the exact native reference into a caller requirement. forBuild preserves the entire family and its indices while selecting eligible source identities; reexports use their actual defining dependency, and source-less or unregistered observations stay unbound. The independent matcher requires known constrained facts and does not infer Cargo resolution or implementation correctness. The common definitions live in Solanalib.Contracts; these modules publicly import them for use throughout the SDK models.
 
 Versioned public aggregate of the reviewed mathematical models.
 

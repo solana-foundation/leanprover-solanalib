@@ -1,5 +1,5 @@
 # Family TokenInterface: spl-token-2022 11.0.0 `onchain::invoke_transfer_checked`, the version
-# pinned in Cargo.lock, with its CPI answered by the shim.
+# pinned in Cargo.toml, with its CPI answered by the shim.
 corpora = ["spl_token_2022_11_0_0"]
 inputs = []
 # The driver builds each AccountInfo from its own values (AccountInfo::new); there is no loader input

@@ -35,7 +35,7 @@ passing SemVer alone does not discharge those obligations. The later TLV
 
 These exact native origins remain unchanged. The per-dependency profiles
 separately declare compatible ranges supported by the reached source review;
-they do not replace a native lock or create an exact source binding. The
+they do not establish the actual dependency resolution or create an exact source binding. The
 profile selects Solana source branches, 64-bit pointers/counts and the actual panic and double-unwind behavior of the
 compilation. Archive and Git hashes
 remain distinct: the two reached bytemuck files need explicit CRLF-to-LF
@@ -133,7 +133,7 @@ correctness follows from a finite reference witness.
 ## Regression scope
 
 The existing `TransferHookResolution` conformance family checks native records
-from the independently locked `transfer-hook-resolution` driver. Its sample
+from the independently pinned `transfer-hook-resolution` driver. Its sample
 interprets fixed/key-data extras and empty PDA seed vectors with a nonfailing
 allocator. It does not instantiate nonempty borrowed-seed storage. The native
 dev profile uses optimization level 3, no debug assertions, no overflow checks
@@ -166,8 +166,8 @@ Model the whole local helper: validation PDA before first program lookup; option
 Import-only roots expose the selected versioned modules. Generated typed catalogs collect their exact registered contracts, source identities, profiles and closed reference witnesses. The generator check derives every catalog from the source registry without changing any model body.
 <!-- /registry -->
 
-<!-- registry:review:ac3d6123b8712718 -->
-<a id="review-ac3d6123b8712718"></a>
+<!-- registry:review:20153bc950caccf5 -->
+<a id="review-20153bc950caccf5"></a>
 
-The 0.9.0 helper and locked dependency chain are the inspected reference. The declared 0.9 range assumes validation PDA before program lookup, whole-region TLV/POD validation, every-current-info borrowing, fresh signer preservation and alias privilege union, ordered first-match resolution/clone-before-push and cleanup. Copyback remains metadata before infos, retaining partial mutation on unwind; the zeroed PDA provider and resource frames remain explicit. This helper performs no CPI.
+The 0.9.0 helper and pinned dependency chain are the inspected reference. The declared 0.9 range assumes validation PDA before program lookup, whole-region TLV/POD validation, every-current-info borrowing, fresh signer preservation and alias privilege union, ordered first-match resolution/clone-before-push and cleanup. Copyback remains metadata before infos, retaining partial mutation on unwind; the zeroed PDA provider and resource frames remain explicit. This helper performs no CPI.
 <!-- /registry -->

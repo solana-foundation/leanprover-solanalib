@@ -404,7 +404,7 @@ def source_files(root):
     for name in sorted(set(names.decode().split('\0'))):
         if not name or not (root / name).is_file():
             continue
-        if '/corpus/' in name or '/rust/prepared/' in name or name == BASELINE:
+        if '/corpus/' in name or name == BASELINE:
             continue
         if name.endswith(('.md', '.md.in', '.lean', '.lean.in', '.py', '.py.in', '.rs',
                           '.json', '.toml', '.sh', '.yml', '.yaml')) or Path(name).name in {'Justfile', 'requirements.txt'}:

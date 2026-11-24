@@ -8,7 +8,7 @@
         "Solanalib.Specs.SplTokenInterface.Instructions": "50b4b127d0457d48eeea51e243db70b6ee255914cbdbea244150ead137ee4e75"
       },
       "source_ids": ["spl-token-interface-2.0.0-lib", "spl-token-interface-2.0.0-instruction"],
-      "argument": "@review:source-notes/token-state.md#review-0a10af57146136f1",
+      "argument": "@review:source-notes/token-state.md#review-f1f46787d0b758a5",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",

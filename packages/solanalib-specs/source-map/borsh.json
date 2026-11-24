@@ -18,7 +18,7 @@
         "value-request::borsh-1.6.1::src/ser/mod.rs",
         "codecs::borsh-1.6.1::src/nostd_io.rs"
       ],
-      "argument": "@review:source-notes/borsh-codecs.md#review-1075a161670073c4",
+      "argument": "@review:source-notes/borsh-codecs.md#review-27704596fdc7ebff",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",

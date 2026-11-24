@@ -13,38 +13,50 @@
   },
   "driver": "raw-runtime",
   "inputs": {
+    "native-pins.toml": "36df2c40417760ab61c5f8ece643756adcd7e55169c155afa0a7c413333e1196",
+    "rust/accounts/Cargo.toml": "3e897705311d25bd5c1626bf10e5df3e16f9bee907469317771aba7292d794ee",
+    "rust/address-profiles-261/Cargo.toml": "4077442468c1ee67b240eb411fe27b48e971b0d66bc33a50c514f2ee1b01ebcf",
+    "rust/anchor-lifecycle-1_1_2/Cargo.toml": "a230d87d53b500946d9955eed5103805d24c97ef2c55a900d9255737449cf248",
+    "rust/anchor-operations-112/Cargo.toml": "5e3aa5f8e5fd7008836d013ba5417dfd4646a631101f60e311796dfafc09c4bd",
+    "rust/anchor-spl-token-1-1-2/Cargo.toml": "dceceb47d5d6814345bf2bdbe0a4af69535b35c62a4087c261d2c63a7e599105",
+    "rust/anchor-system-1-1-2/Cargo.toml": "0b6cdcf093fc4db719376cdc024e26442620a8975f4ab870c5763d23ba253f19",
+    "rust/anchor-views-1-1-2/Cargo.toml": "bd12449589f6a9b65d4c1c55f1a35bd6340dc76d5f7ee0cbe724a0067a63a61b",
+    "rust/cpi-invoke-0-5-0-s3-0-1/Cargo.toml": "05cab1b6313d67718c36a16860545f0c8666c00133f97697fa44ebb2f612cf87",
+    "rust/instruction-extensions-bincode/Cargo.toml": "09148ca6b3f88e66d44251d7c7863d5f26073868d85bfe45fbcdc044546a024e",
+    "rust/instruction-extensions-v2/Cargo.toml": "0bcb999d9a7efe55949f50ce8da95ef3de771c8a608969d91c2b0050bdf1ca62",
+    "rust/instruction-extensions-wincode/Cargo.toml": "f735f12518552be07dd665c51e4c08d640b9606111f09cdcf22a72d20234e3bb",
+    "rust/pubkey-profiles-240/Cargo.toml": "bfc5f7e6ba27f935dc5d9cd81f743f4df0a5216e6941c26b35c26e190943573c",
     "rust/raw-runtime-common/Cargo.toml": "0a56d1103cac3be7487c951761363c20dc26e12dc99fbe3662fcd8568c23ec71",
     "rust/raw-runtime-common/src/lib.rs": "69eeb728a9fef82ed18e2538ccd417ad51e66a66019d8b07674b0f0f26a42f01",
     "rust/raw-runtime-common/src/provider.rs": "9f09dce68d77409c265bf2e1f2e9e475ad409d27c56be872e9261d1a78119699",
     "rust/raw-runtime/.cargo/config.toml": "5b23ef498ea9fcb73248def7346d71fbe37f5990921c302c2332230dd22a28ec",
-    "rust/raw-runtime/Cargo.lock": "92479570c4e23fa13a7bddbe01f40732cc5b365b855f51187781ab65b7c8ce9a",
-    "rust/raw-runtime/Cargo.toml": "7ca7fb36cdd61fb2a40f2fcb66b1b6ed9a0af79c4fd1ccf82158ee593618f2ae",
+    "rust/raw-runtime/Cargo.toml": "e598d1c2e8533b7ad5058427c577a483acc206d5625b1d7bf4f832648b1fd081",
     "rust/raw-runtime/driver.toml": "0ba43e7ebf4d54db4ded896c559a1b9c6e447f5eb7e7d096deb381da5904a5cc",
     "rust/raw-runtime/src/main.rs": "b57b407dc70cd643ed6f7938a97179304df5bf9e7652b836763a51bdf8f2e497",
     "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
-    "rust/recorder/src/lib.rs": "bbfb4b180d1f0a6c571125253d049cac0fe76679a2b8ec899967d62b93e0e51a"
+    "rust/recorder/src/lib.rs": "ae49eaf1400120c36eef711a703d059881f6267f0b0f0984389ca19cf77b5782",
+    "rust/shim/Cargo.toml": "dde2a4bec857a3d829670e53b302e449b2a1a839f63cee16e312466ea5073075",
+    "rust/utility-instructions4/Cargo.toml": "1df46a85e1800392abb094663b9595d314699400caceadb313680f974f81026b",
+    "rust/workspaces/profile-04/Cargo.toml": "d2a77f3edb99cb84bfbb1243301d2e7ec02138152f963e3a1de4f52e8d8ecbcd"
   },
-  "locked": {
-    "conformance-raw-runtime-common": [
-      {
-        "version": "0.1.0"
-      }
-    ],
-    "solana-define-syscall": [
-      {
-        "checksum": "21e14a4f604117f379840956a8fc8695e4c84f5b0ebed192f31f60d9b85d581d",
-        "source": "registry+https://github.com/rust-lang/crates.io-index",
-        "version": "5.1.0"
-      }
-    ]
-  },
-  "recorded_utc": "2026-11-24T05:19:10+00:00",
-  "requirements": {
-    "conformance-raw-runtime-common": "path ../raw-runtime-common",
-    "solana-define-syscall": "=5.1.0"
+  "recorded_utc": "2026-11-24T15:26:57+00:00",
+  "resolution": {
+    "modeled": {
+      "solana-define-syscall": [
+        {
+          "checksum": "21e14a4f604117f379840956a8fc8695e4c84f5b0ebed192f31f60d9b85d581d",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "5.1.0"
+        }
+      ]
+    },
+    "unused_pins": []
   },
   "rust": {
     "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "debug_assertions": true,
+    "opt_level": "0",
+    "overflow_checks": true,
     "panic": "unwind",
     "profile": "dev",
     "rustc": [
@@ -65,5 +77,5 @@
     "--cfg",
     "target_os=\"solana\""
   ],
-  "schema": "solana-library-conformance/manifest/v1"
+  "schema": "solana-library-conformance/manifest/v2"
 }

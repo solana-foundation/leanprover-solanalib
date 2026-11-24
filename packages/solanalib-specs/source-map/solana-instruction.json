@@ -31,7 +31,7 @@
         "instruction-extensions::solana-program-1.18.26::src/system_program.rs",
         "instruction-extensions::solana-program-1.18.26::src/pubkey.rs"
       ],
-      "argument": "@review:source-notes/value-request-instruction.md#review-25c5fd7b30614d71",
+      "argument": "@review:source-notes/value-request-instruction.md#review-6e7648dc76cd2eac",
       "limitations": "@shared:limitations-c37289e6313c960d"
     }
   },

@@ -11,7 +11,7 @@
     run.py --check-registry       fail if SolanalibTest/Conformance/Library/Registry.lean is stale
 
 The model-only check needs Python 3.12 and the Lean toolchain of the root package. Recording also needs the Rust toolchain of the
-suite (rust-toolchain.toml) and the crates locked by the Cargo.lock of each driver.
+suite (rust-toolchain.toml). Modeled dependencies have exact constraints; incidental packages resolve afresh.
 """
 
 from __future__ import annotations
@@ -35,6 +35,7 @@ import tomllib
 
 import checker_selection
 import build_probe
+import native_dependencies
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parent
@@ -42,7 +43,7 @@ REPO = ROOT.parent.parent
 CORPUS = ROOT / "corpus"
 RUST = ROOT / "rust"
 SCHEMA = "solana-library-conformance/corpus/v1"
-MANIFEST_SCHEMA = "solana-library-conformance/manifest/v1"
+MANIFEST_SCHEMA = "solana-library-conformance/manifest/v2"
 TARGET = "x86_64-unknown-linux-gnu"
 LEAN = (REPO / "lean-toolchain").read_text().strip() if (REPO / "lean-toolchain").exists() else ""
 ALLOWED_AXIOMS = frozenset({"propext", "Classical.choice", "Quot.sound"})
@@ -75,8 +76,8 @@ CORPUS_NAME = re.compile(r"^[a-z0-9_]+$")
 SOLANA_RUSTFLAGS = ["-A", "explicit_builtin_cfgs_in_flags", "--cfg", 'target_os="solana"']
 FAMILY_NAME = re.compile(r"^[A-Z][A-Za-z0-9]*$")
 
-# Drivers are discovered: each rust/<name>/driver.toml is a separate Cargo project with its own
-# lockfile and lists the corpus files it writes:
+# Drivers are discovered from rust/<name>/driver.toml and grouped in compatible Cargo workspaces.
+# Each driver lists the corpus files it writes:
 #
 #     corpora = ["solana_account_view_1_0_0"]       # corpus/<name>.json, unique across drivers
 #     inputs = ["rust/common/borsh_de.rs"]           # optional: extra files it includes (#[path])
@@ -141,17 +142,20 @@ def discover_drivers(root: Path = ROOT) -> dict[str, dict]:
         spare_writes = spec.get("spare_writes", [])
         require(isinstance(spare_writes, list) and all(isinstance(f, str) and f for f in spare_writes),
                 f"{spec_path}: `spare_writes` lists function globs")
+        profile = spec.get('profile', 'dev')
+        require(profile in native_dependencies.PROFILES, f'{spec_path}: unknown recording profile')
+        probe = build_probe.configuration(spec, spec_path)
+        require(probe is None or probe['profile'] == profile, f'{spec_path}: probe and recording profiles differ')
         drivers[name] = {"corpora": corpora, "inputs": extra, "unobserved": unobserved, "host": host,
                          "spare_writes": spare_writes, "regionless": region == "none",
-                         "build_probe": build_probe.configuration(spec, spec_path)}
+                         "profile": profile, "build_probe": probe}
     return drivers
 
 
 def _package_files(directory: Path, driver: bool) -> list[Path]:
-    """Sources of a package; for the driver itself also its lockfile and configuration
-    (the lockfile of a path dependency, if any, is not used by the build of the driver)."""
+    """Package sources and driver configuration, excluding temporary Cargo resolutions."""
     files = [directory / "Cargo.toml"]
-    for optional in ("build.rs",) + ((("Cargo.lock", ".cargo/config.toml", "driver.toml")) if driver else ()):
+    for optional in ("build.rs",) + (((".cargo/config.toml", "driver.toml")) if driver else ()):
         if (directory / optional).exists():
             files.append(directory / optional)
     return files + sorted((directory / "src").rglob("*.rs"))
@@ -181,6 +185,20 @@ def driver_inputs(name: str, root: Path = ROOT, drivers: dict | None = None) -> 
         seen.append(directory)
         pending.extend(_path_dependencies(directory))
     files = [f for i, d in enumerate(seen) for f in _package_files(d, driver=i == 0)]
+    workspace = native_dependencies.workspace(root / 'rust' / name)
+    files += [workspace / 'Cargo.toml', root / 'native-pins.toml']
+    # Every member manifest constrains workspace resolution, including the manifests
+    # of its path dependencies. Only the selected driver needs the other source bytes.
+    pending = [(workspace / member).resolve()
+               for member in native_dependencies.read_cargo(workspace)['workspace']['members']]
+    manifests = set()
+    while pending:
+        directory = pending.pop()
+        if directory in manifests:
+            continue
+        manifests.add(directory)
+        files.append(directory / 'Cargo.toml')
+        pending.extend(_path_dependencies(directory))
     rel = sorted({str(f.resolve().relative_to(root.resolve())) for f in files} | set(drivers[name]["inputs"]))
     # Sources a hashed file includes (`#[path = ...]`, `include!`, `include_str!`, `include_bytes!`) must be
     # hashed too: listed in the `inputs` of the driver unless they are already package sources.
@@ -235,42 +253,6 @@ def registry_pins() -> dict[str, set[str]]:
             match = re.fullmatch(r"(.+?)-(\d+\.\d+\.\d+.*)", key)
             if match:
                 pins.setdefault(match[1], set()).add(match[2])
-    return pins
-
-
-def linked_version(lockfile: Path, package: str, crate: str) -> str | None:
-    """The version of `crate` the driver package links: the version of its direct dependency, else the only
-    locked version of a transitive dependency; None if absent or ambiguous."""
-    entries = tomllib.loads(lockfile.read_text()).get("package", [])
-    versions = sorted({e["version"] for e in entries if e["name"] == crate})
-    root = next((e for e in entries if e["name"] == package and "source" not in e), None)
-    for dependency in (root or {}).get("dependencies", []):
-        parts = dependency.split(" ")
-        if parts[0] == crate:
-            return parts[1] if len(parts) > 1 else (versions[0] if len(versions) == 1 else None)
-    return versions[0] if len(versions) == 1 else None
-
-
-def locked_packages(lockfile: Path) -> dict[str, list[dict]]:
-    packages: dict[str, list[dict]] = {}
-    for entry in tomllib.loads(lockfile.read_text()).get("package", []):
-        packages.setdefault(entry["name"], []).append(
-            {k: entry[k] for k in ("version", "source", "checksum") if k in entry})
-    return packages
-
-
-def pinned_requirements(cargo_toml: Path) -> dict[str, str]:
-    deps = tomllib.loads(cargo_toml.read_text()).get("dependencies", {})
-    pins = {}
-    for name, spec in deps.items():
-        if isinstance(spec, str):
-            pins[name] = spec
-        elif "version" in spec:
-            pins[name] = spec["version"]
-        elif "rev" in spec:
-            pins[name] = f"git {spec['git']} rev {spec['rev']}"
-        elif "path" in spec:
-            pins[name] = f"path {spec['path']}"
     return pins
 
 
@@ -381,8 +363,12 @@ def authenticate(corpus: Path = CORPUS, root: Path = ROOT, only: set[str] | None
         build_probe.authenticate(manifest, drivers[driver]["build_probe"], drivers[driver]["host"], driver)
         require(input_hashes(driver, root, drivers) == manifest["inputs"],
                 f"driver {driver}: inputs changed since the recording; run with --record --driver {driver}")
-        lockfile = root / "rust" / driver / "Cargo.lock"
-        package = tomllib.loads((root / "rust" / driver / "Cargo.toml").read_text())["package"]["name"]
+        directory = root / "rust" / driver
+        resolution = manifest.get('resolution')
+        native_dependencies.validate_resolution(directory, resolution, native_dependencies.reviewed_checksums())
+        expected_profile = native_dependencies.profile(directory, drivers[driver]['profile'])
+        require(all(manifest['rust'].get(key) == value for key, value in expected_profile.items()),
+                f'{driver}: recorded compiler profile differs from the workspace profile')
         for name, entry in manifest["corpora"].items():
             file = corpus / name
             require(file.exists(), f"{name}: missing corpus file")
@@ -390,7 +376,7 @@ def authenticate(corpus: Path = CORPUS, root: Path = ROOT, only: set[str] | None
             summary = validate_corpus(file)
             require(summary["records"] == entry["records"], f"{name}: record count differs")
             for crate in summary["crates"]:
-                linked = linked_version(lockfile, package, crate["name"])
+                linked = native_dependencies.selected_version(directory, resolution, crate["name"])
                 require(linked == crate["version"],
                         f"{name}: {crate['name']} {crate['version']} is not the version {driver} links "
                         f"({linked or 'none or ambiguous'})")
@@ -700,12 +686,15 @@ class Runner:
         self.commands: list[dict] = []
         self.command_lock = threading.Lock()
         self.environment = os.environ.copy()
+        build_jobs = self.environment.get('CARGO_BUILD_JOBS')
         for key in list(self.environment):
             if key in {"RUSTFLAGS", "RUSTDOCFLAGS", "RUSTC", "RUSTDOC", "RUSTC_WRAPPER",
                        "RUSTC_WORKSPACE_WRAPPER", "RUSTUP_TOOLCHAIN", "CARGO_ENCODED_RUSTFLAGS",
                        "CARGO_ENCODED_RUSTDOCFLAGS"} or key.startswith(
                            ("CARGO_PROFILE_", "CARGO_BUILD_", "CARGO_TARGET_")):
                 del self.environment[key]
+        if build_jobs is not None:
+            self.environment['CARGO_BUILD_JOBS'] = build_jobs
         self.environment["PYTHONDONTWRITEBYTECODE"] = "1"
 
     def run(self, name: str, arguments: list[str], cwd: Path, env: dict | None = None,
@@ -756,6 +745,10 @@ def record(args: argparse.Namespace) -> None:
         runner.run(f"selftest-{crate}", ["cargo", "test", *offline, "--", "--test-threads=1"], RUST / crate,
                    {"CARGO_TARGET_DIR": str(target_root / f"selftest-{crate}")})
         (RUST / crate / "Cargo.lock").unlink(missing_ok=True)
+    workspaces = {native_dependencies.workspace(RUST / driver) for driver in selected}
+    modeled = native_dependencies.modeled_crates()
+    resolutions = {directory: native_dependencies.fresh_resolution(directory, runner, args.offline, modeled)
+                   for directory in sorted(workspaces)}
     total = 0
     for driver in selected:
         cwd = RUST / driver
@@ -772,8 +765,17 @@ def record(args: argparse.Namespace) -> None:
                 + ("" if drivers[driver]["host"] else " (or set host = true in driver.toml)"))
         flags = ["--locked"] + (["--offline"] if args.offline else [])
         probe = drivers[driver]["build_probe"]
-        flags += build_probe.profile_flags(probe)
-        env = {"CARGO_TARGET_DIR": str(target_root / driver)}
+        flags += ['--profile', drivers[driver]['profile']]
+        directory = native_dependencies.workspace(cwd)
+        env = {"CARGO_TARGET_DIR": str(target_root / directory.name)}
+        _, unit_output = runner.run(f'compiler-units-{driver}',
+            ['cargo', 'build', *flags, '--target', TARGET, '--unit-graph', '-Z', 'unstable-options'],
+            cwd, env, stdout_only=True)
+        resolution, compiled_profile = native_dependencies.compiled_resolution(
+            cwd, resolutions[directory], json.loads(unit_output), modeled)
+        native_dependencies.validate_resolution(cwd, resolution, native_dependencies.reviewed_checksums())
+        require(compiled_profile == native_dependencies.profile(cwd, drivers[driver]['profile']),
+                f'{driver}: compiled profile differs from the selected workspace settings')
         runner.run(f"build-{driver}", ["cargo", "build", *flags, "--target", TARGET], cwd, env)
         observed = None
         if probe is not None:
@@ -789,11 +791,6 @@ def record(args: argparse.Namespace) -> None:
                        cwd, env)
             differing = [p.name for p in sorted(out.glob("*.json")) if p.read_bytes() != (again / p.name).read_bytes()]
             require(not differing, f"driver {driver} is not deterministic: {differing} differ between two runs")
-        lock = locked_packages(cwd / "Cargo.lock")
-        pins = pinned_requirements(cwd / "Cargo.toml")
-        for name, requirement in pins.items():
-            if not name.startswith("conformance-") and not requirement.startswith(("git ", "path ")):
-                require(requirement.startswith("="), f"{driver}: {name} is not pinned with '='")
         written = sorted(p.name for p in out.glob("*.json"))
         expected = sorted(f"{c}.json" for c in drivers[driver]["corpora"])
         require(written == expected, f"driver {driver} wrote {written}, its driver.toml lists {expected}")
@@ -807,10 +804,9 @@ def record(args: argparse.Namespace) -> None:
             "driver": driver,
             "recorded_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
             "rust": {"toolchain": toolchain, "rustc": rustc.strip().splitlines(), "cargo": cargo.strip(),
-                     "target": TARGET, "profile": "dev", "panic": "unwind"},
+                     "target": TARGET, **compiled_profile},
             "inputs": input_hashes(driver, ROOT, drivers),
-            "requirements": pins,
-            "locked": {name: lock[name] for name in sorted(pins) if name in lock},
+            "resolution": resolution,
             "rustflags": config["target"][TARGET]["rustflags"],
             "corpora": corpora,
         }
@@ -2589,7 +2585,7 @@ def main() -> int:
     parser.add_argument("--corpus", action="append", help="check only this corpus (repeatable)")
     parser.add_argument("--registered-checkers", action="store_true",
                         help="check authenticated corpora, permitting only exact reviewed record omissions")
-    parser.add_argument("--target-dir", type=Path, help="Cargo target root, one subdirectory per driver")
+    parser.add_argument("--target-dir", type=Path, help="Cargo target root, one shared subdirectory per workspace")
     parser.add_argument("--offline", action="store_true", help="pass --offline to cargo")
     parser.add_argument("--twice", action="store_true", help="record each driver twice and require equal bytes")
     parser.add_argument("--no-write-corpus", dest="write_corpus", action="store_false",

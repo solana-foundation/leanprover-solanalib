@@ -85,7 +85,7 @@ def hashMembers : List (Solanalib.Specs.SolanaSha256Hasher.Capabilities.Key × S
   [(.zero_initialized_hash, "hash"), (.zero_initialized_hashv, "hashv")]
 
 /-- Compatible callers may resolve the field and syscall providers independently
-of the exact recording lockfile. Both wrapper identities keep the release of the caller. -/
+of the exact native recording. Both wrapper identities keep the release of the caller. -/
 theorem compatible_hash_identities :
     ["2.3.0", "2.3.1", "2.9.0"].all (fun version => hashMembers.all (fun (key, name) =>
       decide ((Solanalib.Specs.SolanaSha256Hasher.Capabilities.catalog.forBuild

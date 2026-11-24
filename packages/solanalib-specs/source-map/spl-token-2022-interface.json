@@ -33,7 +33,7 @@
         "token-state::spl-token-2022-interface-2.1.0::src/extension/transfer_fee/mod.rs",
         "token-state::spl-token-metadata-interface-0.7.0::src/state.rs"
       ],
-      "argument": "@review:source-notes/token-extensions.md#review-107e010ca718d364",
+      "argument": "@review:source-notes/token-extensions.md#review-d61b5fb23b12511a",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",

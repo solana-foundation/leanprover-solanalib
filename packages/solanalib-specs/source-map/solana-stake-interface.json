@@ -13,7 +13,7 @@
         "value-request::solana-address-2.6.0::src/lib.rs",
         "codecs::borsh-1.6.1::src/de/mod.rs"
       ],
-      "argument": "@review:source-notes/stake-state.md#review-790c090ea27f6683",
+      "argument": "@review:source-notes/stake-state.md#review-3882fbba039f0aa5",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",

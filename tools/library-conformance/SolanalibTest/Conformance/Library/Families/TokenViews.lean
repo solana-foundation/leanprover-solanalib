@@ -10,7 +10,7 @@ import SolanalibTest.Conformance.Library.Families.TokenViews.Request
 /-!
 # Family `TokenViews`: pinocchio-token 0.6.0 and pinocchio-token-2022 0.3.1
 
-Driver `rust/token-views` (one dependency lockfile) writes
+Driver `rust/token-views` writes
 one corpus per crate. pinocchio-token 0.6.0: Account/Mint parsers and getters,
 `Batch::new`, `Batch::invoke_signed`, the single-owner `TransferChecked::new`
 and `IntoBatch::into_batch` at two `MultisigSigner` instantiations.

@@ -65,7 +65,7 @@ theorem reviewed_build_admitted :
   decide +kernel
 
 /-- Compatible releases keep the full Clone identity and may resolve compatible
-field providers independently of the exact native-test lockfile. -/
+field providers independently of the exact native recording. -/
 theorem compatible_builds_admitted :
     ["3.1.2", "3.2.0"].all (fun version => decide
       ((Solanalib.Specs.SplToken2022Interface.Capabilities.catalog.forBuild

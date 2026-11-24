@@ -3,11 +3,21 @@ name = "conformance-raw-runtime-cpi2"
 version = "0.1.0"
 edition = "2021"
 publish = false
+workspace = "../workspaces/profile-00"
+
 [dependencies]
 conformance-raw-runtime-common = { path = "../raw-runtime-common" }
 solana-cpi = { version = "=2.2.1", default-features = false }
 solana-define-syscall = { version = "=2.3.0", default-features = false }
-[profile.dev]
-panic = "unwind"
-[profile.release]
-panic = "unwind"
+pin-digest-0-10-7 = { package = "digest", version = "=0.10.7", default-features = false, optional = true }
+pin-sha2-0-10-9 = { package = "sha2", version = "=0.10.9", default-features = false, optional = true }
+pin-solana-account-info-2-3-0 = { package = "solana-account-info", version = "=2.3.0", default-features = false, optional = true }
+pin-solana-hash-2-3-0 = { package = "solana-hash", version = "=2.3.0", default-features = false, optional = true }
+pin-solana-instruction-2-3-3 = { package = "solana-instruction", version = "=2.3.3", default-features = false, optional = true }
+pin-solana-msg-2-2-1 = { package = "solana-msg", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-program-error-2-2-2 = { package = "solana-program-error", version = "=2.2.2", default-features = false, optional = true }
+pin-solana-program-memory-2-3-1 = { package = "solana-program-memory", version = "=2.3.1", default-features = false, optional = true }
+pin-solana-pubkey-2-4-0 = { package = "solana-pubkey", version = "=2.4.0", default-features = false, optional = true }
+pin-solana-sanitize-2-2-1 = { package = "solana-sanitize", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-sha256-hasher-2-3-0 = { package = "solana-sha256-hasher", version = "=2.3.0", default-features = false, optional = true }
+pin-solana-stable-layout-2-2-1 = { package = "solana-stable-layout", version = "=2.2.1", default-features = false, optional = true }

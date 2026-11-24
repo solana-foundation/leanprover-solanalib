@@ -14,7 +14,7 @@
         "sdk-utilities::solana-program-1.15.2::src/rent.rs",
         "sdk-utilities::solana-program-1.18.26::src/rent.rs"
       ],
-      "argument": "@review:source-notes/sysvar-rent-arithmetic.md#review-6d91c0da724dafba",
+      "argument": "@review:source-notes/sysvar-rent-arithmetic.md#review-a0d3ea762a626f56",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",

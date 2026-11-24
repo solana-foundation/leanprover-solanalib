@@ -393,8 +393,9 @@ class NativeAuthentication(unittest.TestCase):
                     self.assertEqual(data["crates"], [{"name": crate, "version": version}])
                     manifest = next(row for row in auth["manifests"].values()
                                     if name + ".json" in row["corpora"])
-                    self.assertEqual(manifest["requirements"][crate], "=" + version)
-                    self.assertEqual([row["version"] for row in manifest["locked"][crate]], [version])
+                    self.assertEqual([row['version'] for row in manifest['resolution']['modeled'][crate]], [version])
+                    self.assertEqual(run.native_dependencies.selected_version(
+                        run.RUST / manifest['driver'], manifest['resolution'], crate), version)
                     exact = frozenset((rid, function, ()) for rid in ids)
                     self.assertEqual(frozenset((row["id"], row["function"], tuple(sorted(row["generics"].items())))
                                                for row in data["records"]), exact)

@@ -12,7 +12,7 @@
         "value-request::pinocchio-associated-token-account-0.4.0::src/instructions/create_idempotent.rs",
         "value-request::solana-instruction-view-2.1.0::src/cpi.rs"
       ],
-      "argument": "@review:source-notes/value-request-ata.md#review-4626f6ec58659e66",
+      "argument": "@review:source-notes/value-request-ata.md#review-32cb9c0ab9bb97db",
       "limitations": "@shared:limitations-fb64b3dbaf139ef9"
     }
   },

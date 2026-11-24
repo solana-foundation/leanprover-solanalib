@@ -1345,7 +1345,7 @@
     "anchor-spl-support::legacy-stake-dependency": {
       "order": 86,
       "argument": "@review:source-notes/owned-dependencies.md#review-3de2f66db0a10c82",
-      "limitations": "@shared:limitations-9d9d7bc5cb785b88",
+      "limitations": "@shared:limitations-ed529cd25f065940",
       "source_ids": ["stake-codecs::solana-program-1.15.2::src/stake/state.rs"],
       "modules": {"Solanalib.Specs.Core.LegacyStake": "2854aab07dd2b3bbd333824c83e1924c8ec86de81e2c0b6dca227ffb7e3edc60"}
     },
@@ -1438,7 +1438,7 @@
     "stake-codecs::review": {
       "order": 90,
       "argument": "@review:source-notes/owned-dependencies.md#review-f29d0d5500d16b0f",
-      "limitations": "@shared:limitations-9d9d7bc5cb785b88",
+      "limitations": "@shared:limitations-ed529cd25f065940",
       "source_ids": [
         "stake-codecs::solana-program-1.15.2::src/stake/state.rs",
         "stake-codecs::solana-program-1.15.2::src/stake/instruction.rs",

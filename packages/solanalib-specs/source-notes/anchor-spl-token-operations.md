@@ -182,7 +182,7 @@ python3.12 -B tools/library-conformance/run.py --model-only --registered-checker
 python3.12 -B tools/library-conformance/run.py --record --offline --twice --no-write-corpus --driver anchor-spl-token-0-32-1 --evidence-dir /tmp/slc-anchor-token-operations-native
 ```
 
-The driver retains its exact source projection, locks, feature selection and
+The driver retains its exact source projection, modeled dependency pins, feature selection and
 authenticated `dev`/unwind, x86-64, Solana-cfg configuration. Fresh native
 recordings and replay of the committed corpus are separate checks; neither
 executes the Token processor or proves the SDK wrapper body.

@@ -14,7 +14,7 @@
         "root-extra::pythnet-sdk-3.0.0::src/messages.rs",
         "codecs::borsh-1.6.1::src/de/mod.rs"
       ],
-      "argument": "@review:source-notes/other-sdk-functions.md#review-a1872d017fc9df3f",
+      "argument": "@review:source-notes/other-sdk-functions.md#review-4ae2939669d16377",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",

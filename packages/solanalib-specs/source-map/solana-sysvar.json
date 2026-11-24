@@ -38,7 +38,7 @@
         "sdk-utilities::solana-epoch-schedule-3.0.0::src/lib.rs",
         "sdk-utilities::solana-epoch-schedule-3.2.0::src/lib.rs"
       ],
-      "argument": "@review:source-notes/sysvar-getters.md#review-6d548314f765b20d",
+      "argument": "@review:source-notes/sysvar-getters.md#review-3f9d18770978a5fe",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",

@@ -1,21 +1,23 @@
+# sha2 0.10.9 and curve25519-dalek 4.1.3 supply the direct cryptographic
+# reference calls, at the same versions selected by the library host branch.
+
 [package]
 name = "conformance-address-2-6-0-host"
 version = "0.1.0"
 edition = "2021"
 publish = false
 description = "Records solana-address 2.6.0 on the plain host branch (feature curve25519), for the pure PDA and curve observations"
-
-# sha2 0.10.9 and curve25519-dalek 4.1.3 supply the direct cryptographic
-# reference calls, at the same versions selected by the library host branch.
+workspace = "../workspaces/profile-06"
 
 [dependencies]
 conformance-recorder = { path = "../recorder" }
 solana-address = { version = "=2.6.0", default-features = false, features = ["curve25519"] }
 sha2 = "=0.10.9"
 curve25519-dalek = "=4.1.3"
-
-[profile.dev]
-panic = "unwind"
-
-[profile.release]
-panic = "unwind"
+pin-curve25519-dalek-derive-0-1-1 = { package = "curve25519-dalek-derive", version = "=0.1.1", default-features = false, optional = true }
+pin-digest-0-10-7 = { package = "digest", version = "=0.10.7", default-features = false, optional = true }
+pin-solana-define-syscall-4-0-1 = { package = "solana-define-syscall", version = "=4.0.1", default-features = false, optional = true }
+pin-solana-define-syscall-5-1-0 = { package = "solana-define-syscall", version = "=5.1.0", default-features = false, optional = true }
+pin-solana-hash-4-3-0 = { package = "solana-hash", version = "=4.3.0", default-features = false, optional = true }
+pin-solana-program-error-3-0-1 = { package = "solana-program-error", version = "=3.0.1", default-features = false, optional = true }
+pin-solana-sha256-hasher-3-1-0 = { package = "solana-sha256-hasher", version = "=3.1.0", default-features = false, optional = true }

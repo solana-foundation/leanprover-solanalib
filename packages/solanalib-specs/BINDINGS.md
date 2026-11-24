@@ -118,7 +118,7 @@ and Rust implementation obligations in place.
 
 `releases` lists source-reviewed references. Optional `compatible_ranges`
 extends selection under the explicit assumption that the relevant operations
-preserve the reference contract at the used types. Exact test lockfiles remain
+preserve the reference contract at the used types. Exact native recordings remain
 reproducible examples, not mandatory dependency resolutions for every caller.
 SemVer is evidence for this assumption; it does not guarantee every detail the
 model may specify, such as diagnostic text. Those details remain part of the

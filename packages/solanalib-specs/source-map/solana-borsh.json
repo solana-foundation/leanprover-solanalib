@@ -44,7 +44,7 @@
         "stake-codecs::bincode-1.3.3::src/error.rs",
         "stake-codecs::bincode-1.3.3::src/de/read.rs"
       ],
-      "argument": "@review:source-notes/borsh-codecs.md#review-1d18dc7136746b3c",
+      "argument": "@review:source-notes/borsh-codecs.md#review-3d1dd074404b2133",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",
@@ -52,7 +52,7 @@
         "@binding:2bdd10cfed4f63a1",
         "@text:4a9631f1802d57aa",
         "@text:6f274b716867988f",
-        "@text:d22d6ebd2d84c108"
+        "@text:9497f7ccaf08c68b"
       ]
     }
   },

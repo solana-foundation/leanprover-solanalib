@@ -1,19 +1,16 @@
+# Exact published releases. Neither library has a reached nonoptional dependency;
+# the optional log macro is disabled because this driver calls Logger directly.
+
 [package]
 name = "conformance-pinocchio-09-values"
 version = "0.1.0"
 edition = "2021"
 publish = false
 description = "Records borrowed Pinocchio 0.9.2 values and Clock APIs and pinocchio-log 0.5.1 Logger APIs"
+workspace = "../workspaces/profile-00"
 
-# Exact published releases. Neither library has a reached nonoptional dependency;
-# the optional log macro is disabled because this driver calls Logger directly.
 [dependencies]
 conformance-recorder = { path = "../recorder" }
 conformance-shim = { path = "../shim" }
 pinocchio = "=0.9.2"
 pinocchio-log = { version = "=0.5.1", default-features = false }
-
-[profile.dev]
-panic = "unwind"
-[profile.release]
-panic = "unwind"

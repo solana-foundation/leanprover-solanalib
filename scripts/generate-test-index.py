@@ -64,7 +64,7 @@ def render():
               'See its [native reproduction guide](../tools/runtime-conformance/README.md#reproduce-native-results) for the sealed Agave archive and compiler.', '',
               'Every SDK driver discovered from `driver.toml` is listed with all corpora it owns. '
               'Use `just test-native-library DRIVER EVIDENCE` with a fresh evidence directory for native observations without changing committed recordings. '
-              'A [driver manifest](../tools/library-conformance/REFERENCE.md#families) also identifies shared source inputs, source/build scope and lockfiles. '
+              'A [driver manifest](../tools/library-conformance/REFERENCE.md#families) also identifies shared source inputs, source/build scope and exact modeled dependency pins. '
               'Checker registration and recorded omissions remain authoritative for replay coverage.', '',
               '| Driver and source directory | Complete corpora |', '| --- | --- |']
     for path in sorted((ROOT / 'tools/library-conformance/rust').glob('*/driver.toml')):

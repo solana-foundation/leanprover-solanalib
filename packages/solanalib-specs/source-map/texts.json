@@ -92,7 +92,7 @@
   "b1937ac5405b82da": "Unchanged request-phase buf is not a whole-call live-buffer preservation claim. The actual before snapshot, ordered output-store equation and current interpreter half must refer to the same live invocation; source pointer translation remains an explicit correspondence obligation.",
   "4a9631f1802d57aa": "No SDK, standard-library, allocator, panic runtime, compiler or application body is proved.",
   "6f274b716867988f": "Native conformance observes chosen generic callbacks and instruction values; it does not prove allocator behavior or target layout. The generic resource families retain those independent binding obligations.",
-  "d22d6ebd2d84c108": "The Program 1.15 and Anchor 0.27 native profiles use ahash 0.7.6 with the obsolete feature attribute removed for compiler compatibility.",
+  "9497f7ccaf08c68b": "The Program 1.15 and Anchor 0.27 native profiles pin the published crates.io ahash 0.7.9 release, which compiles with nightly-2026-05-01.",
   "0b44bf49befc47fc": "Library and primitive implementations remain explicit assumed source interfaces. No invocation body, SDK body, standard-library body or application is proved or executed to justify these models.",
   "c4a375b27071ba18": "Native direct value calls validate complete pointee observations and shared parent identity. Physical source-pointer, extent and borrow obligations are separate Rust-binding obligations.",
   "3c57c8b72be18600": "The recorded production host target plus Solana cfg does not establish SBF layout equivalence. Rust bindings must retain exact emitted types and actual source pointers separately.",

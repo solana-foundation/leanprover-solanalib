@@ -1,20 +1,20 @@
+# pinocchio enables cpi. Overflow checks are disabled, as in a release
+# arithmetic profile, while panics still unwind.
+
 [package]
 name = "conformance-runtime-pinocchio-0-10-2-wrapping"
 version = "0.1.0"
 edition = "2021"
 publish = false
 description = "Records pinocchio 0.10.2 Rent arithmetic, built without overflow checks"
-
-# pinocchio enables cpi. Overflow checks are disabled, as in a release
-# arithmetic profile, while panics still unwind.
+workspace = "../workspaces/profile-03"
 
 [dependencies]
 conformance-recorder = { path = "../recorder" }
 pinocchio = { version = "=0.10.2", features = ["cpi"] }
-
-[profile.dev]
-panic = "unwind"
-overflow-checks = false
-
-[profile.release]
-panic = "unwind"
+pin-solana-account-view-1-0-0 = { package = "solana-account-view", version = "=1.0.0", default-features = false, optional = true }
+pin-solana-address-2-6-1 = { package = "solana-address", version = "=2.6.1", default-features = false, optional = true }
+pin-solana-define-syscall-4-0-1 = { package = "solana-define-syscall", version = "=4.0.1", default-features = false, optional = true }
+pin-solana-define-syscall-5-2-0 = { package = "solana-define-syscall", version = "=5.2.0", default-features = false, optional = true }
+pin-solana-instruction-view-1-0-0 = { package = "solana-instruction-view", version = "=1.0.0", default-features = false, optional = true }
+pin-solana-program-error-3-0-1 = { package = "solana-program-error", version = "=3.0.1", default-features = false, optional = true }

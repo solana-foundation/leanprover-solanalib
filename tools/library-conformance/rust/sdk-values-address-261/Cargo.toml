@@ -3,15 +3,11 @@ name = "conformance-sdk-values-address-261"
 version = "0.1.0"
 edition = "2021"
 publish = false
+workspace = "../workspaces/profile-03"
 
 [dependencies]
 conformance-recorder = { path = "../recorder" }
 option-v3 = { package = "solana-program-option", version = "=3.1.0" }
 solana-address = "=2.6.1"
 solana-sdk-ids = "=3.1.0"
-
-[profile.dev]
-panic = "abort"
-
-[profile.release]
-panic = "abort"
+pin-solana-program-error-3-0-1 = { package = "solana-program-error", version = "=3.0.1", default-features = false, optional = true }

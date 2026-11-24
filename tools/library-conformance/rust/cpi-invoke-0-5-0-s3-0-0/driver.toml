@@ -1,3 +1,4 @@
+profile = "abort"
 corpora = ["cpi_invoke_0_5_0_s3_0_0"]
 inputs = ["rust/common/cpi_signature_mocks.rs"]
 region = "none"
@@ -5,5 +6,5 @@ scope = "whole-signature-mock"
 
 [build_probe]
 argument = "--build-config"
-profile = "dev"
+profile = "abort"
 panic = "abort"

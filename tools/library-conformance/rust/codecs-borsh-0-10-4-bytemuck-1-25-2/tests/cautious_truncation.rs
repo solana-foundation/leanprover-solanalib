@@ -1,5 +1,8 @@
 //! Regression against the published, pinned Borsh 0.10.4 implementation.
-//! Run with `cargo test --locked --release --test cautious_truncation`.
+//! From the repository root, first resolve and record the driver with
+//! `just test-native-library codecs-borsh-0-10-4-bytemuck-1-25-2 EVIDENCE`.
+//! Then run `cargo test --locked --release --test cautious_truncation` in the
+//! driver directory; EVIDENCE must name a fresh evidence directory.
 //! No value of the huge element type is ever constructed. Optimization avoids
 //! reserving its unused return slot on the stack in the generic decoder.
 

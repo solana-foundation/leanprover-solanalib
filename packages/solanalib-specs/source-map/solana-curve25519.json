@@ -11,7 +11,7 @@
         "root-extra::solana-curve25519-3.1.12::src/edwards.rs",
         "root-extra::solana-curve25519-3.1.12::src/curve_syscall_traits.rs"
       ],
-      "argument": "@review:source-notes/other-sdk-functions.md#review-568403ef2efa5912",
+      "argument": "@review:source-notes/other-sdk-functions.md#review-87dc7d4a9e8e4b85",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",

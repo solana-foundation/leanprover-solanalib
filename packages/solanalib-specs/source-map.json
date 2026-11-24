@@ -13,7 +13,7 @@
   "applicability_scope": [
     "Custom-allocator failure while constructing an error or diagnostic payload is outside the scope of this package; interpret those allocations as successful. Other errors, panics, ordinary allocation effects and callback outcomes retain their model contracts.",
     "Applicability selects an existing mathematical model under its recorded conditions. It does not prove Rust implementation correctness or discharge generic-index, ownership, codec, provider or runtime interpretation obligations.",
-    "Declared compatible ranges assume that the registered operation and its relevant dependencies preserve the complete reference contract, at the used types and recorded build conditions, including implementation-specific diagnostics, effects and source identities. Reference releases and test lockfiles are evidence, not an exhaustive eligibility list. Known behavioral exceptions remain excluded; no Cargo resolution or Rust correspondence proof is inferred."
+    "Declared compatible ranges assume that the registered operation and its relevant dependencies preserve the complete reference contract, at the used types and recorded build conditions, including implementation-specific diagnostics, effects and source identities. Reference releases and native recordings are evidence, not an exhaustive eligibility list. Known behavioral exceptions remain excluded; no Cargo resolution or Rust correspondence proof is inferred."
   ],
   "fragments": [
     "source-map/anchor-lang.json",

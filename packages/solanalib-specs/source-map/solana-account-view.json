@@ -10,7 +10,7 @@
         "Solanalib.Specs.SolanaAccountView.Observation": "466d30ce3cc6aff0de74ed14e133ddbf310f8481c74efb775a8dbdec4d67b6a5"
       },
       "source_ids": ["solana-account-view@2.0.0::source", "solana-account-view@1.0.0::source"],
-      "argument": "@review:source-notes/account-view.md#review-9b8c9a1bd745603f",
+      "argument": "@review:source-notes/account-view.md#review-42eb0b9a3501309d",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",

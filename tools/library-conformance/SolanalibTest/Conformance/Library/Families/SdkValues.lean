@@ -7,7 +7,7 @@ import SolanalibTest.Conformance.Library.Families.SdkValues.Values
 import SolanalibTest.Conformance.Library.Families.SdkValues.Callbacks
 import SolanalibTest.Conformance.Library.Families.SdkValues.Keys
 
-/-! Small SDK values at explicitly reviewed releases. The independently locked
+/-! Small SDK values at explicitly reviewed releases. The independently pinned
 native drivers selected in `corpora` exercise pure values and stateful, unwinding and terminating
 callback interpretations. The replay always selects a source relation by its
 exact crate version and corpus, including repeated Rust item paths. -/

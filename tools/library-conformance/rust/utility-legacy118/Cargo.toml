@@ -1,17 +1,39 @@
+# Modeled dependencies use exact constraints; incidental packages resolve afresh.
+
 [package]
 name = "conformance-utility-legacy118"
 version = "0.1.0"
 edition = "2021"
 publish = false
+workspace = "../workspaces/profile-10"
 
-# Exact releases and transitive versions are fixed by Cargo.lock.
 [dependencies]
 conformance-recorder = { path = "../recorder" }
 conformance-shim = { path = "../shim" }
 solana-program = "=1.18.26"
-
-[profile.dev]
-panic = "unwind"
-
-[profile.release]
-panic = "unwind"
+pin-base64-0-12-3 = { package = "base64", version = "=0.12.3", default-features = false, optional = true }
+pin-base64-0-21-7 = { package = "base64", version = "=0.21.7", default-features = false, optional = true }
+pin-bincode-1-3-3 = { package = "bincode", version = "=1.3.3", default-features = false, optional = true }
+pin-blake3-1-5-5 = { package = "blake3", version = "=1.5.5", default-features = false, optional = true }
+pin-borsh-0-9-3 = { package = "borsh", version = "=0.9.3", default-features = false, optional = true }
+pin-borsh-0-10-4 = { package = "borsh", version = "=0.10.4", default-features = false, optional = true }
+pin-borsh-1-5-7 = { package = "borsh", version = "=1.5.7", default-features = false, optional = true }
+pin-borsh-derive-0-9-3 = { package = "borsh-derive", version = "=0.9.3", default-features = false, optional = true }
+pin-borsh-derive-0-10-4 = { package = "borsh-derive", version = "=0.10.4", default-features = false, optional = true }
+pin-borsh-derive-1-5-7 = { package = "borsh-derive", version = "=1.5.7", default-features = false, optional = true }
+pin-borsh-derive-internal-0-9-3 = { package = "borsh-derive-internal", version = "=0.9.3", default-features = false, optional = true }
+pin-borsh-derive-internal-0-10-4 = { package = "borsh-derive-internal", version = "=0.10.4", default-features = false, optional = true }
+pin-borsh-schema-derive-internal-0-9-3 = { package = "borsh-schema-derive-internal", version = "=0.9.3", default-features = false, optional = true }
+pin-borsh-schema-derive-internal-0-10-4 = { package = "borsh-schema-derive-internal", version = "=0.10.4", default-features = false, optional = true }
+pin-bs58-0-4-0 = { package = "bs58", version = "=0.4.0", default-features = false, optional = true }
+pin-bytemuck-1-21-0 = { package = "bytemuck", version = "=1.21.0", default-features = false, optional = true }
+pin-bytemuck_derive-1-8-1 = { package = "bytemuck_derive", version = "=1.8.1", default-features = false, optional = true }
+pin-curve25519-dalek-3-2-1 = { package = "curve25519-dalek", version = "=3.2.1", default-features = false, optional = true }
+pin-digest-0-9-0 = { package = "digest", version = "=0.9.0", default-features = false, optional = true }
+pin-digest-0-10-7 = { package = "digest", version = "=0.10.7", default-features = false, optional = true }
+pin-keccak-0-1-5 = { package = "keccak", version = "=0.1.5", default-features = false, optional = true }
+pin-serde-1-0-216 = { package = "serde", version = "=1.0.216", default-features = false, optional = true }
+pin-serde_derive-1-0-216 = { package = "serde_derive", version = "=1.0.216", default-features = false, optional = true }
+pin-sha2-0-9-9 = { package = "sha2", version = "=0.9.9", default-features = false, optional = true }
+pin-sha2-0-10-8 = { package = "sha2", version = "=0.10.8", default-features = false, optional = true }
+pin-sha3-0-10-8 = { package = "sha3", version = "=0.10.8", default-features = false, optional = true }

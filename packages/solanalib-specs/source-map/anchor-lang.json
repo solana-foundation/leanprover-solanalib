@@ -162,7 +162,7 @@
         "raw-runtime::pinocchio-log-0.5.1::src/logger.rs",
         "raw-runtime::anchor-lang-1.0.2::src/lib.rs"
       ],
-      "argument": "@review:source-notes/anchor-accounts-1.0.2.md#review-6a25e416937b4592",
+      "argument": "@review:source-notes/anchor-accounts-1.0.2.md#review-c7ffbbaf1d03f52c",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",

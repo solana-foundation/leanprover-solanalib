@@ -43,7 +43,7 @@
         "token-instructions::spl-token-2022-8.0.1::src/native_mint.rs",
         "token-instructions::spl-memo-6.0.0::src/lib.rs"
       ],
-      "argument": "@review:source-notes/token-extensions.md#review-4199bfe723e3719f",
+      "argument": "@review:source-notes/token-extensions.md#review-c3ab832f3bc32e62",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",

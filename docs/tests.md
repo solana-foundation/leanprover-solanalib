@@ -539,13 +539,14 @@ These suites test generators, source/identity checks, proof audits and native-re
 | [tools/runtime-conformance/test_run.py](../tools/runtime-conformance/test_run.py) | `just test-runtime` |
 | [tools/library-conformance/test_build_probe.py](../tools/library-conformance/test_build_probe.py) | `just test-conformance` |
 | [tools/library-conformance/test_checker_selection.py](../tools/library-conformance/test_checker_selection.py) | `just test-conformance` |
+| [tools/library-conformance/test_native_dependencies.py](../tools/library-conformance/test_native_dependencies.py) | `just test-conformance` |
 | [tools/library-conformance/test_run.py](../tools/library-conformance/test_run.py) | `just test-conformance` |
 
 ## Native drivers and recordings
 
 The runtime suite uses [agave_cases.rs](../tools/runtime-conformance/agave_cases.rs), [cpi_cases.rs](../tools/runtime-conformance/cpi_cases.rs), shared [account](../tools/runtime-conformance/accounts.tsv), [serialization](../tools/runtime-conformance/serialization.tsv) and [CPI](../tools/runtime-conformance/cpi.tsv) fixtures, and the authenticated [recording metadata](../tools/runtime-conformance/expected-native.json). See its [native reproduction guide](../tools/runtime-conformance/README.md#reproduce-native-results) for the sealed Agave archive and compiler.
 
-Every SDK driver discovered from `driver.toml` is listed with all corpora it owns. Use `just test-native-library DRIVER EVIDENCE` with a fresh evidence directory for native observations without changing committed recordings. A [driver manifest](../tools/library-conformance/REFERENCE.md#families) also identifies shared source inputs, source/build scope and lockfiles. Checker registration and recorded omissions remain authoritative for replay coverage.
+Every SDK driver discovered from `driver.toml` is listed with all corpora it owns. Use `just test-native-library DRIVER EVIDENCE` with a fresh evidence directory for native observations without changing committed recordings. A [driver manifest](../tools/library-conformance/REFERENCE.md#families) also identifies shared source inputs, source/build scope and exact modeled dependency pins. Checker registration and recorded omissions remain authoritative for replay coverage.
 
 | Driver and source directory | Complete corpora |
 | --- | --- |

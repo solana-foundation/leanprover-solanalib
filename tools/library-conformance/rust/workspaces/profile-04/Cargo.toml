@@ -1,0 +1,38 @@
+# Copyright (c) 2026 Harmonic. All rights reserved.
+# Released under Apache 2.0 license as described in the file LICENSE.
+# Authors: Solanalib Contributors
+
+[workspace]
+resolver = "2"
+members = [
+  "../../address-profiles-261",
+  "../../anchor-lifecycle-1_1_2",
+  "../../anchor-operations-112",
+  "../../anchor-spl-token-1-1-2",
+  "../../anchor-system-1-1-2",
+  "../../anchor-views-1-1-2",
+  "../../cpi-invoke-0-5-0-s3-0-1",
+  "../../instruction-extensions-bincode",
+  "../../instruction-extensions-v2",
+  "../../instruction-extensions-wincode",
+  "../../pubkey-profiles-240",
+  "../../raw-runtime",
+  "../../utility-instructions4",
+]
+
+[profile.dev]
+panic = "unwind"
+
+[profile.abort]
+inherits = "dev"
+panic = "abort"
+
+[profile.wrapping]
+inherits = "dev"
+overflow-checks = false
+
+[profile.optimized]
+inherits = "dev"
+opt-level = 3
+debug-assertions = false
+overflow-checks = false

@@ -1,13 +1,14 @@
+# Syscalls reach ../shim and accounts use loader serialization from ../accounts.
+# pinocchio 0.11.1 already links solana-define-syscall 5.1.0; the direct dependency
+# names it for raw syscall calls. Version 4.0.1 is also selected through solana-sha256-hasher.
+
 [package]
 name = "conformance-runtime-pinocchio-0-11-1"
 version = "0.1.0"
 edition = "2021"
 publish = false
 description = "Records pinocchio 0.11.1: Rent arithmetic, Rent from an account, Clock::get and the Instructions sysvar over a generic Deref receiver and over an account; and the raw syscalls of solana-define-syscall 5.1.0, which it links"
-
-# Syscalls reach ../shim and accounts use loader serialization from ../accounts.
-# pinocchio 0.11.1 already links solana-define-syscall 5.1.0; the direct dependency
-# names it for raw syscall calls. The lock also holds 4.0.1 through solana-sha256-hasher.
+workspace = "../workspaces/profile-06"
 
 [dependencies]
 conformance-recorder = { path = "../recorder" }
@@ -15,9 +16,12 @@ conformance-shim = { path = "../shim" }
 conformance-accounts = { path = "../accounts" }
 pinocchio = { version = "=0.11.1", features = ["cpi", "copy", "account-resize"] }
 solana-define-syscall = "=5.1.0"
-
-[profile.dev]
-panic = "unwind"
-
-[profile.release]
-panic = "unwind"
+pin-digest-0-10-7 = { package = "digest", version = "=0.10.7", default-features = false, optional = true }
+pin-sha2-0-10-9 = { package = "sha2", version = "=0.10.9", default-features = false, optional = true }
+pin-solana-account-view-2-0-0 = { package = "solana-account-view", version = "=2.0.0", default-features = false, optional = true }
+pin-solana-address-2-6-0 = { package = "solana-address", version = "=2.6.0", default-features = false, optional = true }
+pin-solana-define-syscall-4-0-1 = { package = "solana-define-syscall", version = "=4.0.1", default-features = false, optional = true }
+pin-solana-hash-4-3-0 = { package = "solana-hash", version = "=4.3.0", default-features = false, optional = true }
+pin-solana-instruction-view-2-1-0 = { package = "solana-instruction-view", version = "=2.1.0", default-features = false, optional = true }
+pin-solana-program-error-3-0-1 = { package = "solana-program-error", version = "=3.0.1", default-features = false, optional = true }
+pin-solana-sha256-hasher-3-1-0 = { package = "solana-sha256-hasher", version = "=3.1.0", default-features = false, optional = true }

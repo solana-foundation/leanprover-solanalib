@@ -1,4 +1,4 @@
-"""Opt-in native configuration receipts; existing drivers keep their receipt format.
+"""Native configuration receipts for drivers that expose their compiled settings.
 
 The explicitly selected profile of Cargo is recorded separately from the observed cfg values of the executable. A workspace or environment override of the panic strategy
 cannot be hidden by reading the leaf Cargo.toml alone.
@@ -23,7 +23,8 @@ def configuration(spec: dict, path: Path) -> dict | None:
     require(isinstance(probe, dict) and set(probe) == {"argument", "profile", "panic"},
             f"{path}: build_probe requires argument, profile and panic")
     require(probe["argument"] == "--build-config", f"{path}: unsupported build probe argument")
-    require(probe["profile"] == "dev", f"{path}: build probe currently supports the dev profile")
+    require(probe["profile"] in {"dev", "abort", "wrapping", "optimized"},
+            f"{path}: build probe requires a known recording profile")
     require(probe["panic"] in ("abort", "unwind"), f"{path}: invalid claimed panic strategy")
     require(scope in ("whole-signature-mock", "projected-wrapper", "linked-source"),
             f"{path}: invalid native scope")

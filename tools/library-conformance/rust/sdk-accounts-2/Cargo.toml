@@ -3,6 +3,7 @@ name = "conformance-sdk-accounts-2"
 version = "0.1.0"
 edition = "2021"
 publish = false
+workspace = "../workspaces/profile-00"
 
 [features]
 default = ["resize-api", "realloc-api"]
@@ -17,6 +18,12 @@ solana-account-info = "=2.3.0"
 solana-program-entrypoint = "=2.3.0"
 solana-program-error = "=2.2.2"
 solana-pubkey = "=2.4.0"
-
-[profile.dev]
-panic = "unwind"
+pin-digest-0-10-7 = { package = "digest", version = "=0.10.7", default-features = false, optional = true }
+pin-sha2-0-10-9 = { package = "sha2", version = "=0.10.9", default-features = false, optional = true }
+pin-solana-define-syscall-2-3-0 = { package = "solana-define-syscall", version = "=2.3.0", default-features = false, optional = true }
+pin-solana-hash-2-3-0 = { package = "solana-hash", version = "=2.3.0", default-features = false, optional = true }
+pin-solana-instruction-2-3-3 = { package = "solana-instruction", version = "=2.3.3", default-features = false, optional = true }
+pin-solana-msg-2-2-1 = { package = "solana-msg", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-program-memory-2-3-1 = { package = "solana-program-memory", version = "=2.3.1", default-features = false, optional = true }
+pin-solana-sanitize-2-2-1 = { package = "solana-sanitize", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-sha256-hasher-2-3-0 = { package = "solana-sha256-hasher", version = "=2.3.0", default-features = false, optional = true }

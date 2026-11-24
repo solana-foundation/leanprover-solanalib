@@ -6,7 +6,7 @@ Each registration seals its immutable source, exact callable identity, closed
 mathematical witnesses and individually reviewed
 [release profiles](../source-map.json).
 The declared compatible ranges assume preservation of the complete operations
-and their reached dependencies. The exact native lockfiles remain reproducible
+and their reached dependencies. The exact native recordings remain reproducible
 test references; they do not restrict callers to those dependency versions.
 
 ## Error values
@@ -57,13 +57,13 @@ source origin and actual compiled declaration must agree with that selection.
 edge values, callback state, override selection, null destruction and double
 panic. A binding must preserve the actual supplied state, admit all ordinary results, reject invalid enum tags, and represent these by-value source types without inventing an owned heap footprint.
 
-The independently locked `error-nullable` native driver calls the real pinned
+The independently pinned `error-nullable` native driver calls the real pinned
 SDK functions. Its 86 error observations cover every variant and status-word
 edge; its 34 Address observations cover zero, all-ones and a nonzero byte at
 every position. Both corpora are recorded twice and replayed by the registered
 references with negative controls. This driver contains no other SDK family.
 
-A source binding must establish the selected compiler, release profile, Solana cfg, target endianness and width, panic strategy and the settings of any verification tool used. The retained native lockfile and source closure supply version and feature evidence for the recorded observations.
+A source binding must establish the selected compiler, release profile, Solana cfg, target endianness and width, panic strategy and the settings of any verification tool used. The recorded provider receipt and source closure supply version and feature evidence for the recorded observations.
 The native observation runtime uses unwind; the three concrete value operations
 have no panic path. No equivalence with a different target layout is inferred.
 

@@ -1,0 +1,30 @@
+# Copyright (c) 2026 Harmonic. All rights reserved.
+# Released under Apache 2.0 license as described in the file LICENSE.
+# Authors: Solanalib Contributors
+
+[workspace]
+resolver = "2"
+members = [
+  "../../codecs-borsh-0-10-4-bytemuck-1-25-2",
+  "../../cpi-invoke-0-4-0-i2-2-1",
+  "../../raw-runtime-anchor",
+  "../../raw-runtime-program118",
+  "../../versions-solana-zero-copy-1-1-1",
+]
+
+[profile.dev]
+panic = "unwind"
+
+[profile.abort]
+inherits = "dev"
+panic = "abort"
+
+[profile.wrapping]
+inherits = "dev"
+overflow-checks = false
+
+[profile.optimized]
+inherits = "dev"
+opt-level = 3
+debug-assertions = false
+overflow-checks = false

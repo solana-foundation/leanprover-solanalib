@@ -9,19 +9,19 @@ model declarations use their canonical library and function names.
 
 A family owns Rust drivers, corpus files and one registered Lean module:
 
-1. **Drivers** `rust/<driver>/`, one Cargo project per lockfile, discovered by
+1. **Drivers** `rust/<driver>/`, members of compatible Cargo workspaces, discovered by
    their `driver.toml`:
    `corpora = [...]` (the corpus files it writes, exactly; names `[a-z0-9_]+`,
    unique across drivers), optional `inputs = [...]` (extra files it includes)
    and optional `unobserved = [...]` (see [Controls](#negative-controls)).
-   The recorded inputs of a driver are its own files (Cargo.toml, Cargo.lock,
+   The recorded inputs of a driver are its own files (Cargo.toml,
    `.cargo/config.toml`, driver.toml, `build.rs`, `src/**`), the sources of its
    path dependencies (`rust/recorder`, `rust/shim`, `rust/accounts`, family
-   helper crates) and its `inputs`; a change to any of them requires recording
-   that driver again. A file a hashed source includes (`#[path = ...]`,
+   helper crates), its `inputs`, `native-pins.toml` and the Cargo manifests of
+   its workspace, every member and their path dependencies. A change to any of
+   these inputs requires recording that driver again. A file a hashed source includes (`#[path = ...]`,
    `include!`, `include_str!`, `include_bytes!`) must be among them, else
-   recording and authentication fail. `run.py --record --driver D` writes only the corpus files of `D` and `corpus/manifests/D.json`, in its own Cargo target directory, so
-   drivers record independently.
+   recording and authentication fail. `run.py --record --driver D` writes only the corpus files of `D` and `corpus/manifests/D.json`. Drivers build separately, sharing a target directory within each workspace.
 2. **Checkers** `SolanalibTest/Conformance/Library/Families/<Family>.lean`, defining
    `SolanalibTest.Conformance.Library.Families.<Family>.corpora : List (String × List Checker)`
    (corpus name and its checkers). Helper modules live in
@@ -29,24 +29,62 @@ A family owns Rust drivers, corpus files and one registered Lean module:
    is generated from the family modules (`run.py --generate-registry`);
    `--model-only` and the offline controls reject a stale one.
 
-Pins: the library under test uses the exact registry version, with `=`; each driver commits its transitive dependency versions in Cargo.lock. Builds use the
+### Native dependencies
+
+Each driver pins modeled direct and transitive registry dependencies with `=version`,
+or names a public Git source at an exact revision. The source registry supplies the
+modeled crate inventory; [native-pins.toml](native-pins.toml) adds reached serialization,
+derive and cryptographic providers. Optional `pin-` aliases with
+`default-features = false` constrain transitive versions without enabling features.
+Required direct dependencies retain their declared features.
+
+The 131 drivers belong to 16 [Cargo workspaces](rust/workspaces). Exact provider
+versions determine which members can share a workspace. The runner compiles one
+driver at a time so unrelated member features are not unified. The workspace
+profiles preserve the selected panic, optimization and overflow settings.
+
+Every recording discards the temporary workspace `Cargo.lock` and resolves afresh.
+Incidental dependencies can select compatible releases. For an exact yanked pin,
+the runner reads its checksum from the public crates.io index and seeds only that
+package identity into the temporary resolution, without copying a dependency graph.
+When a broad upstream range selects another modeled compatibility line, the runner
+can select the unique exact version explicitly pinned by the workspace; ambiguous
+choices fail. The subsequent build uses this fresh resolution with `--locked`.
+No Cargo lockfile is committed or included in recording input hashes.
+
+The `resolution` receipt lists the modeled packages actually selected by the
+compiler unit graph, with versions, public origins and registry archive checksums.
+It excludes unused workspace members and records unused optional pins separately.
+Authentication checks these identities against the exact driver constraints and
+reviewed archive checksums where available. It also checks source hashes, the
+compiler/profile, build probes and complete corpus bytes. These are consistency
+checks against supplied receipts; they do not independently reproduce native calls.
+The scheduled native job performs that reproduction, records twice and fails on
+any change to a complete corpus file.
+
+Before running a direct Cargo control below, resolve its workspace with
+`just test-native-library DRIVER EVIDENCE` from the repository root, using a fresh
+evidence directory. The `--locked` controls then use that local resolution. Add
+`--offline` only when all dependencies of the control are cached.
+
+Builds use the
 repository toolchain (`rust-toolchain.toml`). `--record` runs `rustc -vV` at
 the repository root and in each driver directory, and requires the two to be
 identical and to belong to the pinned nightly: its commit date is the date of the
 channel or up to three days before. A `rust-toolchain` file under
 `rust/` fails recording and authentication. Each manifest records the `rustc -vV` of the driver, and authentication checks it against the pinned
 channel again. Builds use the host target
-`x86_64-unknown-linux-gnu`, the `dev` profile, and
+`x86_64-unknown-linux-gnu`, the selected workspace profile, and
 `-A explicit_builtin_cfgs_in_flags --cfg target_os="solana"` for target units
 only (`.cargo/config.toml`), so the libraries compile their Solana branches. A
 driver that records the host branch of a library says so and sets empty rustflags.
 
 The default panic strategy is `unwind`. Drivers with an explicit `scope` supply
-a `[build_probe]` table in `driver.toml`, naming `--build-config`, the `dev`
+a `[build_probe]` table in `driver.toml`, naming `--build-config`, the selected
 profile and expected panic strategy. The existing launcher selects that profile
 and checks the panic, target and scope observations of the executable before recording.
 Authentication rejects a changed profile, panic or scope claim. Drivers without
-this table retain their commands and receipt format.
+this table still record and authenticate their compiler profile.
 
 The `whole-signature-mock` and `projected-wrapper` scopes retain their mock
 boundaries and require the compile-only `signature-check` feature to be disabled.
@@ -55,7 +93,7 @@ driver. These scopes do not imply execution of an invocation body.
 
 ### Value operations
 
-These families use independently locked drivers and preserve the versioned
+These families use independently pinned drivers and preserve the versioned
 corpus names. Select a family with `--family NAME` or record its driver with
 `--record --driver NAME`, using the [commands in the guide](README.md#reproduce-native-results).
 
@@ -787,9 +825,18 @@ The separate native regression in
 the published implementation with a valid 4 GiB element layout, without
 constructing an element. It checks division panic after reading the length,
 before vector allocation or element callbacks, with zero-length, short-header,
-zero-size and `u8` controls. Run it with `cargo +nightly-2026-05-01 test --locked
---release --manifest-path rust/codecs-borsh-0-10-4-bytemuck-1-25-2/Cargo.toml --test cautious_truncation`
-from this directory. The corresponding Lean tests also cover nonzero
+zero-size and `u8` controls. From the repository root, resolve and record the
+driver before running the control in its pinned toolchain and configuration:
+
+```sh
+just test-native-library codecs-borsh-0-10-4-bytemuck-1-25-2 "$(mktemp -d)"
+(
+  cd tools/library-conformance/rust/codecs-borsh-0-10-4-bytemuck-1-25-2
+  cargo test --locked --release --test cautious_truncation
+)
+```
+
+The corresponding Lean tests also cover nonzero
 truncated sizes and terminal panic policies.
 
 ### Negative controls
@@ -898,7 +945,7 @@ Family Address (solana-address 2.6.0 and 2.6.1):
 - `create_program_address` (both versions) and 2.6.1 `is_on_curve` have no
   registered model and are not recorded.
 
-Family AccountsV2 (solana-account-view 2.0.0; driver `accounts-v2` with its exact dependency lock):
+Family AccountsV2 (solana-account-view 2.0.0; driver `accounts-v2` with exact modeled dependency pins):
 
 - Inputs safe Rust cannot produce are not recorded: an `AccountView` of a
   missing account (the missing-cell acquisition error of the model), consumed or
@@ -918,7 +965,7 @@ Family AccountsV2 (solana-account-view 2.0.0; driver `accounts-v2` with its exac
   observation and the API model admit the record).
 - Targets are `T = [u8]` and mapped `u8` only.
 
-Family AccountsV1 (solana-account-view 1.0.0, solana-account-info 3.1.1; driver `accounts-v1` with its exact dependency lock; each
+Family AccountsV1 (solana-account-view 1.0.0, solana-account-info 3.1.1; driver `accounts-v1` with exact modeled dependency pins; each
 crate is reached through the deserializer of its clients, pinocchio 0.10.2
 `entrypoint::deserialize` and solana-program-entrypoint 3.1.1 `deserialize`):
 
@@ -955,7 +1002,7 @@ crate is reached through the deserializer of its clients, pinocchio 0.10.2
   `i32` conversion and growth-limit boundaries, regrowth over a hidden suffix,
   close after resize and close), at most 20 records.
 
-Family TokenViews (pinocchio-token 0.6.0, pinocchio-token-2022 0.3.1; driver `token-views` with its exact dependency lock):
+Family TokenViews (pinocchio-token 0.6.0, pinocchio-token-2022 0.3.1; driver `token-views` with exact modeled dependency pins):
 
 - Every case runs in `shim::case` over a `rust/accounts` region; the state
   before is read back after the driver acquired the borrows it holds across the
@@ -1013,7 +1060,7 @@ accounts), `runtime-pinocchio-0-10-2-wrapping` and `runtime-rent-3-0-0-wrapping`
 the wrapping profile of the models) and `runtime-program-4-0-0-host` and `runtime-sysvar-3-1-1-host`
 (`host = true`: the `hostStub`/`hostStd` targets through recording
 `program_stubs` and captured stdout)), plus `raw-syscalls-5-2-0` for the separate
-SDK 5.2.0 lock:
+SDK 5.2.0 dependency selection:
 
 - Syscall providers (getters, `hashv`, `validate_edwards`, logs, return data)
   are decided with the shim (target `solana`) or the recording stubs and
@@ -1336,13 +1383,27 @@ python3 -B tools/library-conformance/run.py --record --offline --twice \
   --evidence-dir /tmp/account-cpi-native
 ```
 
-The three CPI drivers also have an existing `signature-check` feature. A
-locked offline `cargo check --features signature-check` in each driver checks
-its function-pointer type declarations. The ordinary recordings keep that
-feature disabled and invoke only the typed mocks. The Lean checker compares complete retained source-type observations and rejects omitted signer arguments or reinterpreted descriptor layouts. Those observations do not establish the ABI of an arbitrary compiled program.
+The three CPI drivers also have a `signature-check` feature that checks their
+function-pointer type declarations. From the repository root, resolve each
+workspace before checking the driver with that feature:
+
+```sh
+for driver in cpi-invoke-0-4-0-i2-3-3 cpi-program-2-3-0 cpi-raw-define-2-3-0; do
+  just test-native-library "$driver" "$(mktemp -d)"
+  (
+    cd "tools/library-conformance/rust/$driver"
+    cargo check --locked --features signature-check
+  )
+done
+```
+
+The ordinary recordings keep that feature disabled and invoke only the typed
+mocks. The Lean checker compares complete retained source-type observations
+and rejects omitted signer arguments or reinterpreted descriptor layouts.
+Those observations do not establish the ABI of an arbitrary compiled program.
 
 The Anchor SPL projector handles exactly the retained support drivers. With
-the locked Anchor SPL 0.32.1 source directory already available, check both
+the pinned Anchor SPL 0.32.1 source directory already available, check both
 projections without writing files:
 
 ~~~sh
@@ -1480,8 +1541,8 @@ registered 0.32.1 wrappers from the authenticated 188-record corpus.
 The earlier `token::transfer` primary and observation models retain native
 coverage through `anchor_spl_1_0_2`; the new 0.32.1 transfer family keeps its
 distinct owned context program and boxed legacy error.
-The two drivers retain their versioned names, exact projection spans, Cargo
-locks, observed build probes and complete corpora.
+The two drivers retain their versioned names, exact projection spans, modeled
+dependency pins, observed build probes and complete corpora.
 They exercise the projected wrappers on the pinned x86-64 Solana-cfg
 `dev`/unwind build, with complete invocation signatures supplied by the test.
 They do not execute the callee or establish sBPF layout equivalence.
@@ -1579,12 +1640,16 @@ The `write_zero_effects` Cargo tests of the same driver inspect successful
 allocation identities and their frees while the exclusive guard is held,
 then check guard release after the actual loader unwind. They use the System
 allocator without failure injection; later panic allocations are counted
-separately. From `tools/library-conformance/rust/anchor-loader-0_32_1`,
-run them serially with the pinned toolchain and existing driver configuration:
+separately. From the repository root, resolve and record the driver, then run
+the tests serially with its pinned toolchain and configuration:
 
 ```sh
-cargo test --locked --offline --target x86_64-unknown-linux-gnu \
-  write_zero_effects -- --test-threads=1 --nocapture
+just test-native-library anchor-loader-0_32_1 "$(mktemp -d)"
+(
+  cd tools/library-conformance/rust/anchor-loader-0_32_1
+  cargo test --locked --target x86_64-unknown-linux-gnu \
+    write_zero_effects -- --test-threads=1 --nocapture
+)
 ```
 
 The two public epoch-fee wrappers are checked immediately before and at the
@@ -1678,9 +1743,18 @@ driver `entry-deserialize`):
 - SDK checks retain the vector/Rc allocation sequence, original-length write
   before data-Rc allocation, duplicate strong counts and terminal allocation
   failure. The three unit tests of the driver cover alias/capacity edges, the
-  zero-capacity exclusion and allocator termination. Run them with
-  `cargo test --locked --offline -- --test-threads=1` from its driver directory
-  in the pinned native environment. See the [format and binding
+  zero-capacity exclusion and allocator termination. From the repository root,
+  resolve and record the driver before running its tests serially:
+
+  ```sh
+  just test-native-library entry-deserialize "$(mktemp -d)"
+  (
+    cd tools/library-conformance/rust/entry-deserialize
+    cargo test --locked -- --test-threads=1
+  )
+  ```
+
+  See the [format and binding
   boundaries](../../packages/solanalib-specs/source-notes/entry-deserialize.md).
 
 Family TransferHookResolution (transfer-hook-interface 0.9.0;
@@ -1799,7 +1873,7 @@ The native references remain `anchor-lifecycle-1_0_2`, `anchor-loader-1_0_2`,
 `anchor-operations-102`, `anchor-system-1-0-2`, `anchor-views-1-0-2`,
 `anchor-spl-support-v102` and `anchor-spl-token-1-0-2`. Companion drivers
 `address-profiles-260`, `instruction-extensions-bincode`, `raw-runtime-anchor`
-and `utility-instructions3` use their pinned locks, inputs and recorded modes.
+and `utility-instructions3` use their exact modeled dependency pins, inputs and recorded modes.
 Compatible-release selector fixtures are not additional native runs.
 
 The SDK and Token interface controls retain the singleton MaybeUninit hash,
@@ -1859,18 +1933,13 @@ checks. Source representations, callback implementations and ordinary
 source and interface binding obligations remain separate; CPI effects are opaque
 at the invocation signature.
 
-## Legacy native dependency
+## Program 1.15 and Anchor 0.27 dependency
 
-The legacy Program and Anchor drivers retain ahash 0.7.6 through their existing
-Cargo patch. The complete [package](rust/prepared/ahash-0.7.6/) comes from the
-[immutable crate archive](https://static.crates.io/crates/ahash/ahash-0.7.6.crate),
-SHA256 `fcb51a0695d8f838b1ee009b3fbf66bda078cd64590202a864a8f3e8c4315c47`.
-Only the obsolete `cfg_attr(feature = "stdsimd", feature(stdsimd))` attribute
-is removed from `src/lib.rs` for the pinned compiler. The Cargo versions, lock
-files, features and remaining source bytes are unchanged. Each driver lists all
-24 package files as ordinary authenticated inputs. The original
-[MIT](rust/prepared/ahash-0.7.6/LICENSE-MIT) and
-[Apache](rust/prepared/ahash-0.7.6/LICENSE-APACHE) licenses are retained.
+The `anchor-lifecycle-0_27_0`, `anchor-views-0-27-0`,
+`instruction-extensions-legacy-15`, `sdk-accounts-legacy-15` and
+`stake-codecs-legacy` drivers pin the published crates.io ahash 0.7.9 release.
+It compiles with the pinned nightly and reproduces the complete recorded observations.
+No vendored dependency or Cargo patch is needed.
 
 ## Legacy Program and Anchor interfaces
 

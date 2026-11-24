@@ -70,45 +70,40 @@ class CommittedCorpus(unittest.TestCase):
 
     def test_libraries_under_test_are_pinned_exactly(self):
         for driver in run.discover_drivers():
-            pins = run.pinned_requirements(run.RUST / driver / "Cargo.toml")
-            for name, requirement in pins.items():
-                if name.startswith("conformance-"):
-                    continue
-                self.assertTrue(requirement.startswith("=") or requirement.startswith("git "),
-                                f"{driver}: {name} = {requirement}")
+            self.assertTrue(run.native_dependencies.pins(run.RUST / driver), driver)
 
     def test_pyth_drivers_use_reviewed_registry_releases(self):
-        sources = run.source_map()["applicability_sources"]
+        sources = run.native_dependencies.registry()["applicability_sources"]
         registry = "registry+https://github.com/rust-lang/crates.io-index"
         for driver in ("pyth", "instructions-3-4-0-bincode"):
-            lockfile = run.RUST / driver / "Cargo.lock"
-            lock = run.locked_packages(lockfile)
+            receipt = json.loads((run.MANIFESTS / (driver + '.json')).read_text())['resolution']
             for crate, version in (("pyth-solana-receiver-sdk", "2.0.0"), ("pythnet-sdk", "3.0.0")):
                 with self.subTest(driver=driver, crate=crate):
-                    self.assertEqual(lock[crate], [{"version": version, "source": registry,
+                    self.assertEqual(receipt['modeled'][crate], [{"version": version, "source": registry,
                         "checksum": sources[crate]["releases"][version]["sha256"]}])
-            package = tomllib.loads((lockfile.parent / "Cargo.toml").read_text())["package"]["name"]
             for crate, version in (("anchor-lang", "1.0.2"), ("anchor-derive-serde", "1.0.2"),
                                    ("anchor-attribute-account", "1.0.2"), ("borsh", "1.6.1")):
                 with self.subTest(driver=driver, dependency=crate):
-                    self.assertEqual(run.linked_version(lockfile, package, crate), version)
+                    self.assertEqual(run.native_dependencies.selected_version(run.RUST / driver, receipt, crate), version)
 
-    def test_two_bytemuck_versions_live_in_separate_lockfiles(self):
-        versions = {d: [p["version"] for p in run.locked_packages(run.RUST / d / "Cargo.lock").get("bytemuck", [])]
-                    for d in ("codecs-borsh-0-10-4-bytemuck-1-25-2", "codecs-borsh-1-6-1-stake-3-1-0")}
-        self.assertEqual(versions, {"codecs-borsh-0-10-4-bytemuck-1-25-2": ["1.25.2"], "codecs-borsh-1-6-1-stake-3-1-0": ["1.25.0"]})
+    def test_two_bytemuck_versions_use_distinct_workspaces(self):
+        expected = {"codecs-borsh-0-10-4-bytemuck-1-25-2": ["1.25.2"],
+                    "codecs-borsh-1-6-1-stake-3-1-0": ["1.25.0"]}
+        versions = {driver: [p['version'] for p in json.loads((run.MANIFESTS / (driver + '.json')).read_text())
+                            ['resolution']['modeled']['bytemuck']] for driver in expected}
+        self.assertEqual(versions, expected)
+        self.assertEqual(len({run.native_dependencies.workspace(run.RUST / driver) for driver in expected}), 2)
 
     def test_drivers_build_with_the_declared_cfg_and_panic_strategy(self):
         drivers = run.discover_drivers()
         for driver in drivers:
             config = tomllib.loads((run.RUST / driver / ".cargo/config.toml").read_text())
-            # The recorder passes --target explicitly; a config default is optional.
             self.assertEqual(config.get("build", {}).get("target", run.TARGET), run.TARGET)
             expected = [] if drivers[driver]["host"] else run.SOLANA_RUSTFLAGS
             self.assertEqual(config["target"][run.TARGET]["rustflags"], expected, driver)
-            profiles = tomllib.loads((run.RUST / driver / "Cargo.toml").read_text())["profile"]
+            settings = run.native_dependencies.profile(run.RUST / driver, drivers[driver]['profile'])
             probe = drivers[driver]["build_probe"]
-            self.assertEqual(profiles["dev"]["panic"], probe["panic"] if probe else "unwind")
+            self.assertEqual(settings["panic"], probe["panic"] if probe else "unwind")
 
 
 class Validation(unittest.TestCase):
@@ -222,6 +217,7 @@ class Authentication(unittest.TestCase):
     def test_changed_driver_input_requires_rerecording(self):
         root = self.tmp / "tool"
         shutil.copytree(run.ROOT / "rust", root / "rust", ignore=shutil.ignore_patterns("target"))
+        shutil.copyfile(run.ROOT / 'native-pins.toml', root / 'native-pins.toml')
         source = root / "rust/codecs-borsh-1-6-1-stake-3-1-0/src/stake.rs"
         source.write_text(source.read_text() + "\n// edited\n")
         with self.assertRaisesRegex(ValueError, "inputs changed"):
@@ -740,7 +736,11 @@ class Controls(unittest.TestCase):
         (d / "src").mkdir(parents=True)
         (tmp / "rust" / "common").mkdir()
         (tmp / "rust" / "common" / "x.rs").write_text("")
-        (d / "Cargo.toml").write_text('[package]\nname = "d"\n')
+        (d / "Cargo.toml").write_text('[package]\nname = "d"\nworkspace = "../workspaces/example"\n')
+        workspace = tmp / 'rust/workspaces/example'
+        workspace.mkdir(parents=True)
+        (workspace / 'Cargo.toml').write_text('[workspace]\nmembers = ["../../d"]\n')
+        (tmp / 'native-pins.toml').write_text('')
         (d / "src" / "main.rs").write_text('#[path = "../../common/x.rs"]\nmod x;\n')
         (d / "driver.toml").write_text('corpora = ["c"]\n')
         with self.assertRaisesRegex(ValueError, "includes ../../common/x.rs .* list it in the `inputs` of the driver"):
@@ -751,6 +751,36 @@ class Controls(unittest.TestCase):
     def test_divergence_globs_leave_an_unlisted_control_id(self):
         self.assertIsNotNone(run.unlisted_control_id("f/a", ["f/*"]))
         self.assertIsNone(run.unlisted_control_id("f/a", ["*"]))
+
+    def test_workspace_resolution_inputs_cover_peer_and_path_dependency_manifests(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            workspace = root / 'rust/workspaces/example'
+            workspace.mkdir(parents=True)
+            (workspace / 'Cargo.toml').write_text('[workspace]\nmembers = ["../../one", "../../two"]\n')
+            (root / 'native-pins.toml').write_text('')
+            for name in ('one', 'two', 'helper'):
+                package = root / 'rust' / name
+                (package / 'src').mkdir(parents=True)
+                (package / 'src/main.rs').write_text('fn main() {}\n')
+                (package / 'Cargo.toml').write_text(f'[package]\nname = "{name}"\nworkspace = "../workspaces/example"\n')
+                if name != 'helper':
+                    (package / 'driver.toml').write_text(f'corpora = ["{name}"]\n')
+            peer = root / 'rust/two/Cargo.toml'
+            peer.write_text(peer.read_text() + '[dependencies]\nhelper = { path = "../helper" }\n')
+            before = run.input_hashes('one', root)
+            for relative in ('rust/two/Cargo.toml', 'rust/helper/Cargo.toml',
+                             'rust/workspaces/example/Cargo.toml', 'native-pins.toml'):
+                with self.subTest(input=relative):
+                    path = root / relative
+                    contents = path.read_text()
+                    path.write_text(contents + '# changed resolver input\n')
+                    after = run.input_hashes('one', root)
+                    self.assertEqual({key for key in before if before[key] != after[key]}, {relative})
+                    path.write_text(contents)
+            (root / 'rust/two/src/main.rs').write_text('fn main() { println!("peer only"); }\n')
+            (workspace / 'Cargo.lock').write_text('temporary resolution\n')
+            self.assertEqual(before, run.input_hashes('one', root))
 
     def test_cross_function_and_theorem_listings_are_validated_and_their_tables_are_current(self):
         models = run.source_map()
@@ -949,20 +979,6 @@ class CompactHex(unittest.TestCase):
 
 
 class PinsAndDeclarations(unittest.TestCase):
-    def test_linked_version_prefers_the_direct_dependency(self):
-        tmp = Path(tempfile.mkdtemp())
-        self.addCleanup(shutil.rmtree, tmp)
-        lock = tmp / "Cargo.lock"
-        lock.write_text(
-            'version = 4\n'
-            '[[package]]\nname = "borsh"\nversion = "0.10.4"\nsource = "registry"\n'
-            '[[package]]\nname = "borsh"\nversion = "1.6.1"\nsource = "registry"\n'
-            '[[package]]\nname = "solo"\nversion = "2.0.0"\nsource = "registry"\n'
-            '[[package]]\nname = "driver"\nversion = "0.1.0"\ndependencies = ["borsh 1.6.1"]\n')
-        self.assertEqual(run.linked_version(lock, "driver", "borsh"), "1.6.1")
-        self.assertEqual(run.linked_version(lock, "driver", "solo"), "2.0.0")
-        self.assertIsNone(run.linked_version(lock, "other", "borsh"))
-
     def test_registry_pins_and_registered_names_are_read(self):
         pins = run.registry_pins()
         self.assertIn("1.6.1", pins["borsh"])

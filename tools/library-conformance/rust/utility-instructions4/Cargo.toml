@@ -1,10 +1,12 @@
+# Exact release and reviewed resolved AccountInfo/Instruction providers.
+
 [package]
 name = "conformance-utility-instructions4"
 version = "0.1.0"
 edition = "2021"
 publish = false
+workspace = "../workspaces/profile-04"
 
-# Exact release and reviewed resolved AccountInfo/Instruction providers.
 [dependencies]
 conformance-recorder = { path = "../recorder" }
 conformance-shim = { path = "../shim" }
@@ -12,6 +14,18 @@ solana-instructions-sysvar = "=4.0.0"
 solana-account-info = "=3.1.1"
 solana-instruction = "=3.4.0"
 solana-pubkey = "=4.2.0"
-
-[profile.dev]
-panic = "unwind"
+pin-borsh-1-6-0 = { package = "borsh", version = "=1.6.0", default-features = false, optional = true }
+pin-borsh-derive-1-6-0 = { package = "borsh-derive", version = "=1.6.0", default-features = false, optional = true }
+pin-serde-1-0-228 = { package = "serde", version = "=1.0.228", default-features = false, optional = true }
+pin-serde_core-1-0-228 = { package = "serde_core", version = "=1.0.228", default-features = false, optional = true }
+pin-serde_derive-1-0-228 = { package = "serde_derive", version = "=1.0.228", default-features = false, optional = true }
+pin-solana-address-2-6-1 = { package = "solana-address", version = "=2.6.1", default-features = false, optional = true }
+pin-solana-define-syscall-4-0-1 = { package = "solana-define-syscall", version = "=4.0.1", default-features = false, optional = true }
+pin-solana-define-syscall-5-1-0 = { package = "solana-define-syscall", version = "=5.1.0", default-features = false, optional = true }
+pin-solana-program-error-3-0-1 = { package = "solana-program-error", version = "=3.0.1", default-features = false, optional = true }
+pin-solana-program-memory-3-1-0 = { package = "solana-program-memory", version = "=3.1.0", default-features = false, optional = true }
+pin-solana-sanitize-3-0-1 = { package = "solana-sanitize", version = "=3.0.1", default-features = false, optional = true }
+pin-solana-sdk-ids-3-1-0 = { package = "solana-sdk-ids", version = "=3.1.0", default-features = false, optional = true }
+pin-solana-serialize-utils-3-1-2 = { package = "solana-serialize-utils", version = "=3.1.2", default-features = false, optional = true }
+pin-wincode-0-5-5 = { package = "wincode", version = "=0.5.5", default-features = false, optional = true }
+pin-wincode-derive-0-4-6 = { package = "wincode-derive", version = "=0.4.6", default-features = false, optional = true }

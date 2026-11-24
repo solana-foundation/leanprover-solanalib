@@ -1,8 +1,9 @@
+profile = "abort"
 corpora = ["cpi_pinocchio_0_9_2"]
 region = "none"
 scope = "whole-signature-mock"
 
 [build_probe]
 argument = "--build-config"
-profile = "dev"
+profile = "abort"
 panic = "abort"

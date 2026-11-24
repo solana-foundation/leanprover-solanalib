@@ -13,3 +13,6 @@ __pycache__/
 
 # Machine-readable export; the source registry is authoritative.
 /packages/solanalib-specs/applicability.json
+
+# Fresh native resolutions are local, including workspace and shared-crate locks.
+/tools/library-conformance/rust/**/Cargo.lock

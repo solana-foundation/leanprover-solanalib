@@ -1,7 +1,7 @@
 // Borsh decoder cases shared by the borsh 0.10.4 and 1.6.1 drivers.
 //
 // Included with `#[path]` into each driver, so `borsh` resolves to the version
-// pinned by the driver `Cargo.toml` and `Cargo.lock` files. The two versions
+// pinned by the driver `Cargo.toml`. The two versions
 // have the same decoder API; their observable errors differ and are recorded.
 
 use borsh::BorshDeserialize;

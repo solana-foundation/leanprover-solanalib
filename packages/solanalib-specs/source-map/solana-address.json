@@ -46,7 +46,7 @@
         "addresses::solana-address-1.1.0::src/lib.rs",
         "codecs::borsh-0.10.4::src/de/mod.rs"
       ],
-      "argument": "@review:source-notes/address-profiles.md#review-26240c5918b37755",
+      "argument": "@review:source-notes/address-profiles.md#review-c015efbed86dc671",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",

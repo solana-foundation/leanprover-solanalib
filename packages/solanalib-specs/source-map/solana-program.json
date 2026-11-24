@@ -198,7 +198,7 @@
         "sdk-utilities::solana-program-1.15.2::src/epoch_schedule.rs",
         "raw-runtime::solana-program-1.15.2::src/syscalls/definitions.rs"
       ],
-      "argument": "@review:source-notes/other-sdk-functions.md#review-c7417a1e9610d378",
+      "argument": "@review:source-notes/other-sdk-functions.md#review-aa1636addeaf8f52",
       "limitations": [
         "@text:520c2c9da4094cbf",
         "@text:04171939ad29b5f0",
@@ -224,7 +224,7 @@
         "@text:f428bee2a0798d8f",
         "@text:4a9631f1802d57aa",
         "@text:6f274b716867988f",
-        "@text:d22d6ebd2d84c108",
+        "@text:9497f7ccaf08c68b",
         "@text:03c93293e69f3a78",
         "@binding:34997fb89ae90ad6",
         "@binding:6c0671bb94c95d48",
