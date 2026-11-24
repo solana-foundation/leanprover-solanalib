@@ -1,0 +1,5 @@
+# Family AccountsV1: solana-account-view 1.0.0 and solana-account-info 3.1.1, at
+# the pinned versions. `solana_account_view_1_0_0_forged` holds the cases
+# whose RuntimeAccount header the loader cannot produce (see the README row).
+corpora = ["solana_account_view_1_0_0", "solana_account_view_1_0_0_forged", "solana_account_info_3_1_1"]
+inputs = []

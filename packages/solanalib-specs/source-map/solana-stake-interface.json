@@ -1,0 +1,264 @@
+{
+  "abstractions": {
+    "library::solana_stake_interface": {
+      "order": 147,
+      "modules": {
+        "Solanalib.Specs.SolanaStakeInterface": "dd5c8f1b68d749e86cb94778b5dc7fe97b70640fe09fbaa17a78827f32de9da7",
+        "Solanalib.Specs.SolanaStakeInterface.Capabilities": "8cd4e3e4cde2f129325f289b445967e352fbee9380e09a7210082975546918c8",
+        "Solanalib.Specs.SolanaStakeInterface.State": "c61a9f18f45d5ac3d87d6eac8b13549664c7fa3c70eab005105e43d61c56b5d9"
+      },
+      "source_ids": [
+        "codecs::solana-stake-interface-3.1.0::src/state.rs",
+        "codecs::solana-stake-interface-3.1.0::src/stake_flags.rs",
+        "value-request::solana-address-2.6.0::src/lib.rs",
+        "codecs::borsh-1.6.1::src/de/mod.rs"
+      ],
+      "argument": "@review:source-notes/stake-state.md#review-3882fbba039f0aa5",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:2bdd10cfed4f63a1",
+        "@text:5e1b00066ecd7630",
+        "@text:e7fd7f3463afb9c9"
+      ]
+    }
+  },
+  "packages": {
+    "solana-stake-interface-3.1.0": {
+      "order": 53,
+      "repository": "https://github.com/solana-program/stake",
+      "revision": "3fc55bf917ef1dd4693318844f2bb696eb3485cd",
+      "path_prefix": "interface/"
+    }
+  },
+  "interfaces": {
+    "codecs::solana-stake-interface-3.1.0::src/state.rs": {
+      "order": 160,
+      "crate": "solana-stake-interface-3.1.0",
+      "path": "src/state.rs",
+      "review_scope": "StakeStateV2 hand-written Borsh decoder and the derived Borsh decoders of Meta, Authorized, Lockup, Stake and Delegation; no other stake program logic.",
+      "sha256": "10d016f3bb33ecdfa55745025cd5ca32db005f687a5cb25540d71472c77dc1e6"
+    },
+    "codecs::solana-stake-interface-3.1.0::src/stake_flags.rs": {
+      "order": 161,
+      "crate": "solana-stake-interface-3.1.0",
+      "path": "src/stake_flags.rs",
+      "review_scope": "Derived Borsh decoder of the one-byte StakeFlags field.",
+      "sha256": "6109865a5be4c9e86ae228884cfd2502bfd3f053b8189a133a06531d301af4f0"
+    }
+  },
+  "models": {
+    "solana-stake-interface::state::StakeStateV2::deserialize_reader": {
+      "order": 192,
+      "contract": "Solanalib.Specs.SolanaStakeInterface.state.StakeStateV2.deserialize_reader_contract",
+      "witness_kind": "Holds",
+      "assumptions": ["@text:09275e21e73bd6d0", "@text:7f33a04bf3780fa7"]
+    }
+  },
+  "api": {
+    "codecs::solana-stake-interface-3.1.0::state::StakeStateV2::deserialize_reader": {
+      "order": 57,
+      "anchor_text": "fn deserialize_reader<R: io::Read>(reader: &mut R) -> io::Result<Self> {",
+      "line": 173,
+      "source_id": "codecs::solana-stake-interface-3.1.0::src/state.rs",
+      "scope": "@text:b87e3b46c5a8b3af",
+      "binding_obligations": ["@binding:2bdd10cfed4f63a1", "@binding:01c6d2d5b808f2d9", "@binding:4e52a781d31ad796"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaStakeInterface.State.live_data_initialized",
+        "SolanalibTest.Specs.SolanaStakeInterface.State.stake_account_decodes",
+        "SolanalibTest.Specs.SolanaStakeInterface.State.invalid_tag_rejected",
+        "SolanalibTest.Specs.SolanaStakeInterface.State.big_endian_tag_rejected",
+        "SolanalibTest.Specs.SolanaStakeInterface.State.truncated_stake_rejected",
+        "SolanalibTest.Specs.SolanaStakeInterface.State.nan_rate_rejected",
+        "SolanalibTest.Specs.SolanaStakeInterface.State.nan_rate_before_truncation",
+        "SolanalibTest.Specs.SolanaStakeInterface.State.contract_rejects_fabricated_success",
+        "SolanalibTest.Specs.SolanaStakeInterface.State.contract_rejects_wrong_error",
+        "SolanalibTest.Specs.SolanaStakeInterface.State.contract_allows_kept_remainder_after_error",
+        "SolanalibTest.Specs.SolanaStakeInterface.State.borsh_deserialize_forwards"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.StakeState.StakeStateV2.encode",
+        "Solanalib.Specs.Core.Borsh.DecodeMatches",
+        "Solanalib.Specs.Borsh.u8.invalid_data.deserialize_reader_model",
+        "Solanalib.Specs.Borsh.u32.invalid_data.deserialize_reader_model",
+        "Solanalib.Specs.Borsh.u64.invalid_data.deserialize_reader_model",
+        "Solanalib.Specs.Borsh.i64.invalid_data.deserialize_reader_model",
+        "Solanalib.Specs.Borsh.f64.invalid_data.deserialize_reader_model",
+        "Solanalib.Specs.SolanaAddress.Address.deserialize_reader_model"
+      ],
+      "rust_names": ["<solana_stake_interface::state::StakeStateV2 as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "models": ["solana-stake-interface::state::StakeStateV2::deserialize_reader"]
+    }
+  },
+  "applicability_sources": {
+    "solana-stake-interface": {
+      "order": 27,
+      "package": "solana-stake-interface",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-1.0.0.crate",
+          "sha256": "e7f014d9709121b3f0877e96701d535906ed06f2e7d93df97c6045528ce18e8c",
+          "revision": "3a5263f3d7b5f1e047ae1a1695d476c4b162f0f2",
+          "path_prefix": "interface/"
+        },
+        "1.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-1.1.0.crate",
+          "sha256": "3681d784f2fdcebdfe0ad2496ae4aacbd687944a997cc3d67aea19b9c9f4e923",
+          "revision": "f444b7883a9cd4a8ac76dde77f7e5c3f40d3d4cb",
+          "path_prefix": "interface/"
+        },
+        "1.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-1.2.0.crate",
+          "sha256": "969a1f4ac2d82fe26eeb379dee252cd6c33ab0169d4ee4c8dbcf09d55c52c589"
+        },
+        "1.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-1.2.1.crate",
+          "sha256": "5269e89fde216b4d7e1d1739cf5303f8398a1ff372a81232abbee80e554a838c"
+        },
+        "2.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-2.0.0.crate",
+          "sha256": "9fd582fe900e43db96651a5b43956b8ebfab1944d091b391d89140635900ef46"
+        },
+        "2.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-2.0.1.crate",
+          "sha256": "f6f912ae679b683365348dea482dbd9468d22ff258b554fd36e3d3683c2122e3"
+        },
+        "2.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-2.0.2.crate",
+          "sha256": "b9bc26191b533f9a6e5a14cca05174119819ced680a80febff2f5051a713f0db",
+          "revision": "1b7db854574397cdee8cb12779a9a3f38d91cf60",
+          "path_prefix": "interface/"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-3.0.0.crate",
+          "sha256": "cd714713337a7f5b513e02119f484fb9b7e056c6ce74af30e70505f2e62b64b7"
+        },
+        "3.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-3.1.0.crate",
+          "sha256": "f49eb5c77484214c3484921e2cdda79d185373118b5458c1b2df0f1a04c3bc30",
+          "revision": "3fc55bf917ef1dd4693318844f2bb696eb3485cd",
+          "path_prefix": "interface/"
+        },
+        "4.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-4.0.0.crate",
+          "sha256": "2fe88e0de7883b9e9f0405f7214a7d14f86e83ddd1a239bf002903d2df4ba14a",
+          "revision": "a177a68a4517c5dfd9033bfd767a8ae6520aaa28",
+          "path_prefix": "interface/"
+        },
+        "4.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-4.1.0.crate",
+          "sha256": "4a60d9207596f2996082cc6c1168c6f492d626bd2a6e9c20c2b264a7a94d91c2",
+          "revision": "fd881334babd1920cb53bf35dcb5c7cb38cdbff7",
+          "path_prefix": "interface/"
+        },
+        "4.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-4.2.0.crate",
+          "sha256": "19f34562cda7df74d85fcb1f7063d8cdec3e14f3d402aa3062605c116d8b8115",
+          "revision": "49cd3238abc2bc8677a75747ca154de88929be49",
+          "path_prefix": "interface/"
+        },
+        "4.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-4.3.0.crate",
+          "sha256": "252b4291eb25a5a356149ed4d4a940d5f655186210fa84b5d0d8d55c3dd42a81",
+          "revision": "0c5a84924a00569f1c277fa353d33bb6ccad3567",
+          "path_prefix": "interface/"
+        },
+        "4.3.1": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-4.3.1.crate",
+          "sha256": "afe327b8f7e6b2e696343f90fd338ee69117cec3ad08747251c6ccfa7063f937",
+          "revision": "ada42f6a0741a12830df1bedff904b8a9a4f3862",
+          "path_prefix": "interface/"
+        },
+        "4.4.0": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-4.4.0.crate",
+          "sha256": "76b3c13c6711702b2fa18b5203f1807aae0d669b627a97b72663355786bbcbed",
+          "revision": "07d1a01960e3ee89ce899cb26186db82f874fb61",
+          "path_prefix": "interface/"
+        },
+        "5.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-5.0.0.crate",
+          "sha256": "e6e97b8c64af0f2257dc25185c07ef1d2a462e47187ce124e2498d23ad6ed349",
+          "revision": "1af4a8cf72448e32c22b1dc130842de95acdd373",
+          "path_prefix": "interface/"
+        },
+        "5.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-5.1.0.crate",
+          "sha256": "9b5120d68ec674551562e20906ed202a55af23f4b532cc4c12568150eb4a8536",
+          "revision": "db205cb68aad37b56995fe03f536d7d4197a3fb4",
+          "path_prefix": "interface/"
+        },
+        "5.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-stake-interface/solana-stake-interface-5.1.1.crate",
+          "sha256": "36bba7bab030c8e7eb0150abd8db29a959924cea44b55f89a587694706ccda9b",
+          "revision": "bed72d02b1f68e7c5b317ad7117353f2243e9a48",
+          "path_prefix": "interface/"
+        }
+      },
+      "evidence": ["@text:368ca62c07916925", "@text:2215992c73afdc7c"]
+    }
+  },
+  "applicability": {
+    "solana-stake-interface::state::StakeStateV2::deserialize_reader": {
+      "order": 192,
+      "profiles": [
+        {
+          "id": "stake-1.x-borsh-1.6.1",
+          "source": "solana-stake-interface",
+          "conditions": "@shared:conditions-bdac74d20587f130",
+          "argument": "@review:source-notes/stake-state.md#review-4124b2b87bde9782",
+          "evidence": ["@text:13afe8ef65accb6d", "@text:ca4c7436eedf3757"],
+          "features": {"reason": "@text:960c0076f439bba8", "all": ["borsh"]},
+          "dependencies": "@shared:dependencies-9374796ee4b4dc98",
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<solana_stake_interface::state::StakeStateV2 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["1.0.0", "1.1.0", "1.2.0", "1.2.1"],
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.0.0", "1.1.0", "1.2.0", "1.2.1"]
+        },
+        {
+          "id": "stake-2.x-borsh-1.6.1",
+          "source": "solana-stake-interface",
+          "conditions": "@shared:conditions-bdac74d20587f130",
+          "argument": "@review:source-notes/stake-state.md#review-7908ca67224fa85f",
+          "evidence": ["@text:3940acc7ade063c2", "@text:8bdd4d0d8d396027"],
+          "features": {"reason": "@text:960c0076f439bba8", "all": ["borsh"]},
+          "dependencies": "@shared:dependencies-9374796ee4b4dc98",
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<solana_stake_interface::state::StakeStateV2 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["2.0.0", "2.0.1", "2.0.2"],
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": ["2.0.0", "2.0.1", "2.0.2"]
+        },
+        {
+          "id": "stake-3.x-borsh-1.6.1",
+          "source": "solana-stake-interface",
+          "conditions": "@shared:conditions-bdac74d20587f130",
+          "argument": "@review:source-notes/stake-state.md#review-9f0a4f30b4a38226",
+          "evidence": ["@text:47d3146c1783a7e0", "@text:35597bac7d205b0d"],
+          "features": {"reason": "@text:960c0076f439bba8", "all": ["borsh"]},
+          "dependencies": "@shared:dependencies-9374796ee4b4dc98",
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<solana_stake_interface::state::StakeStateV2 as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["3.0.0", "3.1.0"],
+              "compatible_ranges": [{"lower": "3.0.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.0.0", "3.1.0"]
+        }
+      ]
+    }
+  }
+}

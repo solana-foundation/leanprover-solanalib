@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "projected-wrapper",
+  "package": "anchor-spl",
+  "version": "1.0.2",
+  "preamble": "use crate::anchor_lang;\nuse crate::solana_program;\nuse crate::anchor_lang::{context::CpiContext, prelude::Pubkey, Result};\nuse anchor_spl::token_2022::{InitializeAccount3};\nuse anchor_spl::token_2022::{TransferChecked};\nuse spl_token_2022_interface as spl_token_2022;",
+  "sources": [
+    {
+      "id": "token_2022",
+      "path": "anchor-spl-1.0.2/src/token_2022.rs",
+      "sha256": "6c68539fa552c5c3e2d2eed1da72bf0206e7654529699bc62e23b3a80bf31810"
+    }
+  ],
+  "functions": [
+    {
+      "source": "token_2022",
+      "name": "initialize_account3",
+      "sha256": "c1814f30e5c28da407c3e35464fafbfff02980ca259fea507b61bedbf681e625"
+    },
+    {
+      "source": "token_2022",
+      "name": "transfer_checked",
+      "sha256": "50831b3c3d032a0503bec5498af2dbded16be1c48a6f1e4b30c45d0c33588203"
+    }
+  ]
+}

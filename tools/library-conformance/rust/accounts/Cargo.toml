@@ -1,0 +1,9 @@
+[package]
+name = "conformance-accounts"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "The serialized input region of the loader (ABI v1, aligned) for account-based conformance cases"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }

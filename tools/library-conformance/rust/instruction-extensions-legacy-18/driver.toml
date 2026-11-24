@@ -1,0 +1,4 @@
+corpora = ["instruction_extensions_legacy_18"]
+inputs = ["rust/instruction-extensions-common/allocator.rs", "rust/instruction-extensions-common/record.rs"]
+# These are instruction metadata vectors, with no loader region.
+region = "none"

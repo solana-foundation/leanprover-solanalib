@@ -1,0 +1,19 @@
+# Exact dependencies select solana-account-view 2.0.0, solana-address 2.6.0 and
+# solana-program-error 3.0.1. The default features preserve every recorded body;
+# the optional copy feature only derives Copy implementations. Address and
+# ProgramError are direct dependencies to name arguments and results.
+
+[package]
+name = "conformance-accounts-v2"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records solana-account-view 2.0.0 (AccountView, Ref, RefMut) over loader-serialized input regions"
+workspace = "../workspaces/profile-06"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-accounts = { path = "../accounts" }
+solana-account-view = "=2.0.0"
+solana-address = "=2.6.0"
+solana-program-error = "=3.0.1"

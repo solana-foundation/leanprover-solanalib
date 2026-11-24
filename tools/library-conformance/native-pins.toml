@@ -1,0 +1,19 @@
+# Copyright (c) 2026 Harmonic. All rights reserved.
+# Released under Apache 2.0 license as described in the file LICENSE.
+# Authors: Solanalib Contributors
+
+# The source registry supplies the modeled SDK crates and declared providers.
+# These additional crates implement reached encodings, derives and cryptographic operations.
+# Each driver constrains its selected versions in Cargo.toml without enabling optional features.
+
+[derive]
+reason = "Generated account, error and codec implementations affect the reached source operations."
+packages = ["anchor-attribute-access-control", "anchor-attribute-constant", "anchor-attribute-error", "anchor-attribute-event", "anchor-attribute-program", "anchor-derive-accounts", "anchor-derive-space", "anchor-lang-idl", "anchor-lang-idl-spec", "borsh-schema-derive-internal", "bytemuck_derive", "num_enum", "num_enum_derive", "wincode-derive"]
+
+[encoding]
+reason = "Binary serialization, logged bytes and address encodings are observed by the models."
+packages = ["serde", "serde_core", "serde_derive", "base64", "bs58"]
+
+[cryptography]
+reason = "Hash and curve providers determine address and digest results in the selected host implementations."
+packages = ["blake3", "curve25519-dalek", "curve25519-dalek-derive", "digest", "ed25519", "ed25519-dalek", "keccak", "sha2", "sha3", "spl-token-confidential-transfer-ciphertext-arithmetic"]

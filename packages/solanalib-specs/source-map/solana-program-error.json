@@ -1,0 +1,290 @@
+{
+  "abstractions": {
+    "library::solana_program_error": {
+      "order": 156,
+      "modules": {
+        "Solanalib.Specs.SolanaProgramError.ProgramError": "ed87a876caf88dd02da6cfe1e99ed8bfc65d279f53bb8dfbc6a527e26f06b1ba",
+        "Solanalib.Specs.SolanaProgramError": "2f5220cb77060a75478e7b2dc51c570a69a5c5939348feac84e306fb8bf5e325",
+        "Solanalib.Specs.SolanaProgramError.Capabilities": "ce28f4940ceeed6c7210403d3d0990e774f9344de801de6c4c1f0ba1a7ffac24"
+      },
+      "source_ids": ["sdk-values::solana-program-error-3.0.1::src/lib.rs"],
+      "argument": "@review:source-notes/error-nullable.md#review-cec27149e4a34a8d",
+      "limitations": ["@text:da0d819ff81c3f79"]
+    }
+  },
+  "packages": {
+    "solana-program-error-3.0.1": {
+      "order": 10,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "7cdfc06b7deb076e3d95e84eb6f23b8dc4f12378",
+      "path_prefix": "program-error/"
+    },
+    "solana-program-error-2.2.2": {
+      "order": 71,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "a5a56cb99d37f2fb024424989551f74e17b75692",
+      "path_prefix": "program-error/"
+    }
+  },
+  "interfaces": {
+    "solana-program-error-3.0.1::src/lib.rs": {
+      "order": 20,
+      "crate": "solana-program-error-3.0.1",
+      "path": "src/lib.rs",
+      "sha256": "047b9c337af95f1c7a7db4e45fa2f9e567bfcf31e632d3626a1162e9c4347810"
+    },
+    "sdk-values::solana-program-error-3.0.1::src/lib.rs": {
+      "order": 173,
+      "crate": "solana-program-error-3.0.1",
+      "path": "src/lib.rs",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/error-nullable.md. No whole-crate model is claimed.",
+      "sha256": "047b9c337af95f1c7a7db4e45fa2f9e567bfcf31e632d3626a1162e9c4347810"
+    },
+    "sdk-utilities::solana-program-error-2.2.2::src/lib.rs": {
+      "order": 219,
+      "crate": "solana-program-error-2.2.2",
+      "path": "src/lib.rs",
+      "sha256": "e1126c36b0d6c2a19b9a646ec089c1f6c4e05ba2312d0d3b1c922c3aa179ff2e"
+    },
+    "cpi-signatures::solana-program-error-2.2.2::src/lib.rs": {
+      "order": 407,
+      "crate": "solana-program-error-2.2.2",
+      "path": "src/lib.rs",
+      "sha256": "e1126c36b0d6c2a19b9a646ec089c1f6c4e05ba2312d0d3b1c922c3aa179ff2e",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-program-error-3.0.1::src/lib.rs": {
+      "order": 408,
+      "crate": "solana-program-error-3.0.1",
+      "path": "src/lib.rs",
+      "sha256": "047b9c337af95f1c7a7db4e45fa2f9e567bfcf31e632d3626a1162e9c4347810",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "solana-program-error-2.2.2::src/lib.rs": {
+      "order": 455,
+      "crate": "solana-program-error-2.2.2",
+      "path": "src/lib.rs",
+      "sha256": "e1126c36b0d6c2a19b9a646ec089c1f6c4e05ba2312d0d3b1c922c3aa179ff2e"
+    },
+    "transfer-hook-resolution::solana-program-error-2.2.2::src/lib.rs": {
+      "order": 568,
+      "crate": "solana-program-error-2.2.2",
+      "path": "src/lib.rs",
+      "sha256": "e1126c36b0d6c2a19b9a646ec089c1f6c4e05ba2312d0d3b1c922c3aa179ff2e",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed."
+    }
+  },
+  "models": {
+    "solana-program-error::ProgramError::into_u64": {
+      "order": 232,
+      "contract": "Solanalib.Specs.SolanaProgramError.ProgramError.into_u64_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaProgramError.ProgramError.into_u64_model"
+    },
+    "solana-program-error::ProgramError::from_u64": {
+      "order": 233,
+      "contract": "Solanalib.Specs.SolanaProgramError.ProgramError.from_u64_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaProgramError.ProgramError.from_u64_model"
+    }
+  },
+  "api": {
+    "solana-program-error@3.0.1::ProgramError.into_u64": {
+      "order": 218,
+      "source_id": "sdk-values::solana-program-error-3.0.1::src/lib.rs",
+      "line": 231,
+      "anchor_text": "impl From<ProgramError> for u64 {",
+      "scope": "@text:82d9ef56dc0b9ccc",
+      "binding_obligations": ["@binding:d6e262b172cb3892"],
+      "rust_names": ["solana_program_error::<impl core::convert::From<solana_program_error::ProgramError> for u64>::from"],
+      "clients": [
+        "SolanalibTest.Specs.Core.ErrorNullable.all_builtin_error_tags",
+        "SolanalibTest.Specs.Core.ErrorNullable.custom_status_edges",
+        "SolanalibTest.Specs.Core.ErrorNullable.custom_zero_encodes_nonzero",
+        "SolanalibTest.Specs.Core.ErrorNullable.error_decoder_rejects_tag_only_test"
+      ],
+      "models": ["solana-program-error::ProgramError::into_u64"]
+    },
+    "solana-program-error@3.0.1::ProgramError.from_u64": {
+      "order": 219,
+      "source_id": "sdk-values::solana-program-error-3.0.1::src/lib.rs",
+      "line": 276,
+      "anchor_text": "impl From<u64> for ProgramError {",
+      "scope": "@text:82d9ef56dc0b9ccc",
+      "binding_obligations": ["@binding:d6e262b172cb3892"],
+      "rust_names": ["<solana_program_error::ProgramError as core::convert::From<u64>>::from"],
+      "clients": [
+        "SolanalibTest.Specs.Core.ErrorNullable.all_builtin_error_tags",
+        "SolanalibTest.Specs.Core.ErrorNullable.custom_status_edges",
+        "SolanalibTest.Specs.Core.ErrorNullable.custom_zero_encodes_nonzero",
+        "SolanalibTest.Specs.Core.ErrorNullable.error_decoder_rejects_tag_only_test"
+      ],
+      "models": ["solana-program-error::ProgramError::from_u64"]
+    }
+  },
+  "applicability_sources": {
+    "solana-program-error": {
+      "order": 35,
+      "package": "solana-program-error",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-11",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-0.0.1.crate",
+          "sha256": "55a94aa4297ad7182ab87d14b2958aa40c284ffabeab1f4c02b39070ba72db26"
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-0.0.2.crate",
+          "sha256": "ddcce3acba542b4336679153e7376f0969b89b74de234a8acf6a187995b673ba"
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.0.crate",
+          "sha256": "dd089caeef26dd07bd12b7b67d45e92faddc2fc67a960f316df7ae4776a2f3d5"
+        },
+        "2.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.1.crate",
+          "sha256": "f02256ba0287dd14b84ae8e56b93f56d69aba330c5eb5e356de40e9ed37d6471"
+        },
+        "2.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.2.crate",
+          "sha256": "8672853ff2835c5ddf711b876711c89033f0fa72b48e427a8cff05268be790de"
+        },
+        "2.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.4.crate",
+          "sha256": "037b650450ebe2c0079319303e68cfdadda9806d0268200f08e1680a1d2b0796"
+        },
+        "2.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.5.crate",
+          "sha256": "19b5a23fa370c03e48f586f133db902b7b51ac6c99b2f02ac61639e2fe5cfe37"
+        },
+        "2.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.6.crate",
+          "sha256": "2473773ee9cebf6ba3d7d1fe911938bc2a3a694e85bea33fd7a99d397cde1202"
+        },
+        "2.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.7.crate",
+          "sha256": "7bd557d10df4380234f5b4a5971a0cae29eedcc42ebe4bbe926a21ff31912e99"
+        },
+        "2.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.8.crate",
+          "sha256": "d87e99e4299728f450194b6adf946dde512d79d82275b1c73f6faea7e9075cef"
+        },
+        "2.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.9.crate",
+          "sha256": "776a7291be6ed77d34c6e637e8efdaf70315bde371532428d8b17da78b1a60aa"
+        },
+        "2.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.10.crate",
+          "sha256": "02f7a81eeb5c3d44b2953c46215af390ca2951a0b8069836ffbf3d368b012b35"
+        },
+        "2.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.11.crate",
+          "sha256": "6a2ea6d8e88767586e6d547e5afb00cda08cee79c986443b2d47236aac50a755"
+        },
+        "2.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.12.crate",
+          "sha256": "6a18ee0aac9905389f424598fd3656c981ed09268c04e160d08a468b25ecc7b1"
+        },
+        "2.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.13.crate",
+          "sha256": "f5f48931e21e648410a17a1a42b3ace669e1b6c55516357f40ac6b91d4f81ef1"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.2.0.crate",
+          "sha256": "d2cbf136a27d9bbc680a94e289f1c07498d271685a1711e00261ceebe740c5dc"
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.2.1.crate",
+          "sha256": "d8ae2c1a8d0d4ae865882d5770a7ebca92bab9c685e43f0461682c6c05a35bfa"
+        },
+        "2.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.14.crate",
+          "sha256": "c0facd81f0ebbd517892d6297a548e5cd79006066c804b9b48387f8657ca3013"
+        },
+        "2.1.15": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.15.crate",
+          "sha256": "e7288c717045ae31a2575af9fa0cde614d98790363c3747ea23ff449d826f3e2"
+        },
+        "2.1.16": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.16.crate",
+          "sha256": "8361d28c96038828cb61a5041882b228e18835a9c501816675800f2f83cdab91"
+        },
+        "2.1.17": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.17.crate",
+          "sha256": "b1b9cf1b0fd17a86dc450466d4aa41cdf437dc81bc5fa88e8f733dadb871633e"
+        },
+        "2.1.18": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.18.crate",
+          "sha256": "05eee88a1f65952d092491157798de43d636c290c5754caf1781a49798449fc1"
+        },
+        "2.1.20": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.20.crate",
+          "sha256": "57d11f976b42dafada93b9b4a3fe12eac6948088ebb979b5f48f96ccdfd7f13d"
+        },
+        "2.1.21": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.1.21.crate",
+          "sha256": "a268d99b9f7a2ebfee0e8aa03be2f926626575d2e3c33ef02245c1e99477202e"
+        },
+        "2.2.2": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-2.2.2.crate",
+          "sha256": "9ee2e0217d642e2ea4bee237f37bd61bb02aec60da3647c48ff88f6556ade775"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-3.0.0.crate",
+          "sha256": "a1af32c995a7b692a915bb7414d5f8e838450cf7c70414e763d8abcae7b51f28"
+        },
+        "3.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-program-error/solana-program-error-3.0.1.crate",
+          "sha256": "4f04fa578707b3612b095f0c8e19b66a1233f7c42ca8082fcb3b745afcc0add6",
+          "revision": "7cdfc06b7deb076e3d95e84eb6f23b8dc4f12378",
+          "path_prefix": "program-error/"
+        }
+      },
+      "evidence": ["@text:e351bcbc407cbb60"]
+    }
+  },
+  "applicability": {
+    "solana-program-error::ProgramError::into_u64": {
+      "order": 232,
+      "profiles": [
+        {
+          "id": "reviewed-3-0-1",
+          "source": "solana-program-error",
+          "releases": ["3.0.1"],
+          "items": [
+            {
+              "releases": ["3.0.1"],
+              "item": "core::convert::From::from",
+              "implementation": "solana_program_error::<impl core::convert::From<solana_program_error::ProgramError> for u64>::from",
+              "compatible_ranges": [{"lower": "3.0.1", "upper": "4.0.0"}]
+            }
+          ],
+          "conditions": [],
+          "argument": "@review:source-notes/program-error-3.0.1.md#review-908fb58c44828f09",
+          "evidence": ["@text:0a0387fd34411b94"]
+        }
+      ]
+    },
+    "solana-program-error::ProgramError::from_u64": {
+      "order": 233,
+      "profiles": [
+        {
+          "id": "reviewed-3-0-1",
+          "source": "solana-program-error",
+          "releases": ["3.0.1"],
+          "items": [
+            {
+              "releases": ["3.0.1"],
+              "item": "core::convert::From::from",
+              "implementation": "<solana_program_error::ProgramError as core::convert::From<u64>>::from",
+              "compatible_ranges": [{"lower": "3.0.1", "upper": "4.0.0"}]
+            }
+          ],
+          "conditions": [],
+          "argument": "@review:source-notes/program-error-3.0.1.md#review-d3a5b1bca026581a",
+          "evidence": ["@text:0a0387fd34411b94"]
+        }
+      ]
+    }
+  }
+}

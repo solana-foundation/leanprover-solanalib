@@ -1,0 +1,10 @@
+[package]
+name = "conformance-versions-solana-zero-copy-1-0-1"
+version = "0.1.0"
+edition = "2021"
+publish = false
+workspace = "../workspaces/profile-02"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+solana-zero-copy = { version = "=1.0.1", default-features = false }

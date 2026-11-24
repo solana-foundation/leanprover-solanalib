@@ -1,0 +1,4 @@
+# Family runtime: pinocchio 0.11.1, and the raw syscalls of
+# solana-define-syscall 5.1.0, which it links.
+corpora = ["pinocchio_0_11_1", "pinocchio_0_11_1_accounts", "solana_define_syscall_5_1_0"]
+inputs = ["rust/runtime-common/rent_cases.rs", "rust/runtime-common/syscall_cases.rs"]

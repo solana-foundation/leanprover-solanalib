@@ -1,0 +1,31 @@
+{
+  "scope": "projected-wrapper conformance; the whole invocation is a typed mock",
+  "profile": "v027",
+  "items": [
+    {
+      "crate": "anchor-spl",
+      "version": "0.27.0",
+      "path": "src/stake.rs",
+      "file_sha256": "f08da91c59d61045c43a14286082aaaa678828f2ada942db135263413bd3f54b",
+      "selector": "pub fn withdraw",
+      "item_sha256": "6c6c3dd72c44ba9b057db7860dfe240776e42093ab92b10a2e613655f3744eaf",
+      "callee": "solana_program::program::invoke_signed",
+      "replacement": "crate::whole_signature::invoke_signed",
+      "replacement_count": 1,
+      "projected_item_sha256": "d788dc6d98baf19fcb4889886ae86653d64a40634424e8c27566528e31ea59d5"
+    },
+    {
+      "crate": "anchor-spl",
+      "version": "0.27.0",
+      "path": "src/stake.rs",
+      "file_sha256": "f08da91c59d61045c43a14286082aaaa678828f2ada942db135263413bd3f54b",
+      "selector": "pub fn deactivate_stake",
+      "item_sha256": "6b0b401912661656c1da6c9309a1c23c7322f4d56a4977a2876e4392e35e8e43",
+      "callee": "solana_program::program::invoke_signed",
+      "replacement": "crate::whole_signature::invoke_signed",
+      "replacement_count": 1,
+      "projected_item_sha256": "748d35a42c364ae69d2c4a5227c8a5f500bfec095aa5f0bf575d75cb100dc55d"
+    }
+  ],
+  "projection_sha256": "40661c2f1883bd14f273b5d16972d0a8bf0d48e4ffbf955a533c46e510fe2377"
+}

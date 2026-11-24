@@ -1,0 +1,3 @@
+# Family Codecs: the no-std `Write::write_all` of borsh 1.6.1, with borsh built without
+# its `std` feature in the no-std profile.
+corpora = ["borsh_1_6_1_nostd_io"]

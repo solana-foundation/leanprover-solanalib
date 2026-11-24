@@ -1,0 +1,10 @@
+[package]
+name = "conformance-raw-runtime-define2"
+version = "0.1.0"
+edition = "2021"
+publish = false
+workspace = "../workspaces/profile-00"
+
+[dependencies]
+conformance-raw-runtime-common = { path = "../raw-runtime-common" }
+solana-define-syscall = { version = "=2.3.0", default-features = false }

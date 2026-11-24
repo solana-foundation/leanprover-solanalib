@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "kind": "projected-wrapper",
+  "package": "anchor-spl",
+  "version": "0.27.0",
+  "preamble": "use crate::anchor_lang;\nuse crate::solana_program;\nuse crate::anchor_lang::{context::CpiContext, prelude::Pubkey, Result};\nuse anchor_spl::token::{Burn};\nuse anchor_spl::token::{MintTo};\nuse anchor_spl::token::{Transfer};",
+  "sources": [
+    {
+      "id": "token",
+      "path": "anchor-spl-0.27.0/src/token.rs",
+      "sha256": "714f4be86d72226740c451cbb05db8833688b357b4532bd305d509c53a1bd2ea"
+    }
+  ],
+  "functions": [
+    {
+      "source": "token",
+      "name": "burn",
+      "sha256": "e6af60a2ed2ff3a3430e60635a9a7ab0157946497b76cba64f435659450e59e9"
+    },
+    {
+      "source": "token",
+      "name": "mint_to",
+      "sha256": "8fff24611edb8e3363a7739689fa4c751c86b3e68227175a83626a057a4c2548"
+    },
+    {
+      "source": "token",
+      "name": "transfer",
+      "sha256": "c6ad701ed298bd7e5d3378c61f88ae14065e4fbdb518bbf760a110e2bce4411d"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+[package]
+name = "conformance-address-comparison-261"
+version = "0.1.0"
+edition = "2021"
+publish = false
+workspace = "../workspaces/profile-03"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-address = { version = "=2.6.1", default-features = false }

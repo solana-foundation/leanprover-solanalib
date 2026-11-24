@@ -1,0 +1,67 @@
+/-
+Copyright (c) 2026 Harmonic. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Solanalib Contributors
+-/
+-- Plain Lean loading exposes proof bodies for the complete dependency audit.
+import Solanalib.Runtime
+import Lean
+import Lean.Util.CollectAxioms
+
+set_option autoImplicit false
+set_option maxRecDepth 100000
+set_option maxHeartbeats 20000000
+set_option pp.universes false
+set_option pp.fullNames true
+set_option pp.proofs true
+set_option pp.deepTerms true
+set_option pp.maxSteps 10000000
+
+open Lean Elab Command in
+run_cmd do
+  liftTermElabM do
+    let env ← getEnv
+    let constants := env.constants.toList.toArray.qsort (fun a b => Name.lt a.1 b.1)
+    let auditedModules := env.header.moduleNames.filter (Name.isPrefixOf `Solanalib.Runtime)
+    let mut auditedConstants := 0
+    let mut auditedTheorems := 0
+    for (name, info) in constants do
+      let some moduleIndex := env.getModuleIdxFor? name | continue
+      let moduleName := env.header.moduleNames[moduleIndex.toNat]!
+      unless Name.isPrefixOf `Solanalib.Runtime moduleName do continue
+      -- Audit every model constant before selecting declarations for the catalog.
+      -- Private proofs, proof-valued definitions and direct axioms are included.
+      let axioms ← collectAxioms name
+      for axiomName in axioms do
+        unless #[`propext, `Classical.choice, `Quot.sound].contains axiomName do
+          throwError "Unexpected axiom {axiomName} in {name}"
+      auditedConstants := auditedConstants + 1
+      if info.isTheorem then auditedTheorems := auditedTheorems + 1
+      let nameText := name.toString
+      unless "Solanalib.Runtime.".isPrefixOf nameText do continue
+      if (nameText.splitOn "._").length > 1 then continue
+      let some location ← findDeclarationRanges? name | continue
+      let kind := match info with
+        | .thmInfo _ => "theorem"
+        | .defnInfo _ => "definition"
+        | .inductInfo _ => "type"
+        | .ctorInfo _ => "constructor"
+        | _ => "auxiliary"
+      let type ← Meta.ppExpr info.type
+      let doc ← findDocString? env name
+      IO.println (Json.mkObj [
+        ("name", toJson nameText), ("module", toJson moduleName.toString),
+        ("kind", toJson kind), ("type", toJson (type.pretty 100)),
+        ("line", toJson location.selectionRange.pos.line),
+        ("column", toJson location.selectionRange.pos.column),
+        ("start_line", toJson location.range.pos.line),
+        ("start_column", toJson location.range.pos.column),
+        ("end_line", toJson location.range.endPos.line),
+        ("end_column", toJson location.range.endPos.column),
+        ("doc", toJson doc),
+        ("axioms", toJson ((axioms.qsort Name.lt).map Name.toString))]).compress
+    IO.println (Json.mkObj [
+      ("kind", toJson "audit_summary"),
+      ("audited_constants", toJson auditedConstants),
+      ("audited_theorems", toJson auditedTheorems),
+      ("audited_modules", toJson ((auditedModules.qsort Name.lt).map Name.toString))]).compress

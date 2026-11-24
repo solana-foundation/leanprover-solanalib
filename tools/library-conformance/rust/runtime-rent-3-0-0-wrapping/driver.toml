@@ -1,0 +1,4 @@
+profile = "wrapping"
+# Family runtime: solana-rent 3.0.0 without overflow checks.
+corpora = ["solana_rent_3_0_0_wrapping"]
+inputs = ["rust/runtime-common/rent_cases.rs", "rust/runtime-common/rent_solana_rent_3_0_0.rs"]

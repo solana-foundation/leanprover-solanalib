@@ -1,0 +1,10 @@
+profile = "abort"
+corpora = ["sdk_values_pubkey_2_4_0"]
+inputs = []
+region = "none"
+scope = "linked-source"
+
+[build_probe]
+argument = "--build-config"
+profile = "abort"
+panic = "abort"

@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "kind": "projected-wrapper",
+  "package": "anchor-spl",
+  "version": "0.32.1",
+  "preamble": "use crate::anchor_lang;\nuse crate::solana_program;\nuse crate::anchor_lang::{context::CpiContext, prelude::Pubkey, Result};\nuse anchor_spl::token::{Transfer};\nuse anchor_spl::token_2022::{Burn};\nuse anchor_spl::token_2022::{CloseAccount};\nuse anchor_spl::token_2022::{GetAccountDataSize};\nuse anchor_spl::token_2022::{InitializeAccount3};\nuse anchor_spl::token_2022::{InitializeImmutableOwner};\nuse anchor_spl::token_2022::{InitializeMint2};\nuse anchor_spl::token_2022::{MintTo};\nuse anchor_spl::token_2022::{SetAuthority};\nuse anchor_spl::token_2022::{TransferChecked};\nuse anchor_spl::token_2022_extensions::group_member_pointer::{GroupMemberPointerInitialize};\nuse anchor_spl::token_2022_extensions::group_pointer::{GroupPointerInitialize};\nuse anchor_spl::token_2022_extensions::metadata_pointer::{MetadataPointerInitialize};\nuse anchor_spl::token_2022_extensions::mint_close_authority::{MintCloseAuthorityInitialize};\nuse anchor_spl::token_2022_extensions::non_transferable::{NonTransferableMintInitialize};\nuse anchor_spl::token_2022_extensions::permanent_delegate::{PermanentDelegateInitialize};\nuse anchor_spl::token_2022_extensions::transfer_hook::{TransferHookInitialize};\nuse spl_token_2022::instruction::AuthorityType;\nuse spl_token_2022::extension::ExtensionType;\nuse crate::anchor_lang::solana_program::program_error::ProgramError;",
+  "sources": [
+    {
+      "id": "token",
+      "path": "anchor-spl-0.32.1/src/token.rs",
+      "sha256": "6ecdab595b6cd77694ebe013ff4b8ff7ac7a7bac72ea96fd52a4f9d139205ff9"
+    },
+    {
+      "id": "token_2022",
+      "path": "anchor-spl-0.32.1/src/token_2022.rs",
+      "sha256": "6e60f28661f2f7c4544287b7a74f2c5f462338d85e1e82ef95b32d7d7647d422"
+    },
+    {
+      "id": "token_2022_extensions_group_member_pointer",
+      "path": "anchor-spl-0.32.1/src/token_2022_extensions/group_member_pointer.rs",
+      "sha256": "867911ea2c7ce036152917e5035308ec6cad1901737c6dc9ddb646ff3666075a"
+    },
+    {
+      "id": "token_2022_extensions_group_pointer",
+      "path": "anchor-spl-0.32.1/src/token_2022_extensions/group_pointer.rs",
+      "sha256": "f662a9445e56d369a473a465fe18a2568be61fd9fa71f0b2cf2e8323957e7865"
+    },
+    {
+      "id": "token_2022_extensions_metadata_pointer",
+      "path": "anchor-spl-0.32.1/src/token_2022_extensions/metadata_pointer.rs",
+      "sha256": "641e231b39843d2c263762e560a2604e32850e54e9d52b8b1d12a17eead736ba"
+    },
+    {
+      "id": "token_2022_extensions_mint_close_authority",
+      "path": "anchor-spl-0.32.1/src/token_2022_extensions/mint_close_authority.rs",
+      "sha256": "321ed29c194b15924640ab72b718fa8e89f5af845cb58c474647848b64bbfd10"
+    },
+    {
+      "id": "token_2022_extensions_non_transferable",
+      "path": "anchor-spl-0.32.1/src/token_2022_extensions/non_transferable.rs",
+      "sha256": "cae553122a22ac11033795d3af31396bdb2e04b2690abba69439928488ac49ed"
+    },
+    {
+      "id": "token_2022_extensions_permanent_delegate",
+      "path": "anchor-spl-0.32.1/src/token_2022_extensions/permanent_delegate.rs",
+      "sha256": "e442f6faa83e099e0942a875dd827aa43171fbdb4179550183e173eec3bb9243"
+    },
+    {
+      "id": "token_2022_extensions_transfer_hook",
+      "path": "anchor-spl-0.32.1/src/token_2022_extensions/transfer_hook.rs",
+      "sha256": "256e74573495e5a4d798947c710c12c8ee0575321a956470c574fa5940ba62e0"
+    }
+  ],
+  "functions": [
+    {
+      "source": "token",
+      "name": "transfer",
+      "sha256": "9a75ded1cdd46d36d0f540c0f552fda13f3c44894c284f0b7d3a19fa71d9cfc0"
+    },
+    {
+      "source": "token_2022",
+      "name": "burn",
+      "sha256": "d2d9d1b58575fa939cb3ee549a1c041b100b436e816b51551ba7bcbc987421e4"
+    },
+    {
+      "source": "token_2022",
+      "name": "close_account",
+      "sha256": "8d50c179946bc37400f365024f0f0f3f20720baed379c033a7d31ca86842882c"
+    },
+    {
+      "source": "token_2022",
+      "name": "get_account_data_size",
+      "sha256": "bd0082ea8e100b6aea6bc70ca3e38d5d88dc05f028b558d32e53c7f38626dcef"
+    },
+    {
+      "source": "token_2022",
+      "name": "initialize_account3",
+      "sha256": "f752c8136892eb5253d4b9ad3dbb38590f12852f74fe0fc4ea732ffe6cc3299f"
+    },
+    {
+      "source": "token_2022",
+      "name": "initialize_immutable_owner",
+      "sha256": "37b02b0c819260d210cab584b7d6ab9388a7aa1c55edd0a04dc9e339edd24379"
+    },
+    {
+      "source": "token_2022",
+      "name": "initialize_mint2",
+      "sha256": "ed5cac3ce1c7f58cb32b9cc743ec3e586115a754876392070ec3ebdd30e76cd9"
+    },
+    {
+      "source": "token_2022",
+      "name": "mint_to",
+      "sha256": "7c49b5ab5b2029a2c470dc2f7da69a49b9d2dd2e15db71688df82b0f5ced35bf"
+    },
+    {
+      "source": "token_2022",
+      "name": "set_authority",
+      "sha256": "9e409b1c4d4314199143409b648f3e20c1e2c8a82bb3863814f7fe01a306095f"
+    },
+    {
+      "source": "token_2022",
+      "name": "transfer_checked",
+      "sha256": "b8079651299b2e40fcc91a9bba5e53b91a50dd900be2a1ad5587e74dbd1067f2"
+    },
+    {
+      "source": "token_2022_extensions_group_member_pointer",
+      "name": "group_member_pointer_initialize",
+      "sha256": "a33083f8190c0298395be6b868ba46dddc020e87eb39cc4df3e0583318deddc8"
+    },
+    {
+      "source": "token_2022_extensions_group_pointer",
+      "name": "group_pointer_initialize",
+      "sha256": "57ebe5502eadc1fd8ccc557cb686b9a9e381a9d2ab6505c0be63f448c401c999"
+    },
+    {
+      "source": "token_2022_extensions_metadata_pointer",
+      "name": "metadata_pointer_initialize",
+      "sha256": "1525ec7e4eb05bd192ba98a0ed3c7f1020b0268b127e9e20dad9167841d4f7d5"
+    },
+    {
+      "source": "token_2022_extensions_mint_close_authority",
+      "name": "mint_close_authority_initialize",
+      "sha256": "f0574c4e4ccad4936f7d816762fbaee43277ab128e92aaec44d52ff468c3c53b"
+    },
+    {
+      "source": "token_2022_extensions_non_transferable",
+      "name": "non_transferable_mint_initialize",
+      "sha256": "a65a43e6d15f2d47b554ab9cde6dc728d5ec0e5f24689cfe8d3f754c49a199bb"
+    },
+    {
+      "source": "token_2022_extensions_permanent_delegate",
+      "name": "permanent_delegate_initialize",
+      "sha256": "25c63b0188af949ea201847ece98b4aad159cc3482611cddf0fc45b04c4d8e28"
+    },
+    {
+      "source": "token_2022_extensions_transfer_hook",
+      "name": "transfer_hook_initialize",
+      "sha256": "5eee064fcb66126fde89e7002ac875bd3279c0ea1fe90e3175ee41b3a599e681"
+    }
+  ]
+}

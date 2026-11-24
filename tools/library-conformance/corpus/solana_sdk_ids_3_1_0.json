@@ -1,0 +1,3 @@
+{"schema":"solana-library-conformance/corpus/v1","corpus":"solana_sdk_ids_3_1_0","crates":[{"name":"solana-sdk-ids","version":"3.1.0"}],"records":[
+{"id":"system_program/id","function":"solana_sdk_ids::system_program::id","generics":{},"state":null,"args":null,"outcome":{"exit":"returned","result":"0000000000000000000000000000000000000000000000000000000000000000","state":null}}
+]}

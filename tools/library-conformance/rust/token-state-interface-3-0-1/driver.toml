@@ -1,0 +1,3 @@
+corpora = ["token_state_interface_3_0_1"]
+inputs = ["rust/common/token_state_versions.rs", "rust/common/token_state_versions_alloc.rs"]
+region = "none"

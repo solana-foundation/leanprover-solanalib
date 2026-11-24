@@ -1,0 +1,299 @@
+{
+  "abstractions": {
+    "library::solana_program_entrypoint": {
+      "order": 164,
+      "modules": {
+        "Solanalib.Specs.SolanaProgramEntrypoint.EntryDeserialize": "cb33aae19149f15231f6d1459684dcc8a60c8001eacb4ff9820c208f5a49855c",
+        "Solanalib.Specs.SolanaProgramEntrypoint": "1792789f1974932328e6d64999c1082924b974eacc5c0b0b4d37626db2b9145d",
+        "Solanalib.Specs.SolanaProgramEntrypoint.Capabilities": "cc205925d0727f8a31a7b25e281169bd7c35fc5fb0dd602706fcad6332634e6d"
+      },
+      "source_ids": ["entry-deserialize::solana-program-entrypoint-2.3.0::src/lib.rs"],
+      "argument": "@review:source-notes/entry-deserialize.md#review-12e1da0b0036ec30",
+      "limitations": [
+        "@binding:62c0aeb6d3e245ae",
+        "@binding:5e5a0ed2ab440ed4",
+        "@binding:a91a3edc32684bd0",
+        "@binding:9d269257abd5b59c",
+        "@binding:a7315b2b44d1b238",
+        "@binding:7456d774b115948a",
+        "@binding:f93c6474e7d2034a",
+        "@text:a59033a3f7b014d2",
+        "@text:f428bee2a0798d8f"
+      ]
+    }
+  },
+  "packages": {
+    "solana-program-entrypoint-2.3.0": {
+      "order": 111,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "5d0a784ca69704a3eb6728d494f5c4d4b35ceecf",
+      "path_prefix": "program-entrypoint/"
+    },
+    "solana-program-entrypoint-3.1.1": {
+      "order": 112,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "19945d307d6fb11eae334108b2a8ca9cbc123790",
+      "path_prefix": "program-entrypoint/"
+    }
+  },
+  "interfaces": {
+    "cpi-signatures::solana-program-entrypoint-2.3.0::src/lib.rs": {
+      "order": 405,
+      "crate": "solana-program-entrypoint-2.3.0",
+      "path": "src/lib.rs",
+      "sha256": "027efed4018bc8f1a340e576bbb0135cb70ba31fc465a23f4732ff8d5196d919",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-program-entrypoint-3.1.1::src/lib.rs": {
+      "order": 406,
+      "crate": "solana-program-entrypoint-3.1.1",
+      "path": "src/lib.rs",
+      "sha256": "6ce0060d00e5711a0e729daeb080206e5e079bfa65a5a9147f49dc45be01316c",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "entry-deserialize::solana-program-entrypoint-2.3.0::src/lib.rs": {
+      "order": 546,
+      "crate": "solana-program-entrypoint-2.3.0",
+      "path": "src/lib.rs",
+      "sha256": "027efed4018bc8f1a340e576bbb0135cb70ba31fc465a23f4732ff8d5196d919"
+    }
+  },
+  "models": {
+    "solana-program-entrypoint::deserialize": {
+      "order": 372,
+      "contract": "Solanalib.Specs.SolanaProgramEntrypoint.deserialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": [
+        "@binding:62c0aeb6d3e245ae",
+        "@binding:5e5a0ed2ab440ed4",
+        "@binding:a91a3edc32684bd0",
+        "@binding:9d269257abd5b59c",
+        "@binding:a7315b2b44d1b238",
+        "@binding:7456d774b115948a",
+        "@binding:f93c6474e7d2034a"
+      ]
+    }
+  },
+  "api": {
+    "solana-program-entrypoint@2.3.0::deserialize": {
+      "order": 380,
+      "source_id": "entry-deserialize::solana-program-entrypoint-2.3.0::src/lib.rs",
+      "line": 457,
+      "anchor_text": "pub unsafe fn deserialize<'a>(input: *mut u8) -> (&'a Pubkey, Vec<AccountInfo<'a>>, &'a [u8]) {",
+      "scope": "@text:a2388896d144f1a8",
+      "binding_obligations": [
+        "@binding:62c0aeb6d3e245ae",
+        "@binding:5e5a0ed2ab440ed4",
+        "@binding:a91a3edc32684bd0",
+        "@binding:9d269257abd5b59c",
+        "@binding:a7315b2b44d1b238",
+        "@binding:7456d774b115948a",
+        "@binding:f93c6474e7d2034a",
+        "@binding:0ade6b5645dc71a1"
+      ],
+      "rust_names": ["solana_program_entrypoint::deserialize"],
+      "clients": [
+        "SolanalibTest.Specs.Core.EntryDeserialize.parse_bytes",
+        "SolanalibTest.Specs.Core.EntryDeserialize.sdk_counts",
+        "SolanalibTest.Specs.Core.EntryDeserialize.sdk_lamport_aliases",
+        "SolanalibTest.Specs.Core.EntryDeserialize.sdk_data_aliases",
+        "SolanalibTest.Specs.Core.EntryDeserialize.sdk_owner_aliases",
+        "SolanalibTest.Specs.Core.EntryDeserialize.sdk_allocation_order",
+        "SolanalibTest.Specs.Core.EntryDeserialize.sdk_write_between_allocations",
+        "SolanalibTest.Specs.Core.EntryDeserialize.sdk_allocation_failure"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.EntryDeserialize.parse",
+        "Solanalib.Specs.Core.EntryDeserialize.SDK.execute",
+        "Solanalib.Specs.Core.EntryDeserialize.SDK.execute_shape",
+        "Solanalib.Specs.Core.EntryDeserialize.SDK.execute_origins"
+      ],
+      "bindings": {"sdk-d195799d22b7113f2817": "solana_program_entrypoint::deserialize"},
+      "models": ["solana-program-entrypoint::deserialize"]
+    }
+  },
+  "applicability_sources": {
+    "solana-program-entrypoint": {
+      "order": 45,
+      "package": "solana-program-entrypoint",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-11",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-0.0.1.crate",
+          "sha256": "51ccafc604b8d0fa18bc3795f69bfec59782083242cb807e80b613de25032bf8",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-0.0.2.crate",
+          "sha256": "7364ba27e69eb175f2e6c1ed80b2e9d7577c872603d633f5977d3a4d1634fd6c",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.0.crate",
+          "sha256": "0eb90f3fa3e979b912451a404508f1f90bb6e5c1d7767625f622b20016fb9fde",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.1.crate",
+          "sha256": "fa2231a596d871922e3e96e7bd6fec3c1abb72a3f15dea90e004dfd42cd4ad13",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.2.crate",
+          "sha256": "5d51f5d76edb8b45d3d47874367a859905c57aee5ca483460d1cd7ecb94d09bf",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.4.crate",
+          "sha256": "7fa45480f3ea73930aae9bcf379f605565cd0288feba78dab73a33fa96c8255a",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.5.crate",
+          "sha256": "6bb29a59145a7535b29e9c3a0bc00b75ac709461239434ce31dd25001c6297ac",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.6.crate",
+          "sha256": "988a49fb8231e95861d11b40931f49e06f0dea5a29241acf7cbca644c52abd6b",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.7.crate",
+          "sha256": "9e0696f51a4386f92f4e1807059bd2b649c207688b9249df332d0fd5ecac240c",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.8.crate",
+          "sha256": "c5f6148e740c6deed55fe343355f0cb3ec158d221e11aa8bb93a392fa62c4137",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.9.crate",
+          "sha256": "8f296f87584dbc684ed1fb00f849803358d97f663ec2829165052d50c2d30de3",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.10.crate",
+          "sha256": "269ccabf1f3aff504a97aca0f8b72e6d3e1b7fb621cc18a2d21a28b17d52e112",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.11.crate",
+          "sha256": "c3422fa98d2ac5b20df9c9feb9f638e1170341b3c4259c26cd91a6a7098f6830",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.12.crate",
+          "sha256": "39fdb97781dc0f4093f0a5ebe0b5c353da217d8c8a13fb7ded3c62a4774f7d13",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.13.crate",
+          "sha256": "bc27bbb6ff7f346b93173cacd14a44873e24a1702a07ebbe4a9295bf53eed3cb",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.14.crate",
+          "sha256": "b07e0e9009caf71a88b0efb4e96d1cce5bb60e90c789c52260463f1e7cbde86b",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.15": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.15.crate",
+          "sha256": "9e2576774bdbb8ae3b24c0774202ad6427425510f5846c48893167714c0e95d9",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.16": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.16.crate",
+          "sha256": "02f947e5234cd4cf8f667ec6505a040f99b77c21c48f6c19f6981b2aad5e7fde",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.17": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.17.crate",
+          "sha256": "a741b8e5aa3c9182bdf345b0bd66f012eb371cb4622ae9d53a448f22d759962f",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.18": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.18.crate",
+          "sha256": "d7d8c05e7466fbf4f38e3001d76495d20bd60761671311e3f35c717a0a181b72",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.20": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.20.crate",
+          "sha256": "c3792a05e134900bb22731235dd23ec6f7b8144983d0b753b3da3566cf8092b2",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.1.21": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.1.21.crate",
+          "sha256": "42577056d9910b5e3badfb4ae8e234a814ff854e645e679b4286e1b4338c0f03",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.2.0.crate",
+          "sha256": "e6e8ac729923675be5ff5184b68f8d27bfd617b3f82bed2b2147f81fe9cda71f",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.2.1.crate",
+          "sha256": "473ffe73c68d93e9f2aa726ad2985fe52760052709aaab188100a42c618060ec",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "2.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-2.3.0.crate",
+          "sha256": "32ce041b1a0ed275290a5008ee1a4a6c48f5054c8a3d78d313c08958a06aedbd",
+          "revision": "5d0a784ca69704a3eb6728d494f5c4d4b35ceecf",
+          "path_prefix": "program-entrypoint/"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-3.0.0.crate",
+          "sha256": "bb61aaf3bf54b69721fbaadb0942cfd41f608cf279e514c1362264a24e469a9e",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "3.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-3.1.0.crate",
+          "sha256": "6557cf5b5e91745d1667447438a1baa7823c6086e4ece67f8e6ebfa7a8f72660",
+          "evidence": ["@text:24f5198a2da3e457"]
+        },
+        "3.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-program-entrypoint/solana-program-entrypoint-3.1.1.crate",
+          "sha256": "84c9b0a1ff494e05f503a08b3d51150b73aa639544631e510279d6375f290997",
+          "evidence": ["@text:24f5198a2da3e457"]
+        }
+      },
+      "evidence": ["@text:abfdf6a401fedac7", "@text:9cd991f11bb9d79a"]
+    }
+  },
+  "applicability": {
+    "solana-program-entrypoint::deserialize": {
+      "order": 372,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/entry-deserialize.md#review-8c1dc6baa23283e5",
+          "conditions": [
+            "@binding:62c0aeb6d3e245ae",
+            "@binding:5e5a0ed2ab440ed4",
+            "@binding:a91a3edc32684bd0",
+            "@binding:9d269257abd5b59c",
+            "@binding:a7315b2b44d1b238",
+            "@binding:7456d774b115948a",
+            "@binding:f93c6474e7d2034a"
+          ],
+          "dependencies": ["@shared:dependencies-04b8fae286256b5f"],
+          "evidence": ["@text:9c7db684f443d4e8", "@text:b0c14a0e8fda735e"],
+          "id": "entry-deserialize-2-3-0",
+          "items": [
+            {
+              "implementation": "solana_program_entrypoint::deserialize",
+              "item": "solana_program_entrypoint::deserialize",
+              "releases": ["2.2.1", "2.3.0"],
+              "compatible_ranges": [{"lower": "2.2.1", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": ["2.2.1", "2.3.0"],
+          "source": "solana-program-entrypoint"
+        }
+      ]
+    }
+  }
+}

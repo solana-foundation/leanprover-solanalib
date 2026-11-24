@@ -1,0 +1,45 @@
+# Copyright (c) 2026 Harmonic. All rights reserved.
+# Released under Apache 2.0 license as described in the file LICENSE.
+# Authors: Solanalib Contributors
+
+[workspace]
+resolver = "2"
+members = [
+  "../../accounts-v2",
+  "../../address-2.6.0",
+  "../../address-2.6.0-host",
+  "../../address-profiles-260",
+  "../../anchor-lifecycle-1_0_2",
+  "../../anchor-operations-102",
+  "../../anchor-spl-token-1-0-2",
+  "../../anchor-system-1-0-2",
+  "../../anchor-views-1-0-2",
+  "../../borsh-1-6-1-nostd",
+  "../../codecs-borsh-1-6-1-stake-3-1-0",
+  "../../cpi-invoke-0-5-0-s3-0-0",
+  "../../instruction-view-2-1-0-cpi",
+  "../../runtime-pinocchio-0-11-1",
+  "../../runtime-rent-3-0-0",
+  "../../runtime-sysvar-3-1-1-host",
+  "../../token-views",
+  "../../utility-instructions3",
+  "../../utility-modern3",
+  "../../versions-solana-hash-4-3-0",
+]
+
+[profile.dev]
+panic = "unwind"
+
+[profile.abort]
+inherits = "dev"
+panic = "abort"
+
+[profile.wrapping]
+inherits = "dev"
+overflow-checks = false
+
+[profile.optimized]
+inherits = "dev"
+opt-level = 3
+debug-assertions = false
+overflow-checks = false

@@ -4,73 +4,218 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  LEAN_NUM_THREADS: '4'
+  MATHLIB_NO_CACHE_ON_UPDATE: '1'
+
 jobs:
   lint:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-
-      - name: Textual style checks
-        run: ./scripts/lint-style.sh
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Textual style and import boundaries
+        run: |
+          ./scripts/lint-style.sh
+          python3 -B -m unittest discover -s scripts -p 'test_lint_style.py'
+          python3 scripts/check-prose.py
+          python3 -B -m unittest discover -s scripts -p 'test_prose.py'
+          python3 -B -m unittest discover -s scripts -p 'test_module_ownership.py'
+          python3 tools/model-audit/import_tiers.py
+          python3 -B -m unittest discover -s tools/model-audit -p 'test_import_tiers.py'
+          python3 scripts/check-upstream-references.py
+          python3 -B -m unittest discover -s scripts -p 'test_upstream_references.py'
+          python3 scripts/check-doc-links.py
+          python3 scripts/generate-test-index.py --check
+          python3 tools/model-audit/generate_gap_index.py --check
+          python3 -B -m unittest discover -s tools/model-audit -p 'test_gap_index.py'
+          python3 -B -m unittest discover -s tools/model-audit -p 'test_review_seals.py'
+          python3 -B -m unittest discover -s tools/model-audit -p 'test_sdk_seals.py'
+          python3 -B -m unittest discover -s tools/model-audit -p 'test_registry_data.py'
 
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
-
-      # ~/.elan holds the Lean toolchain (~200MB); .lake/packages holds every
-      # dep clone + their pre-built oleans (~1GB with Mathlib). Both are stable
-      # against any change that doesn't touch lake-manifest.json or lean-
-      # toolchain, so cache aggressively keyed on those two files.
-      - name: Cache Lean toolchain and Lake deps
-        id: cache
-        uses: actions/cache@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.elan
             .lake/packages
-          key: lake-${{ runner.os }}-${{ hashFiles('lake-manifest.json', 'lean-toolchain') }}
+            .lake/build
+          key: root-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.lean', 'lake-manifest.json') }}-${{ hashFiles('Solanalib/**/*.lean', 'SolanalibTest/**/*.lean', '*.lean', 'examples/**/*.lean', 'packages/**/*.lean') }}
           restore-keys: |
-            lake-${{ runner.os }}-
-
-      - name: Install elan (Lean toolchain manager)
-        if: steps.cache.outputs.cache-hit != 'true'
+            root-${{ runner.os }}-${{ runner.arch }}-
+      - uses: ./.github/actions/setup-lean
+      - name: Resolve the pinned dependencies and public Mathlib cache
         run: |
-          set -euxo pipefail
-          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf \
-            | sh -s -- -y --default-toolchain none
-
-      - name: Add elan to PATH
-        run: echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-
-      # On a warm cache .lake/packages is already populated; lake just verifies
-      # the manifest matches and exits in ~1s. On a cold cache it does the full
-      # 100s+ clone of every dep.
-      - name: Resolve dependencies
-        run: lake update
-
-      - name: Fetch pre-built Mathlib oleans
-        run: lake exe cache get
-
-      - name: Build library
+          lake update
+          lake exe cache get Mathlib.Tactic.Linter.Style Mathlib.Tactic.Linter.Header
+      - name: Build the root library, tests and oracle
         run: |
-          set -o pipefail
-          lake build 2>&1 | tee build.log
+          lake --wfail build Solanalib SolanalibTest SolanalibTest.Examples sbpf-oracle
+          lake --wfail test
+          python3 scripts/check-module-ownership.py
+          python3 scripts/ci-sdk-groups.py
 
-      - name: Fail on warnings in Solanalib source
+  runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.elan
+            .lake/packages
+            .lake/build
+          key: runtime-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.lean', 'lake-manifest.json', 'packages/solanalib-runtime/**/*.lean', 'tools/runtime-conformance/**/*.lean') }}
+          restore-keys: |
+            runtime-${{ runner.os }}-${{ runner.arch }}-
+      - uses: ./.github/actions/setup-lean
+      - name: Build runtime and scenarios
         run: |
-          # Treat any Lean warning emitted for a Solanalib*/ source file as a
-          # build failure. External-library warnings (e.g. Mathlib's own
-          # deprecation messages) are ignored — they're not actionable here.
-          if grep -E '^warning: (Solanalib|SolanalibTest)/' build.log; then
-            echo "::error::lake build produced warnings on Solanalib source"
-            exit 1
-          fi
+          lake --wfail build Solanalib.Runtime SolanalibTest.Runtime SolanalibTest.Conformance.Runtime
+      - name: Replay the authenticated Agave recording and controls
+        run: |
+          python3 -B -m unittest discover -s tools/runtime-conformance -p 'test_*.py'
+          python3 -B tools/runtime-conformance/run.py --model-only --evidence-dir "$RUNNER_TEMP/runtime-replay"
+      - name: Runtime source correspondence and proof audits
+        run: |
+          python3 -B -m unittest discover -s tools/model-audit -p 'test_model_*.py'
+          python3 -B tools/model-audit/check_runtime.py
 
-      - name: Run tests
-        run: lake test
+  contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.elan
+            .lake/packages
+            .lake/build
+          key: contracts-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.lean', 'lake-manifest.json', 'packages/solanalib-contracts/**') }}
+          restore-keys: |
+            contracts-${{ runner.os }}-${{ runner.arch }}-
+      - uses: ./.github/actions/setup-lean
+      - name: Build the shared contract vocabulary
+        run: |
+          lake --wfail build Solanalib.Contracts
+
+  sdk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        group: [core, framework, codecs-oracles, pinocchio, solana, spl]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.elan
+            .lake/packages
+            .lake/build
+          key: sdk-${{ matrix.group }}-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.lean', 'lake-manifest.json', 'scripts/ci-sdk-groups.json') }}-${{ hashFiles('packages/**/*.lean') }}
+          restore-keys: |
+            sdk-${{ matrix.group }}-${{ runner.os }}-${{ runner.arch }}-
+      - uses: ./.github/actions/setup-lean
+      - name: Build the group with its complete production and scenario dependency closure
+        run: python3 scripts/ci-sdk-groups.py --build '${{ matrix.group }}'
+
+  sdk-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: extractions/setup-just@v3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.elan
+            .lake/packages
+            .lake/build
+          key: sdk-audit-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.lean', 'lake-manifest.json') }}-${{ hashFiles('packages/**/*.lean') }}
+          restore-keys: |
+            sdk-audit-${{ runner.os }}-${{ runner.arch }}-
+      - uses: ./.github/actions/setup-lean
+      - name: Build every SDK and scenario library before compiled negative controls
+        run: python3 scripts/ci-sdk-groups.py --build all
+      - name: Audit controls, including isolated Lean counterexamples
+        env:
+          SOLANA_SPECS_INTEGRATION_TESTS: '1'
+        run: |
+          python3 -B -m unittest discover -s tools/model-audit -p 'test_solana_*.py'
+          python3 -B -m unittest discover -s tools/model-audit -p 'test_*generation.py'
+          python3 -B -m unittest discover -s tools/model-audit -p 'test_lean_format.py'
+      - name: Generated registries, full axiom closure and pinned source bytes
+        run: |
+          just --set python python3 check-generated
+          python3 tools/model-audit/check_solana_specs.py --fetch-sdk --output "$RUNNER_TEMP/specs-audit.json"
+
+  library-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.elan
+            .lake/packages
+            .lake/build
+          key: library-replay-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lakefile.lean', 'lake-manifest.json') }}-${{ hashFiles('Solanalib/**/*.lean', 'SolanalibTest/**/*.lean', '*.lean', 'examples/**/*.lean', 'packages/**/*.lean', 'tools/*-conformance/**/*.lean') }}
+          restore-keys: |
+            library-replay-${{ runner.os }}-${{ runner.arch }}-
+      - uses: ./.github/actions/setup-lean
+      - name: Build all libraries and check ordinary Lean loading from one artifact directory
+        run: |
+          lake exe cache get Mathlib.Tactic.Linter.Style Mathlib.Tactic.Linter.Header
+          lake --wfail build Solanalib SolanalibTest SolanalibTest.Examples sbpf-oracle Solanalib.Runtime SolanalibTest.Runtime SolanalibTest.Conformance.Runtime Solanalib.Contracts
+          python3 scripts/ci-sdk-groups.py --build all
+          lake --wfail build SolanalibTest.Conformance.Library solanalib-library-conformance solanalib-selection-control
+          python3 scripts/check-lean-loading.py
+      - name: Replay every registered checker with authenticated, explicitly recorded omissions
+        run: |
+          python3 scripts/check-module-ownership.py
+          python3 tools/library-conformance/run.py --check-registry
+          python3 tools/library-conformance/run.py --model-only --registered-checkers --control-jobs 4 --evidence-dir "$RUNNER_TEMP/library-replay"
+      - name: Python and actual compiled selection controls
+        env:
+          SOLANA_CONFORMANCE_SELECTION_LEAN: '1'
+        run: |
+          python3 -B -m unittest discover -s tools/library-conformance -p 'test_*.py'

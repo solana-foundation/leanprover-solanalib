@@ -1,0 +1,6 @@
+# Family AccountsV2: solana-account-view 2.0.0 (AccountView, Ref, RefMut).
+corpora = ["solana_account_view_2_0_0"]
+inputs = []
+# `close` zeroes the data length of the account and leaves its data bytes as spare bytes; the
+# projection of the family represents every byte of the data area (backing and an all-zero 10 KiB reserve).
+spare_writes = ["solana_account_view::AccountView::close"]

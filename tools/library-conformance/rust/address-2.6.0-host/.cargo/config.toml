@@ -1,0 +1,9 @@
+# Plain host build: unlike the other drivers, no `--cfg target_os="solana"`, so
+# solana-address compiles its non-Solana branch (SHA-256 and Ed25519 in
+# process, feature `curve25519`). The explicit target keeps build scripts and
+# proc macros on the plain host configuration, as elsewhere.
+[build]
+target = "x86_64-unknown-linux-gnu"
+
+[target.x86_64-unknown-linux-gnu]
+rustflags = []

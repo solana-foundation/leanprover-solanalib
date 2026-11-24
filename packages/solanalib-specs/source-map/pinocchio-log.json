@@ -1,0 +1,301 @@
+{
+  "abstractions": {
+    "library::pinocchio_log": {
+      "order": 165,
+      "argument": "@review:source-notes/raw-syscalls.md#review-079e6ebac962b669",
+      "limitations": [
+        "@text:132d16a6cd998881",
+        "@text:94fa3298c23cef70",
+        "@text:e5de8a5387837ac5",
+        "@text:a59033a3f7b014d2",
+        "@text:f428bee2a0798d8f"
+      ],
+      "source_ids": ["pinocchio-log@0.5.1::src/logger.rs", "raw-runtime::pinocchio-log-0.5.1::src/logger.rs"],
+      "modules": {
+        "Solanalib.Specs.PinocchioLog.Logger": "b6df7c3dedab4977769719425d6bc2b121348e753a1965dd6c16c577bdf09309",
+        "Solanalib.Specs.PinocchioLog": "eed92121d2941abd5ef808cd43d8d685d4d16976ac8a2cd67baa2b1b5ea78ef0",
+        "Solanalib.Specs.PinocchioLog.Capabilities": "b07d031406ca72ee341a962b01d8df6a689224f917cf1851f77954c79262d297"
+      }
+    }
+  },
+  "packages": {
+    "pinocchio-log-0.5.1": {
+      "order": 64,
+      "repository": "https://github.com/anza-xyz/pinocchio",
+      "revision": "bde84880a6709bbda4da8767b5f0a42d9678d07c",
+      "path_prefix": "sdk/log/crate/"
+    }
+  },
+  "interfaces": {
+    "raw-runtime::pinocchio-log-0.5.1::src/logger.rs": {
+      "order": 183,
+      "crate": "pinocchio-log-0.5.1",
+      "path": "src/logger.rs",
+      "review_scope": "Private logger::syscalls sol_memcpy_ and sol_memset_ declarations at lines 11 and 13, compiled only for Solana without static-syscalls; public Logger operations are conformance entry points. Other log externs are outside this registered inventory.",
+      "sha256": "8862511989d0b7ccc4ad4db43bcbc4120415609a19bb8ecaec39d7cf16de85a1"
+    },
+    "pinocchio-log@0.5.1::src/logger.rs": {
+      "order": 547,
+      "crate": "pinocchio-log-0.5.1",
+      "path": "src/logger.rs",
+      "sha256": "8862511989d0b7ccc4ad4db43bcbc4120415609a19bb8ecaec39d7cf16de85a1"
+    }
+  },
+  "models": {
+    "pinocchio-log::logger::Logger::append": {
+      "order": 373,
+      "contract": "Solanalib.Specs.PinocchioLog.logger.Logger.append_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.PinocchioLog.logger.Logger.append_hasExecution"
+    },
+    "pinocchio-log::logger::Logger::default": {
+      "order": 381,
+      "contract": "Solanalib.Specs.PinocchioLog.logger.Logger.default_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.PinocchioLog.logger.Logger.default_hasExecution"
+    },
+    "pinocchio-log::logger::Logger::log": {
+      "order": 386,
+      "contract": "Solanalib.Specs.PinocchioLog.logger.Logger.log_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.PinocchioLog.logger.Logger.log_hasExecution"
+    },
+    "pinocchio-log::logger::syscalls::sol_memcpy_": {
+      "order": 423,
+      "contract": "Solanalib.Specs.PinocchioLog.logger.syscalls.sol_memcpy__contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-88c0eb59ed773f24"
+    },
+    "pinocchio-log::logger::syscalls::sol_memset_": {
+      "order": 424,
+      "contract": "Solanalib.Specs.PinocchioLog.logger.syscalls.sol_memset__contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-88c0eb59ed773f24"
+    }
+  },
+  "api": {
+    "pinocchio-log@0.5.1::Logger::append": {
+      "order": 381,
+      "source_id": "pinocchio-log@0.5.1::src/logger.rs",
+      "line": 93,
+      "anchor_text": "pub fn append<T: Log>(&mut self, value: T) -> &mut Self {",
+      "scope": "@text:08ca47619bf62635",
+      "binding_obligations": ["@binding:75353d3818144d47"],
+      "rust_names": ["pinocchio_log::logger::Logger::<BUFFER>::append"],
+      "clients": ["SolanalibTest.Specs.PinocchioLog.formatter_unwind_retains_partial_tail_and_drops_value"],
+      "model_dependencies": ["Solanalib.Specs.Core.FixedLogger.appendFamily"],
+      "models": ["pinocchio-log::logger::Logger::append"]
+    },
+    "pinocchio-log@0.5.1::Logger::default": {
+      "order": 389,
+      "source_id": "pinocchio-log@0.5.1::src/logger.rs",
+      "line": 72,
+      "anchor_text": "fn default() -> Self {",
+      "scope": "@text:9d040c6206554d70",
+      "rust_names": ["<pinocchio_log::logger::Logger<BUFFER> as core::default::Default>::default"],
+      "clients": ["SolanalibTest.Specs.PinocchioLog.default_initializes_only_length"],
+      "model_dependencies": ["Solanalib.Specs.Core.FixedLogger.defaultFamily"],
+      "models": ["pinocchio-log::logger::Logger::default"]
+    },
+    "pinocchio-log@0.5.1::Logger::log": {
+      "order": 394,
+      "source_id": "pinocchio-log@0.5.1::src/logger.rs",
+      "line": 128,
+      "anchor_text": "pub fn log(&self) {",
+      "scope": "@text:9bd70042fd0c6711",
+      "binding_obligations": ["@binding:f15ae3c683af93cd"],
+      "rust_names": ["pinocchio_log::logger::Logger::<BUFFER>::log"],
+      "clients": ["SolanalibTest.Specs.PinocchioLog.log_terminal_preserves_sink_outcome"],
+      "model_dependencies": ["Solanalib.Specs.Core.FixedLogger.logFamily"],
+      "models": ["pinocchio-log::logger::Logger::log"]
+    },
+    "pinocchio-log@0.5.1::logger::syscalls::sol_memset_": {
+      "order": 406,
+      "source_id": "raw-runtime::pinocchio-log-0.5.1::src/logger.rs",
+      "line": 13,
+      "anchor_text": "pub fn sol_memset_(s: *mut u8, c: u8, n: u64);",
+      "models": ["pinocchio-log::logger::syscalls::sol_memset_"],
+      "scope": "@text:484c3a8f11682025",
+      "binding_obligations": "@shared:binding-obligations-df9d9e20a3218a68",
+      "rust_names": ["pinocchio_log::logger::syscalls::sol_memset_"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.set_bytes",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.set_empty"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.RawMemory.setStep"],
+      "binding_defaults": false
+    },
+    "pinocchio-log@0.5.1::logger::syscalls::sol_memcpy_": {
+      "order": 407,
+      "source_id": "raw-runtime::pinocchio-log-0.5.1::src/logger.rs",
+      "line": 11,
+      "anchor_text": "pub fn sol_memcpy_(dst: *mut u8, src: *const u8, n: u64);",
+      "models": ["pinocchio-log::logger::syscalls::sol_memcpy_"],
+      "scope": "@text:84abe77fa64be87f",
+      "binding_obligations": "@shared:binding-obligations-df9d9e20a3218a68",
+      "rust_names": ["pinocchio_log::logger::syscalls::sol_memcpy_"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.copy_bytes",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.copy_overlap",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.copy_empty"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.RawMemory.copyStep"],
+      "binding_defaults": false
+    }
+  },
+  "applicability_sources": {
+    "pinocchio-log": {
+      "order": 44,
+      "package": "pinocchio-log",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-11",
+      "evidence": ["@text:063e274450ab2124"],
+      "releases": {
+        "0.1.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-log/pinocchio-log-0.1.0.crate",
+          "sha256": "9987367f9cc12a98bb45297e91446a4eda3752d4d21cb5d3085e5d4a8b7ba766",
+          "yanked": false,
+          "evidence": ["@text:9b71caafdad18a9b"]
+        },
+        "0.3.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-log/pinocchio-log-0.3.0.crate",
+          "sha256": "95bd1d0d8a24f2637cb6748232912b6bae67b643b7ca903c68e670e704cd0652",
+          "yanked": false,
+          "evidence": ["@text:9b71caafdad18a9b"]
+        },
+        "0.4.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-log/pinocchio-log-0.4.0.crate",
+          "sha256": "f89f8ffd986174cefe59448295a004aaf70c3605f30de066f42d27b06188f267",
+          "yanked": false,
+          "evidence": ["@text:9b71caafdad18a9b"]
+        },
+        "0.5.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-log/pinocchio-log-0.5.0.crate",
+          "sha256": "f266eb7ddac75ef32c42025d5cc571da4f8c9e6d5c3d70820c204d5fee72e57a",
+          "yanked": false,
+          "evidence": ["@text:9b71caafdad18a9b"]
+        },
+        "0.5.1": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-log/pinocchio-log-0.5.1.crate",
+          "sha256": "cd11022408f312e6179ece321c1f7dc0d1b2aa7765fddd39b2a7378d65a899e8",
+          "revision": "bde84880a6709bbda4da8767b5f0a42d9678d07c",
+          "path_prefix": "sdk/log/crate/"
+        }
+      }
+    }
+  },
+  "applicability": {
+    "pinocchio-log::logger::Logger::append": {
+      "order": 373,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/raw-syscalls.md#review-eaa07032ea8b5658",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:c22857d940544e9c", "@binding:75353d3818144d47"],
+          "evidence": ["@text:4829e79132493c4f"],
+          "id": "pinocchio-log-0.5.1-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio_log::logger::Logger::<BUFFER>::append",
+              "item": "pinocchio_log::logger::Logger::<BUFFER>::append",
+              "releases": ["0.5.1"],
+              "compatible_ranges": [{"lower": "0.5.1", "upper": "0.6.0"}]
+            }
+          ],
+          "releases": ["0.5.1"],
+          "source": "pinocchio-log"
+        }
+      ]
+    },
+    "pinocchio-log::logger::Logger::default": {
+      "order": 381,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/raw-syscalls.md#review-60b0df85f4722e4a",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:c22857d940544e9c"],
+          "evidence": ["@text:4829e79132493c4f"],
+          "id": "pinocchio-log-0.5.1-reviewed",
+          "items": [
+            {
+              "implementation": "<pinocchio_log::logger::Logger<BUFFER> as core::default::Default>::default",
+              "item": "core::default::Default::default",
+              "releases": ["0.5.1"],
+              "compatible_ranges": [{"lower": "0.5.1", "upper": "0.6.0"}]
+            }
+          ],
+          "releases": ["0.5.1"],
+          "source": "pinocchio-log"
+        }
+      ]
+    },
+    "pinocchio-log::logger::Logger::log": {
+      "order": 386,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/raw-syscalls.md#review-41434152873df17c",
+          "conditions": ["@binding:04b7c89022dbabb7", "@binding:c22857d940544e9c", "@binding:f15ae3c683af93cd"],
+          "evidence": ["@text:4829e79132493c4f"],
+          "id": "pinocchio-log-0.5.1-reviewed",
+          "items": [
+            {
+              "implementation": "pinocchio_log::logger::Logger::<BUFFER>::log",
+              "item": "pinocchio_log::logger::Logger::<BUFFER>::log",
+              "releases": ["0.5.1"],
+              "compatible_ranges": [{"lower": "0.5.1", "upper": "0.6.0"}]
+            }
+          ],
+          "releases": ["0.5.1"],
+          "source": "pinocchio-log",
+          "target": "@shared:target-4b53925a5ff2bc7b",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:8db580570fccb66f"}
+        }
+      ]
+    },
+    "pinocchio-log::logger::syscalls::sol_memcpy_": {
+      "order": 423,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/raw-syscalls.md#review-67fcf6f56931f125",
+          "conditions": "@shared:conditions-40336273679407c7",
+          "evidence": ["@text:4829e79132493c4f", "@text:d8e797cfeb7a4e4d"],
+          "id": "raw-runtime-pinocchio-log-0.5.1",
+          "items": [
+            {
+              "implementation": "pinocchio_log::logger::syscalls::sol_memcpy_",
+              "item": "pinocchio_log::logger::syscalls::sol_memcpy_",
+              "releases": ["0.5.1"],
+              "compatible_ranges": [{"lower": "0.5.1", "upper": "0.6.0"}]
+            }
+          ],
+          "releases": ["0.5.1"],
+          "source": "pinocchio-log",
+          "target": "@shared:target-8000ec168ae05c01",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        }
+      ]
+    },
+    "pinocchio-log::logger::syscalls::sol_memset_": {
+      "order": 424,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/raw-syscalls.md#review-85eb0cc39314aea2",
+          "conditions": "@shared:conditions-40336273679407c7",
+          "evidence": ["@text:4829e79132493c4f", "@text:d8e797cfeb7a4e4d"],
+          "id": "raw-runtime-pinocchio-log-0.5.1",
+          "items": [
+            {
+              "implementation": "pinocchio_log::logger::syscalls::sol_memset_",
+              "item": "pinocchio_log::logger::syscalls::sol_memset_",
+              "releases": ["0.5.1"],
+              "compatible_ranges": [{"lower": "0.5.1", "upper": "0.6.0"}]
+            }
+          ],
+          "releases": ["0.5.1"],
+          "source": "pinocchio-log",
+          "target": "@shared:target-8000ec168ae05c01",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:04b7c89022dbabb7", "@binding:c22857d940544e9c"]
+}

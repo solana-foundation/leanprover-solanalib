@@ -1,0 +1,34 @@
+//! Exact version profile for generic instruction construction and cloning.
+use solana_instruction::{AccountMeta, Instruction};
+use solana_pubkey::Pubkey;
+use solana_system_interface::instruction::create_account_with_seed;
+#[path = "../../instruction-extensions-common/allocator.rs"]
+mod allocator;
+#[path = "../../instruction-extensions-common/record.rs"]
+mod record;
+#[global_allocator]
+static ALLOCATOR: allocator::ObservedAllocator = allocator::ObservedAllocator;
+
+const META_NEW: &str = "solana_instruction::account_meta::AccountMeta::new";
+const META_READONLY: &str = "solana_instruction::account_meta::AccountMeta::new_readonly";
+const META_CLONE: &str =
+    "<solana_instruction::account_meta::AccountMeta as core::clone::Clone>::clone";
+const INSTRUCTION_CLONE: &str = "<solana_instruction::Instruction as core::clone::Clone>::clone";
+const SYSTEM_FUNCTION: &str = "solana_system_interface::instruction::create_account_with_seed";
+
+fn main() {
+    conformance_recorder::init();
+    if record::child() {
+        return;
+    }
+    let mut corpus = conformance_recorder::Corpus::new(
+        "instruction_extensions_v2_2",
+        &[
+            ("solana-instruction", "2.2.1"),
+            ("solana-system-interface", "1.0.0"),
+        ],
+    );
+
+    record::record_system(&mut corpus);
+    corpus.write(&conformance_recorder::out_dir()).unwrap();
+}

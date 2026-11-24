@@ -1,0 +1,1827 @@
+{
+  "abstractions": {
+    "library::solana_account_view": {
+      "order": 133,
+      "modules": {
+        "Solanalib.Specs.SolanaAccountView": "22e2bb9344715a99316e3126cce9efc7a235b97989db0213f409e911f356748e",
+        "Solanalib.Specs.SolanaAccountView.Basic": "a17f37e4096bc3379577bb25f8c34bd4e43ef78dde18efa47cfbe380b7a0f77d",
+        "Solanalib.Specs.SolanaAccountView.Capabilities": "807d2e41f6b907b0db93f68bb67c1d8e7907f4aa0f68fed766421764f23dc0dc",
+        "Solanalib.Specs.SolanaAccountView.Guard": "1bdc623fd35179b598177fa750575ad77b781972a12dea568e60722c1057a686",
+        "Solanalib.Specs.SolanaAccountView.Observation": "466d30ce3cc6aff0de74ed14e133ddbf310f8481c74efb775a8dbdec4d67b6a5"
+      },
+      "source_ids": ["solana-account-view@2.0.0::source", "solana-account-view@1.0.0::source"],
+      "argument": "@review:source-notes/account-view.md#review-42eb0b9a3501309d",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@text:ab406b5d1b659b4e",
+        "@text:4cabfefd64d501d1",
+        "@text:a5684c8bce3af212"
+      ]
+    }
+  },
+  "packages": {
+    "solana-account-view-2.0.0": {
+      "order": 6,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "1666707490c6c29e6e2edf69e2122b7cae3c9dbb",
+      "path_prefix": "account-view/"
+    },
+    "solana-account-view-1.0.0": {
+      "order": 42,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "21fea2733e9f53f719253960cbf4e2dbc725f404",
+      "path_prefix": "account-view/"
+    }
+  },
+  "interfaces": {
+    "solana-account-view@2.0.0::source": {
+      "order": 19,
+      "crate": "solana-account-view-2.0.0",
+      "path": "src/lib.rs",
+      "sha256": "ef348c8f7214861389222600eb5dbef578383c4fc07abc5dd07d7ab921e6b74e"
+    },
+    "solana-account-view@1.0.0::source": {
+      "order": 138,
+      "crate": "solana-account-view-1.0.0",
+      "path": "src/lib.rs",
+      "sha256": "878e1130939b68f4fd1bc613169e73273690464a787ff13c04afc9d50e3ddb8f"
+    }
+  },
+  "models": {
+    "solana-account-view::AccountView::Observation::data_len": {
+      "order": 122,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Observation.data_len_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": {
+        "projection": "Solanalib.Specs.Core.AccountViewObservation.Operations.dataLen",
+        "receiver": "Solanalib.Specs.SolanaAccountView.AccountView.Observation.reference"
+      },
+      "assumptions": ["@text:d65d9ad0c9fe0d96"],
+      "model_gaps": ["@text:4eb8c6c9c2092936"],
+      "remaining_requirements": ["@text:bf30dc4687c62912"]
+    },
+    "solana-account-view::AccountView::Observation::is_signer": {
+      "order": 123,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Observation.is_signer_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": {
+        "projection": "Solanalib.Specs.Core.AccountViewObservation.Operations.isSigner",
+        "receiver": "Solanalib.Specs.SolanaAccountView.AccountView.Observation.reference"
+      },
+      "assumptions": ["@text:d65d9ad0c9fe0d96"],
+      "model_gaps": ["@text:4eb8c6c9c2092936"],
+      "remaining_requirements": ["@text:bf30dc4687c62912"]
+    },
+    "solana-account-view::AccountView::Observation::lamports": {
+      "order": 124,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Observation.lamports_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": {
+        "projection": "Solanalib.Specs.Core.AccountViewObservation.Operations.lamports",
+        "receiver": "Solanalib.Specs.SolanaAccountView.AccountView.Observation.reference"
+      },
+      "assumptions": ["@text:d65d9ad0c9fe0d96"],
+      "model_gaps": ["@text:4eb8c6c9c2092936"],
+      "remaining_requirements": ["@text:bf30dc4687c62912"]
+    },
+    "solana-account-view::AccountView::Observation::set_lamports": {
+      "order": 125,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Observation.set_lamports_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": {
+        "projection": "Solanalib.Specs.Core.AccountViewObservation.Operations.setLamports",
+        "receiver": "Solanalib.Specs.SolanaAccountView.AccountView.Observation.reference"
+      },
+      "assumptions": ["@text:bbd0c4fb91fe2900"],
+      "model_gaps": ["@text:4eb8c6c9c2092936"],
+      "remaining_requirements": ["@text:bf30dc4687c62912"]
+    },
+    "solana-account-view::AccountView::Observation::try_borrow": {
+      "order": 126,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Observation.try_borrow_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": {
+        "projection": "Solanalib.Specs.Core.AccountViewObservation.Operations.tryBorrow",
+        "receiver": "Solanalib.Specs.SolanaAccountView.AccountView.Observation.reference"
+      },
+      "assumptions": ["@text:c55a632a82236fc3"],
+      "model_gaps": ["@text:4eb8c6c9c2092936"],
+      "remaining_requirements": ["@text:bf30dc4687c62912"]
+    },
+    "solana-account-view::AccountView::Observation::try_borrow_mut": {
+      "order": 127,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Observation.try_borrow_mut_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": {
+        "projection": "Solanalib.Specs.Core.AccountViewObservation.Operations.tryBorrowMut",
+        "receiver": "Solanalib.Specs.SolanaAccountView.AccountView.Observation.reference"
+      },
+      "assumptions": ["@text:c55a632a82236fc3"],
+      "model_gaps": ["@text:4eb8c6c9c2092936"],
+      "remaining_requirements": ["@text:bf30dc4687c62912"]
+    },
+    "solana-account-view::AccountView::Pool::address": {
+      "order": 128,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.address_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.address_model",
+      "assumptions": ["@text:d8cf70de99480e84", "@text:a12e24f1d5722b19"]
+    },
+    "solana-account-view::AccountView::Pool::clone": {
+      "order": 129,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.clone_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.clone_model",
+      "assumptions": ["@text:b6915f6dec6bf01f", "@text:a12e24f1d5722b19"]
+    },
+    "solana-account-view::AccountView::Pool::close_header": {
+      "order": 130,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.close_header_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.close_header_model",
+      "assumptions": ["@text:409c2e022e46e881", "@text:a12e24f1d5722b19"]
+    },
+    "solana-account-view::AccountView::Pool::close_with_resize_delta": {
+      "order": 131,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.close_with_resize_delta_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.close_with_resize_delta_model",
+      "assumptions": ["@text:c7587770814190c4", "@text:a12e24f1d5722b19", "@text:729ff71a849ccb3c"]
+    },
+    "solana-account-view::AccountView::Pool::data_len": {
+      "order": 132,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.data_len_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.data_len_model",
+      "assumptions": ["@text:94820066c356078d", "@text:a12e24f1d5722b19"]
+    },
+    "solana-account-view::AccountView::Pool::is_data_empty": {
+      "order": 133,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.is_data_empty_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.is_data_empty_model",
+      "assumptions": ["@text:59b7cc10a8701afa", "@text:a12e24f1d5722b19"]
+    },
+    "solana-account-view::AccountView::Pool::is_signer": {
+      "order": 134,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.is_signer_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.is_signer_model",
+      "assumptions": ["@text:94820066c356078d", "@text:a12e24f1d5722b19"]
+    },
+    "solana-account-view::AccountView::Pool::is_writable": {
+      "order": 135,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.is_writable_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.is_writable_model",
+      "assumptions": ["@text:59b7cc10a8701afa", "@text:a12e24f1d5722b19"]
+    },
+    "solana-account-view::AccountView::Pool::lamports": {
+      "order": 136,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.lamports_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.lamports_model",
+      "assumptions": ["@text:94820066c356078d", "@text:a12e24f1d5722b19"]
+    },
+    "solana-account-view::AccountView::Pool::owned_by": {
+      "order": 137,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.owned_by_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.owned_by_model",
+      "assumptions": ["@text:94820066c356078d", "@text:a12e24f1d5722b19"]
+    },
+    "solana-account-view::AccountView::Pool::owner": {
+      "order": 138,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.owner_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.owner_model",
+      "assumptions": ["@text:0d71296bd755a469", "@text:a12e24f1d5722b19"]
+    },
+    "solana-account-view::AccountView::Pool::resize": {
+      "order": 139,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.resize_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.resize_model",
+      "assumptions": ["@text:d4a9832a1a938d4a", "@text:a12e24f1d5722b19", "@text:ac2ed6cc0b64d51e", "@text:3338cf230109aec3"]
+    },
+    "solana-account-view::AccountView::Pool::set_lamports": {
+      "order": 140,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.set_lamports_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.set_lamports_model",
+      "assumptions": ["@text:5b5b73856380b4b3", "@text:a12e24f1d5722b19"]
+    },
+    "solana-account-view::AccountView::Pool::try_borrow": {
+      "order": 141,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.try_borrow_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.try_borrow_model",
+      "assumptions": ["@text:23f98d46d2f787e0", "@text:a12e24f1d5722b19"]
+    },
+    "solana-account-view::AccountView::Pool::try_borrow_mut": {
+      "order": 142,
+      "contract": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.try_borrow_mut_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAccountView.AccountView.Pool.try_borrow_mut_model",
+      "assumptions": ["@text:23f98d46d2f787e0", "@text:a12e24f1d5722b19"]
+    },
+    "solana-account-view::Ref::deref": {
+      "order": 143,
+      "contract": "Solanalib.Specs.SolanaAccountView.Ref.deref_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SolanaAccountView.Ref.deref_model",
+      "execution": "Solanalib.Specs.SolanaAccountView.Ref.deref_execution",
+      "assumptions": "@shared:assumptions-8f0367af9c8b07bb"
+    },
+    "solana-account-view::Ref::map": {
+      "order": 144,
+      "contract": "Solanalib.Specs.SolanaAccountView.Ref.map_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SolanaAccountView.Ref.map_model",
+      "execution": "Solanalib.Specs.SolanaAccountView.Ref.map_execution",
+      "assumptions": ["@text:f2fd2b459ebde8bd", "@text:a12e24f1d5722b19", "@text:b3e40d3cbfec370f", "@text:e4eab587e49728f4"]
+    },
+    "solana-account-view::Ref::release": {
+      "order": 145,
+      "contract": "Solanalib.Specs.SolanaAccountView.Ref.release_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SolanaAccountView.Ref.release_model",
+      "execution": "Solanalib.Specs.SolanaAccountView.Ref.release_execution",
+      "assumptions": "@shared:assumptions-b5128099599444b2"
+    },
+    "solana-account-view::Ref::try_map": {
+      "order": 146,
+      "contract": "Solanalib.Specs.SolanaAccountView.Ref.try_map_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SolanaAccountView.Ref.try_map_model",
+      "execution": "Solanalib.Specs.SolanaAccountView.Ref.try_map_execution",
+      "assumptions": "@shared:assumptions-64b2cd9dc50a75e8"
+    },
+    "solana-account-view::RefMut::deref": {
+      "order": 147,
+      "contract": "Solanalib.Specs.SolanaAccountView.RefMut.deref_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SolanaAccountView.RefMut.deref_model",
+      "execution": "Solanalib.Specs.SolanaAccountView.RefMut.deref_execution",
+      "assumptions": "@shared:assumptions-8f0367af9c8b07bb"
+    },
+    "solana-account-view::RefMut::deref_mut": {
+      "order": 148,
+      "contract": "Solanalib.Specs.SolanaAccountView.RefMut.deref_mut_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SolanaAccountView.RefMut.deref_mut_model",
+      "execution": "Solanalib.Specs.SolanaAccountView.RefMut.deref_mut_execution",
+      "assumptions": "@shared:assumptions-8f0367af9c8b07bb"
+    },
+    "solana-account-view::RefMut::release": {
+      "order": 149,
+      "contract": "Solanalib.Specs.SolanaAccountView.RefMut.release_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SolanaAccountView.RefMut.release_model",
+      "execution": "Solanalib.Specs.SolanaAccountView.RefMut.release_execution",
+      "assumptions": "@shared:assumptions-b5128099599444b2"
+    },
+    "solana-account-view::RefMut::try_map": {
+      "order": 150,
+      "contract": "Solanalib.Specs.SolanaAccountView.RefMut.try_map_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SolanaAccountView.RefMut.try_map_model",
+      "execution": "Solanalib.Specs.SolanaAccountView.RefMut.try_map_execution",
+      "assumptions": "@shared:assumptions-64b2cd9dc50a75e8"
+    }
+  },
+  "api": {
+    "solana-account-view@1.0.0::AccountView::address": {
+      "order": 90,
+      "anchor_text": "pub fn address(&self) -> &Address {",
+      "binding_obligations": ["@binding:d4e64798f6f30395"],
+      "line": 121,
+      "scope": "@text:ce41d34608901ea1",
+      "source_id": "solana-account-view@1.0.0::source",
+      "clients": ["SolanalibTest.Specs.SolanaAccountView.Lifecycle.observations"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.address_contract",
+        "Solanalib.Specs.Core.AccountView.AddressRef.value"
+      ],
+      "rust_names": ["solana_account_view::AccountView::address"],
+      "models": ["solana-account-view::AccountView::Pool::address"]
+    },
+    "solana-account-view@1.0.0::AccountView::clone": {
+      "order": 91,
+      "anchor_text": "#[derive(Clone, PartialEq, Eq, Debug)]",
+      "binding_obligations": ["@binding:d4e64798f6f30395"],
+      "line": 98,
+      "scope": "@text:bd4798aa1bd1e517",
+      "source_id": "solana-account-view@1.0.0::source",
+      "clients": ["SolanalibTest.Specs.SolanaAccountView.Lifecycle.clone_alias"],
+      "model_dependencies": ["Solanalib.Specs.Core.AccountView.clone_contract"],
+      "rust_names": ["<solana_account_view::AccountView as core::clone::Clone>::clone"],
+      "models": ["solana-account-view::AccountView::Pool::clone"]
+    },
+    "solana-account-view@1.0.0::AccountView::close": {
+      "order": 92,
+      "anchor_text": "pub fn close(&self) -> ProgramResult {",
+      "binding_obligations": ["@binding:3018289608ff30ae", "@binding:495415022682de5f", "@binding:9ec21d0f219399d7"],
+      "line": 414,
+      "scope": "@text:8ca91645d5b87eeb",
+      "source_id": "solana-account-view@1.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.close_with_resize_delta_preserves_backing",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.close_with_resize_delta_borrow_failure",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.close_invalidates_owner_reference",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.close_contract_without_resize_invariant",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.close_overflow_outside_contract",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.loader_header_inside_contracts"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.close_contract",
+        "Solanalib.Specs.Core.AccountView.Account.close_backing",
+        "Solanalib.Specs.Core.AccountView.close_ready"
+      ],
+      "rust_names": ["solana_account_view::AccountView::close"],
+      "models": ["solana-account-view::AccountView::Pool::close_with_resize_delta"]
+    },
+    "solana-account-view@1.0.0::AccountView::data_len": {
+      "order": 93,
+      "anchor_text": "pub fn data_len(&self) -> usize {",
+      "line": 165,
+      "scope": "@text:2079d20dfc502e64",
+      "source_id": "solana-account-view@1.0.0::source",
+      "clients": ["SolanalibTest.Specs.SolanaAccountView.Lifecycle.observations"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.observationContract",
+        "Solanalib.Specs.Core.AccountView.State.HasAccount"
+      ],
+      "rust_names": ["solana_account_view::AccountView::data_len"],
+      "models": ["solana-account-view::AccountView::Pool::data_len"]
+    },
+    "solana-account-view@1.0.0::AccountView::is_data_empty": {
+      "order": 94,
+      "anchor_text": "pub fn is_data_empty(&self) -> bool {",
+      "line": 201,
+      "scope": "@text:00cfee7202070f82",
+      "source_id": "solana-account-view@1.0.0::source",
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.observationContract",
+        "Solanalib.Specs.Core.AccountView.State.HasAccount"
+      ],
+      "rust_names": ["solana_account_view::AccountView::is_data_empty"],
+      "models": ["solana-account-view::AccountView::Pool::is_data_empty"]
+    },
+    "solana-account-view@1.0.0::AccountView::is_signer": {
+      "order": 95,
+      "anchor_text": "pub fn is_signer(&self) -> bool {",
+      "line": 143,
+      "scope": "@text:0d12258b203b94d8",
+      "source_id": "solana-account-view@1.0.0::source",
+      "clients": ["SolanalibTest.Specs.SolanaAccountView.Lifecycle.observations"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.observationContract",
+        "Solanalib.Specs.Core.AccountView.State.HasAccount"
+      ],
+      "rust_names": ["solana_account_view::AccountView::is_signer"],
+      "models": ["solana-account-view::AccountView::Pool::is_signer"]
+    },
+    "solana-account-view@1.0.0::AccountView::is_writable": {
+      "order": 96,
+      "anchor_text": "pub fn is_writable(&self) -> bool {",
+      "line": 150,
+      "scope": "@text:d8b4d61a89c5f155",
+      "source_id": "solana-account-view@1.0.0::source",
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.observationContract",
+        "Solanalib.Specs.Core.AccountView.State.HasAccount"
+      ],
+      "rust_names": ["solana_account_view::AccountView::is_writable"],
+      "models": ["solana-account-view::AccountView::Pool::is_writable"]
+    },
+    "solana-account-view@1.0.0::AccountView::lamports": {
+      "order": 97,
+      "anchor_text": "pub fn lamports(&self) -> u64 {",
+      "line": 183,
+      "scope": "@text:78b8e998dcbdaedd",
+      "source_id": "solana-account-view@1.0.0::source",
+      "clients": ["SolanalibTest.Specs.SolanaAccountView.Lifecycle.observations"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.observationContract",
+        "Solanalib.Specs.Core.AccountView.State.HasAccount"
+      ],
+      "rust_names": ["solana_account_view::AccountView::lamports"],
+      "models": ["solana-account-view::AccountView::Pool::lamports"]
+    },
+    "solana-account-view@1.0.0::AccountView::owned_by": {
+      "order": 98,
+      "anchor_text": "pub fn owned_by(&self, program: &Address) -> bool {",
+      "line": 208,
+      "scope": "@text:79d76851d28320fb",
+      "source_id": "solana-account-view@1.0.0::source",
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.owned_by_contract",
+        "Solanalib.Specs.Core.AccountView.State.HasAccount"
+      ],
+      "rust_names": ["solana_account_view::AccountView::owned_by"],
+      "models": ["solana-account-view::AccountView::Pool::owned_by"]
+    },
+    "solana-account-view@1.0.0::AccountView::owner": {
+      "order": 99,
+      "anchor_text": "pub unsafe fn owner(&self) -> &Address {",
+      "binding_obligations": ["@binding:495415022682de5f", "@binding:d4e64798f6f30395"],
+      "line": 136,
+      "scope": "@text:388d3c9a73513890",
+      "source_id": "solana-account-view@1.0.0::source",
+      "clients": ["SolanalibTest.Specs.SolanaAccountView.Lifecycle.close_invalidates_owner_reference"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.owner_contract",
+        "Solanalib.Specs.Core.AccountView.OwnerRef.Valid",
+        "Solanalib.Specs.Core.AccountView.owner_invalidated_by_close"
+      ],
+      "rust_names": ["solana_account_view::AccountView::owner"],
+      "models": ["solana-account-view::AccountView::Pool::owner"]
+    },
+    "solana-account-view@1.0.0::AccountView::resize": {
+      "order": 100,
+      "anchor_text": "pub fn resize(&self, new_len: usize) -> Result<(), ProgramError> {",
+      "binding_obligations": ["@binding:63f7c42455f06fca"],
+      "line": 344,
+      "scope": "@text:f1939c87d38946c0",
+      "source_id": "solana-account-view@1.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.shrink_keeps_backing",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.regrow_zeroes_exposed_bytes",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.growth_limit_fails",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.resize_conflict_precedes_conversion",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.resize_unchanged_still_checks_borrow",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.resize_contract_without_capacity",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.resize_failure_without_resize_invariant",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.resize_overflow_outside_contract",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.loader_header_inside_contracts"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.resize_contract",
+        "Solanalib.Specs.Core.AccountView.Account.resize_bytes",
+        "Solanalib.Specs.Core.AccountView.Account.resize_arithmetic_bounds",
+        "Solanalib.Specs.Core.AccountView.resize_preserves_signed_domain",
+        "Solanalib.Specs.Core.AccountView.Account.resize_data_fits"
+      ],
+      "rust_names": ["solana_account_view::AccountView::resize"],
+      "models": ["solana-account-view::AccountView::Pool::resize"]
+    },
+    "solana-account-view@1.0.0::AccountView::set_lamports": {
+      "order": 101,
+      "anchor_text": "pub fn set_lamports(&self, lamports: u64) {",
+      "binding_obligations": ["@binding:3018289608ff30ae", "@binding:d4e64798f6f30395"],
+      "line": 190,
+      "scope": "@text:3106dabad4e101fe",
+      "source_id": "solana-account-view@1.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.setter_contract",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.read_only_metadata_allows_local_set",
+        "SolanalibTest.Specs.SolanaAccountView.Mapping.Infallible.mapping_effects"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.set_lamports_contract",
+        "Solanalib.Specs.Core.AccountView.setLamports_alias",
+        "Solanalib.Specs.Core.AccountView.setLamports_ready"
+      ],
+      "rust_names": ["solana_account_view::AccountView::set_lamports"],
+      "models": ["solana-account-view::AccountView::Pool::set_lamports"]
+    },
+    "solana-account-view@1.0.0::AccountView::try_borrow": {
+      "order": 102,
+      "anchor_text": "pub fn try_borrow(&self) -> Result<Ref<'_, [u8]>, ProgramError> {",
+      "binding_obligations": ["@binding:d4e64798f6f30395"],
+      "line": 262,
+      "scope": "@text:6de55f27eb57f05f",
+      "source_id": "solana-account-view@1.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.shared_step",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.borrow_conflicts",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.acquisition_core_projection"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.borrowContract",
+        "Solanalib.Specs.Core.AccountView.acquire_guardReady",
+        "Solanalib.Specs.Core.AccountView.shared_acquisition_projection"
+      ],
+      "rust_names": ["solana_account_view::AccountView::try_borrow"],
+      "models": ["solana-account-view::AccountView::Pool::try_borrow"]
+    },
+    "solana-account-view@1.0.0::AccountView::try_borrow_mut": {
+      "order": 103,
+      "anchor_text": "pub fn try_borrow_mut(&self) -> Result<RefMut<'_, [u8]>, ProgramError> {",
+      "binding_obligations": ["@binding:3018289608ff30ae", "@binding:d4e64798f6f30395"],
+      "line": 285,
+      "scope": "@text:0c996fd7cb4f898f",
+      "source_id": "solana-account-view@1.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.exclusive_step",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.borrow_conflicts",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.write_is_immediate"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.borrowContract",
+        "Solanalib.Specs.Core.AccountView.acquire_guardReady",
+        "Solanalib.Specs.Core.AccountView.mutable_acquisition_projection"
+      ],
+      "rust_names": ["solana_account_view::AccountView::try_borrow_mut"],
+      "models": ["solana-account-view::AccountView::Pool::try_borrow_mut"]
+    },
+    "solana-account-view@1.0.0::Ref::deref": {
+      "order": 104,
+      "anchor_text": "fn deref(&self) -> &Self::Target {",
+      "binding_obligations": ["@binding:459397f6c2991bb0", "@binding:d4e64798f6f30395"],
+      "line": 561,
+      "scope": "@text:7d3052001b4403bd",
+      "source_id": "solana-account-view@1.0.0::source",
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.derefFamily",
+        "Solanalib.Specs.Core.AccountView.DataRef.project",
+        "Solanalib.Specs.Core.AccountView.sliceProfile_ready"
+      ],
+      "rust_names": ["<solana_account_view::Ref<'_, T> as core::ops::deref::Deref>::deref"],
+      "models": ["solana-account-view::Ref::deref"]
+    },
+    "solana-account-view@1.0.0::Ref::drop": {
+      "order": 105,
+      "anchor_text": "fn drop(&mut self) {",
+      "binding_obligations": ["@binding:459397f6c2991bb0", "@binding:d4e64798f6f30395"],
+      "line": 567,
+      "scope": "@text:a641bffdc9644351",
+      "source_id": "solana-account-view@1.0.0::source",
+      "models": ["solana-account-view::Ref::release"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.releaseFamily",
+        "Solanalib.Specs.Core.AccountView.release_ready",
+        "Solanalib.Specs.Core.AccountView.read_released"
+      ],
+      "rust_names": ["<solana_account_view::Ref<'_, T> as core::ops::drop::Drop>::drop"]
+    },
+    "solana-account-view@1.0.0::Ref::map": {
+      "order": 106,
+      "anchor_text": "pub fn map<U: ?Sized, F>(orig: Ref<'a, T>, f: F) -> Ref<'a, U>",
+      "binding_obligations": ["@binding:459397f6c2991bb0", "@binding:392e62a99c1ab2f1", "@binding:d4e64798f6f30395"],
+      "line": 503,
+      "scope": "@text:fcfffe8b37790d96",
+      "source_id": "solana-account-view@1.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Mapping.Infallible.mapping_contract",
+        "SolanalibTest.Specs.SolanaAccountView.Mapping.Infallible.mapping_effects",
+        "SolanalibTest.Specs.SolanaAccountView.Mapping.Infallible.mapped_reference_ready"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.mapFamily",
+        "Solanalib.Specs.Core.AccountView.protocol_finish",
+        "Solanalib.Specs.Core.AccountView.map_returned_guardReady"
+      ],
+      "rust_names": ["solana_account_view::Ref::<'a, T>::map"],
+      "models": ["solana-account-view::Ref::map"]
+    },
+    "solana-account-view@1.0.0::RefMut::deref_mut": {
+      "order": 107,
+      "anchor_text": "fn deref_mut(&mut self) -> &mut <Self as core::ops::Deref>::Target {",
+      "binding_obligations": ["@binding:459397f6c2991bb0", "@binding:d4e64798f6f30395"],
+      "line": 649,
+      "scope": "@text:8d38f7ba2ddf7983",
+      "source_id": "solana-account-view@1.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.mutable_reference_contract",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.write_is_immediate"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.derefFamily",
+        "Solanalib.Specs.Core.AccountView.writeReference_reads",
+        "Solanalib.Specs.Core.AccountView.writeReference_guardReady"
+      ],
+      "rust_names": ["<solana_account_view::RefMut<'_, T> as core::ops::deref::DerefMut>::deref_mut"],
+      "models": ["solana-account-view::RefMut::deref_mut"]
+    },
+    "solana-account-view@1.0.0::RefMut::drop": {
+      "order": 108,
+      "anchor_text": "fn drop(&mut self) {",
+      "binding_obligations": ["@binding:459397f6c2991bb0", "@binding:d4e64798f6f30395"],
+      "line": 655,
+      "scope": "@text:a641bffdc9644351",
+      "source_id": "solana-account-view@1.0.0::source",
+      "models": ["solana-account-view::RefMut::release"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.release_contract",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.release_consumes_without_copyback",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.reacquire_no_old_token"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.releaseFamily",
+        "Solanalib.Specs.Core.AccountView.release_ready",
+        "Solanalib.Specs.Core.AccountView.read_released"
+      ],
+      "rust_names": ["<solana_account_view::RefMut<'_, T> as core::ops::drop::Drop>::drop"]
+    },
+    "solana-account-view@2.0.0::AccountView::address": {
+      "order": 109,
+      "anchor_text": "pub fn address(&self) -> &Address {",
+      "line": 120,
+      "scope": "@text:9b62282a35e63c71",
+      "source_id": "solana-account-view@2.0.0::source",
+      "clients": ["SolanalibTest.Specs.SolanaAccountView.Lifecycle.observations"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.address_contract",
+        "Solanalib.Specs.Core.AccountView.AddressRef.value"
+      ],
+      "rust_names": ["solana_account_view::AccountView::address"],
+      "models": ["solana-account-view::AccountView::Pool::address"]
+    },
+    "solana-account-view@2.0.0::AccountView::close": {
+      "order": 110,
+      "anchor_text": "pub fn close(&mut self) -> ProgramResult {",
+      "binding_obligations": ["@binding:f3467ba3fb126b2e", "@binding:495415022682de5f"],
+      "line": 337,
+      "scope": "@text:af08ece6aa091944",
+      "source_id": "solana-account-view@2.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.close_header_preserves_backing",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.close_header_borrow_failure",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.close_has_no_resize_update"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.closeHeader_contract",
+        "Solanalib.Specs.Core.AccountView.Account.closeHeader_backing",
+        "Solanalib.Specs.Core.AccountView.closeHeader_ready"
+      ],
+      "rust_names": ["solana_account_view::AccountView::close"],
+      "models": ["solana-account-view::AccountView::Pool::close_header"]
+    },
+    "solana-account-view@2.0.0::AccountView::data_len": {
+      "order": 111,
+      "anchor_text": "pub fn data_len(&self) -> usize {",
+      "line": 166,
+      "scope": "@text:2249844f10d1e370",
+      "source_id": "solana-account-view@2.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.observations",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.missing_handle_rejected",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.current_values_satisfy_posts",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.presence_without_full_ready"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.observationContract",
+        "Solanalib.Specs.SolanaAccountView.AccountView.Observation.data_len_contract",
+        "Solanalib.Specs.Core.AccountView.State.HasAccount",
+        "Solanalib.Specs.Core.AccountView.observation_reference",
+        "Solanalib.Specs.SolanaAccountView.AccountView.Pool.data_len_hasExecution"
+      ],
+      "rust_names": ["solana_account_view::AccountView::data_len"],
+      "models": [
+        "solana-account-view::AccountView::Pool::data_len",
+        "solana-account-view::AccountView::Observation::data_len"
+      ]
+    },
+    "solana-account-view@2.0.0::AccountView::is_signer": {
+      "order": 112,
+      "anchor_text": "pub fn is_signer(&self) -> bool {",
+      "line": 144,
+      "scope": "@text:c356802c02af2649",
+      "source_id": "solana-account-view@2.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.observations",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.missing_handle_rejected",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.current_values_satisfy_posts",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.presence_without_full_ready"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.observationContract",
+        "Solanalib.Specs.SolanaAccountView.AccountView.Observation.is_signer_contract",
+        "Solanalib.Specs.Core.AccountView.State.HasAccount",
+        "Solanalib.Specs.Core.AccountView.observation_reference",
+        "Solanalib.Specs.SolanaAccountView.AccountView.Pool.is_signer_hasExecution"
+      ],
+      "rust_names": ["solana_account_view::AccountView::is_signer"],
+      "models": [
+        "solana-account-view::AccountView::Pool::is_signer",
+        "solana-account-view::AccountView::Observation::is_signer"
+      ]
+    },
+    "solana-account-view@2.0.0::AccountView::lamports": {
+      "order": 113,
+      "anchor_text": "pub fn lamports(&self) -> u64 {",
+      "line": 173,
+      "scope": "@text:931ee4699e398f62",
+      "source_id": "solana-account-view@2.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.observations",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.missing_handle_rejected",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.current_values_satisfy_posts",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.presence_without_full_ready",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.missing_handle_no_real_cell_post",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.observation_from_current_cell"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.observationContract",
+        "Solanalib.Specs.SolanaAccountView.AccountView.Observation.lamports_contract",
+        "Solanalib.Specs.Core.AccountView.State.HasAccount",
+        "Solanalib.Specs.Core.AccountView.observation_reference",
+        "Solanalib.Specs.SolanaAccountView.AccountView.Pool.lamports_hasExecution"
+      ],
+      "rust_names": ["solana_account_view::AccountView::lamports"],
+      "models": [
+        "solana-account-view::AccountView::Pool::lamports",
+        "solana-account-view::AccountView::Observation::lamports"
+      ]
+    },
+    "solana-account-view@2.0.0::AccountView::owned_by": {
+      "order": 114,
+      "anchor_text": "pub fn owned_by(&self, program: &Address) -> bool {",
+      "line": 198,
+      "scope": "@text:19c6ade48f20a948",
+      "source_id": "solana-account-view@2.0.0::source",
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.owned_by_contract",
+        "Solanalib.Specs.Core.AccountView.State.HasAccount",
+        "Solanalib.Specs.Core.AccountView.owned_by_reference",
+        "Solanalib.Specs.SolanaAccountView.AccountView.Pool.owned_by_hasExecution"
+      ],
+      "rust_names": ["solana_account_view::AccountView::owned_by"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.missing_handle_rejected",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.current_values_satisfy_posts",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.presence_without_full_ready",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.Scalar.missing_handle_no_real_cell_post"
+      ],
+      "models": ["solana-account-view::AccountView::Pool::owned_by"]
+    },
+    "solana-account-view@2.0.0::AccountView::set_lamports": {
+      "order": 115,
+      "anchor_text": "pub fn set_lamports(&mut self, lamports: u64) {",
+      "binding_obligations": ["@binding:f3467ba3fb126b2e"],
+      "line": 180,
+      "scope": "@text:e053b7eada17a70f",
+      "source_id": "solana-account-view@2.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.setter_contract",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.read_only_metadata_allows_local_set",
+        "SolanalibTest.Specs.SolanaAccountView.ExternalTarget.header_update_with_external_reference",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.wide_balance_update",
+        "SolanalibTest.Specs.SolanaAccountView.SingleAccount.boundedSetter_realizes"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.set_lamports_contract",
+        "Solanalib.Specs.Core.AccountView.setLamports_alias",
+        "Solanalib.Specs.Core.AccountView.setLamports_ready",
+        "Solanalib.Specs.SolanaAccountView.AccountView.Observation.set_lamports_contract",
+        "Solanalib.Specs.Core.AccountViewObservation.Spec.setLamports_valid"
+      ],
+      "rust_names": ["solana_account_view::AccountView::set_lamports"],
+      "models": [
+        "solana-account-view::AccountView::Pool::set_lamports",
+        "solana-account-view::AccountView::Observation::set_lamports"
+      ]
+    },
+    "solana-account-view@2.0.0::AccountView::try_borrow": {
+      "order": 116,
+      "anchor_text": "pub fn try_borrow(&self) -> Result<Ref<'_, [u8]>, ProgramError> {",
+      "binding_obligations": ["@binding:2ce51d6689c731a9"],
+      "line": 252,
+      "scope": "@text:26969a6372968621",
+      "source_id": "solana-account-view@2.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.shared_step",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.borrow_conflicts",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.acquisition_observation_projection",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.missing_account_borrow",
+        "SolanalibTest.Specs.SolanaAccountView.SingleAccount.write_then_shared_valid"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.borrowContract",
+        "Solanalib.Specs.Core.AccountView.acquire_guardReady",
+        "Solanalib.Specs.Core.AccountView.shared_acquisition_projection",
+        "Solanalib.Specs.SolanaAccountView.AccountView.Observation.try_borrow_contract",
+        "Solanalib.Specs.Core.AccountViewObservation.Spec.tryBorrow_valid"
+      ],
+      "rust_names": ["solana_account_view::AccountView::try_borrow"],
+      "models": [
+        "solana-account-view::AccountView::Pool::try_borrow",
+        "solana-account-view::AccountView::Observation::try_borrow"
+      ]
+    },
+    "solana-account-view@2.0.0::AccountView::try_borrow_mut": {
+      "order": 117,
+      "anchor_text": "pub fn try_borrow_mut(&mut self) -> Result<RefMut<'_, [u8]>, ProgramError> {",
+      "binding_obligations": ["@binding:f3467ba3fb126b2e", "@binding:df2792cf6c83a826"],
+      "line": 275,
+      "scope": "@text:83c03659cc4bcfe4",
+      "source_id": "solana-account-view@2.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.exclusive_step",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.borrow_conflicts",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.write_is_immediate"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.borrowContract",
+        "Solanalib.Specs.Core.AccountView.acquire_guardReady",
+        "Solanalib.Specs.Core.AccountView.mutable_acquisition_projection",
+        "Solanalib.Specs.SolanaAccountView.AccountView.Observation.try_borrow_mut_contract",
+        "Solanalib.Specs.Core.AccountViewObservation.Spec.tryBorrowMut_valid"
+      ],
+      "rust_names": ["solana_account_view::AccountView::try_borrow_mut"],
+      "models": [
+        "solana-account-view::AccountView::Pool::try_borrow_mut",
+        "solana-account-view::AccountView::Observation::try_borrow_mut"
+      ]
+    },
+    "solana-account-view@2.0.0::Ref::deref": {
+      "order": 118,
+      "anchor_text": "fn deref(&self) -> &Self::Target {",
+      "binding_obligations": ["@binding:459397f6c2991bb0"],
+      "line": 503,
+      "scope": "@text:38136f7be9966cbe",
+      "source_id": "solana-account-view@2.0.0::source",
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.derefFamily",
+        "Solanalib.Specs.Core.AccountView.DataRef.project",
+        "Solanalib.Specs.Core.AccountView.sliceProfile_ready"
+      ],
+      "rust_names": ["<solana_account_view::Ref<'_, T> as core::ops::deref::Deref>::deref"],
+      "models": ["solana-account-view::Ref::deref"]
+    },
+    "solana-account-view@2.0.0::Ref::drop": {
+      "order": 119,
+      "anchor_text": "fn drop(&mut self) {",
+      "binding_obligations": ["@binding:459397f6c2991bb0"],
+      "line": 509,
+      "scope": "@text:0a54fa1b138682e9",
+      "source_id": "solana-account-view@2.0.0::source",
+      "models": ["solana-account-view::Ref::release"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.releaseFamily",
+        "Solanalib.Specs.Core.AccountView.release_ready",
+        "Solanalib.Specs.Core.AccountView.read_released"
+      ],
+      "rust_names": ["<solana_account_view::Ref<'_, T> as core::ops::drop::Drop>::drop"]
+    },
+    "solana-account-view@2.0.0::Ref::try_map": {
+      "order": 120,
+      "anchor_text": "pub fn try_map<U: ?Sized, E>(",
+      "binding_obligations": "@shared:binding-obligations-489b271967b5b5b0",
+      "line": 463,
+      "scope": "@text:02f1a03ebab8a542",
+      "source_id": "solana-account-view@2.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.ExternalTarget.mapping_contract",
+        "SolanalibTest.Specs.SolanaAccountView.ExternalTarget.mapped_reads_external_storage",
+        "SolanalibTest.Specs.SolanaAccountView.ExternalTarget.missing_target_permission_rejected",
+        "SolanalibTest.Specs.SolanaAccountView.ExternalTarget.external_target_is_not_an_account_slice"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.tryMapFamily",
+        "Solanalib.Specs.Core.AccountView.protocol_finish",
+        "Solanalib.Specs.Core.AccountView.tryMap_returned_guardReady",
+        "Solanalib.Specs.Core.AccountView.tryMap_unwind_retired",
+        "Solanalib.Specs.Core.AccountView.finishSourceMap_cells"
+      ],
+      "rust_names": ["solana_account_view::Ref::<'a, T>::try_map"],
+      "models": ["solana-account-view::Ref::try_map"]
+    },
+    "solana-account-view@2.0.0::RefMut::deref": {
+      "order": 121,
+      "anchor_text": "fn deref(&self) -> &Self::Target {",
+      "binding_obligations": ["@binding:459397f6c2991bb0"],
+      "line": 586,
+      "scope": "@text:38136f7be9966cbe",
+      "source_id": "solana-account-view@2.0.0::source",
+      "clients": ["SolanalibTest.Specs.SolanaAccountView.Lifecycle.exclusive_read_reference"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.derefFamily",
+        "Solanalib.Specs.Core.AccountView.DataRef.project",
+        "Solanalib.Specs.Core.AccountView.sliceProfile_ready"
+      ],
+      "rust_names": ["<solana_account_view::RefMut<'_, T> as core::ops::deref::Deref>::deref"],
+      "models": ["solana-account-view::RefMut::deref"]
+    },
+    "solana-account-view@2.0.0::RefMut::deref_mut": {
+      "order": 122,
+      "anchor_text": "fn deref_mut(&mut self) -> &mut <Self as core::ops::Deref>::Target {",
+      "binding_obligations": ["@binding:459397f6c2991bb0"],
+      "line": 591,
+      "scope": "@text:77d7251e866a5a1e",
+      "source_id": "solana-account-view@2.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.mutable_reference_contract",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.write_is_immediate",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.consumed_descriptor_cannot_read"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.derefFamily",
+        "Solanalib.Specs.Core.AccountView.writeReference_reads",
+        "Solanalib.Specs.Core.AccountView.writeReference_guardReady"
+      ],
+      "rust_names": ["<solana_account_view::RefMut<'_, T> as core::ops::deref::DerefMut>::deref_mut"],
+      "models": ["solana-account-view::RefMut::deref_mut"]
+    },
+    "solana-account-view@2.0.0::RefMut::drop": {
+      "order": 123,
+      "anchor_text": "fn drop(&mut self) {",
+      "binding_obligations": ["@binding:459397f6c2991bb0"],
+      "line": 597,
+      "scope": "@text:0a54fa1b138682e9",
+      "source_id": "solana-account-view@2.0.0::source",
+      "models": ["solana-account-view::RefMut::release"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.release_contract",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.release_consumes_without_copyback",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.reacquire_no_old_token",
+        "SolanalibTest.Specs.SolanaAccountView.Mapping.Fallible.release_after_error",
+        "SolanalibTest.Specs.SolanaAccountView.Lifecycle.second_release_rejected"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.releaseFamily",
+        "Solanalib.Specs.Core.AccountView.release_ready",
+        "Solanalib.Specs.Core.AccountView.read_released"
+      ],
+      "rust_names": ["<solana_account_view::RefMut<'_, T> as core::ops::drop::Drop>::drop"]
+    },
+    "solana-account-view@2.0.0::RefMut::try_map": {
+      "order": 124,
+      "anchor_text": "pub fn try_map<U: ?Sized, E>(",
+      "binding_obligations": "@shared:binding-obligations-489b271967b5b5b0",
+      "line": 546,
+      "scope": "@text:02f1a03ebab8a542",
+      "source_id": "solana-account-view@2.0.0::source",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAccountView.Mapping.Fallible.error_contract",
+        "SolanalibTest.Specs.SolanaAccountView.Mapping.Fallible.error_keeps_mutation",
+        "SolanalibTest.Specs.SolanaAccountView.Mapping.Fallible.release_after_error",
+        "SolanalibTest.Specs.SolanaAccountView.Mapping.Fallible.unwind_contract",
+        "SolanalibTest.Specs.SolanaAccountView.Mapping.Fallible.unwind_consumes_token_retains_lease",
+        "SolanalibTest.Specs.SolanaAccountView.Mapping.Fallible.terminal_contract"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.AccountView.tryMapFamily",
+        "Solanalib.Specs.Core.AccountView.protocol_finish",
+        "Solanalib.Specs.Core.AccountView.tryMap_returned_guardReady",
+        "Solanalib.Specs.Core.AccountView.tryMap_unwind_retired",
+        "Solanalib.Specs.Core.AccountView.finishSourceMap_cells"
+      ],
+      "rust_names": ["solana_account_view::RefMut::<'a, T>::try_map"],
+      "models": ["solana-account-view::RefMut::try_map"]
+    }
+  },
+  "applicability_sources": {
+    "solana-account-view": {
+      "order": 13,
+      "package": "solana-account-view",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-account-view/solana-account-view-0.0.0.crate",
+          "sha256": "d3874cdb8b0a879a99b69764ce70d23c7166a33f81c70ccf4a07c6e6cff0bfdc"
+        },
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-account-view/solana-account-view-1.0.0.crate",
+          "sha256": "f37ca34c37f92ee341b73d5ce7c8ef5bb38e9a87955b4bd343c63fa18b149215",
+          "revision": "21fea2733e9f53f719253960cbf4e2dbc725f404",
+          "path_prefix": "account-view/"
+        },
+        "2.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-account-view/solana-account-view-2.0.0.crate",
+          "sha256": "fc141b940560430425ebaadb7645496c45f6a10fad9911d719bd03eab7f4d422",
+          "revision": "1666707490c6c29e6e2edf69e2122b7cae3c9dbb",
+          "path_prefix": "account-view/"
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-account-view/solana-account-view-2.1.0.crate",
+          "sha256": "1acd7ff34cf7f09e238921b5aa64d9e517b2e92642c153a5dc15d99c8e25af3d",
+          "revision": "8e8e679ad3072748887d23a678ce2e6a6fb5e41b",
+          "path_prefix": "account-view/"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-account-view/solana-account-view-3.0.0.crate",
+          "sha256": "6d648359fbdc962a6d4435b8a05b6f4920fa9ea2c12bb92d0284c7eefb81551f",
+          "revision": "ab0d0b587ddc325731933e0f5442a86cc921f309",
+          "path_prefix": "account-view/"
+        }
+      },
+      "evidence": ["@text:6944ef1b17b142a6"]
+    }
+  },
+  "applicability": {
+    "solana-account-view::AccountView::Observation::data_len": {
+      "order": 122,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:6433324b93df7fc9"],
+          "argument": "@review:source-notes/account-view.md#review-6911633088aede5f",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::data_len",
+              "implementation": "solana_account_view::AccountView::data_len",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Observation::is_signer": {
+      "order": 123,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:47b4513d74798922"],
+          "argument": "@review:source-notes/account-view.md#review-daf61cd98549d010",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::is_signer",
+              "implementation": "solana_account_view::AccountView::is_signer",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Observation::lamports": {
+      "order": 124,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:a13352cf559537a2"],
+          "argument": "@review:source-notes/account-view.md#review-52ea08bdb7a68d15",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::lamports",
+              "implementation": "solana_account_view::AccountView::lamports",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Observation::set_lamports": {
+      "order": 125,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:edefa44d10c04506"],
+          "argument": "@review:source-notes/account-view.md#review-12bc79a131d9db02",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::set_lamports",
+              "implementation": "solana_account_view::AccountView::set_lamports",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Observation::try_borrow": {
+      "order": 126,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:258bc0cada0851b4"],
+          "argument": "@review:source-notes/account-view.md#review-e536cfb54d1d6d70",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::try_borrow",
+              "implementation": "solana_account_view::AccountView::try_borrow",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Observation::try_borrow_mut": {
+      "order": 127,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:1f67ca21c0280c1b"],
+          "argument": "@review:source-notes/account-view.md#review-e27b82aa6e8396a3",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::try_borrow_mut",
+              "implementation": "solana_account_view::AccountView::try_borrow_mut",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::address": {
+      "order": 128,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:958126224d869930"],
+          "argument": "@review:source-notes/account-view.md#review-c6041abc86cd991b",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::address",
+              "implementation": "solana_account_view::AccountView::address",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        },
+        {
+          "id": "solana-account-view-reviewed-2",
+          "source": "solana-account-view",
+          "conditions": ["@text:368b4bb08b8e2474"],
+          "argument": "@review:source-notes/account-view.md#review-8a5bd8311644d3d3",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::address",
+              "implementation": "solana_account_view::AccountView::address",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::clone": {
+      "order": 129,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:368b4bb08b8e2474"],
+          "argument": "@review:source-notes/account-view.md#review-e70307d75779ab7e",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "core::clone::Clone::clone",
+              "implementation": "<solana_account_view::AccountView as core::clone::Clone>::clone",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::close_header": {
+      "order": 130,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:037680f007a8c6e9"],
+          "argument": "@review:source-notes/account-view.md#review-b33b9feba4938e13",
+          "evidence": ["@text:888289a1c8206aed", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::close",
+              "implementation": "solana_account_view::AccountView::close",
+              "releases": ["2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}, {"lower": "3.0.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::close_with_resize_delta": {
+      "order": 131,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": [
+            "@text:368b4bb08b8e2474",
+            "@text:2b6b5653ad4d00de",
+            "@text:b97f9f80cdd585aa",
+            "@text:ccea41078718ca66"
+          ],
+          "argument": "@review:source-notes/account-view.md#review-696f81bbb2dda0cb",
+          "evidence": ["@text:0a0e147f6f3dd6a2"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::close",
+              "implementation": "solana_account_view::AccountView::close",
+              "releases": ["1.0.0"],
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::data_len": {
+      "order": 132,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:6433324b93df7fc9"],
+          "argument": "@review:source-notes/account-view.md#review-e3bdf2b8b8197b60",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::data_len",
+              "implementation": "solana_account_view::AccountView::data_len",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        },
+        {
+          "id": "solana-account-view-reviewed-2",
+          "source": "solana-account-view",
+          "conditions": ["@text:368b4bb08b8e2474"],
+          "argument": "@review:source-notes/account-view.md#review-f114d84cf9078a27",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::data_len",
+              "implementation": "solana_account_view::AccountView::data_len",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::is_data_empty": {
+      "order": 133,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:368b4bb08b8e2474"],
+          "argument": "@review:source-notes/account-view.md#review-654023651e7d092c",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::is_data_empty",
+              "implementation": "solana_account_view::AccountView::is_data_empty",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::is_signer": {
+      "order": 134,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:47b4513d74798922"],
+          "argument": "@review:source-notes/account-view.md#review-f926483df2453ce6",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::is_signer",
+              "implementation": "solana_account_view::AccountView::is_signer",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        },
+        {
+          "id": "solana-account-view-reviewed-2",
+          "source": "solana-account-view",
+          "conditions": ["@text:368b4bb08b8e2474"],
+          "argument": "@review:source-notes/account-view.md#review-a9b6e8f4b043e5c6",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::is_signer",
+              "implementation": "solana_account_view::AccountView::is_signer",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::is_writable": {
+      "order": 135,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:368b4bb08b8e2474"],
+          "argument": "@review:source-notes/account-view.md#review-32b98921bd656909",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::is_writable",
+              "implementation": "solana_account_view::AccountView::is_writable",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::lamports": {
+      "order": 136,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:a13352cf559537a2"],
+          "argument": "@review:source-notes/account-view.md#review-73ea6d85e312a73e",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::lamports",
+              "implementation": "solana_account_view::AccountView::lamports",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        },
+        {
+          "id": "solana-account-view-reviewed-2",
+          "source": "solana-account-view",
+          "conditions": ["@text:368b4bb08b8e2474"],
+          "argument": "@review:source-notes/account-view.md#review-145369ea101e00a1",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::lamports",
+              "implementation": "solana_account_view::AccountView::lamports",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::owned_by": {
+      "order": 137,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:195a66e1e1b88478"],
+          "argument": "@review:source-notes/account-view.md#review-3f2e4276f9551f54",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::owned_by",
+              "implementation": "solana_account_view::AccountView::owned_by",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        },
+        {
+          "id": "solana-account-view-reviewed-2",
+          "source": "solana-account-view",
+          "conditions": ["@text:368b4bb08b8e2474"],
+          "argument": "@review:source-notes/account-view.md#review-3c3577460774eec6",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::owned_by",
+              "implementation": "solana_account_view::AccountView::owned_by",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::owner": {
+      "order": 138,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:368b4bb08b8e2474", "@text:fb59a77e17acc143"],
+          "argument": "@review:source-notes/account-view.md#review-e744b0cf4a369c1c",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:2d83b6ca0955293e"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::owner",
+              "implementation": "solana_account_view::AccountView::owner",
+              "releases": ["1.0.0", "2.0.0", "2.1.0"],
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}, {"lower": "2.0.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::resize": {
+      "order": 139,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:368b4bb08b8e2474", "@text:2b6b5653ad4d00de", "@text:ed50f7dbc692c740"],
+          "argument": "@review:source-notes/account-view.md#review-d7cd0a461e7c58f8",
+          "evidence": ["@text:0a0e147f6f3dd6a2"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::resize",
+              "implementation": "solana_account_view::AccountView::resize",
+              "releases": ["1.0.0"],
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::set_lamports": {
+      "order": 140,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:edefa44d10c04506"],
+          "argument": "@review:source-notes/account-view.md#review-d03f24fe96abe847",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::set_lamports",
+              "implementation": "solana_account_view::AccountView::set_lamports",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        },
+        {
+          "id": "solana-account-view-reviewed-2",
+          "source": "solana-account-view",
+          "conditions": ["@text:368b4bb08b8e2474", "@text:b97f9f80cdd585aa"],
+          "argument": "@review:source-notes/account-view.md#review-50e8598fe0bc8bb8",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::set_lamports",
+              "implementation": "solana_account_view::AccountView::set_lamports",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::try_borrow": {
+      "order": 141,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:258bc0cada0851b4"],
+          "argument": "@review:source-notes/account-view.md#review-6a97a60e4999879a",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::try_borrow",
+              "implementation": "solana_account_view::AccountView::try_borrow",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        },
+        {
+          "id": "solana-account-view-reviewed-2",
+          "source": "solana-account-view",
+          "conditions": ["@text:368b4bb08b8e2474", "@text:2b6b5653ad4d00de"],
+          "argument": "@review:source-notes/account-view.md#review-751e15975bd99b0c",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::try_borrow",
+              "implementation": "solana_account_view::AccountView::try_borrow",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::AccountView::Pool::try_borrow_mut": {
+      "order": 142,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:1f67ca21c0280c1b"],
+          "argument": "@review:source-notes/account-view.md#review-fd44f9b9c48167ed",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::try_borrow_mut",
+              "implementation": "solana_account_view::AccountView::try_borrow_mut",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        },
+        {
+          "id": "solana-account-view-reviewed-2",
+          "source": "solana-account-view",
+          "conditions": ["@text:368b4bb08b8e2474", "@text:2b6b5653ad4d00de", "@text:b97f9f80cdd585aa"],
+          "argument": "@review:source-notes/account-view.md#review-4b90b07434e5dc40",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::AccountView::try_borrow_mut",
+              "implementation": "solana_account_view::AccountView::try_borrow_mut",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::Ref::deref": {
+      "order": 143,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:4a5e1e7264579f48"],
+          "argument": "@review:source-notes/account-view.md#review-d1708eb0849c330a",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "core::ops::deref::Deref::deref",
+              "implementation": "<solana_account_view::Ref<'_, T> as core::ops::deref::Deref>::deref",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        },
+        {
+          "id": "solana-account-view-reviewed-2",
+          "source": "solana-account-view",
+          "conditions": "@shared:conditions-d0ea8bde591f38d0",
+          "argument": "@review:source-notes/account-view.md#review-1f7fbdb3c219309b",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "core::ops::deref::Deref::deref",
+              "implementation": "<solana_account_view::Ref<'_, T> as core::ops::deref::Deref>::deref",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::Ref::map": {
+      "order": 144,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": [
+            "@text:368b4bb08b8e2474",
+            "@text:2b6b5653ad4d00de",
+            "@text:41146e67bebd1468",
+            "@text:da8bad2639e7cd5a"
+          ],
+          "argument": "@review:source-notes/account-view.md#review-54ace6be89daf3c2",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::Ref::<'a, T>::map",
+              "implementation": "solana_account_view::Ref::<'a, T>::map",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::Ref::release": {
+      "order": 145,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:41b7adf9f4e39449"],
+          "argument": "@review:source-notes/account-view.md#review-3c0bad56f5e63e1e",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "core::ops::drop::Drop::drop",
+              "implementation": "<solana_account_view::Ref<'_, T> as core::ops::drop::Drop>::drop",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        },
+        {
+          "id": "solana-account-view-reviewed-2",
+          "source": "solana-account-view",
+          "conditions": "@shared:conditions-d0ea8bde591f38d0",
+          "argument": "@review:source-notes/account-view.md#review-ff436b9138d64188",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "core::ops::drop::Drop::drop",
+              "implementation": "<solana_account_view::Ref<'_, T> as core::ops::drop::Drop>::drop",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::Ref::try_map": {
+      "order": 146,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:4151bc1b98bda22f"],
+          "argument": "@review:source-notes/account-view.md#review-2b284178326028b1",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::Ref::<'a, T>::try_map",
+              "implementation": "solana_account_view::Ref::<'a, T>::try_map",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::RefMut::deref": {
+      "order": 147,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:4a5e1e7264579f48"],
+          "argument": "@review:source-notes/account-view.md#review-4406b36f08596917",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "core::ops::deref::Deref::deref",
+              "implementation": "<solana_account_view::RefMut<'_, T> as core::ops::deref::Deref>::deref",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::RefMut::deref_mut": {
+      "order": 148,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:4a5e1e7264579f48"],
+          "argument": "@review:source-notes/account-view.md#review-ad2489d6086e53da",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "core::ops::deref::DerefMut::deref_mut",
+              "implementation": "<solana_account_view::RefMut<'_, T> as core::ops::deref::DerefMut>::deref_mut",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        },
+        {
+          "id": "solana-account-view-reviewed-2",
+          "source": "solana-account-view",
+          "conditions": "@shared:conditions-d0ea8bde591f38d0",
+          "argument": "@review:source-notes/account-view.md#review-13c955d4232a1b49",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "core::ops::deref::DerefMut::deref_mut",
+              "implementation": "<solana_account_view::RefMut<'_, T> as core::ops::deref::DerefMut>::deref_mut",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::RefMut::release": {
+      "order": 149,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:41b7adf9f4e39449"],
+          "argument": "@review:source-notes/account-view.md#review-23b4090b2eb2f564",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "core::ops::drop::Drop::drop",
+              "implementation": "<solana_account_view::RefMut<'_, T> as core::ops::drop::Drop>::drop",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        },
+        {
+          "id": "solana-account-view-reviewed-2",
+          "source": "solana-account-view",
+          "conditions": "@shared:conditions-d0ea8bde591f38d0",
+          "argument": "@review:source-notes/account-view.md#review-a1d2c4cfe58988ff",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "core::ops::drop::Drop::drop",
+              "implementation": "<solana_account_view::RefMut<'_, T> as core::ops::drop::Drop>::drop",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-account-view::RefMut::try_map": {
+      "order": 150,
+      "profiles": [
+        {
+          "id": "solana-account-view-reviewed",
+          "source": "solana-account-view",
+          "conditions": ["@text:4151bc1b98bda22f"],
+          "argument": "@review:source-notes/account-view.md#review-e49ed387e5a0a19c",
+          "evidence": ["@text:0a0e147f6f3dd6a2", "@text:ef82941ca3c55b04"],
+          "items": [
+            {
+              "item": "solana_account_view::RefMut::<'a, T>::try_map",
+              "implementation": "solana_account_view::RefMut::<'a, T>::try_map",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:7e9928471a7d1a58", "@binding:ffb0ea7cfe813e99"]
+}

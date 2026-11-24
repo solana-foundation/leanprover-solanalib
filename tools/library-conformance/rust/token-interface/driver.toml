@@ -1,0 +1,4 @@
+# Family TokenInterface: spl-token-interface 2.0.0 and spl-token-2022-interface 3.1.1,
+# the pinned versions.
+corpora = ["spl_token_interface_2_0_0", "spl_token_2022_interface_3_1_1", "spl_token_2022_interface_3_1_1_fee", "spl_token_2022_interface_3_1_1_extension"]
+inputs = []

@@ -1,0 +1,659 @@
+{
+  "abstractions": {
+    "library::bytemuck": {
+      "order": 124,
+      "modules": {
+        "Solanalib.Specs.Bytemuck": "61c55ebdd5ac6ccd4d66d0ed321ac1caec8b0836fc6737122748cf7ebeddb764",
+        "Solanalib.Specs.Bytemuck.Bytes": "faac0ac03c487236360ac7957b0cb21031afdaf87f7bf5dea837dd86dc2a37c3",
+        "Solanalib.Specs.Bytemuck.Capabilities": "5e515228e4810011b406022bd85ce9bebc45024d624eff3591dd334fa51b554c"
+      },
+      "source_ids": [
+        "bytemuck-1.25.2-lib",
+        "bytemuck-1.25.2-internal",
+        "bytemuck-1.25.2-zeroable",
+        "root-extra::bytemuck-1.25.0::src/lib.rs",
+        "bytemuck-1.25.0-internal",
+        "bytemuck-1.25.0-zeroable"
+      ],
+      "argument": "@review:source-notes/bytemuck-views.md#review-c9d5121329f3d21a",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@text:fa0e7f3c128727fa",
+        "@text:f3072e8a5c0bd0bc",
+        "@text:a0f90920b7f7bb9b"
+      ]
+    }
+  },
+  "packages": {
+    "bytemuck-1.25.0": {
+      "order": 16,
+      "repository": "https://github.com/Lokathor/bytemuck",
+      "revision": "164cedda0eae131bc6cb67902599f4ec253642ca"
+    },
+    "bytemuck-1.25.2": {
+      "order": 17,
+      "repository": "https://github.com/Lokathor/bytemuck",
+      "revision": "f363643e951a7ac9e4b9921de982f2b0918902e3"
+    },
+    "bytemuck-1.21.0": {
+      "order": 92,
+      "repository": "https://github.com/Lokathor/bytemuck",
+      "revision": "621848fcf09ac42000e3b9c548f17f252c7e399c"
+    },
+    "bytemuck-1.24.0": {
+      "order": 93,
+      "repository": "https://github.com/Lokathor/bytemuck",
+      "revision": "da748163ea203f80098b6bdc754c54ebc535364c"
+    },
+    "bytemuck-1.22.0": {
+      "order": 134,
+      "repository": "https://github.com/Lokathor/bytemuck",
+      "revision": "d1d918b2879c62fa946a9534ab8ee0760106b0fa",
+      "path_prefix": ""
+    }
+  },
+  "interfaces": {
+    "bytemuck-1.25.0-internal": {
+      "order": 52,
+      "crate": "bytemuck-1.25.0",
+      "path": "src/internal.rs",
+      "sha256": "93198f6ba0e5e430c5a33ebe17a738d24a3874a40761614434d976aeef402dc9"
+    },
+    "bytemuck-1.25.2-internal": {
+      "order": 53,
+      "anchor_text": "pub(crate) fn is_aligned_to(ptr: *const (), align: usize) -> bool {",
+      "cargo_package_checksum": "95832e849adfb21180ccb6826a99da14e5d266ae5c2e668e1602cf234f153797",
+      "crate": "bytemuck-1.25.2",
+      "line": 135,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "7b99bce6fd19ac16efd0fa94051b95f6cee7945f9d76842e072e4176a152794c",
+        "cargo_vcs_info_sha256": "c8aecf533b8af2b661d1426cd5658915273bed7a059ca5bb93b874145d2fcf80"
+      },
+      "path": "src/internal.rs",
+      "sha256": "93198f6ba0e5e430c5a33ebe17a738d24a3874a40761614434d976aeef402dc9"
+    },
+    "bytemuck-1.25.2-lib": {
+      "order": 54,
+      "anchor_text": "pub fn try_from_bytes<T: AnyBitPattern>(s: &[u8]) -> Result<&T, PodCastError> {",
+      "cargo_package_checksum": "95832e849adfb21180ccb6826a99da14e5d266ae5c2e668e1602cf234f153797",
+      "crate": "bytemuck-1.25.2",
+      "line": 353,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "7b99bce6fd19ac16efd0fa94051b95f6cee7945f9d76842e072e4176a152794c",
+        "cargo_vcs_info_sha256": "c8aecf533b8af2b661d1426cd5658915273bed7a059ca5bb93b874145d2fcf80"
+      },
+      "path": "src/lib.rs",
+      "sha256": "d4256f4efdfaf8ef19dbcef82777e740dcb9f3b78d44c3836fec611b26294cce"
+    },
+    "root-extra::bytemuck-1.25.0::src/internal.rs": {
+      "order": 58,
+      "crate": "bytemuck-1.25.0",
+      "path": "src/internal.rs",
+      "sha256": "93198f6ba0e5e430c5a33ebe17a738d24a3874a40761614434d976aeef402dc9"
+    },
+    "root-extra::bytemuck-1.25.0::src/lib.rs": {
+      "order": 59,
+      "crate": "bytemuck-1.25.0",
+      "path": "src/lib.rs",
+      "sha256": "e5c0d212a8f512da6a3aea3edb4be8e00161c9fa1c137413b6fda3dc426ddaf8"
+    },
+    "bytemuck-1.25.0-zeroable": {
+      "order": 158,
+      "crate": "bytemuck-1.25.0",
+      "path": "src/zeroable.rs",
+      "sha256": "49db4e7edec70d863db37d1502945e012c1a08058adef803e13d4e7ec344017c"
+    },
+    "bytemuck-1.25.2-zeroable": {
+      "order": 159,
+      "crate": "bytemuck-1.25.2",
+      "path": "src/zeroable.rs",
+      "sha256": "49db4e7edec70d863db37d1502945e012c1a08058adef803e13d4e7ec344017c"
+    },
+    "stake-codecs::bytemuck-1.21.0::src/internal.rs": {
+      "order": 278,
+      "crate": "bytemuck-1.21.0",
+      "path": "src/internal.rs",
+      "sha256": "2b5b4fdc1a5d14462dd604ca1f4f23116f40639d7d8b4c1a7189ce276edd8272",
+      "review_scope": "Selected stake constructors/getters, Pack dispatch and cleanup, lookup bincode decoding and borrowed Pubkey layout, or WriteCounter framing only; other APIs are outside this review.",
+      "repository_bytes": {
+        "sha256": "93198f6ba0e5e430c5a33ebe17a738d24a3874a40761614434d976aeef402dc9",
+        "transform": "lf-to-crlf"
+      }
+    },
+    "stake-codecs::bytemuck-1.21.0::src/lib.rs": {
+      "order": 279,
+      "crate": "bytemuck-1.21.0",
+      "path": "src/lib.rs",
+      "sha256": "752aa0122fa8e3d80dfc48d0bf694aebbbccf7a3686ca2376aca7bb60ed627c3",
+      "review_scope": "Selected stake constructors/getters, Pack dispatch and cleanup, lookup bincode decoding and borrowed Pubkey layout, or WriteCounter framing only; other APIs are outside this review.",
+      "repository_bytes": {
+        "sha256": "eb7383c3ec7925cd9f6e7e9f0a4532957937460ea5effe9f5b49210b7d13c7d3",
+        "transform": "lf-to-crlf"
+      }
+    },
+    "stake-codecs::bytemuck-1.24.0::src/internal.rs": {
+      "order": 280,
+      "crate": "bytemuck-1.24.0",
+      "path": "src/internal.rs",
+      "sha256": "93198f6ba0e5e430c5a33ebe17a738d24a3874a40761614434d976aeef402dc9",
+      "review_scope": "Selected stake constructors/getters, Pack dispatch and cleanup, lookup bincode decoding and borrowed Pubkey layout, or WriteCounter framing only; other APIs are outside this review."
+    },
+    "stake-codecs::bytemuck-1.24.0::src/lib.rs": {
+      "order": 281,
+      "crate": "bytemuck-1.24.0",
+      "path": "src/lib.rs",
+      "sha256": "e5c0d212a8f512da6a3aea3edb4be8e00161c9fa1c137413b6fda3dc426ddaf8",
+      "review_scope": "Selected stake constructors/getters, Pack dispatch and cleanup, lookup bincode decoding and borrowed Pubkey layout, or WriteCounter framing only; other APIs are outside this review."
+    },
+    "transfer-hook-resolution::bytemuck-1.22.0::src/internal.rs": {
+      "order": 563,
+      "crate": "bytemuck-1.22.0",
+      "path": "src/internal.rs",
+      "sha256": "93198f6ba0e5e430c5a33ebe17a738d24a3874a40761614434d976aeef402dc9",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed. Published crate uses CRLF; Git uses LF. Only line endings differ; the actual crate archive is separately checksum-sealed."
+    },
+    "transfer-hook-resolution::bytemuck-1.22.0::src/lib.rs": {
+      "order": 564,
+      "crate": "bytemuck-1.22.0",
+      "path": "src/lib.rs",
+      "sha256": "4b4b820c43ac37603414e6a7e0bd571bbd5a247e7fddc2cf28070948f56c5116",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed. Published crate uses CRLF; Git uses LF. Only line endings differ; the actual crate archive is separately checksum-sealed."
+    }
+  },
+  "models": {
+    "bytemuck::bytes_of": {
+      "order": 64,
+      "contract": "Solanalib.Specs.Bytemuck.bytes_of_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:05035c7c2bf29c21"]
+    },
+    "bytemuck::try_from_bytes": {
+      "order": 65,
+      "contract": "Solanalib.Specs.Bytemuck.try_from_bytes_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:3692ee3d7a2ac9a1"]
+    },
+    "bytemuck::zeroable::Zeroable::zeroed": {
+      "order": 66,
+      "contract": "Solanalib.Specs.Bytemuck.zeroable.Zeroable.zeroed_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:61cf4e36af200d1d"]
+    }
+  },
+  "api": {
+    "bytemuck@1.25.0::try_from_bytes": {
+      "order": 53,
+      "source_id": "root-extra::bytemuck-1.25.0::src/lib.rs",
+      "line": 349,
+      "anchor_text": "pub fn try_from_bytes<T: AnyBitPattern>(s: &[u8]) -> Result<&T, PodCastError> {",
+      "scope": "@text:56b14921dd28fab5",
+      "binding_obligations": ["@binding:38e494d8c0515f05", "@binding:c1e02d524da98b55"],
+      "clients": [
+        "SolanalibTest.Specs.Bytemuck.Bytes.aligned_exact_size_accepted_same_address",
+        "SolanalibTest.Specs.Bytemuck.Bytes.misaligned_input_rejected",
+        "SolanalibTest.Specs.Bytemuck.Bytes.size_mismatch_rejected_before_alignment",
+        "SolanalibTest.Specs.Bytemuck.Bytes.long_aligned_input_rejected",
+        "SolanalibTest.Specs.Bytemuck.Bytes.empty_slice_alignment_checked",
+        "SolanalibTest.Specs.Bytemuck.Bytes.try_from_bytes_versioned_contract_holds",
+        "SolanalibTest.Specs.Bytemuck.Bytes.contract_rejects_success_when_misaligned",
+        "SolanalibTest.Specs.Bytemuck.Bytes.contract_rejects_alignment_error_on_size_mismatch",
+        "SolanalibTest.Specs.Bytemuck.Bytes.contract_rejects_wrong_value"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Bytemuck.Decoding",
+        "Solanalib.Specs.Core.Bytemuck.SliceRef",
+        "Solanalib.Specs.Core.Bytemuck.TypedRef",
+        "Solanalib.Specs.Core.Bytemuck.PodCastError",
+        "Solanalib.Specs.Core.Bytemuck.isAlignedTo",
+        "Solanalib.Specs.Core.Bytemuck.tryFromBytes",
+        "Solanalib.Specs.Core.Bytemuck.TryFromBytesPost",
+        "Solanalib.Specs.Core.Bytemuck.tryFromBytesPost_iff"
+      ],
+      "rust_names": ["bytemuck::try_from_bytes"],
+      "models": ["bytemuck::try_from_bytes"]
+    },
+    "bytemuck@1.25.0::zeroable::Zeroable::zeroed": {
+      "order": 54,
+      "source_id": "bytemuck-1.25.0-zeroable",
+      "line": 32,
+      "anchor_text": "fn zeroed() -> Self {",
+      "scope": "@text:e999b9b93aaae4ab",
+      "binding_obligations": ["@binding:7c5d7e8595bb66f2", "@binding:0c093ec8744042a4"],
+      "clients": [
+        "SolanalibTest.Specs.Bytemuck.Bytes.zeroed_value_has_all_zero_bytes",
+        "SolanalibTest.Specs.Bytemuck.Bytes.zeroed_contract_rejects_nonzero"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Bytemuck.Decoding",
+        "Solanalib.Specs.Core.Bytemuck.zeroBytes",
+        "Solanalib.Specs.Core.Bytemuck.zeroed"
+      ],
+      "rust_names": ["bytemuck::zeroable::Zeroable::zeroed"],
+      "models": ["bytemuck::zeroable::Zeroable::zeroed"]
+    },
+    "bytemuck@1.25.2::bytes_of": {
+      "order": 55,
+      "source_id": "bytemuck-1.25.2-lib",
+      "line": 284,
+      "anchor_text": "pub fn bytes_of<T: NoUninit>(t: &T) -> &[u8] {",
+      "scope": "@text:ffcbbaf0ef737429",
+      "binding_obligations": ["@binding:38e494d8c0515f05", "@binding:8cce10fdf9b17bf4"],
+      "clients": [
+        "SolanalibTest.Specs.Bytemuck.Bytes.bytes_of_little_endian_same_address",
+        "SolanalibTest.Specs.Bytemuck.Bytes.bytes_of_is_not_big_endian",
+        "SolanalibTest.Specs.Bytemuck.Bytes.bytes_of_zero_sized_empty_same_address",
+        "SolanalibTest.Specs.Bytemuck.Bytes.bytes_of_source_cast_geometry",
+        "SolanalibTest.Specs.Bytemuck.Bytes.bytes_of_versioned_contract_holds",
+        "SolanalibTest.Specs.Bytemuck.Bytes.bytes_of_contract_rejects_wrong_bytes",
+        "SolanalibTest.Specs.Bytemuck.Bytes.bytes_of_contract_rejects_moved_address"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Bytemuck.Encoding",
+        "Solanalib.Specs.Core.Bytemuck.SliceRef",
+        "Solanalib.Specs.Core.Bytemuck.TypedRef",
+        "Solanalib.Specs.Core.Bytemuck.tryCastSlice",
+        "Solanalib.Specs.Core.Bytemuck.tryCastSlice_toBytes",
+        "Solanalib.Specs.Core.Bytemuck.bytesOf",
+        "Solanalib.Specs.Core.Bytemuck.bytesOf_zero_sized"
+      ],
+      "rust_names": ["bytemuck::bytes_of"],
+      "models": ["bytemuck::bytes_of"]
+    },
+    "bytemuck@1.25.2::zeroable::Zeroable::zeroed": {
+      "order": 56,
+      "source_id": "bytemuck-1.25.2-zeroable",
+      "line": 32,
+      "anchor_text": "fn zeroed() -> Self {",
+      "scope": "@text:e999b9b93aaae4ab",
+      "binding_obligations": ["@binding:7c5d7e8595bb66f2", "@binding:0c093ec8744042a4"],
+      "clients": [
+        "SolanalibTest.Specs.Bytemuck.Bytes.zeroed_value_has_all_zero_bytes",
+        "SolanalibTest.Specs.Bytemuck.Bytes.zeroed_contract_rejects_nonzero",
+        "SolanalibTest.Specs.Bytemuck.Bytes.zeroed_versioned_contract_holds"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Bytemuck.Decoding",
+        "Solanalib.Specs.Core.Bytemuck.zeroBytes",
+        "Solanalib.Specs.Core.Bytemuck.zeroed"
+      ],
+      "rust_names": ["bytemuck::zeroable::Zeroable::zeroed"],
+      "models": ["bytemuck::zeroable::Zeroable::zeroed"]
+    }
+  },
+  "applicability_sources": {
+    "bytemuck": {
+      "order": 4,
+      "package": "bytemuck",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.1.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-0.1.0.crate",
+          "sha256": "fbcfa26debfe4f6fb409a0ec33273e3ffa6e6b4f6f177d3a5d14ab45c03459ef",
+          "revision": "7603a0f01d34d81409436558dec142073a53bfc2",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.1.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-0.1.1.crate",
+          "sha256": "fe8208fbcc1d481450eb07880d5b60c99da1b1864840f6af82141ac4931e721e",
+          "revision": "28abb7f2c1358851b08f5b91e0f983dd7be02286",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.1.2": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-0.1.2.crate",
+          "sha256": "3b5389e57ef2cb21b174a28fddb1f83d53453342f7655a0a6d382bf6c2460b33",
+          "revision": "b0fc42a1cd21a4ed50b095be8ff9adec7ec7b9ac",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.0.0.crate",
+          "sha256": "372a58a0010bd183faff83ba294b4a9ff875ccca37b0ca4eb19a7a5457ac9b7c",
+          "revision": "1bd6144acf7b16df48f245af3b3e0af4b8c2b330"
+        },
+        "1.0.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.0.1.crate",
+          "sha256": "24f99434c5af25c3002973d0e93d24ca72a09a7c890068d7e4ccdd2ba2d53f9b",
+          "revision": "f44e0cde328aff431f3e0c8e3336ba255c788e6d"
+        },
+        "1.1.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.1.0.crate",
+          "sha256": "fe8d506cf580b813b52e2ff73ea8e96df94c3842ec3ab5278be2cbdd196d91f7",
+          "revision": "6d44eadbd2651a0704a8d66afee5d312b80795f2"
+        },
+        "1.2.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.2.0.crate",
+          "sha256": "37fa13df2292ecb479ec23aa06f4507928bef07839be9ef15281411076629431",
+          "revision": "2725633356818ea7cb1a1336fde2aa62eb061315"
+        },
+        "1.3.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.3.0.crate",
+          "sha256": "d40636046a60a45ee5185e885a3ccb771f7a2065fb7cbcc2a7ecfd9896d1c365",
+          "revision": "bb2b95643e8147e4fcc76eb65e27af099a1d6e14",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.3.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.3.1.crate",
+          "sha256": "db7a1029718df60331e557c9e83a55523c955e5dd2a7bfeffad6bbd50b538ae9",
+          "revision": "07c5193565aac2a7a7bdacdde7c493bf3e509c25"
+        },
+        "1.4.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.4.0.crate",
+          "sha256": "92046dbb6f9332943252123f53623e0a6d513651af14967e2991c371ec20201c",
+          "revision": "426df7c9c068bd71938b13f09f0468c4541bd6f1"
+        },
+        "1.4.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.4.1.crate",
+          "sha256": "41aa2ec95ca3b5c54cf73c91acf06d24f4495d5f1b1c12506ae3483d646177ac",
+          "revision": "68ed5fe6f21d1b0bbdb0b15abcb42e9a094c36ac"
+        },
+        "1.5.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.5.0.crate",
+          "sha256": "5a4bad0c5981acc24bc09e532f35160f952e35422603f0563cd7a73c2c2e65a0",
+          "revision": "e1e5ebda61d3ef5ee25e7126870ecf2a354a20d2"
+        },
+        "1.5.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.5.1.crate",
+          "sha256": "bed57e2090563b83ba8f83366628ce535a7584c9afa4c9fc0612a03925c6df58",
+          "revision": "6f1c78e82486bcfa0da5d10970c815ec4d4a0738"
+        },
+        "1.6.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.6.0.crate",
+          "sha256": "1bd24bfbd2c054630764222780a681282d7d524ffc28b7925e712afdfb3502bf",
+          "revision": "37b82b32c65ab99a2b668d3daf6a2742ade70371",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.6.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.6.1.crate",
+          "sha256": "0d45b1d46ddf3b55b8746d56cac01e05a156fa3719616f5483683662834ee43a",
+          "revision": "223ee7deaf7e12aa89e4da1901431e5d7c28fd91",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.6.2": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.6.2.crate",
+          "sha256": "2d369ccb80791bfda25cfddab2e2f86533ed9fd1eeda20a5ecb03701f653d0a7",
+          "revision": "987baf6273226f248860a55c2c526e27f67db0d4",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.6.3": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.6.3.crate",
+          "sha256": "4e958115c9f9c1d95cdd844739a1016aee8deb2f4c79cade481df1f4217c1388",
+          "revision": "fa438707868fe2a62c198ae253c81720edddc2c5",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.7.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.7.0.crate",
+          "sha256": "9966d2ab714d0f785dbac0a0396251a35280aeb42413281617d0209ab4898435",
+          "revision": "19c41fb116885bd03687e56ed2c846f168534604",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.7.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.7.1.crate",
+          "sha256": "b6469469a66bb9a556bc706b5dc80a51be7deb7050d7e9803c1b647bd856b04b",
+          "revision": "5024fcc6fb77219ff59c6c61874fb3e83bb07632",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.7.2": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.7.2.crate",
+          "sha256": "72957246c41db82b8ef88a5486143830adeb8227ef9837740bdec67724cf2c5b",
+          "revision": "be16fe2958fdfa2e79eb71fe94d8bfe7e3e64fc4"
+        },
+        "1.7.3": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.7.3.crate",
+          "sha256": "439989e6b8c38d1b6570a384ef1e49c8848128f5a97f3914baef02920842712f",
+          "revision": "e32f013a0623171464d0fe03a2f0663ac08701de"
+        },
+        "1.8.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.8.0.crate",
+          "sha256": "0e851ca7c24871e7336801608a4797d7376545b6928a10d32d75685687141ead",
+          "revision": "4569a30c9f0e818b6441b2ee8ddfb7dfd1ba33bf"
+        },
+        "1.9.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.9.0.crate",
+          "sha256": "ee1e0e2125faccb856bf10b0a9dfa89c4c718d05ef85580dfefbdf1c422ef801",
+          "revision": "73eaaaf9b86caffc503a02cbc87da464e28026d1"
+        },
+        "1.9.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.9.1.crate",
+          "sha256": "cdead85bdec19c194affaeeb670c0e41fe23de31459efd1c174d049269cf02cc",
+          "revision": "b75005c4d04e60576e9d1770c016f9946bc86ff3"
+        },
+        "1.10.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.10.0.crate",
+          "sha256": "c53dfa917ec274df8ed3c572698f381a24eef2efba9492d797301b72b6db408a",
+          "revision": "bf68430b59d019bbeddd2a2fa44a6de32c7b24b6"
+        },
+        "1.11.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.11.0.crate",
+          "sha256": "a5377c8865e74a160d21f29c2d40669f53286db6eab59b88540cbb12ffc8b835",
+          "revision": "d75942c484d18137844cb905399e5a4a354e5916"
+        },
+        "1.12.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.12.0.crate",
+          "sha256": "44f8cb64b4147a528e1e9e77583739e683541973295b35f3bd7e78d42c5971fd",
+          "revision": "995205de230338338e1c030ea82dcda116a305b5",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.12.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.12.1.crate",
+          "sha256": "2f5715e491b5a1598fc2bef5a606847b5dc1d48ea625bd3c02c00de8285591da",
+          "revision": "950a3ed3b930a1b73f6511d2a5075940089c82b1"
+        },
+        "1.12.2": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.12.2.crate",
+          "sha256": "5aec14f5d4e6e3f927cd0c81f72e5710d95ee9019fbeb4b3021193867491bfd8",
+          "revision": "7b67524a43aeee8c8e07ad8f4486cfe81e51591c"
+        },
+        "1.12.3": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.12.3.crate",
+          "sha256": "aaa3a8d9a1ca92e282c96a32d6511b695d7d994d1d102ba85d279f9b2756947f",
+          "revision": "06a62314a362d82251d09103cfe889ae470df33c"
+        },
+        "1.12.4": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.12.4.crate",
+          "sha256": "a549ccde89ad36338c8a96be4646ba602d7b55d6120c8b20c74fea1939432680",
+          "revision": "cb5caf7bf861b96b9700a8ec626db1ac20e15bca",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.13.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.13.0.crate",
+          "sha256": "c041d3eab048880cb0b86b256447da3f18859a163c3b8d8893f4e6368abe6393",
+          "revision": "49c23727fa681753eaae8010958a9a1293954103"
+        },
+        "1.13.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.13.1.crate",
+          "sha256": "17febce684fd15d89027105661fec94afb475cb995fbc59d2865198446ba2eea",
+          "revision": "b19f8abfe34d6ab660e748086874c01e0212b738"
+        },
+        "1.14.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.14.0.crate",
+          "sha256": "374d28ec25809ee0e23827c2ab573d729e293f281dfe393500e7ad618baa61c6",
+          "revision": "ff0b14dae9a4f0650f17c15c16acbd75df1cc4b5"
+        },
+        "1.14.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.14.1.crate",
+          "sha256": "ed2490600f404f2b94c167e31d3ed1d5f3c225a0f3b80230053b3e0b7b962bd9",
+          "revision": "1e1a22e5eac57e5b473e0c427dc187008228ad46",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.14.2": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.14.2.crate",
+          "sha256": "ea31d69bda4949c1c1562c1e6f042a1caefac98cdc8a298260a2ff41c1e2d42b",
+          "revision": "04ed11bdd5ec8e53d3377272f42bb2d4b21b1d31",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.14.3": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.14.3.crate",
+          "sha256": "a2ef034f05691a48569bd920a96c81b9d91bbad1ab5ac7c4616c1f6ef36cb79f",
+          "revision": "49eed864acb5791f61753bfeae488718d481f1f3",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.15.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.15.0.crate",
+          "sha256": "5d6d68c57235a3a081186990eca2867354726650f42f7516ca50c28d6281fd15",
+          "revision": "4d2fc16208e55db8e231a6f0bf5ea4b928579502",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.16.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.16.0.crate",
+          "sha256": "78834c15cb5d5efe3452d58b1e8ba890dd62d21907f867f383358198e56ebca5",
+          "revision": "4c46b919e2cccae67b3ef2648b1f746d0638afb3",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.16.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.16.1.crate",
+          "sha256": "b236fc92302c97ed75b38da1f4917b5cdda4984745740f153a5d3059e48d725e",
+          "revision": "02ffd53a4e42497574f06eba5907212b66a71a3a",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.16.2": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.16.2.crate",
+          "sha256": "ccab81bc68a63a8830201dfa6e39db6e880c13b07490d39d386a853997fbcf1d",
+          "revision": "758774d45142aa8ca8d6fbd965ba7a0325891bd8"
+        },
+        "1.16.3": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.16.3.crate",
+          "sha256": "102087e286b4677862ea56cf8fc58bb2cdfa8725c40ffb80fe3a008eb7f2fc83",
+          "revision": "20f4a09404d79c9ab549efd8d3f5d82977368e4d"
+        },
+        "1.17.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.17.0.crate",
+          "sha256": "6fd4c6dcc3b0aea2f5c0b4b82c2b15fe39ddbc76041a310848f4706edf76bb31",
+          "revision": "3c42ba7f23e4c17990322e78a574d0df749030cf"
+        },
+        "1.17.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.17.1.crate",
+          "sha256": "773d90827bc3feecfb67fab12e24de0749aad83c74b9504ecde46237b5cd24e2",
+          "revision": "dc059fd187c45cd9739aeedabd5e75e527058f90"
+        },
+        "1.18.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.18.0.crate",
+          "sha256": "94bbb0ad554ad961ddc5da507a12a29b14e4ae5bda06b19f575a3e6079d2e2ae",
+          "revision": "860c391345a2ec61fecf3cd46bcdde1add01caf9"
+        },
+        "1.19.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.19.0.crate",
+          "sha256": "8334215b81e418a0a7bdb8ef0849474f40bb10c8b71f1c4ed315cff49f32494d",
+          "revision": "7b98ff1cec8df2be270410f2c42c655f5abd66b2"
+        },
+        "1.20.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.20.0.crate",
+          "sha256": "8b37c88a63ffd85d15b406896cc343916d7cf57838a847b3a6f2ca5d39a5695a",
+          "revision": "9bf993b1e487b1e7242aeb970e0d06fa7e4ae166"
+        },
+        "1.21.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.21.0.crate",
+          "sha256": "ef657dfab802224e671f5818e9a4935f9b1957ed18e58292690cc39e7a4092a3",
+          "revision": "621848fcf09ac42000e3b9c548f17f252c7e399c"
+        },
+        "1.22.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.22.0.crate",
+          "sha256": "b6b1fc10dbac614ebc03540c9dbd60e83887fda27794998c6528f1782047d540",
+          "revision": "d1d918b2879c62fa946a9534ab8ee0760106b0fa"
+        },
+        "1.23.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.23.0.crate",
+          "sha256": "9134a6ef01ce4b366b50689c94f82c14bc72bc5d0386829828a2e2752ef7958c",
+          "revision": "028ff3bec68ab9c123dc578b74a7af4a72a37609"
+        },
+        "1.23.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.23.1.crate",
+          "sha256": "5c76a5792e44e4abe34d3abf15636779261d45a7450612059293d1d2cfc63422",
+          "revision": "ebb132677b7599ac30b6455d64a091edc73ddb95"
+        },
+        "1.23.2": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.23.2.crate",
+          "sha256": "3995eaeebcdf32f91f980d360f78732ddc061097ab4e39991ae7a6ace9194677",
+          "revision": "c069a2f6a4c7f3416257d0378c799085aa5626bb"
+        },
+        "1.24.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.24.0.crate",
+          "sha256": "1fbdf580320f38b612e485521afda1ee26d10cc9884efaaa750d383e13e3c5f4",
+          "revision": "da748163ea203f80098b6bdc754c54ebc535364c"
+        },
+        "1.25.0": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.25.0.crate",
+          "sha256": "c8efb64bd706a16a1bdde310ae86b351e4d21550d98d056f22f8a7f7a2183fec",
+          "revision": "164cedda0eae131bc6cb67902599f4ec253642ca"
+        },
+        "1.25.1": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.25.1.crate",
+          "sha256": "d6aedf8ae72766347502cf3cb4f41cf5e9cc37d28bee90f1fdaaae15f9cf9424",
+          "revision": "cabc8e75899e67ad274959b6de27653558d01296"
+        },
+        "1.25.2": {
+          "archive_url": "https://static.crates.io/crates/bytemuck/bytemuck-1.25.2.crate",
+          "sha256": "95832e849adfb21180ccb6826a99da14e5d266ae5c2e668e1602cf234f153797",
+          "revision": "f363643e951a7ac9e4b9921de982f2b0918902e3"
+        }
+      },
+      "evidence": ["@text:e65652667a3b83dd", "@text:60dcf65880145ee4"]
+    }
+  },
+  "applicability": {
+    "bytemuck::bytes_of": {
+      "order": 64,
+      "profiles": [
+        {
+          "id": "bytemuck-reviewed",
+          "source": "bytemuck",
+          "conditions": ["@text:6125cbb4b2c40baf", "@text:6a497009e8ee7549"],
+          "argument": "@review:source-notes/bytemuck-views.md#review-6119753468787605",
+          "evidence": ["@text:c41be0af72218a40", "@text:46e73804ba5f7f45"],
+          "items": [
+            {
+              "item": "bytemuck::bytes_of",
+              "implementation": "bytemuck::bytes_of",
+              "releases": "@shared:releases-24ad71b2858d8d2d",
+              "compatible_ranges": [{"lower": "1.16.3", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-24ad71b2858d8d2d"
+        }
+      ]
+    },
+    "bytemuck::try_from_bytes": {
+      "order": 65,
+      "profiles": [
+        {
+          "id": "bytemuck-reviewed",
+          "source": "bytemuck",
+          "conditions": ["@text:bf29fe3ca3c85512", "@text:f9fb0249dadf1ddf"],
+          "argument": "@review:source-notes/bytemuck-views.md#review-6a3879fc3666b87b",
+          "evidence": ["@text:fdb8dab2df628346", "@text:46e73804ba5f7f45"],
+          "items": [
+            {
+              "item": "bytemuck::try_from_bytes",
+              "implementation": "bytemuck::try_from_bytes",
+              "releases": "@shared:releases-65248404814f4eb3",
+              "compatible_ranges": [{"lower": "1.9.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-65248404814f4eb3"
+        }
+      ]
+    },
+    "bytemuck::zeroable::Zeroable::zeroed": {
+      "order": 66,
+      "profiles": [
+        {
+          "id": "bytemuck-reviewed",
+          "source": "bytemuck",
+          "conditions": ["@text:2d572138464fc015", "@text:7dae7d5931c3231c"],
+          "argument": "@review:source-notes/bytemuck-views.md#review-3b821bb56247500f",
+          "evidence": ["@text:67c8741daf104f3d", "@text:46e73804ba5f7f45"],
+          "items": [
+            {
+              "item": "bytemuck::zeroable::Zeroable::zeroed",
+              "implementation": "bytemuck::zeroable::Zeroable::zeroed",
+              "releases": "@shared:releases-e889229a1846d521",
+              "compatible_ranges": [{"lower": "0.1.0", "upper": "0.2.0"}, {"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-e889229a1846d521"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,3 @@
+# Family Codecs: borsh 0.10.4 and bytemuck 1.25.2.
+corpora = ["borsh_0_10_4", "bytemuck_1_25_2"]
+inputs = ["rust/common/borsh_de.rs", "rust/common/bytemuck_cases.rs"]

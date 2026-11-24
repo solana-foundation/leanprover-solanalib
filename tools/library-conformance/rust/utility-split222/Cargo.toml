@@ -1,0 +1,44 @@
+# Modeled dependencies use exact constraints; incidental packages resolve afresh.
+
+[package]
+name = "conformance-utility-split222"
+version = "0.1.0"
+edition = "2021"
+publish = false
+workspace = "../workspaces/profile-14"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-sysvar = { version = "=2.2.2", features = ["bincode"] }
+solana-rent = "=2.2.1"
+solana-sha256-hasher = "=2.3.0"
+solana-msg = "=2.2.1"
+pin-base64-0-22-1 = { package = "base64", version = "=0.22.1", default-features = false, optional = true }
+pin-bincode-1-3-3 = { package = "bincode", version = "=1.3.3", default-features = false, optional = true }
+pin-bs58-0-5-1 = { package = "bs58", version = "=0.5.1", default-features = false, optional = true }
+pin-bytemuck-1-22-0 = { package = "bytemuck", version = "=1.22.0", default-features = false, optional = true }
+pin-bytemuck_derive-1-10-2 = { package = "bytemuck_derive", version = "=1.10.2", default-features = false, optional = true }
+pin-digest-0-10-7 = { package = "digest", version = "=0.10.7", default-features = false, optional = true }
+pin-serde-1-0-228 = { package = "serde", version = "=1.0.228", default-features = false, optional = true }
+pin-serde_core-1-0-228 = { package = "serde_core", version = "=1.0.228", default-features = false, optional = true }
+pin-serde_derive-1-0-228 = { package = "serde_derive", version = "=1.0.228", default-features = false, optional = true }
+pin-sha2-0-10-9 = { package = "sha2", version = "=0.10.9", default-features = false, optional = true }
+pin-solana-account-info-2-3-0 = { package = "solana-account-info", version = "=2.3.0", default-features = false, optional = true }
+pin-solana-clock-2-2-2 = { package = "solana-clock", version = "=2.2.2", default-features = false, optional = true }
+pin-solana-cpi-2-2-1 = { package = "solana-cpi", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-define-syscall-2-3-0 = { package = "solana-define-syscall", version = "=2.3.0", default-features = false, optional = true }
+pin-solana-epoch-schedule-2-2-1 = { package = "solana-epoch-schedule", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-hash-2-3-0 = { package = "solana-hash", version = "=2.3.0", default-features = false, optional = true }
+pin-solana-instruction-2-2-1 = { package = "solana-instruction", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-instructions-sysvar-2-2-2 = { package = "solana-instructions-sysvar", version = "=2.2.2", default-features = false, optional = true }
+pin-solana-program-entrypoint-2-3-0 = { package = "solana-program-entrypoint", version = "=2.3.0", default-features = false, optional = true }
+pin-solana-program-error-2-2-2 = { package = "solana-program-error", version = "=2.2.2", default-features = false, optional = true }
+pin-solana-program-memory-2-3-1 = { package = "solana-program-memory", version = "=2.3.1", default-features = false, optional = true }
+pin-solana-pubkey-2-2-1 = { package = "solana-pubkey", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-sanitize-2-2-1 = { package = "solana-sanitize", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-sdk-ids-2-2-1 = { package = "solana-sdk-ids", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-serialize-utils-2-2-1 = { package = "solana-serialize-utils", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-stable-layout-2-2-1 = { package = "solana-stable-layout", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-stake-interface-1-2-1 = { package = "solana-stake-interface", version = "=1.2.1", default-features = false, optional = true }
+pin-solana-system-interface-1-0-0 = { package = "solana-system-interface", version = "=1.0.0", default-features = false, optional = true }

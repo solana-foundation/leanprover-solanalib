@@ -1,0 +1,2390 @@
+{
+  "abstractions": {
+    "contract-vocabulary": {
+      "order": 0,
+      "argument": "@review:source-notes/owned-dependencies.md#review-7802fce456a7d79d",
+      "limitations": ["@text:8626ced4877b281d"],
+      "source_ids": [],
+      "modules": {
+        "Solanalib.Specs.Core": "62aff9da84f91f7bd9b50b65532c97287cda80a1eff946b2c1377f0bdc74690a",
+        "Solanalib.Specs.Core.Outcome": "ea2b886827e08bef39794776acf57cc5befbaedf1f5f326cffdac56d65b0357b",
+        "Solanalib.Specs.Core.Family": "8452ba19feaa803fc62cd69e2a008ab6f753d054504b6e4111c31f2e040d9ec3",
+        "Solanalib.Contracts": "65f7929a24ce6a41c44cad6ba7fc58c077b84a567dea6a005cc815cc1fee5bcd",
+        "Solanalib.Contracts.Outcome": "481964fba0da62352b573369d1c0b7089c29860824e7a6d290fc25f17e4eed7f",
+        "Solanalib.Contracts.Family": "20bb43966ba41394c55a3b160449eade563811e071cfe6de29ff3ad122caf4a9"
+      }
+    },
+    "owned-dependencies-Owned": {
+      "order": 1,
+      "argument": "@review:source-notes/owned-dependencies.md#review-07fd65078cb915e2",
+      "limitations": "@shared:limitations-d7ceaa6935ff0000",
+      "source_ids": [],
+      "modules": {"Solanalib.Specs.Core.Owned": "f9960f5186397d9aef5101f599d7a37dfbf013319b62b94cc489f0a4bffe1197"}
+    },
+    "owned-dependencies-OwnedCleanup": {
+      "order": 2,
+      "argument": "@review:source-notes/owned-dependencies.md#review-dd55bb6df243bbae",
+      "limitations": "@shared:limitations-d7ceaa6935ff0000",
+      "source_ids": [],
+      "modules": {
+        "Solanalib.Specs.Core.OwnedCleanup": "e77246c74a88bc92dcc9434be69852fff2cba04277cf0a74c2508b60085a6b5a"
+      }
+    },
+    "owned-dependencies-OwnedFocus": {
+      "order": 3,
+      "argument": "@review:source-notes/owned-dependencies.md#review-fec411198fb144de",
+      "limitations": "@shared:limitations-d7ceaa6935ff0000",
+      "source_ids": [],
+      "modules": {"Solanalib.Specs.Core.OwnedFocus": "a138fe4b08464f9d54ea5f1cb9d65ff5ff97c36b1ba4c624891f55e11c29f060"}
+    },
+    "owned-dependencies-OwnedFocusFacts": {
+      "order": 4,
+      "argument": "@review:source-notes/owned-dependencies.md#review-54acac1468b29c10",
+      "limitations": "@shared:limitations-d7ceaa6935ff0000",
+      "source_ids": [],
+      "modules": {
+        "Solanalib.Specs.Core.OwnedFocusFacts": "42102548ee20988ed8fca16d97e97237ad092f2cf0833ff261e14e2b0fd2e5b0"
+      }
+    },
+    "owned-dependencies-OwnedVector": {
+      "order": 5,
+      "argument": "@review:source-notes/owned-dependencies.md#review-f58d5814097e9336",
+      "limitations": "@shared:limitations-d7ceaa6935ff0000",
+      "source_ids": [],
+      "modules": {"Solanalib.Specs.Core.OwnedVector": "645a77aff350b07780b2fdb643e2bc0db3d2be6213ba617d323bda58e0f93976"}
+    },
+    "callback-composition": {
+      "order": 6,
+      "argument": "@review:source-notes/owned-dependencies.md#review-1ad40f4e9cfe0bb9",
+      "limitations": ["@text:f2edb38f96e4518e", "@text:0627f245efe37789"],
+      "source_ids": [],
+      "modules": {
+        "Solanalib.Specs.Core.Callback": "2430d4a4afc77b6a6cf52679206b2822e829639f702ed68942effd40a0575907",
+        "Solanalib.Contracts.Callback": "0c430db86b48806bed6875a0d01a16624c15ec438ee5f12276cdda8b42454fd9"
+      }
+    },
+    "capability-bundles": {
+      "order": 7,
+      "argument": "@review:source-notes/owned-dependencies.md#review-4aae0103348b7a9d",
+      "limitations": ["@text:520c2c9da4094cbf", "@text:04171939ad29b5f0", "@text:dc22091b6e8bebb9"],
+      "source_ids": [],
+      "modules": {
+        "Solanalib.Specs.Core.Capabilities": "18378e363f928b8e6e39ef419bf9fd5ea817451a62b761ad1716db910dff72d9",
+        "Solanalib.Specs.Core.SupportingCapabilities": "7d0e3631726771be61beb0343ebadb7377be6d2d70a5ef009486269cba53b837",
+        "Solanalib.Specs.Core.Versioning": "3ea005e639c909feb654ce2bc28a5776db146c45ef6f16be83fa4529f2f01d17",
+        "Solanalib.Contracts.Capabilities": "7f68fca2adf1d4844a5b31fa05919023bb47a8e80a378846139e69f15cf64bdf",
+        "Solanalib.Contracts.Versioning": "a38b0c488b499e237fcdeaecdbd442a7b630b5e838338ea212947c4d0b6d311c"
+      }
+    },
+    "account-view-shared": {
+      "order": 8,
+      "argument": "@review:source-notes/owned-dependencies.md#review-2132ca4baf8a7dca",
+      "limitations": "@shared:limitations-c8482aeecf19d8e6",
+      "source_ids": ["solana-account-view@2.0.0::source"],
+      "modules": {
+        "Solanalib.Specs.Core.AccountView": "5155d879d4ebda0594693d5787d3590bc13f93a9a195783443e46bf31ed7bd65",
+        "Solanalib.Specs.Core.AccountViewData": "35d55d1ff2c2fb01780dbff29ede5dedfe255f2cf2512f8cd0280ee8ecf8f220",
+        "Solanalib.Specs.Core.AccountViewFacts": "2be3c69c90613731b45ad5f0628738580288ce1eb15ffc161699c7545d0e360d",
+        "Solanalib.Specs.Core.AccountViewGuard": "25b13f499ecaecee702a3f3a4586cd2e023b4e867666ad88d48572acad6586aa",
+        "Solanalib.Specs.Core.AccountViewLifecycle": "bcec1de8c409d99a104be4c6a5577b3a2676e6bccbf73761768bde52ef4f5731",
+        "Solanalib.Specs.Core.AccountViewMap": "d2ee9614c58d1e4a0ba901f47c96960606264c3c5f0084142cd0e297266697bc",
+        "Solanalib.Specs.Core.AccountViewMapLaws": "e9cfef56f90096c3200dbc471d5d02583e0638819690884fb43bded1d4be13f5",
+        "Solanalib.Specs.Core.AccountViewObservation": "b574af66974f2caccee218be978f113be4c50e56edb51e020d3525e688e536d2",
+        "Solanalib.Specs.Core.AccountViewProjection": "bab49a41a8988de36828462f6a17de2a432afd8d7512fa42a08dd3aa08332741",
+        "Solanalib.Specs.Core.AccountViewWitness": "aab275002245f99c92bec7ba9b372cf330c9e9ed8a2df87a3e0f1d049a7a3739"
+      }
+    },
+    "address-instruction-request-vocabulary": {
+      "order": 9,
+      "argument": "@review:source-notes/owned-dependencies.md#review-bbe607da5ac2a669",
+      "limitations": ["@text:a3d6e4f4477d7687", "@text:fb9c6055c104cabb"],
+      "source_ids": [
+        "value-request::solana-address-2.6.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/syscalls.rs",
+        "value-request::solana-instruction-view-2.1.0::src/lib.rs",
+        "value-request::solana-instruction-view-2.1.0::src/cpi.rs",
+        "value-request::pinocchio-system-0.6.0::src/lib.rs",
+        "value-request::pinocchio-system-0.6.0::src/instructions/allocate.rs",
+        "value-request::pinocchio-system-0.6.0::src/instructions/assign.rs",
+        "value-request::pinocchio-system-0.6.0::src/instructions/transfer.rs",
+        "value-request::pinocchio-associated-token-account-0.4.0::src/lib.rs",
+        "value-request::pinocchio-associated-token-account-0.4.0::src/instructions/create_idempotent.rs",
+        "value-request::borsh-1.6.1::src/ser/mod.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.Address": "b0e746c5a7255b0b6b44a2ea7f3793bacfdd0e2b9241917cea8c3afad4271b94",
+        "Solanalib.Specs.Core.Instruction": "1904b07945bab57e919c9469a1a0bea3920bc2f382a647fcc30a6324b141a6c2",
+        "Solanalib.Specs.Core.CpiRequest": "88a11cc14415656a9d96cd931bfdc8b4887610a182c2b7b092b5e05643438cd5",
+        "Solanalib.Specs.Core.AddressSyscall": "b03095a8a4f9f3088964c4e65e68243883c0cdd44dc5ff0abe5a84ed32f7f992",
+        "Solanalib.Specs.Core.AddressSyscallFamily": "9b8691aae0139962e5016876be638b3c5b68612823c2eb9eccada04b821cbae6",
+        "Solanalib.Specs.Core.AddressSyscallSample": "10620c0cf3af98a815a73fd2042f38085bf36ee864650031926b7c58f9b8220d"
+      }
+    },
+    "checked-instruction-view-array": {
+      "order": 10,
+      "argument": "@review:source-notes/owned-dependencies.md#review-6e4b6aca41513edd",
+      "limitations": "@shared:limitations-86341282deaeda87",
+      "source_ids": ["value-request::solana-instruction-view-2.1.0::src/cpi.rs", "solana-account-view@2.0.0::source"],
+      "modules": {
+        "Solanalib.Specs.Core.CpiRequestChecked": "88cb5ccad7973b28c38693cd2ef086d281f2749bc3e27ebcf36608332f98bfab",
+        "Solanalib.Specs.Core.CpiRequestCheckedFacts": "32d3d47d9a6591d3c04ac227582391541429499ebb87059655d7b5b882ba50c4",
+        "Solanalib.Specs.Core.CpiRequestCheckedFamily": "b906781447acbf7b98d0c34921e4953c995671e39623bb139e331deaf316b585",
+        "Solanalib.Specs.Core.CpiRequestCheckedWitness": "5ed6335a324aa0f6b59ccab3b56a569b9d80343a3b344d0a810dc7a33f332c23"
+      }
+    },
+    "edwards-validation-protocol": {
+      "order": 11,
+      "argument": "@review:source-notes/owned-dependencies.md#review-48e21407adf8bf90",
+      "limitations": ["@binding:66f4d76aecf1d8fb", "@binding:aedf68b7ebcba974"],
+      "source_ids": [
+        "root-extra::solana-curve25519-3.1.12::src/edwards.rs",
+        "root-extra::solana-curve25519-3.1.12::src/curve_syscall_traits.rs"
+      ],
+      "modules": {"Solanalib.Specs.Core.Curve": "2e322e13c3f3c07725a4f2cbef968c64081b56787aeb9092c4568c8a6aa6df9a"}
+    },
+    "pinocchio-token-0.6.0-batch-models": {
+      "order": 12,
+      "argument": "@review:source-notes/owned-dependencies.md#review-ba66d22b895f89ef",
+      "limitations": ["@text:52ba7ecf3c1761cf", "@text:503b3b1f219fa59c", "@text:747563800c0403c3"],
+      "source_ids": [
+        "batch-source:pinocchio-token-0.6.0:src/instructions/batch.rs",
+        "batch-source:pinocchio-token-0.6.0:src/instructions/transfer_checked.rs",
+        "batch-source:pinocchio-token-0.6.0:src/lib.rs",
+        "batch-source:solana-instruction-view-2.1.0:src/cpi.rs",
+        "batch-source:solana-instruction-view-2.1.0:src/lib.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenInstructionBatch": "39d7bf56fe851f56b51bb9b8d55db6cc7eace0f5df513590da056415265cc460",
+        "Solanalib.Specs.Core.TokenInstructionBatchRun": "f2ea0c680413d0fcf931a7070c9e27a4ad8ee77cf4ab34bdeb48bf892cee7de6",
+        "Solanalib.Specs.Core.TokenInstructionBatchProperties": "03accf509dc050753b0ea12afb405cabe8580e84d6c37560a6f8e7a1aa633e1d",
+        "Solanalib.Specs.Core.TokenInstructionBatchWitness": "a506f1610f1f358d6f25a871087cc8d4f7171b2915be8ecc5f5e937e02959d10"
+      }
+    },
+    "pinocchio-token-2022-0.3.1-local-instructions": {
+      "order": 13,
+      "argument": "@review:source-notes/owned-dependencies.md#review-cae6fbc653b75319",
+      "limitations": "@shared:limitations-86341282deaeda87",
+      "source_ids": [
+        "pinocchio-token-2022-0.3.1-lib",
+        "pinocchio-token-2022-0.3.1-instructions-close-account",
+        "pinocchio-token-2022-0.3.1-instructions-transfer-checked",
+        "value-request::solana-instruction-view-2.1.0::src/cpi.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenRequest": "9fb37987b6cd7f6fff43f21243c3c841d2ce0ba8ddf6284abc2b66fdd32844de"
+      }
+    },
+    "program-error-values": {
+      "order": 14,
+      "argument": "@review:source-notes/owned-dependencies.md#review-207bfec44f28598e",
+      "limitations": ["@text:82acfbaaf707bc65", "@text:e3be6f29ce44cd74"],
+      "source_ids": ["solana-program-error-3.0.1::src/lib.rs"],
+      "modules": {
+        "Solanalib.Specs.Core.ProgramError": "22f0b1ac370b4edddd7715b7818103483c39409ecf9b437c5a6c8c88d96811d8"
+      }
+    },
+    "shared-borrow-guard-lifecycle": {
+      "order": 15,
+      "argument": "@review:source-notes/owned-dependencies.md#review-ae13fe7197748fbd",
+      "limitations": [
+        "@text:754e12f6479752b2",
+        "@text:e12ca07f93530f0c",
+        "@text:b346fb95b121076d",
+        "@text:e63a916b1bbb9af3",
+        "@text:000c694ba76f8bf8",
+        "@text:5df0fa01171b15b4",
+        "@text:c7cb52499be26a82"
+      ],
+      "source_ids": [],
+      "modules": {
+        "Solanalib.Specs.Core.Borrow": "652a9148406f21b73139a4ec6eca64e3a5e5b0eb2f7c48e5e289182a81f15fda",
+        "Solanalib.Specs.Core.BorrowFacts": "5cd17aa9aa85052fbf22a483459f997281ff0949f5b66050faab6658bef553d8",
+        "Solanalib.Specs.Core.BorrowHistory": "626080034fd068a30cdb5da384e77857bd29cba7da2fd105153346ccf38fbb76",
+        "Solanalib.Specs.Core.BorrowValid": "6aaa706364fcc920f9f38c78c1209f8ca1001f59bb2ef51c03c194892989b2ab",
+        "Solanalib.Specs.Core.BorrowMap": "26793a4a68551ab73bff497a0288a7e46fd8388bc7f20f3d505ef2e07928177e",
+        "Solanalib.Specs.Core.BorrowMapLaws": "a4b8d34b4f66bb8ba96df67f66c02153fa2b437b329068072a3574a498ecfee6",
+        "Solanalib.Specs.Core.BorrowCompatibility": "fc32c87173fb3caf2aebc35bf87cba001abd1a6a7aea21feeda0b17f6d8a8562",
+        "Solanalib.Specs.Core.BorrowLifecycle": "a2071923ed619b9c6599fb4bd4cbe9abc56cbb806613f705c14f7a5ea3b9868e"
+      }
+    },
+    "sysvars::module::Solanalib.Specs.Core.Borsh": {
+      "order": 16,
+      "argument": "@review:source-notes/owned-dependencies.md#review-ca5cdb03d4ef3c11",
+      "limitations": ["@binding:2bdd10cfed4f63a1", "@binding:7c831c1e0b4de3a2"],
+      "source_ids": ["value-request::borsh-1.6.1::src/ser/mod.rs"],
+      "modules": {"Solanalib.Specs.Core.Borsh": "cc32cd6089db01bb485c0c4c39cec01e71509b32e94c77eea445fb9c7e32bb10"}
+    },
+    "sysvars::module::Solanalib.Specs.Core.InstructionsSysvar": {
+      "order": 17,
+      "argument": "@review:source-notes/owned-dependencies.md#review-d6059dbfe2d32ac4",
+      "limitations": ["@binding:2bdd10cfed4f63a1", "@binding:d282988771a2fb4f"],
+      "source_ids": ["sysvars::pinocchio-0.11.1::src/sysvars/instructions.rs"],
+      "modules": {
+        "Solanalib.Specs.Core.InstructionsSysvar": "4e550f383c5caeed04fb49cc353f13643aa727d38c13a143c3067095c0a29c70"
+      }
+    },
+    "sysvars::module::Solanalib.Specs.Core.InstructionsSysvarGeneric": {
+      "order": 18,
+      "argument": "@review:source-notes/owned-dependencies.md#review-cea4ab5cafb15798",
+      "limitations": ["@binding:2bdd10cfed4f63a1", "@binding:7c831c1e0b4de3a2", "@binding:d282988771a2fb4f"],
+      "source_ids": ["sysvars::pinocchio-0.11.1::src/sysvars/instructions.rs"],
+      "modules": {
+        "Solanalib.Specs.Core.InstructionsSysvarGeneric": "569423b935145d1cf8e3bab420a15b3a75e2c131603311b2144279743005d12c"
+      }
+    },
+    "sysvars::module::Solanalib.Specs.Core.Sysvar": {
+      "order": 19,
+      "argument": "@review:source-notes/owned-dependencies.md#review-a5deeeab83931dd0",
+      "limitations": ["@binding:2bdd10cfed4f63a1", "@binding:7c831c1e0b4de3a2"],
+      "source_ids": [
+        "sysvars::pinocchio-0.11.1::src/sysvars/mod.rs",
+        "sysvars::pinocchio-0.11.1::src/sysvars/clock.rs",
+        "sysvars::pinocchio-0.11.1::src/sysvars/rent.rs"
+      ],
+      "modules": {"Solanalib.Specs.Core.Sysvar": "de3338517a016efaf6ac2913e7c29e856e5ac62bdd7bfe9a18bd62bef9526e93"}
+    },
+    "sysvars::module::Solanalib.Specs.Core.SysvarAccount": {
+      "order": 20,
+      "argument": "@review:source-notes/owned-dependencies.md#review-3a23beaba76344a2",
+      "limitations": ["@binding:2bdd10cfed4f63a1", "@binding:15c59e5e680dd420"],
+      "source_ids": ["sysvars::pinocchio-0.11.1::src/sysvars/rent.rs"],
+      "modules": {
+        "Solanalib.Specs.Core.SysvarAccount": "6ea37f309209a49e2a4ffb406dff01fc37d560e4ddd22c4e39913304bdafae35"
+      }
+    },
+    "sysvars::module::Solanalib.Specs.Core.SysvarRent": {
+      "order": 21,
+      "argument": "@review:source-notes/owned-dependencies.md#review-e91b0898abbd0ccb",
+      "limitations": ["@binding:2bdd10cfed4f63a1", "@text:7fe5c3fe00e23196"],
+      "source_ids": ["sysvars::pinocchio-0.11.1::src/sysvars/rent.rs"],
+      "modules": {"Solanalib.Specs.Core.SysvarRent": "8cc0f32473ac38b9c99f25e40a626805c953015c9bfbccc71ca8da0dfc841f10"}
+    },
+    "token-instruction-values": {
+      "order": 22,
+      "argument": "@review:source-notes/owned-dependencies.md#review-bfee0c153c5ae46b",
+      "limitations": ["@binding:73cfb3cbae7ec412", "@binding:157f977863257615"],
+      "source_ids": [
+        "pinocchio-token-2022-0.3.1-lib",
+        "pinocchio-token-2022-0.3.1-instructions-close-account",
+        "pinocchio-token-2022-0.3.1-instructions-transfer-checked",
+        "batch-source:pinocchio-token-0.6.0:src/lib.rs",
+        "batch-source:pinocchio-token-0.6.0:src/instructions/transfer_checked.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenInstruction": "08bbb026a98f3ffb571b5d8bdb82cd2d2d9893b6e1ad835f7d35c59552a4548c"
+      }
+    },
+    "token-state-Token": {
+      "order": 23,
+      "argument": "@review:source-notes/owned-dependencies.md#review-a32b5e0b347d438c",
+      "limitations": "@shared:limitations-ee8f125bd4ec4b7a",
+      "source_ids": [
+        "pinocchio-token-0.6.0-lib",
+        "pinocchio-token-2022-0.3.1-lib",
+        "pinocchio-token-0.6.0-state-account-state",
+        "pinocchio-token-2022-0.3.1-state-account-state"
+      ],
+      "modules": {"Solanalib.Specs.Core.Token": "a1c408b6bf9251f53976b042b62cc9f07e5de50a0ba74c4267e9c710f31d7e61"}
+    },
+    "token-state-TokenState": {
+      "order": 24,
+      "argument": "@review:source-notes/owned-dependencies.md#review-0cce7c30ed79210e",
+      "limitations": "@shared:limitations-ee8f125bd4ec4b7a",
+      "source_ids": [
+        "pinocchio-token-0.6.0-state-account",
+        "pinocchio-token-0.6.0-state-mint",
+        "pinocchio-token-0.6.0-state-account-state",
+        "pinocchio-token-0.6.0-state-mod",
+        "pinocchio-token-2022-0.3.1-state-account",
+        "pinocchio-token-2022-0.3.1-state-mint",
+        "pinocchio-token-2022-0.3.1-state-account-state",
+        "pinocchio-token-2022-0.3.1-state-mod",
+        "spl-token-2022-interface-3.1.1-state",
+        "spl-token-2022-interface-3.1.1-pod",
+        "solana-program-pack-3.1.0-lib"
+      ],
+      "modules": {"Solanalib.Specs.Core.TokenState": "db6152a065b722edb19817ca8d189bfdd311fa801fb4d50ea241d10d397bed1d"}
+    },
+    "token-state-TokenStateBorrow": {
+      "order": 25,
+      "argument": "@review:source-notes/owned-dependencies.md#review-e66c183efd3366da",
+      "limitations": "@shared:limitations-ee8f125bd4ec4b7a",
+      "source_ids": [
+        "pinocchio-token-0.6.0-state-account",
+        "pinocchio-token-0.6.0-state-mint",
+        "pinocchio-token-0.6.0-state-account-state",
+        "pinocchio-token-0.6.0-state-mod",
+        "pinocchio-token-2022-0.3.1-state-account",
+        "pinocchio-token-2022-0.3.1-state-mint",
+        "pinocchio-token-2022-0.3.1-state-account-state",
+        "pinocchio-token-2022-0.3.1-state-mod"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenStateBorrow": "4f9cbbcf31e91828d787a33c5dbe0cf86b66f09d32c7d684aae9cc8ff344de3f"
+      }
+    },
+    "token-state-TokenStateContracts": {
+      "order": 26,
+      "argument": "@review:source-notes/owned-dependencies.md#review-0a0c246fac677b18",
+      "limitations": "@shared:limitations-ee8f125bd4ec4b7a",
+      "source_ids": [
+        "pinocchio-token-0.6.0-state-account",
+        "pinocchio-token-0.6.0-state-mint",
+        "pinocchio-token-0.6.0-state-account-state",
+        "pinocchio-token-0.6.0-state-mod",
+        "pinocchio-token-2022-0.3.1-state-account",
+        "pinocchio-token-2022-0.3.1-state-mint",
+        "pinocchio-token-2022-0.3.1-state-account-state",
+        "pinocchio-token-2022-0.3.1-state-mod"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenStateContracts": "875c2029e85d063f5e18a47f38a1ca439f953f70b7d4ec64f8c8c74614db40cd"
+      }
+    },
+    "token-state-TokenStateFacts": {
+      "order": 27,
+      "argument": "@review:source-notes/owned-dependencies.md#review-217bf1f8eaa0f760",
+      "limitations": "@shared:limitations-ee8f125bd4ec4b7a",
+      "source_ids": [],
+      "modules": {
+        "Solanalib.Specs.Core.TokenStateFacts": "876110fc262f09088621e5d64b39b10922f502e625d991cc8f3cdaae431d9c92"
+      }
+    },
+    "account-info-anchor-function-models": {
+      "order": 28,
+      "argument": "@review:source-notes/owned-dependencies.md#review-b0a061492bde475d",
+      "limitations": ["@text:82acfbaaf707bc65", "@text:cfcf69334da190e5", "@text:4b89796d0fbdad1b", "@text:0729e0191b5277d8"],
+      "source_ids": [
+        "solana-account-info-3.1.1::src/lib.rs",
+        "anchor-lang-1.0.2::src/accounts/account.rs",
+        "anchor-lang-1.0.2::src/accounts/interface_account.rs",
+        "anchor-lang-1.0.2::src/accounts/interface.rs",
+        "anchor-lang-1.0.2::src/accounts/account_loader.rs",
+        "anchor-lang-1.0.2::src/accounts/signer.rs",
+        "anchor-lang-1.0.2::src/accounts/account_info.rs",
+        "anchor-lang-1.0.2::src/lib.rs",
+        "anchor-spl-1.0.2::src/token.rs",
+        "anchor-spl-1.0.2::src/token_interface.rs",
+        "anchor-error-values-1.0.2",
+        "anchor-context-1.0.2",
+        "solana-program-error-3.0.1::src/lib.rs",
+        "anchor-syn-1.0.2::src/codegen/error.rs",
+        "anchor-spl-1.0.2::Cargo.toml"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.AccountInfo": "726bfc45ead5c523bcd3e849d2ce29784aab44cb9ee05163ee54b541deb95c50",
+        "Solanalib.Specs.Core.AccountInfoContracts": "4d69c02c8cd170986dfe19b8f0d5bd88b0a34dc4f59f76748e06e2339bb363e3",
+        "Solanalib.Specs.Core.AccountInfoDataAdmission": "01ca997bd8f536cca5bdd6640222f4acd66c7c8e98fd350d6e805ce111c32d32",
+        "Solanalib.Specs.Core.AccountInfoFacts": "fcbe1d39dc11821309f530bca6d810d03a79da2cd2e2f61848e3acb11924cfe4",
+        "Solanalib.Specs.Core.AccountInfoGuardCallback": "958bd8a80ebfd500b305398de1e60727b29606699ce76b0940d78723e0992b3e",
+        "Solanalib.Specs.Core.AccountInfoRc": "8960771f4e7bd4b539158b2176bca835969c18d732c3909ec797309d1f6ef2a8",
+        "Solanalib.Specs.Core.AnchorAccount": "9ce88e0a6817e65f8d854b32f1d1f7704415f1096c696ebdc5f5ab359d23a94a",
+        "Solanalib.Specs.Core.AnchorConstruct": "9163b8b7309a31ce560548d15b98daa427be01dc92213d4066715c301988ab84",
+        "Solanalib.Specs.Core.AnchorConstructOwned": "e078601376d6fa5a6ce34f11c120c9758a19025229b9d9a3c507fd6d15a02bc8",
+        "Solanalib.Specs.Core.AnchorContext": "343bf68fac682b5051a7f3dda67910f02bf2ed6ac97995552ce1c7104e204305",
+        "Solanalib.Specs.Core.AnchorContextOwned": "659e9ec06f4cb154cf5398acfb1bf9905155a9435b148317ccdad46347068f80",
+        "Solanalib.Specs.Core.AnchorEffects": "b14a3289b874acd863ede95d6b807dbffaa8da9192385fce1a718468bb007daf",
+        "Solanalib.Specs.Core.AnchorError": "7011851cba6d2f1b6b1ce89acd597e493b88894392e53970634eec2d8b6fcea5",
+        "Solanalib.Specs.Core.AnchorErrorCallbacks": "1aaa5179565fcdd760884aa827edfce20ecb38ee9e36099a177e31880a4fa2e8",
+        "Solanalib.Specs.Core.AnchorErrorOwned": "2afeb3cc3d76b48535692702c5d3c4c24b64bbea3fa757005b36aef717e16b32",
+        "Solanalib.Specs.Core.AnchorErrorOwnedAssignment": "92cbaf41b60ce07fd92ed085a1c3c0b1992332d3e4afde2afbb1ad47e1e14f08",
+        "Solanalib.Specs.Core.AnchorErrorOwnedCallbackAdmission": "7aaae07ba41a1f3107e8389021c953534ed74d6e0fcbdf06d4e001fc7debffef",
+        "Solanalib.Specs.Core.AnchorErrorOwnedCallbackContracts": "4a94ed91f10ef1707908c312d56a3ba42dde9357144ffa2e4e35e4494bd2ca03",
+        "Solanalib.Specs.Core.AnchorErrorOwnedCallbacks": "a2281132121a4303fbe561ab352d9f3085f1479f5a4ce4b05cd3c30c6a34ad05",
+        "Solanalib.Specs.Core.AnchorErrorOwnedContracts": "f523fa0727b0f74ae3c9f03335cbe941641ff27db3493f148ba83431bff68a67",
+        "Solanalib.Specs.Core.AnchorErrorOwnedFacts": "fbb6a3ec142405dd648f73ab5351e369044c80f935dd805c27527d9fdb1463a8",
+        "Solanalib.Specs.Core.AnchorErrorOwnedLaws": "623d370f808aed9b518ca6b43d259be0ee29ff2a2ec305d32e1fbb426d60c310",
+        "Solanalib.Specs.Core.AnchorErrorOwnedReference": "142a11acc3422a1f10bf8e6bf5907a193a9fcd371a69ffeb1008cbf40941c2d7",
+        "Solanalib.Specs.Core.AnchorErrorOwnedReferenceLaws": "0049e7522c88fa6fd44b5dba059fc9cc6cc973b52031b3fb1b309f420a2051a8",
+        "Solanalib.Specs.Core.AnchorErrorOwnedTransport": "d6ce5ebba5dd42f3c884fe0d356075c397243f9c20f0cf61345a066d68e65c93",
+        "Solanalib.Specs.Core.AnchorGuardEffects": "c521c82cd39809c9772e3098aeb6fdbf8f08d0ae5f9d7e706c789e3d82f0bfa3",
+        "Solanalib.Specs.Core.AnchorLoading": "c670a8c20a07c1d67916a98a50ab7f683b5d0f16525d4fced4f9800321e6bd8e",
+        "Solanalib.Specs.Core.AnchorLoadingOwned": "62eefd0c6246208c8b233aaa619eb334b2febb589b04afc5525e3e0aa0fdf505",
+        "Solanalib.Specs.Core.AnchorLog": "2fe8da9bd2ecb957eb3c1c532b977cea891ae4a8a908a7e32fcb4d0ce99c6c34",
+        "Solanalib.Specs.Core.AnchorOwnedSamples": "e959adbc66cffb88180832a02619dad663126a7b73fc532eb44a7fe1f8eb2156",
+        "Solanalib.Specs.Core.AnchorSpl": "9c56edbbf579661b9926a2600054fcfe0a717bbc5ea66a2bac7ddaffca696366",
+        "Solanalib.Specs.Core.AnchorSplAmountOwned": "ac0d4308a6d1b4d4c150aee07d67c5f7c1de3b22e60fb8ffa6e10fd83717b2cf",
+        "Solanalib.Specs.Core.AnchorSplTransferOwned": "e688e8e7717f6bd8f98bb8306d57701f235d9251927015e9c28579dd3192a471",
+        "Solanalib.Specs.Core.AnchorSplTransferResources": "3c7d7803160ab81d2c6103a091c6fc24014e5bec1f4df66e35d0b0237d9dd432",
+        "Solanalib.Specs.Core.AnchorSplTransferSample": "af385d2280730c64f6c5d01ded5a9fecd50dfe342d6b87faaae4836e26c84510",
+        "Solanalib.Specs.Core.AnchorSplTransferVectorSample": "598d5e900841ee3be4b6cdbe04cd8522b06b7327aef5f539419f52cc38e37779",
+        "Solanalib.Specs.Core.AnchorToInfo": "2639dc435d842bcd85ee3bd6473fe7899d1e5f1d277515b84c58f98a78b2a83a"
+      }
+    },
+    "root-extra::pyth_solana_receiver_sdk_2_0_0": {
+      "order": 29,
+      "argument": "@review:source-notes/owned-dependencies.md#review-8e7a02e6d145aae8",
+      "limitations": ["@binding:94d82941a618889f", "@binding:142c76ae14e92655", "@text:517b2e3b9a0ed73f"],
+      "source_ids": [
+        "root-extra::pyth-solana-receiver-sdk-2.0.0::src/price_update.rs",
+        "root-extra::pyth-solana-receiver-sdk-2.0.0::src/error.rs",
+        "root-extra::pythnet-sdk-3.0.0::src/messages.rs",
+        "codecs::borsh-1.6.1::src/de/mod.rs"
+      ],
+      "modules": {"Solanalib.Specs.Core.OraclePyth": "841bd20e17f194b5bcaeeae97ddabc7b55688e70042ebdbfadc955daef800980"}
+    },
+    "root-extra::switchboard_on_demand_0_12_1": {
+      "order": 30,
+      "argument": "@review:source-notes/owned-dependencies.md#review-16b8ab7237839656",
+      "limitations": ["@binding:462e2f49be94cd57", "@binding:308202f8b78687ec"],
+      "source_ids": [
+        "root-extra::switchboard-on-demand-0.12.1::src/on_demand/accounts/pull_feed.rs",
+        "root-extra::switchboard-on-demand-0.12.1::src/on_demand/error.rs",
+        "root-extra::bytemuck-1.25.0::src/lib.rs",
+        "root-extra::bytemuck-1.25.0::src/internal.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.OracleSwitchboard": "f53c3081109428ab7ea8f8c8cd08eacedf0eafa7b3c98cc63391bf9c6247aec0"
+      }
+    },
+    "shared-owned-array-construction": {
+      "order": 31,
+      "argument": "@review:source-notes/owned-dependencies.md#review-d5de003a6b2c3ead",
+      "limitations": [
+        "@text:984e4b17dc3882f5",
+        "@text:ecdb5960adc0da1d",
+        "@text:eed824519a55619d",
+        "@text:bf925d77d346de12",
+        "@text:3c5443f78ac5cb1d",
+        "@text:ec8ffdecb8cf48d8"
+      ],
+      "source_ids": [],
+      "modules": {
+        "Solanalib.Specs.Core.OwnedArray": "9980842e76e9d28782241a2faf47a5cac2b210371d64e7d5e083ff8234f08b49",
+        "Solanalib.Specs.Core.OwnedArrayContracts": "715be122107059c8883a277ad9235ab9c002343ef7874414576c4a8731fe2cfd",
+        "Solanalib.Specs.Core.OwnedArrayFacts": "696d0aa2ea28c2cbdd2ee347a1fb8c6b335425979b8751dd92441373858307a7",
+        "Solanalib.Specs.Core.OwnedArrayLaws": "339dc35c3cbf01104855999aca42fe66f69f7fefb5ba29a2f9d41a562203e94c",
+        "Solanalib.Specs.Core.OwnedArrayProgress": "9e08e5becee7d773f0868c57c04bfa007ea6b2a2989ee03050218f9afdb6daa8",
+        "Solanalib.Specs.Core.OwnedArrayReference": "73a67f42f89ed26faa31d94b2b47e384e75f3b65c50d8b2b930360c615ae52d8"
+      }
+    },
+    "sysvars::module::Solanalib.Specs.Core.BorshUnchecked": {
+      "order": 32,
+      "argument": "@review:source-notes/owned-dependencies.md#review-14d16b02bd55ffaf",
+      "limitations": ["@binding:2bdd10cfed4f63a1", "@binding:7c831c1e0b4de3a2"],
+      "source_ids": ["sysvars::solana-borsh-3.0.2::src/macros.rs", "sysvars::solana-borsh-3.0.2::src/v1.rs"],
+      "modules": {
+        "Solanalib.Specs.Core.BorshUnchecked": "c7fa2e0ac14a8d10641265a5f7fedf456cba92afdaded84e8715c87a5195d940"
+      }
+    },
+    "sysvars::module::Solanalib.Specs.Core.Float64": {
+      "order": 33,
+      "argument": "@review:source-notes/owned-dependencies.md#review-08172d047fa30fc6",
+      "limitations": ["@binding:2bdd10cfed4f63a1", "@binding:28e35fd0e9f93d35"],
+      "source_ids": ["sysvars::solana-rent-3.0.0::src/lib.rs"],
+      "modules": {"Solanalib.Specs.Core.Float64": "aab5e4cf93cc952cf1e0477928a902be6c30600610ac76c610201cd538b383bd"}
+    },
+    "sysvars::module::Solanalib.Specs.Core.Log": {
+      "order": 34,
+      "argument": "@review:source-notes/owned-dependencies.md#review-0e1dbaff05908623",
+      "limitations": ["@binding:2bdd10cfed4f63a1", "@binding:7c831c1e0b4de3a2"],
+      "source_ids": ["sysvars::solana-msg-3.1.0::src/lib.rs", "sysvars::solana-program-4.0.0::src/log.rs"],
+      "modules": {"Solanalib.Specs.Core.Log": "9511de9cb6e204ae8ded947d0adc0f3266b1d61144033810692dd27ed4b3d69b"}
+    },
+    "sysvars::module::Solanalib.Specs.Core.SysvarRentArithmetic": {
+      "order": 35,
+      "argument": "@review:source-notes/owned-dependencies.md#review-41d7b694b81c9d9e",
+      "limitations": ["@binding:2bdd10cfed4f63a1", "@binding:28e35fd0e9f93d35"],
+      "source_ids": ["sysvars::solana-rent-3.0.0::src/lib.rs"],
+      "modules": {
+        "Solanalib.Specs.Core.SysvarRentArithmetic": "a2e6c21c7f80f8ea9bb57be312e17cf6cfe5b73429ef0c637760921698c1f318"
+      }
+    },
+    "sysvars::module::Solanalib.Specs.Core.SysvarSdk": {
+      "order": 36,
+      "argument": "@review:source-notes/owned-dependencies.md#review-d822720f764feee2",
+      "limitations": ["@binding:2bdd10cfed4f63a1", "@binding:7c831c1e0b4de3a2"],
+      "source_ids": [
+        "sysvars::solana-sysvar-3.1.1::src/lib.rs",
+        "sysvars::solana-sysvar-3.1.1::src/clock.rs",
+        "sysvars::solana-sysvar-3.1.1::src/rent.rs"
+      ],
+      "modules": {"Solanalib.Specs.Core.SysvarSdk": "24e2f09b5dbda5d33626f71a52f7e51091ca8d021d831cc2d8644dc8baa60465"}
+    },
+    "token-collect-TokenRequestAllocatedCollect": {
+      "order": 37,
+      "argument": "@review:source-notes/owned-dependencies.md#review-0ee7a6916d560ada",
+      "limitations": "@shared:limitations-05cbf1033ec5ab11",
+      "source_ids": ["spl-tlv-account-resolution-0.11.1-state"],
+      "modules": {
+        "Solanalib.Specs.Core.TokenRequestAllocatedCollect": "6343c927f91c10590cb95d37f21345577f01c6fb84ddc38fb78be8b8fb5998f4"
+      }
+    },
+    "token-collect-TokenRequestAllocatedCollectFacts": {
+      "order": 38,
+      "argument": "@review:source-notes/owned-dependencies.md#review-ba99fca9a389bca3",
+      "limitations": "@shared:limitations-05cbf1033ec5ab11",
+      "source_ids": ["spl-tlv-account-resolution-0.11.1-state"],
+      "modules": {
+        "Solanalib.Specs.Core.TokenRequestAllocatedCollectFacts": "3e6d8347f3e3cc9468802b8ea066b646329b9111b85917202326282a9923969e"
+      }
+    },
+    "token-collect-TokenRequestAllocatedCollectFrame": {
+      "order": 39,
+      "argument": "@review:source-notes/owned-dependencies.md#review-4450dc166163ceb5",
+      "limitations": "@shared:limitations-05cbf1033ec5ab11",
+      "source_ids": ["spl-tlv-account-resolution-0.11.1-state"],
+      "modules": {
+        "Solanalib.Specs.Core.TokenRequestAllocatedCollectFrame": "a05b8da8a41d1d83ee30cb9a2df9ea2c5356fd075d4c75fd388abde6daee5f56"
+      }
+    },
+    "token-collect-TokenRequestAllocatedCollectProtocol": {
+      "order": 40,
+      "argument": "@review:source-notes/owned-dependencies.md#review-0a45275cec1f7985",
+      "limitations": "@shared:limitations-05cbf1033ec5ab11",
+      "source_ids": ["spl-tlv-account-resolution-0.11.1-state"],
+      "modules": {
+        "Solanalib.Specs.Core.TokenRequestAllocatedCollectProtocol": "97bf4196315892597daf0d207084e92b6a3c980752f405e00c651de1703feb3f"
+      }
+    },
+    "token-collect-TokenRequestAllocatedCollectReference": {
+      "order": 41,
+      "argument": "@review:source-notes/owned-dependencies.md#review-ae2358a58ae78ad2",
+      "limitations": "@shared:limitations-05cbf1033ec5ab11",
+      "source_ids": ["spl-tlv-account-resolution-0.11.1-state"],
+      "modules": {
+        "Solanalib.Specs.Core.TokenRequestAllocatedCollectReference": "0e4edb658a2a858b6fc34bce18a650263a133e4587bfc1b19bee94099db0339e"
+      }
+    },
+    "token-extension-base-observation-3.1.1": {
+      "order": 42,
+      "argument": "@review:source-notes/owned-dependencies.md#review-42a32a7208cb9daf",
+      "limitations": "@shared:limitations-3c8ab747086ef07c",
+      "source_ids": [
+        "spl-token-2022-interface-3.1.1-extensions",
+        "spl-token-2022-interface-3.1.1-state",
+        "spl-token-2022-interface-3.1.1-pod",
+        "solana-program-pack-3.1.0-lib"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenExtensionState": "ecf1bca4d3124907493f48d160f1feb7107743e7a0c026602768dd9f23ceddef"
+      }
+    },
+    "token-extension-byte-layouts-3.1.1": {
+      "order": 43,
+      "argument": "@review:source-notes/owned-dependencies.md#review-c69374e5dd0da3cd",
+      "limitations": "@shared:limitations-3c8ab747086ef07c",
+      "source_ids": [
+        "spl-token-2022-interface-3.1.1-extensions",
+        "spl-token-2022-interface-3.1.1-account-len",
+        "spl-token-2022-interface-3.1.1-pod",
+        "spl-token-2022-interface-3.1.1-state",
+        "spl-token-2022-interface-3.1.1-error",
+        "spl-token-group-interface-0.7.2-state",
+        "solana-zk-sdk-pod-0.1.2-lib",
+        "solana-zk-sdk-pod-0.1.2-encryption",
+        "solana-zk-sdk-pod-0.1.2-elgamal",
+        "solana-zk-sdk-pod-0.1.2-auth-encryption",
+        "fee-unaligned-1.2.0",
+        "fee-nullable-1.3.0",
+        "fee-address-2.6.1",
+        "spl-token-2022-interface-3.1.1-extension-confidential-mint-burn",
+        "spl-token-2022-interface-3.1.1-extension-confidential-transfer",
+        "spl-token-2022-interface-3.1.1-extension-confidential-transfer-fee",
+        "spl-token-2022-interface-3.1.1-extension-cpi-guard",
+        "spl-token-2022-interface-3.1.1-extension-default-account-state",
+        "spl-token-2022-interface-3.1.1-extension-group-member-pointer",
+        "spl-token-2022-interface-3.1.1-extension-group-pointer",
+        "spl-token-2022-interface-3.1.1-extension-interest-bearing-mint",
+        "spl-token-2022-interface-3.1.1-extension-memo-transfer",
+        "spl-token-2022-interface-3.1.1-extension-metadata-pointer",
+        "spl-token-2022-interface-3.1.1-extension-pausable",
+        "spl-token-2022-interface-3.1.1-extension-permissioned-burn",
+        "spl-token-2022-interface-3.1.1-extension-scaled-ui-amount",
+        "token-fees-3.1.1",
+        "spl-token-2022-interface-3.1.1-extension-transfer-hook",
+        "spl-token-2022-interface-3.1.1-extension-immutable-owner",
+        "spl-token-2022-interface-3.1.1-extension-mint-close-authority",
+        "spl-token-2022-interface-3.1.1-extension-non-transferable",
+        "spl-token-2022-interface-3.1.1-extension-permanent-delegate",
+        "bytemuck-1.25.2-internal",
+        "bytemuck-1.25.2-lib",
+        "solana-program-pack-3.1.0-lib",
+        "spl-token-2022-interface-3.1.1-extension-token-group",
+        "spl-token-2022-interface-3.1.1-extension-token-metadata"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenExtension": "fb46ca40c7bdd9a25d919acabbcc55eed281fe16f6fc3940d742e7cfea9333ed"
+      }
+    },
+    "token-instruction-owned-builders": {
+      "order": 44,
+      "argument": "@review:source-notes/owned-dependencies.md#review-641163d83f9c33a2",
+      "limitations": ["@binding:73cfb3cbae7ec412", "@binding:157f977863257615", "@text:596287a3ed55cd46"],
+      "source_ids": ["spl-token-interface-2.0.0-instruction", "spl-token-2022-interface-3.0.0-instruction"],
+      "modules": {
+        "Solanalib.Specs.Core.TokenInstructionAllocated": "3fdd78654f48b9c47807ecd183127c27158b1d03004129596b472e43530c8cb3",
+        "Solanalib.Specs.Core.TokenInstructionAllocatedWitness": "6add7a529c054cf7a834b8ffed5432ac0476db72d8f3e83b37405a7673ceb801",
+        "Solanalib.Specs.Core.TokenInstructionConstructors": "33c8f37ecb523f59b3d1b63da36b178bcb8fabeb934aa898ed9bc9aff189a05e",
+        "Solanalib.Specs.Core.TokenInstructionPlan": "c0ac1c111e905769bdce9bbab6e657f72c4d443517bcb7f550c28995f20a8e36"
+      }
+    },
+    "token-onchain-owned-preparation": {
+      "order": 45,
+      "argument": "@review:source-notes/owned-dependencies.md#review-1688ffe011de50d3",
+      "limitations": [
+        "@binding:73cfb3cbae7ec412",
+        "@text:693d2134b885db67",
+        "@text:c92a28cb5b96be28",
+        "@text:15ccd0119e9ebc22",
+        "@text:c9cc8059598b32f7",
+        "@text:77cff31bd903b5f3"
+      ],
+      "source_ids": [
+        "spl-token-2022-11.0.0-onchain",
+        "spl-token-2022-interface-3.0.0-lib",
+        "spl-token-2022-interface-3.0.0-instruction",
+        "spl-token-2022-interface-3.0.0-pod",
+        "spl-token-2022-interface-3.0.0-state",
+        "spl-token-2022-interface-3.0.0-extension-mod",
+        "spl-token-2022-interface-3.0.0-extension-transfer-hook-mod",
+        "spl-transfer-hook-interface-2.1.0-lib",
+        "spl-transfer-hook-interface-2.1.0-onchain",
+        "spl-transfer-hook-interface-2.1.0-instruction",
+        "spl-tlv-account-resolution-0.11.1-state",
+        "spl-tlv-account-resolution-0.11.1-account",
+        "spl-type-length-value-0.9.1-state"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenRequestAllocatedAdmission": "0a831e3ae7bc297ed27429fa3eb2be9fb8f8f6aa50a3e293b51d4c0ed64a7ea0",
+        "Solanalib.Specs.Core.TokenRequestAllocatedBase": "970f5fc6dc84a68549898599ad92173001e4f040dbc6ce5938af662bcb1a9e98",
+        "Solanalib.Specs.Core.TokenRequestAllocatedBorrowAdmission": "508ffe09c169e5f619a53200a54512889d106eed24046544ff4a6695c57571bb",
+        "Solanalib.Specs.Core.TokenRequestAllocatedCollectAdmission": "2317ab9db218783b04c4904529220107cb42cdee9dee2f37c1364256f54d0b21",
+        "Solanalib.Specs.Core.TokenRequestAllocatedControl": "21627f3e53e3ed438b861d206c4acac779e3d4ff78d2d625f1dbce22a14d030c",
+        "Solanalib.Specs.Core.TokenRequestAllocatedGuard": "b25b462e05d1ec1f06ce1e8d7bb4caefeb18e0dc10dce01e41ca2de7a4dd38c2",
+        "Solanalib.Specs.Core.TokenRequestAllocatedGuardBorrow": "76cee8a6efd276a7dcf6a648519dd685c9d9e9d0c76b7bf95c18beed956d91d0",
+        "Solanalib.Specs.Core.TokenRequestAllocatedGuardCollection": "728c1d00917a6e0fead5b07b771dec439588b14d57d2220931e36d8de02f48f3",
+        "Solanalib.Specs.Core.TokenRequestAllocatedGuardComposition": "1ed8b8fe85828aceaee3628b671966c4eaa644144a9becdf039c62a429e7896d",
+        "Solanalib.Specs.Core.TokenRequestAllocatedGuardInputs": "e55dd6c91fa5a2ef4434f7ea2ca0b20be63de7205b17b7753aeb7da12380e8bb",
+        "Solanalib.Specs.Core.TokenRequestAllocatedGuardObservations": "48d1d7e22364271d99dd41c95a7451e757898af9d2f98bf9499616b749b6346a",
+        "Solanalib.Specs.Core.TokenRequestAllocatedGuardPrimitives": "fb633d51c30abc35c17360d39b30e6e4076228ea74d1a93c9e2700e79ffe7dc5",
+        "Solanalib.Specs.Core.TokenRequestAllocatedGuardProviders": "e11271398bcc6ea454cb43e400c496fd8175c6c2db7afc5bded5752dcca6134b",
+        "Solanalib.Specs.Core.TokenRequestAllocatedGuardResources": "387dc8d78cf7e72b17b8c67992d4ef2052b0cc893ca9e1aa6b3d35d1df3bc6d0",
+        "Solanalib.Specs.Core.TokenRequestAllocatedGuardScope": "c87f5fb325ad4545eae03b1cf8b1a5d99c51a201463bc66342987b3b7e811063",
+        "Solanalib.Specs.Core.TokenRequestAllocatedHooks": "12389ea6909510049743a8fc46afe1e2a9ad6f8b0f2b5f3519885e4e8ff46e9f",
+        "Solanalib.Specs.Core.TokenRequestAllocatedLiteral": "a6871c55e81764a10e3ba10145f0092c73bc3ed80547aa4901c65426a64dd679",
+        "Solanalib.Specs.Core.TokenRequestAllocatedLiteralAdmission": "7df6053f664ecf71be5d8676309a41a9023a7435e903489150fb78825dd3775d",
+        "Solanalib.Specs.Core.TokenRequestAllocatedOnchain": "a65fbfff1c67abcdbfee787980d6937d24932f3f876f97a48a8a9f902b0ea4f1",
+        "Solanalib.Specs.Core.TokenRequestAllocatedPdaAdmission": "28c251101c36294f204d5a2cb6c42abc37e92f9886fed7c439f9153b01e99035",
+        "Solanalib.Specs.Core.TokenRequestAllocatedResourceAdmission": "c31eabe9e079d6c7737388ce9aea41c5d6a5d5a0a7d9959a311e2877b1a934c4",
+        "Solanalib.Specs.Core.TokenRequestAllocatedResults": "af29994d8e9f58795083d84dcc4085d279f789a05bbb3841ee218674c805aaaf",
+        "Solanalib.Specs.Core.TokenRequestAllocatedTypes": "d9169c02f07e9ecde982db2096af230a26c438a261bc48bd13833ea69d94cca8",
+        "Solanalib.Specs.Core.TokenRequestAllocatedWitness": "5c38c18256d61200af747601477257ab25f16fcb09ce14dc2f06e948f021b9f8",
+        "Solanalib.Specs.Core.TokenRequestAllocatedWitnessAdmission": "143d7589fcdf00d9f6b6d6ac918c8afb5cdd79d0f86a202fb69ea6386d1546ea",
+        "Solanalib.Specs.Core.TokenRequestAllocatedWitnessBorrows": "f0fb587bc85362766b6c782d12ee8b04569c4224255fe3ea9b1d333460bd7a4f",
+        "Solanalib.Specs.Core.TokenRequestAllocatedWitnessFrames": "c15b3d75e7bf9be1fad6187b1e65718036258655be413a830811774ce28565dc",
+        "Solanalib.Specs.Core.TokenRequestAllocatedWitnessPrepare": "837c2263d8fec772cc32330cc4250d43164b97c1f7534529a148ecbfb5097b41",
+        "Solanalib.Specs.Core.TokenRequestAllocatedWitnessProviders": "8090f244f8d79edcf4aa96464819ff78d371188f6bc3817b42f6ea13078b8f46",
+        "Solanalib.Specs.Core.TokenRequestAllocatedWitnessResources": "1e0410456665c4cad6c54b6620ab0b8e72f9391ee714e3e826f01592576c7443",
+        "Solanalib.Specs.Core.TokenRequestAllocatedWitnessSteps": "19d66b5bd1df78e90464a79c7b1355b76f75c36fac6c399e4d861c518f5ce9b3"
+      }
+    },
+    "token-onchain-supporting-values": {
+      "order": 46,
+      "argument": "@review:source-notes/owned-dependencies.md#review-80aedff26aac752d",
+      "limitations": ["@binding:73cfb3cbae7ec412", "@binding:157f977863257615", "@text:7a71fd1bd8afd29e"],
+      "source_ids": [
+        "spl-token-2022-11.0.0-onchain",
+        "spl-token-2022-interface-3.0.0-pod",
+        "spl-token-2022-interface-3.0.0-state",
+        "spl-token-2022-interface-3.0.0-extension-mod",
+        "spl-token-2022-interface-3.0.0-extension-transfer-hook-mod",
+        "spl-transfer-hook-interface-2.1.0-lib",
+        "spl-transfer-hook-interface-2.1.0-onchain",
+        "spl-transfer-hook-interface-2.1.0-instruction",
+        "spl-transfer-hook-interface-2.1.0-error",
+        "spl-tlv-account-resolution-0.11.1-account",
+        "spl-tlv-account-resolution-0.11.1-state",
+        "spl-tlv-account-resolution-0.11.1-seeds",
+        "spl-tlv-account-resolution-0.11.1-pubkey-data",
+        "spl-tlv-account-resolution-0.11.1-error",
+        "spl-type-length-value-0.9.1-state",
+        "spl-type-length-value-0.9.1-error",
+        "spl-type-length-value-0.9.1-length",
+        "spl-pod-0.7.3-list-list-view",
+        "spl-pod-0.7.3-list-list-view-read-only",
+        "spl-pod-0.7.3-primitives",
+        "spl-pod-0.7.3-bytemuck",
+        "spl-pod-0.7.3-error"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenRequestHooks": "9c05f7cc2450ba0d54eaff4d0ddf5d6e9b18e45622c68b3ff84279306b19de5d",
+        "Solanalib.Specs.Core.TokenRequestOnchain": "52f7db722ce87b44642e0c76a81c029f4844e669caac40a9be921ef0526692ad",
+        "Solanalib.Specs.Core.TokenRequestOnchainContract": "959a51948cc72ba419ffeaf2ef148e19e8d963c9637810027e59098d68553322"
+      }
+    },
+    "token-request-allocated-seeds": {
+      "order": 47,
+      "argument": "@review:source-notes/owned-dependencies.md#review-33b566f21ea8ca75",
+      "limitations": ["@binding:73cfb3cbae7ec412", "@binding:157f977863257615"],
+      "source_ids": [
+        "spl-tlv-account-resolution-0.11.1-account",
+        "spl-tlv-account-resolution-0.11.1-seeds",
+        "spl-tlv-account-resolution-0.11.1-pubkey-data",
+        "spl-tlv-account-resolution-0.11.1-error"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenRequestAllocatedSeeds": "bf10414925cfcf64bb4fb9c3e761b01c8e4bbf6f40a7f2781d370af9191c5617",
+        "Solanalib.Specs.Core.TokenRequestAllocatedSeedsFailures": "89f053bacc68ec42b25497438885627b6b99ac5d84fff050cd1c8fa7a752eba8",
+        "Solanalib.Specs.Core.TokenRequestAllocatedSeedsLedger": "e25ac336dd85f748777ddc84da363f6bf01b4411e91a4b1559871a88d90bb08e",
+        "Solanalib.Specs.Core.TokenRequestAllocatedSeedsPda": "770dd2ca41a1dfccd305ac61d903aba52c093622f5148ec567e007fa2dfefcb1",
+        "Solanalib.Specs.Core.TokenRequestAllocatedSeedsSyscall": "d2e938d9cb5bc2cd9a1bbf32b1a48312c33db31a784f11246dd7a057b3db06f2",
+        "Solanalib.Specs.Core.TokenRequestAllocatedSeedsTypes": "2a93826a87f1ec59e10e4414abae354f71ed60a4e5b6b53e2fc9d8fa63312da7",
+        "Solanalib.Specs.Core.TokenRequestAllocatedSeedsUnpack": "ae37f130db4e5de461cd1580ca113126064bc1480371f6aa7d34077a6f2e9642",
+        "Solanalib.Specs.Core.TokenRequestAllocatedSeedsViews": "9eb54678f68ab7a7d19b5395ec2dbbd157fe38500b720b02208de4779347cb23",
+        "Solanalib.Specs.Core.TokenRequestAllocatedSeedsWitness": "6065ca218a9bc3c9b25daa3ae8737446c98656de61630632e0d00d51e51fe67b"
+      }
+    },
+    "token-request-allocated-tlv": {
+      "order": 48,
+      "argument": "@review:source-notes/owned-dependencies.md#review-78a10322f290895e",
+      "assumptions": ["@text:da57e50719f22122", "@text:35e33265084669b3", "@text:7e97c6535f52407e", "@text:6956ae2ee2c8b907"],
+      "limitations": [
+        "@text:a5f4e1a78e77375f",
+        "@text:627db5f852f3e4ed",
+        "@text:0e95d9d3367bc1fb",
+        "@text:981f77ca30910696",
+        "@text:1e16879c6396444c"
+      ],
+      "section": "allocated-token-preparation",
+      "source_ids": [
+        "spl-token-2022-interface-3.0.0-state",
+        "spl-token-2022-interface-3.0.0-extension-mod",
+        "spl-type-length-value-0.9.1-state",
+        "spl-type-length-value-0.9.1-length",
+        "spl-discriminator-0.5.2-discriminator",
+        "solana-zero-copy-1.0.1-unaligned",
+        "bytemuck-1.25.0-internal"
+      ],
+      "treatment": "@text:08f0be883564cbf2",
+      "modules": {
+        "Solanalib.Specs.Core.TokenRequestAllocatedTlv": "6fc0d4d73a02d899c4b993e9ffe416e6bd295563d01731f5600e35bc2bce3f73"
+      }
+    },
+    "account-view-1.0.0-instantiation": {
+      "order": 49,
+      "argument": "@review:source-notes/owned-dependencies.md#review-5bce79dc068a1249",
+      "limitations": "@shared:limitations-c8482aeecf19d8e6",
+      "source_ids": ["solana-account-view@1.0.0::source"],
+      "modules": {
+        "Solanalib.Specs.Core.AccountViewMapFamily": "e26c09dc09ee1db9be99e88fd153606ae8b708d2161cbdb2b60681dbe99eff3b"
+      }
+    },
+    "account-view-1.0.0-revision": {
+      "order": 50,
+      "argument": "@review:source-notes/owned-dependencies.md#review-114507fe85362fc2",
+      "limitations": "@shared:limitations-c8482aeecf19d8e6",
+      "source_ids": ["solana-account-view@1.0.0::source"],
+      "modules": {
+        "Solanalib.Specs.Core.AccountViewRevision": "ce693cd65943a730400e2b729323cde1e9736168c1c21e1ff3b93bcbc435670c",
+        "Solanalib.Specs.Core.AccountViewRevisionData": "771e540a918781b55f06b6fdcaffccb075e47d32fff9c74c96a0c913d8fd792b",
+        "Solanalib.Specs.Core.AccountViewRevisionFacts": "11e27d5b41c2a042f77bf78eeab8cd01eb553cfab6f0025cb37a7aa598a7b7b3",
+        "Solanalib.Specs.Core.AccountViewRevisionLifecycle": "e418581a55a8cb2da2203134236b490d0880f90135ef3df743c789855bef31e6",
+        "Solanalib.Specs.Core.AccountViewRevisionWitness": "beed448fec975badf29acd5647b2a0930a5684e7610c9cc1b2fa7a3eb400ebfc"
+      }
+    },
+    "borrowed-field-reference-current-observation": {
+      "order": 51,
+      "argument": "@review:source-notes/owned-dependencies.md#review-417fa9e60d989889",
+      "limitations": ["@text:6e89a5cd2a2a006d", "@text:56be0518addb42df"],
+      "source_ids": [],
+      "modules": {
+        "Solanalib.Specs.Core.FieldReference": "5bea8208c398fdc2080f68895a003208037051d4eb48d82e32228a6d1516f687"
+      }
+    },
+    "checked-instruction-view-slice": {
+      "order": 52,
+      "argument": "@review:source-notes/owned-dependencies.md#review-3004eeecfa9bd738",
+      "limitations": [
+        "@text:d97f913a465a4ea1",
+        "@text:0d8214400a53b569",
+        "@text:0a8bca42d5153e95",
+        "@text:ad6f02fd34c4061f",
+        "@binding:3be629903e979e7e"
+      ],
+      "source_ids": ["value-request::solana-instruction-view-1.0.0::src/cpi.rs", "solana-account-view@1.0.0::source"],
+      "modules": {
+        "Solanalib.Specs.Core.CpiRequestCheckedSlice": "01969128e53da791f6b5b8e6ac872243375ff628284aefd08abe4a03835a4ff7",
+        "Solanalib.Specs.Core.CpiRequestCheckedSliceFacts": "a4d0927f8613509124871c82b16fadd7e87772b70ee1f8049f69764fb05ece5c",
+        "Solanalib.Specs.Core.CpiRequestCheckedSliceFamily": "88ba9e977f5fc2cc2c3fad7bb3246f4fec348aa2550751f52522f1f097b94ae4",
+        "Solanalib.Specs.Core.CpiRequestCheckedSliceWitness": "a89b22fae369a78e24480094a4773e54f2326eb11d4b72476d78849d5a6af784"
+      }
+    },
+    "owned-instruction-builders": {
+      "order": 53,
+      "argument": "@review:source-notes/owned-dependencies.md#review-61466b9fb65beb06",
+      "limitations": ["@text:a3d6e4f4477d7687", "@text:9926f4c894db8c29"],
+      "source_ids": [
+        "value-request::solana-address-2.6.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/syscalls.rs",
+        "value-request::solana-address-2.6.1::src/lib.rs",
+        "value-request::solana-address-2.6.1::src/syscalls.rs",
+        "value-request::solana-instruction-view-1.0.0::src/cpi.rs",
+        "value-request::solana-instruction-view-2.1.0::src/lib.rs",
+        "value-request::solana-instruction-view-2.1.0::src/cpi.rs",
+        "value-request::solana-instruction-3.4.0::src/account_meta.rs",
+        "value-request::solana-instruction-3.4.0::src/lib.rs",
+        "value-request::solana-system-interface-3.2.0::src/lib.rs",
+        "value-request::solana-system-interface-3.2.0::src/instruction.rs",
+        "value-request::pinocchio-system-0.6.0::src/lib.rs",
+        "value-request::pinocchio-system-0.6.0::src/instructions/allocate.rs",
+        "value-request::pinocchio-system-0.6.0::src/instructions/assign.rs",
+        "value-request::pinocchio-system-0.6.0::src/instructions/transfer.rs",
+        "value-request::pinocchio-associated-token-account-0.4.0::src/lib.rs",
+        "value-request::pinocchio-associated-token-account-0.4.0::src/instructions/create_idempotent.rs",
+        "value-request::borsh-1.6.1::src/ser/mod.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.InstructionBuilder": "dd35e3dcb087bac656ba5129088350652e3a79dd1136ee964b551c77301156da",
+        "Solanalib.Specs.Core.InstructionBuilderFamily": "c116a45ed2ee1e21d332af9f4eb5c911ad1ba8b5e9dfeb4eec658d569678dfd4",
+        "Solanalib.Specs.Core.InstructionBuilderSample": "99b813cdbe1edbe6730e59fe72328fdf8a1919b8ef84d10aa20706944781834f"
+      }
+    },
+    "root-extra::solana_program_option_3_1_0": {
+      "order": 54,
+      "argument": "@review:source-notes/owned-dependencies.md#review-662ed1e92cae6dcf",
+      "limitations": ["@binding:95ee659b5979b9c0"],
+      "source_ids": ["root-extra::solana-program-option-3.1.0::src/lib.rs"],
+      "modules": {
+        "Solanalib.Specs.Core.ProgramOption": "dfef62a324aad49e25bb2855bd5845103c489e957281114bdba391b22c2088b7"
+      }
+    },
+    "root-extra::solana_zero_copy_1_2_0": {
+      "order": 55,
+      "argument": "@review:source-notes/owned-dependencies.md#review-b5729012462188fa",
+      "limitations": ["@binding:27ff7dfa299cd3f3"],
+      "source_ids": ["root-extra::solana-zero-copy-1.2.0::src/unaligned.rs"],
+      "modules": {"Solanalib.Specs.Core.Unaligned": "f6d3d5795b27d940f39596b8aa8e66a025c27271ef0951fbc4676f9ddf975e8d"}
+    },
+    "runtime-helpers::module::Solanalib.Specs.Core.Hash": {
+      "order": 56,
+      "argument": "@review:source-notes/owned-dependencies.md#review-dfd546f11357aa1d",
+      "limitations": ["@binding:0eced3bcf8b962e4"],
+      "source_ids": ["runtime-helpers::solana-hash-4.5.0::src/lib.rs"],
+      "modules": {"Solanalib.Specs.Core.Hash": "43713f796726b3f10dfc3098066892e4470ef5367be61bd14e74f93e0ac80816"}
+    },
+    "runtime-helpers::module::Solanalib.Specs.Core.HashSyscall": {
+      "order": 57,
+      "argument": "@review:source-notes/owned-dependencies.md#review-f46660d940e041e7",
+      "limitations": ["@binding:0eced3bcf8b962e4", "@binding:7a8a551ef172114a"],
+      "source_ids": [
+        "runtime-helpers::solana-hash-4.5.0::src/lib.rs",
+        "runtime-helpers::solana-sha256-hasher-3.1.0::src/lib.rs",
+        "runtime-helpers::solana-define-syscall-4.0.1::src/definitions.rs"
+      ],
+      "modules": {"Solanalib.Specs.Core.HashSyscall": "f1d73839247b430d6a14ac6c751007e7f525c5e0336afb422370e371d6ac64f4"}
+    },
+    "runtime-helpers::module::Solanalib.Specs.Core.ReturnData": {
+      "order": 58,
+      "argument": "@review:source-notes/owned-dependencies.md#review-074718a5eea2c27f",
+      "limitations": ["@binding:0eced3bcf8b962e4", "@binding:7a8a551ef172114a"],
+      "source_ids": [
+        "runtime-helpers::solana-program-4.0.0::src/program.rs",
+        "runtime-helpers::solana-cpi-3.1.0::src/lib.rs",
+        "runtime-helpers::solana-define-syscall-4.0.1::src/definitions.rs"
+      ],
+      "modules": {"Solanalib.Specs.Core.ReturnData": "e4579bc26f919f31571b4e67587966164ef8ad47b9df0ef08a63479ffdb2a5c9"}
+    },
+    "system-create-account-value": {
+      "order": 59,
+      "argument": "@review:source-notes/owned-dependencies.md#review-b0f1d892a2c0498e",
+      "limitations": ["@text:a3d6e4f4477d7687", "@text:fb9c6055c104cabb"],
+      "source_ids": ["value-request::solana-system-interface-3.2.0::src/instruction.rs"],
+      "modules": {
+        "Solanalib.Specs.Core.InstructionSystemCreateAccount": "fd8a06acd228806ec395c9becb98ad53f4db272f10be1fb5118ad20928796bc1"
+      }
+    },
+    "sysvars::module::Solanalib.Specs.Core.SysvarRent102": {
+      "order": 60,
+      "argument": "@review:source-notes/owned-dependencies.md#review-843b1d57f5e47b0e",
+      "limitations": ["@binding:2bdd10cfed4f63a1", "@binding:28e35fd0e9f93d35"],
+      "source_ids": ["sysvars::pinocchio-0.10.2::src/sysvars/mod.rs", "sysvars::pinocchio-0.10.2::src/sysvars/rent.rs"],
+      "modules": {
+        "Solanalib.Specs.Core.SysvarRent102": "63a6b718abd90aed8d2f90777ada70924fb9305e3ea1ef4d403e8e11a8e32b0b",
+        "Solanalib.Specs.Core.SysvarRent102Getter": "6bd32787670dc2213dc8f61baa91b3a882a9947fe40e8b9772a5273d0d5e7bba"
+      }
+    },
+    "token-extension-fee-codecs-3.1.1": {
+      "order": 61,
+      "argument": "@review:source-notes/owned-dependencies.md#review-0b8807962123fe46",
+      "limitations": ["@text:921ee9a2cf3201e2", "@text:b74a046462432951"],
+      "source_ids": [
+        "spl-token-2022-interface-3.1.1-extensions",
+        "token-fees-3.1.1",
+        "fee-unaligned-1.2.0",
+        "fee-nullable-1.3.0",
+        "fee-address-2.6.1"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenExtensionFee": "77e409992ad2f329e6ddd4a3aa7f6a9072ad3ca2f770d849fdca58db5d0eb4d1"
+      }
+    },
+    "token-extension-operational-getter-3.1.1": {
+      "order": 62,
+      "argument": "@review:source-notes/owned-dependencies.md#review-3001f1d5ec56f3f8",
+      "limitations": ["@text:921ee9a2cf3201e2", "@text:b74a046462432951"],
+      "source_ids": ["spl-token-2022-interface-3.1.1-extensions", "bytemuck-1.25.2-internal", "bytemuck-1.25.2-lib"],
+      "modules": {
+        "Solanalib.Specs.Core.TokenExtensionGetter": "3afaa8c6af327bfe25ab9e0176f6cd88a2edbdf08e2c970e7e730fa0b0a10b21"
+      }
+    },
+    "token-extension-operational-listing-3.1.1": {
+      "order": 63,
+      "argument": "@review:source-notes/owned-dependencies.md#review-8c9e392a954632f6",
+      "limitations": ["@text:921ee9a2cf3201e2", "@text:b74a046462432951"],
+      "source_ids": ["spl-token-2022-interface-3.1.1-extensions"],
+      "modules": {
+        "Solanalib.Specs.Core.TokenExtensionListCurrent": "0704980f194f5f9526ff267e23b109f0d528da72607e0bd479e74d2cd5d25934",
+        "Solanalib.Specs.Core.TokenExtensionListFrame": "8d5b4e7bc5fac8423b0a314d1a3be48e363e98cc4d8a4ce212b0023c81e5753a",
+        "Solanalib.Specs.Core.TokenExtensionListReference": "b7dd552c46ce07fb89395335c39fcad6800a636e02986ffc8fb394ddcf6d8b8d"
+      }
+    },
+    "token-extension-operational-unpack-3.1.1": {
+      "order": 64,
+      "argument": "@review:source-notes/owned-dependencies.md#review-1a981692f2a146d5",
+      "limitations": ["@text:921ee9a2cf3201e2", "@text:b74a046462432951"],
+      "source_ids": [
+        "spl-token-2022-interface-3.1.1-extensions",
+        "solana-program-pack-3.1.0-lib",
+        "spl-token-2022-interface-3.1.1-state"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenExtensionUnpack": "04a5e327939d6d63b7045fe84d80261af6d3ecad2342cf7962e3a686a311ba42",
+        "Solanalib.Specs.Core.TokenExtensionUnpackFacts": "c2236f6138d6942208ca19457a78dc36b60e6480f2aa9235bd3a0f1e9af31c4f"
+      }
+    },
+    "token-extension-scan-3.1.1": {
+      "order": 65,
+      "argument": "@review:source-notes/owned-dependencies.md#review-29a5bdd0dec945bb",
+      "limitations": ["@text:921ee9a2cf3201e2", "@text:b74a046462432951"],
+      "source_ids": [
+        "spl-token-2022-interface-3.1.1-extensions",
+        "spl-token-2022-interface-3.1.1-account-len",
+        "spl-token-2022-interface-3.1.1-pod",
+        "spl-token-2022-interface-3.1.1-state",
+        "spl-token-2022-interface-3.1.1-error",
+        "spl-token-group-interface-0.7.2-state",
+        "solana-zk-sdk-pod-0.1.2-lib",
+        "solana-zk-sdk-pod-0.1.2-encryption",
+        "solana-zk-sdk-pod-0.1.2-elgamal",
+        "solana-zk-sdk-pod-0.1.2-auth-encryption",
+        "fee-unaligned-1.2.0",
+        "fee-nullable-1.3.0",
+        "fee-address-2.6.1",
+        "spl-token-2022-interface-3.1.1-extension-confidential-mint-burn",
+        "spl-token-2022-interface-3.1.1-extension-confidential-transfer",
+        "spl-token-2022-interface-3.1.1-extension-confidential-transfer-fee",
+        "spl-token-2022-interface-3.1.1-extension-cpi-guard",
+        "spl-token-2022-interface-3.1.1-extension-default-account-state",
+        "spl-token-2022-interface-3.1.1-extension-group-member-pointer",
+        "spl-token-2022-interface-3.1.1-extension-group-pointer",
+        "spl-token-2022-interface-3.1.1-extension-interest-bearing-mint",
+        "spl-token-2022-interface-3.1.1-extension-memo-transfer",
+        "spl-token-2022-interface-3.1.1-extension-metadata-pointer",
+        "spl-token-2022-interface-3.1.1-extension-pausable",
+        "spl-token-2022-interface-3.1.1-extension-permissioned-burn",
+        "spl-token-2022-interface-3.1.1-extension-scaled-ui-amount",
+        "token-fees-3.1.1",
+        "spl-token-2022-interface-3.1.1-extension-transfer-hook",
+        "spl-token-2022-interface-3.1.1-extension-immutable-owner",
+        "spl-token-2022-interface-3.1.1-extension-mint-close-authority",
+        "spl-token-2022-interface-3.1.1-extension-non-transferable",
+        "spl-token-2022-interface-3.1.1-extension-permanent-delegate",
+        "bytemuck-1.25.2-internal",
+        "bytemuck-1.25.2-lib",
+        "solana-program-pack-3.1.0-lib",
+        "spl-token-2022-interface-3.1.1-extension-token-group",
+        "spl-token-2022-interface-3.1.1-extension-token-metadata"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenExtensionScan": "6e0b680741708fd4ddfdc386f8e3bf9feb8f31fc8791af4525440a44deba2168"
+      }
+    },
+    "token-extension-sizing-3.1.1": {
+      "order": 66,
+      "argument": "@review:source-notes/owned-dependencies.md#review-8509e83632ce2ee1",
+      "limitations": ["@text:921ee9a2cf3201e2", "@text:b74a046462432951"],
+      "source_ids": [
+        "spl-token-2022-interface-3.1.1-extensions",
+        "spl-token-2022-interface-3.1.1-account-len",
+        "spl-token-2022-interface-3.1.1-pod",
+        "spl-token-2022-interface-3.1.1-error"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenExtensionSize": "091e3ea0e9b2543d691a6bf79e0d9b71e3382954ab90a2a96ce6f82ac71bc4cb"
+      }
+    },
+    "token-fee-arithmetic-3.1.1": {
+      "order": 67,
+      "argument": "@review:source-notes/owned-dependencies.md#review-4e2afbd02d2fe20e",
+      "limitations": ["@text:921ee9a2cf3201e2", "@text:b74a046462432951"],
+      "source_ids": ["token-fees-3.1.1", "fee-unaligned-1.2.0", "fee-nullable-1.3.0", "fee-address-2.6.1"],
+      "modules": {"Solanalib.Specs.Core.TokenFee": "96dc71dbfc5d04191d35f034b3fb83f16fc27a5dbb7b39a95614defcf67d4862"}
+    },
+    "token-fee-reference-3.1.1": {
+      "order": 68,
+      "argument": "@review:source-notes/owned-dependencies.md#review-fbfa63ac63ecc0c3",
+      "limitations": ["@text:40e266757e3d6356", "@text:9b8be0780b91ae07", "@text:5a4d42aa5b46b855"],
+      "source_ids": ["token-fees-3.1.1"],
+      "modules": {
+        "Solanalib.Specs.Core.TokenFeeReference": "b22c84a061234f7952c15c9fb0cfd69187f8595c08ec2c8a76638aa9cba0a61c"
+      }
+    },
+    "token-instruction-owned-variants": {
+      "order": 69,
+      "argument": "@review:source-notes/owned-dependencies.md#review-f64203a2a14979b0",
+      "limitations": ["@binding:73cfb3cbae7ec412", "@binding:157f977863257615"],
+      "source_ids": ["spl-token-interface-2.0.0-instruction", "spl-token-2022-interface-3.1.1-instruction"],
+      "modules": {
+        "Solanalib.Specs.Core.TokenInstructionValues": "1db8d07184052b74166d48749ea0a7eb61090b842be7f06a2999c07723eed47f",
+        "Solanalib.Specs.Core.TokenInstructionVariants": "c3e4fb1287989cd2796c2456f4b60c90d73a51c2d3c350766ad2e019646ba139",
+        "Solanalib.Specs.Core.TokenInstructionAllocatedFamily": "51dcab960067b52e8535849bc6a204ed241ed1e5fa0338440ba5bdb3455119e1",
+        "Solanalib.Specs.Core.TokenInstructionAllocatedFamilyWitness": "a71c8e8e4a49cb01b4d097461b6f25dd23aa6f298b444c4ce893d158c8e4a5aa"
+      }
+    },
+    "codecs::module::Solanalib.Specs.Core.BorshCodecs": {
+      "order": 70,
+      "argument": "@review:source-notes/owned-dependencies.md#review-4a8cdc641870bef3",
+      "limitations": ["@text:52e825a966b79e95", "@text:7f450f0aa4569b02", "@text:4a45bee39ec357d9"],
+      "source_ids": [
+        "codecs::borsh-0.10.4::src/de/mod.rs",
+        "codecs::borsh-0.10.4::src/de/hint.rs",
+        "codecs::borsh-1.6.1::src/de/mod.rs",
+        "codecs::borsh-1.6.1::src/de/hint.rs",
+        "codecs::borsh-1.6.1::src/error.rs",
+        "value-request::borsh-1.6.1::src/ser/mod.rs",
+        "codecs::borsh-1.6.1::src/nostd_io.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.BorshWire": "b4ed9358accdba01a1adde1673d5b9d17977404f10b253c8a25a58a8728fb4e8",
+        "Solanalib.Specs.Core.BorshProgram": "f80e66ee91d775895da3b248a793a27bdb2d13d070d37831f9c7ba1fc3595637",
+        "Solanalib.Specs.Core.BorshCodec": "2a4483789187fce032589e22ccf0f5eb9b3045ccb2ca3bd10be8694c7e96a9a5",
+        "Solanalib.Specs.Core.BorshFamily": "a67396b7687ae7edea75ba22c1cb946711ddad03b6157406950b7faebc1cfee1",
+        "Solanalib.Specs.Core.BorshWriteAll": "6915dffc0ca6a70ed4728c603e8214fe850ee51c5da05d8fa347b8f0729bd449"
+      }
+    },
+    "bytemuck-views-vocabulary": {
+      "order": 71,
+      "argument": "@review:source-notes/owned-dependencies.md#review-d2b0e86cb1a9129c",
+      "limitations": ["@text:09f91adb5271516a", "@text:8f3a6b31ae344981", "@text:9d158f53a6fe39ad", "@text:387fac8d799e08bb"],
+      "source_ids": [
+        "bytemuck-1.25.2-lib",
+        "bytemuck-1.25.2-internal",
+        "bytemuck-1.25.2-zeroable",
+        "root-extra::bytemuck-1.25.0::src/lib.rs",
+        "bytemuck-1.25.0-internal",
+        "bytemuck-1.25.0-zeroable"
+      ],
+      "modules": {"Solanalib.Specs.Core.Bytemuck": "769816819f33f8f35c8ca1c8ffb340f796d28ed9556cebb0cdd30a25a21da15c"}
+    },
+    "codecs::module::Solanalib.Specs.Core.StakeState": {
+      "order": 72,
+      "argument": "@review:source-notes/owned-dependencies.md#review-6eb11d976b802aa4",
+      "limitations": ["@text:612f29d77ef0644e", "@text:16bc9bef9da75d95"],
+      "source_ids": [
+        "codecs::solana-stake-interface-3.1.0::src/state.rs",
+        "codecs::solana-stake-interface-3.1.0::src/stake_flags.rs"
+      ],
+      "modules": {"Solanalib.Specs.Core.StakeState": "0a487ce201e8dbbe092a2ad71c579a0ba68b5a09b1b7296edecbcf08b680484b"}
+    },
+    "raw-syscalls::module::Solanalib.Specs.Core.RawSyscall": {
+      "order": 73,
+      "argument": "@review:source-notes/owned-dependencies.md#review-c08abffc3699b415",
+      "limitations": ["@text:778297b7fea994fc", "@text:df44d9d0ec03d777", "@text:62705fc5e29534ed", "@text:d3b2871df7aa6008"],
+      "source_ids": [
+        "raw-syscalls::solana-define-syscall-5.1.0::src/definitions.rs",
+        "raw-syscalls::solana-define-syscall-5.1.0::src/lib.rs",
+        "raw-syscalls::solana-define-syscall-5.2.0::src/definitions.rs",
+        "raw-syscalls::solana-define-syscall-5.2.0::src/lib.rs",
+        "raw-syscalls::solana-define-syscall-5.2.0::src/curve_constants.rs"
+      ],
+      "modules": {"Solanalib.Specs.Core.RawSyscall": "de5164338aa6964aa61d1231014d0f0b68d696d0ded8bf2dadea10153f1f4289"}
+    },
+    "addresses::comparison": {
+      "order": 74,
+      "modules": {
+        "Solanalib.Specs.Core.AddressValueOperations": "f2fc0a7f8497e8b006eff9c42aa7dee127f8f53dd87c94ca59a9765d7ff6371b"
+      },
+      "source_ids": ["value-request::solana-address-2.6.0::src/lib.rs", "fee-address-2.6.1"],
+      "argument": "@review:source-notes/owned-dependencies.md#review-f9c0caa26df2bf89",
+      "limitations": ["@binding:4a7190a81d148c5b", "@binding:d340b5da13ec1c9e"]
+    },
+    "sdk-values::Solanalib.Specs.Core.ErrorValue": {
+      "order": 75,
+      "modules": {"Solanalib.Specs.Core.ErrorValue": "e4debcbd50db3eed4add83e4dd6ce485567073072b335c878e16dd546c9e9fda"},
+      "source_ids": ["sdk-values::solana-program-error-3.0.1::src/lib.rs"],
+      "argument": "@review:source-notes/owned-dependencies.md#review-e58190d7f7177173",
+      "limitations": ["@text:4eaa44b520524356"]
+    },
+    "sdk-values::Solanalib.Specs.Core.NullableValue": {
+      "order": 76,
+      "modules": {
+        "Solanalib.Specs.Core.NullableValue": "b09f0d56f60eaea40adac12a1bb2d401ab2c60537f76f933ab0b754629bd9abd"
+      },
+      "source_ids": [
+        "sdk-values::solana-nullable-1.3.0::src/nullable.rs",
+        "sdk-values::solana-address-2.6.1::src/lib.rs",
+        "sdk-values::pinocchio-0.10.2::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-e58190d7f7177173",
+      "limitations": ["@text:4eaa44b520524356"]
+    },
+    "sdk-values::Solanalib.Specs.Core.NullableOperations": {
+      "order": 77,
+      "modules": {
+        "Solanalib.Specs.Core.NullableOperations": "b589ae998587c33862101d37705faad19e001c289b6cfb39428ad2b8f191a4a8"
+      },
+      "source_ids": [
+        "sdk-values::solana-nullable-1.3.0::src/maybe_null.rs",
+        "sdk-values::solana-nullable-1.3.0::src/nullable.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-e58190d7f7177173",
+      "limitations": ["@text:4eaa44b520524356"]
+    },
+    "raw-runtime::requests": {
+      "order": 78,
+      "argument": "@review:source-notes/owned-dependencies.md#review-5556f2335a0afb6d",
+      "limitations": [
+        "@binding:5f583f5855e8d5ee",
+        "@binding:0e0734da409a4986",
+        "@binding:d8520a9e72709815",
+        "@binding:4288734bf7f8f1b2",
+        "@binding:025d8e5631e6dc0b",
+        "@text:b1937ac5405b82da"
+      ],
+      "source_ids": [
+        "raw-runtime::solana-define-syscall-2.3.0::src/definitions.rs",
+        "raw-runtime::solana-define-syscall-2.3.0::src/lib.rs",
+        "raw-runtime::solana-define-syscall-4.0.1::src/definitions.rs",
+        "raw-runtime::solana-define-syscall-4.0.1::src/lib.rs",
+        "raw-runtime::solana-define-syscall-5.1.0::src/definitions.rs",
+        "raw-runtime::solana-define-syscall-5.1.0::src/lib.rs",
+        "raw-runtime::solana-program-1.15.2::src/syscalls/definitions.rs",
+        "raw-runtime::solana-program-1.15.2::src/syscalls/mod.rs",
+        "raw-runtime::solana-program-1.18.26::src/syscalls/definitions.rs",
+        "raw-runtime::solana-program-1.18.26::src/syscalls/mod.rs",
+        "raw-runtime::solana-cpi-2.2.1::src/lib.rs",
+        "raw-runtime::solana-cpi-2.2.1::src/syscalls.rs",
+        "raw-runtime::solana-cpi-3.1.0::src/lib.rs",
+        "raw-runtime::solana-cpi-3.1.0::src/syscalls.rs",
+        "raw-runtime::pinocchio-0.9.2::src/lib.rs",
+        "raw-runtime::pinocchio-0.9.2::src/syscalls.rs",
+        "raw-runtime::pinocchio-log-0.5.1::src/logger.rs",
+        "raw-runtime::anchor-lang-1.0.2::src/lib.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.InputWrites": "a7c3023661e66b8c1468f54ea3889082916cdab414e7e2ff8fb487760332a8c8",
+        "Solanalib.Specs.Core.RawAddress": "b94441fb280d2a400a8fc2566892682157f273dc28f7d574cac5d338159bcfc8",
+        "Solanalib.Specs.Core.RawState": "732e3fc439129b5db70b42f11f91148c84184102fcae7b231e943bca95aa0a4b",
+        "Solanalib.Specs.Core.RawRuntime": "d4ea3cb5947026298c915c24ec51b66379ac359e66a090ccbbb56aa455d00f7e",
+        "Solanalib.Specs.Core.RawMemory": "344a7e3926340819d5e626578aa6f8f8e37fa7fad1b6976acac6ea4c55486549",
+        "Solanalib.Specs.Core.RawRuntimeSample": "e1a39dd263013c8704c78df3161a771cba3cab3d1841c6389920a3d42c474cbb"
+      }
+    },
+    "sdk-utilities::module::Solanalib.Specs.Core.SdkLog": {
+      "order": 79,
+      "argument": "@review:source-notes/owned-dependencies.md#review-55a98f09bb09fae6",
+      "limitations": ["@binding:b5fa051f6f3ee7b5", "@binding:f8fdb012bb5e313a"],
+      "source_ids": [
+        "sdk-utilities::solana-program-1.15.2::src/log.rs",
+        "sdk-utilities::solana-program-1.18.26::src/log.rs",
+        "sdk-utilities::solana-program-1.15.2::src/program_stubs.rs",
+        "sdk-utilities::solana-program-1.18.26::src/program_stubs.rs"
+      ],
+      "modules": {"Solanalib.Specs.Core.SdkLog": "c6b6b6095b888a0a23495798f49f622a3b02ec2ddf6ff239984cfbb3a2e6ec5a"}
+    },
+    "sdk-utilities::module::Solanalib.Specs.Core.EpochSchedule": {
+      "order": 80,
+      "argument": "@review:source-notes/owned-dependencies.md#review-254f08a4d3d1c7df",
+      "limitations": ["@binding:b5fa051f6f3ee7b5"],
+      "source_ids": [
+        "sdk-utilities::solana-epoch-schedule-3.0.0::src/lib.rs",
+        "sdk-utilities::solana-epoch-schedule-3.2.0::src/lib.rs",
+        "sdk-utilities::solana-program-1.15.2::src/epoch_schedule.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.EpochSchedule": "ba3ef861a9042c39fd2d9ac2db0dc4c764004001b1066588a7f0d91b1df85e90"
+      }
+    },
+    "sdk-utilities::module::Solanalib.Specs.Core.HashSingle": {
+      "order": 81,
+      "argument": "@review:source-notes/owned-dependencies.md#review-6a2adf7ad9aa1762",
+      "limitations": ["@binding:b5fa051f6f3ee7b5", "@binding:f8fdb012bb5e313a"],
+      "source_ids": [
+        "sdk-utilities::solana-sha256-hasher-2.3.0::src/lib.rs",
+        "runtime-helpers::solana-sha256-hasher-3.1.0::src/lib.rs",
+        "sdk-utilities::solana-program-1.18.26::src/hash.rs"
+      ],
+      "modules": {"Solanalib.Specs.Core.HashSingle": "54b5bfa7ba43791c794b0b9821d74d97c406cdb72706df26feaa71ebda228086"}
+    },
+    "sdk-utilities::module::Solanalib.Specs.Core.HashInitialized": {
+      "order": 82,
+      "argument": "@review:source-notes/owned-dependencies.md#review-e6e849e1b9e447fb",
+      "limitations": ["@binding:b5fa051f6f3ee7b5", "@binding:f8fdb012bb5e313a"],
+      "source_ids": [
+        "sdk-utilities::solana-sha256-hasher-2.3.0::src/lib.rs",
+        "runtime-helpers::solana-sha256-hasher-3.1.0::src/lib.rs",
+        "sdk-utilities::solana-program-1.18.26::src/hash.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.HashInitialized": "8c9c18d29018f7c3b52afd60867bd7a14e0f43c6c37e92c6e3884da2bf1dd53a"
+      }
+    },
+    "sdk-utilities::module::Solanalib.Specs.Core.SysvarSdkLegacy": {
+      "order": 83,
+      "argument": "@review:source-notes/owned-dependencies.md#review-ed5482b521394efa",
+      "limitations": ["@binding:b5fa051f6f3ee7b5", "@binding:f8fdb012bb5e313a", "@binding:57a174b603247af7"],
+      "source_ids": [
+        "sdk-utilities::solana-sysvar-2.2.2::src/lib.rs",
+        "sdk-utilities::solana-sysvar-2.2.2::src/clock.rs",
+        "sdk-utilities::solana-sysvar-2.2.2::src/rent.rs",
+        "sdk-utilities::solana-sysvar-2.3.0::src/lib.rs",
+        "sdk-utilities::solana-sysvar-2.3.0::src/clock.rs",
+        "sdk-utilities::solana-sysvar-2.3.0::src/rent.rs",
+        "sdk-utilities::solana-program-1.15.2::src/sysvar/mod.rs",
+        "sdk-utilities::solana-program-1.15.2::src/sysvar/rent.rs",
+        "sdk-utilities::solana-program-1.15.2::src/program_error.rs",
+        "sdk-utilities::solana-program-1.15.2::src/rent.rs",
+        "sdk-utilities::solana-program-1.15.2::src/clock.rs",
+        "sdk-utilities::solana-program-1.15.2::src/program_stubs.rs",
+        "sdk-utilities::solana-program-1.18.26::src/sysvar/mod.rs",
+        "sdk-utilities::solana-program-1.18.26::src/sysvar/rent.rs",
+        "sdk-utilities::solana-program-1.18.26::src/program_error.rs",
+        "sdk-utilities::solana-program-1.18.26::src/rent.rs",
+        "sdk-utilities::solana-program-1.18.26::src/clock.rs",
+        "sdk-utilities::solana-program-1.18.26::src/program_stubs.rs",
+        "sdk-utilities::solana-program-1.18.26::src/sysvar/clock.rs",
+        "sdk-utilities::solana-program-error-2.2.2::src/lib.rs",
+        "sdk-utilities::solana-clock-2.2.2::src/lib.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.SysvarSdkLegacy": "460b493dbafb33489d8b1a6db12f84422330bd7d33901c278b91c34fddc771e6"
+      }
+    },
+    "addresses::shared-operations": {
+      "order": 84,
+      "modules": {
+        "Solanalib.Specs.Core.AddressDerived": "f9d741c59c10b7c15302d95b0e918e6786718cd138c01a2e64353968e76120bc",
+        "Solanalib.Specs.Core.AddressOperations": "3d304965ce07c726d78279c68dac1705fc667a9c3cb27ea39953a61389be6786"
+      },
+      "source_ids": [
+        "addresses::solana-pubkey-2.2.1::src/lib.rs",
+        "addresses::solana-pubkey-2.2.1::Cargo.toml.orig",
+        "addresses::solana-pubkey-2.4.0::src/lib.rs",
+        "addresses::solana-pubkey-2.4.0::Cargo.toml.orig",
+        "addresses::solana-program-1.15.2::src/pubkey.rs",
+        "addresses::solana-program-1.18.26::src/pubkey.rs",
+        "addresses::solana-loader-v3-interface-6.1.1::src/lib.rs",
+        "addresses::spl-associated-token-account-client-2.0.0::src/address.rs",
+        "addresses::spl-associated-token-account-client-2.0.0::src/lib.rs",
+        "addresses::spl-associated-token-account-interface-2.0.0::src/address.rs",
+        "addresses::spl-associated-token-account-interface-2.0.0::src/lib.rs",
+        "addresses::borsh-0.9.3::src/de/mod.rs",
+        "addresses::borsh-0.9.3::src/ser/mod.rs",
+        "addresses::borsh-1.6.0::src/de/mod.rs",
+        "addresses::borsh-1.6.0::src/ser/mod.rs",
+        "addresses::borsh-derive-1.6.0::src/internals/deserialize/structs/mod.rs",
+        "addresses::borsh-derive-1.6.0::src/internals/serialize/structs/mod.rs",
+        "addresses::borsh-derive-internal-0.9.3::src/struct_de.rs",
+        "addresses::borsh-derive-internal-0.9.3::src/struct_ser.rs",
+        "addresses::borsh-0.10.4::src/ser/mod.rs",
+        "addresses::solana-address-2.6.0::src/error.rs",
+        "addresses::solana-address-2.6.1::src/error.rs",
+        "addresses::solana-pubkey-3.0.0::src/lib.rs",
+        "addresses::solana-pubkey-4.2.0::src/lib.rs",
+        "addresses::solana-address-1.1.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/syscalls.rs",
+        "fee-address-2.6.1",
+        "value-request::solana-address-2.6.1::src/syscalls.rs",
+        "codecs::borsh-0.10.4::src/de/mod.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-4e030e98221d0985",
+      "limitations": "@shared:limitations-4576d1984dd24813"
+    },
+    "addresses::shared-borsh": {
+      "order": 85,
+      "modules": {
+        "Solanalib.Specs.Core.AddressBorsh": "21e685772e361b335ce343014c6206d30f6aa10fbf0c4be2c6b57a983c810557"
+      },
+      "source_ids": [
+        "addresses::solana-pubkey-2.2.1::src/lib.rs",
+        "addresses::solana-pubkey-2.2.1::Cargo.toml.orig",
+        "addresses::solana-pubkey-2.4.0::src/lib.rs",
+        "addresses::solana-pubkey-2.4.0::Cargo.toml.orig",
+        "addresses::solana-program-1.15.2::src/pubkey.rs",
+        "addresses::solana-program-1.18.26::src/pubkey.rs",
+        "addresses::solana-loader-v3-interface-6.1.1::src/lib.rs",
+        "addresses::spl-associated-token-account-client-2.0.0::src/address.rs",
+        "addresses::spl-associated-token-account-client-2.0.0::src/lib.rs",
+        "addresses::spl-associated-token-account-interface-2.0.0::src/address.rs",
+        "addresses::spl-associated-token-account-interface-2.0.0::src/lib.rs",
+        "addresses::borsh-0.9.3::src/de/mod.rs",
+        "addresses::borsh-0.9.3::src/ser/mod.rs",
+        "addresses::borsh-1.6.0::src/de/mod.rs",
+        "addresses::borsh-1.6.0::src/ser/mod.rs",
+        "addresses::borsh-derive-1.6.0::src/internals/deserialize/structs/mod.rs",
+        "addresses::borsh-derive-1.6.0::src/internals/serialize/structs/mod.rs",
+        "addresses::borsh-derive-internal-0.9.3::src/struct_de.rs",
+        "addresses::borsh-derive-internal-0.9.3::src/struct_ser.rs",
+        "addresses::borsh-0.10.4::src/ser/mod.rs",
+        "addresses::solana-address-2.6.0::src/error.rs",
+        "addresses::solana-address-2.6.1::src/error.rs",
+        "addresses::solana-pubkey-3.0.0::src/lib.rs",
+        "addresses::solana-pubkey-4.2.0::src/lib.rs",
+        "addresses::solana-address-1.1.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/syscalls.rs",
+        "fee-address-2.6.1",
+        "value-request::solana-address-2.6.1::src/syscalls.rs",
+        "codecs::borsh-0.10.4::src/de/mod.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-4e030e98221d0985",
+      "limitations": "@shared:limitations-4576d1984dd24813"
+    },
+    "anchor-spl-support::legacy-stake-dependency": {
+      "order": 86,
+      "argument": "@review:source-notes/owned-dependencies.md#review-3de2f66db0a10c82",
+      "limitations": "@shared:limitations-ed529cd25f065940",
+      "source_ids": ["stake-codecs::solana-program-1.15.2::src/stake/state.rs"],
+      "modules": {"Solanalib.Specs.Core.LegacyStake": "2854aab07dd2b3bbd333824c83e1924c8ec86de81e2c0b6dca227ffb7e3edc60"}
+    },
+    "instruction-extensions-system": {
+      "order": 87,
+      "argument": "@review:source-notes/owned-dependencies.md#review-420c70bc5e0fc774",
+      "limitations": "@shared:limitations-24f2e4ba0bb15db8",
+      "source_ids": [
+        "instruction-extensions::solana-instruction-2.2.1::src/lib.rs",
+        "instruction-extensions::solana-instruction-2.2.1::src/account_meta.rs",
+        "instruction-extensions::solana-instruction-2.3.3::src/lib.rs",
+        "instruction-extensions::solana-instruction-2.3.3::src/account_meta.rs",
+        "instruction-extensions::solana-instruction-3.4.0::src/lib.rs",
+        "instruction-extensions::solana-instruction-3.4.0::src/account_meta.rs",
+        "instruction-extensions::solana-system-interface-1.0.0::src/instruction.rs",
+        "instruction-extensions::solana-system-interface-1.0.0::src/lib.rs",
+        "instruction-extensions::solana-system-interface-3.2.0::src/instruction.rs",
+        "instruction-extensions::solana-system-interface-3.2.0::src/lib.rs",
+        "instruction-extensions::solana-program-1.15.2::src/instruction.rs",
+        "instruction-extensions::solana-program-1.15.2::src/system_instruction.rs",
+        "instruction-extensions::solana-program-1.15.2::src/system_program.rs",
+        "instruction-extensions::solana-program-1.15.2::src/pubkey.rs",
+        "instruction-extensions::solana-program-1.18.26::src/instruction.rs",
+        "instruction-extensions::solana-program-1.18.26::src/system_instruction.rs",
+        "instruction-extensions::solana-program-1.18.26::src/system_program.rs",
+        "instruction-extensions::solana-program-1.18.26::src/pubkey.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.InstructionSystemExtended": "6ee651f65bccd6cc3bef2bde3d05de2d58467fe73378646dbdac190e65504cb0",
+        "Solanalib.Specs.Core.InstructionSystemExtendedSample": "3a66686ee834102c95b7999f69e48dc9dff224c2a66e40b64df01388d702fe58"
+      }
+    },
+    "instruction-extensions-metadata": {
+      "order": 88,
+      "argument": "@review:source-notes/owned-dependencies.md#review-7c61b66e2c36b275",
+      "limitations": "@shared:limitations-24f2e4ba0bb15db8",
+      "source_ids": [
+        "instruction-extensions::solana-instruction-2.2.1::src/lib.rs",
+        "instruction-extensions::solana-instruction-2.2.1::src/account_meta.rs",
+        "instruction-extensions::solana-instruction-2.3.3::src/lib.rs",
+        "instruction-extensions::solana-instruction-2.3.3::src/account_meta.rs",
+        "instruction-extensions::solana-instruction-3.4.0::src/lib.rs",
+        "instruction-extensions::solana-instruction-3.4.0::src/account_meta.rs",
+        "instruction-extensions::solana-system-interface-1.0.0::src/instruction.rs",
+        "instruction-extensions::solana-system-interface-1.0.0::src/lib.rs",
+        "instruction-extensions::solana-system-interface-3.2.0::src/instruction.rs",
+        "instruction-extensions::solana-system-interface-3.2.0::src/lib.rs",
+        "instruction-extensions::solana-program-1.15.2::src/instruction.rs",
+        "instruction-extensions::solana-program-1.15.2::src/system_instruction.rs",
+        "instruction-extensions::solana-program-1.15.2::src/system_program.rs",
+        "instruction-extensions::solana-program-1.15.2::src/pubkey.rs",
+        "instruction-extensions::solana-program-1.18.26::src/instruction.rs",
+        "instruction-extensions::solana-program-1.18.26::src/system_instruction.rs",
+        "instruction-extensions::solana-program-1.18.26::src/system_program.rs",
+        "instruction-extensions::solana-program-1.18.26::src/pubkey.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.InstructionMeta": "1b381ce0b1ca752212e1255658f0c4f81df0e652e9f30f229b717ae1eb6ff2ca"
+      }
+    },
+    "instruction-extensions-clone": {
+      "order": 89,
+      "argument": "@review:source-notes/owned-dependencies.md#review-ee7ba24f0b1c6ae3",
+      "limitations": "@shared:limitations-24f2e4ba0bb15db8",
+      "source_ids": [
+        "instruction-extensions::solana-instruction-2.2.1::src/lib.rs",
+        "instruction-extensions::solana-instruction-2.2.1::src/account_meta.rs",
+        "instruction-extensions::solana-instruction-2.3.3::src/lib.rs",
+        "instruction-extensions::solana-instruction-2.3.3::src/account_meta.rs",
+        "instruction-extensions::solana-instruction-3.4.0::src/lib.rs",
+        "instruction-extensions::solana-instruction-3.4.0::src/account_meta.rs",
+        "instruction-extensions::solana-system-interface-1.0.0::src/instruction.rs",
+        "instruction-extensions::solana-system-interface-1.0.0::src/lib.rs",
+        "instruction-extensions::solana-system-interface-3.2.0::src/instruction.rs",
+        "instruction-extensions::solana-system-interface-3.2.0::src/lib.rs",
+        "instruction-extensions::solana-program-1.15.2::src/instruction.rs",
+        "instruction-extensions::solana-program-1.15.2::src/system_instruction.rs",
+        "instruction-extensions::solana-program-1.15.2::src/system_program.rs",
+        "instruction-extensions::solana-program-1.15.2::src/pubkey.rs",
+        "instruction-extensions::solana-program-1.18.26::src/instruction.rs",
+        "instruction-extensions::solana-program-1.18.26::src/system_instruction.rs",
+        "instruction-extensions::solana-program-1.18.26::src/system_program.rs",
+        "instruction-extensions::solana-program-1.18.26::src/pubkey.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.InstructionClone": "1d72425be76d2a7feac866b79831add76a2f419d23e7e936ec2dfe946cd5da29",
+        "Solanalib.Specs.Core.InstructionCloneSample": "d1934d3cfa3592599cfe9baaf559ee1a7a42462bcc5babc2f82d6898f6605ffb"
+      }
+    },
+    "stake-codecs::review": {
+      "order": 90,
+      "argument": "@review:source-notes/owned-dependencies.md#review-f29d0d5500d16b0f",
+      "limitations": "@shared:limitations-ed529cd25f065940",
+      "source_ids": [
+        "stake-codecs::solana-program-1.15.2::src/stake/state.rs",
+        "stake-codecs::solana-program-1.15.2::src/stake/instruction.rs",
+        "stake-codecs::solana-program-1.15.2::src/stake/mod.rs",
+        "stake-codecs::solana-program-1.15.2::src/stake/config.rs",
+        "stake-codecs::solana-program-1.15.2::src/program_pack.rs",
+        "stake-codecs::solana-program-1.15.2::src/program_error.rs",
+        "stake-codecs::solana-program-1.15.2::src/instruction.rs",
+        "stake-codecs::solana-program-1.15.2::src/system_instruction.rs",
+        "stake-codecs::solana-program-1.15.2::src/pubkey.rs",
+        "stake-codecs::solana-program-1.15.2::src/sysvar/clock.rs",
+        "stake-codecs::solana-program-1.15.2::src/sysvar/rent.rs",
+        "stake-codecs::solana-program-1.15.2::src/sysvar/stake_history.rs",
+        "stake-codecs::solana-program-1.18.26::src/address_lookup_table/state.rs",
+        "stake-codecs::solana-program-1.18.26::src/borsh0_10.rs",
+        "stake-codecs::solana-program-1.18.26::src/borsh.rs",
+        "stake-codecs::solana-program-1.18.26::src/pubkey.rs",
+        "stake-codecs::solana-address-lookup-table-interface-2.2.2::src/state.rs",
+        "stake-codecs::solana-address-lookup-table-interface-2.2.2::Cargo.toml",
+        "stake-codecs::solana-borsh-2.2.1::src/v0_10.rs",
+        "stake-codecs::solana-borsh-2.2.1::src/macros.rs",
+        "stake-codecs::solana-borsh-2.2.1::Cargo.toml",
+        "stake-codecs::bincode-1.3.3::src/lib.rs",
+        "stake-codecs::bincode-1.3.3::src/config/mod.rs",
+        "stake-codecs::bincode-1.3.3::src/de/mod.rs",
+        "stake-codecs::bincode-1.3.3::src/ser/mod.rs",
+        "stake-codecs::bytemuck-1.21.0::src/lib.rs",
+        "stake-codecs::bytemuck-1.21.0::src/internal.rs",
+        "stake-codecs::bytemuck-1.24.0::src/lib.rs",
+        "stake-codecs::bytemuck-1.24.0::src/internal.rs",
+        "stake-codecs::solana-pubkey-2.4.0::src/lib.rs",
+        "stake-codecs::bincode-1.3.3::src/error.rs",
+        "stake-codecs::bincode-1.3.3::src/de/read.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.AddressLookupTable": "6fc00ec0ac68e55ba61e274809adfe4e0a921cae102ae0a2a2c2860dc5bbf26e",
+        "Solanalib.Specs.Core.AddressLookupTableOwned": "0a63f156093193539ec814ba33004f923069e00885cc86e93d499f0554a18af0",
+        "Solanalib.Specs.Core.BorshPackedLen": "8f8672db731327047448d9ccd70884b58ed49c58a0352f246f5047f432ea4eb6",
+        "Solanalib.Specs.Core.ProgramPack": "3bd237ada60eb54447bce87a9b0904684e60c30e84b9aa47d8f9044252cfbe7a",
+        "Solanalib.Specs.Core.LegacyStakeInstructionWitness": "3ff582e4556c684450f7bb3bda825b7e3f9ddf3bb93e7e2e7d73d94dd8c6f80b",
+        "Solanalib.Specs.Core.LegacyStakeInstructionOwned": "e55c23e1879ddabc90f8d0918782c566e250b3cf85ae18ed1b36c0627b9e6ead",
+        "Solanalib.Specs.Core.LegacyStakeInstruction": "6eafa48b85d7e626db9fc177b1cba04093d464308bbcdf34b26872a55c0fb75a",
+        "Solanalib.Specs.Core.ProgramPackExecutable": "7df33e0b7a5cf0e986a2c08196252d1555ebfb42c2d541598c19e9ea10495c0c"
+      }
+    },
+    "anchor-spl-support-primitives": {
+      "order": 91,
+      "source_ids": [
+        "anchor-spl-support::anchor-spl-0.27.0::src/stake.rs",
+        "anchor-spl-support::anchor-spl-1.1.2::src/associated_token.rs",
+        "anchor-spl-support::anchor-spl-1.0.2::src/token_interface.rs",
+        "anchor-spl-support::anchor-spl-1.0.2::src/associated_token.rs",
+        "anchor-spl-support::anchor-spl-0.32.1::src/token_interface.rs",
+        "anchor-spl-support::anchor-spl-1.1.2::src/token_interface.rs",
+        "anchor-spl-support::anchor-spl-0.32.1::src/memo.rs",
+        "anchor-spl-support::anchor-spl-0.29.0::src/token_interface.rs",
+        "anchor-spl-support::anchor-spl-1.0.2::src/token.rs",
+        "anchor-spl-support::anchor-spl-0.27.0::src/token.rs",
+        "anchor-spl-support::anchor-spl-0.32.1::src/metadata.rs",
+        "anchor-spl-support::anchor-spl-0.32.1::src/associated_token.rs",
+        "anchor-spl-support::anchor-spl-1.0.2::src/token_2022.rs",
+        "anchor-spl-support::anchor-spl-0.32.1::src/token.rs",
+        "anchor-spl-support::solana-program-1.15.2::src/stake/instruction.rs",
+        "anchor-spl-support::spl-memo-6.0.0::src/lib.rs",
+        "anchor-spl-support::spl-associated-token-account-client-2.0.0::src/instruction.rs",
+        "anchor-spl-support::spl-associated-token-account-client-2.0.0::src/address.rs",
+        "anchor-spl-support::spl-associated-token-account-interface-2.0.0::src/instruction.rs",
+        "anchor-spl-support::spl-associated-token-account-interface-2.0.0::src/address.rs",
+        "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/instructions/create_metadata_account_v3.rs",
+        "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/data_v2.rs",
+        "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/creator.rs",
+        "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/collection_details.rs",
+        "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/collection.rs",
+        "anchor-spl-support::mpl-token-metadata-5.1.1::src/generated/types/uses.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-8ba4459d8da58983",
+      "limitations": ["@text:0b44bf49befc47fc", "@text:c4a375b27071ba18", "@text:3c57c8b72be18600"],
+      "modules": {
+        "Solanalib.Specs.Core.AnchorSplSupport.Values": "b9895a7abcac3f9256031936d1d498472ea8acc8923e5db335231899d5f464dc",
+        "Solanalib.Specs.Core.AnchorSplSupport.Reference": "68c5e827ab7f6682d09538d5e0e2d3da776980510635070172217310ded14f8f",
+        "Solanalib.Specs.Core.AnchorSplSupport.ReferenceFacts": "0a411448dcba95733a2126c74662fa14dcf635c7f2566053a18c29fddb8c9c50",
+        "Solanalib.Specs.Core.AnchorSplSupport.Resources": "da10cd6166bc2e142be19f531fdb061cb5f674eafd8602741c0e9dcbb3577f84",
+        "Solanalib.Specs.Core.AnchorSplSupport.ExecutionRun": "f6951c86a022a487a17fa1d27611d6cecdc9ae14b1c1552dfca87a3b422cd8ac",
+        "Solanalib.Specs.Core.AnchorSplSupport.Admission": "44b9d3ced2372e2c6550d1213d0f7fcf5fe8ea720b92c21e1d2c0943f9848de8",
+        "Solanalib.Specs.Core.AnchorSplSupport.Continuations": "aed8af91c53abb3bf33a3c200ac518c047a8c98b0dca42fcd46f5fc41927f90a",
+        "Solanalib.Specs.Core.AnchorSplSupport.Wrappers": "9b807e01bef1528dcd27e4b5ca051a8206f06cc6a031dcca0529ee169f8a6891",
+        "Solanalib.Specs.Core.AnchorSplSupport.Instructions": "a79b3c9cb0c26b5d939a54fb4ba86c46099e1901dbe547909026c1a60793f3e0",
+        "Solanalib.Specs.Core.AnchorSplSupport.ReferenceExecution": "33f7306fac21bde3c606c3301ccc1d68b2ba0848d146aabc30c259e30b6f113b",
+        "Solanalib.Specs.Core.AnchorSplSupport.ExecutionTypes": "933e86de3b92c54fd0d2da6aca3e44f64a5631b5b2ba42c1fbe2ca7d3f88ae16",
+        "Solanalib.Specs.Core.AnchorSplSupport.ReferenceReady": "f5750bf61639d8e0757b4469424d05ea9225f4e65264d9f2bfade029ad1afe8e",
+        "Solanalib.Specs.Core.AnchorSplSupport.Sample": "04fb590e8447c5fe00a7a40f5a3c8e866e7b3e6724134a39232c332042d8be82",
+        "Solanalib.Specs.Core.AnchorSplSupport.ExecutionBuild": "ec825f6795456a53478f4dcb51fecd249e44a4aee4526e00a5cb477e319ae4d9",
+        "Solanalib.Specs.Core.AnchorSplSupport.ErrorResources": "176e924c69083ee4e0dbd12231af4af47a2e2197b87fe79971c0a5a81a133498",
+        "Solanalib.Specs.Core.AnchorSplSupport.Conformance": "c38172b545cd2074178ae94d536aaeb64ad78b58ca754facd09d8f99cb503ddb"
+      }
+    },
+    "anchor-views-source-references-and-owners": {
+      "order": 92,
+      "argument": "@review:source-notes/owned-dependencies.md#review-93ea4a4f92ee5352",
+      "limitations": ["@binding:b844ef86141ca458", "@binding:0ca3308c4a8c4733", "@text:2d6cbc4f6eda8e09"],
+      "source_ids": [
+        "anchor-lang-0.27.0::src/accounts/account.rs",
+        "anchor-lang-0.27.0::src/accounts/interface.rs",
+        "anchor-lang-0.27.0::src/accounts/interface_account.rs",
+        "anchor-lang-0.27.0::src/accounts/program.rs",
+        "anchor-lang-0.27.0::src/accounts/signer.rs",
+        "anchor-lang-0.27.0::src/accounts/system_account.rs",
+        "anchor-lang-0.27.0::src/accounts/sysvar.rs",
+        "anchor-lang-0.27.0::src/accounts/unchecked_account.rs",
+        "anchor-lang-0.27.0::src/lib.rs",
+        "anchor-lang-0.29.0::src/accounts/account.rs",
+        "anchor-lang-0.29.0::src/accounts/interface.rs",
+        "anchor-lang-0.29.0::src/accounts/interface_account.rs",
+        "anchor-lang-0.29.0::src/accounts/program.rs",
+        "anchor-lang-0.29.0::src/accounts/signer.rs",
+        "anchor-lang-0.29.0::src/accounts/system_account.rs",
+        "anchor-lang-0.29.0::src/accounts/sysvar.rs",
+        "anchor-lang-0.29.0::src/accounts/unchecked_account.rs",
+        "anchor-lang-0.29.0::src/lib.rs",
+        "anchor-lang-0.32.1::src/accounts/account.rs",
+        "anchor-lang-0.32.1::src/accounts/interface.rs",
+        "anchor-lang-0.32.1::src/accounts/interface_account.rs",
+        "anchor-lang-0.32.1::src/accounts/program.rs",
+        "anchor-lang-0.32.1::src/accounts/signer.rs",
+        "anchor-lang-0.32.1::src/accounts/system_account.rs",
+        "anchor-lang-0.32.1::src/accounts/sysvar.rs",
+        "anchor-lang-0.32.1::src/accounts/unchecked_account.rs",
+        "anchor-lang-0.32.1::src/lib.rs",
+        "anchor-lang-1.0.2::src/accounts/account.rs",
+        "anchor-lang-1.0.2::src/accounts/interface.rs",
+        "anchor-lang-1.0.2::src/accounts/interface_account.rs",
+        "anchor-lang-1.0.2::src/accounts/program.rs",
+        "anchor-lang-1.0.2::src/accounts/signer.rs",
+        "anchor-lang-1.0.2::src/accounts/system_account.rs",
+        "anchor-lang-1.0.2::src/accounts/sysvar.rs",
+        "anchor-lang-1.0.2::src/accounts/unchecked_account.rs",
+        "anchor-lang-1.0.2::src/lib.rs",
+        "anchor-lang-1.1.2::src/accounts/account.rs",
+        "anchor-lang-1.1.2::src/accounts/interface.rs",
+        "anchor-lang-1.1.2::src/accounts/interface_account.rs",
+        "anchor-lang-1.1.2::src/accounts/program.rs",
+        "anchor-lang-1.1.2::src/accounts/signer.rs",
+        "anchor-lang-1.1.2::src/accounts/system_account.rs",
+        "anchor-lang-1.1.2::src/accounts/sysvar.rs",
+        "anchor-lang-1.1.2::src/accounts/unchecked_account.rs",
+        "anchor-lang-1.1.2::src/lib.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.AnchorViewsContracts": "bc2499234714d592324a72fc14bb622791a7aa66e78647da69cb00d2df5e3ee3",
+        "Solanalib.Specs.Core.AnchorViewsSamples": "f61d1ce3eb47493c0f002fb2fdad36dd3576665436d84aa1c403bf226756b78e",
+        "Solanalib.Specs.Core.AnchorViewsFacts": "a77528f131bc89480095baffbf93f1823a5b3c13ed95c67c0a5cbaa194879916",
+        "Solanalib.Specs.Core.AnchorViewsLamports": "24a10887d7bf0203ae21bc0a9a8f13928e8154e6961f7a086bf8cb82bbb06546",
+        "Solanalib.Specs.Core.AnchorViewsOwned": "5ac539f94101af48c7de1f7ee45d9817ace32c85b593bb2306461dc272d99032",
+        "Solanalib.Specs.Core.AnchorViews": "a1f6824bf4f58cae84e43a957e5ff28a10cd45d1185aabd58b54947a944369e6",
+        "Solanalib.Specs.Core.AnchorViewsAssignment": "a8076e001d910c7671f767788f140c0c457bc84caed38dc27a1334e2beadb8c3"
+      }
+    },
+    "borrow-projection-support::shared-world": {
+      "order": 93,
+      "source_ids": [],
+      "argument": "@review:source-notes/owned-dependencies.md#review-cbcbf177c62487f6",
+      "limitations": ["@text:58230ad34615a82b"],
+      "modules": {
+        "Solanalib.Specs.Core.BorrowContentProjection": "3d6a99099e7cf7e255048b9254873ad0fee75670d31cd33955c38208e82c1853",
+        "Solanalib.Specs.Core.BorrowProjection": "37b2fa3f30f819cc4da1fb74e49ffb56c52ebde3f1ef9d1e32e32ec4a32fc4f8"
+      }
+    },
+    "opaque-cpi-support::runtime-boundaries": {
+      "order": 94,
+      "source_ids": [],
+      "argument": "@review:source-notes/owned-dependencies.md#review-bb2c5a347237ccd7",
+      "limitations": ["@text:f52431621a3907d6", "@text:b9a4e855994845a6"],
+      "modules": {
+        "Solanalib.Specs.Core.OpaqueCpiBorrowFacts": "ff015a03e733f5fc3eaedb97518fc4010d69b706efd834eb4e67a13e8148ab09",
+        "Solanalib.Specs.Core.OpaqueCpiWitness": "67e514ea3c55e82bdcab737a4d265dba514aafaa075535f07ad6c8f1da25d0ea",
+        "Solanalib.Specs.Core.OpaqueCpiReference": "992916066a6411427c4d17f42286986c1e0a3c0e67255a64445ed09d9c0508e9",
+        "Solanalib.Specs.Core.OpaqueCpiAccountState": "ec5680753d247b4e0637f41aa6dcdd12bd7278779f187ed6a41ab7630aca4e78",
+        "Solanalib.Specs.Core.OpaqueCpiSdkOwnedWitness": "62edcc0c758532597144e1595cd3f75663bc12e01abf4d42245d71b0af7ea30a",
+        "Solanalib.Specs.Core.OpaqueCpiSdk": "7fb6440f64deb12b9badf5ee167a2ce65aae587688a0f57430a6653b3a041d2c",
+        "Solanalib.Specs.Core.OpaqueCpi": "680668f8776b81488463474969bbf6b016a110c3666a2acec1fc9bc66ce8102e",
+        "Solanalib.Specs.Core.OpaqueCpiMemory": "3b4c0bf849e2274a5cac52f1e56dd70707a9aaacafc384d1bbf4137908e3d13e",
+        "Solanalib.Specs.Core.OpaqueCpiOwnedReference": "84131a3d4cf8d60fc4ced4146e584196a5c08c714fded01debe2fc53aa441f86",
+        "Solanalib.Specs.Core.OpaqueCpiSdkOwned": "873a291e1bd5401b60406dfb91fcd312e7a5d2a2c29137ded774a4cd0fd6067d"
+      }
+    },
+    "sdk-account-info-operations": {
+      "order": 95,
+      "modules": {
+        "Solanalib.Specs.Core.AccountInfoResize": "bf4888f75e3c3220b543d6ffad4a6af5eb91a8c45f7bfb303ac0c3465df9cf79",
+        "Solanalib.Specs.Core.AccountInfoSdk": "cb79c83e759c22180d9352bb621e623a6dd0de6ace1dd8693e81e9d651d9e639"
+      },
+      "source_ids": [
+        "sdk-account-info::solana-account-info-2.3.0::src/lib.rs",
+        "sdk-account-info::solana-account-info-3.1.1::src/lib.rs",
+        "sdk-account-info::solana-program-1.15.2::src/account_info.rs",
+        "sdk-account-info::solana-program-1.15.2::src/program_error.rs",
+        "sdk-account-info::solana-program-1.15.2::src/program_memory.rs",
+        "sdk-account-info::solana-program-1.15.2::src/program_stubs.rs",
+        "sdk-account-info::solana-program-1.15.2::src/entrypoint.rs",
+        "sdk-account-info::solana-program-1.18.26::src/account_info.rs",
+        "sdk-account-info::solana-program-1.18.26::src/program_error.rs",
+        "sdk-account-info::solana-program-1.18.26::src/program_memory.rs",
+        "sdk-account-info::solana-program-1.18.26::src/program_stubs.rs",
+        "sdk-account-info::solana-program-1.18.26::src/entrypoint.rs",
+        "sdk-account-info::solana-program-memory-2.2.1::src/lib.rs",
+        "sdk-account-info::solana-program-memory-2.3.1::src/lib.rs",
+        "sdk-account-info::solana-program-memory-3.0.0::src/lib.rs",
+        "sdk-account-info::solana-program-memory-3.1.0::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-ab164008de907922",
+      "limitations": ["@binding:dfecc70a526cdd36", "@text:2ed3a8025edecccd", "@text:0e7a50555fec3acd"]
+    },
+    "anchor-context-error-codec-operations": {
+      "order": 96,
+      "source_ids": [
+        "anchor-lang-0.27.0::src/context.rs",
+        "anchor-lang-0.27.0::src/bpf_writer.rs",
+        "anchor-lang-0.27.0::src/lib.rs",
+        "anchor-lang-0.27.0::src/bpf_upgradeable_state.rs",
+        "anchor-lang-0.27.0::src/error.rs",
+        "anchor-syn-0.27.0::src/codegen/error.rs",
+        "anchor-lang-0.29.0::src/context.rs",
+        "anchor-lang-0.29.0::src/bpf_writer.rs",
+        "anchor-lang-0.29.0::src/lib.rs",
+        "anchor-lang-0.29.0::src/bpf_upgradeable_state.rs",
+        "anchor-lang-0.29.0::src/error.rs",
+        "anchor-syn-0.29.0::src/codegen/error.rs",
+        "anchor-lang-0.32.1::src/context.rs",
+        "anchor-lang-0.32.1::src/bpf_writer.rs",
+        "anchor-lang-0.32.1::src/lib.rs",
+        "anchor-lang-0.32.1::src/bpf_upgradeable_state.rs",
+        "anchor-lang-0.32.1::src/error.rs",
+        "anchor-syn-0.32.1::src/codegen/error.rs",
+        "anchor-context-1.0.2",
+        "anchor-lang-1.0.2::src/bpf_writer.rs",
+        "anchor-lang-1.0.2::src/lib.rs",
+        "anchor-lang-1.0.2::src/bpf_upgradeable_state.rs",
+        "anchor-error-values-1.0.2",
+        "anchor-syn-1.0.2::src/codegen/error.rs",
+        "anchor-lang-1.1.2::src/context.rs",
+        "anchor-lang-1.1.2::src/bpf_writer.rs",
+        "anchor-lang-1.1.2::src/lib.rs",
+        "anchor-lang-1.1.2::src/bpf_upgradeable_state.rs",
+        "anchor-syn-1.1.2::src/codegen/error.rs",
+        "anchor-lang-error-1.1.2::src/lib.rs",
+        "anchor-lang-0.27.0::src/idl.rs",
+        "solana-program-1.15.2::src/program_error.rs",
+        "solana-program-1.18.26::src/program_error.rs",
+        "solana-program-error-2.2.2::src/lib.rs",
+        "solana-program-error-3.0.1::src/lib.rs",
+        "bincode-1.3.3::src/de/mod.rs",
+        "bincode-1.3.3::src/config/mod.rs",
+        "solana-loader-v3-interface-6.1.1::src/state.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-303d6cdfff6b34a1",
+      "limitations": ["@text:efaaf108f03e5357", "@text:213333ae17d64adf", "@text:ec8446923195b08d"],
+      "modules": {
+        "Solanalib.Specs.Core.AnchorErrorOperationsLog": "130e3696d4be5681d14d76fcb9d2fc4745cd3759d5ed4b03a2b0bd8b47c4e9d3",
+        "Solanalib.Specs.Core.AnchorErrorOperationsCallbacks": "a229fde69b0f159fb168ee1de140b49a03293573b953c43c0dfaf0670d7b2cd7",
+        "Solanalib.Specs.Core.AnchorErrorOperationsContracts": "0565b1c176d119d4c701a67824647cd5ce93a76b704570aab5f37abc5291ee4d",
+        "Solanalib.Specs.Core.AnchorCodecDecoders": "9cbcf7225d8a89821d3d6f8c04ebfd01d19fcc4c76f8a92557baa3b049dc398e",
+        "Solanalib.Specs.Core.AnchorErrorCodeTables": "c1aebecf90a5a91622e35bb67c2841786570bd53ae32c6da2fb4673c9e71667c",
+        "Solanalib.Specs.Core.AnchorErrorOperationsLogWitnesses": "c6f61aa067b12d1a665f979ae451d3738659083f4c4d1f4aa6beb7ee779c1b49",
+        "Solanalib.Specs.Core.AnchorErrorOperationsWitnesses": "b62272b18768c0c28217d63a22b65151e684780404d1e04edd06fd5169c20e03",
+        "Solanalib.Specs.Core.AnchorCodec": "347426b1c2350c8d51463a1cbe618fdb61dae5b574160499492ba8b6e8a6be40",
+        "Solanalib.Specs.Core.AnchorErrorOperationsEquality": "37d216fc3f3d44980fa72ab019d0a5e2ee50c0885ed64dd46b86cfffdfc3b09a"
+      }
+    },
+    "anchor-owned-error-primitives": {
+      "order": 97,
+      "source_ids": [
+        "anchor-lang-0.27.0::src/error.rs",
+        "anchor-lang-0.29.0::src/error.rs",
+        "anchor-lang-0.32.1::src/error.rs",
+        "anchor-error-values-1.0.2",
+        "anchor-lang-error-1.1.2::src/lib.rs",
+        "solana-program-1.15.2::src/program_error.rs",
+        "solana-program-1.18.26::src/program_error.rs",
+        "solana-program-error-2.2.2::src/lib.rs",
+        "solana-program-error-3.0.1::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-5e479024ba0d2d51",
+      "limitations": ["@text:a3361c774930c893", "@text:2e200b5cf39f0d4f"],
+      "modules": {
+        "Solanalib.Specs.Core.AnchorErrorOperations": "ee9506d08ceb645e0c9a2bec77d5195ee2ffbe3ab45722ce93032fe74d163607",
+        "Solanalib.Specs.Core.ProgramErrorOwnedValues": "626cbf66c133f3bd03ee361adeece593d7d353380173fb2e45fdce1a3215257f",
+        "Solanalib.Specs.Core.ProgramErrorOwned": "9614fbedef1e5b9cd1def2c1ccd847108cfc1e601c625998dca7a192d42c0319"
+      }
+    },
+    "anchor-context-primitives": {
+      "order": 98,
+      "source_ids": [
+        "anchor-lang-0.27.0::src/context.rs",
+        "anchor-lang-0.29.0::src/context.rs",
+        "anchor-lang-0.32.1::src/context.rs",
+        "anchor-context-1.0.2",
+        "anchor-lang-1.1.2::src/context.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-39a4b9ddaf62e22b",
+      "limitations": ["@text:ada46c212644edf8", "@text:39c805a976ccaded"],
+      "modules": {
+        "Solanalib.Specs.Core.AnchorContextOperations": "c4453ca88f3b13248c3239dfda6eba579cbeccb1e1a77116f98f7d84182e668e"
+      }
+    },
+    "anchor-system-owned-wrappers": {
+      "order": 99,
+      "source_ids": [
+        "anchor-lang-0.27.0::src/system_program.rs",
+        "anchor-lang-0.27.0::src/context.rs",
+        "anchor-lang-0.27.0::src/lib.rs",
+        "anchor-lang-0.27.0::src/error.rs",
+        "anchor-lang-0.29.0::src/system_program.rs",
+        "anchor-lang-0.29.0::src/context.rs",
+        "anchor-lang-0.29.0::src/lib.rs",
+        "anchor-lang-0.29.0::src/error.rs",
+        "anchor-lang-0.32.1::src/system_program.rs",
+        "anchor-lang-0.32.1::src/context.rs",
+        "anchor-lang-0.32.1::src/lib.rs",
+        "anchor-lang-0.32.1::src/error.rs",
+        "anchor-lang-1.0.2::src/system_program.rs",
+        "anchor-context-1.0.2",
+        "anchor-lang-1.0.2::src/lib.rs",
+        "anchor-error-values-1.0.2",
+        "anchor-lang-1.1.2::src/system_program.rs",
+        "anchor-lang-1.1.2::src/context.rs",
+        "anchor-lang-1.1.2::src/lib.rs",
+        "anchor-lang-error-1.1.2::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-890159c9f1a99a7c",
+      "limitations": ["@text:fdf73ce45ea9d7c8", "@text:27860a63db6b85ab", "@text:6ccbd02b7955d25f"],
+      "modules": {
+        "Solanalib.Specs.Core.AnchorSystemRun": "0ed9ab00009af56287729238051d096bde49cf2c7365c9a6effe1e120034cb67",
+        "Solanalib.Specs.Core.AnchorSystem": "6270fd22cb83363d2001e919640d8ae30fae827f750e59439e2a44c167e6c8c6",
+        "Solanalib.Specs.Core.AnchorSystemSample": "3f8cfdf29b5a555e8c2aa4291e8784ca93a1213849bd44ebd140072f773d553a",
+        "Solanalib.Specs.Core.AnchorSystemWitness": "7fedbcf1abc79a36dd27dbf6af3c60d436337d8513dfdb2c4adacb2930679bce",
+        "Solanalib.Specs.Core.AnchorSystemExitWitness": "9febe7d6cca634da93ad222f02836f097453a0657ce8593de9500243c5259432"
+      }
+    },
+    "anchor-spl-token-operations": {
+      "order": 100,
+      "modules": {
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Builders": "ab2df7bb1f01a689a151556e865ae4e9cdea15fd23b9282373c84bc47b9c0d75",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Inputs": "14c0ae04c909bdef2f0b6dc784fc972fa6d99d55d36c9aeb671f7be06a729675",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Execution": "140c59e33f91e24de660e9f9aedb79e0dd8d868a65284d920c98b59aeae0cea3",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Reference": "7f3560fa867d7e7d3361d36ae6bbdb0d3a8142aa662a3c042c4d2ca123a34a09",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.BuilderErrors": "1ef3e763b4ac2677f256df32e53b16cc8f99459edef05f1f538ef7290805a8dc",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.ExecutionBuilders": "fba69e2f10765e1a3f1c615c6aac407ef8ea44aea42bf6079e0b24359cb6dddb",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Resources": "ec8285d797cff87319f1e5f8e534d0c3af494d7a22b4312578159b8210d22250",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.ReferenceObservation": "a0b1125566645130447ea16bc6efed4f12d2aefeb9a782faa6ca0882377cda11",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.ExecutionRun": "cf12e76e99cfabd57fa797acd31d5226dcb76cfdd01988b5643a719bd06c7155",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Wrappers": "91ac71c5062d0f5ca515f01ad382b057ac0846722c16799a1c376cf33af76991",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.ReferenceReady": "ea1d0f386543f5e2fba2644472ae43786f4f661e5fe63d631c467cfc414971fc",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Continuation": "5d747561f68087ea6b3e46e041984f21826808171febe82c34da45361a79d38b",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.Sample": "3aa2f2f5d655939a0b7f1fe4df2b86d262a76a7b6a26bc15d969de9def08a72f",
+        "Solanalib.Specs.Core.AnchorSplTokenOperations.ExecutionVectors": "ac190e8ea98509427c421bfc5277e72bcf81412537cbbb15b51f1f59bdfe123a"
+      },
+      "source_ids": [
+        "anchor-spl-0.27.0::src/token.rs",
+        "anchor-spl-0.27.0::Cargo.toml.orig",
+        "anchor-spl-0.29.0::src/token_2022.rs",
+        "anchor-spl-0.29.0::Cargo.toml.orig",
+        "anchor-spl-0.32.1::src/token.rs",
+        "anchor-spl-0.32.1::src/token_2022.rs",
+        "anchor-spl-0.32.1::src/token_2022_extensions/group_member_pointer.rs",
+        "anchor-spl-0.32.1::src/token_2022_extensions/group_pointer.rs",
+        "anchor-spl-0.32.1::src/token_2022_extensions/metadata_pointer.rs",
+        "anchor-spl-0.32.1::src/token_2022_extensions/mint_close_authority.rs",
+        "anchor-spl-0.32.1::src/token_2022_extensions/non_transferable.rs",
+        "anchor-spl-0.32.1::src/token_2022_extensions/permanent_delegate.rs",
+        "anchor-spl-0.32.1::src/token_2022_extensions/transfer_hook.rs",
+        "anchor-spl-0.32.1::Cargo.toml.orig",
+        "anchor-spl-1.0.2::src/token_2022.rs",
+        "anchor-spl-1.0.2::Cargo.toml.orig",
+        "anchor-spl-1.1.2::src/token_2022.rs",
+        "anchor-spl-1.1.2::Cargo.toml.orig",
+        "spl-token-3.5.0::src/instruction.rs",
+        "spl-token-2022-0.9.0::src/instruction.rs",
+        "spl-token-8.0.0::src/instruction.rs",
+        "spl-token-2022-8.0.1::src/instruction.rs",
+        "spl-token-2022-interface-2.1.0::src/instruction.rs",
+        "spl-token-2022-8.0.1::src/extension/group_member_pointer/instruction.rs",
+        "spl-token-2022-8.0.1::src/extension/group_pointer/instruction.rs",
+        "spl-token-2022-8.0.1::src/extension/metadata_pointer/instruction.rs",
+        "spl-token-2022-8.0.1::src/extension/transfer_hook/instruction.rs",
+        "anchor-context-1.0.2",
+        "anchor-error-values-1.0.2",
+        "anchor-lang-0.27.0::src/context.rs",
+        "anchor-lang-0.27.0::src/error.rs",
+        "anchor-lang-0.29.0::src/context.rs",
+        "anchor-lang-0.29.0::src/error.rs",
+        "anchor-lang-0.32.1::src/context.rs",
+        "anchor-lang-0.32.1::src/error.rs",
+        "anchor-lang-1.1.2::src/context.rs",
+        "anchor-lang-error-1.1.2::src/lib.rs",
+        "solana-program-1.15.2::src/program_error.rs",
+        "solana-program-1.18.26::src/program_error.rs",
+        "solana-program-error-2.2.2::src/lib.rs",
+        "solana-program-error-3.0.1::src/lib.rs",
+        "token-instructions::spl-token-2022-8.0.1::src/extension/metadata_pointer/instruction.rs",
+        "token-instructions::spl-token-2022-8.0.1::src/instruction.rs",
+        "token-instructions::spl-token-2022-8.0.1::src/lib.rs",
+        "token-instructions::spl-token-8.0.0::src/instruction.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-4e073bd4cffc163f",
+      "limitations": ["@text:3f01dd8837b14bb1", "@text:aec3f92d025a3912", "@text:f621b86787b9e0ac"]
+    },
+    "token-instruction-additional-plans": {
+      "order": 101,
+      "argument": "@review:source-notes/owned-dependencies.md#review-38b904f5fa73aa94",
+      "limitations": ["@binding:b985857460252cc6", "@binding:f80b845a6ce838b4", "@binding:340aca4748420ac8"],
+      "source_ids": [
+        "token-instructions::spl-token-8.0.0::src/instruction.rs",
+        "token-instructions::spl-token-2022-8.0.1::src/instruction.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenInstructionAdditionalPlans": "6567929d1f7f8cc2819079d6de31c933c92b3880e44a1f30879dc35c47c0ecf9"
+      }
+    },
+    "token-metadata-pointer-constructor": {
+      "order": 102,
+      "argument": "@review:source-notes/owned-dependencies.md#review-8adcc7d0a266948d",
+      "limitations": ["@binding:b985857460252cc6", "@binding:340aca4748420ac8", "@text:c7ecec5e7424fb9a"],
+      "source_ids": [
+        "token-instructions::spl-token-2022-8.0.1::src/extension/metadata_pointer/instruction.rs",
+        "token-instructions::spl-token-2022-8.0.1::src/instruction.rs",
+        "token-instructions::spl-token-2022-8.0.1::src/lib.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.TokenMetadataPointer": "f21cc9d26b2a9114e42c15d118f04454ac569f0b7e4c421c0596c6a65b59b39d"
+      }
+    },
+    "callback-graph": {
+      "order": 103,
+      "argument": "@review:source-notes/owned-dependencies.md#review-80a4176f98915ac2",
+      "limitations": ["@text:68c073e0ba029503"],
+      "source_ids": [],
+      "modules": {
+        "Solanalib.Specs.Core.CallbackGraph": "723605b130f864617a7ba75e93b6f44fec2ceae77d2503e483ea9b65231d8329"
+      }
+    },
+    "anchor-lifecycle-validation-and-cleanup": {
+      "order": 104,
+      "source_ids": [
+        "anchor-lifecycle-0.27.0::Cargo.toml.orig",
+        "anchor-lang-0.27.0::src/lib.rs",
+        "anchor-lifecycle-0.27.0::src/common.rs",
+        "anchor-lifecycle-0.27.0::src/bpf_writer.rs",
+        "anchor-lang-0.27.0::src/accounts/account.rs",
+        "anchor-lang-0.27.0::src/accounts/interface_account.rs",
+        "anchor-lang-0.27.0::src/accounts/program.rs",
+        "anchor-lang-0.27.0::src/accounts/sysvar.rs",
+        "anchor-lifecycle-0.29.0::Cargo.toml.orig",
+        "anchor-lang-0.29.0::src/lib.rs",
+        "anchor-lifecycle-0.29.0::src/common.rs",
+        "anchor-lifecycle-0.29.0::src/bpf_writer.rs",
+        "anchor-lang-0.29.0::src/accounts/account.rs",
+        "anchor-lang-0.29.0::src/accounts/interface_account.rs",
+        "anchor-lang-0.29.0::src/accounts/program.rs",
+        "anchor-lang-0.29.0::src/accounts/sysvar.rs",
+        "anchor-lifecycle-0.32.1::Cargo.toml.orig",
+        "anchor-lang-0.32.1::src/lib.rs",
+        "anchor-lifecycle-0.32.1::src/common.rs",
+        "anchor-lifecycle-0.32.1::src/bpf_writer.rs",
+        "anchor-lang-0.32.1::src/accounts/account.rs",
+        "anchor-lang-0.32.1::src/accounts/interface_account.rs",
+        "anchor-lang-0.32.1::src/accounts/program.rs",
+        "anchor-lang-0.32.1::src/accounts/sysvar.rs",
+        "anchor-lifecycle-1.0.2::Cargo.toml.orig",
+        "anchor-lang-1.0.2::src/lib.rs",
+        "anchor-lifecycle-1.0.2::src/common.rs",
+        "anchor-lifecycle-1.0.2::src/bpf_writer.rs",
+        "anchor-lang-1.0.2::src/accounts/account.rs",
+        "anchor-lang-1.0.2::src/accounts/interface_account.rs",
+        "anchor-lang-1.0.2::src/accounts/program.rs",
+        "anchor-lang-1.0.2::src/accounts/sysvar.rs",
+        "anchor-lifecycle-1.1.2::Cargo.toml.orig",
+        "anchor-lang-1.1.2::src/lib.rs",
+        "anchor-lifecycle-1.1.2::src/common.rs",
+        "anchor-lifecycle-1.1.2::src/bpf_writer.rs",
+        "anchor-lang-1.1.2::src/accounts/account.rs",
+        "anchor-lang-1.1.2::src/accounts/interface_account.rs",
+        "anchor-lang-1.1.2::src/accounts/program.rs",
+        "anchor-lang-1.1.2::src/accounts/sysvar.rs",
+        "anchor-lang-0.27.0::src/accounts/signer.rs",
+        "anchor-lang-0.27.0::src/accounts/system_account.rs",
+        "anchor-lang-0.27.0::src/accounts/unchecked_account.rs",
+        "anchor-lifecycle-0.27.0::src/accounts/account_info.rs",
+        "anchor-lifecycle-0.27.0::src/accounts/boxed.rs",
+        "anchor-lang-0.29.0::src/accounts/signer.rs",
+        "anchor-lifecycle-0.29.0::src/accounts/account_info.rs",
+        "anchor-lifecycle-0.29.0::src/accounts/boxed.rs",
+        "anchor-lifecycle-0.29.0::src/accounts/option.rs",
+        "anchor-lang-0.32.1::src/accounts/interface.rs",
+        "anchor-lang-0.32.1::src/accounts/signer.rs",
+        "anchor-lang-0.32.1::src/accounts/unchecked_account.rs",
+        "anchor-lifecycle-0.32.1::src/accounts/account_info.rs",
+        "anchor-lifecycle-0.32.1::src/accounts/boxed.rs",
+        "anchor-lifecycle-0.32.1::src/accounts/option.rs",
+        "anchor-lang-1.0.2::src/accounts/interface.rs",
+        "anchor-lang-1.0.2::src/accounts/signer.rs",
+        "anchor-lang-1.0.2::src/accounts/system_account.rs",
+        "anchor-lang-1.0.2::src/accounts/unchecked_account.rs",
+        "anchor-lifecycle-1.0.2::src/accounts/boxed.rs",
+        "anchor-lifecycle-1.0.2::src/accounts/option.rs",
+        "anchor-lang-1.1.2::src/accounts/interface.rs",
+        "anchor-lang-1.1.2::src/accounts/signer.rs",
+        "anchor-lang-1.1.2::src/accounts/unchecked_account.rs",
+        "anchor-lifecycle-1.1.2::src/accounts/boxed.rs",
+        "anchor-lifecycle-1.1.2::src/accounts/option.rs",
+        "anchor-error-values-1.0.2",
+        "anchor-lang-0.27.0::src/error.rs",
+        "anchor-lang-0.29.0::src/error.rs",
+        "anchor-lang-0.32.1::src/error.rs",
+        "anchor-lang-error-1.1.2::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-e5f8d5fd55406350",
+      "limitations": ["@text:6654f224a359ec49", "@text:1b1c3f0ceb380910", "@text:a51c9598251ad1cc"],
+      "modules": {
+        "Solanalib.Specs.Core.AnchorLifecycleClose": "68efeed5e8339158d315ddf34b6ae069a7040d959432d5fb9b02e922c1623b29",
+        "Solanalib.Specs.Core.AnchorLifecycleCloseFacts": "fcf3c280dbbd13979fffae45940cbf76979913692c5d1ad961fc872a415e8288",
+        "Solanalib.Specs.Core.AnchorLifecycleConstruct": "404e862d2b3221070b93a4b56b11622005bfc8f836c90c6fcb63fa0443aeb611",
+        "Solanalib.Specs.Core.AnchorLifecycleReloadSamples": "bce084469689aa3c1c491c2f3e4db1056a40e63f11d02f8bfc82ae25b4b1d8eb",
+        "Solanalib.Specs.Core.AnchorLifecycleExitFacts": "55ab11bcef005b59912e48eef5478826c03d574b5f4c5ae34fae57e642f06d49",
+        "Solanalib.Specs.Core.AnchorLifecycleValidation": "f8a6757e98c44c308fbb4bd7688d15f115d7374b8b45572f7f5f770b1b955b33",
+        "Solanalib.Specs.Core.AnchorLifecyclePayload": "e6911e19eff7cee21bc0151f4ed24e891a142a36c242dfb9b81c88d28cccd846",
+        "Solanalib.Specs.Core.AnchorLifecyclePayloadSamples": "3fa211e957a928e2195a762212d7983cf0f6203154d3e37cfad92def5ee15f60",
+        "Solanalib.Specs.Core.AnchorLifecycleCloseSamples": "45b5cc383c6f1dcd1eaab37941f1e04a574653b99b3542e4850f06e7bef3fec2",
+        "Solanalib.Specs.Core.AnchorLifecyclePayloadFacts": "5046efc3d77f46ec35ef0561bd7051ab60b119d469def993a55d4510bfc3767c",
+        "Solanalib.Specs.Core.AnchorLifecycleSourceCollections": "e77b8ac4e6aa2803e206c07f313e4a4494c841d7070a64526381099d5f4b5167",
+        "Solanalib.Specs.Core.AnchorLifecycleProfiles": "2f42f4a990ffb31b558c582421c30241fb08ef5e742680c0519c41fe700b4059",
+        "Solanalib.Specs.Core.AnchorLifecycleRead": "dd57b83fafdb1f127f46a912d32747eb17c3113064499cdd391e1c2b0e19e08d",
+        "Solanalib.Specs.Core.AnchorLifecycleCollections": "16234ac3e6f458dbb42bfee983a68308a870ad4e53ec78a6b91b4f281e41fbe6",
+        "Solanalib.Specs.Core.AnchorLifecycleExit": "5cf504f510496feaf29690f423935e8c135e89444873201c8fdb1f46b5e8ad8d",
+        "Solanalib.Specs.Core.AnchorLifecycle": "39b96a727fe466d1eb775ee45590977242cc2ad24195b299d069736602536860",
+        "Solanalib.Specs.Core.AnchorLifecycleFocus": "43c8d4d0c14b0470be244164ca93471d9e90e068ec50e6e663d22c39962d73a7",
+        "Solanalib.Specs.Core.AnchorLifecycleErrorFacts": "ec6239fe8fa230fe3f7e642d6d1e6db157fbda42793238df9a0145b5366615f1",
+        "Solanalib.Specs.Core.AnchorLifecycleConstructTrace": "775dd356f75c69da1fb4557afd073795349e3155d72c7ff7c4d38372b08002e9"
+      }
+    },
+    "anchor-loader-lifecycle": {
+      "order": 105,
+      "argument": "@review:source-notes/owned-dependencies.md#review-cc6a81bdcc17465c",
+      "limitations": ["@text:bb42fd67b08b115b", "@text:0a948620f02cce41"],
+      "source_ids": [
+        "anchor-lang-0.32.1::src/accounts/account_loader.rs",
+        "anchor-lang-1.0.2::src/accounts/account_loader.rs",
+        "anchor-lang-1.1.2::src/accounts/account_loader.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.AnchorLoaderConstruct": "221474937a039fa79cc8cdc254288ad034ab9248eb552879fde5e97835438323",
+        "Solanalib.Specs.Core.AnchorLoaderIdentity": "01c6203b2ac2e1f5fd8049e65ddaf780f903df7da2dfbdacec454b810fc4438b",
+        "Solanalib.Specs.Core.AnchorLoaderInitOwned": "d2defcd0532a9618471d5a4adc6e3749858d7fe50a206d5e7a6069c0254c2aa4",
+        "Solanalib.Specs.Core.AnchorLoaderInit": "836c10f3c413c5c64a603e90367960e7281ac35deaa16f915615a8cea557c739",
+        "Solanalib.Specs.Core.AnchorLoaderExit": "6c07d198b1f7cb2b9e8a65996a83d07666a33d32a53156308baf341a821c5892",
+        "Solanalib.Specs.Core.AnchorLoaderClose": "f94e5da0d28d6d86287ab88bcd1800f2b773f2612daa57f1ce62faeaa61bbbdd"
+      }
+    },
+    "extended-token-selected-support::sdk-values::Solanalib.Specs.Core.ProgramOptionValues": {
+      "order": 106,
+      "modules": {
+        "Solanalib.Specs.Core.ProgramOptionValues": "d6024dc262f630347ced9dd1192ab4511ec54818e0121532930defafec4b904b"
+      },
+      "source_ids": [
+        "sdk-values::solana-program-option-3.1.0::src/lib.rs",
+        "sdk-values::solana-program-option-2.2.1::src/lib.rs",
+        "sdk-values::solana-program-1.15.2::src/program_option.rs",
+        "addresses::solana-program-1.15.2::src/pubkey.rs",
+        "addresses::solana-program-1.18.26::src/pubkey.rs",
+        "addresses::solana-pubkey-2.2.1::src/lib.rs",
+        "addresses::solana-pubkey-2.4.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/lib.rs",
+        "sdk-values::solana-address-2.6.1::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-4e44ba666333c286",
+      "limitations": ["@text:4eaa44b520524356"]
+    },
+    "extended-token-selected-support::token-extension-legacy-control": {
+      "order": 107,
+      "modules": {
+        "Solanalib.Specs.Core.TokenExtensionLegacyOwners": "7c26aff010f4e88a8d73aa7734f08f2857e83116d02496812d15ab23b4122669",
+        "Solanalib.Specs.Core.TokenExtensionLegacyGetterLaws": "c2fa4ef5ecac77f68b102331b97c2bf6ace2fa20b64a9aedfcf755df1209c793"
+      },
+      "source_ids": [
+        "token-state::spl-token-2022-8.0.1::src/extension/mod.rs",
+        "token-state::spl-token-2022-8.0.1::src/extension/permanent_delegate.rs",
+        "token-state::spl-token-2022-8.0.1::src/extension/transfer_hook/mod.rs",
+        "token-state::spl-token-2022-interface-2.1.0::src/extension/mod.rs",
+        "token-state::spl-token-2022-interface-3.0.1::src/extension/mod.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-7d6859774643ec81",
+      "limitations": ["@binding:624aee729d2ca0fe", "@binding:5d949fd403669264"]
+    },
+    "sdk-values::Solanalib.Specs.Core.ProgramOptionOperations": {
+      "order": 108,
+      "modules": {
+        "Solanalib.Specs.Core.ProgramOptionOperations": "28af167bc890822d6002ded9ede576aec21157a39aa7e9bb7e44753ef3d1c777"
+      },
+      "source_ids": [
+        "sdk-values::solana-program-option-3.1.0::src/lib.rs",
+        "sdk-values::solana-program-option-2.2.1::src/lib.rs",
+        "sdk-values::solana-program-1.15.2::src/program_option.rs",
+        "sdk-values::solana-program-1.18.26::src/program_option.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-4e44ba666333c286",
+      "limitations": ["@text:4eaa44b520524356"]
+    },
+    "token-extension-legacy-control": {
+      "order": 109,
+      "modules": {
+        "Solanalib.Specs.Core.TokenExtensionLegacyFamilies": "50926180580256a91c924e24dc7fc07a4b97b277d291694c62adce6ab1dc48d5",
+        "Solanalib.Specs.Core.TokenExtensionLegacyWitness": "0659f56328033741abe19827a0d662ec28dc7677d946758e079e9446b7086e07",
+        "Solanalib.Specs.Core.TokenExtensionLegacyUnpack": "b695f7f6a783e3f4cbfd6ccc5df4e2321c49d8c56638da981ebd29ad7cd9cf00",
+        "Solanalib.Specs.Core.TokenExtensionLegacySize": "7d820507c4ed63cbac8c64858ad8d3afa23ded8407cfd79ec1e46bed56fe9bee",
+        "Solanalib.Specs.Core.TokenExtensionLegacy": "cec4145758091e82d6bddcc97c6dfda345233a1547e95645ffc38e4a7eba3eef",
+        "Solanalib.Specs.Core.TokenExtensionLegacyNewLength": "a2b176cf3dcbee98dad9772e6f85f6dee57c244789d84d271ca5f2280539390e",
+        "Solanalib.Specs.Core.TokenExtensionLegacyList": "2c4a978aeb3b8b7f8263fd6f0dca409a9fa0310c64e56ff010f3ae971512fbd7",
+        "Solanalib.Specs.Core.TokenExtensionKey": "209abadb4f3e689aba9b4fd95edc41942af6c3eb0cc0d47bc3a09bdbdcb54a7d",
+        "Solanalib.Specs.Core.TokenExtensionLegacyBounds": "fe15037fbb734a160461c17f31868a25c5ba439b82bda7de9f0240db107acea4"
+      },
+      "source_ids": [
+        "token-state::spl-token-2022-8.0.1::src/extension/mod.rs",
+        "token-state::spl-token-2022-8.0.1::src/extension/permanent_delegate.rs",
+        "token-state::spl-token-2022-8.0.1::src/extension/transfer_hook/mod.rs",
+        "token-state::spl-token-2022-interface-2.1.0::src/extension/mod.rs",
+        "token-state::spl-token-2022-interface-3.0.1::src/extension/mod.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-bb2d88bcfe61e203",
+      "limitations": ["@binding:624aee729d2ca0fe", "@binding:5d949fd403669264"]
+    },
+    "token-extra-state-values": {
+      "order": 110,
+      "modules": {
+        "Solanalib.Specs.Core.TokenStateExtra": "0586d5b670e21be5faf9871b69294c954e776dca734ec056e63db8671c23a562"
+      },
+      "source_ids": [
+        "token-state::spl-token-2022-8.0.1::src/state.rs",
+        "token-state::spl-token-2022-8.0.1::src/extension/transfer_fee/mod.rs",
+        "token-state::spl-token-2022-interface-2.1.0::src/extension/transfer_fee/mod.rs",
+        "token-state::spl-token-metadata-interface-0.7.0::src/state.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-e1bd634e5e426cfc",
+      "limitations": ["@binding:a5f30773f618fd19"]
+    },
+    "token-fee-legacy-values": {
+      "order": 111,
+      "modules": {
+        "Solanalib.Specs.Core.TokenFeeExtra": "c3c1222a1a9994632e77e5fdd8e053c3c19857a4782bb8aa0b73ad5a49143177"
+      },
+      "source_ids": [
+        "token-state::spl-token-2022-8.0.1::src/state.rs",
+        "token-state::spl-token-2022-8.0.1::src/extension/transfer_fee/mod.rs",
+        "token-state::spl-token-2022-interface-2.1.0::src/extension/transfer_fee/mod.rs",
+        "token-state::spl-token-metadata-interface-0.7.0::src/state.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-a035c5adfc385b82",
+      "limitations": ["@binding:a5f30773f618fd19"]
+    },
+    "token-metadata-owned-initialize": {
+      "order": 112,
+      "argument": "@review:source-notes/owned-dependencies.md#review-f8644a105bcbd709",
+      "limitations": [
+        "@binding:b985857460252cc6",
+        "@binding:340aca4748420ac8",
+        "@binding:c7d04bcad5003b3b",
+        "@text:1846d6c1784c54f1"
+      ],
+      "source_ids": ["token-instructions::spl-token-metadata-interface-0.7.0::src/instruction.rs"],
+      "modules": {
+        "Solanalib.Specs.Core.TokenMetadataInitializeSample": "caba09ff440590d608fba8f2ec846b66c44d96d2cfbdda7510400a2232ff5fa2",
+        "Solanalib.Specs.Core.TokenMetadataInitialize": "6f9562b75dbeb1e95a9b82e1ff382e453ebeaf907086536a899c28fbedbef32b"
+      }
+    },
+    "entry-deserialize::pinocchio_0_9_2": {
+      "order": 113,
+      "modules": {
+        "Solanalib.Specs.Core.EntryDeserializePinocchio": "eaea088f58c629f520d32985d74c0abc5f43ccce7b8f60e28baf635e17f73995",
+        "Solanalib.Specs.Core.EntryDeserializePinocchioAccount": "4157dcef2ec8a957ac3a3564ac992eb0540e7f92b9dbb5c107242d1c9d2d79c9"
+      },
+      "source_ids": [
+        "entry-deserialize::pinocchio-0.9.2::src/entrypoint/mod.rs",
+        "entry-deserialize::pinocchio-0.9.2::src/account_info.rs",
+        "entry-deserialize::pinocchio-0.9.2::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-caed575a7d244b52",
+      "limitations": [
+        "@binding:62c0aeb6d3e245ae",
+        "@binding:5e5a0ed2ab440ed4",
+        "@binding:a91a3edc32684bd0",
+        "@binding:1f54d6f6175ab591",
+        "@binding:c0681db98b1e8d03",
+        "@binding:b71285ec55ef5888",
+        "@binding:34c704f8b299f2ae"
+      ]
+    },
+    "entry-deserialize::solana_program_entrypoint_2_3_0": {
+      "order": 114,
+      "modules": {
+        "Solanalib.Specs.Core.EntryDeserialize": "19879ed01cedc615cab1f634bbbbf4eedd742f5325bb6c60e7e6178f4d88bc47",
+        "Solanalib.Specs.Core.EntryDeserializeSDK": "78bb101abaf9a9f283a0204b1daea4fe293df62d5d1039f115f537b04af4a56a",
+        "Solanalib.Specs.Core.EntryDeserializeSDKOrigins": "885725db623bb0347aab4e114cae29a886783334d9e2809de47db975d3af92a4",
+        "Solanalib.Specs.Core.EntryDeserializeSDKShape": "f9a10ebec4f509ad507baba861b7a8672d4fb5616ea46eecf45908cb45026539"
+      },
+      "source_ids": ["entry-deserialize::solana-program-entrypoint-2.3.0::src/lib.rs"],
+      "argument": "@review:source-notes/owned-dependencies.md#review-7ac18ee916b88cc8",
+      "limitations": [
+        "@binding:62c0aeb6d3e245ae",
+        "@binding:5e5a0ed2ab440ed4",
+        "@binding:a91a3edc32684bd0",
+        "@binding:9d269257abd5b59c",
+        "@binding:a7315b2b44d1b238",
+        "@binding:7456d774b115948a",
+        "@binding:f93c6474e7d2034a"
+      ]
+    },
+    "pinocchio-0.9.2-review": {
+      "order": 115,
+      "argument": "@review:source-notes/owned-dependencies.md#review-9088a05f3cf38fca",
+      "limitations": "@shared:limitations-3d91049af0284294",
+      "source_ids": [
+        "pinocchio@0.9.2::src/account_info.rs",
+        "pinocchio@0.9.2::src/instruction.rs",
+        "pinocchio@0.9.2::src/sysvars/clock.rs",
+        "pinocchio@0.9.2::src/pubkey.rs",
+        "pinocchio@0.9.2::src/sysvars/mod.rs",
+        "pinocchio@0.9.2::src/program_error.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.PinocchioAccount": "845c8a2adbf3f0d62e8a0b90f4f8ec361500a736d36ac332e8465e9695be3ccd",
+        "Solanalib.Specs.Core.PinocchioResizeCall": "f41236db6f32a00af522131427ce7cfd03b2fdacf5c71911d6ee211b5ae5693f",
+        "Solanalib.Specs.Core.PinocchioAccountResize": "e8911121b9b3c19a4d73ba1018cc245f1d2ac5a41c7db8dc3b5213306f8b035e",
+        "Solanalib.Specs.Core.PinocchioGuard": "a1bddf725f77faf9a002b24234d959a9b303d4a803765eacfe782a1da6c6bac1",
+        "Solanalib.Specs.Core.InstructionBorrowed": "914ec53b365a96c86af9b06b63891a37982e448bad776809d4ee0f3b3c8efe6e"
+      }
+    },
+    "pinocchio-log-0.5.1-review": {
+      "order": 116,
+      "argument": "@review:source-notes/owned-dependencies.md#review-9088a05f3cf38fca",
+      "limitations": "@shared:limitations-3d91049af0284294",
+      "source_ids": ["pinocchio-log@0.5.1::src/logger.rs"],
+      "modules": {
+        "Solanalib.Specs.Core.FixedLoggerAppend": "b40c1144a45838ef4530dc705008d125229ae29497222f5278642d16af8029be",
+        "Solanalib.Specs.Core.FixedLogger": "54c27ae2d95564e669a1ccf10cc4ff4f171dde31ecaef462dd9d9a69375a2441",
+        "Solanalib.Specs.Core.FixedLoggerReference": "4489bfbfc073dde12c2b54f874a20cf292862e37a274a32d63191aaff2cb55b3"
+      }
+    },
+    "transfer-hook-resolution::local-helper": {
+      "order": 117,
+      "modules": {
+        "Solanalib.Specs.Core.TransferHookResolutionFacts": "a978736fe29c3ecdd5260133ae8315cf0e3e0b5b98f729bfba34dae6f2264c06",
+        "Solanalib.Specs.Core.TransferHookResolutionRun": "fae30fa9119de25b00dc1527f907e606e41303a07a74bc0fffef68ad3f99296e",
+        "Solanalib.Specs.Core.TransferHookResolutionTypes": "940a3baddd5689e3dd3d63b891d563533a2717841a97c5d2ac9ddb2c284aa52a",
+        "Solanalib.Specs.Core.TransferHookResolution": "0d752a7dac17e7b8d9e131665f851c8e9aea83b72270e3d1404340fc80aa6405",
+        "Solanalib.Specs.Core.TransferHookResolutionErrors": "a0c2c9248f1510be8b0eddb3e31060dd51377046f8eddf89b9bd06b980086b82",
+        "Solanalib.Specs.Core.TransferHookResolutionWitness": "42ecfec69ad0e04f548bc039c9b087a95b7411a0f23642addcea403993146f07",
+        "Solanalib.Specs.Core.TransferHookResolutionSample": "523c52b76fe5726f6522afe7e8087febb48e7533e777ae9b3f8f00c70c14dac8"
+      },
+      "source_ids": [
+        "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::src/onchain.rs",
+        "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::src/instruction.rs",
+        "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::src/lib.rs",
+        "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::src/error.rs",
+        "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::Cargo.toml.orig",
+        "transfer-hook-resolution::spl-tlv-account-resolution-0.9.0::src/state.rs",
+        "transfer-hook-resolution::spl-tlv-account-resolution-0.9.0::src/account.rs",
+        "transfer-hook-resolution::spl-tlv-account-resolution-0.9.0::src/seeds.rs",
+        "transfer-hook-resolution::spl-tlv-account-resolution-0.9.0::src/pubkey_data.rs",
+        "transfer-hook-resolution::spl-tlv-account-resolution-0.9.0::src/error.rs",
+        "transfer-hook-resolution::spl-type-length-value-0.7.0::src/state.rs",
+        "transfer-hook-resolution::spl-type-length-value-0.7.0::src/length.rs",
+        "transfer-hook-resolution::spl-type-length-value-0.7.0::src/error.rs",
+        "transfer-hook-resolution::spl-pod-0.5.1::src/slice.rs",
+        "transfer-hook-resolution::spl-pod-0.5.1::src/bytemuck.rs",
+        "transfer-hook-resolution::spl-pod-0.5.1::src/primitives.rs",
+        "transfer-hook-resolution::spl-pod-0.5.1::src/error.rs",
+        "transfer-hook-resolution::spl-discriminator-0.4.1::src/discriminator.rs",
+        "transfer-hook-resolution::spl-discriminator-0.4.1::src/lib.rs",
+        "transfer-hook-resolution::solana-account-info-2.3.0::src/lib.rs",
+        "transfer-hook-resolution::solana-instruction-2.2.1::src/lib.rs",
+        "transfer-hook-resolution::solana-instruction-2.2.1::src/account_meta.rs",
+        "transfer-hook-resolution::solana-program-error-2.2.2::src/lib.rs",
+        "transfer-hook-resolution::bytemuck-1.22.0::src/lib.rs",
+        "transfer-hook-resolution::bytemuck-1.22.0::src/internal.rs",
+        "addresses::solana-pubkey-2.2.1::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-803098b64c833657",
+      "limitations": [
+        "@binding:f15afa8677b4b8c2",
+        "@binding:d7227cf23647c204",
+        "@binding:90832d83de9cd52d",
+        "@binding:cc5c6bc062c36cdd",
+        "@binding:a147ebec4789a003"
+      ]
+    },
+    "sdk-values::Solanalib.Specs.Core.SdkValue": {
+      "order": 118,
+      "modules": {"Solanalib.Specs.Core.SdkValue": "f8b3c1102945d61ecd6650ee9adb7fb25e10a6cd81801318740bae31e175798b"},
+      "source_ids": [
+        "sdk-values::solana-zero-copy-1.0.1::src/unaligned.rs",
+        "sdk-values::solana-zero-copy-1.1.1::src/unaligned.rs",
+        "sdk-values::spl-pod-0.5.1::src/primitives.rs",
+        "sdk-values::spl-pod-0.7.3::src/optional_keys.rs",
+        "sdk-values::solana-sdk-ids-3.1.0::src/lib.rs",
+        "sdk-values::solana-address-2.6.0::src/lib.rs",
+        "sdk-values::solana-address-1.1.0::src/lib.rs",
+        "sdk-values::solana-address-1.1.0::Cargo.toml.orig",
+        "sdk-values::solana-pubkey-3.0.0::src/lib.rs",
+        "sdk-values::solana-pubkey-3.0.0::Cargo.toml.orig",
+        "sdk-values::solana-address-2.6.1::src/lib.rs",
+        "sdk-values::solana-address-2.6.1::Cargo.toml.orig"
+      ],
+      "argument": "@review:source-notes/owned-dependencies.md#review-4e44ba666333c286",
+      "limitations": ["@text:4eaa44b520524356"]
+    },
+    "sdk-utilities::module::Solanalib.Specs.Core.InstructionsSysvarCheckedWitness": {
+      "order": 119,
+      "argument": "@review:source-notes/owned-dependencies.md#review-ea88b12210a600e5",
+      "limitations": ["@binding:b5fa051f6f3ee7b5", "@binding:8eb0270e4a85336e"],
+      "source_ids": [
+        "sdk-utilities::solana-instructions-sysvar-3.0.0::src/lib.rs",
+        "sdk-utilities::solana-instructions-sysvar-4.0.0::src/lib.rs",
+        "sdk-utilities::solana-serialize-utils-3.1.1::src/lib.rs",
+        "sdk-utilities::solana-serialize-utils-3.1.2::src/lib.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.InstructionsSysvarCheckedWitness": "eeb42817df604b67fd039acc0dcf4b9027cff42c9cfafe478e341feae14da98c"
+      }
+    },
+    "sdk-utilities::module::Solanalib.Specs.Core.InstructionsSysvarChecked": {
+      "order": 120,
+      "argument": "@review:source-notes/owned-dependencies.md#review-ea88b12210a600e5",
+      "limitations": ["@binding:b5fa051f6f3ee7b5", "@binding:8eb0270e4a85336e"],
+      "source_ids": [
+        "sdk-utilities::solana-instructions-sysvar-3.0.0::src/lib.rs",
+        "sdk-utilities::solana-instructions-sysvar-4.0.0::src/lib.rs",
+        "sdk-utilities::solana-serialize-utils-3.1.1::src/lib.rs",
+        "sdk-utilities::solana-serialize-utils-3.1.2::src/lib.rs"
+      ],
+      "modules": {
+        "Solanalib.Specs.Core.InstructionsSysvarChecked": "c82244530461fe84d3e43c61419bd3e2d640b29182f337e0f58f8b4c8dc80486"
+      }
+    }
+  },
+  "models": {
+    "shared-owned-array::construction": {
+      "order": 110,
+      "contract": "Solanalib.Specs.Core.Owned.Array.construction_contract",
+      "witness_kind": "FamilyReference",
+      "kind": "supporting",
+      "assumptions": [
+        "@text:3020596c4df4a1d7",
+        "@text:11163e02868726bb",
+        "@text:853b19a105491068",
+        "@text:c67adf6e908644a5",
+        "@text:99726b9542cdb13b"
+      ],
+      "remaining_requirements": ["@text:ddc605a826075724", "@text:96b362318eba7d5d"]
+    },
+    "shared-token::amount": {
+      "order": 111,
+      "contract": "Solanalib.Specs.Core.Token.amountContract",
+      "witness_kind": "RealizedBy",
+      "kind": "supporting",
+      "reference": "Solanalib.Specs.Core.Token.amountReference",
+      "witness": "Solanalib.Specs.Core.Token.amountReference_realizes",
+      "assumptions": ["@text:ad01b475c76803df"]
+    },
+    "shared-token::decimals": {
+      "order": 112,
+      "contract": "Solanalib.Specs.Core.Token.decimalsContract",
+      "witness_kind": "RealizedBy",
+      "kind": "supporting",
+      "reference": "Solanalib.Specs.Core.Token.decimalsReference",
+      "witness": "Solanalib.Specs.Core.Token.decimalsReference_realizes",
+      "assumptions": ["@text:ad01b475c76803df"]
+    },
+    "shared-token::mint": {
+      "order": 113,
+      "contract": "Solanalib.Specs.Core.Token.mintContract",
+      "witness_kind": "RealizedBy",
+      "kind": "supporting",
+      "reference": "Solanalib.Specs.Core.Token.mintReference",
+      "witness": "Solanalib.Specs.Core.Token.mintReference_realizes",
+      "assumptions": ["@text:3695f416d8415267"]
+    },
+    "shared-token::owner": {
+      "order": 114,
+      "contract": "Solanalib.Specs.Core.Token.ownerContract",
+      "witness_kind": "RealizedBy",
+      "kind": "supporting",
+      "reference": "Solanalib.Specs.Core.Token.ownerReference",
+      "witness": "Solanalib.Specs.Core.Token.ownerReference_realizes",
+      "assumptions": ["@text:3695f416d8415267"]
+    },
+    "shared-token::state": {
+      "order": 115,
+      "contract": "Solanalib.Specs.Core.Token.stateFamily",
+      "witness_kind": "FamilyReference",
+      "kind": "supporting",
+      "reference": "Solanalib.Specs.Core.Token.stateFamilyRun",
+      "execution": "Solanalib.Specs.Core.Token.stateFamily_execution",
+      "sample": "Solanalib.Specs.Core.Token.stateAbortPolicy",
+      "assumptions": ["@text:cd48356a3a6c5f85"]
+    }
+  },
+  "applicability": {
+    "shared-owned-array::construction": {
+      "order": 110,
+      "conditions": ["@text:3859266b19176ef4"],
+      "consumers": ["spl-token-2022::onchain::invoke_transfer_checked"]
+    },
+    "shared-token::amount": {
+      "order": 111,
+      "conditions": ["@text:3859266b19176ef4"],
+      "consumers": [
+        "pinocchio-token::state::account::Account::amount",
+        "pinocchio-token-2022::state::account::Account::amount"
+      ]
+    },
+    "shared-token::decimals": {
+      "order": 112,
+      "conditions": ["@text:3859266b19176ef4"],
+      "consumers": ["pinocchio-token::state::mint::Mint::decimals", "pinocchio-token-2022::state::mint::Mint::decimals"]
+    },
+    "shared-token::mint": {
+      "order": 113,
+      "conditions": ["@text:3859266b19176ef4"],
+      "consumers": [
+        "pinocchio-token::state::account::Account::mint",
+        "pinocchio-token-2022::state::account::Account::mint"
+      ]
+    },
+    "shared-token::owner": {
+      "order": 114,
+      "conditions": ["@text:3859266b19176ef4"],
+      "consumers": [
+        "pinocchio-token::state::account::Account::owner",
+        "pinocchio-token-2022::state::account::Account::owner"
+      ]
+    },
+    "shared-token::state": {
+      "order": 115,
+      "conditions": ["@text:3859266b19176ef4"],
+      "consumers": [
+        "pinocchio-token::state::account::Account::state",
+        "pinocchio-token-2022::state::account::Account::state"
+      ]
+    }
+  }
+}

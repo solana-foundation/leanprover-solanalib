@@ -1,0 +1,34 @@
+[package]
+name = "conformance-cpi-invoke-0-5-0-s3-0-0"
+version = "0.1.0"
+edition = "2021"
+publish = false
+workspace = "../workspaces/profile-06"
+
+[features]
+signature-check = []
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+solana-invoke = "=0.5.0"
+solana-account-info = "=3.1.1"
+solana-address = "=2.6.0"
+solana-instruction = "=3.4.0"
+solana-stable-layout = "=3.0.0"
+solana-program-error = "=3.0.1"
+solana-program-entrypoint = "=3.1.1"
+solana-define-syscall = "=3.0.0"
+pin-digest-0-10-7 = { package = "digest", version = "=0.10.7", default-features = false, optional = true }
+pin-sha2-0-10-9 = { package = "sha2", version = "=0.10.9", default-features = false, optional = true }
+pin-solana-address-1-1-0 = { package = "solana-address", version = "=1.1.0", default-features = false, optional = true }
+pin-solana-define-syscall-4-0-1 = { package = "solana-define-syscall", version = "=4.0.1", default-features = false, optional = true }
+pin-solana-define-syscall-5-1-0 = { package = "solana-define-syscall", version = "=5.1.0", default-features = false, optional = true }
+pin-solana-hash-4-3-0 = { package = "solana-hash", version = "=4.3.0", default-features = false, optional = true }
+pin-solana-program-memory-3-1-0 = { package = "solana-program-memory", version = "=3.1.0", default-features = false, optional = true }
+pin-solana-pubkey-3-0-0 = { package = "solana-pubkey", version = "=3.0.0", default-features = false, optional = true }
+pin-solana-pubkey-4-2-0 = { package = "solana-pubkey", version = "=4.2.0", default-features = false, optional = true }
+pin-solana-sanitize-3-0-1 = { package = "solana-sanitize", version = "=3.0.1", default-features = false, optional = true }
+pin-solana-sha256-hasher-3-1-0 = { package = "solana-sha256-hasher", version = "=3.1.0", default-features = false, optional = true }
+
+[lints]
+rust = { unexpected_cfgs = { level = "warn", check-cfg = ["cfg(target_os, values(\"solana\"))"] } }

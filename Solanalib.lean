@@ -3,18 +3,14 @@ Copyright (c) 2026 Solana Foundation. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Solanalib Contributors
 -/
-import Solanalib.Account.Basic
-import Solanalib.Account.Transfer
 import Solanalib.Finance.CompoundInterest
 import Solanalib.Finance.Decay
 import Solanalib.Finance.Growth
 import Solanalib.Finance.LinearDecay
 import Solanalib.Finance.MonotoneSequence
 import Solanalib.Finance.WithdrawalCap
-import Solanalib.Instruction.Basic
 import Solanalib.Numeric.Fraction
 import Solanalib.Primitives.Lamports
-import Solanalib.Primitives.Pubkey
 import Solanalib.Primitives.Time
 import Solanalib.SBPF.CommType
 import Solanalib.SBPF.Decoder
@@ -24,6 +20,7 @@ import Solanalib.SBPF.State
 import Solanalib.SBPF.Syntax
 import Solanalib.SBPF.Value
 import Solanalib.SBPF.Verifier
+import Solanalib.Transfer
 
 /-!
 ![Solanalib][banner]
@@ -49,10 +46,10 @@ Modules are organised by Solana concept, not by framework. Framework-specific
 results (Anchor account validation, Pinocchio entrypoint patterns, …) layer on
 top of the core primitives and live in their own subdirectories.
 
-* `Solanalib.Primitives` — atomic on-chain types (`Pubkey`, `Lamports`, `Timestamp`).
+* `Solanalib.Runtime`    — Solana public keys, accounts, instructions and execution.
+* `Solanalib.Transfer`   — conservation for the checked System transfer path.
+* `Solanalib.Primitives` — lamport and time notations for arithmetic developments.
 * `Solanalib.Numeric`    — fixed-point arithmetic (`Fraction`, Q68.60).
-* `Solanalib.Account`    — the account model and operations over it.
-* `Solanalib.Instruction` — instruction + account-meta shapes.
 * `Solanalib.Finance`    — domain abstractions: decay, growth, compounding, caps.
 * `Solanalib.SBPF`       — the sBPF ISA semantics (machine layer).
 -/

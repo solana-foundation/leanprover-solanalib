@@ -1,0 +1,150 @@
+[
+  {
+    "module": "Solanalib.Runtime.Basic",
+    "description": "Bytes, addresses, integer encodings and byte-range lemmas."
+  },
+  {
+    "module": "Solanalib.Runtime.Ids",
+    "description": "Program ids, sysvar ids and reserved keys."
+  },
+  {
+    "module": "Solanalib.Runtime.Profile",
+    "description": "Release choices, feature gates, limits and the dated network profile."
+  },
+  {
+    "module": "Solanalib.Runtime.Account",
+    "description": "Stored accounts, bounds and rent checks."
+  },
+  {
+    "module": "Solanalib.Runtime.Error",
+    "description": "Instruction errors, transaction errors and exit-code interpretation."
+  },
+  {
+    "module": "Solanalib.Runtime.ProgramCache",
+    "description": "Transaction-local cache modifications, latest-entry lookup and visibility metadata."
+  },
+  {
+    "module": "Solanalib.Runtime.Context",
+    "description": "Instruction accounts, frames, transaction state, stack and return-data reset."
+  },
+  {
+    "module": "Solanalib.Runtime.Borrowed",
+    "description": "Runtime account setters and their authority and balance properties."
+  },
+  {
+    "module": "Solanalib.Runtime.Layout",
+    "description": "Both input ABIs, duplicate records, field offsets and serialization proofs."
+  },
+  {
+    "module": "Solanalib.Runtime.ReadBack",
+    "description": "Deserialization, ordered account checks and exact successful results."
+  },
+  {
+    "module": "Solanalib.Runtime.Memory",
+    "description": "Program-visible regions, loads, stores and checked data growth."
+  },
+  {
+    "module": "Solanalib.Runtime.AccountState",
+    "description": "Library account cells, identities and borrow states."
+  },
+  {
+    "module": "Solanalib.Runtime.StoreOps",
+    "description": "In-place library operations over the account store."
+  },
+  {
+    "module": "Solanalib.Runtime.View",
+    "description": "Partial observations, completion and visible account metadata."
+  },
+  {
+    "module": "Solanalib.Runtime.Store",
+    "description": "The initial library store derived from runtime accounts."
+  },
+  {
+    "module": "Solanalib.Runtime.CopyBack",
+    "description": "Conditional comparison of in-place and deferred-copy store operations."
+  },
+  {
+    "module": "Solanalib.Runtime.Prims",
+    "description": "Parameterized cryptography and program-address derivation."
+  },
+  {
+    "module": "Solanalib.Runtime.Sysvar",
+    "description": "Typed sysvars, account encodings and cache consistency."
+  },
+  {
+    "module": "Solanalib.Runtime.Syscall",
+    "description": "Request and reply types, registration gates and non-CPI effects."
+  },
+  {
+    "module": "Solanalib.Runtime.Cpi",
+    "description": "Privileges, pointers and synchronization at CPI entry and return."
+  },
+  {
+    "module": "Solanalib.Runtime.System",
+    "description": "The modeled System instructions and the opaque nonce boundary."
+  },
+  {
+    "module": "Solanalib.Runtime.LoaderEffects",
+    "description": "Mandatory cache effects of successful opaque loader-v3 management operations."
+  },
+  {
+    "module": "Solanalib.Runtime.Exec",
+    "description": "Program traces, runtime acceptance and instruction execution."
+  },
+  {
+    "module": "Solanalib.Runtime.Message",
+    "description": "Resolved messages, privileges, Instructions sysvar and ordered execution."
+  },
+  {
+    "module": "Solanalib.Runtime.FlagConsistency",
+    "description": "Consistent message and CPI frame construction, flag queries and first-occurrence privilege checks."
+  },
+  {
+    "module": "Solanalib.Runtime.Nonce",
+    "description": "Nonce marker selection, current-state decoding, authority and exact state advancement."
+  },
+  {
+    "module": "Solanalib.Runtime.Transaction",
+    "description": "Checked nonce admission before fees, account loading, transaction outcomes and bank commit."
+  },
+  {
+    "module": "Solanalib.Runtime.Frame",
+    "description": "Confinement and lamport conservation for instructions and messages."
+  },
+  {
+    "module": "Solanalib.Runtime.Executable",
+    "description": "Actual executable metadata and its preservation by setters, read-back, CPI synchronization and modeled System instructions."
+  },
+  {
+    "module": "Solanalib.Runtime.LamportFrame",
+    "description": "Read-only account balances and balance preservation across nested instruction entry."
+  },
+  {
+    "module": "Solanalib.Runtime.StackFrame",
+    "description": "Invocation-stack preservation and instruction-index restoration across accepted execution."
+  },
+  {
+    "module": "Solanalib.Runtime.SysvarCoherence",
+    "description": "Instructions-sysvar index coherence through entry and successful nested execution."
+  },
+  {
+    "module": "Solanalib.Runtime.ReadonlyFrame",
+    "description": "Read-only account data and length preservation across nested execution."
+  },
+  {
+    "module": "Solanalib.Runtime.Env",
+    "description": "Stateful syscall traces and Clock constancy in a fixed context."
+  },
+  {
+    "module": "Solanalib.Runtime.Protocol",
+    "description": "Generic state-threading and the information lost by forgetting state."
+  },
+  {
+    "module": "Solanalib.Runtime.WritesLegal",
+    "description": "Sufficient buffer conditions for exact aligned read-back in L."
+  },
+  {
+    "module": "Solanalib.Runtime.Theorems",
+    "description": "The connection from successful CPI-free runs to read-back."
+  }
+]

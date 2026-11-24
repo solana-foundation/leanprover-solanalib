@@ -1,0 +1,4 @@
+corpora = ["stake_codecs_legacy"]
+region = "none"
+inputs = [
+]

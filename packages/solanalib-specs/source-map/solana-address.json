@@ -1,0 +1,1788 @@
+{
+  "abstractions": {
+    "library::solana_address": {
+      "order": 134,
+      "modules": {
+        "Solanalib.Specs.SolanaAddress": "c01fdeb659b5b56bfae6d0c25ae482fbb903b4bc3fc6efae8d265cd919a1fe5f",
+        "Solanalib.Specs.SolanaAddress.Address": "855823cbca58cf48b4f4852e78eea6cf6f9e4cc486d271a2e6283f206349a835",
+        "Solanalib.Specs.SolanaAddress.Borsh": "e4694a72807fb2278ad110a087ccad29d7587fd17c8dc43630164f4035345732",
+        "Solanalib.Specs.SolanaAddress.Capabilities": "7652a0b8d31647ad8364f472623779f766e66edb09caf7c3a896279e677c53e2",
+        "Solanalib.Specs.SolanaAddress.Syscalls": "ec34a7347174ce8a7404e64801d3395e06b38c28e9133283660b05f08f460bdb",
+        "Solanalib.Specs.SolanaAddress.Address.Cmp": "9d18bc8e4ff78e53b78d3ab38fc454dbae4971edbea9a131e82a55caa4f27225",
+        "Solanalib.Specs.SolanaAddress.Operations": "8ffd70dd9cbf494b7bab45d8dde80d7f59b725dbced89116aebf9836bbc653bf"
+      },
+      "source_ids": [
+        "value-request::solana-address-2.6.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/syscalls.rs",
+        "value-request::borsh-1.6.1::src/ser/mod.rs",
+        "codecs::borsh-1.6.1::src/de/mod.rs",
+        "value-request::solana-address-2.6.1::src/lib.rs",
+        "value-request::solana-address-2.6.1::src/syscalls.rs",
+        "fee-address-2.6.1",
+        "addresses::solana-pubkey-2.2.1::src/lib.rs",
+        "addresses::solana-pubkey-2.2.1::Cargo.toml.orig",
+        "addresses::solana-pubkey-2.4.0::src/lib.rs",
+        "addresses::solana-pubkey-2.4.0::Cargo.toml.orig",
+        "addresses::solana-program-1.15.2::src/pubkey.rs",
+        "addresses::solana-program-1.18.26::src/pubkey.rs",
+        "addresses::solana-loader-v3-interface-6.1.1::src/lib.rs",
+        "addresses::spl-associated-token-account-client-2.0.0::src/address.rs",
+        "addresses::spl-associated-token-account-client-2.0.0::src/lib.rs",
+        "addresses::spl-associated-token-account-interface-2.0.0::src/address.rs",
+        "addresses::spl-associated-token-account-interface-2.0.0::src/lib.rs",
+        "addresses::borsh-0.9.3::src/de/mod.rs",
+        "addresses::borsh-0.9.3::src/ser/mod.rs",
+        "addresses::borsh-1.6.0::src/de/mod.rs",
+        "addresses::borsh-1.6.0::src/ser/mod.rs",
+        "addresses::borsh-derive-1.6.0::src/internals/deserialize/structs/mod.rs",
+        "addresses::borsh-derive-1.6.0::src/internals/serialize/structs/mod.rs",
+        "addresses::borsh-derive-internal-0.9.3::src/struct_de.rs",
+        "addresses::borsh-derive-internal-0.9.3::src/struct_ser.rs",
+        "addresses::borsh-0.10.4::src/ser/mod.rs",
+        "addresses::solana-address-2.6.0::src/error.rs",
+        "addresses::solana-address-2.6.1::src/error.rs",
+        "addresses::solana-pubkey-3.0.0::src/lib.rs",
+        "addresses::solana-pubkey-4.2.0::src/lib.rs",
+        "addresses::solana-address-1.1.0::src/lib.rs",
+        "codecs::borsh-0.10.4::src/de/mod.rs"
+      ],
+      "argument": "@review:source-notes/address-profiles.md#review-c015efbed86dc671",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@text:a3d6e4f4477d7687",
+        "@text:9926f4c894db8c29",
+        "@binding:4a7190a81d148c5b",
+        "@binding:d340b5da13ec1c9e",
+        "@binding:bd9bae7aff33eed6",
+        "@binding:5e39aac10a122ac0",
+        "@binding:784d07d7dda8727b",
+        "@binding:b792c49c5b1e749b"
+      ]
+    }
+  },
+  "packages": {
+    "solana-address-2.6.0": {
+      "order": 7,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "b658e468fe1c0021dd86c1175dea5ee92cd28a08",
+      "path_prefix": "address/"
+    },
+    "solana-address-2.6.1": {
+      "order": 21,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "14a725d6e9180e6cfbd98054473d61ef3aabde57",
+      "path_prefix": "address/"
+    },
+    "solana-address-1.1.0": {
+      "order": 82,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "265bca4715bc1975bf7c6d012c8dcb13545f971c",
+      "path_prefix": "address/"
+    }
+  },
+  "interfaces": {
+    "value-request::solana-address-2.6.0::src/lib.rs": {
+      "order": 35,
+      "crate": "solana-address-2.6.0",
+      "path": "src/lib.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "131396d54c0c98d63b44e66a11e1bf5ec309afbfdf5c54cc3e3bdaffba8617f2"
+    },
+    "value-request::solana-address-2.6.0::src/syscalls.rs": {
+      "order": 36,
+      "crate": "solana-address-2.6.0",
+      "path": "src/syscalls.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "fa104462d56565e5a87635d81563abb8d05f8be5d8a590a9b187f32415e04481"
+    },
+    "fee-address-2.6.1": {
+      "order": 55,
+      "anchor_text": "#[repr(transparent)]",
+      "cargo_package_checksum": "39c93e262f671bf402e1040e4a7e40b05d81da5956c7681948c975a0997517bb",
+      "checked_layout_declarations": [
+        {
+          "fields": [{"line": 108, "name": "0", "type": "[u8; 32]"}],
+          "line": 108,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 86,
+          "source_id": "fee-address-2.6.1",
+          "type": "Address"
+        }
+      ],
+      "crate": "solana-address-2.6.1",
+      "line": 86,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "ee2f809d5a74a55c01f9ea8b6d3d9b5905b97bad5872ef539f81b3974634066e",
+        "cargo_vcs_info_sha256": "35a3e2c27e03576bfdb6c18cea31a9f996d0a18d219f28b3db7d5ce1eaba2a5d"
+      },
+      "path": "src/lib.rs",
+      "sha256": "c93a7d9fb216e2778fba29a478ebe17ff9a538a7691aeed22e35264f32624904"
+    },
+    "value-request::solana-address-2.6.1::src/lib.rs": {
+      "order": 145,
+      "crate": "solana-address-2.6.1",
+      "path": "src/lib.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "c93a7d9fb216e2778fba29a478ebe17ff9a538a7691aeed22e35264f32624904"
+    },
+    "value-request::solana-address-2.6.1::src/syscalls.rs": {
+      "order": 146,
+      "crate": "solana-address-2.6.1",
+      "path": "src/syscalls.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "fa104462d56565e5a87635d81563abb8d05f8be5d8a590a9b187f32415e04481"
+    },
+    "sdk-values::solana-address-2.6.1::src/lib.rs": {
+      "order": 176,
+      "crate": "solana-address-2.6.1",
+      "path": "src/lib.rs",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/error-nullable.md. No whole-crate model is claimed.",
+      "sha256": "c93a7d9fb216e2778fba29a478ebe17ff9a538a7691aeed22e35264f32624904"
+    },
+    "sdk-values::solana-address-2.6.1::Cargo.toml.orig": {
+      "order": 177,
+      "crate": "solana-address-2.6.1",
+      "path": "Cargo.toml.orig",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/error-nullable.md. No whole-crate model is claimed.",
+      "sha256": "f59138dcdf768d28f7160c577fa378c834d1b29df6c3a5bb6ec6628f7db171b8",
+      "path_in_repository": "address/Cargo.toml"
+    },
+    "addresses::solana-address-1.1.0::src/lib.rs": {
+      "order": 237,
+      "crate": "solana-address-1.1.0",
+      "path": "src/lib.rs",
+      "sha256": "944d51e703cbd5f72fde47b54dd3af1eff2760ccaedd5be5471ab138a783f22b",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "addresses::solana-address-2.6.0::src/error.rs": {
+      "order": 238,
+      "crate": "solana-address-2.6.0",
+      "path": "src/error.rs",
+      "sha256": "ea382322b5288f624650f2aa1418c2260c8e4c686d7ce4a6622eabdefeb955f0",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "addresses::solana-address-2.6.1::src/error.rs": {
+      "order": 239,
+      "crate": "solana-address-2.6.1",
+      "path": "src/error.rs",
+      "sha256": "ea382322b5288f624650f2aa1418c2260c8e4c686d7ce4a6622eabdefeb955f0",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "sdk-values::solana-address-1.1.0::Cargo.toml.orig": {
+      "order": 554,
+      "crate": "solana-address-1.1.0",
+      "path": "Cargo.toml.orig",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/sdk-values.md. No whole-crate model is claimed.",
+      "sha256": "c63ca6ea2662f6505ef7473190e317489a8f64ae75c680e333580e336a0cf474",
+      "path_in_repository": "address/Cargo.toml"
+    },
+    "sdk-values::solana-address-1.1.0::src/lib.rs": {
+      "order": 555,
+      "crate": "solana-address-1.1.0",
+      "path": "src/lib.rs",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/sdk-values.md. No whole-crate model is claimed.",
+      "sha256": "944d51e703cbd5f72fde47b54dd3af1eff2760ccaedd5be5471ab138a783f22b"
+    },
+    "sdk-values::solana-address-2.6.0::src/lib.rs": {
+      "order": 556,
+      "crate": "solana-address-2.6.0",
+      "path": "src/lib.rs",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/sdk-values.md. No whole-crate model is claimed.",
+      "sha256": "131396d54c0c98d63b44e66a11e1bf5ec309afbfdf5c54cc3e3bdaffba8617f2"
+    }
+  },
+  "models": {
+    "solana-address::Address::as_array": {
+      "order": 151,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.as_array_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAddress.Address.as_array_model",
+      "assumptions": ["@text:fc89ca8b9e078a4d"]
+    },
+    "solana-address::Address::as_ref": {
+      "order": 152,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.as_ref_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAddress.Address.as_ref_model",
+      "assumptions": ["@text:fc89ca8b9e078a4d"]
+    },
+    "solana-address::Address::default": {
+      "order": 153,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.default_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAddress.Address.default_model",
+      "assumptions": ["@text:fc89ca8b9e078a4d"]
+    },
+    "solana-address::Address::deserialize_reader": {
+      "order": 154,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.deserialize_reader_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAddress.Address.deserialize_reader_model",
+      "assumptions": ["@text:f70d9eb241cb5fd6", "@text:9a402617c05da28b"]
+    },
+    "solana-address::Address::eq": {
+      "order": 155,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.eq_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAddress.Address.eq_model",
+      "assumptions": ["@text:fc89ca8b9e078a4d"]
+    },
+    "solana-address::Address::find_program_address": {
+      "order": 156,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.find_program_address_contract",
+      "witness_kind": "Holds",
+      "kind": "observation",
+      "assumptions": ["@text:ce525721f642b11a", "@text:c5ad8f3d8a393337"],
+      "model_gaps": ["@text:54ace92b5f16fcf6"]
+    },
+    "solana-address::Address::find_program_address_solana": {
+      "order": 157,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.find_program_address_solana_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": [
+        "@text:28976fe67da87cc6",
+        "@text:c08e62b99af46096",
+        "@text:47b3fc40375cae75",
+        "@text:a4e14aeb6e6a02ca",
+        "@text:889e11205634a99a",
+        "@text:0338995a2d26a6cd",
+        "@text:d73f81175678f4fa"
+      ]
+    },
+    "solana-address::Address::is_on_curve": {
+      "order": 158,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.is_on_curve_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": "Solanalib.Specs.SolanaAddress.Address.is_on_curve_model",
+      "assumptions": ["@text:a7fbac7b47281f83"],
+      "model_gaps": ["@text:6274a08e910f97ff"]
+    },
+    "solana-address::Address::is_on_curve_solana": {
+      "order": 159,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.is_on_curve_solana_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:17875bd02043810d", "@text:1f49dc3edc89dbb8", "@text:a27edb9fde549ede"]
+    },
+    "solana-address::Address::new_from_array": {
+      "order": 160,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.new_from_array_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAddress.Address.new_from_array_model",
+      "assumptions": ["@text:fc89ca8b9e078a4d"]
+    },
+    "solana-address::Address::serialize": {
+      "order": 161,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.serialize_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:14454b56fa34daa4", "@text:fedc385140b1ae6e"]
+    },
+    "solana-address::Address::to_bytes": {
+      "order": 162,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.to_bytes_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAddress.Address.to_bytes_model",
+      "assumptions": ["@text:fc89ca8b9e078a4d"]
+    },
+    "solana-address::Address::try_find_program_address_solana": {
+      "order": 163,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.try_find_program_address_solana_contract",
+      "witness_kind": "FamilyReference",
+      "kind": "supporting",
+      "assumptions": [
+        "@text:28976fe67da87cc6",
+        "@text:c08e62b99af46096",
+        "@text:47b3fc40375cae75",
+        "@text:a4e14aeb6e6a02ca",
+        "@text:889e11205634a99a"
+      ]
+    },
+    "solana-address::Address::cmp": {
+      "order": 230,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.cmp_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaAddress.Address.cmp_model"
+    },
+    "solana-address::Address::create_program_address_solana": {
+      "order": 431,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.create_program_address_solana_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:784d07d7dda8727b"]
+    },
+    "solana-address::Address::deserialize_reader_read_exact": {
+      "order": 454,
+      "contract": "Solanalib.Specs.SolanaAddress.Address.deserialize_reader_read_exact_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:784d07d7dda8727b"]
+    }
+  },
+  "api": {
+    "solana-address@2.6.0::Address::as_array": {
+      "order": 125,
+      "anchor_text": "pub const fn as_array(&self) -> &[u8; 32] {",
+      "line": 302,
+      "scope": "@text:2ed4ce412195669f",
+      "source_id": "value-request::solana-address-2.6.0::src/lib.rs",
+      "clients": ["SolanalibTest.Specs.SolanaAddress.all_32_bytes_preserved"],
+      "model_dependencies": ["Solanalib.Specs.Core.Address.asArray"],
+      "rust_names": ["solana_address::Address::as_array"],
+      "models": ["solana-address::Address::as_array"]
+    },
+    "solana-address@2.6.0::Address::as_ref": {
+      "order": 126,
+      "anchor_text": "fn as_ref(&self) -> &[u8] {",
+      "line": 325,
+      "scope": "@text:a6a0dbeeeaf29fa6",
+      "source_id": "value-request::solana-address-2.6.0::src/lib.rs",
+      "clients": ["SolanalibTest.Specs.SolanaAddress.bytes_roundtrip_of_contracts"],
+      "model_dependencies": ["Solanalib.Specs.Core.Address.Value"],
+      "rust_names": ["<solana_address::Address as core::convert::AsRef<[u8]>>::as_ref"],
+      "models": ["solana-address::Address::as_ref"]
+    },
+    "solana-address@2.6.0::Address::default": {
+      "order": 127,
+      "anchor_text": "#[derive(Clone, Default, Eq, Ord, PartialEq, PartialOrd)]",
+      "line": 100,
+      "scope": "@text:271f207fd4c45c98",
+      "source_id": "value-request::solana-address-2.6.0::src/lib.rs",
+      "clients": ["SolanalibTest.Specs.SolanaAddress.default_is_32_zero_bytes"],
+      "model_dependencies": ["Solanalib.Specs.Core.Address.Value"],
+      "rust_names": ["<solana_address::Address as core::default::Default>::default"],
+      "models": ["solana-address::Address::default"]
+    },
+    "solana-address@2.6.0::Address::deserialize_reader": {
+      "order": 128,
+      "anchor_text": "derive(BorshSerialize, BorshDeserialize),",
+      "line": 90,
+      "source_id": "value-request::solana-address-2.6.0::src/lib.rs",
+      "scope": "@text:0778a966891b5970",
+      "binding_obligations": ["@binding:17a03b289e0ff9cd", "@binding:7c7750c30e9bae67", "@binding:5190a32e6baa1ea3"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaAddress.borsh_decode_exact",
+        "SolanalibTest.Specs.SolanaAddress.borsh_decode_leaves_trailing",
+        "SolanalibTest.Specs.SolanaAddress.borsh_decode_truncated",
+        "SolanalibTest.Specs.SolanaAddress.borsh_decode_reads_first_32",
+        "SolanalibTest.Specs.SolanaAddress.borsh_roundtrip",
+        "SolanalibTest.Specs.SolanaAddress.borsh_decode_contract_controls"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.SolanaAddress.Address.decoder",
+        "Solanalib.Specs.SolanaAddress.Address.decoder_calls_array",
+        "Solanalib.Specs.Borsh.Array.invalid_data.deserialize_reader_run",
+        "Solanalib.Specs.Borsh.invalid_data_profile",
+        "Solanalib.Specs.Core.Borsh.decodeByteArray"
+      ],
+      "rust_names": ["<solana_address::Address as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "models": ["solana-address::Address::deserialize_reader"],
+      "binding_defaults": false
+    },
+    "solana-address@2.6.0::Address::eq": {
+      "order": 129,
+      "anchor_text": "#[derive(Clone, Default, Eq, Ord, PartialEq, PartialOrd)]",
+      "line": 100,
+      "scope": "@text:6bd25b59358ba716",
+      "source_id": "value-request::solana-address-2.6.0::src/lib.rs",
+      "clients": ["SolanalibTest.Specs.SolanaAddress.equality_checks_last_byte"],
+      "model_dependencies": ["Solanalib.Specs.Core.Address.equal"],
+      "rust_names": ["<solana_address::Address as core::cmp::PartialEq>::eq"],
+      "models": ["solana-address::Address::eq"]
+    },
+    "solana-address@2.6.0::Address::find_program_address": {
+      "order": 130,
+      "anchor_text": "pub fn find_program_address(seeds: &[&[u8]], program_id: &Address) -> (Address, u8) {",
+      "binding_obligations": [
+        "@binding:a476936476993e94",
+        "@binding:d6c9ed9aa195ae1a",
+        "@binding:1431ead4405387b8",
+        "@binding:e9939193ee58385c"
+      ],
+      "line": 277,
+      "scope": "@text:9158ab42fecaf553",
+      "source_id": "value-request::solana-address-2.6.0::src/syscalls.rs",
+      "models": ["solana-address::Address::find_program_address_solana"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.success_uses_returned_bump_and_actual_state",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.none_panics_using_actual_syscall_state",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.none_can_terminate_from_actual_syscall_state",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.success_never_calls_unwrap_panic",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.pure_pda_answer_does_not_exclude_syscall_termination",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.syscall_unwind_preserves_state_without_unwrap",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.uninitialized_success_has_no_find_outcome",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.nonzero_reply_does_not_invent_panic_exit"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Address.Syscall.findRun",
+        "Solanalib.Specs.Core.Address.Syscall.findPost",
+        "Solanalib.Specs.Core.Address.Syscall.finishFind",
+        "Solanalib.Specs.Core.Address.Syscall.panicMessage",
+        "Solanalib.Specs.Core.Address.Syscall.findRun_returned_projection",
+        "Solanalib.Specs.SolanaAddress.Address.find_program_address_reference",
+        "Solanalib.Specs.Core.Address.Syscall.SuccessInitialized",
+        "Solanalib.Specs.Core.Address.Syscall.findRun_retains",
+        "Solanalib.Specs.Core.Address.Syscall.findRun_hasOutcome"
+      ],
+      "rust_names": ["solana_address::syscalls::<impl solana_address::Address>::find_program_address"]
+    },
+    "solana-address@2.6.0::Address::is_on_curve": {
+      "order": 131,
+      "anchor_text": "pub fn is_on_curve(&self) -> bool {",
+      "binding_obligations": ["@binding:2d787b40d0676452", "@binding:a8e15f73222da86d"],
+      "line": 313,
+      "scope": "@text:fb62ab8bcdc6eb46",
+      "source_id": "value-request::solana-address-2.6.0::src/lib.rs",
+      "models": ["solana-address::Address::is_on_curve_solana"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.address_null_differs_from_curve_sdk_scratch",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.scratch_provider_cannot_replace_address_null_call",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.curve_nonzero_returns_false_with_effects",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.curve_syscall_terminal_is_preserved",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.curve_syscall_unwind_state_is_preserved",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.curve_projection_keeps_returned_state_observation"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Address.Syscall.curveRequest",
+        "Solanalib.Specs.Core.Address.Syscall.curveRun",
+        "Solanalib.Specs.Core.Address.Syscall.curvePost",
+        "Solanalib.Specs.Core.Address.Syscall.NormalCurveAgreement",
+        "Solanalib.Specs.Core.Address.Syscall.curveRun_returned_projection",
+        "Solanalib.Specs.SolanaAddress.Address.is_on_curve_reference"
+      ],
+      "rust_names": ["solana_address::Address::is_on_curve"]
+    },
+    "solana-address@2.6.0::Address::new_from_array": {
+      "order": 132,
+      "anchor_text": "pub const fn new_from_array(address_array: [u8; 32]) -> Self {",
+      "line": 223,
+      "scope": "@text:e138762245146b9e",
+      "source_id": "value-request::solana-address-2.6.0::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAddress.bytes_roundtrip_of_contracts",
+        "SolanalibTest.Specs.SolanaAddress.all_32_bytes_preserved"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Address.newFromArray"],
+      "rust_names": ["solana_address::Address::new_from_array"],
+      "models": ["solana-address::Address::new_from_array"]
+    },
+    "solana-address@2.6.0::Address::serialize": {
+      "order": 133,
+      "anchor_text": "derive(BorshSerialize, BorshDeserialize),",
+      "binding_obligations": ["@binding:de4fe6c902f18cc2"],
+      "line": 90,
+      "scope": "@text:d06f8cf19fabc3e8",
+      "source_id": "value-request::solana-address-2.6.0::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAddress.borsh_error_retains_partial_write",
+        "SolanalibTest.Specs.SolanaAddress.borsh_writes_all_address_bytes",
+        "SolanalibTest.Specs.SolanaAddress.borsh_retains_unwind_state",
+        "SolanalibTest.Specs.SolanaAddress.borsh_retains_terminal_reason",
+        "SolanalibTest.Specs.SolanaAddress.borsh_single_write_call",
+        "SolanalibTest.Specs.SolanaAddress.borsh_roundtrip"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Borsh.Array.serialize_run",
+        "Solanalib.Specs.SolanaAddress.Address.serialize_run_iff",
+        "Solanalib.Specs.Core.Borsh.WriterIndex",
+        "Solanalib.Contracts.Model.Callback.map"
+      ],
+      "rust_names": ["<solana_address::Address as borsh::ser::BorshSerialize>::serialize"],
+      "models": ["solana-address::Address::serialize"]
+    },
+    "solana-address@2.6.0::Address::to_bytes": {
+      "order": 134,
+      "anchor_text": "pub const fn to_bytes(&self) -> [u8; 32] {",
+      "line": 296,
+      "scope": "@text:00926d971f1a0b00",
+      "source_id": "value-request::solana-address-2.6.0::src/lib.rs",
+      "clients": ["SolanalibTest.Specs.SolanaAddress.all_32_bytes_preserved"],
+      "model_dependencies": ["Solanalib.Specs.Core.Address.asArray"],
+      "rust_names": ["solana_address::Address::to_bytes"],
+      "models": ["solana-address::Address::to_bytes"]
+    },
+    "solana-address@2.6.0::Address::try_find_program_address": {
+      "order": 135,
+      "anchor_text": "pub fn try_find_program_address(",
+      "binding_obligations": ["@binding:a476936476993e94", "@binding:d6c9ed9aa195ae1a", "@binding:1431ead4405387b8"],
+      "line": 300,
+      "scope": "@text:48bc30dd04890b19",
+      "source_id": "value-request::solana-address-2.6.0::src/syscalls.rs",
+      "models": ["solana-address::Address::try_find_program_address_solana"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.request_keeps_seed_tree_and_initial_outputs",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.nonzero_status_ignores_uninitialized_output",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.nonzero_status_ignores_initialized_output_too",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.status_zero_without_initialization_has_no_outcome",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.no_local_seed_limit_precheck",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.uninitialized_success_rejected_by_both_families",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.mixed_success_is_not_admitted",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.admitted_try_progress_uses_actual_provider"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Address.Syscall.pdaRequest",
+        "Solanalib.Specs.Core.Address.Syscall.tryRun",
+        "Solanalib.Specs.Core.Address.Syscall.tryPost",
+        "Solanalib.Specs.Core.Address.Syscall.tryRun_returned_projection",
+        "Solanalib.Specs.Core.Address.Syscall.SuccessInitialized",
+        "Solanalib.Specs.Core.Address.Syscall.tryRun_retains",
+        "Solanalib.Specs.Core.Address.Syscall.tryRun_hasOutcome_iff",
+        "Solanalib.Specs.Core.Address.Syscall.decodePda_hasResult_iff",
+        "Solanalib.Specs.SolanaAddress.Address.try_find_program_address_solana_hasOutcome_iff"
+      ],
+      "rust_names": []
+    },
+    "solana-address@2.6.1::Address::as_array": {
+      "order": 136,
+      "anchor_text": "pub const fn as_array(&self) -> &[u8; 32] {",
+      "line": 309,
+      "scope": "@text:2ed4ce412195669f",
+      "source_id": "value-request::solana-address-2.6.1::src/lib.rs",
+      "clients": ["SolanalibTest.Specs.SolanaAddress.all_32_bytes_preserved"],
+      "model_dependencies": ["Solanalib.Specs.Core.Address.asArray"],
+      "rust_names": ["solana_address::Address::as_array"],
+      "models": ["solana-address::Address::as_array"]
+    },
+    "solana-address@2.6.1::Address::as_ref": {
+      "order": 137,
+      "anchor_text": "fn as_ref(&self) -> &[u8] {",
+      "line": 332,
+      "scope": "@text:a6a0dbeeeaf29fa6",
+      "source_id": "value-request::solana-address-2.6.1::src/lib.rs",
+      "clients": ["SolanalibTest.Specs.SolanaAddress.bytes_roundtrip_of_contracts"],
+      "model_dependencies": ["Solanalib.Specs.Core.Address.Value"],
+      "rust_names": ["<solana_address::Address as core::convert::AsRef<[u8]>>::as_ref"],
+      "models": ["solana-address::Address::as_ref"]
+    },
+    "solana-address@2.6.1::Address::default": {
+      "order": 138,
+      "anchor_text": "#[derive(Clone, Default, Eq, Ord, PartialEq, PartialOrd)]",
+      "line": 107,
+      "scope": "@text:271f207fd4c45c98",
+      "source_id": "value-request::solana-address-2.6.1::src/lib.rs",
+      "clients": ["SolanalibTest.Specs.SolanaAddress.default_is_32_zero_bytes"],
+      "model_dependencies": ["Solanalib.Specs.Core.Address.Value"],
+      "rust_names": ["<solana_address::Address as core::default::Default>::default"],
+      "models": ["solana-address::Address::default"]
+    },
+    "solana-address@2.6.1::Address::eq": {
+      "order": 139,
+      "anchor_text": "#[derive(Clone, Default, Eq, Ord, PartialEq, PartialOrd)]",
+      "line": 107,
+      "scope": "@text:6bd25b59358ba716",
+      "source_id": "value-request::solana-address-2.6.1::src/lib.rs",
+      "clients": ["SolanalibTest.Specs.SolanaAddress.equality_checks_last_byte"],
+      "model_dependencies": ["Solanalib.Specs.Core.Address.equal"],
+      "rust_names": ["<solana_address::Address as core::cmp::PartialEq>::eq"],
+      "models": ["solana-address::Address::eq"]
+    },
+    "solana-address@2.6.1::Address::find_program_address": {
+      "order": 140,
+      "anchor_text": "pub fn find_program_address(seeds: &[&[u8]], program_id: &Address) -> (Address, u8) {",
+      "binding_obligations": [
+        "@binding:bb9edf5e161a23ee",
+        "@binding:d6c9ed9aa195ae1a",
+        "@binding:1431ead4405387b8",
+        "@binding:e9939193ee58385c",
+        "@binding:4bdc0963b6a7b8b1",
+        "@binding:df0747ec2c3f2597"
+      ],
+      "line": 277,
+      "scope": "@text:2c4f1cb1f6bc26f8",
+      "source_id": "value-request::solana-address-2.6.1::src/syscalls.rs",
+      "models": ["solana-address::Address::find_program_address_solana"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.selected_find_success_is_not_initial_bump_snapshot",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.local_panic_follows_actual_none_state",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.pure_answer_does_not_prevent_selected_syscall_terminal"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Address.Syscall.findRun",
+        "Solanalib.Specs.Core.Address.Syscall.findPost",
+        "Solanalib.Specs.Core.Address.Syscall.finishFind",
+        "Solanalib.Specs.Core.Address.Syscall.panicMessage",
+        "Solanalib.Specs.Core.Address.Syscall.findRun_returned_projection",
+        "Solanalib.Specs.SolanaAddress.Address.find_program_address_reference",
+        "Solanalib.Specs.Core.Address.Syscall.SuccessInitialized",
+        "Solanalib.Specs.Core.Address.Syscall.decodePda_hasResult_iff",
+        "Solanalib.Specs.Core.Address.Syscall.findRun_retains",
+        "Solanalib.Specs.Core.Address.Syscall.findRun_hasOutcome"
+      ],
+      "rust_names": ["solana_address::syscalls::<impl solana_address::Address>::find_program_address"]
+    },
+    "solana-address@2.6.1::Address::new_from_array": {
+      "order": 141,
+      "anchor_text": "pub const fn new_from_array(address_array: [u8; 32]) -> Self {",
+      "line": 230,
+      "scope": "@text:e138762245146b9e",
+      "source_id": "value-request::solana-address-2.6.1::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaAddress.bytes_roundtrip_of_contracts",
+        "SolanalibTest.Specs.SolanaAddress.all_32_bytes_preserved"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Address.newFromArray"],
+      "rust_names": ["solana_address::Address::new_from_array"],
+      "models": ["solana-address::Address::new_from_array"]
+    },
+    "solana-address@2.6.1::Address::to_bytes": {
+      "order": 142,
+      "anchor_text": "pub const fn to_bytes(&self) -> [u8; 32] {",
+      "line": 303,
+      "scope": "@text:00926d971f1a0b00",
+      "source_id": "value-request::solana-address-2.6.1::src/lib.rs",
+      "clients": ["SolanalibTest.Specs.SolanaAddress.all_32_bytes_preserved"],
+      "model_dependencies": ["Solanalib.Specs.Core.Address.asArray"],
+      "rust_names": ["solana_address::Address::to_bytes"],
+      "models": ["solana-address::Address::to_bytes"]
+    },
+    "solana-address@2.6.1::Address::try_find_program_address": {
+      "order": 143,
+      "anchor_text": "pub fn try_find_program_address(",
+      "binding_obligations": [
+        "@binding:bb9edf5e161a23ee",
+        "@binding:d6c9ed9aa195ae1a",
+        "@binding:1431ead4405387b8",
+        "@binding:4bdc0963b6a7b8b1",
+        "@binding:df0747ec2c3f2597"
+      ],
+      "line": 300,
+      "scope": "@text:4d0e72220ccebf3f",
+      "source_id": "value-request::solana-address-2.6.1::src/syscalls.rs",
+      "models": ["solana-address::Address::try_find_program_address_solana"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.selected_try_find_uses_actual_outputs",
+        "SolanalibTest.Specs.SolanaAddress.Syscalls.nonzero_uninitialized_try_output_is_none"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Address.Syscall.pdaRequest",
+        "Solanalib.Specs.Core.Address.Syscall.tryRun",
+        "Solanalib.Specs.Core.Address.Syscall.tryPost",
+        "Solanalib.Specs.Core.Address.Syscall.tryRun_returned_projection",
+        "Solanalib.Specs.Core.Address.Syscall.SuccessInitialized",
+        "Solanalib.Specs.Core.Address.Syscall.decodePda_hasResult_iff",
+        "Solanalib.Specs.Core.Address.Syscall.tryRun_retains",
+        "Solanalib.Specs.Core.Address.Syscall.tryRun_hasOutcome_iff"
+      ],
+      "rust_names": []
+    },
+    "addresses::solana-address-2.6.0::cmp": {
+      "order": 215,
+      "source_id": "value-request::solana-address-2.6.0::src/lib.rs",
+      "line": 101,
+      "anchor_text": "pub struct Address(pub(crate) [u8; 32]);",
+      "rust_names": ["<solana_address::Address as core::cmp::Ord>::cmp"],
+      "models": ["solana-address::Address::cmp"],
+      "scope": "@text:06225d3f3fcfd44d",
+      "binding_obligations": ["@binding:4a7190a81d148c5b", "@binding:d340b5da13ec1c9e"],
+      "bindings": {"<solana_address::Address as core::cmp::Ord>::cmp": "<solana_address::Address as core::cmp::Ord>::cmp"},
+      "binding_defaults": false
+    },
+    "addresses::solana-address-2.6.1::cmp": {
+      "order": 216,
+      "source_id": "fee-address-2.6.1",
+      "line": 108,
+      "anchor_text": "pub struct Address(pub(crate) [u8; 32]);",
+      "rust_names": ["<solana_address::Address as core::cmp::Ord>::cmp"],
+      "models": ["solana-address::Address::cmp"],
+      "scope": "@text:06225d3f3fcfd44d",
+      "binding_obligations": ["@binding:4a7190a81d148c5b", "@binding:d340b5da13ec1c9e"],
+      "bindings": {"sdk-0f18eb5581e867bd72fd": "<solana_address::Address as core::cmp::Ord>::cmp"},
+      "binding_defaults": false
+    },
+    "addresses::solana-address-2.6.1::create_program_address_solana": {
+      "order": 482,
+      "source_id": "value-request::solana-address-2.6.1::src/syscalls.rs",
+      "line": 392,
+      "anchor_text": "pub fn create_program_address(",
+      "rust_names": ["solana_address::syscalls::<impl solana_address::Address>::create_program_address"],
+      "models": ["solana-address::Address::create_program_address_solana"],
+      "scope": "@text:85e86589e68b7622",
+      "binding_obligations": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+      "bindings": {
+        "sdk-3c5d2ac4e693cf4a6ca8": "solana_address::syscalls::<impl solana_address::Address>::create_program_address"
+      },
+      "binding_defaults": false
+    },
+    "addresses::solana-address-2.6.1::serialize": {
+      "order": 498,
+      "source_id": "fee-address-2.6.1",
+      "line": 97,
+      "anchor_text": "derive(BorshSerialize, BorshDeserialize),",
+      "rust_names": ["<solana_address::Address as borsh::ser::BorshSerialize>::serialize"],
+      "models": ["solana-address::Address::serialize"],
+      "scope": "@text:39aedeebbb980e8f",
+      "binding_obligations": "@shared:binding-obligations-443bb15228e8b089",
+      "bindings": {
+        "<solana_address::Address as borsh::ser::BorshSerialize>::serialize": "<solana_address::Address as borsh::ser::BorshSerialize>::serialize"
+      },
+      "binding_defaults": false
+    },
+    "addresses::solana-address-2.6.1::deserialize_reader": {
+      "order": 505,
+      "source_id": "fee-address-2.6.1",
+      "line": 97,
+      "anchor_text": "derive(BorshSerialize, BorshDeserialize),",
+      "rust_names": ["<solana_address::Address as borsh::de::BorshDeserialize>::deserialize_reader"],
+      "models": ["solana-address::Address::deserialize_reader_read_exact"],
+      "scope": "@text:29396bdcebcd42dd",
+      "binding_obligations": "@shared:binding-obligations-443bb15228e8b089",
+      "bindings": {
+        "<solana_address::Address as borsh::de::BorshDeserialize>::deserialize_reader": "<solana_address::Address as borsh::de::BorshDeserialize>::deserialize_reader"
+      },
+      "binding_defaults": false
+    },
+    "addresses::solana-address-2.6.0::create_program_address_solana": {
+      "order": 522,
+      "source_id": "value-request::solana-address-2.6.0::src/syscalls.rs",
+      "line": 392,
+      "anchor_text": "pub fn create_program_address(",
+      "rust_names": ["solana_address::syscalls::<impl solana_address::Address>::create_program_address"],
+      "models": ["solana-address::Address::create_program_address_solana"],
+      "scope": "@text:85e86589e68b7622",
+      "binding_obligations": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+      "bindings": {
+        "solana_address::syscalls::<impl solana_address::Address>::create_program_address": "solana_address::syscalls::<impl solana_address::Address>::create_program_address"
+      },
+      "binding_defaults": false
+    }
+  },
+  "applicability_sources": {
+    "solana-address": {
+      "order": 14,
+      "package": "solana-address",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-address/solana-address-0.0.0.crate",
+          "sha256": "1bb4f8d7edb87f61aea2e0e4693db6cb6c35ca8ec300d7dd6e3cf5586aacf0ba"
+        },
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-address/solana-address-1.0.0.crate",
+          "sha256": "0a7a457086457ea9db9a5199d719dc8734dc2d0342fad0d8f77633c31eb62f19",
+          "revision": "49b9fa9bd419b1b9d89b80273a762517a4521c7d",
+          "path_prefix": "address/"
+        },
+        "1.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-address/solana-address-1.1.0.crate",
+          "sha256": "a2ecac8e1b7f74c2baa9e774c42817e3e75b20787134b76cc4d45e8a604488f5",
+          "revision": "265bca4715bc1975bf7c6d012c8dcb13545f971c",
+          "path_prefix": "address/"
+        },
+        "2.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-address/solana-address-2.0.0.crate",
+          "sha256": "e37320fd2945c5d654b2c6210624a52d66c3f1f73b653ed211ab91a703b35bdd",
+          "revision": "2f6630386677afa76d1b11264605a8e8aea99f36",
+          "path_prefix": "address/"
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-address/solana-address-2.1.0.crate",
+          "sha256": "998227476aed49e1c63dec0e89341b768a2cf3bd22913c3ed8baa985cda882c9",
+          "revision": "2a6ca603a0fad553ca92194c97de87acaaaf6e7a",
+          "path_prefix": "address/"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-address/solana-address-2.2.0.crate",
+          "sha256": "68c5d02824391b072dc5cd0aaa85fb0af9784a21d23286a767994d1e8a322131",
+          "revision": "37a4618674ee347aeeb453cffcd5e1061175c226",
+          "path_prefix": "address/"
+        },
+        "2.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-address/solana-address-2.3.0.crate",
+          "sha256": "500b83d41bda401b84ebff6033e2e7bc828870ea444805112d15fc0a3e470b9c",
+          "revision": "f1e372a239e4a4164beda8d833456f2552e32c50",
+          "path_prefix": "address/"
+        },
+        "2.4.0": {
+          "archive_url": "https://static.crates.io/crates/solana-address/solana-address-2.4.0.crate",
+          "sha256": "7f67735365edc7fb19ed74ec950597107c8ee9cbfebac57b8868b3e78fb6df16",
+          "revision": "12d77cc879746a052635a38bed51833d828ffa3d",
+          "path_prefix": "address/"
+        },
+        "2.5.0": {
+          "archive_url": "https://static.crates.io/crates/solana-address/solana-address-2.5.0.crate",
+          "sha256": "5f08236dacd0e6dc8234becef58e27c8567856644ef509d7e97957d55a91dc72",
+          "revision": "aeeb6e3c5ca056736f183c04bdc85201f9ca2953",
+          "path_prefix": "address/"
+        },
+        "2.6.0": {
+          "archive_url": "https://static.crates.io/crates/solana-address/solana-address-2.6.0.crate",
+          "sha256": "f1384b52c435a750cc9c538760fc7bb472fd78e65a9900a2d07312c5bb335b72",
+          "revision": "b658e468fe1c0021dd86c1175dea5ee92cd28a08",
+          "path_prefix": "address/"
+        },
+        "2.6.1": {
+          "archive_url": "https://static.crates.io/crates/solana-address/solana-address-2.6.1.crate",
+          "sha256": "39c93e262f671bf402e1040e4a7e40b05d81da5956c7681948c975a0997517bb",
+          "revision": "14a725d6e9180e6cfbd98054473d61ef3aabde57",
+          "path_prefix": "address/"
+        },
+        "2.7.0": {
+          "archive_url": "https://static.crates.io/crates/solana-address/solana-address-2.7.0.crate",
+          "sha256": "01332a01c0a3098404d55a724c8d9a92aed4a50fe40a7dd0c7a51e29274c14de"
+        },
+        "2.8.0": {
+          "archive_url": "https://static.crates.io/crates/solana-address/solana-address-2.8.0.crate",
+          "sha256": "ea4126c5e3b30cec8e2f8155842a8f031dda8df986437f1ebb0c781715b132d3",
+          "revision": "cecbc7d6ca2494093b9cdec595b53d57cd0cf5f1",
+          "path_prefix": "address/"
+        },
+        "2.9.0": {
+          "archive_url": "https://static.crates.io/crates/solana-address/solana-address-2.9.0.crate",
+          "sha256": "451294fdd4dde59ae27213695e2333eaaa39035e1f099f68644d2aa3ca0e2edd",
+          "revision": "8710db55d804f1199242201c1c0b3ed54d27b3ce",
+          "path_prefix": "address/"
+        }
+      },
+      "evidence": ["@text:cbcb4b8fc28e20e4", "@text:2215992c73afdc7c"]
+    }
+  },
+  "applicability": {
+    "solana-address::Address::as_array": {
+      "order": 151,
+      "profiles": [
+        {
+          "id": "solana-address-reviewed-direct",
+          "source": "solana-address",
+          "conditions": ["@text:fc89ca8b9e078a4d", "@text:0ed23aac10e236c1"],
+          "argument": "@review:source-notes/address-profiles.md#review-8777c082259d9ee8",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "items": [
+            {
+              "item": "solana_address::Address::as_array",
+              "implementation": "solana_address::Address::as_array",
+              "releases": "@shared:releases-add01a08efd1aa49",
+              "compatible_ranges": "@shared:compatible-ranges-d3b90be7452d561e"
+            }
+          ],
+          "releases": "@shared:releases-add01a08efd1aa49"
+        },
+        {
+          "id": "solana-address-reviewed-facade",
+          "source": "solana-address",
+          "conditions": ["@text:fc89ca8b9e078a4d", "@text:0ed23aac10e236c1"],
+          "argument": "@review:source-notes/address-profiles.md#review-8777c082259d9ee8",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "items": [
+            {
+              "item": "solana_address::Address::as_array",
+              "implementation": "solana_address::Address::as_array",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        }
+      ]
+    },
+    "solana-address::Address::as_ref": {
+      "order": 152,
+      "profiles": [
+        {
+          "id": "solana-address-reviewed-direct",
+          "source": "solana-address",
+          "conditions": ["@text:fc89ca8b9e078a4d", "@text:0ed23aac10e236c1"],
+          "argument": "@review:source-notes/address-profiles.md#review-381b06de65cb1a06",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "items": [
+            {
+              "item": "core::convert::AsRef::as_ref",
+              "implementation": "<solana_address::Address as core::convert::AsRef<[u8]>>::as_ref",
+              "releases": "@shared:releases-add01a08efd1aa49",
+              "compatible_ranges": "@shared:compatible-ranges-d3b90be7452d561e"
+            }
+          ],
+          "releases": "@shared:releases-add01a08efd1aa49"
+        },
+        {
+          "id": "solana-address-reviewed-facade",
+          "source": "solana-address",
+          "conditions": ["@text:fc89ca8b9e078a4d", "@text:0ed23aac10e236c1"],
+          "argument": "@review:source-notes/address-profiles.md#review-381b06de65cb1a06",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "items": [
+            {
+              "item": "core::convert::AsRef::as_ref",
+              "implementation": "<solana_address::Address as core::convert::AsRef<[u8]>>::as_ref",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        }
+      ]
+    },
+    "solana-address::Address::default": {
+      "order": 153,
+      "profiles": [
+        {
+          "id": "solana-address-reviewed-direct",
+          "source": "solana-address",
+          "conditions": ["@text:fc89ca8b9e078a4d", "@text:0ed23aac10e236c1"],
+          "argument": "@review:source-notes/address-profiles.md#review-dc046e80c911a861",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "items": [
+            {
+              "item": "core::default::Default::default",
+              "implementation": "<solana_address::Address as core::default::Default>::default",
+              "releases": "@shared:releases-add01a08efd1aa49",
+              "compatible_ranges": "@shared:compatible-ranges-d3b90be7452d561e"
+            }
+          ],
+          "releases": "@shared:releases-add01a08efd1aa49"
+        },
+        {
+          "id": "solana-address-reviewed-facade",
+          "source": "solana-address",
+          "conditions": ["@text:fc89ca8b9e078a4d", "@text:0ed23aac10e236c1"],
+          "argument": "@review:source-notes/address-profiles.md#review-dc046e80c911a861",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "items": [
+            {
+              "item": "core::default::Default::default",
+              "implementation": "<solana_address::Address as core::default::Default>::default",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        }
+      ]
+    },
+    "solana-address::Address::deserialize_reader": {
+      "order": 154,
+      "profiles": [
+        {
+          "id": "solana-address-reviewed-direct",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-4611c1db43825cc6",
+          "argument": "@review:source-notes/address-profiles.md#review-505edc955f5fce5e",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "features": {"reason": "@text:7e8a568b07f1a754", "all": ["borsh"]},
+          "dependencies": "@shared:dependencies-2df6515dc96bf64b",
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<solana_address::Address as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": "@shared:releases-add01a08efd1aa49",
+              "compatible_ranges": "@shared:compatible-ranges-d3b90be7452d561e"
+            }
+          ],
+          "releases": "@shared:releases-add01a08efd1aa49"
+        },
+        {
+          "id": "solana-address-reviewed-facade",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-4611c1db43825cc6",
+          "argument": "@review:source-notes/address-profiles.md#review-505edc955f5fce5e",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-0e58e12a1e7369bc",
+          "features": {"reason": "@text:7e8a568b07f1a754", "all": ["borsh"]},
+          "items": [
+            {
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<solana_address::Address as borsh::de::BorshDeserialize>::deserialize_reader",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        }
+      ]
+    },
+    "solana-address::Address::eq": {
+      "order": 155,
+      "profiles": [
+        {
+          "id": "solana-address-reviewed-direct",
+          "source": "solana-address",
+          "conditions": ["@text:fc89ca8b9e078a4d", "@text:0ed23aac10e236c1"],
+          "argument": "@review:source-notes/address-profiles.md#review-8df7000ae1e6ad53",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "items": [
+            {
+              "item": "core::cmp::PartialEq::eq",
+              "implementation": "<solana_address::Address as core::cmp::PartialEq>::eq",
+              "releases": "@shared:releases-add01a08efd1aa49",
+              "compatible_ranges": "@shared:compatible-ranges-d3b90be7452d561e"
+            }
+          ],
+          "releases": "@shared:releases-add01a08efd1aa49"
+        },
+        {
+          "id": "solana-address-reviewed-facade",
+          "source": "solana-address",
+          "conditions": ["@text:fc89ca8b9e078a4d", "@text:0ed23aac10e236c1"],
+          "argument": "@review:source-notes/address-profiles.md#review-8df7000ae1e6ad53",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "items": [
+            {
+              "item": "core::cmp::PartialEq::eq",
+              "implementation": "<solana_address::Address as core::cmp::PartialEq>::eq",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        }
+      ]
+    },
+    "solana-address::Address::find_program_address": {
+      "order": 156,
+      "profiles": [
+        {
+          "id": "solana-address-reviewed-direct",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-86d764f390d27425",
+          "argument": "@review:source-notes/address-profiles.md#review-e5601d9f2b0eeb4a",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "features": {"reason": "@text:74f380e8b135a8c8", "all": ["curve25519"]},
+          "target": "@shared:target-10edae3e1976fe2e",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "releases": "@shared:releases-add01a08efd1aa49",
+              "compatible_ranges": "@shared:compatible-ranges-d3b90be7452d561e"
+            }
+          ],
+          "releases": "@shared:releases-add01a08efd1aa49"
+        },
+        {
+          "id": "solana-address-reviewed-facade",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-86d764f390d27425",
+          "argument": "@review:source-notes/address-profiles.md#review-e5601d9f2b0eeb4a",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "features": {"reason": "@text:74f380e8b135a8c8", "all": ["curve25519"]},
+          "target": "@shared:target-10edae3e1976fe2e",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        },
+        {
+          "id": "solana-address-reviewed-direct-2",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-35941b397328ab29",
+          "argument": "@review:source-notes/address-profiles.md#review-e5601d9f2b0eeb4a",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "features": {"reason": "@text:74f380e8b135a8c8", "all": ["curve25519"]},
+          "target": "@shared:target-10edae3e1976fe2e",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "releases": "@shared:releases-add01a08efd1aa49",
+              "compatible_ranges": "@shared:compatible-ranges-d3b90be7452d561e"
+            }
+          ],
+          "releases": "@shared:releases-add01a08efd1aa49"
+        },
+        {
+          "id": "solana-address-reviewed-facade-2",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-35941b397328ab29",
+          "argument": "@review:source-notes/address-profiles.md#review-e5601d9f2b0eeb4a",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "features": {"reason": "@text:74f380e8b135a8c8", "all": ["curve25519"]},
+          "target": "@shared:target-10edae3e1976fe2e",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        }
+      ]
+    },
+    "solana-address::Address::find_program_address_solana": {
+      "order": 157,
+      "profiles": [
+        {
+          "id": "solana-address-reviewed-direct-solana",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-9794f344e56e0eee",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-f3c4ff494410b2c3",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "releases": "@shared:releases-b041b42b53b9b859",
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-b041b42b53b9b859"
+        },
+        {
+          "id": "solana-address-reviewed-direct-bpf",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-9794f344e56e0eee",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-34a55cded8302a08",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "releases": "@shared:releases-b041b42b53b9b859",
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-b041b42b53b9b859"
+        },
+        {
+          "id": "solana-address-reviewed-facade-solana",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-9794f344e56e0eee",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-f3c4ff494410b2c3",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        },
+        {
+          "id": "solana-address-reviewed-facade-bpf",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-9794f344e56e0eee",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-34a55cded8302a08",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        },
+        {
+          "id": "solana-address-reviewed-direct-solana-2",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-34c45270df47da6c",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-f3c4ff494410b2c3",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "releases": "@shared:releases-b041b42b53b9b859",
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-b041b42b53b9b859"
+        },
+        {
+          "id": "solana-address-reviewed-direct-bpf-2",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-34c45270df47da6c",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-34a55cded8302a08",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "releases": "@shared:releases-b041b42b53b9b859",
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-b041b42b53b9b859"
+        },
+        {
+          "id": "solana-address-reviewed-facade-solana-2",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-34c45270df47da6c",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-f3c4ff494410b2c3",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        },
+        {
+          "id": "solana-address-reviewed-facade-bpf-2",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-34c45270df47da6c",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-34a55cded8302a08",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::find_program_address",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        }
+      ]
+    },
+    "solana-address::Address::is_on_curve": {
+      "order": 158,
+      "profiles": [
+        {
+          "id": "solana-address-reviewed-direct",
+          "source": "solana-address",
+          "conditions": ["@text:a7fbac7b47281f83", "@text:83c0a66c08aae40a"],
+          "argument": "@review:source-notes/address-profiles.md#review-73b0ffa3f20afd45",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "features": {"reason": "@text:74f380e8b135a8c8", "all": ["curve25519"]},
+          "target": "@shared:target-10edae3e1976fe2e",
+          "items": [
+            {
+              "item": "solana_address::Address::is_on_curve",
+              "implementation": "solana_address::Address::is_on_curve",
+              "releases": "@shared:releases-add01a08efd1aa49",
+              "compatible_ranges": "@shared:compatible-ranges-d3b90be7452d561e"
+            }
+          ],
+          "releases": "@shared:releases-add01a08efd1aa49"
+        },
+        {
+          "id": "solana-address-reviewed-facade",
+          "source": "solana-address",
+          "conditions": ["@text:a7fbac7b47281f83", "@text:83c0a66c08aae40a"],
+          "argument": "@review:source-notes/address-profiles.md#review-73b0ffa3f20afd45",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "features": {"reason": "@text:74f380e8b135a8c8", "all": ["curve25519"]},
+          "target": "@shared:target-10edae3e1976fe2e",
+          "items": [
+            {
+              "item": "solana_address::Address::is_on_curve",
+              "implementation": "solana_address::Address::is_on_curve",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        }
+      ]
+    },
+    "solana-address::Address::is_on_curve_solana": {
+      "order": 159,
+      "profiles": [
+        {
+          "id": "solana-address-reviewed-direct-solana",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-38a7f68c55558013",
+          "argument": "@review:source-notes/address-profiles.md#review-e69ef61140704968",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "features": "@shared:features-c40614e5981b9e41",
+          "target": "@shared:target-2bf9d9e2fab65081",
+          "items": [
+            {
+              "item": "solana_address::Address::is_on_curve",
+              "implementation": "solana_address::Address::is_on_curve",
+              "releases": "@shared:releases-e45aa0153c09395c",
+              "compatible_ranges": [{"lower": "2.2.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-e45aa0153c09395c"
+        },
+        {
+          "id": "solana-address-reviewed-direct-bpf",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-38a7f68c55558013",
+          "argument": "@review:source-notes/address-profiles.md#review-e69ef61140704968",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "features": "@shared:features-c40614e5981b9e41",
+          "target": "@shared:target-6b155e848ff9f10b",
+          "items": [
+            {
+              "item": "solana_address::Address::is_on_curve",
+              "implementation": "solana_address::Address::is_on_curve",
+              "releases": "@shared:releases-e45aa0153c09395c",
+              "compatible_ranges": [{"lower": "2.2.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-e45aa0153c09395c"
+        },
+        {
+          "id": "solana-address-reviewed-facade-solana",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-38a7f68c55558013",
+          "argument": "@review:source-notes/address-profiles.md#review-e69ef61140704968",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-f730765f8eb009cd",
+          "features": "@shared:features-c40614e5981b9e41",
+          "target": "@shared:target-2bf9d9e2fab65081",
+          "items": [
+            {
+              "item": "solana_address::Address::is_on_curve",
+              "implementation": "solana_address::Address::is_on_curve",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        },
+        {
+          "id": "solana-address-reviewed-facade-bpf",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-38a7f68c55558013",
+          "argument": "@review:source-notes/address-profiles.md#review-e69ef61140704968",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-f730765f8eb009cd",
+          "features": "@shared:features-c40614e5981b9e41",
+          "target": "@shared:target-6b155e848ff9f10b",
+          "items": [
+            {
+              "item": "solana_address::Address::is_on_curve",
+              "implementation": "solana_address::Address::is_on_curve",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        }
+      ]
+    },
+    "solana-address::Address::new_from_array": {
+      "order": 160,
+      "profiles": [
+        {
+          "id": "solana-address-reviewed-direct",
+          "source": "solana-address",
+          "conditions": ["@text:fc89ca8b9e078a4d", "@text:0ed23aac10e236c1"],
+          "argument": "@review:source-notes/address-profiles.md#review-244d888d9ea412ad",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "items": [
+            {
+              "item": "solana_address::Address::new_from_array",
+              "implementation": "solana_address::Address::new_from_array",
+              "releases": "@shared:releases-add01a08efd1aa49",
+              "compatible_ranges": "@shared:compatible-ranges-d3b90be7452d561e"
+            }
+          ],
+          "releases": "@shared:releases-add01a08efd1aa49"
+        },
+        {
+          "id": "solana-address-reviewed-facade",
+          "source": "solana-address",
+          "conditions": ["@text:fc89ca8b9e078a4d", "@text:0ed23aac10e236c1"],
+          "argument": "@review:source-notes/address-profiles.md#review-244d888d9ea412ad",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "items": [
+            {
+              "item": "solana_address::Address::new_from_array",
+              "implementation": "solana_address::Address::new_from_array",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        }
+      ]
+    },
+    "solana-address::Address::serialize": {
+      "order": 161,
+      "profiles": [
+        {
+          "id": "solana-address-reviewed-direct",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-6032ea343d0aaeb1",
+          "argument": "@review:source-notes/address-profiles.md#review-78783e584906532a",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "features": {"reason": "@text:7e8a568b07f1a754", "all": ["borsh"]},
+          "dependencies": "@shared:dependencies-2df6515dc96bf64b",
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<solana_address::Address as borsh::ser::BorshSerialize>::serialize",
+              "releases": "@shared:releases-add01a08efd1aa49",
+              "compatible_ranges": "@shared:compatible-ranges-d3b90be7452d561e"
+            }
+          ],
+          "releases": "@shared:releases-add01a08efd1aa49"
+        },
+        {
+          "id": "solana-address-reviewed-facade",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-6032ea343d0aaeb1",
+          "argument": "@review:source-notes/address-profiles.md#review-78783e584906532a",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-0e58e12a1e7369bc",
+          "features": {"reason": "@text:7e8a568b07f1a754", "all": ["borsh"]},
+          "items": [
+            {
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<solana_address::Address as borsh::ser::BorshSerialize>::serialize",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        },
+        {
+          "id": "solana-address-2.6.1-serialize",
+          "source": "solana-address",
+          "releases": ["2.6.1"],
+          "items": [
+            {
+              "releases": ["2.6.1"],
+              "item": "borsh::ser::BorshSerialize::serialize",
+              "implementation": "<solana_address::Address as borsh::ser::BorshSerialize>::serialize",
+              "compatible_ranges": [{"lower": "2.6.1", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-443bb15228e8b089",
+          "argument": "@review:source-notes/address-profiles.md#review-0cc6ce6fb0de67b9",
+          "evidence": ["@text:b06495e280378f79", "@text:1f682a7685cc2e22"],
+          "dependencies": [
+            {
+              "package": "borsh",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["1.6.0"],
+              "reason": "@text:779e66101f549433",
+              "compatible_ranges": [{"lower": "1.6.0", "upper": "2.0.0"}]
+            },
+            "@shared:dependencies-8ae82950f36a696b"
+          ],
+          "features": {"all": ["borsh"], "reason": "@text:60e3f854d21484d2"}
+        }
+      ]
+    },
+    "solana-address::Address::to_bytes": {
+      "order": 162,
+      "profiles": [
+        {
+          "id": "solana-address-reviewed-direct",
+          "source": "solana-address",
+          "conditions": ["@text:fc89ca8b9e078a4d", "@text:0ed23aac10e236c1"],
+          "argument": "@review:source-notes/address-profiles.md#review-75ed24749002632b",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "items": [
+            {
+              "item": "solana_address::Address::to_bytes",
+              "implementation": "solana_address::Address::to_bytes",
+              "releases": "@shared:releases-add01a08efd1aa49",
+              "compatible_ranges": "@shared:compatible-ranges-d3b90be7452d561e"
+            }
+          ],
+          "releases": "@shared:releases-add01a08efd1aa49"
+        },
+        {
+          "id": "solana-address-reviewed-facade",
+          "source": "solana-address",
+          "conditions": ["@text:fc89ca8b9e078a4d", "@text:0ed23aac10e236c1"],
+          "argument": "@review:source-notes/address-profiles.md#review-75ed24749002632b",
+          "evidence": ["@text:bbf48d8558da7f29", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "items": [
+            {
+              "item": "solana_address::Address::to_bytes",
+              "implementation": "solana_address::Address::to_bytes",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        }
+      ]
+    },
+    "solana-address::Address::try_find_program_address_solana": {
+      "order": 163,
+      "profiles": [
+        {
+          "id": "solana-address-reviewed-direct-solana",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-528e3f3619bd84b0",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-f3c4ff494410b2c3",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "releases": "@shared:releases-b041b42b53b9b859",
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-b041b42b53b9b859"
+        },
+        {
+          "id": "solana-address-reviewed-direct-bpf",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-528e3f3619bd84b0",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-34a55cded8302a08",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "releases": "@shared:releases-b041b42b53b9b859",
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-b041b42b53b9b859"
+        },
+        {
+          "id": "solana-address-reviewed-facade-solana",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-528e3f3619bd84b0",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-f3c4ff494410b2c3",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        },
+        {
+          "id": "solana-address-reviewed-facade-bpf",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-528e3f3619bd84b0",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-34a55cded8302a08",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        },
+        {
+          "id": "solana-address-reviewed-direct-solana-2",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-0ceb1469dc0375e0",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-f3c4ff494410b2c3",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "releases": "@shared:releases-b041b42b53b9b859",
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-b041b42b53b9b859"
+        },
+        {
+          "id": "solana-address-reviewed-direct-bpf-2",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-0ceb1469dc0375e0",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-34a55cded8302a08",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "releases": "@shared:releases-b041b42b53b9b859",
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}]
+            }
+          ],
+          "releases": "@shared:releases-b041b42b53b9b859"
+        },
+        {
+          "id": "solana-address-reviewed-facade-solana-2",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-0ceb1469dc0375e0",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-f3c4ff494410b2c3",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        },
+        {
+          "id": "solana-address-reviewed-facade-bpf-2",
+          "source": "solana-address",
+          "conditions": "@shared:conditions-0ceb1469dc0375e0",
+          "argument": "@review:source-notes/address-profiles.md#review-a52bf578c31f49ab",
+          "evidence": ["@text:45cf5bbec8d9019e", "@text:135bc9554855a07c"],
+          "identity_dependency": "solana-address",
+          "dependencies": "@shared:dependencies-cf404d42e0fe8d51",
+          "features": {"reason": "@text:29536ef25094f0fe", "all": ["syscalls"]},
+          "target": "@shared:target-34a55cded8302a08",
+          "items": [
+            {
+              "item": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address",
+              "releases": ["1.1.0"],
+              "compatible_ranges": [{"lower": "1.1.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.1.0"]
+        }
+      ]
+    },
+    "solana-address::Address::cmp": {
+      "order": 230,
+      "profiles": [
+        {
+          "id": "solana-address-2.6.0-2.6.1-cmp",
+          "source": "solana-address",
+          "releases": ["2.6.0", "2.6.1", "2.7.0", "2.8.0", "2.9.0"],
+          "items": [
+            {
+              "releases": ["2.6.0", "2.6.1", "2.7.0", "2.8.0", "2.9.0"],
+              "item": "core::cmp::Ord::cmp",
+              "implementation": "<solana_address::Address as core::cmp::Ord>::cmp",
+              "compatible_ranges": [{"lower": "2.6.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:4a7190a81d148c5b", "@binding:d340b5da13ec1c9e"],
+          "argument": "@review:source-notes/address-profiles.md#review-c5c1e5df35c3e341",
+          "evidence": [
+            "@text:8faccf49ac809b96",
+            "@text:b06495e280378f79",
+            "@text:5ed539adf9698cba",
+            "@text:877b155312e79229",
+            "@text:135bc9554855a07c"
+          ]
+        }
+      ]
+    },
+    "solana-address::Address::create_program_address_solana": {
+      "order": 431,
+      "profiles": [
+        {
+          "id": "solana-address-2.6.0-2.6.1-create_program_address_solana",
+          "source": "solana-address",
+          "releases": ["2.6.0", "2.6.1"],
+          "items": [
+            {
+              "releases": ["2.6.0", "2.6.1"],
+              "item": "solana_address::syscalls::<impl solana_address::Address>::create_program_address",
+              "implementation": "solana_address::syscalls::<impl solana_address::Address>::create_program_address",
+              "compatible_ranges": [{"lower": "2.6.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0", "@text:1e3c02d8c534101d"],
+          "argument": "@review:source-notes/address-profiles.md#review-a2169aef50eb4062",
+          "evidence": ["@text:8faccf49ac809b96", "@text:b06495e280378f79"],
+          "target": "@shared:target-86e77ec323a176ad",
+          "features": {"all": ["syscalls"], "reason": "@text:2a052cf1f340f36a"}
+        }
+      ]
+    },
+    "solana-address::Address::deserialize_reader_read_exact": {
+      "order": 454,
+      "profiles": [
+        {
+          "id": "solana-address-2.6.1-deserialize_reader",
+          "source": "solana-address",
+          "releases": ["2.6.1"],
+          "items": [
+            {
+              "releases": ["2.6.1"],
+              "item": "borsh::de::BorshDeserialize::deserialize_reader",
+              "implementation": "<solana_address::Address as borsh::de::BorshDeserialize>::deserialize_reader",
+              "compatible_ranges": [{"lower": "2.6.1", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-443bb15228e8b089",
+          "argument": "@review:source-notes/address-profiles.md#review-df5973550f5e654d",
+          "evidence": ["@text:b06495e280378f79", "@text:1f682a7685cc2e22"],
+          "dependencies": [
+            {
+              "package": "borsh",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["1.6.0"],
+              "reason": "@text:b6af4a0300cb43c4",
+              "compatible_ranges": [{"lower": "1.6.0", "upper": "2.0.0"}]
+            },
+            "@shared:dependencies-8ae82950f36a696b"
+          ],
+          "features": {"all": ["borsh"], "reason": "@text:60e3f854d21484d2"}
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:328106abb4b8d9fb", "@binding:5190a32e6baa1ea3"]
+}

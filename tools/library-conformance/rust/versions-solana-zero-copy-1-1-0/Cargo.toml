@@ -1,0 +1,12 @@
+# The runner resolves this exact yanked release with its public archive checksum.
+
+[package]
+name = "conformance-versions-solana-zero-copy-1-1-0"
+version = "0.1.0"
+edition = "2021"
+publish = false
+workspace = "../workspaces/profile-00"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+solana-zero-copy = { version = "=1.1.0", default-features = false }

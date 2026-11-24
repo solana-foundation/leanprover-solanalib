@@ -1,0 +1,416 @@
+{
+  "abstractions": {
+    "library::solana_hash": {
+      "order": 138,
+      "modules": {
+        "Solanalib.Specs.SolanaHash": "a4e50bc1f1ca6922922f55f57722eca4b309c8bcdfe00dc3a3ae69db891b9117",
+        "Solanalib.Specs.SolanaHash.Capabilities": "6ccd92f51f4762cbd723186e8a13c03a13b059b370d60f9404a9ee5dc056b6d6",
+        "Solanalib.Specs.SolanaHash.Hash": "c318c6daece3b01e9db996bc1a747d2ab57229d704b39784e03715ad1f49a8be"
+      },
+      "source_ids": [
+        "runtime-helpers::solana-hash-4.5.0::src/lib.rs",
+        "versions::solana-hash-4.3.0::src/lib.rs",
+        "versions::solana-hash-4.4.0::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/hash-helpers.md#review-ceec3340a5f6324b",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:0eced3bcf8b962e4",
+        "@binding:172619708ef1bcc9"
+      ]
+    }
+  },
+  "packages": {
+    "solana-hash-4.5.0": {
+      "order": 45,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "e33d4eacfc252f0f8bd82ca208c53db8e93f0e24",
+      "path_prefix": "hash/"
+    },
+    "solana-hash-4.3.0": {
+      "order": 56,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "733314800924ada41da0fd662fac656c9a3a3c4b",
+      "path_prefix": "hash/"
+    },
+    "solana-hash-4.4.0": {
+      "order": 57,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "d4726c863954958e851056a239c65d20196533c3",
+      "path_prefix": "hash/"
+    }
+  },
+  "interfaces": {
+    "runtime-helpers::solana-hash-4.5.0::src/lib.rs": {
+      "order": 135,
+      "crate": "solana-hash-4.5.0",
+      "path": "src/lib.rs",
+      "sha256": "321fbfcad19137ca7bbc9ca0f32c0748fc9679db0a1c44e79e51962d3789286d"
+    },
+    "versions::solana-hash-4.3.0::src/lib.rs": {
+      "order": 167,
+      "crate": "solana-hash-4.3.0",
+      "path": "src/lib.rs",
+      "sha256": "faabc7a454e316fec3b5b92b7961a79e618bc46029174adba5364ede3203f5a1"
+    },
+    "versions::solana-hash-4.4.0::src/lib.rs": {
+      "order": 168,
+      "crate": "solana-hash-4.4.0",
+      "path": "src/lib.rs",
+      "sha256": "5f894d45516ec1207cbfd76b2811a33e98977a83f247dc451c1ef50d4a033bb3"
+    }
+  },
+  "models": {
+    "solana-hash::Hash::to_bytes": {
+      "order": 172,
+      "contract": "Solanalib.Specs.SolanaHash.Hash.to_bytes_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaHash.Hash.to_bytes_model",
+      "assumptions": ["@binding:0eced3bcf8b962e4", "@binding:172619708ef1bcc9"]
+    }
+  },
+  "api": {
+    "runtime-helpers::solana-hash-4.5.0::solana_hash::Hash::to_bytes": {
+      "order": 87,
+      "anchor_text": "pub const fn to_bytes(&self) -> [u8; HASH_BYTES] {",
+      "line": 167,
+      "scope": "@text:334564e8babefa54",
+      "source_id": "runtime-helpers::solana-hash-4.5.0::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaHash.Hash.copies_exact_array",
+        "SolanalibTest.Specs.SolanaHash.Hash.versioned_contract_holds",
+        "SolanalibTest.Specs.SolanaHash.Hash.copied_array_is_not_reversed",
+        "SolanalibTest.Specs.SolanaHash.Hash.zero_and_ascending_are_distinct"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Hash.Value",
+        "Solanalib.Specs.Core.Hash.Array32",
+        "Solanalib.Specs.Core.Hash.toArray"
+      ],
+      "rust_names": ["solana_hash::Hash::to_bytes"],
+      "models": ["solana-hash::Hash::to_bytes"]
+    },
+    "solana-hash@4.3.0::Hash::to_bytes": {
+      "order": 151,
+      "anchor_text": "pub const fn to_bytes(&self) -> [u8; HASH_BYTES] {",
+      "line": 150,
+      "scope": "@text:69b3d498ba564fd7",
+      "source_id": "versions::solana-hash-4.3.0::src/lib.rs",
+      "clients": ["SolanalibTest.Specs.SolanaHash.registered_release_4_3_0"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Hash.Value",
+        "Solanalib.Specs.Core.Hash.Array32",
+        "Solanalib.Specs.Core.Hash.toArray"
+      ],
+      "rust_names": ["solana_hash::Hash::to_bytes"],
+      "models": ["solana-hash::Hash::to_bytes"]
+    },
+    "solana-hash@4.4.0::Hash::to_bytes": {
+      "order": 152,
+      "anchor_text": "pub const fn to_bytes(&self) -> [u8; HASH_BYTES] {",
+      "line": 152,
+      "scope": "@text:8a704ce563d8a98e",
+      "source_id": "versions::solana-hash-4.4.0::src/lib.rs",
+      "clients": ["SolanalibTest.Specs.SolanaHash.registered_release_4_4_0"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Hash.Value",
+        "Solanalib.Specs.Core.Hash.Array32",
+        "Solanalib.Specs.Core.Hash.toArray"
+      ],
+      "rust_names": ["solana_hash::Hash::to_bytes"],
+      "models": ["solana-hash::Hash::to_bytes"]
+    }
+  },
+  "compatibility": {
+    "hash-to-bytes": {
+      "order": 0,
+      "models": ["solana-hash::Hash::to_bytes"],
+      "releases": ["4.3.0", "4.4.0", "4.5.0"],
+      "reviewed_on": "2026-11-09",
+      "argument": "@review:source-notes/hash-helpers.md#review-728de313fd1dc37e"
+    }
+  },
+  "applicability_sources": {
+    "solana-hash": {
+      "order": 18,
+      "package": "solana-hash",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-0.0.1.crate",
+          "sha256": "42ea86feccf00d2462289c2c9f604e0a9a504768c611814da0abdf89fb7ed06a"
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-0.0.2.crate",
+          "sha256": "1a2241b1df63d3268f09e068f31a28ee0eada0fdf795912a5e258e4a16114b31",
+          "revision": "2d9764a01669f65d32960df605fd266cb8813891",
+          "path_prefix": "sdk/hash/",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.0.crate",
+          "sha256": "1807bc4e9e1d25271514167d5a1e698ce5a330bce547a368242dd63b355b5faa",
+          "revision": "c1080de464cfb578c301e975f498964b5d5313db",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.1.crate",
+          "sha256": "6631c9888f0adfa287d7a09e669eea80017a655807352789f2b5056c0abd353a",
+          "revision": "adeac02216dae627b90d7498a26e04276e88ed29",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.2.crate",
+          "sha256": "dd4adcc124a76786a090639440387ccc68fbf9477103489de107b73d90ce60ba",
+          "revision": "cefd3f13a2b8c1f3f8332ebeea3d7bf44d547a9a",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.4.crate",
+          "sha256": "1eb018925ea07bf67ce767430fd580a52ed7406f61844ece6b53fdd0d97e8b2e",
+          "revision": "024d047eedba22768099cc6509414202400c6231",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.5.crate",
+          "sha256": "453b0d210de622407b7264f14a786e785c98fd1438bd1d4c882bd15b0ad1b5a8",
+          "revision": "4da190bd01724d1433cff65782100978aefd4c00",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.6.crate",
+          "sha256": "a86aabbd7ebf807689a0355f053d6dc31d2131c2d83613011a374a18cc5d61b7",
+          "revision": "c15e6692b1eb2e9196a5d51af5ee8cb57ab7e689",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.7.crate",
+          "sha256": "7067f2bd1e9c3f28153484f03e44bf8dc73cededa6bc132e40de9bfc667b8534",
+          "revision": "c79c3c9e67274594ed4f43ed8386e9ddc60a99e9",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.8.crate",
+          "sha256": "58e35f984e3d60a58184743446250cf724afb34ed65f794da0dc4b462f9c1929",
+          "revision": "6ea38fce866595908486a01c7d6b7182988f3b2d",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.9.crate",
+          "sha256": "f3831f21dfc426f7da989712ee52372584967452fd299f700a7615670a4203b3",
+          "revision": "fdb6acc0a634fd0f1fd060d13aa4142c2e4601de",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.10.crate",
+          "sha256": "ad865143587f6173d0bd15ec66b749fd2682c865467ffd2bb725705e33f0c8fa",
+          "revision": "33ab693d94c787e64686e7b2d2f49492eae63885",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.11.crate",
+          "sha256": "7c25925816be2f57992c4c5af7dff31713bc95696c2fbc4bca911e290ba2f330",
+          "revision": "134be7c14066ea00c9791187d6bbc4795dd92f0e",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.12.crate",
+          "sha256": "9d7983e14fd607a13fa6ef89ab2ddad91fd3e65fd24b2b37c142ddc94ac8cb27",
+          "revision": "00cfd3ee36e9f2af78465731e87a063504753385",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.13.crate",
+          "sha256": "36647a50db4d401721e55d6bc1d259a8cea7bc333ab41c6358d2f5b344a1ab4e",
+          "revision": "67412607f511ded3770031280b6aaf10607713fc",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.14.crate",
+          "sha256": "852254006562e95680aeda4d25867277f6ff9af0e488ade1162fc49218913602",
+          "revision": "3ad46824358db6337072ad2b5d50ebcab6e1f113",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.15": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.15.crate",
+          "sha256": "4719d5932ff3a356f04cc14e495a82fc5c8b1faf036a3c8dc0ed273bfc1f22e9",
+          "revision": "535456856619786b7ac47b5b50b0a730e571365d",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.16": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.16.crate",
+          "sha256": "a09443b4d9444816bc189aeb724395518febb52bc02cbbc5145d010607b017ac",
+          "revision": "5002c63047230994282abd24207414126cb57e22",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.17": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.17.crate",
+          "sha256": "ebca9a929fc081d3d56923a787563a6a6bf8cd9ff403c6d7a22ed98c5c91dc2d",
+          "revision": "4adcd0f2f9075d9a2c08e3e12a694ced58f2af29",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.18": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.18.crate",
+          "sha256": "d5ff7806bbdc84f8c98ccc5e5e005080d3a4e8b1b7f61db193a155d53555d3b2",
+          "revision": "f91c2fcac24eee5a40f10606540ef6e08d1b6655",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.20": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.20.crate",
+          "sha256": "e75e12a61d3a8a0db6fec4d69bfc33bfec7aec4466f4860ead4dc8f56252f267",
+          "revision": "89985de3c6a8643f90af5dcb14bed23382bee088",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.1.21": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.1.21.crate",
+          "sha256": "8591e9192a4575792bb6a175f82b6bcfb301fc1113c4342bce7789f00726e98a",
+          "revision": "8a085eebcb901b6846d1f82f4636667742146545",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.2.0.crate",
+          "sha256": "4c7e29a5aba505e381c8251d2b7c4f87676ede47f874f676b82c897309c79fca",
+          "revision": "1baa4033e0d2d4175373f07b73ddda2f3cc0a8d6",
+          "path_prefix": "sdk/hash/"
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.2.1.crate",
+          "sha256": "cf7bcb14392900fe02e4e34e90234fbf0c673d4e327888410ba99fa2ba0f4e99",
+          "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+          "path_prefix": "hash/",
+          "repository": "https://github.com/anza-xyz/solana-sdk"
+        },
+        "2.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-2.3.0.crate",
+          "sha256": "b5b96e9f0300fa287b545613f007dfe20043d7812bee255f418c1eb649c93b63",
+          "revision": "8723226ec4f07385258a3801d3ebf2769f265a4f",
+          "path_prefix": "hash/"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-3.0.0.crate",
+          "sha256": "8a063723b9e84c14d8c0d2cdf0268207dc7adecf546e31251f9e07c7b00b566c",
+          "revision": "b81d9e51e3c0afa67d6717b702975becf1acdb33",
+          "path_prefix": "hash/"
+        },
+        "3.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-3.1.0.crate",
+          "sha256": "337c246447142f660f778cf6cb582beba8e28deb05b3b24bfb9ffd7c562e5f41",
+          "revision": "ad4993d1c66fc1a27b5eb8e03319d013ad36057d",
+          "path_prefix": "hash/"
+        },
+        "4.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-4.0.0.crate",
+          "sha256": "ff2672d370be2deb51fc3cfeca8c8d9327b84e7db9418ad90d190defb6afbe36",
+          "revision": "d8058bc0a89b8ee2c32d97721a93ae0b9eaa0d03",
+          "path_prefix": "hash/"
+        },
+        "4.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-4.0.1.crate",
+          "sha256": "6a5d48a6ee7b91fc7b998944ab026ed7b3e2fc8ee3bc58452644a86c2648152f",
+          "revision": "162fdd1b292643c0cc67845c6303a558bea17df3",
+          "path_prefix": "hash/"
+        },
+        "4.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-4.1.0.crate",
+          "sha256": "5b6100d68f90726ddb4d2ac7d00e8b6cf9ce8e4ccdfbb9112b1d766045753241",
+          "revision": "ed948a19f4320dce12825add83db3df6f12a68b0",
+          "path_prefix": "hash/"
+        },
+        "4.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-4.2.0.crate",
+          "sha256": "8064ea1d591ec791be95245058ca40f4f5345d390c200069d0f79bbf55bfae55",
+          "revision": "006f7be094c5363ad5a4b2522e965f2249bcc9e4",
+          "path_prefix": "hash/"
+        },
+        "4.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-4.3.0.crate",
+          "sha256": "f1b113239362cee7093bfb250467138f079a2a03673181dc15bff6ccd677912d",
+          "revision": "733314800924ada41da0fd662fac656c9a3a3c4b",
+          "path_prefix": "hash/"
+        },
+        "4.4.0": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-4.4.0.crate",
+          "sha256": "fe51db00ac3aa9f950d1e6201a126acfa26e6d81bc4a183ba64ec02effcad883",
+          "revision": "d4726c863954958e851056a239c65d20196533c3",
+          "path_prefix": "hash/"
+        },
+        "4.5.0": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-4.5.0.crate",
+          "sha256": "6f4c847893a2ea50b4ae3ca723b124e07cd0544fecea3598f785168f9b78333f",
+          "revision": "e33d4eacfc252f0f8bd82ca208c53db8e93f0e24",
+          "path_prefix": "hash/"
+        },
+        "4.6.0": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-4.6.0.crate",
+          "sha256": "0df9b01495ed31100aca97a7f5862d5e19ab1636d60d1a9f02391408dd9dec84",
+          "revision": "6a572b07c36ace73db12d9f3d8e294570db3b702",
+          "path_prefix": "hash/"
+        },
+        "4.7.0": {
+          "archive_url": "https://static.crates.io/crates/solana-hash/solana-hash-4.7.0.crate",
+          "sha256": "c7507df0d2c6350053d125e3df200976fdc68d2a942637d11ac657fe7220949a",
+          "revision": "9cae2fe24907b8ff15d1ca7ba53475e77daafc68",
+          "path_prefix": "hash/"
+        }
+      },
+      "evidence": ["@text:a37e9ef7ff20cfc2"]
+    }
+  },
+  "applicability": {
+    "solana-hash::Hash::to_bytes": {
+      "order": 172,
+      "profiles": [
+        {
+          "id": "solana-hash-reviewed-direct",
+          "source": "solana-hash",
+          "conditions": ["@text:bdc2305bbb3cf615", "@text:e9cd4e203441efbd"],
+          "argument": "@review:source-notes/hash-helpers.md#review-655e626ff7893c13",
+          "evidence": ["@text:a380b36fbb494b4c", "@text:5d18f14ee655639f"],
+          "items": [
+            {
+              "item": "solana_hash::Hash::to_bytes",
+              "implementation": "solana_hash::Hash::to_bytes",
+              "releases": "@shared:releases-cf9a335b5b3c41ba",
+              "compatible_ranges": [
+                {"lower": "2.1.0", "upper": "3.0.0"},
+                {"lower": "3.0.0", "upper": "3.1.0"},
+                {"lower": "4.0.0", "upper": "5.0.0"}
+              ]
+            }
+          ],
+          "releases": "@shared:releases-cf9a335b5b3c41ba"
+        },
+        {
+          "id": "solana-hash-reviewed-hash-v4-facade",
+          "source": "solana-hash",
+          "conditions": ["@text:bdc2305bbb3cf615", "@text:e9cd4e203441efbd"],
+          "argument": "@review:source-notes/hash-helpers.md#review-655e626ff7893c13",
+          "evidence": ["@text:a380b36fbb494b4c", "@text:5d18f14ee655639f"],
+          "identity_dependency": "solana-hash",
+          "dependencies": [
+            {
+              "package": "solana-hash",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["4.0.0", "4.0.1", "4.1.0", "4.2.0", "4.3.0", "4.4.0", "4.5.0", "4.6.0", "4.7.0"],
+              "reason": "@text:add4ba0929e2c5e0",
+              "compatible_ranges": [{"lower": "4.0.0", "upper": "5.0.0"}]
+            }
+          ],
+          "items": [
+            {
+              "item": "solana_hash::Hash::to_bytes",
+              "implementation": "solana_hash::Hash::to_bytes",
+              "releases": ["3.1.0"],
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.1.0"]
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:0eced3bcf8b962e4", "@binding:172619708ef1bcc9"]
+}

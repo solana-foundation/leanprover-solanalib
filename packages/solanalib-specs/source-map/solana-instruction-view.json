@@ -1,0 +1,571 @@
+{
+  "abstractions": {
+    "library::solana_instruction_view": {
+      "order": 140,
+      "modules": {
+        "Solanalib.Specs.SolanaInstructionView": "89f5ac6dcb5c5fb7ea19d8134e9d3a3168547e761f144ad9530cdaad6d031c1d",
+        "Solanalib.Specs.SolanaInstructionView.Capabilities": "43b6f2bcee3e10a2239639521655bb4c5ae5c8f6b53cd7b3937545cebbba4774",
+        "Solanalib.Specs.SolanaInstructionView.Request": "c83f324c8532f38432f212f16aab00632a442fd9e33c2957ac76f304fbd72266"
+      },
+      "source_ids": [
+        "value-request::solana-instruction-view-2.1.0::src/lib.rs",
+        "value-request::solana-instruction-view-2.1.0::src/cpi.rs",
+        "value-request::solana-instruction-view-1.0.0::src/cpi.rs"
+      ],
+      "argument": "@review:source-notes/value-request-instruction-view.md#review-6c70d52f123e9ad7",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@text:d97f913a465a4ea1",
+        "@text:0d8214400a53b569",
+        "@text:0a8bca42d5153e95",
+        "@binding:3be629903e979e7e"
+      ]
+    }
+  },
+  "packages": {
+    "solana-instruction-view-2.1.0": {
+      "order": 9,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "d8e311b30785b398f689528443ffd50db2a262f0",
+      "path_prefix": "instruction-view/"
+    },
+    "solana-instruction-view-1.0.0": {
+      "order": 47,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "c4d0dabc8cbf086bd0b3027f65b158b946c0b5e7",
+      "path_prefix": "instruction-view/"
+    }
+  },
+  "interfaces": {
+    "batch-source:solana-instruction-view-2.1.0:src/cpi.rs": {
+      "order": 3,
+      "crate": "solana-instruction-view-2.1.0",
+      "path": "src/cpi.rs",
+      "sha256": "22af149b56cf4a1cb101282545e168e6dad918f4c58a8275910053ad8d1c5c6d"
+    },
+    "batch-source:solana-instruction-view-2.1.0:src/lib.rs": {
+      "order": 4,
+      "crate": "solana-instruction-view-2.1.0",
+      "path": "src/lib.rs",
+      "sha256": "c745f209a610a2f6d4d3e97fc428fa89a1051c73aaa53ff8f327a6e3a2851a2b"
+    },
+    "value-request::solana-instruction-view-2.1.0::src/cpi.rs": {
+      "order": 37,
+      "crate": "solana-instruction-view-2.1.0",
+      "path": "src/cpi.rs",
+      "review_scope": "Descriptor construction and ordinary checked CPI wrapper preparation are reviewed. The actual unchecked invocation remains opaque at its unit-returning signature; its body and callee implementation are outside this review.",
+      "sha256": "22af149b56cf4a1cb101282545e168e6dad918f4c58a8275910053ad8d1c5c6d"
+    },
+    "value-request::solana-instruction-view-2.1.0::src/lib.rs": {
+      "order": 38,
+      "crate": "solana-instruction-view-2.1.0",
+      "path": "src/lib.rs",
+      "review_scope": "Constructors and signatures only; invocation implementation bodies remain opaque.",
+      "sha256": "c745f209a610a2f6d4d3e97fc428fa89a1051c73aaa53ff8f327a6e3a2851a2b"
+    },
+    "value-request::solana-instruction-view-1.0.0::src/cpi.rs": {
+      "order": 149,
+      "crate": "solana-instruction-view-1.0.0",
+      "path": "src/cpi.rs",
+      "review_scope": "Descriptor construction and ordinary checked CPI wrapper preparation are reviewed. The actual unchecked invocation remains opaque at its unit-returning signature; its body and callee implementation are outside this review.",
+      "sha256": "420fb63bbb6225051411f2fc3313cef5c4cef2ac0903d7b201eaa7d2735201c5"
+    }
+  },
+  "models": {
+    "solana-instruction-view::InstructionAccount::readonly_signer": {
+      "order": 173,
+      "contract": "Solanalib.Specs.SolanaInstructionView.InstructionAccount.readonly_signer_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaInstructionView.InstructionAccount.readonly_signer_model",
+      "assumptions": ["@text:44b4cb85437a55e4"]
+    },
+    "solana-instruction-view::cpi::Seed::from_array": {
+      "order": 174,
+      "contract": "Solanalib.Specs.SolanaInstructionView.cpi.Seed.from_array_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaInstructionView.cpi.Seed.from_array_model",
+      "assumptions": ["@text:ae2e3e56b93c6ce8"]
+    },
+    "solana-instruction-view::cpi::Seed::from_slice": {
+      "order": 175,
+      "contract": "Solanalib.Specs.SolanaInstructionView.cpi.Seed.from_slice_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaInstructionView.cpi.Seed.from_slice_model",
+      "assumptions": ["@text:ae2e3e56b93c6ce8"]
+    },
+    "solana-instruction-view::cpi::Signer::from_array": {
+      "order": 176,
+      "contract": "Solanalib.Specs.SolanaInstructionView.cpi.Signer.from_array_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaInstructionView.cpi.Signer.from_array_model",
+      "assumptions": ["@text:ae2e3e56b93c6ce8"]
+    },
+    "solana-instruction-view::cpi::Signer::from_slice": {
+      "order": 177,
+      "contract": "Solanalib.Specs.SolanaInstructionView.cpi.Signer.from_slice_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaInstructionView.cpi.Signer.from_slice_model",
+      "assumptions": ["@text:ae2e3e56b93c6ce8"]
+    },
+    "solana-instruction-view::cpi::invoke_signed": {
+      "order": 178,
+      "contract": "Solanalib.Specs.SolanaInstructionView.cpi.invoke_signed_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:b31d9441642e63f4", "@text:633bf32af9beba1f", "@text:96a8abc33d3d7273"]
+    },
+    "solana-instruction-view::cpi::invoke_signed_with_slice": {
+      "order": 179,
+      "contract": "Solanalib.Specs.SolanaInstructionView.cpi.invoke_signed_with_slice_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-5eb90b9242976f93"
+    },
+    "solana-instruction-view::cpi::invoke_with_slice": {
+      "order": 180,
+      "contract": "Solanalib.Specs.SolanaInstructionView.cpi.invoke_with_slice_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-5eb90b9242976f93"
+    }
+  },
+  "api": {
+    "solana-instruction-view@1.0.0::cpi::Seed::from_slice": {
+      "order": 153,
+      "anchor_text": "fn from(value: &'a [u8]) -> Self {",
+      "line": 117,
+      "scope": "@text:4a64aaffb6febb15",
+      "source_id": "value-request::solana-instruction-view-1.0.0::src/cpi.rs",
+      "clients": ["SolanalibTest.Specs.SolanaInstructionView.CheckedSlice.seed_conversion_keeps_empty_and_long_bytes"],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.seedFromSlice"],
+      "rust_names": ["<solana_instruction_view::cpi::Seed<'a> as core::convert::From<&'a [u8]>>::from"],
+      "models": ["solana-instruction-view::cpi::Seed::from_slice"]
+    },
+    "solana-instruction-view@1.0.0::cpi::Signer::from_slice": {
+      "order": 154,
+      "anchor_text": "fn from(value: &'b [Seed<'a>]) -> Self {",
+      "line": 165,
+      "scope": "@text:63d6675ac1bfb0e5",
+      "source_id": "value-request::solana-instruction-view-1.0.0::src/cpi.rs",
+      "clients": ["SolanalibTest.Specs.SolanaInstructionView.CheckedSlice.signer_keeps_empty_seeds_and_order"],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.signerFromSlice"],
+      "rust_names": [
+        "<solana_instruction_view::cpi::Signer<'a, 'b> as core::convert::From<&'b [solana_instruction_view::cpi::Seed<'a>]>>::from"
+      ],
+      "models": ["solana-instruction-view::cpi::Signer::from_slice"]
+    },
+    "solana-instruction-view@1.0.0::cpi::invoke_signed_with_slice": {
+      "order": 155,
+      "anchor_text": "pub fn invoke_signed_with_slice(",
+      "binding_obligations": ["@binding:49956dedf07d5306", "@binding:3be629903e979e7e"],
+      "line": 440,
+      "scope": "@text:dcd50aa97194173d",
+      "source_id": "value-request::solana-instruction-view-1.0.0::src/cpi.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedSlice.signed_executes_nonempty_prefix",
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedSlice.signed_duplicate_prefix_and_seeds",
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedSlice.terminal_skips_box_drop",
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedSlice.maximum_count_precedes_allocation",
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedSlice.allocation_precedes_missing_accounts",
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedSlice.readonly_exclusive_borrow_rejected"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.CpiRequest.Checked.sliceV1",
+        "Solanalib.Specs.Core.CpiRequest.Checked.Storage",
+        "Solanalib.Specs.Core.CpiRequest.Checked.checkV1",
+        "Solanalib.Specs.Core.CpiRequest.Checked.prepareV1",
+        "Solanalib.Specs.Core.CpiRequest.Checked.invokePrepared_no_error"
+      ],
+      "rust_names": ["solana_instruction_view::cpi::invoke_signed_with_slice"],
+      "models": ["solana-instruction-view::cpi::invoke_signed_with_slice"]
+    },
+    "solana-instruction-view@1.0.0::cpi::invoke_with_slice": {
+      "order": 156,
+      "anchor_text": "pub fn invoke_with_slice(",
+      "binding_obligations": ["@binding:49956dedf07d5306", "@binding:3be629903e979e7e"],
+      "line": 282,
+      "scope": "@text:2e400fcf7c4b987d",
+      "source_id": "value-request::solana-instruction-view-1.0.0::src/cpi.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedSlice.unsigned_unwind_drops_box_from_actual_state",
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedSlice.double_unwind_uses_post_drop_state"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.CpiRequest.Checked.sliceV1",
+        "Solanalib.Specs.Core.CpiRequest.Checked.Storage",
+        "Solanalib.Specs.Core.CpiRequest.Checked.checkV1",
+        "Solanalib.Specs.Core.CpiRequest.Checked.prepareV1",
+        "Solanalib.Specs.Core.CpiRequest.Checked.invokePrepared_no_error"
+      ],
+      "rust_names": ["solana_instruction_view::cpi::invoke_with_slice"],
+      "models": ["solana-instruction-view::cpi::invoke_with_slice"]
+    },
+    "solana-instruction-view@2.1.0::InstructionAccount::readonly_signer": {
+      "order": 157,
+      "anchor_text": "pub const fn readonly_signer(address: &'a Address) -> Self {",
+      "line": 80,
+      "scope": "@text:a4c32827673b1107",
+      "source_id": "value-request::solana-instruction-view-2.1.0::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedArray.readonly_signer_flags_are_asymmetric",
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedArray.borrowed_meta_observes_current_key"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.accountMeta", "Solanalib.Specs.Core.Instruction.RefMeta.observe"],
+      "rust_names": ["solana_instruction_view::InstructionAccount::<'a>::readonly_signer"],
+      "models": ["solana-instruction-view::InstructionAccount::readonly_signer"]
+    },
+    "solana-instruction-view@2.1.0::cpi::Seed::from_array": {
+      "order": 158,
+      "anchor_text": "fn from(value: &'bytes [u8; SIZE]) -> Self {",
+      "line": 179,
+      "scope": "@text:4a64aaffb6febb15",
+      "source_id": "value-request::solana-instruction-view-2.1.0::src/cpi.rs",
+      "clients": ["SolanalibTest.Specs.SolanaInstructionView.CheckedArray.seed_slice_and_array_keep_values"],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.seedFromArray"],
+      "rust_names": ["<solana_instruction_view::cpi::Seed<'bytes> as core::convert::From<&'bytes [u8; SIZE]>>::from"],
+      "models": ["solana-instruction-view::cpi::Seed::from_array"]
+    },
+    "solana-instruction-view@2.1.0::cpi::Seed::from_slice": {
+      "order": 159,
+      "anchor_text": "fn from(value: &'bytes [u8]) -> Self {",
+      "line": 169,
+      "scope": "@text:4a64aaffb6febb15",
+      "source_id": "value-request::solana-instruction-view-2.1.0::src/cpi.rs",
+      "clients": ["SolanalibTest.Specs.SolanaInstructionView.CheckedArray.seed_slice_and_array_keep_values"],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.seedFromSlice"],
+      "rust_names": ["<solana_instruction_view::cpi::Seed<'bytes> as core::convert::From<&'bytes [u8]>>::from"],
+      "models": ["solana-instruction-view::cpi::Seed::from_slice"]
+    },
+    "solana-instruction-view@2.1.0::cpi::Signer::from_array": {
+      "order": 160,
+      "anchor_text": "fn from(value: &'seeds [Seed<'bytes>; SIZE]) -> Self {",
+      "line": 229,
+      "scope": "@text:63d6675ac1bfb0e5",
+      "source_id": "value-request::solana-instruction-view-2.1.0::src/cpi.rs",
+      "clients": ["SolanalibTest.Specs.SolanaInstructionView.CheckedArray.signer_array_keeps_empty_seeds_and_order"],
+      "model_dependencies": ["Solanalib.Specs.Core.Instruction.signerFromArray"],
+      "rust_names": [
+        "<solana_instruction_view::cpi::Signer<'bytes, 'seeds> as core::convert::From<&'seeds [solana_instruction_view::cpi::Seed<'bytes>; SIZE]>>::from"
+      ],
+      "models": ["solana-instruction-view::cpi::Signer::from_array"]
+    },
+    "solana-instruction-view@2.1.0::cpi::invoke_signed": {
+      "order": 161,
+      "anchor_text": "pub fn invoke_signed<const ACCOUNTS: usize, A: AsRef<AccountView>>(",
+      "binding_obligations": ["@binding:49956dedf07d5306", "@binding:89f26d9c076e3598"],
+      "line": 372,
+      "scope": "@text:f3693817d523df4e",
+      "source_id": "value-request::solana-instruction-view-2.1.0::src/cpi.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedArray.full_array_retains_raw_flag_two_and_nonzero_padding",
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedArray.array_keeps_duplicate_prefix_and_seed_tree",
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedArray.raw_unwind_and_terminal_preserved",
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedArray.missing_count_precedes_every_callback",
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedArray.readonly_exclusive_borrow_reaches_invocation",
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedArray.repeated_asref_can_select_distinct_handles",
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedArray.borrow_error_retains_second_asref_effect",
+        "SolanalibTest.Specs.SolanaInstructionView.CheckedArray.array_above_source_bound_executes"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.CpiRequest.Checked.arrayFamily",
+        "Solanalib.Specs.Core.CpiRequest.Checked.HeaderTypes",
+        "Solanalib.Specs.Core.CpiRequest.Checked.StaticAccounts",
+        "Solanalib.Specs.Core.CpiRequest.Checked.checkV2",
+        "Solanalib.Specs.Core.CpiRequest.Checked.prepareV2",
+        "Solanalib.Specs.Core.CpiRequest.Checked.innerV2",
+        "Solanalib.Specs.Core.CpiRequest.Checked.invokePrepared_no_error"
+      ],
+      "rust_names": ["solana_instruction_view::cpi::invoke_signed"],
+      "models": ["solana-instruction-view::cpi::invoke_signed"]
+    }
+  },
+  "applicability_sources": {
+    "solana-instruction-view": {
+      "order": 20,
+      "package": "solana-instruction-view",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-0.0.0.crate",
+          "sha256": "ba8cb255cdd46aafb9779cf1d51eac1e0bb496109808d9c99d292b47c85e3892"
+        },
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-1.0.0.crate",
+          "sha256": "60147e4d0a4620013df40bf30a86dd299203ff12fcb8b593cd51014fce0875d8",
+          "revision": "c4d0dabc8cbf086bd0b3027f65b158b946c0b5e7",
+          "path_prefix": "instruction-view/"
+        },
+        "2.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-2.0.0.crate",
+          "sha256": "7c35d02cd27575b1fd05938d3624e476b0173208139053b51aa48dd9bec149f1",
+          "revision": "4f3f285c95b9fb8ebbe755737d22057c4ee24296",
+          "path_prefix": "instruction-view/"
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-2.1.0.crate",
+          "sha256": "6ab7a27d0c4214b9f7389c3dd00b68c93093a67f1dcc5b7893aebe299bbcbb47",
+          "revision": "d8e311b30785b398f689528443ffd50db2a262f0",
+          "path_prefix": "instruction-view/"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-instruction-view/solana-instruction-view-3.0.0.crate",
+          "sha256": "e145b112003bc400015bac7cc36196bd37404defb112daa9ac9ca7f47450ada8",
+          "revision": "71d4a33cf09939139336bfc9135e14306dae2c8e",
+          "path_prefix": "instruction-view/"
+        }
+      },
+      "evidence": ["@text:2617d6ece1d10228"]
+    }
+  },
+  "applicability": {
+    "solana-instruction-view::InstructionAccount::readonly_signer": {
+      "order": 173,
+      "profiles": [
+        {
+          "id": "solana-instruction-view-reviewed",
+          "source": "solana-instruction-view",
+          "conditions": ["@text:2831295128d2389d", "@text:3133550f8e07f621"],
+          "argument": "@review:source-notes/value-request-instruction-view.md#review-d8cd9a3a304be903",
+          "evidence": ["@text:28bb536dadf45954", "@text:234644e39e932792"],
+          "items": [
+            {
+              "item": "solana_instruction_view::InstructionAccount::<'a>::readonly_signer",
+              "implementation": "solana_instruction_view::InstructionAccount::<'a>::readonly_signer",
+              "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-6407904a201abc01"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-instruction-view::cpi::Seed::from_array": {
+      "order": 174,
+      "profiles": [
+        {
+          "id": "solana-instruction-view-reviewed",
+          "source": "solana-instruction-view",
+          "conditions": ["@text:2831295128d2389d", "@text:3133550f8e07f621"],
+          "argument": "@review:source-notes/value-request-instruction-view.md#review-d55894e394ce21c0",
+          "evidence": ["@text:28bb536dadf45954", "@text:234644e39e932792"],
+          "features": {"reason": "@text:dc5231cd08822a09", "all": ["cpi"]},
+          "items": [
+            {
+              "item": "core::convert::From::from",
+              "implementation": "<solana_instruction_view::cpi::Seed<'a> as core::convert::From<&'a [u8; SIZE]>>::from",
+              "releases": ["1.0.0", "2.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-ad33585a636350f9"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0"]
+        },
+        {
+          "id": "solana-instruction-view-reviewed-2",
+          "source": "solana-instruction-view",
+          "conditions": ["@text:2831295128d2389d", "@text:3133550f8e07f621"],
+          "argument": "@review:source-notes/value-request-instruction-view.md#review-d55894e394ce21c0",
+          "evidence": ["@text:28bb536dadf45954", "@text:234644e39e932792"],
+          "features": {"reason": "@text:dc5231cd08822a09", "all": ["cpi"]},
+          "items": [
+            {
+              "item": "core::convert::From::from",
+              "implementation": "<solana_instruction_view::cpi::Seed<'bytes> as core::convert::From<&'bytes [u8; SIZE]>>::from",
+              "releases": ["2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-d4731d23b05f1184"
+            }
+          ],
+          "releases": ["2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-instruction-view::cpi::Seed::from_slice": {
+      "order": 175,
+      "profiles": [
+        {
+          "id": "solana-instruction-view-reviewed",
+          "source": "solana-instruction-view",
+          "conditions": ["@text:2831295128d2389d", "@text:3133550f8e07f621"],
+          "argument": "@review:source-notes/value-request-instruction-view.md#review-8801e1b0dbb82876",
+          "evidence": ["@text:28bb536dadf45954", "@text:234644e39e932792"],
+          "features": {"reason": "@text:dc5231cd08822a09", "all": ["cpi"]},
+          "items": [
+            {
+              "item": "core::convert::From::from",
+              "implementation": "<solana_instruction_view::cpi::Seed<'a> as core::convert::From<&'a [u8]>>::from",
+              "releases": ["1.0.0", "2.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-ad33585a636350f9"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0"]
+        },
+        {
+          "id": "solana-instruction-view-reviewed-2",
+          "source": "solana-instruction-view",
+          "conditions": ["@text:2831295128d2389d", "@text:3133550f8e07f621"],
+          "argument": "@review:source-notes/value-request-instruction-view.md#review-8801e1b0dbb82876",
+          "evidence": ["@text:28bb536dadf45954", "@text:234644e39e932792"],
+          "features": {"reason": "@text:dc5231cd08822a09", "all": ["cpi"]},
+          "items": [
+            {
+              "item": "core::convert::From::from",
+              "implementation": "<solana_instruction_view::cpi::Seed<'bytes> as core::convert::From<&'bytes [u8]>>::from",
+              "releases": ["2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-d4731d23b05f1184"
+            }
+          ],
+          "releases": ["2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-instruction-view::cpi::Signer::from_array": {
+      "order": 176,
+      "profiles": [
+        {
+          "id": "solana-instruction-view-reviewed",
+          "source": "solana-instruction-view",
+          "conditions": ["@text:2831295128d2389d", "@text:3133550f8e07f621"],
+          "argument": "@review:source-notes/value-request-instruction-view.md#review-0280326f168ab447",
+          "evidence": ["@text:28bb536dadf45954", "@text:234644e39e932792"],
+          "features": {"reason": "@text:dc5231cd08822a09", "all": ["cpi"]},
+          "items": [
+            {
+              "item": "core::convert::From::from",
+              "implementation": "<solana_instruction_view::cpi::Signer<'a, 'b> as core::convert::From<&'b [solana_instruction_view::cpi::Seed<'a>; SIZE]>>::from",
+              "releases": ["1.0.0", "2.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-ad33585a636350f9"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0"]
+        },
+        {
+          "id": "solana-instruction-view-reviewed-2",
+          "source": "solana-instruction-view",
+          "conditions": ["@text:2831295128d2389d", "@text:3133550f8e07f621"],
+          "argument": "@review:source-notes/value-request-instruction-view.md#review-0280326f168ab447",
+          "evidence": ["@text:28bb536dadf45954", "@text:234644e39e932792"],
+          "features": {"reason": "@text:dc5231cd08822a09", "all": ["cpi"]},
+          "items": [
+            {
+              "item": "core::convert::From::from",
+              "implementation": "<solana_instruction_view::cpi::Signer<'bytes, 'seeds> as core::convert::From<&'seeds [solana_instruction_view::cpi::Seed<'bytes>; SIZE]>>::from",
+              "releases": ["2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-d4731d23b05f1184"
+            }
+          ],
+          "releases": ["2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-instruction-view::cpi::Signer::from_slice": {
+      "order": 177,
+      "profiles": [
+        {
+          "id": "solana-instruction-view-reviewed",
+          "source": "solana-instruction-view",
+          "conditions": ["@text:2831295128d2389d", "@text:3133550f8e07f621"],
+          "argument": "@review:source-notes/value-request-instruction-view.md#review-704404ce52240198",
+          "evidence": ["@text:28bb536dadf45954", "@text:234644e39e932792"],
+          "features": {"reason": "@text:dc5231cd08822a09", "all": ["cpi"]},
+          "items": [
+            {
+              "item": "core::convert::From::from",
+              "implementation": "<solana_instruction_view::cpi::Signer<'a, 'b> as core::convert::From<&'b [solana_instruction_view::cpi::Seed<'a>]>>::from",
+              "releases": ["1.0.0", "2.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-ad33585a636350f9"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0"]
+        },
+        {
+          "id": "solana-instruction-view-reviewed-2",
+          "source": "solana-instruction-view",
+          "conditions": ["@text:2831295128d2389d", "@text:3133550f8e07f621"],
+          "argument": "@review:source-notes/value-request-instruction-view.md#review-704404ce52240198",
+          "evidence": ["@text:28bb536dadf45954", "@text:234644e39e932792"],
+          "features": {"reason": "@text:dc5231cd08822a09", "all": ["cpi"]},
+          "items": [
+            {
+              "item": "core::convert::From::from",
+              "implementation": "<solana_instruction_view::cpi::Signer<'bytes, 'seeds> as core::convert::From<&'seeds [solana_instruction_view::cpi::Seed<'bytes>]>>::from",
+              "releases": ["2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-d4731d23b05f1184"
+            }
+          ],
+          "releases": ["2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-instruction-view::cpi::invoke_signed": {
+      "order": 178,
+      "profiles": [
+        {
+          "id": "solana-instruction-view-reviewed",
+          "source": "solana-instruction-view",
+          "conditions": [
+            "@text:565c8e54eab64d1c",
+            "@text:18041680d5e71ef0",
+            "@text:c9fb9028b7278bcf",
+            "@text:7deca17089cfc5a6"
+          ],
+          "argument": "@review:source-notes/value-request-instruction-view.md#review-9ea4c410a968d0b5",
+          "evidence": ["@text:bddbc65e9ad44256", "@text:234644e39e932792"],
+          "features": {"reason": "@text:dc5231cd08822a09", "all": ["cpi"]},
+          "items": [
+            {
+              "item": "solana_instruction_view::cpi::invoke_signed",
+              "implementation": "solana_instruction_view::cpi::invoke_signed",
+              "releases": ["2.1.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-d4731d23b05f1184"
+            }
+          ],
+          "releases": ["2.1.0", "3.0.0"]
+        }
+      ]
+    },
+    "solana-instruction-view::cpi::invoke_signed_with_slice": {
+      "order": 179,
+      "profiles": [
+        {
+          "id": "solana-instruction-view-reviewed",
+          "source": "solana-instruction-view",
+          "conditions": "@shared:conditions-a7e93eaeba5ec028",
+          "argument": "@review:source-notes/value-request-instruction-view.md#review-c8a8efcd78d8e5aa",
+          "evidence": ["@text:28bb536dadf45954"],
+          "features": {"reason": "@text:dc5231cd08822a09", "all": ["cpi"]},
+          "items": [
+            {
+              "item": "solana_instruction_view::cpi::invoke_signed_with_slice",
+              "implementation": "solana_instruction_view::cpi::invoke_signed_with_slice",
+              "releases": ["1.0.0"],
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.0.0"]
+        }
+      ]
+    },
+    "solana-instruction-view::cpi::invoke_with_slice": {
+      "order": 180,
+      "profiles": [
+        {
+          "id": "solana-instruction-view-reviewed",
+          "source": "solana-instruction-view",
+          "conditions": "@shared:conditions-a7e93eaeba5ec028",
+          "argument": "@review:source-notes/value-request-instruction-view.md#review-0cbd513c1aa4754b",
+          "evidence": ["@text:28bb536dadf45954"],
+          "features": {"reason": "@text:dc5231cd08822a09", "all": ["cpi"]},
+          "items": [
+            {
+              "item": "solana_instruction_view::cpi::invoke_with_slice",
+              "implementation": "solana_instruction_view::cpi::invoke_with_slice",
+              "releases": ["1.0.0"],
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "releases": ["1.0.0"]
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:328106abb4b8d9fb", "@binding:5190a32e6baa1ea3"]
+}

@@ -1,0 +1,2 @@
+corpora = ["utility_split230"]
+inputs = ["rust/utility-common/sysvar_scripts.rs", "rust/anchor/src/track.rs", "rust/runtime-common/rent_cases.rs", "rust/runtime-common/syscall_cases.rs", "rust/utility-common/rent.rs", "rust/utility-common/sysvar.rs"]

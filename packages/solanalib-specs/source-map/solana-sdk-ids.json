@@ -1,0 +1,315 @@
+{
+  "abstractions": {
+    "library::solana_sdk_ids": {
+      "order": 145,
+      "modules": {
+        "Solanalib.Specs.SolanaSdkIds": "39af282367f040fb2ee651822b7636d69976dff6226c544cedb920227e50c24d",
+        "Solanalib.Specs.SolanaSdkIds.Capabilities": "465efedb62c05daf02f26c98a3955691e0c089f7e063672dda3efaa3e78ebcaf",
+        "Solanalib.Specs.SolanaSdkIds.SystemProgram": "3c85eb79f2166fedd8c4abe04b506f02414574b6c2370db5c7a0bbf851dedc59",
+        "Solanalib.Specs.SolanaSdkIds.AdditionalIds": "e49708b7ff571dfa4bea1b245c1e512e9827ba8f03764c1f403dc5d421f56fc7"
+      },
+      "source_ids": [
+        "root-extra::solana-sdk-ids-3.1.0::src/lib.rs",
+        "value-request::solana-address-2.6.1::src/lib.rs",
+        "sdk-values::solana-sdk-ids-3.1.0::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/other-sdk-functions.md#review-e942609c0dfa8a12",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:a172ad168dd1c2c6",
+        "@text:da0d819ff81c3f79"
+      ]
+    }
+  },
+  "packages": {
+    "solana-sdk-ids-3.1.0": {
+      "order": 49,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "1bb184f0646173544c0b44d45342d6d66d54b9ce",
+      "path_prefix": "sdk-ids/"
+    }
+  },
+  "interfaces": {
+    "root-extra::solana-sdk-ids-3.1.0::src/lib.rs": {
+      "order": 131,
+      "crate": "solana-sdk-ids-3.1.0",
+      "path": "src/lib.rs",
+      "sha256": "eb90075d89375af38b6d8e7fe09c4ddb154570feb46d7e7c37602233c2ad57a7"
+    },
+    "sdk-values::solana-sdk-ids-3.1.0::src/lib.rs": {
+      "order": 559,
+      "crate": "solana-sdk-ids-3.1.0",
+      "path": "src/lib.rs",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/sdk-values.md. No whole-crate model is claimed.",
+      "sha256": "eb90075d89375af38b6d8e7fe09c4ddb154570feb46d7e7c37602233c2ad57a7"
+    }
+  },
+  "models": {
+    "solana-sdk-ids::system_program::id": {
+      "order": 190,
+      "contract": "Solanalib.Specs.SolanaSdkIds.system_program.id_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaSdkIds.system_program.id_model",
+      "assumptions": ["@binding:a172ad168dd1c2c6"]
+    },
+    "solana-sdk-ids::ed25519_program::id": {
+      "order": 438,
+      "contract": "Solanalib.Specs.SolanaSdkIds.ed25519_program.id_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaSdkIds.ed25519_program.id_model",
+      "assumptions": ["@binding:3bb5a093b983c27b"]
+    },
+    "solana-sdk-ids::bpf_loader_upgradeable::id": {
+      "order": 457,
+      "contract": "Solanalib.Specs.SolanaSdkIds.bpf_loader_upgradeable.id_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaSdkIds.bpf_loader_upgradeable.id_model",
+      "assumptions": ["@binding:3bb5a093b983c27b"]
+    },
+    "solana-sdk-ids::sysvar::instructions::id": {
+      "order": 475,
+      "contract": "Solanalib.Specs.SolanaSdkIds.sysvar.instructions.id_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaSdkIds.sysvar.instructions.id_model",
+      "assumptions": ["@binding:3bb5a093b983c27b"]
+    },
+    "solana-sdk-ids::vote::id": {
+      "order": 476,
+      "contract": "Solanalib.Specs.SolanaSdkIds.vote.id_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SolanaSdkIds.vote.id_model",
+      "assumptions": ["@binding:3bb5a093b983c27b"]
+    }
+  },
+  "api": {
+    "solana-sdk-ids@3.1.0::system_program.id": {
+      "order": 167,
+      "anchor_text": "pub mod system_program {",
+      "binding_obligations": ["@binding:a172ad168dd1c2c6", "@binding:16af5e6b4a95e14a"],
+      "line": 67,
+      "scope": "@text:08aba12aaa5f9d8e",
+      "source_id": "root-extra::solana-sdk-ids-3.1.0::src/lib.rs",
+      "clients": ["SolanalibTest.Specs.SolanaSdkIds.exact_system_id_bytes"],
+      "model_dependencies": ["Solanalib.Runtime.Ids.systemProgram"],
+      "rust_names": ["solana_sdk_ids::system_program::id"],
+      "models": ["solana-sdk-ids::system_program::id"],
+      "binding_defaults": false
+    },
+    "solana-sdk-ids@3.1.0::bpf_loader_upgradeable.id": {
+      "order": 452,
+      "source_id": "sdk-values::solana-sdk-ids-3.1.0::src/lib.rs",
+      "line": 16,
+      "anchor_text": "pub mod bpf_loader_upgradeable {",
+      "scope": "@text:3e0397e5d5c9437c",
+      "rust_names": ["solana_sdk_ids::bpf_loader_upgradeable::id"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaSdkIds.AdditionalIds.exact_ids",
+        "SolanalibTest.Specs.SolanaSdkIds.AdditionalIds.reject_cross_wiring"
+      ],
+      "models": ["solana-sdk-ids::bpf_loader_upgradeable::id"]
+    },
+    "solana-sdk-ids@3.1.0::ed25519_program.id": {
+      "order": 460,
+      "source_id": "sdk-values::solana-sdk-ids-3.1.0::src/lib.rs",
+      "line": 28,
+      "anchor_text": "pub mod ed25519_program {",
+      "scope": "@text:3e0397e5d5c9437c",
+      "rust_names": ["solana_sdk_ids::ed25519_program::id"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaSdkIds.AdditionalIds.exact_ids",
+        "SolanalibTest.Specs.SolanaSdkIds.AdditionalIds.reject_cross_wiring"
+      ],
+      "models": ["solana-sdk-ids::ed25519_program::id"]
+    },
+    "solana-sdk-ids@3.1.0::sysvar.instructions.id": {
+      "order": 582,
+      "source_id": "sdk-values::solana-sdk-ids-3.1.0::src/lib.rs",
+      "line": 90,
+      "anchor_text": "pub mod instructions {",
+      "scope": "@text:3e0397e5d5c9437c",
+      "rust_names": ["solana_sdk_ids::sysvar::instructions::id"],
+      "clients": [
+        "SolanalibTest.Specs.Core.SdkValues.exact_ids",
+        "SolanalibTest.Specs.Core.SdkValues.ids_reject_cross_wiring"
+      ],
+      "models": ["solana-sdk-ids::sysvar::instructions::id"]
+    },
+    "solana-sdk-ids@3.1.0::vote.id": {
+      "order": 583,
+      "source_id": "sdk-values::solana-sdk-ids-3.1.0::src/lib.rs",
+      "line": 71,
+      "anchor_text": "pub mod vote {",
+      "scope": "@text:3e0397e5d5c9437c",
+      "rust_names": ["solana_sdk_ids::vote::id"],
+      "clients": [
+        "SolanalibTest.Specs.Core.SdkValues.exact_ids",
+        "SolanalibTest.Specs.Core.SdkValues.ids_reject_cross_wiring"
+      ],
+      "models": ["solana-sdk-ids::vote::id"]
+    }
+  },
+  "applicability_sources": {
+    "solana-sdk-ids": {
+      "order": 25,
+      "package": "solana-sdk-ids",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-sdk-ids/solana-sdk-ids-0.0.1.crate",
+          "sha256": "1477dd8f6c2945cd8fb5acbbee2167758747d58700baf9a30709929dba1dd332"
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-sdk-ids/solana-sdk-ids-0.0.2.crate",
+          "sha256": "0745dbb8c6b9efac43b02072ecd1fff16803bf82e10b4af68ab0f4d30f9954a4",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "0.0.3": {
+          "archive_url": "https://static.crates.io/crates/solana-sdk-ids/solana-sdk-ids-0.0.3.crate",
+          "sha256": "3fd3718f21f667ce3f721a2fd1716d31d4292db4f81d7162adaddd7a7cb28ebe",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sdk-ids/solana-sdk-ids-2.2.0.crate",
+          "sha256": "6776348ff4384ceb2bca7b04a22bec4710e2551f42e2bd84d14340892d4a43db",
+          "revision": "1baa4033e0d2d4175373f07b73ddda2f3cc0a8d6",
+          "path_prefix": "sdk/sdk-ids/"
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-sdk-ids/solana-sdk-ids-2.2.1.crate",
+          "sha256": "5c5d8b9cc68d5c88b062a33e23a6466722467dde0035152d8fb1afbcdf350a5f",
+          "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+          "path_prefix": "sdk-ids/",
+          "repository": "https://github.com/anza-xyz/solana-sdk"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sdk-ids/solana-sdk-ids-3.0.0.crate",
+          "sha256": "b1b6d6aaf60669c592838d382266b173881c65fb1cdec83b37cb8ce7cb89f9ad",
+          "revision": "0b00547296c719c31479b5056e285b19130b9a8a",
+          "path_prefix": "sdk-ids/"
+        },
+        "3.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sdk-ids/solana-sdk-ids-3.1.0.crate",
+          "sha256": "def234c1956ff616d46c9dd953f251fa7096ddbaa6d52b165218de97882b7280",
+          "revision": "1bb184f0646173544c0b44d45342d6d66d54b9ce",
+          "path_prefix": "sdk-ids/"
+        }
+      },
+      "evidence": ["@text:c39758438f391d04"]
+    }
+  },
+  "applicability": {
+    "solana-sdk-ids::system_program::id": {
+      "order": 190,
+      "profiles": [
+        {
+          "id": "solana-sdk-ids-reviewed",
+          "source": "solana-sdk-ids",
+          "conditions": ["@binding:a172ad168dd1c2c6", "@text:a0248b9439b186b0"],
+          "argument": "@review:source-notes/other-sdk-functions.md#review-6dd40202dd300385",
+          "evidence": ["@text:dbaf3933a231cbed", "@text:c7963528a50c5f94"],
+          "items": [
+            {
+              "item": "solana_sdk_ids::system_program::id",
+              "implementation": "solana_sdk_ids::system_program::id",
+              "releases": ["0.0.2", "0.0.3", "2.2.0", "2.2.1", "3.0.0", "3.1.0"],
+              "compatible_ranges": "@shared:compatible-ranges-99da6c15d19f7d33"
+            }
+          ],
+          "releases": ["0.0.2", "0.0.3", "2.2.0", "2.2.1", "3.0.0", "3.1.0"]
+        }
+      ]
+    },
+    "solana-sdk-ids::ed25519_program::id": {
+      "order": 438,
+      "profiles": [
+        {
+          "id": "reviewed-3-1-0",
+          "source": "solana-sdk-ids",
+          "releases": ["3.1.0"],
+          "items": [
+            {
+              "releases": ["3.1.0"],
+              "item": "solana_sdk_ids::ed25519_program::id",
+              "implementation": "solana_sdk_ids::ed25519_program::id",
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:3bb5a093b983c27b"],
+          "argument": "@review:source-notes/other-sdk-functions.md#review-809ad2def3c50bc7",
+          "evidence": ["@text:c7963528a50c5f94"],
+          "dependencies": "@shared:dependencies-0690bca9c818fb20"
+        }
+      ]
+    },
+    "solana-sdk-ids::bpf_loader_upgradeable::id": {
+      "order": 457,
+      "profiles": [
+        {
+          "id": "reviewed-3-1-0",
+          "source": "solana-sdk-ids",
+          "releases": ["3.1.0"],
+          "items": [
+            {
+              "releases": ["3.1.0"],
+              "item": "solana_sdk_ids::bpf_loader_upgradeable::id",
+              "implementation": "solana_sdk_ids::bpf_loader_upgradeable::id",
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:3bb5a093b983c27b"],
+          "argument": "@review:source-notes/other-sdk-functions.md#review-5e7aca45b8b50771",
+          "evidence": ["@text:c7963528a50c5f94"],
+          "dependencies": "@shared:dependencies-0690bca9c818fb20"
+        }
+      ]
+    },
+    "solana-sdk-ids::sysvar::instructions::id": {
+      "order": 478,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/other-sdk-functions.md#review-d153b6c8ee481a36",
+          "conditions": ["@binding:3bb5a093b983c27b"],
+          "dependencies": "@shared:dependencies-b5c81ce90b18fe5d",
+          "evidence": ["@text:c7963528a50c5f94"],
+          "id": "reviewed-3-1-0",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}],
+              "implementation": "solana_sdk_ids::sysvar::instructions::id",
+              "item": "solana_sdk_ids::sysvar::instructions::id",
+              "releases": ["3.1.0"]
+            }
+          ],
+          "releases": ["3.1.0"],
+          "source": "solana-sdk-ids"
+        }
+      ]
+    },
+    "solana-sdk-ids::vote::id": {
+      "order": 479,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/other-sdk-functions.md#review-d153b6c8ee481a36",
+          "conditions": ["@binding:3bb5a093b983c27b"],
+          "dependencies": "@shared:dependencies-b5c81ce90b18fe5d",
+          "evidence": ["@text:c7963528a50c5f94"],
+          "id": "reviewed-3-1-0",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}],
+              "implementation": "solana_sdk_ids::vote::id",
+              "item": "solana_sdk_ids::vote::id",
+              "releases": ["3.1.0"]
+            }
+          ],
+          "releases": ["3.1.0"],
+          "source": "solana-sdk-ids"
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:3bb5a093b983c27b", "@binding:d6e262b172cb3892"]
+}

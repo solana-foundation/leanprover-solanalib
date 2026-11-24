@@ -1,0 +1,9 @@
+# Registered models of packages/solanalib-specs/source-map that no checker decides, with the reason.
+# `run.py --model-only` over every family fails unless the registered models minus those its
+# checkers decide (decides.json) are exactly these. The native-exceptions table
+# in REFERENCE.md is generated from this file by `run.py --generate-registry`.
+
+[[model]]
+id = "shared-owned-array::construction"
+detail = "`Solanalib.Specs.Core.Owned.Array.construction_run`"
+reason = "Abstract protocol with no standalone Rust identity. [Lean scenario tests](../../packages/solanalib-specs/SolanalibTest/Specs/Core/OwnedArray.lean) cover ordered evaluation, partial failure, cleanup, terminal exits and rejected traces. The operational Token-2022 checker covers its concrete literal use, not this independent construction family."

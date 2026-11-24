@@ -1,0 +1,4 @@
+[build]
+target = "x86_64-unknown-linux-gnu"
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-A", "explicit_builtin_cfgs_in_flags", "--cfg", 'target_os="solana"']

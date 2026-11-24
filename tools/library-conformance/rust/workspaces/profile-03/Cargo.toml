@@ -1,0 +1,40 @@
+# Copyright (c) 2026 Harmonic. All rights reserved.
+# Released under Apache 2.0 license as described in the file LICENSE.
+# Authors: Solanalib Contributors
+
+[workspace]
+resolver = "2"
+members = [
+  "../../accounts-v1",
+  "../../address-2.6.1",
+  "../../address-2.6.1-host",
+  "../../address-comparison-261",
+  "../../error-nullable",
+  "../../instructions-3-4-0-wincode",
+  "../../raw-syscalls-5-2-0",
+  "../../runtime-pinocchio-0-10-2",
+  "../../runtime-pinocchio-0-10-2-wrapping",
+  "../../runtime-program-4-0-0-host",
+  "../../runtime-rent-3-0-0-wrapping",
+  "../../sdk-accounts-3",
+  "../../sdk-values-address-261",
+  "../../token-interface",
+  "../../token-state-interface-3-1-1",
+]
+
+[profile.dev]
+panic = "unwind"
+
+[profile.abort]
+inherits = "dev"
+panic = "abort"
+
+[profile.wrapping]
+inherits = "dev"
+overflow-checks = false
+
+[profile.optimized]
+inherits = "dev"
+opt-level = 3
+debug-assertions = false
+overflow-checks = false

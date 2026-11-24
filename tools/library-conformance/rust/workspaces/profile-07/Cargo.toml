@@ -1,0 +1,28 @@
+# Copyright (c) 2026 Harmonic. All rights reserved.
+# Released under Apache 2.0 license as described in the file LICENSE.
+# Authors: Solanalib Contributors
+
+[workspace]
+resolver = "2"
+members = [
+  "../../anchor-spl-token-0-32-1",
+  "../../pubkey-profiles-221",
+  "../../versions-solana-hash-4-4-0",
+]
+
+[profile.dev]
+panic = "unwind"
+
+[profile.abort]
+inherits = "dev"
+panic = "abort"
+
+[profile.wrapping]
+inherits = "dev"
+overflow-checks = false
+
+[profile.optimized]
+inherits = "dev"
+opt-level = 3
+debug-assertions = false
+overflow-checks = false

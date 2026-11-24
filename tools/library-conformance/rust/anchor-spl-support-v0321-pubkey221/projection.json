@@ -1,0 +1,43 @@
+{
+  "scope": "projected-wrapper conformance; the whole invocation is a typed mock",
+  "profile": "v0321-pubkey221",
+  "items": [
+    {
+      "crate": "anchor-spl",
+      "version": "0.32.1",
+      "path": "src/associated_token.rs",
+      "file_sha256": "d1632f813c253fb223c05cd863d524b9db883b1198f7f9a66f6e2b600324c644",
+      "selector": "pub fn create",
+      "item_sha256": "03a3681197e7675013c73f444e119d9869a02f5003f5c00bc178b15ead5b928a",
+      "callee": "anchor_lang::solana_program::program::invoke_signed",
+      "replacement": "crate::whole_signature::invoke_signed",
+      "replacement_count": 1,
+      "projected_item_sha256": "201a1a02e36c9974df502b91c203935df2c4b71d6b149ba7f39a089c087134e2"
+    },
+    {
+      "crate": "anchor-spl",
+      "version": "0.32.1",
+      "path": "src/memo.rs",
+      "file_sha256": "52b271a4651f163a7e9140a1d398fb88d65757129b0c66ed8d44a960696b250c",
+      "selector": "pub fn build_memo",
+      "item_sha256": "36cb2ff9b06517eca5f454170f64b1df680212c75ebafa7f4371f25d5e955191",
+      "callee": "anchor_lang::solana_program::program::invoke_signed",
+      "replacement": "crate::whole_signature::invoke_signed",
+      "replacement_count": 1,
+      "projected_item_sha256": "17af32170dce0f614b0265cf45135e17d1445891756eefe3d3250f87fd94d7a8"
+    },
+    {
+      "crate": "anchor-spl",
+      "version": "0.32.1",
+      "path": "src/metadata.rs",
+      "file_sha256": "8084f9d006703289b33f65164b2387747e89ae75d985ff007cde5aa693d6c03a",
+      "selector": "pub fn create_metadata_accounts_v3",
+      "item_sha256": "60d9ec8daa7d0932eb793ae4d0268b8eb27829fe93eb745629da51e854f10d72",
+      "callee": "anchor_lang::solana_program::program::invoke_signed",
+      "replacement": "crate::whole_signature::invoke_signed",
+      "replacement_count": 1,
+      "projected_item_sha256": "a5639668a734c9b2473cc8b1b2000079ae7a56d9fe577159d3aa65c9c1f6138c"
+    }
+  ],
+  "projection_sha256": "825cc17ca4955b166ba4fbd40285f23693a20c5f873c47847e7cddd2447e4eb5"
+}

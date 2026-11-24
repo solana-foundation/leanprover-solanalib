@@ -1,0 +1,9 @@
+scope = "projected-wrapper"
+region = "none"
+corpora = ["anchor_spl_token_1_1_2"]
+inputs = ["rust/common/anchor_spl_token.rs", "rust/common/anchor_spl_token_track.rs", "rust/anchor-spl-token-1-1-2/projection.json", "project_wrappers.py"]
+
+[build_probe]
+argument = "--build-config"
+profile = "dev"
+panic = "unwind"

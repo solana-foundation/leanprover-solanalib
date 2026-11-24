@@ -1,0 +1,3 @@
+# Family Address: solana-address 2.6.0 on the selected Solana branch.
+corpora = ["solana_address_2_6_0_api"]
+inputs = ["rust/address-common/values.rs", "rust/address-common/syscalls.rs"]

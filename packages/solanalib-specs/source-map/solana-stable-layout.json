@@ -1,0 +1,66 @@
+{
+  "packages": {
+    "solana-stable-layout-2.2.1": {
+      "order": 117,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+      "path_prefix": "stable-layout/"
+    },
+    "solana-stable-layout-3.0.0": {
+      "order": 118,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "6e09738da9b95ccaa731e8b9156e50cb42843baf",
+      "path_prefix": "stable-layout/"
+    },
+    "solana-stable-layout-3.0.1": {
+      "order": 119,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "9c59797697dcff9be25a2f2df9819b1438f2b83c",
+      "path_prefix": "stable-layout/"
+    }
+  },
+  "interfaces": {
+    "cpi-signatures::solana-stable-layout-2.2.1::src/stable_instruction.rs": {
+      "order": 409,
+      "crate": "solana-stable-layout-2.2.1",
+      "path": "src/stable_instruction.rs",
+      "sha256": "592ce4eb00dc8c46745a00e722bbbe84802fc10f5b1d91d9f8d9142637f46591",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-stable-layout-2.2.1::src/stable_vec.rs": {
+      "order": 410,
+      "crate": "solana-stable-layout-2.2.1",
+      "path": "src/stable_vec.rs",
+      "sha256": "d5f083965c45753f8766801f5ea0c464bf65072718417f2dd3db0c0b1d669d88",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-stable-layout-3.0.0::src/stable_instruction.rs": {
+      "order": 411,
+      "crate": "solana-stable-layout-3.0.0",
+      "path": "src/stable_instruction.rs",
+      "sha256": "592ce4eb00dc8c46745a00e722bbbe84802fc10f5b1d91d9f8d9142637f46591",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-stable-layout-3.0.0::src/stable_vec.rs": {
+      "order": 412,
+      "crate": "solana-stable-layout-3.0.0",
+      "path": "src/stable_vec.rs",
+      "sha256": "d5f083965c45753f8766801f5ea0c464bf65072718417f2dd3db0c0b1d669d88",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-stable-layout-3.0.1::src/stable_instruction.rs": {
+      "order": 413,
+      "crate": "solana-stable-layout-3.0.1",
+      "path": "src/stable_instruction.rs",
+      "sha256": "2b1682876a3ed37c3370d2393531bd193aee319a2d899715b4f7eaa41098288f",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-stable-layout-3.0.1::src/stable_vec.rs": {
+      "order": 414,
+      "crate": "solana-stable-layout-3.0.1",
+      "path": "src/stable_vec.rs",
+      "sha256": "710d69a336168f3c483e691c584a92b23dcb36ae92e8c677327ab82a74f11b06",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    }
+  }
+}

@@ -1,0 +1,780 @@
+{
+  "abstractions": {
+    "library::solana_curve25519": {
+      "order": 136,
+      "modules": {
+        "Solanalib.Specs.SolanaCurve25519": "e98543e1aed86d312d1ec4fb3aedf3e8e4e0b890d45abce090c2a9dae79bc07d",
+        "Solanalib.Specs.SolanaCurve25519.Capabilities": "fa2e83ab7b043b0115f13bd1b88194c08e35a0130e3e01dd739f69e97a6775dd",
+        "Solanalib.Specs.SolanaCurve25519.Edwards": "b1662273d93d3c8b6bf1d748cb3fcb0a9529ba58855aa6a713fac6c90572f2b5"
+      },
+      "source_ids": [
+        "root-extra::solana-curve25519-3.1.12::src/edwards.rs",
+        "root-extra::solana-curve25519-3.1.12::src/curve_syscall_traits.rs"
+      ],
+      "argument": "@review:source-notes/other-sdk-functions.md#review-87dc7d4a9e8e4b85",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:66f4d76aecf1d8fb",
+        "@binding:aedf68b7ebcba974"
+      ]
+    }
+  },
+  "packages": {
+    "solana-curve25519-3.1.12": {
+      "order": 8,
+      "repository": "https://github.com/anza-xyz/agave",
+      "revision": "6c1ba34691f17ac902ae3d2e1147eed5723b9cef",
+      "path_prefix": "curves/curve25519/"
+    }
+  },
+  "interfaces": {
+    "root-extra::solana-curve25519-3.1.12::src/curve_syscall_traits.rs": {
+      "order": 17,
+      "crate": "solana-curve25519-3.1.12",
+      "path": "src/curve_syscall_traits.rs",
+      "sha256": "b233fbfbb0a846708ef0fdc03e6a40ab021ff71f826bd28924e0fea01fb36fda"
+    },
+    "root-extra::solana-curve25519-3.1.12::src/edwards.rs": {
+      "order": 18,
+      "crate": "solana-curve25519-3.1.12",
+      "path": "src/edwards.rs",
+      "sha256": "7a27a3ffe31b179cba94a4cf120513d78e20318f60481e0ab04e1de4d129c614"
+    }
+  },
+  "models": {
+    "solana-curve25519::edwards::target_arch::validate_edwards": {
+      "order": 165,
+      "contract": "Solanalib.Specs.SolanaCurve25519.edwards.target_arch.validate_edwards_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.SolanaCurve25519.edwards.target_arch.validate_edwards_hasExecution",
+      "assumptions": ["@binding:66f4d76aecf1d8fb", "@binding:aedf68b7ebcba974"]
+    }
+  },
+  "api": {
+    "solana-curve25519@3.1.12::edwards.target_arch.validate_edwards": {
+      "order": 144,
+      "anchor_text": "pub fn validate_edwards(point: &PodEdwardsPoint) -> bool {",
+      "binding_obligations": ["@binding:66f4d76aecf1d8fb", "@binding:aedf68b7ebcba974", "@binding:16af5e6b4a95e14a"],
+      "line": 148,
+      "scope": "@text:db3635f6bf921e61",
+      "source_id": "root-extra::solana-curve25519-3.1.12::src/edwards.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaCurve25519.callback_terminal_has_no_post_state",
+        "SolanalibTest.Specs.SolanaCurve25519.callback_unwind_retains_state",
+        "SolanalibTest.Specs.SolanaCurve25519.nonzero_status_ignores_zero_scratch",
+        "SolanalibTest.Specs.SolanaCurve25519.request_is_edwards_with_initialized_scratch",
+        "SolanalibTest.Specs.SolanaCurve25519.zero_status_cannot_report_false",
+        "SolanalibTest.Specs.SolanaCurve25519.zero_status_ignores_nonzero_scratch"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Curve.validateEdwards", "Solanalib.Specs.Core.Curve.validationPost"],
+      "rust_names": ["solana_curve25519::edwards::target_arch::validate_edwards"],
+      "models": ["solana-curve25519::edwards::target_arch::validate_edwards"]
+    }
+  },
+  "applicability_sources": {
+    "solana-curve25519": {
+      "order": 16,
+      "package": "solana-curve25519",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-0.0.0.crate",
+          "sha256": "00c8b9e9740c16c50b24a8c84ca3429d17705d63c1eebd1d3cf4c0541410d33e"
+        },
+        "2.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.0.crate",
+          "sha256": "bb57042cc8e094a82d556db45b9a4dc28484e4241534c5cded444c9f5038cb48",
+          "revision": "16de8b75ebcd57022409b422de557dd37b1de8db",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.1.crate",
+          "sha256": "c9c4692f4eeb32f6b1b968250f3301927590debb056841f1134f6d098d3c0ec5",
+          "revision": "d02dac60779dc6fa2a3e4d227565c19ff3000f9c",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.2.crate",
+          "sha256": "9d0e4796ea1c84c8ed80023ab93f03aaeca1a968120b13074233ced4abddb3c2",
+          "revision": "b5bc3b23819ebc0df7cb2b20c3272e1008b46fec",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.3": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.3.crate",
+          "sha256": "109fa7ddac40dc7807c60c789f1db26f0aae920ecae5ab1e6132c74300a99fdf",
+          "revision": "c6b0570fff9fbce477571fcb8c1b410f1e9485d2",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.4": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.4.crate",
+          "sha256": "7a7a7e9bc903aa73b077e6c26d2871ef8a28b5c7914adb405d56106fbe6e2e09",
+          "revision": "0b1143e149fdae49db2f678cbe7a986af9f6d405",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.5": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.5.crate",
+          "sha256": "330050cec44d1d74b8010ef8d2afc3b378ff944c3cd8d8f2a4ea30b5355eef9b",
+          "revision": "57a09f19f989228f1cfb195203cc60ea0120dd08",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.6": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.6.crate",
+          "sha256": "fc5dea48018cf265f8dde880807c828dab731ab16ad0913c63863811ec483909",
+          "revision": "600cfbb10b2b7af033a9e930d09878c2e4f0844a",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.7": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.7.crate",
+          "sha256": "cc4cbe7889d4593eba95ba66096ef25e8b75f27384e9cc9633c43c8e6d3f77af",
+          "revision": "11b87c1ba32c1895898f2a17502417fccdf1a4c8",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.8": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.8.crate",
+          "sha256": "147c81e77b74f5d0a52579c1cf982fffb8c4491fb3baabf0e4fa19e2f6f39030",
+          "revision": "3e7563cdad47a731b4243c3cf59a69c5fe607f07",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.9": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.9.crate",
+          "sha256": "0aa9209adbba7662a0a6a79ab48b4d09a2cb23a3db3dd817818e1bc28da99a11",
+          "revision": "ced98f1ebe73f7e9691308afa757323003ff744f",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.10": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.10.crate",
+          "sha256": "33dfcbe23eacee29bd9eec8cdbc370b201e4309eb97672d7503db6f70841d9cd",
+          "revision": "1b5c6140e2f2a6a54b4074f1a933cc5e92e7c14d",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.11": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.11.crate",
+          "sha256": "698aeff176242ed50c887bea4c7e6e332ba5f120b7b02745d3a3cce3a719dcdd",
+          "revision": "d868218e08b404e285a6f0ac3be2ab792658feef",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.13": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.13.crate",
+          "sha256": "44b61d8eda3319deca3627e3eb3970ce2ad179ad39c106d6c003d06c90e3031d",
+          "revision": "4cc7b90484ab8054090b78ea59645b5904e57efb",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.14": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.14.crate",
+          "sha256": "e0d6ca4dc435e6048f871424cd5ace2aeb06c2c82229d684903b03fb351072d4",
+          "revision": "85619024446741b999d4b2f82621b153166632d3",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.15": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.15.crate",
+          "sha256": "357376e5364c0168a303ce3555951af646d8644905a04cb26837dc2f433a94c4",
+          "revision": "f8f3fe31d92c778d8552fa21f6b1abf4bcbca81d",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.16": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.16.crate",
+          "sha256": "0f42c6b987786d8cca7fc14749bbcbe514dd1e61d91b316b98ea1342cf670e18",
+          "revision": "f5a88ce9045ce204bb4c7495d597d2417ee861c2",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.17": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.17.crate",
+          "sha256": "ace7c7061e86efee26a964490e1a86aec831236db2206e3910f8712e9de3e1e2",
+          "revision": "93e6e33ea5bec52eaf71cec8cacc12fd81e85e6d",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.18": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.18.crate",
+          "sha256": "c94998b7dd9eb9e356e2fbe57955dcaaeca8f22f62de50bff9c3c73bcc700f57",
+          "revision": "f77014dcdff00279fb3a3fdb93f77338e47cf39e",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.19": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.19.crate",
+          "sha256": "a416f5db2943034d1a0992e124f62b9d3ee701c16da999b5e3828bee2c119760",
+          "revision": "2c653b09825bb50d0106c70e5b5293cd0cef43d6",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.20": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.20.crate",
+          "sha256": "1de0d559189d662de9698797f88c81a6d074dd3e8f79cd07d1cf68bffede9493",
+          "revision": "20a8749f7a71ca230bec4ecdbeb292e3d8cd399d",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.21": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.21.crate",
+          "sha256": "a1957f919e45d2ef818a6cd8fb902f3575cd3e9be4818305fe41ba0bd39b8183",
+          "revision": "843c6a1ac37ff1554b6415856b3ac4e0c1004277",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.22": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.22.crate",
+          "sha256": "b1fa528e0fa34c5e03d13226af94c32664a8f170203a1c4cb3a1145514ba28cd",
+          "revision": "faea52f338df8521864ab7ce97b120b2abb5ce13",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.23": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.23.crate",
+          "sha256": "ef53061d8df8e7672af6b7130a934d6004a677e8f18526dce55da8f952f2ed37",
+          "revision": "89906f3f455a013f4264e9898ab0502bcad94555",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.24": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.24.crate",
+          "sha256": "4f1d7b6dd70fd32d0f3c6ed95178ad8106830b4991eb9bcc7564f4f789ad7b58",
+          "revision": "336796a7184c6e8bbfdc3fea87b7a3278c1d5272",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.0.25": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.0.25.crate",
+          "sha256": "864508e8505a48ff523ab57f9fea3c4d25298b34e9c4d531d9681ca5ff6e85cb",
+          "revision": "40aee13cd02255930dc78b5ccd1d1fcda9d5bb15",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.0.crate",
+          "sha256": "f934d38b6f2a940fb1e1d8eaa17a14ffd3773b37be9fb29fa4bcec1bac5e4591",
+          "revision": "c1080de464cfb578c301e975f498964b5d5313db",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.1.crate",
+          "sha256": "54e5ba4b41a9dbe44ced90ef703670e01db50c9f8f71b632740b58285b2ed4ac",
+          "revision": "adeac02216dae627b90d7498a26e04276e88ed29",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.2.crate",
+          "sha256": "957e8f3986a544442d6c16ab747897a9f1f6c37b5c5c6d7aa352c64fb06e93d2",
+          "revision": "cefd3f13a2b8c1f3f8332ebeea3d7bf44d547a9a",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.4.crate",
+          "sha256": "85b8226b3a12bc753151a79e073bac46e0643c85a57a4fdeba7e15841116644f",
+          "revision": "024d047eedba22768099cc6509414202400c6231",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.5.crate",
+          "sha256": "ad6e9d784bfa97bd4f779f54b17b40460515024fdf3ff35a8d6176ad65542bfa",
+          "revision": "4da190bd01724d1433cff65782100978aefd4c00",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.6.crate",
+          "sha256": "d2ce85c03e05856b4094891fbaedf9ea9b0334b19d8fba72bd4b106442b46e12",
+          "revision": "c15e6692b1eb2e9196a5d51af5ee8cb57ab7e689",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.7.crate",
+          "sha256": "5344c8fb488fdf37845765c802f01198db010b16f4b4113dcb122549e303153f",
+          "revision": "c79c3c9e67274594ed4f43ed8386e9ddc60a99e9",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.8.crate",
+          "sha256": "07ec1e9b0cf73334da62f82ac9c19985f18410c2e59f020c0e4a8cf18d1607ef",
+          "revision": "6ea38fce866595908486a01c7d6b7182988f3b2d",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.9.crate",
+          "sha256": "73bc9e6fa982335c964ca18bc6721b26a604a993ceb7ad434d78548b2244c343",
+          "revision": "fdb6acc0a634fd0f1fd060d13aa4142c2e4601de",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.10.crate",
+          "sha256": "71b91a6c7db7874ab0721ba2ad49c34614c6af5bfa1a02f18ee471d28416b1fc",
+          "revision": "33ab693d94c787e64686e7b2d2f49492eae63885",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.11.crate",
+          "sha256": "4b2ed697e82c44b0833550501e3fab428c07cc2865c788307fad4c98a64d27d0",
+          "revision": "134be7c14066ea00c9791187d6bbc4795dd92f0e",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.12.crate",
+          "sha256": "ddd364b9c90c05406baa604743a266a4526fd7ac1e7a048c40971ca28200851b",
+          "revision": "00cfd3ee36e9f2af78465731e87a063504753385",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.13.crate",
+          "sha256": "af29b27893aa7bc5082f30ef653c9319b36ac2b2d0f5c44688a5e80c42fcd892",
+          "revision": "67412607f511ded3770031280b6aaf10607713fc",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.14.crate",
+          "sha256": "f8d9d4e6350509c072cc9a514610d1f29db63637ee3299a8fb2703c1ecad262b",
+          "revision": "3ad46824358db6337072ad2b5d50ebcab6e1f113",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.15": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.15.crate",
+          "sha256": "8790cd8457a34a0247b4d918187cb9d0e5c69c96485485beb4a52a08bd0a07da",
+          "revision": "535456856619786b7ac47b5b50b0a730e571365d",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.16": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.16.crate",
+          "sha256": "cd4bc49fde36f9fc778610783f0255aaf866753a8531fe6faf24d7da370af79f",
+          "revision": "5002c63047230994282abd24207414126cb57e22",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.17": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.17.crate",
+          "sha256": "d0a6936dcb43058ecf2908d34f1fa8fab078c788fa82ccb104d022b4ebdd0657",
+          "revision": "4adcd0f2f9075d9a2c08e3e12a694ced58f2af29",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.18": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.18.crate",
+          "sha256": "ca046dcf604144d200255c029badc9dfa901b8a5d5587243e22067b5af7c75da",
+          "revision": "f91c2fcac24eee5a40f10606540ef6e08d1b6655",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.20": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.20.crate",
+          "sha256": "69c77df8deb48b0da86df71092c45541044deb789366f480205034b7f4156b4f",
+          "revision": "89985de3c6a8643f90af5dcb14bed23382bee088",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.1.21": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.1.21.crate",
+          "sha256": "bdcc0923e1fbfe614d4a5675c3e4398b521c9d128c2114aaf3e404ea81ad08ee",
+          "revision": "8a085eebcb901b6846d1f82f4636667742146545",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.0.crate",
+          "sha256": "28e46b297431ab5a67b99d9aba1e7cff16105e4d44e1c0b92c916935d86b2424",
+          "revision": "8b11c7d5bf529ed690f4954cb1f96c8be66bb8e8",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.1.crate",
+          "sha256": "f213e3a853a23814dee39d730cd3a5583b7b1e6b37b2cd4d940bbe62df7acc16",
+          "revision": "5defe9361bc9f940d4c29488c7bcd3442e9c9fc5",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.2": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.2.crate",
+          "sha256": "47aa7c95eb487628d2f3ca723c27923ba564844b04d3a7ad920000008ce250b0",
+          "revision": "888e81b3bb1213942cc670f0b2dd225b0ed38406",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.3": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.3.crate",
+          "sha256": "fa1f28fdc4acdf6d1e47eec6fea58e88a650ca08f6a779d34730a616a2a82801",
+          "revision": "0b37b8fd3cca8e90b557c85f08df340654d4e5bb",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.4": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.4.crate",
+          "sha256": "9b3d15f1a893ced38529d44d7fe0d4348dc38c28fea13b6d6be5d13d438a441f",
+          "revision": "ee871fe841995567cff13c2b43ba9b54e7042ddc",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.5": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.5.crate",
+          "sha256": "4895e0943c12a322aa0af8d9f9164c7023dee6ecd9f6a70537709b986ffc3aac",
+          "revision": "bf03df94d521826f847fde9f64bc62151dda36e2",
+          "path_prefix": "curves/curve25519/",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "2.2.6": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.6.crate",
+          "sha256": "91f23498bbf3ae4f22125a2f16f988a5a659628ea4949ca605a05191f91095d3",
+          "revision": "e5cdee7cd3637593e28a93ee166190451b737d84",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.7": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.7.crate",
+          "sha256": "e0cf33066cc9a741ff4cc4d171a4a816ea06f9826516b7360d997179a1b3244f",
+          "revision": "7c7f93bc52c4fe2ee40f364f4d9f17c258219158",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.8": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.8.crate",
+          "sha256": "7d9499a822cd1acdac4fcec1acb500819f84b2f83042d6ae0d19cc45b32747f9",
+          "revision": "9d057399d7cf7e1efda717128ff73aee0ee24ff7",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.9": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.9.crate",
+          "sha256": "57a0725f5aba62198039f0dff215004b285519344bf6acce5e6dc29eaa113e11",
+          "revision": "b45a25818fdae571a4e44db0132edd5f5f7b5186",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.10": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.10.crate",
+          "sha256": "4c7794a2cbb70f6ea1026b37c9a9418f4dc89de9abeb502afb01d1bac0978fdd",
+          "revision": "23a719929d688b77d4eb5031895dfa1753904fbd",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.11": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.11.crate",
+          "sha256": "1de13796959f32e52eb2d59a0dbfe0d55ee59b07e04b0ae5648e07ba1082dd98",
+          "revision": "fd63ecda7ae7d32fe4ee0f3c933af8f2d5759ea2",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.12": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.12.crate",
+          "sha256": "3241d534ec36aff225705eea77785589906c9ecaa3db2a0de0d821bae8d32dcc",
+          "revision": "0315eb6adc87229654159448344972cbe484d0c7",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.13": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.13.crate",
+          "sha256": "2bbae3e82630f22650b606147f0e415c594a0f1df6977ccc39aba3b910b4a7c5",
+          "revision": "4d7c71fd7f6f49d0f4813c84fdf278d7df3b4e27",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.14": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.14.crate",
+          "sha256": "87c69c23233a6dce77422fe4fb00ca3a5888f1ed58e6f5e3fa4c2402c953e105",
+          "revision": "e2b577603e06fed3eaba420d6c0261ee7ff11c65",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.15": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.15.crate",
+          "sha256": "def3cfe5279edb64fc39111cff6dcf77b01fbfba2c02c13ced41e6a48baf4cbe",
+          "revision": "7aff93a272470a2a7c4367701643e51a92c8aa4f",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.16": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.16.crate",
+          "sha256": "9fe901fd92d30a1f25a9b2fe76b45171acd8ec1ba920c15c00eb016fcf5a9b11",
+          "revision": "851b752679fa3ee2f5d67aba7450774bd7374e24",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.17": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.17.crate",
+          "sha256": "160a07da6e6793f98928529f38c96b3973bdee523aca1f878648e8b1efa9bf4e",
+          "revision": "e998175df817db8410349430b3f5fadfaae82e81",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.18": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.18.crate",
+          "sha256": "65e2a54e2ed54b23d01281b90da8ce11f955af2711798bdea299f107a7e15551",
+          "revision": "1bcdaab0f36b57bc0b0556c0c36751d1c58dee09",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.19": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.19.crate",
+          "sha256": "a218a4c5ac88a3855de226c78983e2f49c7d2736caa46ce38b9bae56464ea015",
+          "revision": "8213d01317fbafbc73532b73a49ce6c53ab72440",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.2.20": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.2.20.crate",
+          "sha256": "411f8a1fcbc3781bdc6ee3457bb6275eab8a7bd05154f1e73ecfdbba508d1ea4",
+          "revision": "dabc99a539c4b024a715cb247a4decf7e45d8659",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.3.1": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.3.1.crate",
+          "sha256": "e2b575bfa3a3775e4201cd5179d4d390a056b8dc691a3df8ac754e8d7e629454",
+          "revision": "e3eca4c13d2e82120e97ecf6f753cfe8e9b4aadf",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.3.2": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.3.2.crate",
+          "sha256": "10aa190d9f47432e255edd9aaddd21aa78c31be0e639c8463427d0fe5e6919a0",
+          "revision": "3766952d3de7069bedc9dd2fabc6307fdb4ca815",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.3.3": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.3.3.crate",
+          "sha256": "41408a8fbd47775414e29d393319e8d3327cfac690b3f37ca44b938c5f93a77e",
+          "revision": "04e3b678efb85a30d3b96ef09a9316983bed6b7d",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.3.4": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.3.4.crate",
+          "sha256": "be64f4005f30cb8de8850a0e03356521da7e35b8c06d85bc79d78f9a74df028a",
+          "revision": "bbf10bfb00c99ad08da1455db98b857e69aa3429",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.3.5": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.3.5.crate",
+          "sha256": "901ee3d2de34ff51365cff6a9112b74bb7ede92581b21b3550bdeac4c407b267",
+          "revision": "c048f3c854123267c413236db9efd1d82e710850",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.3.6": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.3.6.crate",
+          "sha256": "ad6269c8dded5d571c75a4a32997514f57f23757f2e18549ca3040586465e336",
+          "revision": "30fca8f17d9aca13b058c6010ebc4e9c1adb10c9",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.3.7": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.3.7.crate",
+          "sha256": "b162f50499b391b785d57b2f2c73e3b9754d88fd4894bef444960b00bda8dcca",
+          "revision": "14bf3f162d6976064c079753c10e4e17542ef4cd",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.3.8": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.3.8.crate",
+          "sha256": "8ae1f4d4aeca2150abd9c731d23ff6c157af0d6828c1c17a3fc22b1a7804c8ee",
+          "revision": "473089c19cd5e92da0da58cab0aadc4f0514c0d3",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.3.9": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.3.9.crate",
+          "sha256": "be0f4b325ca71954295690acab6e2bc6a969ff0d3b028b20ba41f7906bd4044a",
+          "revision": "47647df756f5dd0b3c739cecaa71bcf754af6be8",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.3.10": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.3.10.crate",
+          "sha256": "946ba468216b901ecfc9476497aeaa985745652bf312dbdc7d72dbe702916b9b",
+          "revision": "b3ae67598ad7c69cffcc19755afa6ad5b9b07eff",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.3.11": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.3.11.crate",
+          "sha256": "b7d15f552a005c5a086772d9b988a3446563f5eb9da1e4ab174a24a98562d785",
+          "revision": "342b9503bea8248c9ab3facc1fe40624d0e79ed5",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.3.12": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.3.12.crate",
+          "sha256": "fa77936de1910002e7ad5817e38c3990402c2d8e92517cdd736df51485c76d88",
+          "revision": "f1c269ac192282e7e061735a473b861221974ea2",
+          "path_prefix": "curves/curve25519/"
+        },
+        "2.3.13": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-2.3.13.crate",
+          "sha256": "eae4261b9a8613d10e77ac831a8fa60b6fa52b9b103df46d641deff9f9812a23",
+          "revision": "5466f4592b1983adb13ba0a5d53f41ea2de69fba",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.0.crate",
+          "sha256": "2dab05c4022aaf34512f8237b868758d638839ce55e3e30bf26e14a8f7a81250",
+          "revision": "b6c96e84b10396b92912d4574dae7d03f606da26",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.1.crate",
+          "sha256": "bcc509e804c6ee1de78f5205b8ef581858e413243575ec65d3a935a8da4f705c",
+          "revision": "77d31b70c1b4f6f69e5a02bfaf20be84e87f1623",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.2.crate",
+          "sha256": "2c54e311a3e1c0e17bf28b38170cce3b12e92e17ed1d8df9ee526a52b92da716",
+          "revision": "01781bb975bf9f91a789288837021f7eb89b9cb8",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.3": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.3.crate",
+          "sha256": "c7a066fb2de74b9abdbb807353ddbc554d1d1e03a190937556d446923b20ccad",
+          "revision": "9e6bb8209d012e819e55ad90949dec17bc150fca",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.4": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.4.crate",
+          "sha256": "0ba127394fa5fa55ff4d9f62275acc97defd7d3d3e1390b3202453190fc31122",
+          "revision": "5310b355c683112ff37a187306dbe262cdad1269",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.5": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.5.crate",
+          "sha256": "35cead1611796d2dbb09ed42c15f775fefdf5d9f02e522bcb651914e87b393c2",
+          "revision": "9a59db94a3e400e1a3294d277c8121cae26166de",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.6": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.6.crate",
+          "sha256": "813e74de7617523753addd4d3257154b748a9c013c71905d4f9f90528ae976f9",
+          "revision": "0bf8b0dcd8cf6b3986dbef93e7641846ba643851",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.7": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.7.crate",
+          "sha256": "09b5a8c8d7017e6b16d7e97faabe10e1adb5b8dfe6b7bc223503041169837a3c",
+          "revision": "ea24c1fd19980ed198c659562c2a890add5ddbbc",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.8": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.8.crate",
+          "sha256": "32bd3bbc0b17cc8db6dabdf25479dde6a72ec969a0aa7427aa9644aac923881a",
+          "revision": "b4d1c7748c46d44042c3a0264853ab9bfaa243c3",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.9": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.9.crate",
+          "sha256": "c087b6bc1be3feea11ecc142c7d006f41aa2452e6ed16dd2b60f6f3303ff5f29",
+          "revision": "3454667767e36a915e174124c04f7e320bf37c1a",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.10": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.10.crate",
+          "sha256": "be2ca224d51d8a1cc20f221706968d8f851586e6b05937cb518bedc156596dee",
+          "revision": "96c3a8519a3bac8c7e7dd49b6d6aefcfeba09d90",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.11": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.11.crate",
+          "sha256": "a3b240f4e2f0000e5f040ba30f8761bf24fe752dd752a99edc1191227b81e26d",
+          "revision": "edda5bc036f8157e28d314afefe0cb4656f7cd94",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.12": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.12.crate",
+          "sha256": "d7e0f6e024ec8f1b141b1fb6388813277bcfaef640e717ebefca26225f687643",
+          "revision": "5a06890206cf9f00a5fbd253b8f417cc5c3a075c",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.13": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.13.crate",
+          "sha256": "118fdacc7a92ee00731a9f050de1fc4c541f5a16a961a1d5ed992a162353d242",
+          "revision": "90098d261e2be2f898769d9ee35141597f1a2234",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.0.14": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.0.14.crate",
+          "sha256": "efd10e811e654a511754c63140de516ad042634a84093d775c43331c6230bfb5",
+          "revision": "f516a8927c76c07f0ebc54ca7a4ce8b2046eee86",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.1.1.crate",
+          "sha256": "134f67bd3031223df4aba035c503e4d14acacfc4cf19af10d10ec9c2605bb84f",
+          "revision": "7096e605db3f34829dcf40bbe84e5a6d461402db",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.1.2.crate",
+          "sha256": "1fbfd91a8aa99fff637999b5a944894ff2866076f331c315de21e3a1ea1edac9",
+          "revision": "8803776abef8f3ee3076c3100b932cdff1a22201",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.1.3": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.1.3.crate",
+          "sha256": "c7123212926bb5957229c6736956eff0a05a73d0924b5d2ef898d43fb67befe9",
+          "revision": "563f59594e64051b6dbf62ea2d2c282420a81534",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.1.4.crate",
+          "sha256": "a2cb3f53e40375fba75e908295c7723d16dad3fb54384140366fade2c7ef37bb",
+          "revision": "6dcc39fcba90fbb5c924c71a1ef287c234f56c17",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.1.5.crate",
+          "sha256": "ebca352e7716ff1a0877272f87c772c958489c1d568a92d318dc0c75939d2884",
+          "revision": "67963d68232074824fe0deb2476e9fd209d88f1d",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.1.6.crate",
+          "sha256": "e7012a457fa158f4b0e7160add8d3882536177a2e4942be5c993f7bff65edbec",
+          "revision": "63057a7b1827d0610f70e36386dcb87f1c23b67a",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.1.7.crate",
+          "sha256": "a6d1e80bc1dec29e07019e96eeb7d72aa5ff70780a9ae700d7dd101692456739",
+          "revision": "9873bc41245ce90635c62a9aaeebb0c6ce8f22a8",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.1.8.crate",
+          "sha256": "737ede9143c36b8628cc11d920cdb762cd1ccbd7ca904c3bd63b39c58669fe38",
+          "revision": "2717084afeeb7baad4342468c27f528ef617a3cf",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.1.9.crate",
+          "sha256": "720e1d774f0404957bf112365b2720ca9af9b0d1bdf0a653b22cfb52dbaa9c9e",
+          "revision": "765ee54adc4f574b1cd4f03a5500bf46c0af0817",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.1.10.crate",
+          "sha256": "f3d7e1177e6006823b91e0a930d94992ed74f8a6327d54ee50a9457ff72e625a",
+          "revision": "7bc9c805218ca06769956e2cb61601329f5a0f6c",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.1.11.crate",
+          "sha256": "9a9eaec815ed773919bc7269c027933fc2472d7b9876f68ea6f1281c7daa5278",
+          "revision": "81d1f5fb0c75203329468250df3769393ab1479b",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.1.12.crate",
+          "sha256": "2eb091ac9c1e4d51c3cd1893444aee607cd1b0173c4ba0b557f8960844f44a1b",
+          "revision": "6c1ba34691f17ac902ae3d2e1147eed5723b9cef",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.1.13.crate",
+          "sha256": "78600945fd087ceae784e4afee6c22610d5ee480fc73d6df1d733c6f06507d3e",
+          "revision": "437252fc4371f0050072cd4db44c295e3317e871",
+          "path_prefix": "curves/curve25519/"
+        },
+        "3.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-3.1.14.crate",
+          "sha256": "5aff7432cdf2ec6a44ac06b4d64d2ee006f6c0066d6456e032a7fe25be40cd5c",
+          "revision": "3134055b562e95902233be308453fffa1c4a8902",
+          "path_prefix": "curves/curve25519/"
+        },
+        "4.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-4.0.0.crate",
+          "sha256": "c0ee66a3e25ed8d20ed6fcd1ac71735415ff1edaf33ff1ec2118826eba927bcc",
+          "revision": "34f4f5197c659a721bd27c6ca1ecf97f5e6efa8f",
+          "path_prefix": "curve25519/"
+        },
+        "4.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-curve25519/solana-curve25519-4.0.1.crate",
+          "sha256": "14b4d2a4bf0d0b0a86c22111917e86e8bd39a7b31420fb2c7d73eb83761fc7af",
+          "revision": "a947d32fb1ab7d06b69bd96bd97eb4d002eb454e",
+          "path_prefix": "curve25519/"
+        }
+      },
+      "evidence": ["@text:14604403f683c694"]
+    }
+  },
+  "applicability": {
+    "solana-curve25519::edwards::target_arch::validate_edwards": {
+      "order": 165,
+      "profiles": [
+        {
+          "id": "solana-curve25519-reviewed",
+          "source": "solana-curve25519",
+          "conditions": ["@text:2441a4189b3bea78", "@text:44a9e0591238b523"],
+          "argument": "@review:source-notes/other-sdk-functions.md#review-40d75bf97cd7d988",
+          "evidence": ["@text:30511071c3c18cba", "@text:6182331d27750901"],
+          "target": [{"field": "os", "reason": "@text:ef129200e3a187ca", "include": ["solana"]}],
+          "items": [
+            {
+              "item": "solana_curve25519::edwards::target_arch::validate_edwards",
+              "implementation": "solana_curve25519::edwards::target_arch::validate_edwards",
+              "releases": "@shared:releases-70f43da3541b4abe",
+              "compatible_ranges": [
+                {"lower": "2.0.0", "upper": "3.0.0"},
+                {"lower": "3.0.0", "upper": "4.0.0"},
+                {"lower": "4.0.0", "upper": "5.0.0"}
+              ]
+            }
+          ],
+          "releases": "@shared:releases-70f43da3541b4abe"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,5 @@
+corpora = ["anchor_loader_1_0_2"]
+inputs = ["rust/anchor-loader-shared/enc.rs", "rust/anchor-account-world/world.rs", "rust/anchor-loader-shared/script.rs", "rust/anchor-loader-shared/cases.rs"]
+
+# Shrinking keeps the backing bytes; the checker validates their reclassification as spare.
+spare_writes = ["<anchor_lang::accounts::account_loader::AccountLoader<'info, T> as anchor_lang::AccountsClose<'info>>::close"]

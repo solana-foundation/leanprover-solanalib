@@ -1,0 +1,472 @@
+{
+  "abstractions": {
+    "library::solana_sha256_hasher": {
+      "order": 146,
+      "modules": {
+        "Solanalib.Specs.SolanaSha256Hasher": "15a4c76b068e346a7c36237c039b78d0966be9e95131eba6d40dbdb035c85a0a",
+        "Solanalib.Specs.SolanaSha256Hasher.Capabilities": "126e17766fd817d66a3b0aa5bd1730c142ee130f494812d59cde55b275727e0b",
+        "Solanalib.Specs.SolanaSha256Hasher.Hashv": "ad0a2810d1532a627aa4c35c6a063a66271fd24c98049ac2189dd0a4665a1a6f",
+        "Solanalib.Specs.SolanaSha256Hasher.HashInitialized": "29c5daee9b92a1028784d835b11ee2b1c6b41f1101133be36fba59359095a300",
+        "Solanalib.Specs.SolanaSha256Hasher.Hash": "116098a52144d3f3077d0917b42ccd5d4525387ac5020daa466eb3eaa4256d47"
+      },
+      "source_ids": [
+        "runtime-helpers::solana-hash-4.5.0::src/lib.rs",
+        "runtime-helpers::solana-sha256-hasher-3.1.0::src/lib.rs",
+        "runtime-helpers::solana-define-syscall-4.0.1::src/definitions.rs",
+        "sdk-utilities::solana-sha256-hasher-2.3.0::src/lib.rs",
+        "sdk-utilities::solana-program-1.18.26::src/hash.rs"
+      ],
+      "argument": "@review:source-notes/hash-helpers.md#review-f46a7d6395a4a1cd",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:0eced3bcf8b962e4",
+        "@binding:7a8a551ef172114a",
+        "@binding:b5fa051f6f3ee7b5",
+        "@text:637dfd12e71b9ba7",
+        "@binding:f8fdb012bb5e313a"
+      ]
+    }
+  },
+  "packages": {
+    "solana-sha256-hasher-3.1.0": {
+      "order": 50,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "5da94053da7b81dcd04c62ff4df7eb6bfc20a398",
+      "path_prefix": "sha256-hasher/"
+    },
+    "solana-sha256-hasher-2.3.0": {
+      "order": 73,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "b59af0713262418f88f9112e13457cfcc8741dc5",
+      "path_prefix": "sha256-hasher/"
+    }
+  },
+  "interfaces": {
+    "runtime-helpers::solana-sha256-hasher-3.1.0::src/lib.rs": {
+      "order": 137,
+      "crate": "solana-sha256-hasher-3.1.0",
+      "path": "src/lib.rs",
+      "sha256": "10388c2d6943cfbdca396e653e83507b5b6112a84933e754744dcfb06dee3df2"
+    },
+    "sdk-utilities::solana-sha256-hasher-2.3.0::src/lib.rs": {
+      "order": 221,
+      "crate": "solana-sha256-hasher-2.3.0",
+      "path": "src/lib.rs",
+      "sha256": "1444b217cef854b094397b6526561b3d495ce640f2a134526bbe92783b8aff4c"
+    }
+  },
+  "models": {
+    "solana-sha256-hasher::hashv": {
+      "order": 191,
+      "contract": "Solanalib.Specs.SolanaSha256Hasher.hashv_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SolanaSha256Hasher.hashv_model",
+      "execution": "Solanalib.Specs.SolanaSha256Hasher.hashv_hasExecution",
+      "assumptions": [
+        "@binding:0eced3bcf8b962e4",
+        "@binding:7a8a551ef172114a",
+        "@binding:5f764e88f3097a6a",
+        "@binding:19cfbc7ec1a14203",
+        "@binding:099a0f46db32ce3b",
+        "@binding:e88a3b632a4bc3ed"
+      ]
+    },
+    "solana-sha256-hasher::zero_initialized::hashv": {
+      "order": 243,
+      "contract": "Solanalib.Specs.SolanaSha256Hasher.zero_initialized.hashv_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.SolanaSha256Hasher.zero_initialized.hashv_hasExecution",
+      "assumptions": ["@binding:f8fdb012bb5e313a", "@binding:564171134c0cf409"]
+    },
+    "solana-sha256-hasher::zero_initialized::hash": {
+      "order": 245,
+      "contract": "Solanalib.Specs.SolanaSha256Hasher.zero_initialized.hash_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.SolanaSha256Hasher.zero_initialized.hash_hasExecution",
+      "assumptions": ["@binding:f8fdb012bb5e313a", "@binding:564171134c0cf409"]
+    },
+    "solana-sha256-hasher::hash": {
+      "order": 479,
+      "contract": "Solanalib.Specs.SolanaSha256Hasher.hash_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.SolanaSha256Hasher.hash_hasExecution",
+      "assumptions": ["@binding:f8fdb012bb5e313a", "@text:0085254d4a284868"]
+    }
+  },
+  "api": {
+    "runtime-helpers::solana-sha256-hasher-3.1.0::solana_sha256_hasher::hashv": {
+      "order": 89,
+      "anchor_text": "pub fn hashv(vals: &[&[u8]]) -> Hash {",
+      "binding_obligations": [
+        "@binding:0eced3bcf8b962e4",
+        "@binding:7a8a551ef172114a",
+        "@binding:5f764e88f3097a6a",
+        "@binding:19cfbc7ec1a14203",
+        "@binding:099a0f46db32ce3b",
+        "@binding:e88a3b632a4bc3ed"
+      ],
+      "line": 44,
+      "scope": "@text:57a54ee5e08458d6",
+      "source_id": "runtime-helpers::solana-sha256-hasher-3.1.0::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaSha256Hasher.Hashv.actual_request_fields",
+        "SolanalibTest.Specs.SolanaSha256Hasher.Hashv.nonzero_return_contract",
+        "SolanalibTest.Specs.SolanaSha256Hasher.Hashv.mixed_uninitialized_nonzero_rejected",
+        "SolanalibTest.Specs.SolanaSha256Hasher.Hashv.unwind_keeps_effects",
+        "SolanalibTest.Specs.SolanaSha256Hasher.Hashv.terminal_error_preserved",
+        "SolanalibTest.Specs.SolanaSha256Hasher.Hashv.transport_does_not_supply_hash_agreement",
+        "SolanalibTest.Specs.SolanaSha256Hasher.Hashv.canonical_count_failure",
+        "SolanalibTest.Specs.SolanaSha256Hasher.Hashv.canonical_count_success"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Hash.Syscall.request",
+        "Solanalib.Specs.Core.Hash.Syscall.request_count",
+        "Solanalib.Specs.Core.Hash.Syscall.EveryReturnInitialized",
+        "Solanalib.Specs.Core.Hash.Syscall.initialized_return_has_run",
+        "Solanalib.Specs.Core.Hash.Syscall.NormalHashAgreement",
+        "Solanalib.Specs.Core.Hash.Syscall.returned_hash_projection",
+        "Solanalib.Specs.Core.Hash.Syscall.canonical_hash_reply"
+      ],
+      "rust_names": ["solana_sha256_hasher::hashv"],
+      "models": ["solana-sha256-hasher::hashv"],
+      "binding_defaults": false
+    },
+    "sdk-utilities::solana-sha256-hasher-2.3.0::hash": {
+      "order": 228,
+      "source_id": "sdk-utilities::solana-sha256-hasher-2.3.0::src/lib.rs",
+      "line": 57,
+      "anchor_text": "pub fn hash(val: &[u8]) -> Hash {",
+      "scope": "@review:source-notes/owned-dependencies.md#review-e6e849e1b9e447fb",
+      "binding_obligations": ["@binding:564171134c0cf409"],
+      "rust_names": ["solana_sha256_hasher::hash"],
+      "models": ["solana-sha256-hasher::zero_initialized::hash"]
+    },
+    "sdk-utilities::solana-sha256-hasher-2.3.0::hashv": {
+      "order": 230,
+      "source_id": "sdk-utilities::solana-sha256-hasher-2.3.0::src/lib.rs",
+      "line": 32,
+      "anchor_text": "pub fn hashv(vals: &[&[u8]]) -> Hash {",
+      "scope": "@review:source-notes/owned-dependencies.md#review-e6e849e1b9e447fb",
+      "binding_obligations": ["@binding:564171134c0cf409"],
+      "rust_names": ["solana_sha256_hasher::hashv"],
+      "models": ["solana-sha256-hasher::zero_initialized::hashv"]
+    },
+    "sdk-utilities::solana-sha256-hasher-3.1.0::hash": {
+      "order": 588,
+      "source_id": "runtime-helpers::solana-sha256-hasher-3.1.0::src/lib.rs",
+      "line": 79,
+      "anchor_text": "pub fn hash(val: &[u8]) -> Hash {",
+      "scope": "@text:630a4b5597e4e48e",
+      "rust_names": ["solana_sha256_hasher::hash"],
+      "models": ["solana-sha256-hasher::hash"]
+    }
+  },
+  "applicability_sources": {
+    "solana-sha256-hasher": {
+      "order": 26,
+      "package": "solana-sha256-hasher",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-0.0.1.crate",
+          "sha256": "ed71f8f986b30a6ca42aeb23336fd97e75edfb797127b633a3466b1bffb25ca2"
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-0.0.2.crate",
+          "sha256": "ecec01cf352a731f6649fb506d40c572c15c0aaecad2f8e76219f666e3c831e3",
+          "revision": "2d9764a01669f65d32960df605fd266cb8813891",
+          "path_prefix": "sdk/sha256-hasher/",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.0.crate",
+          "sha256": "bd115f3a1136314b0183235080d29023530c3a0a5df60505fdb7ea620eff9fd6",
+          "revision": "c1080de464cfb578c301e975f498964b5d5313db",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.1.crate",
+          "sha256": "c49345545ea5144954b065aea76ea527766b3475402dc8278b91f6ffbb425975",
+          "revision": "adeac02216dae627b90d7498a26e04276e88ed29",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.2.crate",
+          "sha256": "215d1d82b57a61b973ac693a0e0a241ab3af87a133baf38879685b29bb16438d",
+          "revision": "cefd3f13a2b8c1f3f8332ebeea3d7bf44d547a9a",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.4.crate",
+          "sha256": "3cee22aa72b8e5a58674d6b933ab8099915483a9f0fd5d0363540b32b200c7c6",
+          "revision": "024d047eedba22768099cc6509414202400c6231",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.5.crate",
+          "sha256": "1a95731a17cb43f11972296b53d930d0cbdb3f665e76a8d35a36393e7adcba21",
+          "revision": "4da190bd01724d1433cff65782100978aefd4c00",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.6.crate",
+          "sha256": "cb4c977c6c4d95c8b43a9f405844f29a73c9d8b0a7c561b91d4f6a44f290d35c",
+          "revision": "c15e6692b1eb2e9196a5d51af5ee8cb57ab7e689",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.7.crate",
+          "sha256": "4806e0ffeeb460968219b6a20176b1dc616089e84de1cd37e50cf7f01e295ad9",
+          "revision": "c79c3c9e67274594ed4f43ed8386e9ddc60a99e9",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.8.crate",
+          "sha256": "0db90ad6643d4d626f923159eaa876000c09f8c2e9aa7ff59b803e8328712582",
+          "revision": "6ea38fce866595908486a01c7d6b7182988f3b2d",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.9.crate",
+          "sha256": "700bb300ed088d6c216fa32a2f383d290a9981b52620f7a39b37963a78d0fedb",
+          "revision": "fdb6acc0a634fd0f1fd060d13aa4142c2e4601de",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.10.crate",
+          "sha256": "98c4229293979bf8bda7db2243ae75e13695341375577a4c44b07e4f0b7a5d9e",
+          "revision": "33ab693d94c787e64686e7b2d2f49492eae63885",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.11.crate",
+          "sha256": "3456f5d3868b9ae8e7bc53529bbbd8bee48b0d9cf3783f918269e71e4ee5268d",
+          "revision": "134be7c14066ea00c9791187d6bbc4795dd92f0e",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.12.crate",
+          "sha256": "8ef58345b6473a4045299ce77a90a1e6c46e360ed94899c9178fe2d03ea3e5e4",
+          "revision": "00cfd3ee36e9f2af78465731e87a063504753385",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.13.crate",
+          "sha256": "de0e647536438a92f1b02424d94c703534566aa9b1d8aae87f3b181d2dc5787c",
+          "revision": "67412607f511ded3770031280b6aaf10607713fc",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.14.crate",
+          "sha256": "378185bb9fa1c738c51d5640dce465372738a6ab0fd71200f73f1e1e764ad30f",
+          "revision": "3ad46824358db6337072ad2b5d50ebcab6e1f113",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.15": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.15.crate",
+          "sha256": "415a11580ee6c11cef3c3593420881bcf47c0f8de9f650ac65af5b861845c1d5",
+          "revision": "535456856619786b7ac47b5b50b0a730e571365d",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.16": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.16.crate",
+          "sha256": "25803e2ab53494854fc1f28e84b60008520afd2770a0ac2e7a600c9b5ca72e5f",
+          "revision": "5002c63047230994282abd24207414126cb57e22",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.17": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.17.crate",
+          "sha256": "999359c49d12fba92e709482ea1a8f24a3112242d1d68929022b8cb79ba6ec8c",
+          "revision": "4adcd0f2f9075d9a2c08e3e12a694ced58f2af29",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.18": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.18.crate",
+          "sha256": "d6661bdeefb6970c3dc9ad5d1551794b4aa288d81ecf22ccb2d0d38a5171043a",
+          "revision": "f91c2fcac24eee5a40f10606540ef6e08d1b6655",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.20": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.20.crate",
+          "sha256": "98fad3fa0864a364481984d646cac28c3fb6f774f8569116a94bc15b8fb8574d",
+          "revision": "89985de3c6a8643f90af5dcb14bed23382bee088",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.1.21": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.1.21.crate",
+          "sha256": "4028550a372b5ce9514941fb1a04cfac9aa66f76fd9684a7b11ef37ac586e492",
+          "revision": "8a085eebcb901b6846d1f82f4636667742146545",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.2.0.crate",
+          "sha256": "e628c2ac45e6896dfd1de1fa8891ad77b6b97209c0732631904e41798a529e3d",
+          "revision": "1baa4033e0d2d4175373f07b73ddda2f3cc0a8d6",
+          "path_prefix": "sdk/sha256-hasher/"
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.2.1.crate",
+          "sha256": "0037386961c0d633421f53560ad7c80675c0447cba4d1bb66d60974dd486c7ea",
+          "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+          "path_prefix": "sha256-hasher/",
+          "repository": "https://github.com/anza-xyz/solana-sdk"
+        },
+        "2.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-2.3.0.crate",
+          "sha256": "5aa3feb32c28765f6aa1ce8f3feac30936f16c5c3f7eb73d63a5b8f6f8ecdc44",
+          "revision": "b59af0713262418f88f9112e13457cfcc8741dc5",
+          "path_prefix": "sha256-hasher/"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-3.0.0.crate",
+          "sha256": "a9b912ba6f71cb202c0c3773ec77bf898fa9fe0c78691a2d6859b3b5b8954719",
+          "revision": "4daed60dccbc1d4ab5ff39f65914aa04d2b256b6",
+          "path_prefix": "sha256-hasher/"
+        },
+        "3.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-3.0.1.crate",
+          "sha256": "b2ab77481366a966f895abbc11896d4803d285d258281a992ca89aca3ed0658c",
+          "revision": "8ecb627747a2c67fb04d6f9b0199290501bdccea",
+          "path_prefix": "sha256-hasher/"
+        },
+        "3.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-sha256-hasher/solana-sha256-hasher-3.1.0.crate",
+          "sha256": "db7dc3011ea4c0334aaaa7e7128cb390ecf546b28d412e9bf2064680f57f588f",
+          "revision": "5da94053da7b81dcd04c62ff4df7eb6bfc20a398",
+          "path_prefix": "sha256-hasher/"
+        }
+      },
+      "evidence": ["@text:7d5f3175cec1ae13"]
+    }
+  },
+  "applicability": {
+    "solana-sha256-hasher::hashv": {
+      "order": 191,
+      "profiles": [
+        {
+          "id": "solana-sha256-hasher-reviewed-solana",
+          "source": "solana-sha256-hasher",
+          "conditions": "@shared:conditions-b5f0e81c417ba66b",
+          "argument": "@review:source-notes/hash-helpers.md#review-00094bae31eaa266",
+          "evidence": ["@text:37dfdf85dd596899"],
+          "target": "@shared:target-c1b299a5dd7c738c",
+          "items": [
+            {
+              "item": "solana_sha256_hasher::hashv",
+              "implementation": "solana_sha256_hasher::hashv",
+              "releases": ["3.1.0"],
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.1.0"]
+        },
+        {
+          "id": "solana-sha256-hasher-reviewed-bpf",
+          "source": "solana-sha256-hasher",
+          "conditions": "@shared:conditions-b5f0e81c417ba66b",
+          "argument": "@review:source-notes/hash-helpers.md#review-00094bae31eaa266",
+          "evidence": ["@text:37dfdf85dd596899"],
+          "target": "@shared:target-ffe23f0ce5d524ab",
+          "items": [
+            {
+              "item": "solana_sha256_hasher::hashv",
+              "implementation": "solana_sha256_hasher::hashv",
+              "releases": ["3.1.0"],
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.1.0"]
+        }
+      ]
+    },
+    "solana-sha256-hasher::zero_initialized::hashv": {
+      "order": 243,
+      "profiles": [
+        {
+          "id": "sha256-zeroed-2.3.0",
+          "source": "solana-sha256-hasher",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_sha256_hasher::hashv",
+              "implementation": "solana_sha256_hasher::hashv",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:f8fdb012bb5e313a", "@binding:564171134c0cf409"],
+          "argument": "@review:source-notes/hash-helpers.md#review-d67302287a6118cb",
+          "evidence": ["@text:3a63a7f1709399f8"],
+          "dependencies": "@shared:dependencies-018a96a44289e213",
+          "target": "@shared:target-617938b2d74821ad"
+        }
+      ]
+    },
+    "solana-sha256-hasher::zero_initialized::hash": {
+      "order": 245,
+      "profiles": [
+        {
+          "id": "sha256-zeroed-2.3.0",
+          "source": "solana-sha256-hasher",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_sha256_hasher::hash",
+              "implementation": "solana_sha256_hasher::hash",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:f8fdb012bb5e313a", "@binding:564171134c0cf409"],
+          "argument": "@review:source-notes/hash-helpers.md#review-60050e25608b2520",
+          "evidence": ["@text:3a63a7f1709399f8"],
+          "dependencies": "@shared:dependencies-018a96a44289e213",
+          "target": "@shared:target-617938b2d74821ad"
+        }
+      ]
+    },
+    "solana-sha256-hasher::hash": {
+      "order": 480,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/hash-helpers.md#review-57cded8fdf371ffd",
+          "conditions": "@shared:conditions-b5f0e81c417ba66b",
+          "evidence": ["@text:37dfdf85dd596899"],
+          "id": "singleton-solana-sha256-hasher-reviewed-solana",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}],
+              "implementation": "solana_sha256_hasher::hash",
+              "item": "solana_sha256_hasher::hash",
+              "releases": ["3.1.0"]
+            }
+          ],
+          "releases": ["3.1.0"],
+          "source": "solana-sha256-hasher",
+          "target": "@shared:target-c1b299a5dd7c738c"
+        },
+        {
+          "argument": "@review:source-notes/hash-helpers.md#review-57cded8fdf371ffd",
+          "conditions": "@shared:conditions-b5f0e81c417ba66b",
+          "evidence": ["@text:37dfdf85dd596899"],
+          "id": "singleton-solana-sha256-hasher-reviewed-bpf",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}],
+              "implementation": "solana_sha256_hasher::hash",
+              "item": "solana_sha256_hasher::hash",
+              "releases": ["3.1.0"]
+            }
+          ],
+          "releases": ["3.1.0"],
+          "source": "solana-sha256-hasher",
+          "target": "@shared:target-ffe23f0ce5d524ab"
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:b5fa051f6f3ee7b5", "@binding:f8fdb012bb5e313a"]
+}

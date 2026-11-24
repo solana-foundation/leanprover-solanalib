@@ -1,0 +1,17 @@
+[package]
+name = "conformance-cpi-pinocchio-0-9-2"
+version = "0.1.0"
+edition = "2021"
+publish = false
+workspace = "../workspaces/profile-00"
+
+[features]
+signature-check = []
+
+[dependencies]
+pinocchio = "=0.9.2"
+conformance-recorder = { path = "../recorder" }
+conformance-accounts = { path = "../accounts" }
+
+[lints]
+rust = { unexpected_cfgs = { level = "warn", check-cfg = ["cfg(target_os, values(\"solana\"))"] } }

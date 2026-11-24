@@ -1,0 +1,54 @@
+{
+  "packages": {
+    "solana-program-memory-2.2.1": {
+      "order": 113,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+      "path_prefix": "program-memory/"
+    },
+    "solana-program-memory-2.3.1": {
+      "order": 114,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "62ac3de4e6bae535768faeed8b906c464b518941",
+      "path_prefix": "program-memory/"
+    },
+    "solana-program-memory-3.0.0": {
+      "order": 115,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "18584b731d88e94d3d46339324494074ca554ee9",
+      "path_prefix": "program-memory/"
+    },
+    "solana-program-memory-3.1.0": {
+      "order": 116,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "df4f131ef403164b191712241480f09ada90b8e1",
+      "path_prefix": "program-memory/"
+    }
+  },
+  "interfaces": {
+    "sdk-account-info::solana-program-memory-2.2.1::src/lib.rs": {
+      "order": 427,
+      "crate": "solana-program-memory-2.2.1",
+      "path": "src/lib.rs",
+      "sha256": "ce21999d4f1da02a272e3de732baa97321f4979d67a54488a8aaf2e92e6ef42f"
+    },
+    "sdk-account-info::solana-program-memory-2.3.1::src/lib.rs": {
+      "order": 428,
+      "crate": "solana-program-memory-2.3.1",
+      "path": "src/lib.rs",
+      "sha256": "a3bac8e0bb9012c368568818675ae77243cb960a93b92f5f22f41ebe685f99a2"
+    },
+    "sdk-account-info::solana-program-memory-3.0.0::src/lib.rs": {
+      "order": 429,
+      "crate": "solana-program-memory-3.0.0",
+      "path": "src/lib.rs",
+      "sha256": "b13f07bed4ccce3f36b0318b374b82505a814a2475015692e1b924dfaa6222cb"
+    },
+    "sdk-account-info::solana-program-memory-3.1.0::src/lib.rs": {
+      "order": 430,
+      "crate": "solana-program-memory-3.1.0",
+      "path": "src/lib.rs",
+      "sha256": "fdc607342e9b616a1242ea570a4b78bea4dcb19ad6e4dd7382fe1b43bdf3b529"
+    }
+  }
+}

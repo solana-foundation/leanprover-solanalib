@@ -1,0 +1,18 @@
+[package]
+name = "conformance-codecs-borsh-0-10-4-bytemuck-1-25-2"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records borsh 0.10.4 and bytemuck 1.25.2"
+workspace = "../workspaces/profile-01"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+borsh = "=0.10.4"
+bytemuck = "=1.25.2"
+pin-borsh-derive-0-10-4 = { package = "borsh-derive", version = "=0.10.4", default-features = false, optional = true }
+pin-borsh-derive-internal-0-10-4 = { package = "borsh-derive-internal", version = "=0.10.4", default-features = false, optional = true }
+pin-borsh-schema-derive-internal-0-10-4 = { package = "borsh-schema-derive-internal", version = "=0.10.4", default-features = false, optional = true }
+pin-serde-1-0-229 = { package = "serde", version = "=1.0.229", default-features = false, optional = true }
+pin-serde_core-1-0-229 = { package = "serde_core", version = "=1.0.229", default-features = false, optional = true }
+pin-serde_derive-1-0-229 = { package = "serde_derive", version = "=1.0.229", default-features = false, optional = true }

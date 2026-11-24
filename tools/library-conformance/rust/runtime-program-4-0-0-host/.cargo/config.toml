@@ -1,0 +1,8 @@
+# Host build of the host branches: unlike the other drivers, no `--cfg target_os="solana"`, so
+# the libraries select their non-Solana code (program stubs, standard output). The explicit
+# target keeps build scripts and proc macros on the plain host configuration.
+[build]
+target = "x86_64-unknown-linux-gnu"
+
+[target.x86_64-unknown-linux-gnu]
+rustflags = []

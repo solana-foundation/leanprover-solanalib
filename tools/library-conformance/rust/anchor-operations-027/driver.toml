@@ -1,0 +1,3 @@
+corpora = ["anchor_operations_0_27_0"]
+region = "none"
+inputs = ["rust/anchor/src/track.rs", "rust/anchor-operations-common/enc.rs", "rust/anchor-operations-common/errors.rs", "rust/anchor-operations-common/codecs.rs", "rust/anchor-operations-common/contexts.rs", "rust/anchor-operations-common/check_private_writer.py"]

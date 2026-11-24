@@ -1,0 +1,273 @@
+{
+  "abstractions": {
+    "library::spl_token_metadata_interface": {
+      "order": 162,
+      "modules": {
+        "Solanalib.Specs.SplTokenMetadataInterface": "edfe401da5c886753524b2550f13f2c6fd6a42ff19b365f464d42ee7369faf5c",
+        "Solanalib.Specs.SplTokenMetadataInterface.Capabilities": "e7ab64c3c2a3e80ddb5bcd4d0a49f8238fb026366e8ec8016ff5311b5db33534",
+        "Solanalib.Specs.SplTokenMetadataInterface.State": "73200738beeb8dccbfbe2f5f23517ca9b240f96fd0923f07b4bf55795766954e",
+        "Solanalib.Specs.SplTokenMetadataInterface.Initialize": "5a61b9022395116c9aaae11f39210d61e46c2dcfa4d83b238eed7bf91f769eec"
+      },
+      "source_ids": [
+        "token-state::spl-token-2022-8.0.1::src/state.rs",
+        "token-state::spl-token-2022-8.0.1::src/extension/transfer_fee/mod.rs",
+        "token-state::spl-token-2022-interface-2.1.0::src/extension/transfer_fee/mod.rs",
+        "token-state::spl-token-metadata-interface-0.7.0::src/state.rs",
+        "token-instructions::spl-token-metadata-interface-0.7.0::src/instruction.rs"
+      ],
+      "argument": "@review:source-notes/other-sdk-functions.md#review-b7fe6d3dfab05a86",
+      "limitations": [
+        "@text:a59033a3f7b014d2",
+        "@text:f428bee2a0798d8f",
+        "@binding:a5f30773f618fd19",
+        "@binding:b985857460252cc6",
+        "@binding:340aca4748420ac8",
+        "@binding:c7d04bcad5003b3b",
+        "@text:1846d6c1784c54f1"
+      ]
+    }
+  },
+  "packages": {
+    "spl-token-metadata-interface-0.7.0": {
+      "order": 133,
+      "repository": "https://github.com/solana-program/token-metadata",
+      "revision": "28b1e025e28c54e7447cd29d566413ae00d04ff8",
+      "path_prefix": "interface/"
+    }
+  },
+  "interfaces": {
+    "token-instructions::spl-token-metadata-interface-0.7.0::src/instruction.rs": {
+      "order": 533,
+      "crate": "spl-token-metadata-interface-0.7.0",
+      "path": "src/instruction.rs",
+      "sha256": "fc2216185ee93f01841351fd41d42ae798118f3b9fc2a4595a86c9d950ec6a45"
+    },
+    "token-state::spl-token-metadata-interface-0.7.0::src/state.rs": {
+      "order": 542,
+      "crate": "spl-token-metadata-interface-0.7.0",
+      "path": "src/state.rs",
+      "sha256": "194e53a9536adead44516c7ff86362c40acd6380517527be6aa8be4487d6940c"
+    }
+  },
+  "models": {
+    "spl-token-metadata-interface::instruction::initialize": {
+      "order": 359,
+      "contract": "Solanalib.Specs.SplTokenMetadataInterface.instruction.initialize_contract",
+      "reference": "Solanalib.Specs.SplTokenMetadataInterface.instruction.initialize_reference",
+      "witness_kind": "FamilyReference",
+      "witness": "Solanalib.Specs.SplTokenMetadataInterface.instruction.initialize_reference_holds",
+      "assumptions": ["@text:b890322b3b913e89", "@binding:340aca4748420ac8", "@binding:c7d04bcad5003b3b"]
+    },
+    "spl-token-metadata-interface::state::TokenMetadata::default": {
+      "order": 360,
+      "contract": "Solanalib.Specs.SplTokenMetadataInterface.state.TokenMetadata.default_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SplTokenMetadataInterface.state.TokenMetadata.defaultReference"
+    }
+  },
+  "api": {
+    "spl-token-metadata-interface@0.7.0::instruction.initialize": {
+      "order": 359,
+      "source_id": "token-instructions::spl-token-metadata-interface-0.7.0::src/instruction.rs",
+      "line": 226,
+      "anchor_text": "pub fn initialize(",
+      "rust_names": ["spl_token_metadata_interface::instruction::initialize"],
+      "scope": "@text:6a42564ca753365c",
+      "binding_obligations": ["@binding:b985857460252cc6", "@binding:340aca4748420ac8", "@binding:c7d04bcad5003b3b"],
+      "clients": [
+        "SolanalibTest.Specs.SplTokenMetadataInterface.complete_construction",
+        "SolanalibTest.Specs.SplTokenMetadataInterface.utf8_length_and_order",
+        "SolanalibTest.Specs.SplTokenMetadataInterface.local_cleanup_keeps_only_instruction",
+        "SolanalibTest.Specs.SplTokenMetadataInterface.serializer_reads_current_owner",
+        "SolanalibTest.Specs.SplTokenMetadataInterface.serializer_missing_owner_unwinds",
+        "SolanalibTest.Specs.SplTokenMetadataInterface.metadata_alias_preserved"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.InstructionAllocated.run",
+        "Solanalib.Specs.Core.Owned.protect",
+        "Solanalib.Specs.Core.Owned.cleanup"
+      ],
+      "models": ["spl-token-metadata-interface::instruction::initialize"]
+    },
+    "spl-token-metadata-interface@0.7.0::state.TokenMetadata.default": {
+      "order": 360,
+      "source_id": "token-state::spl-token-metadata-interface-0.7.0::src/state.rs",
+      "line": 22,
+      "anchor_text": "#[derive(Clone, Debug, Default, PartialEq, BorshDeserialize, BorshSerialize, BorshSchema)]",
+      "rust_names": ["<spl_token_metadata_interface::state::TokenMetadata as core::default::Default>::default"],
+      "scope": "@text:15c8d72e1e85b680",
+      "binding_obligations": ["@binding:a5f30773f618fd19"],
+      "models": ["spl-token-metadata-interface::state::TokenMetadata::default"]
+    }
+  },
+  "applicability_sources": {
+    "spl-token-metadata-interface": {
+      "order": 43,
+      "package": "spl-token-metadata-interface",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-11",
+      "releases": {
+        "0.2.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.2.0.crate",
+          "sha256": "4c16ce3ba6979645fb7627aa1e435576172dd63088dc7848cb09aa331fa1fe4f"
+        },
+        "0.2.1": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.2.1.crate",
+          "sha256": "e16aa8f64b6e0eaab3f5034e84d867c8435d8216497b4543a4978a31f4b6e8a8"
+        },
+        "0.3.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.3.0.crate",
+          "sha256": "3a8f278187d01e1d33fc09d2067aba68fec18bb01a38222be6de23181737eb7d"
+        },
+        "0.3.1": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.3.1.crate",
+          "sha256": "46eb3014a7d6d25949a92371e5e83b83c48c633a2a2165f93fb94353f67811d3"
+        },
+        "0.3.2": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.3.2.crate",
+          "sha256": "e9a24f0033b8d562b71bf914dd9fa51b548903e4897baa7ac0bf9e77fd318489"
+        },
+        "0.3.3": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.3.3.crate",
+          "sha256": "30179c47e93625680dabb620c6e7931bd12d62af390f447bc7beb4a3a9b5feee"
+        },
+        "0.3.4": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.3.4.crate",
+          "sha256": "c9e992b15402bc3fc3455ba2e037547a6e1fdbdb235d42203988a4b26167832b"
+        },
+        "0.3.5": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.3.5.crate",
+          "sha256": "f3da00495b602ebcf5d8ba8b3ecff1ee454ce4c125c9077747be49c2d62335ba"
+        },
+        "0.4.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.4.0.crate",
+          "sha256": "c6c2318ddff97e006ed9b1291ebec0750a78547f870f62a69c56fe3b46a5d8fc"
+        },
+        "0.5.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.5.0.crate",
+          "sha256": "e1cdf88690dc21db5a124bac7be5d2b6171c526a5bce157170afb1771238f049"
+        },
+        "0.5.1": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.5.1.crate",
+          "sha256": "27c7a6d2a2a4f23c8f051ba2f7edb5689f1b534b4126bd9b4ae4177685e9a341"
+        },
+        "0.6.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.6.0.crate",
+          "sha256": "dfb9c89dbc877abd735f05547dcf9e6e12c00c11d6d74d8817506cab4c99fdbb"
+        },
+        "0.7.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.7.0.crate",
+          "sha256": "304d6e06f0de0c13a621464b1fd5d4b1bebf60d15ca71a44d3839958e0da16ee",
+          "revision": "28b1e025e28c54e7447cd29d566413ae00d04ff8",
+          "path_prefix": "interface/"
+        },
+        "0.8.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-0.8.0.crate",
+          "sha256": "9c467c7c3bd056f8fe60119e7ec34ddd6f23052c2fa8f1f51999098063b72676"
+        },
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-1.0.0.crate",
+          "sha256": "10347d7a9b8179cb9c238f7f19419495e872ec107b4c7594eb26454ce14fe2fc"
+        },
+        "1.0.1": {
+          "archive_url": "https://static.crates.io/crates/spl-token-metadata-interface/spl-token-metadata-interface-1.0.1.crate",
+          "sha256": "3d3d96f175e7022ff200464dfa75a3708a4e9b70c83c4ecd04fe52ee479f4fef"
+        }
+      },
+      "evidence": ["@text:b6cdda0959e34411", "@text:3f88c50cc4ba3af9"]
+    }
+  },
+  "applicability": {
+    "spl-token-metadata-interface::instruction::initialize": {
+      "order": 359,
+      "profiles": [
+        {
+          "id": "spl-token-metadata-interface-0.7.0-pubkey-2-2-solana",
+          "source": "spl-token-metadata-interface",
+          "releases": ["0.7.0"],
+          "items": [
+            {
+              "releases": ["0.7.0"],
+              "item": "spl_token_metadata_interface::instruction::initialize",
+              "implementation": "spl_token_metadata_interface::instruction::initialize",
+              "compatible_ranges": [{"lower": "0.7.0", "upper": "0.8.0"}]
+            }
+          ],
+          "target": "@shared:target-210cc27e224db129",
+          "dependencies": [
+            "@shared:dependencies-19c335d26afe978e",
+            "@shared:dependencies-2e111e4a2916d3e7",
+            "@shared:dependencies-96bec55689b6df95",
+            {
+              "package": "borsh",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["1.5.7"],
+              "reason": "@text:282e598393cdc122"
+            }
+          ],
+          "conditions": "@shared:conditions-c73d3dae40c620f0",
+          "argument": "@review:source-notes/other-sdk-functions.md#review-0aa95830ee2443fb",
+          "evidence": ["@text:9fbfe0f6101ffc83", "@text:df901e865b6aa216"]
+        },
+        {
+          "id": "spl-token-metadata-interface-0.7.0-pubkey-2-4-solana",
+          "source": "spl-token-metadata-interface",
+          "releases": ["0.7.0"],
+          "items": [
+            {
+              "releases": ["0.7.0"],
+              "item": "spl_token_metadata_interface::instruction::initialize",
+              "implementation": "spl_token_metadata_interface::instruction::initialize",
+              "compatible_ranges": [{"lower": "0.7.0", "upper": "0.8.0"}]
+            }
+          ],
+          "target": "@shared:target-210cc27e224db129",
+          "dependencies": [
+            "@shared:dependencies-725974b6567eaa6a",
+            "@shared:dependencies-e5540342ba0c794d",
+            "@shared:dependencies-96bec55689b6df95",
+            {
+              "package": "borsh",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["1.6.0"],
+              "reason": "@text:282e598393cdc122"
+            }
+          ],
+          "conditions": "@shared:conditions-c73d3dae40c620f0",
+          "argument": "@review:source-notes/other-sdk-functions.md#review-0aa95830ee2443fb",
+          "evidence": ["@text:9fbfe0f6101ffc83", "@text:df901e865b6aa216"]
+        }
+      ]
+    },
+    "spl-token-metadata-interface::state::TokenMetadata::default": {
+      "order": 360,
+      "profiles": [
+        {
+          "id": "spl-token-metadata-interface-0.7.0-state-TokenMetadata-default",
+          "source": "spl-token-metadata-interface",
+          "releases": ["0.7.0"],
+          "items": [
+            {
+              "releases": ["0.7.0"],
+              "item": "core::default::Default::default",
+              "implementation": "<spl_token_metadata_interface::state::TokenMetadata as core::default::Default>::default",
+              "compatible_ranges": [{"lower": "0.7.0", "upper": "0.8.0"}]
+            }
+          ],
+          "conditions": [],
+          "argument": "@review:source-notes/other-sdk-functions.md#review-37bd4f6f60522e35",
+          "evidence": ["@text:9fbfe0f6101ffc83"],
+          "dependencies": [
+            "@shared:dependencies-119304827f314cda",
+            {
+              "package": "solana-pubkey",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.2.1", "2.4.0"],
+              "reason": "@text:a2811e91e0c16ee2"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,595 @@
+{
+  "corpora": {
+    "anchor_lang_1_0_2.json": {
+      "crates": [
+        {
+          "name": "anchor-lang",
+          "version": "1.0.2"
+        }
+      ],
+      "records": 198,
+      "sha256": "6ca41dfd789c6b632ba2a1453e84d9e6d44d64073ccd7e11e1e7739af0dd9474"
+    },
+    "anchor_spl_1_0_2.json": {
+      "crates": [
+        {
+          "name": "anchor-spl",
+          "version": "1.0.2"
+        },
+        {
+          "name": "anchor-lang",
+          "version": "1.0.2"
+        }
+      ],
+      "records": 35,
+      "sha256": "1360d35719ce5d3dea578a39c49e3718dee7b40de7e94d046265c472eadfad68"
+    }
+  },
+  "driver": "anchor",
+  "inputs": {
+    "native-pins.toml": "36df2c40417760ab61c5f8ece643756adcd7e55169c155afa0a7c413333e1196",
+    "rust/accounts/Cargo.toml": "3e897705311d25bd5c1626bf10e5df3e16f9bee907469317771aba7292d794ee",
+    "rust/accounts/src/lib.rs": "606e12d3e1d6f742cc64c3d8a41e5c76d42f388ce9c69c4f8a5dbdd5de2fd8d5",
+    "rust/anchor-spl-support-v102/Cargo.toml": "200c2942b803bb17b2b4b8d819a0194538050e0b0f80170bf1480147d8f1f883",
+    "rust/anchor/.cargo/config.toml": "eb75cb2bbc05ffcc804b1ed43a79043e074f9dddd2ec40d95c361c24bc5731a3",
+    "rust/anchor/Cargo.toml": "7d278974dbeb70ae7cf9b1d1b236c87a8a447e23515f023e20b20d5d1a8126a0",
+    "rust/anchor/driver.toml": "d949320d0c9b3754183c3adbbefe4e8555d69ed1cce286dc200b48207a904649",
+    "rust/anchor/src/accounts.rs": "6f80d37fb59237d7faa591ff6ef9d91bb395b1abef07f7e1a18cfb814b67b097",
+    "rust/anchor/src/enc.rs": "82b9353c5c259f330d1fe1c9e746592190361a877ed2bbe5a3ba7de725e3c648",
+    "rust/anchor/src/errors.rs": "5147df0c58f3b0620ef7a7bd3418c62e603686b14635b3fa6781887d62e64a58",
+    "rust/anchor/src/json.rs": "8462c3d477a57eae9bb4ce708451bd17a57dc951585a38b9d53092e11f01b311",
+    "rust/anchor/src/main.rs": "7b7d91fc72c9d8306e4d980ed3576822c0206adbf632cc963bd9bcfafd067f05",
+    "rust/anchor/src/misc.rs": "42dffc72e310d20fbe0d23c959d4cffbbb41b9388849b0565e8fcb67173364ae",
+    "rust/anchor/src/script.rs": "de250250d3df5443b2bff26040f6769525ce2cfc0bd0ae596c4be3f9a8c0c2ad",
+    "rust/anchor/src/spl.rs": "a03bf3fa367d44daf5f2bb3c9e577d59d3d0ea7c976a3895cf79972ab995743c",
+    "rust/anchor/src/track.rs": "f753a31988e0054fc24f318b535e7a427b5901d9d0b1dff9263f28dad8d073a0",
+    "rust/anchor/src/world.rs": "e2baa3c73c5b6a335422aa1106511a49dfee6536c812be3122d39a9c55dde0f3",
+    "rust/instructions-3-4-0-bincode/Cargo.toml": "2c4203abc67eac51898a2d225a400d635e944f8893d88bcbfb165e2f8d86c0a5",
+    "rust/recorder/Cargo.toml": "f0d4e716ddc5057d40156d061e4f48827e91ace6db9acfb84532d3d5d414f13d",
+    "rust/recorder/src/lib.rs": "ae49eaf1400120c36eef711a703d059881f6267f0b0f0984389ca19cf77b5782",
+    "rust/shim/Cargo.toml": "dde2a4bec857a3d829670e53b302e449b2a1a839f63cee16e312466ea5073075",
+    "rust/shim/src/lib.rs": "687cac522416bdbb2f6b9311d3d19775c8596258cf8c33e63eccda6da9293399",
+    "rust/token-interface-onchain/Cargo.toml": "05eb15bac5d797c0e5f433d8c73d451d874ff9ccbf2ca27510412f737e081aec",
+    "rust/token-state-interface-2-1-0/Cargo.toml": "565e191810242bd23b67dd923dcfa0f1864016771c433a418fa24db5326ee8b5",
+    "rust/workspaces/profile-13/Cargo.toml": "7cae65c9ac81c2876bd02bcbb5aa03a20756af8c45d358780e18325c6ce45fc6"
+  },
+  "recorded_utc": "2026-11-24T15:26:06+00:00",
+  "resolution": {
+    "modeled": {
+      "anchor-attribute-access-control": [
+        {
+          "checksum": "0b8cd233e382ea499e3c1e51bf4f0cb367abb37bb64e9e3667a5d618af3fe265",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.2"
+        }
+      ],
+      "anchor-attribute-account": [
+        {
+          "checksum": "2e12171382e24c5cda6b0f7236a4f6bb9b657da997780c88a0ef794a419298bf",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.2"
+        }
+      ],
+      "anchor-attribute-constant": [
+        {
+          "checksum": "510f8db71375446405dfabdaf157fb7d3fbf33470c98ed75fad4c467e8ca0080",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.2"
+        }
+      ],
+      "anchor-attribute-error": [
+        {
+          "checksum": "72b203169a49ea74da7782281e740ea8e21017c85f8f3b1ab452712c9796d28f",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.2"
+        }
+      ],
+      "anchor-attribute-event": [
+        {
+          "checksum": "c50a462651e573ec6cc632e8f607e8b1e11f620f6fc26badaeff04fd49f45cc1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.2"
+        }
+      ],
+      "anchor-attribute-program": [
+        {
+          "checksum": "84704ee25a7e788afd9d846945cba536cfdcd53b463e8a337cf237cd897ca4d9",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.2"
+        }
+      ],
+      "anchor-derive-accounts": [
+        {
+          "checksum": "98bf49664527c7bb0ebca04e9b5bfb618d6ceb849ef44a8149241d244bbfb0f6",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.2"
+        }
+      ],
+      "anchor-derive-serde": [
+        {
+          "checksum": "8140a40827bdfd74720f1f3084778fa081262f2f43bd4bdbc350f98ce1b341c6",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.2"
+        }
+      ],
+      "anchor-derive-space": [
+        {
+          "checksum": "1ee5b6fa5dde037399d3e0bb322a1c7360ad8adc6b6afdd797d19566c039dcfb",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.2"
+        }
+      ],
+      "anchor-lang": [
+        {
+          "checksum": "1bac4de7c9a9a69180798af701e22302cc0ebf2ef683b843706a1b7809454735",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.2"
+        }
+      ],
+      "anchor-lang-idl": [
+        {
+          "checksum": "32e8599d21995f68e296265aa5ab0c3cef582fd58afec014d01bd0bce18a4418",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.1.2"
+        }
+      ],
+      "anchor-lang-idl-spec": [
+        {
+          "checksum": "2bdf143115440fe621bdac3a29a1f7472e09f6cd82b2aa569429a0c13f103838",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.1.0"
+        }
+      ],
+      "anchor-spl": [
+        {
+          "checksum": "0b8005eef3a48a9a8cb21b126ae3bb252647e353afe6ef7f19e545177801c841",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.2"
+        }
+      ],
+      "anchor-syn": [
+        {
+          "checksum": "6940253e80acf0f8e83b1ebd9c4772c496aedcce6ad19aa85ce75d0b6b188298",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.2"
+        }
+      ],
+      "base64": [
+        {
+          "checksum": "9d297deb1925b89f2ccc13d7635fa0714f12c87adce1c75356b39ca9b7178567",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.21.7"
+        },
+        {
+          "checksum": "72b3254f16251a8381aa12e40e3c4d2f0199f8c6508fbecb9d91f575e0fbb8c6",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.22.1"
+        }
+      ],
+      "bincode": [
+        {
+          "checksum": "b1f45e9417d87227c7a56d22e471c6206462cba514c7590c09aff4cf6d1ddcad",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.3.3"
+        }
+      ],
+      "borsh": [
+        {
+          "checksum": "cfd1e3f8955a5d7de9fab72fc8373fade9fb8a703968cb200ae3dc6cf08e185a",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.6.1"
+        }
+      ],
+      "borsh-derive": [
+        {
+          "checksum": "bfcfdc083699101d5a7965e49925975f2f55060f94f9a05e7187be95d530ca59",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.6.1"
+        }
+      ],
+      "bs58": [
+        {
+          "checksum": "bf88ba1141d185c399bee5288d850d63b8369520c1eafc32a0430b5b6c287bf4",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.5.1"
+        }
+      ],
+      "bytemuck": [
+        {
+          "checksum": "c8efb64bd706a16a1bdde310ae86b351e4d21550d98d056f22f8a7f7a2183fec",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.25.0"
+        }
+      ],
+      "bytemuck_derive": [
+        {
+          "checksum": "f9abbd1bc6865053c427f7198e6af43bfdedc55ab791faed4fbd361d789575ff",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.10.2"
+        }
+      ],
+      "digest": [
+        {
+          "checksum": "9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.10.7"
+        }
+      ],
+      "num_enum": [
+        {
+          "checksum": "5d0bca838442ec211fa11de3a8b0e0e8f3a4522575b5c4c06ed722e005036f26",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.7.6"
+        }
+      ],
+      "num_enum_derive": [
+        {
+          "checksum": "680998035259dcfcafe653688bf2aa6d3e2dc05e98be6ab46afb089dc84f1df8",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.7.6"
+        }
+      ],
+      "serde": [
+        {
+          "checksum": "9a8e94ea7f378bd32cbbd37198a4a91436180c5bb472411e48b5ec2e2124ae9e",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.228"
+        }
+      ],
+      "serde_core": [
+        {
+          "checksum": "41d385c7d4ca58e59fc732af25c3983b67ac852c1a25000afe1175de458b67ad",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.228"
+        }
+      ],
+      "serde_derive": [
+        {
+          "checksum": "d540f220d3187173da220f885ab66608367b6574e925011a9353e4badda91d79",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.228"
+        }
+      ],
+      "sha2": [
+        {
+          "checksum": "a7507d819769d01a365ab707794a4084392c824f54a7a6a7862f8c3d0892b283",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.10.9"
+        }
+      ],
+      "solana-account-info": [
+        {
+          "checksum": "a9cf16495d9eb53e3d04e72366a33bb1c20c24e78c171d8b8f5978357b63ae95",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.1.1"
+        }
+      ],
+      "solana-address": [
+        {
+          "checksum": "a2ecac8e1b7f74c2baa9e774c42817e3e75b20787134b76cc4d45e8a604488f5",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.1.0"
+        },
+        {
+          "checksum": "f1384b52c435a750cc9c538760fc7bb472fd78e65a9900a2d07312c5bb335b72",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "2.6.0"
+        }
+      ],
+      "solana-borsh": [
+        {
+          "checksum": "c04abbae16f57178a163125805637b8a076175bb5c0002fb04f4792bea901cf7",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.0.2"
+        }
+      ],
+      "solana-clock": [
+        {
+          "checksum": "95cf11109c3b6115cc510f1e31f06fdd52f504271bc24ef5f1249fbbcae5f9f3",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.0.1"
+        }
+      ],
+      "solana-cpi": [
+        {
+          "checksum": "4dea26709d867aada85d0d3617db0944215c8bb28d3745b912de7db13a23280c",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.1.0"
+        }
+      ],
+      "solana-curve25519": [
+        {
+          "checksum": "2eb091ac9c1e4d51c3cd1893444aee607cd1b0173c4ba0b557f8960844f44a1b",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.1.12"
+        }
+      ],
+      "solana-define-syscall": [
+        {
+          "checksum": "f9697086a4e102d28a156b8d6b521730335d6951bd39a5e766512bbe09007cee",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.0.0"
+        },
+        {
+          "checksum": "57e5b1c0bc1d4a4d10c88a4100499d954c09d3fecfae4912c1a074dff68b1738",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "4.0.1"
+        },
+        {
+          "checksum": "21e14a4f604117f379840956a8fc8695e4c84f5b0ebed192f31f60d9b85d581d",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "5.1.0"
+        }
+      ],
+      "solana-epoch-schedule": [
+        {
+          "checksum": "6e5481e72cc4d52c169db73e4c0cd16de8bc943078aac587ec4817a75cc6388f",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.0.0"
+        }
+      ],
+      "solana-hash": [
+        {
+          "checksum": "f1b113239362cee7093bfb250467138f079a2a03673181dc15bff6ccd677912d",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "4.3.0"
+        }
+      ],
+      "solana-instruction": [
+        {
+          "checksum": "37ebb0ffd19263051bc3f683fcc086134b8ff23af894dcb63f7563c7137b42f1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.4.0"
+        }
+      ],
+      "solana-instructions-sysvar": [
+        {
+          "checksum": "7ddf67876c541aa1e21ee1acae35c95c6fbc61119814bfef70579317a5e26955",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.0.0"
+        }
+      ],
+      "solana-invoke": [
+        {
+          "checksum": "4065031f5c7dd29ef5f5003c1a353011eeabbafa6c5a5033da0cedbfca824b94",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.5.0"
+        }
+      ],
+      "solana-loader-v3-interface": [
+        {
+          "checksum": "2e0538d4dbc9022e01616f1c58f2db98ece739c5d5ed4a2ef8737a953e76a2d4",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "6.1.1"
+        }
+      ],
+      "solana-msg": [
+        {
+          "checksum": "726b7cbbc6be6f1c6f29146ac824343b9415133eee8cce156452ad1db93f8008",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.1.0"
+        }
+      ],
+      "solana-nullable": [
+        {
+          "checksum": "a0f95d3028ef0f682bb174b77379c19d5dae2904a649f4a103fe29be7a139980",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.1.1"
+        }
+      ],
+      "solana-program-entrypoint": [
+        {
+          "checksum": "84c9b0a1ff494e05f503a08b3d51150b73aa639544631e510279d6375f290997",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.1.1"
+        }
+      ],
+      "solana-program-error": [
+        {
+          "checksum": "4f04fa578707b3612b095f0c8e19b66a1233f7c42ca8082fcb3b745afcc0add6",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.0.1"
+        }
+      ],
+      "solana-program-memory": [
+        {
+          "checksum": "4068648649653c2c50546e9a7fb761791b5ab0cda054c771bb5808d3a4b9eb52",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.1.0"
+        }
+      ],
+      "solana-program-option": [
+        {
+          "checksum": "7a88006a9b8594088cec9027ab77caaaa258a2aaa2083d3f086c44b42e50aeab",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.1.0"
+        }
+      ],
+      "solana-program-pack": [
+        {
+          "checksum": "3d7701cb15b90667ae1c89ef4ac35a59c61e66ce58ddee13d729472af7f41d59",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.1.0"
+        }
+      ],
+      "solana-pubkey": [
+        {
+          "checksum": "8909d399deb0851aa524420beeb5646b115fd253ef446e35fe4504c904da3941",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.0.0"
+        },
+        {
+          "checksum": "7db719574990de7e8b0f55a8593ac92a5ccb42c8ce67b3e4bf05b139d5d9ee71",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "4.2.0"
+        }
+      ],
+      "solana-rent": [
+        {
+          "checksum": "b702d8c43711e3c8a9284a4f1bbc6a3de2553deb25b0c8142f9a44ef0ce5ddc1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.0.0"
+        }
+      ],
+      "solana-sanitize": [
+        {
+          "checksum": "dcf09694a0fc14e5ffb18f9b7b7c0f15ecb6eac5b5610bf76a1853459d19daf9",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.0.1"
+        }
+      ],
+      "solana-sdk-ids": [
+        {
+          "checksum": "def234c1956ff616d46c9dd953f251fa7096ddbaa6d52b165218de97882b7280",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.1.0"
+        }
+      ],
+      "solana-serialize-utils": [
+        {
+          "checksum": "5d7cc401931d178472358e6b78dc72d031dc08f752d7410f0e8bd259dd6f02fa",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.1.1"
+        }
+      ],
+      "solana-sha256-hasher": [
+        {
+          "checksum": "db7dc3011ea4c0334aaaa7e7128cb390ecf546b28d412e9bf2064680f57f588f",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.1.0"
+        }
+      ],
+      "solana-stable-layout": [
+        {
+          "checksum": "1da74507795b6e8fb60b7c7306c0c36e2c315805d16eaaf479452661234685ac",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.0.0"
+        }
+      ],
+      "solana-stake-interface": [
+        {
+          "checksum": "b9bc26191b533f9a6e5a14cca05174119819ced680a80febff2f5051a713f0db",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "2.0.2"
+        }
+      ],
+      "solana-system-interface": [
+        {
+          "checksum": "4e1790547bfc3061f1ee68ea9d8dc6c973c02a163697b24263a8e9f2e6d4afa2",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "2.0.0"
+        },
+        {
+          "checksum": "55b54965bf0b76fa8e2b35376583efddd4d916618cfe595bf48c7d7b55a9e628",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.2.0"
+        }
+      ],
+      "solana-sysvar": [
+        {
+          "checksum": "6690d3dd88f15c21edff68eb391ef8800df7a1f5cec84ee3e8d1abf05affdf74",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "3.1.1"
+        }
+      ],
+      "solana-zero-copy": [
+        {
+          "checksum": "c5a91404c7de468dd80658cdb5d894ec803d1092ea6e2bfdf84eee6f07559c0d",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "1.0.1"
+        }
+      ],
+      "spl-associated-token-account-interface": [
+        {
+          "checksum": "e6433917b60441d68d99a17e121d9db0ea15a9a69c0e5afa34649cf5ba12612f",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "2.0.0"
+        }
+      ],
+      "spl-discriminator": [
+        {
+          "checksum": "e597c5ff9ed7c74a54dbc47bae2f06e4db8c98f4356ad280200dc11878266db1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.5.2"
+        }
+      ],
+      "spl-pod": [
+        {
+          "checksum": "2f9c6e142cdf1e7e77f480053ec9f0ce989890768ddf91f619b50f39d1b456f5",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.7.3"
+        }
+      ],
+      "spl-token-2022-interface": [
+        {
+          "checksum": "2fcd81188211f4b3c8a5eba7fd534c7142f9dd026123b3472492782cc72f4dc6",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "2.1.0"
+        }
+      ],
+      "spl-token-group-interface": [
+        {
+          "checksum": "841cbd6f2322d02719be4da1affedbe6495b1048b7b985ec9796032564026e22",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.7.2"
+        }
+      ],
+      "spl-token-interface": [
+        {
+          "checksum": "8c564ac05a7c8d8b12e988a37d82695b5ba4db376d07ea98bc4882c81f96c7f3",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "2.0.0"
+        }
+      ],
+      "spl-token-metadata-interface": [
+        {
+          "checksum": "9c467c7c3bd056f8fe60119e7ec34ddd6f23052c2fa8f1f51999098063b72676",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.8.0"
+        }
+      ],
+      "spl-type-length-value": [
+        {
+          "checksum": "2504631748c48d2a937414d64a12dcac4588d34bd07d355d648619c189d29435",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "version": "0.9.1"
+        }
+      ]
+    },
+    "unused_pins": [
+      "pin-curve25519-dalek-4-1-3",
+      "pin-curve25519-dalek-derive-0-1-1",
+      "pin-keccak-0-1-5",
+      "pin-sha3-0-10-8",
+      "pin-solana-hash-3-1-0",
+      "pin-wincode-0-5-4",
+      "pin-wincode-derive-0-4-5"
+    ]
+  },
+  "rust": {
+    "cargo": "cargo 1.97.0-nightly (eb9b60f1f 2026-04-24)",
+    "debug_assertions": true,
+    "opt_level": "0",
+    "overflow_checks": true,
+    "panic": "unwind",
+    "profile": "dev",
+    "rustc": [
+      "rustc 1.97.0-nightly (f53b654a8 2026-04-30)",
+      "binary: rustc",
+      "commit-hash: f53b654a8882fd5fc036c4ca7a4ff41ce32497a6",
+      "commit-date: 2026-04-30",
+      "host: x86_64-unknown-linux-gnu",
+      "release: 1.97.0-nightly",
+      "LLVM version: 22.1.4"
+    ],
+    "target": "x86_64-unknown-linux-gnu",
+    "toolchain": "nightly-2026-05-01"
+  },
+  "rustflags": [
+    "-A",
+    "explicit_builtin_cfgs_in_flags",
+    "--cfg",
+    "target_os=\"solana\""
+  ],
+  "schema": "solana-library-conformance/manifest/v2"
+}

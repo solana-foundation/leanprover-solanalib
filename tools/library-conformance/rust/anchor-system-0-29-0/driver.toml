@@ -1,0 +1,9 @@
+scope = "projected-wrapper"
+region = "none"
+corpora = ["anchor_system_0_29_0"]
+inputs = ["rust/common/anchor_system.rs", "rust/anchor/src/track.rs", "rust/anchor-system-0-29-0/projection.json", "project_wrappers.py"]
+
+[build_probe]
+argument = "--build-config"
+profile = "dev"
+panic = "unwind"

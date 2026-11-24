@@ -1,0 +1,2 @@
+corpora = ["spl_token_8_0_0_instructions", "spl_token_2022_8_0_1_instructions", "spl_token_metadata_interface_0_7_0_initialize", "spl_memo_6_0_0_id"]
+inputs = []

@@ -1,0 +1,159 @@
+{
+  "abstractions": {
+    "library::spl_associated_token_account_interface": {
+      "order": 172,
+      "modules": {
+        "Solanalib.Specs.SplAssociatedTokenAccountInterface": "a0d816d0ce07a21245b26a702afdeb0b148ce49a7e61893d4bd96396bd852849",
+        "Solanalib.Specs.SplAssociatedTokenAccountInterface.Capabilities": "626d08648f179defa1c34df119884022dbe8ad15ffcec9a3a0746b97b87bc3c2",
+        "Solanalib.Specs.SplAssociatedTokenAccountInterface.Address": "7ddb017a93430dd30cf907f0017dc3af0208ab122f88b8d06135de0ca7ef9e13"
+      },
+      "source_ids": [
+        "addresses::solana-pubkey-2.2.1::src/lib.rs",
+        "addresses::solana-pubkey-2.2.1::Cargo.toml.orig",
+        "addresses::solana-pubkey-2.4.0::src/lib.rs",
+        "addresses::solana-pubkey-2.4.0::Cargo.toml.orig",
+        "addresses::solana-program-1.15.2::src/pubkey.rs",
+        "addresses::solana-program-1.18.26::src/pubkey.rs",
+        "addresses::solana-loader-v3-interface-6.1.1::src/lib.rs",
+        "addresses::spl-associated-token-account-client-2.0.0::src/address.rs",
+        "addresses::spl-associated-token-account-client-2.0.0::src/lib.rs",
+        "addresses::spl-associated-token-account-interface-2.0.0::src/address.rs",
+        "addresses::spl-associated-token-account-interface-2.0.0::src/lib.rs",
+        "addresses::borsh-0.9.3::src/de/mod.rs",
+        "addresses::borsh-0.9.3::src/ser/mod.rs",
+        "addresses::borsh-1.6.0::src/de/mod.rs",
+        "addresses::borsh-1.6.0::src/ser/mod.rs",
+        "addresses::borsh-derive-1.6.0::src/internals/deserialize/structs/mod.rs",
+        "addresses::borsh-derive-1.6.0::src/internals/serialize/structs/mod.rs",
+        "addresses::borsh-derive-internal-0.9.3::src/struct_de.rs",
+        "addresses::borsh-derive-internal-0.9.3::src/struct_ser.rs",
+        "addresses::borsh-0.10.4::src/ser/mod.rs",
+        "addresses::solana-address-2.6.0::src/error.rs",
+        "addresses::solana-address-2.6.1::src/error.rs",
+        "addresses::solana-pubkey-3.0.0::src/lib.rs",
+        "addresses::solana-pubkey-4.2.0::src/lib.rs",
+        "addresses::solana-address-1.1.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/lib.rs",
+        "value-request::solana-address-2.6.0::src/syscalls.rs",
+        "fee-address-2.6.1",
+        "value-request::solana-address-2.6.1::src/syscalls.rs",
+        "codecs::borsh-0.10.4::src/de/mod.rs"
+      ],
+      "argument": "@review:source-notes/other-sdk-functions.md#review-29c3df036102ffee",
+      "limitations": "@shared:limitations-8770b03dd66ffeea"
+    }
+  },
+  "packages": {
+    "spl-associated-token-account-interface-2.0.0": {
+      "order": 88,
+      "repository": "https://github.com/solana-program/associated-token-account",
+      "revision": "250da0e21a9853a7afddba85658ed8a9119c71c9",
+      "path_prefix": "interface/"
+    }
+  },
+  "interfaces": {
+    "addresses::spl-associated-token-account-interface-2.0.0::src/address.rs": {
+      "order": 251,
+      "crate": "spl-associated-token-account-interface-2.0.0",
+      "path": "src/address.rs",
+      "sha256": "b3a86ce5683f5b09327602fef8139f8896863c98505d6410b2de5e22461b5959",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "addresses::spl-associated-token-account-interface-2.0.0::src/lib.rs": {
+      "order": 252,
+      "crate": "spl-associated-token-account-interface-2.0.0",
+      "path": "src/lib.rs",
+      "sha256": "c459c7ce80d2438327b551a15ddd488fcc12098bd915892fe7918943516796e0",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "anchor-spl-support::spl-associated-token-account-interface-2.0.0::src/address.rs": {
+      "order": 366,
+      "crate": "spl-associated-token-account-interface-2.0.0",
+      "path": "src/address.rs",
+      "sha256": "b3a86ce5683f5b09327602fef8139f8896863c98505d6410b2de5e22461b5959"
+    },
+    "anchor-spl-support::spl-associated-token-account-interface-2.0.0::src/instruction.rs": {
+      "order": 367,
+      "crate": "spl-associated-token-account-interface-2.0.0",
+      "path": "src/instruction.rs",
+      "sha256": "033191cb1316fe2370fb9f694b0a0f9f140f647ca44661f07cb661ed4aa8c56d"
+    }
+  },
+  "models": {
+    "spl-associated-token-account-interface::address::get_associated_token_address_with_program_id": {
+      "order": 444,
+      "contract": "Solanalib.Specs.SplAssociatedTokenAccountInterface.address.get_associated_token_address_with_program_id_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:784d07d7dda8727b"]
+    }
+  },
+  "api": {
+    "addresses::spl-associated-token-account-interface-2.0.0::get_associated_token_address_with_program_id": {
+      "order": 438,
+      "source_id": "addresses::spl-associated-token-account-interface-2.0.0::src/address.rs",
+      "line": 40,
+      "anchor_text": "pub fn get_associated_token_address_with_program_id(",
+      "rust_names": ["spl_associated_token_account_interface::address::get_associated_token_address_with_program_id"],
+      "models": ["spl-associated-token-account-interface::address::get_associated_token_address_with_program_id"],
+      "scope": "@text:c1cf725803784346",
+      "binding_obligations": ["@binding:bd9bae7aff33eed6", "@binding:5e39aac10a122ac0"],
+      "bindings": {
+        "spl_associated_token_account_interface::address::get_associated_token_address_with_program_id": "spl_associated_token_account_interface::address::get_associated_token_address_with_program_id"
+      }
+    }
+  },
+  "applicability_sources": {
+    "addresses-spl-associated-token-account-interface": {
+      "order": 50,
+      "package": "spl-associated-token-account-interface",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-11",
+      "releases": {
+        "0.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-associated-token-account-interface/spl-associated-token-account-interface-0.0.0.crate",
+          "sha256": "5c9eef07a57f60a7e6208bec5d6841ba1c21376ca48e6f13cd0241aba7d14757"
+        },
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-associated-token-account-interface/spl-associated-token-account-interface-1.0.0.crate",
+          "sha256": "5e6bbe0794e532ac08428d3abf5bf8ae75bd81dfddd785c388e326c00c92c6f5"
+        },
+        "2.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-associated-token-account-interface/spl-associated-token-account-interface-2.0.0.crate",
+          "sha256": "e6433917b60441d68d99a17e121d9db0ea15a9a69c0e5afa34649cf5ba12612f",
+          "revision": "250da0e21a9853a7afddba85658ed8a9119c71c9"
+        }
+      },
+      "evidence": ["@text:84f93d5515b5fbc3", "@text:e1738c835b01e6b4"]
+    }
+  },
+  "applicability": {
+    "spl-associated-token-account-interface::address::get_associated_token_address_with_program_id": {
+      "order": 444,
+      "profiles": [
+        {
+          "id": "spl-associated-token-account-interface-2.0.0-get_associated_token_address_with_program_id",
+          "source": "addresses-spl-associated-token-account-interface",
+          "releases": ["2.0.0"],
+          "items": [
+            {
+              "releases": ["2.0.0"],
+              "item": "spl_associated_token_account_interface::address::get_associated_token_address_with_program_id",
+              "implementation": "spl_associated_token_account_interface::address::get_associated_token_address_with_program_id",
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": [
+            "@binding:bd9bae7aff33eed6",
+            "@binding:5e39aac10a122ac0",
+            "@text:b713465cca376b04",
+            "@text:5879a6f61ff6f6f9"
+          ],
+          "argument": "@review:source-notes/value-request-ata.md#review-e4575ab7dc5f1d40",
+          "evidence": ["@text:5e57915cbdb451f9"],
+          "target": "@shared:target-86e77ec323a176ad",
+          "dependencies": ["@shared:dependencies-440dff4999391f4f", "@shared:dependencies-9ae1e5ccc3308c86"]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+# The exact published release has no reached nonoptional dependency.
+
+[package]
+name = "conformance-pinocchio-09"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records Pinocchio 0.9.2 account, guard and resize APIs"
+workspace = "../workspaces/profile-00"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+conformance-accounts = { path = "../accounts" }
+pinocchio = "=0.9.2"

@@ -1,0 +1,26 @@
+{
+  "packages": {
+    "borsh-derive-internal-0.9.3": {
+      "order": 81,
+      "repository": "https://github.com/near/borsh-rs",
+      "revision": "eeb969ce1d3a4b63e97df87fe37d5ba86100db73",
+      "path_prefix": "borsh-derive-internal/"
+    }
+  },
+  "interfaces": {
+    "addresses::borsh-derive-internal-0.9.3::src/struct_de.rs": {
+      "order": 235,
+      "crate": "borsh-derive-internal-0.9.3",
+      "path": "src/struct_de.rs",
+      "sha256": "9da23672f8e5269d1b48f464a77e2975621745648a872341e4fb3cf987aae9df",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    },
+    "addresses::borsh-derive-internal-0.9.3::src/struct_ser.rs": {
+      "order": 236,
+      "crate": "borsh-derive-internal-0.9.3",
+      "path": "src/struct_ser.rs",
+      "sha256": "8e71643e0194923bcc521798a4adf8e4c97fa8e15f0450139016b20431b09261",
+      "review_scope": "Exact source interface and reached wrapper/byte-array behavior. Library, standard-library, compiler and runtime bodies remain assumed interfaces."
+    }
+  }
+}

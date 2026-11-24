@@ -1,0 +1,38 @@
+{
+  "packages": {
+    "spl-discriminator-0.5.2": {
+      "order": 31,
+      "repository": "https://github.com/solana-program/libraries",
+      "revision": "963d8b841e0e5f298b349038d433daec41b0d83b",
+      "path_prefix": "discriminator/"
+    },
+    "spl-discriminator-0.4.1": {
+      "order": 135,
+      "repository": "https://github.com/solana-program/libraries",
+      "revision": "0b6a6f5210e0559cbddddbabde597653c30cb6b1",
+      "path_prefix": "discriminator/"
+    }
+  },
+  "interfaces": {
+    "spl-discriminator-0.5.2-discriminator": {
+      "order": 71,
+      "crate": "spl-discriminator-0.5.2",
+      "path": "src/discriminator.rs",
+      "sha256": "cfd5d478d3fff4b937592088aeee4b9934267dba6ce3e33306d5f51d9ee879f1"
+    },
+    "transfer-hook-resolution::spl-discriminator-0.4.1::src/discriminator.rs": {
+      "order": 569,
+      "crate": "spl-discriminator-0.4.1",
+      "path": "src/discriminator.rs",
+      "sha256": "cfd5d478d3fff4b937592088aeee4b9934267dba6ce3e33306d5f51d9ee879f1",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed."
+    },
+    "transfer-hook-resolution::spl-discriminator-0.4.1::src/lib.rs": {
+      "order": 570,
+      "crate": "spl-discriminator-0.4.1",
+      "path": "src/lib.rs",
+      "sha256": "dcd8b3559e037d8cf863e0f09555d1e5d770aa4f54cf181146fc61db26ab02ee",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed."
+    }
+  }
+}

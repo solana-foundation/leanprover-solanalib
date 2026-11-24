@@ -1,0 +1,5 @@
+{"schema":"solana-library-conformance/corpus/v1","corpus":"sdk_values_solana_program_1_18_26","crates":[{"name":"solana-program","version":"1.18.26"}],"records":[
+{"id":"into_option/none","function":"solana_program::program_option::<impl core::convert::From<solana_program::program_option::COption<T>> for core::option::Option<T>>::from","generics":{"T":"u64"},"state":null,"args":{"option":null},"outcome":{"exit":"returned","result":null,"state":null}},
+{"id":"into_option/zero","function":"solana_program::program_option::<impl core::convert::From<solana_program::program_option::COption<T>> for core::option::Option<T>>::from","generics":{"T":"u64"},"state":null,"args":{"option":{"some":0}},"outcome":{"exit":"returned","result":{"some":0},"state":null}},
+{"id":"into_option/max","function":"solana_program::program_option::<impl core::convert::From<solana_program::program_option::COption<T>> for core::option::Option<T>>::from","generics":{"T":"u64"},"state":null,"args":{"option":{"some":18446744073709551615}},"outcome":{"exit":"returned","result":{"some":18446744073709551615},"state":null}}
+]}

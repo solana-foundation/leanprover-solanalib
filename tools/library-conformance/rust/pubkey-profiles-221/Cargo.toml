@@ -1,0 +1,38 @@
+# Modeled dependencies use exact constraints; incidental packages resolve afresh.
+
+[package]
+name = "conformance-pubkey-profiles-221"
+version = "0.1.0"
+edition = "2021"
+publish = false
+workspace = "../workspaces/profile-07"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-pubkey = { version = "=2.2.1", features = ["borsh", "curve25519"] }
+borsh-selected = { package = "borsh", version = "=0.10.4", features = ["std"] }
+spl-associated-token-account-client = "=2.0.0"
+pin-borsh-1-5-7 = { package = "borsh", version = "=1.5.7", default-features = false, optional = true }
+pin-borsh-derive-0-10-4 = { package = "borsh-derive", version = "=0.10.4", default-features = false, optional = true }
+pin-borsh-derive-1-5-7 = { package = "borsh-derive", version = "=1.5.7", default-features = false, optional = true }
+pin-borsh-derive-internal-0-10-4 = { package = "borsh-derive-internal", version = "=0.10.4", default-features = false, optional = true }
+pin-borsh-schema-derive-internal-0-10-4 = { package = "borsh-schema-derive-internal", version = "=0.10.4", default-features = false, optional = true }
+pin-bs58-0-5-1 = { package = "bs58", version = "=0.5.1", default-features = false, optional = true }
+pin-curve25519-dalek-4-1-3 = { package = "curve25519-dalek", version = "=4.1.3", default-features = false, optional = true }
+pin-curve25519-dalek-derive-0-1-1 = { package = "curve25519-dalek-derive", version = "=0.1.1", default-features = false, optional = true }
+pin-digest-0-10-7 = { package = "digest", version = "=0.10.7", default-features = false, optional = true }
+pin-serde-1-0-228 = { package = "serde", version = "=1.0.228", default-features = false, optional = true }
+pin-serde_core-1-0-228 = { package = "serde_core", version = "=1.0.228", default-features = false, optional = true }
+pin-serde_derive-1-0-228 = { package = "serde_derive", version = "=1.0.228", default-features = false, optional = true }
+pin-sha2-0-10-9 = { package = "sha2", version = "=0.10.9", default-features = false, optional = true }
+pin-solana-define-syscall-2-3-0 = { package = "solana-define-syscall", version = "=2.3.0", default-features = false, optional = true }
+pin-solana-hash-2-3-0 = { package = "solana-hash", version = "=2.3.0", default-features = false, optional = true }
+pin-solana-instruction-2-2-1 = { package = "solana-instruction", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-sanitize-2-2-1 = { package = "solana-sanitize", version = "=2.2.1", default-features = false, optional = true }
+pin-solana-sha256-hasher-2-3-0 = { package = "solana-sha256-hasher", version = "=2.3.0", default-features = false, optional = true }
+
+[features]
+default = ["seed"]
+seed = []
+legacy_io = []

@@ -9,6 +9,15 @@ on:
     paths:
       - "Solanalib/**"
       - "Solanalib.lean"
+      - "packages/**"
+      - "tools/model-audit/**"
+      - "scripts/postprocess-docs.py"
+      - "scripts/build-docs.py"
+      - "scripts/generate-test-index.py"
+      - "docs/**"
+      - "tools/library-conformance/**"
+      - "Justfile"
+      - ".github/actions/setup-lean/**"
       - "lakefile.lean"
       - "lake-manifest.json"
       - "lean-toolchain"
@@ -24,11 +33,20 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+env:
+  LEAN_NUM_THREADS: '4'
+  MATHLIB_NO_CACHE_ON_UPDATE: '1'
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+      - uses: extractions/setup-just@v3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
       # Cache Lean toolchain + Lake deps + doc-gen4's own build output. Without
       # this cache the doc-gen4 compile from source dominates the build at ~10
@@ -41,34 +59,25 @@ jobs:
           path: |
             ~/.elan
             .lake/packages
-          key: lake-docs-${{ runner.os }}-${{ hashFiles('lake-manifest.json', 'lean-toolchain') }}
+            .lake/build
+          key: lake-docs-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lakefile.lean', 'lake-manifest.json', 'lean-toolchain') }}-${{ hashFiles('Solanalib/**/*.lean', 'Solanalib.lean', 'packages/**/Solanalib/**/*.lean') }}
           restore-keys: |
             lake-docs-${{ runner.os }}-
             lake-${{ runner.os }}-
 
-      - name: Install elan (Lean toolchain manager)
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          set -euxo pipefail
-          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf \
-            | sh -s -- -y --default-toolchain none
+      - uses: ./.github/actions/setup-lean
 
-      - name: Add elan to PATH
-        run: echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-
-      # Pulls doc-gen4 into the manifest (gated behind -Kenv=dev in lakefile.lean).
+      # Re-elaborate the conditional dependency even after a normal cached build.
+      # Pulls the pinned doc-gen4 into the manifest.
       - name: Resolve dependencies with -Kenv=dev
-        run: lake -Kenv=dev update
+        run: lake -R -Kenv=dev update
 
       # Downloads pre-built Mathlib oleans so we don't compile Mathlib from scratch.
       - name: Fetch pre-built Mathlib oleans
-        run: lake exe cache get
+        run: lake exe cache get Mathlib.Tactic.Linter.Style Mathlib.Tactic.Linter.Header
 
       - name: Build documentation site
-        run: lake -Kenv=dev build Solanalib:docs
-
-      - name: Patch landing page (banner + title + module nav)
-        run: python3 scripts/postprocess-docs.py
+        run: just --set python python3 docs
 
       - uses: actions/configure-pages@v5
 

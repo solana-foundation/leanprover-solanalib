@@ -1,0 +1,1766 @@
+{
+  "abstractions": {
+    "library::solana_define_syscall": {
+      "order": 137,
+      "modules": {
+        "Solanalib.Specs.SolanaDefineSyscall": "8634778f06a720aca367a6fcaf49348308d8104519fb1f35c98a4d21dac4b04f",
+        "Solanalib.Specs.SolanaDefineSyscall.Capabilities": "bd6fc595a16b34ae0f8b022a38c30d133bd5649df86c342d117035e18132a502",
+        "Solanalib.Specs.SolanaDefineSyscall.Definitions": "7dc6cadd6e755fc24b2ede8d72a8c8de7dc93f804f693efaa96fe1f983bfa326",
+        "Solanalib.Specs.SolanaDefineSyscall.Runtime": "fbafd86382896c78e0c3fdb29761e68120892205d883a79abf7d15cee34951ed",
+        "Solanalib.Specs.SolanaDefineSyscall.Cpi": "cbec12511769b25f6971207b0379a8421df65e3139dceb8cc74f33caf7c98fae"
+      },
+      "source_ids": [
+        "raw-syscalls::solana-define-syscall-5.1.0::src/definitions.rs",
+        "raw-syscalls::solana-define-syscall-5.1.0::src/lib.rs",
+        "raw-syscalls::solana-define-syscall-5.2.0::src/definitions.rs",
+        "raw-syscalls::solana-define-syscall-5.2.0::src/lib.rs",
+        "raw-syscalls::solana-define-syscall-5.2.0::src/curve_constants.rs",
+        "raw-runtime::solana-define-syscall-2.3.0::src/definitions.rs",
+        "raw-runtime::solana-define-syscall-2.3.0::src/lib.rs",
+        "raw-runtime::solana-define-syscall-4.0.1::src/definitions.rs",
+        "raw-runtime::solana-define-syscall-4.0.1::src/lib.rs",
+        "raw-runtime::solana-define-syscall-5.1.0::src/definitions.rs",
+        "raw-runtime::solana-define-syscall-5.1.0::src/lib.rs",
+        "raw-runtime::solana-program-1.15.2::src/syscalls/definitions.rs",
+        "raw-runtime::solana-program-1.15.2::src/syscalls/mod.rs",
+        "raw-runtime::solana-program-1.18.26::src/syscalls/definitions.rs",
+        "raw-runtime::solana-program-1.18.26::src/syscalls/mod.rs",
+        "raw-runtime::solana-cpi-2.2.1::src/lib.rs",
+        "raw-runtime::solana-cpi-2.2.1::src/syscalls.rs",
+        "raw-runtime::solana-cpi-3.1.0::src/lib.rs",
+        "raw-runtime::solana-cpi-3.1.0::src/syscalls.rs",
+        "raw-runtime::pinocchio-0.9.2::src/lib.rs",
+        "raw-runtime::pinocchio-0.9.2::src/syscalls.rs",
+        "raw-runtime::pinocchio-log-0.5.1::src/logger.rs",
+        "raw-runtime::anchor-lang-1.0.2::src/lib.rs",
+        "cpi-signatures::solana-invoke-0.4.0::src/lib.rs",
+        "cpi-signatures::solana-invoke-0.4.0::src/stable_instruction_borrowed.rs",
+        "cpi-signatures::solana-invoke-0.5.0::src/lib.rs",
+        "cpi-signatures::solana-invoke-0.5.0::src/stable_instruction_borrowed.rs",
+        "cpi-signatures::solana-program-1.15.2::src/program.rs",
+        "cpi-signatures::solana-program-1.15.2::src/account_info.rs",
+        "cpi-signatures::solana-program-1.15.2::src/instruction.rs",
+        "cpi-signatures::solana-program-1.15.2::src/program_error.rs",
+        "cpi-signatures::solana-program-1.15.2::src/syscalls/definitions.rs",
+        "cpi-signatures::solana-program-1.18.26::src/program.rs",
+        "cpi-signatures::solana-program-1.18.26::src/account_info.rs",
+        "cpi-signatures::solana-program-1.18.26::src/instruction.rs",
+        "cpi-signatures::solana-program-1.18.26::src/program_error.rs",
+        "cpi-signatures::solana-program-1.18.26::src/syscalls/definitions.rs",
+        "cpi-signatures::solana-program-1.18.26::src/stable_layout/stable_instruction.rs",
+        "cpi-signatures::solana-program-1.18.26::src/stable_layout/stable_vec.rs",
+        "cpi-signatures::solana-program-2.2.1::src/program.rs",
+        "cpi-signatures::solana-program-2.3.0::src/program.rs",
+        "cpi-signatures::pinocchio-0.9.2::src/cpi.rs",
+        "cpi-signatures::pinocchio-0.9.2::src/syscalls.rs",
+        "cpi-signatures::pinocchio-0.9.2::src/instruction.rs",
+        "cpi-signatures::solana-define-syscall-2.3.0::src/lib.rs",
+        "cpi-signatures::solana-define-syscall-2.3.0::src/definitions.rs",
+        "cpi-signatures::solana-define-syscall-3.0.0::src/lib.rs",
+        "cpi-signatures::solana-define-syscall-3.0.0::src/definitions.rs",
+        "cpi-signatures::solana-define-syscall-5.1.0::src/lib.rs",
+        "cpi-signatures::solana-define-syscall-5.1.0::src/definitions.rs",
+        "cpi-signatures::solana-cpi-2.2.1::src/lib.rs",
+        "cpi-signatures::solana-account-info-2.3.0::src/lib.rs",
+        "cpi-signatures::solana-account-info-3.1.1::src/lib.rs",
+        "cpi-signatures::solana-instruction-2.2.1::src/lib.rs",
+        "cpi-signatures::solana-instruction-2.2.1::src/account_meta.rs",
+        "cpi-signatures::solana-instruction-2.3.3::src/lib.rs",
+        "cpi-signatures::solana-instruction-2.3.3::src/account_meta.rs",
+        "cpi-signatures::solana-instruction-3.4.0::src/lib.rs",
+        "cpi-signatures::solana-instruction-3.4.0::src/account_meta.rs",
+        "cpi-signatures::solana-program-error-2.2.2::src/lib.rs",
+        "cpi-signatures::solana-program-error-3.0.1::src/lib.rs",
+        "cpi-signatures::solana-stable-layout-2.2.1::src/stable_instruction.rs",
+        "cpi-signatures::solana-stable-layout-2.2.1::src/stable_vec.rs",
+        "cpi-signatures::solana-stable-layout-3.0.0::src/stable_instruction.rs",
+        "cpi-signatures::solana-stable-layout-3.0.0::src/stable_vec.rs",
+        "cpi-signatures::solana-stable-layout-3.0.1::src/stable_instruction.rs",
+        "cpi-signatures::solana-stable-layout-3.0.1::src/stable_vec.rs",
+        "cpi-signatures::solana-program-entrypoint-2.3.0::src/lib.rs",
+        "cpi-signatures::solana-program-entrypoint-3.1.1::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/raw-syscalls.md#review-85ad56313a32ba6d",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@text:778297b7fea994fc",
+        "@text:df44d9d0ec03d777",
+        "@text:62705fc5e29534ed",
+        "@text:4b3e6d0a29b22580",
+        "@binding:5f583f5855e8d5ee",
+        "@binding:0e0734da409a4986",
+        "@binding:d8520a9e72709815",
+        "@binding:4288734bf7f8f1b2",
+        "@binding:025d8e5631e6dc0b",
+        "@text:b1937ac5405b82da",
+        "@text:9222eed7cf79bfc3",
+        "@text:1990fc5cba945d0e"
+      ]
+    }
+  },
+  "packages": {
+    "solana-define-syscall-4.0.1": {
+      "order": 44,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "6fde52632b91530f2492abd9e8f6062509173a75",
+      "path_prefix": "define-syscall/"
+    },
+    "solana-define-syscall-5.1.0": {
+      "order": 54,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "20460d626da00db050d46a103f58116bda2b3403",
+      "path_prefix": "define-syscall/"
+    },
+    "solana-define-syscall-5.2.0": {
+      "order": 55,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "882ea29f565810bfdf6a85700f95c004d24fceda",
+      "path_prefix": "define-syscall/"
+    },
+    "solana-define-syscall-2.3.0": {
+      "order": 66,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "8e5e0b87c5c07b5087e8560bdedb0ee6f6a9ce4a",
+      "path_prefix": "define-syscall/"
+    },
+    "solana-define-syscall-3.0.0": {
+      "order": 106,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "7a807539b71dc0a0e3f87f2ba7b55e63393c0c00",
+      "path_prefix": "define-syscall/"
+    }
+  },
+  "interfaces": {
+    "runtime-helpers::solana-define-syscall-4.0.1::src/definitions.rs": {
+      "order": 134,
+      "crate": "solana-define-syscall-4.0.1",
+      "path": "src/definitions.rs",
+      "sha256": "958fc42c0c792cd01d20fbeb12faad1e01220dc2f785e55c9ccf60625f3a99d5"
+    },
+    "raw-syscalls::solana-define-syscall-5.1.0::src/definitions.rs": {
+      "order": 162,
+      "crate": "solana-define-syscall-5.1.0",
+      "path": "src/definitions.rs",
+      "review_scope": "The declarations of sol_log_ (line 10), sol_sha256 (21), sol_panic_ (36) and abort (37); the other syscalls are not modeled.",
+      "sha256": "3f7587731dac4d70f4e2be26d89a61d43185e2d581684a3150eabdd449134e50"
+    },
+    "raw-syscalls::solana-define-syscall-5.1.0::src/lib.rs": {
+      "order": 163,
+      "crate": "solana-define-syscall-5.1.0",
+      "path": "src/lib.rs",
+      "review_scope": "define_syscall! without the static-syscalls target feature (lines 32-47): an extern \"C\" block declaring the function, with () as the return type when none is written.",
+      "sha256": "f997481296d2fa184c646de11c5af9892376cdf362b02de5317be5992d19581d"
+    },
+    "raw-syscalls::solana-define-syscall-5.2.0::src/definitions.rs": {
+      "order": 164,
+      "crate": "solana-define-syscall-5.2.0",
+      "path": "src/definitions.rs",
+      "review_scope": "Only sol_sha512 (line 25) and sol_curve_multiscalar_mul (line 28).",
+      "sha256": "4fea9c6578e40f84f18f5826e1b380d0b1c3a8c6147b0036f94992adee7ae89f"
+    },
+    "raw-syscalls::solana-define-syscall-5.2.0::src/lib.rs": {
+      "order": 165,
+      "crate": "solana-define-syscall-5.2.0",
+      "path": "src/lib.rs",
+      "review_scope": "Dynamic extern-C branch, lines 33-48; dispatch predicate in source-notes/raw-syscalls.md.",
+      "sha256": "737b180ccbb655a63db26c48a92996ddee2580f87bdde4f2e0aac0e86b81fa1e"
+    },
+    "raw-syscalls::solana-define-syscall-5.2.0::src/curve_constants.rs": {
+      "order": 166,
+      "crate": "solana-define-syscall-5.2.0",
+      "path": "src/curve_constants.rs",
+      "review_scope": "MSM curve IDs: Edwards 0 (line 8), Ristretto 1 (line 11).",
+      "sha256": "edfdafc11c1029621f421b479b7f91690f322dad3ac046d835f12b2416fd2644"
+    },
+    "raw-runtime::solana-define-syscall-2.3.0::src/definitions.rs": {
+      "order": 188,
+      "crate": "solana-define-syscall-2.3.0",
+      "path": "src/definitions.rs",
+      "review_scope": "Only the raw memory, PDA, typed clock/rent/epoch-schedule, stack-height and return-data declarations registered in this fragment; exact per-release inventory mappings select a subset. SHA256 aliases reuse the existing hash contract. No CPI implementation is selected.",
+      "sha256": "00f9cdba7f8425b0f2529ce9454630ee37b8529bdb2544c355f0d8c72e66e20a"
+    },
+    "raw-runtime::solana-define-syscall-2.3.0::src/lib.rs": {
+      "order": 189,
+      "crate": "solana-define-syscall-2.3.0",
+      "path": "src/lib.rs",
+      "review_scope": "Dynamic extern-C define_syscall macro and its static-dispatch cfg alternatives; declaration names remain owned by the expansion crate.",
+      "sha256": "cf8eee6b5ab9ca0b6b803a777bf0eac0fba7c22bfc03e1b77237b22917429436"
+    },
+    "raw-runtime::solana-define-syscall-4.0.1::src/definitions.rs": {
+      "order": 190,
+      "crate": "solana-define-syscall-4.0.1",
+      "path": "src/definitions.rs",
+      "review_scope": "Only the raw memory, PDA, typed clock/rent/epoch-schedule, stack-height and return-data declarations registered in this fragment; exact per-release inventory mappings select a subset. SHA256 aliases reuse the existing hash contract. No CPI implementation is selected.",
+      "sha256": "958fc42c0c792cd01d20fbeb12faad1e01220dc2f785e55c9ccf60625f3a99d5"
+    },
+    "raw-runtime::solana-define-syscall-4.0.1::src/lib.rs": {
+      "order": 191,
+      "crate": "solana-define-syscall-4.0.1",
+      "path": "src/lib.rs",
+      "review_scope": "Dynamic extern-C define_syscall macro and its static-dispatch cfg alternatives; declaration names remain owned by the expansion crate.",
+      "sha256": "f997481296d2fa184c646de11c5af9892376cdf362b02de5317be5992d19581d"
+    },
+    "raw-runtime::solana-define-syscall-5.1.0::src/definitions.rs": {
+      "order": 192,
+      "crate": "solana-define-syscall-5.1.0",
+      "path": "src/definitions.rs",
+      "review_scope": "Only the raw memory, PDA, typed clock/rent/epoch-schedule, stack-height and return-data declarations registered in this fragment; exact per-release inventory mappings select a subset. SHA256 aliases reuse the existing hash contract. No CPI implementation is selected.",
+      "sha256": "3f7587731dac4d70f4e2be26d89a61d43185e2d581684a3150eabdd449134e50"
+    },
+    "raw-runtime::solana-define-syscall-5.1.0::src/lib.rs": {
+      "order": 193,
+      "crate": "solana-define-syscall-5.1.0",
+      "path": "src/lib.rs",
+      "review_scope": "Dynamic extern-C define_syscall macro and its static-dispatch cfg alternatives; declaration names remain owned by the expansion crate.",
+      "sha256": "f997481296d2fa184c646de11c5af9892376cdf362b02de5317be5992d19581d"
+    },
+    "cpi-signatures::solana-define-syscall-2.3.0::src/definitions.rs": {
+      "order": 375,
+      "crate": "solana-define-syscall-2.3.0",
+      "path": "src/definitions.rs",
+      "sha256": "00f9cdba7f8425b0f2529ce9454630ee37b8529bdb2544c355f0d8c72e66e20a",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-define-syscall-2.3.0::src/lib.rs": {
+      "order": 376,
+      "crate": "solana-define-syscall-2.3.0",
+      "path": "src/lib.rs",
+      "sha256": "cf8eee6b5ab9ca0b6b803a777bf0eac0fba7c22bfc03e1b77237b22917429436",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-define-syscall-3.0.0::src/definitions.rs": {
+      "order": 377,
+      "crate": "solana-define-syscall-3.0.0",
+      "path": "src/definitions.rs",
+      "sha256": "679d6691561296cb5329c67cb3847f4b8b04e6d3eb148d7418d82e0a3c4a0306",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-define-syscall-3.0.0::src/lib.rs": {
+      "order": 378,
+      "crate": "solana-define-syscall-3.0.0",
+      "path": "src/lib.rs",
+      "sha256": "cf8eee6b5ab9ca0b6b803a777bf0eac0fba7c22bfc03e1b77237b22917429436",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-define-syscall-5.1.0::src/definitions.rs": {
+      "order": 379,
+      "crate": "solana-define-syscall-5.1.0",
+      "path": "src/definitions.rs",
+      "sha256": "3f7587731dac4d70f4e2be26d89a61d43185e2d581684a3150eabdd449134e50",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    },
+    "cpi-signatures::solana-define-syscall-5.1.0::src/lib.rs": {
+      "order": 380,
+      "crate": "solana-define-syscall-5.1.0",
+      "path": "src/lib.rs",
+      "sha256": "f997481296d2fa184c646de11c5af9892376cdf362b02de5317be5992d19581d",
+      "review_scope": "Exact invocation signatures, local argument preparation, public representation types and dynamic extern declarations. Invocation and callee execution remain opaque; source inspection justifies an assumed interface and is not a body proof."
+    }
+  },
+  "models": {
+    "solana-define-syscall::definitions::abort": {
+      "order": 166,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.abort_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:ba3a1470dba10d9c", "@text:ffc0a369e43f97e2"]
+    },
+    "solana-define-syscall::definitions::sol_curve_multiscalar_mul": {
+      "order": 167,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_curve_multiscalar_mul_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:4e2ead15bfb62c1b"]
+    },
+    "solana-define-syscall::definitions::sol_log_": {
+      "order": 168,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_log__contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:4e52a368f8fc067d", "@text:6ed7d54c638b64e5"]
+    },
+    "solana-define-syscall::definitions::sol_panic_": {
+      "order": 169,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_panic__contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:bd4f9885146bb25e", "@text:ffc0a369e43f97e2"]
+    },
+    "solana-define-syscall::definitions::sol_sha256": {
+      "order": 170,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_sha256_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-78bc9719cc54320d"
+    },
+    "solana-define-syscall::definitions::sol_sha512": {
+      "order": 171,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_sha512_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:6da02fe0f3c08800"]
+    },
+    "solana-define-syscall::definitions::sol_get_rent_sysvar": {
+      "order": 235,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_get_rent_sysvar_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-88c0eb59ed773f24"
+    },
+    "solana-define-syscall::definitions::sol_create_program_address": {
+      "order": 236,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_create_program_address_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-88c0eb59ed773f24"
+    },
+    "solana-define-syscall::definitions::sol_get_clock_sysvar": {
+      "order": 237,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_get_clock_sysvar_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-88c0eb59ed773f24"
+    },
+    "solana-define-syscall::definitions::sol_memcpy_": {
+      "order": 238,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_memcpy__contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-88c0eb59ed773f24"
+    },
+    "solana-define-syscall::definitions::sol_try_find_program_address": {
+      "order": 239,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_try_find_program_address_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-88c0eb59ed773f24"
+    },
+    "solana-define-syscall::definitions::sol_memset_": {
+      "order": 240,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_memset__contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-88c0eb59ed773f24"
+    },
+    "solana-define-syscall::definitions::sol_invoke_signed_rust": {
+      "order": 267,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_invoke_signed_rust_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-ca98373b1903b699"
+    },
+    "solana-define-syscall::definitions::sol_set_return_data": {
+      "order": 433,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_set_return_data_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-88c0eb59ed773f24"
+    },
+    "solana-define-syscall::definitions::sol_get_stack_height": {
+      "order": 472,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_get_stack_height_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-88c0eb59ed773f24"
+    },
+    "solana-define-syscall::definitions::sol_get_epoch_schedule_sysvar": {
+      "order": 473,
+      "contract": "Solanalib.Specs.SolanaDefineSyscall.definitions.sol_get_epoch_schedule_sysvar_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-88c0eb59ed773f24"
+    }
+  },
+  "api": {
+    "solana-define-syscall::definitions::sol_curve_multiscalar_mul": {
+      "order": 145,
+      "source_id": "raw-syscalls::solana-define-syscall-5.2.0::src/definitions.rs",
+      "line": 28,
+      "anchor_text": "define_syscall!(fn sol_curve_multiscalar_mul(curve_id: u64, scalars_addr: *const u8, points_addr: *const u8, points_len: u64, result_point_addr: *mut u8) -> u64);",
+      "scope": "@text:25c63887d775eed6",
+      "binding_obligations": ["@binding:9e1e7876a64e7643"],
+      "rust_names": ["solana_define_syscall::definitions::sol_curve_multiscalar_mul"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.failed_output_write_rejected",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.msm_count_512_returns",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.msm_count_513_precedes_curve",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.msm_zero_inputs_admitted",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.msm_invalid_curve_no_output",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_msm_invalid_returns",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_msm_invalid_stops",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_msm_unregistered",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_msm_decode_failure",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_msm_success",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.invalid_curve_success_rejected",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.paired_inputs_keep_widths",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.short_msm_output_rejected",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.unknown_msm_status_rejected"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.RawSyscall.msmFamily",
+        "Solanalib.Specs.Core.RawSyscall.MsmWidth",
+        "Solanalib.Specs.Core.RawSyscall.canonicalMsm",
+        "Solanalib.Specs.Core.RawSyscall.canonical_msm_returned_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_msm_post_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_msm_terminated_iff"
+      ],
+      "models": ["solana-define-syscall::definitions::sol_curve_multiscalar_mul"],
+      "binding_defaults": false
+    },
+    "solana-define-syscall::definitions::sol_sha512": {
+      "order": 146,
+      "source_id": "raw-syscalls::solana-define-syscall-5.2.0::src/definitions.rs",
+      "line": 25,
+      "anchor_text": "define_syscall!(fn sol_sha512(vals: *const u8, val_len: u64, hash_result: *mut u8) -> u64);",
+      "scope": "@text:c84ec9e3d4f17dd2",
+      "binding_obligations": ["@binding:401acecbe6991f00"],
+      "rust_names": ["solana_define_syscall::definitions::sol_sha512"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_sha512_two_slices",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_sha512_empty_unaligned",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_sha512_unregistered",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.sha512_old_release_unregistered",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.sha512_unaligned_no_return",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.split_sha512_output_rejected",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.short_sha512_output_rejected"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.RawSyscall.sha512Family",
+        "Solanalib.Specs.Core.RawSyscall.canonicalSha512",
+        "Solanalib.Specs.Core.RawSyscall.canonical_sha512_returned_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_sha512_post_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_sha512_terminated_iff"
+      ],
+      "models": ["solana-define-syscall::definitions::sol_sha512"],
+      "binding_defaults": false
+    },
+    "solana-define-syscall@5.1.0::definitions::abort": {
+      "order": 147,
+      "source_id": "raw-syscalls::solana-define-syscall-5.1.0::src/definitions.rs",
+      "line": 37,
+      "anchor_text": "define_syscall!(fn abort() -> !);",
+      "scope": "@text:d886703f6ba76058",
+      "binding_obligations": ["@binding:c290248368f11032", "@binding:fa3b72d31a81bd91", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["solana_define_syscall::definitions::abort"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_abort_stops",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.abort_answer_not_returned"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.RawSyscall.Index",
+        "Solanalib.Specs.Core.RawSyscall.canonical",
+        "Solanalib.Specs.Core.RawSyscall.Fails",
+        "Solanalib.Specs.Core.RawSyscall.stops",
+        "Solanalib.Specs.Core.RawSyscall.abortFamily",
+        "Solanalib.Specs.Core.RawSyscall.canonical_abort_no_answer",
+        "Solanalib.Specs.Core.RawSyscall.canonical_abort_iff"
+      ],
+      "models": ["solana-define-syscall::definitions::abort"],
+      "binding_defaults": false
+    },
+    "solana-define-syscall@5.1.0::definitions::sol_log_": {
+      "order": 148,
+      "source_id": "raw-syscalls::solana-define-syscall-5.1.0::src/definitions.rs",
+      "line": 10,
+      "anchor_text": "define_syscall!(fn sol_log_(message: *const u8, len: u64));",
+      "scope": "@text:370e63b046d8c9ad",
+      "binding_obligations": ["@binding:f7b63a436d462d41", "@binding:fa3b72d31a81bd91", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["solana_define_syscall::definitions::sol_log_"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_log_utf8",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_log_invalid",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.exhausted_log_stops"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.RawSyscall.Index",
+        "Solanalib.Specs.Core.RawSyscall.canonical",
+        "Solanalib.Specs.Core.RawSyscall.Fails",
+        "Solanalib.Specs.Core.RawSyscall.Answered",
+        "Solanalib.Specs.Core.RawSyscall.logFamily",
+        "Solanalib.Specs.Core.RawSyscall.logPost_unanswered",
+        "Solanalib.Specs.Core.RawSyscall.canonical_log_returned_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_log_answered_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_log_terminated_iff"
+      ],
+      "models": ["solana-define-syscall::definitions::sol_log_"],
+      "binding_defaults": false
+    },
+    "solana-define-syscall@5.1.0::definitions::sol_panic_": {
+      "order": 149,
+      "source_id": "raw-syscalls::solana-define-syscall-5.1.0::src/definitions.rs",
+      "line": 36,
+      "anchor_text": "define_syscall!(fn sol_panic_(filename: *const u8, filename_len: u64, line: u64, column: u64) -> !);",
+      "scope": "@text:e4ae0d7e534796af",
+      "binding_obligations": ["@binding:521ee5e5e48db40b", "@binding:fa3b72d31a81bd91", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["solana_define_syscall::definitions::sol_panic_"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_panic_stops",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.panic_answer_not_returned"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.RawSyscall.Index",
+        "Solanalib.Specs.Core.RawSyscall.canonical",
+        "Solanalib.Specs.Core.RawSyscall.Fails",
+        "Solanalib.Specs.Core.RawSyscall.stops",
+        "Solanalib.Specs.Core.RawSyscall.PanicArgs",
+        "Solanalib.Specs.Core.RawSyscall.panicFamily",
+        "Solanalib.Specs.Core.RawSyscall.canonical_panic_no_answer",
+        "Solanalib.Specs.Core.RawSyscall.canonical_panic_iff"
+      ],
+      "models": ["solana-define-syscall::definitions::sol_panic_"],
+      "binding_defaults": false
+    },
+    "solana-define-syscall@5.1.0::definitions::sol_sha256": {
+      "order": 150,
+      "source_id": "raw-syscalls::solana-define-syscall-5.1.0::src/definitions.rs",
+      "line": 21,
+      "anchor_text": "define_syscall!(fn sol_sha256(vals: *const u8, val_len: u64, hash_result: *mut u8) -> u64);",
+      "scope": "@text:20b76a5dff2d39a8",
+      "binding_obligations": ["@binding:44ae024359492a59", "@binding:fa3b72d31a81bd91", "@binding:5190a32e6baa1ea3"],
+      "rust_names": ["solana_define_syscall::definitions::sol_sha256"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_hash_returned",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_hash_over_limit",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_hash_post",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_hash_width",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_hash_unaligned",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_hash_empty_unaligned",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_v0_unaligned",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_hash_v0_unaligned",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.split_digest_breaks_law",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.nonzero_written_breaks_law",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.nonzero_status_returned",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.hash_terminal_passed",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.answering_hash_within_limit",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.answering_hash_over_limit"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.RawSyscall.Index",
+        "Solanalib.Specs.Core.RawSyscall.canonical",
+        "Solanalib.Specs.Core.RawSyscall.Fails",
+        "Solanalib.Specs.Core.RawSyscall.HashShape",
+        "Solanalib.Specs.Core.RawSyscall.Sha256Args",
+        "Solanalib.Specs.Core.RawSyscall.Sha256Args.unaligned",
+        "Solanalib.Specs.Core.RawSyscall.Sha256Args.overLimit",
+        "Solanalib.Specs.Core.RawSyscall.Sha256Args.rejected",
+        "Solanalib.Specs.Core.RawSyscall.sha256Post_rejected",
+        "Solanalib.Specs.Core.RawSyscall.aborted",
+        "Solanalib.Specs.Core.RawSyscall.sha256Family",
+        "Solanalib.Specs.Core.RawSyscall.canonical_sha256_returned_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_sha256_terminated_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_sha256_unaligned_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_sha256_post_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_unaligned_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_checkAligned",
+        "Solanalib.Specs.Core.RawSyscall.canonical_overLimit_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_rejected_eq_false_iff"
+      ],
+      "models": ["solana-define-syscall::definitions::sol_sha256"],
+      "binding_defaults": false
+    },
+    "solana-define-syscall@2.3.0::definitions::sol_create_program_address": {
+      "order": 221,
+      "source_id": "raw-runtime::solana-define-syscall-2.3.0::src/definitions.rs",
+      "line": 19,
+      "anchor_text": "define_syscall!(fn sol_create_program_address(seeds_addr: *const u8, seeds_len: u64, program_id_addr: *const u8, address_bytes_addr: *const u8) -> u64);",
+      "models": ["solana-define-syscall::definitions::sol_create_program_address"],
+      "scope": "@text:e4f36a6a3a701d89",
+      "binding_obligations": "@shared:binding-obligations-4fa1534a71935507",
+      "rust_names": ["solana_define_syscall::definitions::sol_create_program_address"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.create_success",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.create_on_curve",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.create_count",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.create_seed_length"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.RawAddress.createStep"]
+    },
+    "solana-define-syscall@2.3.0::definitions::sol_memset_": {
+      "order": 222,
+      "source_id": "raw-runtime::solana-define-syscall-2.3.0::src/definitions.rs",
+      "line": 17,
+      "anchor_text": "define_syscall!(fn sol_memset_(s: *mut u8, c: u8, n: u64));",
+      "models": ["solana-define-syscall::definitions::sol_memset_"],
+      "scope": "@text:484c3a8f11682025",
+      "binding_obligations": "@shared:binding-obligations-4fa1534a71935507",
+      "rust_names": ["solana_define_syscall::definitions::sol_memset_"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.set_bytes",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.set_empty"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.RawMemory.setStep"]
+    },
+    "solana-define-syscall@2.3.0::definitions::sol_memcpy_": {
+      "order": 223,
+      "source_id": "raw-runtime::solana-define-syscall-2.3.0::src/definitions.rs",
+      "line": 14,
+      "anchor_text": "define_syscall!(fn sol_memcpy_(dst: *mut u8, src: *const u8, n: u64));",
+      "models": ["solana-define-syscall::definitions::sol_memcpy_"],
+      "scope": "@text:84abe77fa64be87f",
+      "binding_obligations": "@shared:binding-obligations-4fa1534a71935507",
+      "rust_names": ["solana_define_syscall::definitions::sol_memcpy_"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.copy_bytes",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.copy_overlap",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.copy_empty"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.RawMemory.copyStep"]
+    },
+    "solana-define-syscall@2.3.0::definitions::sol_try_find_program_address": {
+      "order": 224,
+      "source_id": "raw-runtime::solana-define-syscall-2.3.0::src/definitions.rs",
+      "line": 20,
+      "anchor_text": "define_syscall!(fn sol_try_find_program_address(seeds_addr: *const u8, seeds_len: u64, program_id_addr: *const u8, address_bytes_addr: *const u8, bump_seed_addr: *const u8) -> u64);",
+      "models": ["solana-define-syscall::definitions::sol_try_find_program_address"],
+      "scope": "@text:f8db8a56506d7741",
+      "binding_obligations": "@shared:binding-obligations-4fa1534a71935507",
+      "rust_names": ["solana_define_syscall::definitions::sol_try_find_program_address"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.find_success",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.find_on_curve_overlap",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.find_overlap"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.RawAddress.findStep"]
+    },
+    "solana-define-syscall@2.3.0::definitions::sol_get_clock_sysvar": {
+      "order": 225,
+      "source_id": "raw-runtime::solana-define-syscall-2.3.0::src/definitions.rs",
+      "line": 36,
+      "anchor_text": "define_syscall!(fn sol_get_clock_sysvar(addr: *mut u8) -> u64);",
+      "models": ["solana-define-syscall::definitions::sol_get_clock_sysvar"],
+      "scope": "@text:b689c4aeeaf5739d",
+      "binding_obligations": "@shared:binding-obligations-4fa1534a71935507",
+      "rust_names": ["solana_define_syscall::definitions::sol_get_clock_sysvar"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.clock_bytes",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.typed_v0",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.typed_input_restricted"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.RawState.typedStep"]
+    },
+    "solana-define-syscall@2.3.0::definitions::sol_get_rent_sysvar": {
+      "order": 226,
+      "source_id": "raw-runtime::solana-define-syscall-2.3.0::src/definitions.rs",
+      "line": 38,
+      "anchor_text": "define_syscall!(fn sol_get_rent_sysvar(addr: *mut u8) -> u64);",
+      "models": ["solana-define-syscall::definitions::sol_get_rent_sysvar"],
+      "scope": "@text:5d651e72688ae836",
+      "binding_obligations": "@shared:binding-obligations-4fa1534a71935507",
+      "rust_names": ["solana_define_syscall::definitions::sol_get_rent_sysvar"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.rent_bytes",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.typed_unaligned"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.RawState.typedStep"]
+    },
+    "solana-define-syscall@2.3.0::definitions::sol_sha256": {
+      "order": 227,
+      "source_id": "raw-runtime::solana-define-syscall-2.3.0::src/definitions.rs",
+      "line": 21,
+      "anchor_text": "define_syscall!(fn sol_sha256(vals: *const u8, val_len: u64, hash_result: *mut u8) -> u64);",
+      "models": ["solana-define-syscall::definitions::sol_sha256"],
+      "scope": "@text:20b76a5dff2d39a8",
+      "binding_obligations": [
+        "@binding:00e8e1acec00ca35",
+        "@binding:44ae024359492a59",
+        "@binding:fa3b72d31a81bd91",
+        "@binding:5190a32e6baa1ea3"
+      ],
+      "rust_names": ["solana_define_syscall::definitions::sol_sha256"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_hash_returned",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_hash_over_limit",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_hash_post",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_hash_width",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_hash_unaligned",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_hash_empty_unaligned",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_v0_unaligned",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.canonical_hash_v0_unaligned",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.split_digest_breaks_law",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.nonzero_written_breaks_law",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.nonzero_status_returned",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.hash_terminal_passed",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.answering_hash_within_limit",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Definitions.answering_hash_over_limit"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.RawSyscall.Index",
+        "Solanalib.Specs.Core.RawSyscall.canonical",
+        "Solanalib.Specs.Core.RawSyscall.Fails",
+        "Solanalib.Specs.Core.RawSyscall.HashShape",
+        "Solanalib.Specs.Core.RawSyscall.Sha256Args",
+        "Solanalib.Specs.Core.RawSyscall.Sha256Args.unaligned",
+        "Solanalib.Specs.Core.RawSyscall.Sha256Args.overLimit",
+        "Solanalib.Specs.Core.RawSyscall.Sha256Args.rejected",
+        "Solanalib.Specs.Core.RawSyscall.sha256Post_rejected",
+        "Solanalib.Specs.Core.RawSyscall.aborted",
+        "Solanalib.Specs.Core.RawSyscall.sha256Family",
+        "Solanalib.Specs.Core.RawSyscall.canonical_sha256_returned_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_sha256_terminated_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_sha256_unaligned_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_sha256_post_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_unaligned_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_checkAligned",
+        "Solanalib.Specs.Core.RawSyscall.canonical_overLimit_iff",
+        "Solanalib.Specs.Core.RawSyscall.canonical_rejected_eq_false_iff"
+      ],
+      "binding_defaults": false
+    },
+    "solana-define-syscall@2.3.0::definitions::sol_invoke_signed_rust": {
+      "order": 265,
+      "source_id": "cpi-signatures::solana-define-syscall-2.3.0::src/definitions.rs",
+      "line": 7,
+      "anchor_text": "define_syscall!(fn sol_invoke_signed_rust(instruction_addr: *const u8, account_infos_addr: *const u8, account_infos_len: u64, signers_seeds_addr: *const u8, signers_seeds_len: u64) -> u64);",
+      "scope": "@text:8b9eece1c7d7fd21",
+      "binding_obligations": "@shared:binding-obligations-ead809654050e5c0",
+      "rust_names": ["solana_define_syscall::definitions::sol_invoke_signed_rust"],
+      "clients": [
+        "SolanalibTest.Specs.Core.OpaqueCpi.raw_success",
+        "SolanalibTest.Specs.Core.OpaqueCpi.nonzero_is_rejected",
+        "SolanalibTest.Specs.Core.OpaqueCpi.seed_failure_no_return"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.OpaqueCpi.Index",
+        "Solanalib.Specs.Core.OpaqueCpi.Success",
+        "Solanalib.Specs.Core.OpaqueCpi.Failure",
+        "Solanalib.Specs.Core.CpiRequest.Request"
+      ],
+      "models": ["solana-define-syscall::definitions::sol_invoke_signed_rust"],
+      "binding_defaults": false
+    },
+    "solana-define-syscall@5.1.0::definitions::sol_create_program_address": {
+      "order": 459,
+      "source_id": "raw-runtime::solana-define-syscall-5.1.0::src/definitions.rs",
+      "line": 19,
+      "anchor_text": "define_syscall!(fn sol_create_program_address(seeds_addr: *const u8, seeds_len: u64, program_id_addr: *const u8, address_bytes_addr: *const u8) -> u64);",
+      "scope": "@text:e4f36a6a3a701d89",
+      "binding_obligations": "@shared:binding-obligations-cfded73a7f40e27c",
+      "rust_names": ["solana_define_syscall::definitions::sol_create_program_address"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.create_success",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.create_on_curve",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.create_count",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.create_seed_length"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.RawAddress.createStep"],
+      "models": ["solana-define-syscall::definitions::sol_create_program_address"],
+      "binding_defaults": false
+    },
+    "solana-define-syscall@4.0.1::definitions::sol_set_return_data": {
+      "order": 461,
+      "source_id": "raw-runtime::solana-define-syscall-4.0.1::src/definitions.rs",
+      "line": 8,
+      "anchor_text": "define_syscall!(fn sol_set_return_data(data: *const u8, length: u64));",
+      "models": ["solana-define-syscall::definitions::sol_set_return_data"],
+      "scope": "@text:a7c535b6f3601753",
+      "binding_obligations": "@shared:binding-obligations-df9d9e20a3218a68",
+      "rust_names": ["solana_define_syscall::definitions::sol_set_return_data"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.return_set",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.return_clear",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.return_too_long",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.return_protocol"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.RawState.setReturnStep"],
+      "binding_defaults": false
+    },
+    "solana-define-syscall@3.0.0::definitions::sol_invoke_signed_rust": {
+      "order": 487,
+      "source_id": "cpi-signatures::solana-define-syscall-3.0.0::src/definitions.rs",
+      "line": 7,
+      "anchor_text": "define_syscall!(fn sol_invoke_signed_rust(instruction_addr: *const u8, account_infos_addr: *const u8, account_infos_len: u64, signers_seeds_addr: *const u8, signers_seeds_len: u64) -> u64);",
+      "scope": "@text:8b9eece1c7d7fd21",
+      "binding_obligations": "@shared:binding-obligations-ead809654050e5c0",
+      "rust_names": ["solana_define_syscall::definitions::sol_invoke_signed_rust"],
+      "clients": [
+        "SolanalibTest.Specs.Core.OpaqueCpi.raw_success",
+        "SolanalibTest.Specs.Core.OpaqueCpi.nonzero_is_rejected",
+        "SolanalibTest.Specs.Core.OpaqueCpi.seed_failure_no_return"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.OpaqueCpi.Index",
+        "Solanalib.Specs.Core.OpaqueCpi.Success",
+        "Solanalib.Specs.Core.OpaqueCpi.Failure",
+        "Solanalib.Specs.Core.CpiRequest.Request"
+      ],
+      "models": ["solana-define-syscall::definitions::sol_invoke_signed_rust"],
+      "binding_defaults": false
+    },
+    "solana-define-syscall@4.0.1::definitions::sol_memset_": {
+      "order": 503,
+      "source_id": "raw-runtime::solana-define-syscall-4.0.1::src/definitions.rs",
+      "line": 17,
+      "anchor_text": "define_syscall!(fn sol_memset_(s: *mut u8, c: u8, n: u64));",
+      "models": ["solana-define-syscall::definitions::sol_memset_"],
+      "scope": "@text:484c3a8f11682025",
+      "binding_obligations": "@shared:binding-obligations-df9d9e20a3218a68",
+      "rust_names": ["solana_define_syscall::definitions::sol_memset_"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.set_bytes",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.set_empty"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.RawMemory.setStep"],
+      "binding_defaults": false
+    },
+    "solana-define-syscall@4.0.1::definitions::sol_memcpy_": {
+      "order": 515,
+      "source_id": "raw-runtime::solana-define-syscall-4.0.1::src/definitions.rs",
+      "line": 14,
+      "anchor_text": "define_syscall!(fn sol_memcpy_(dst: *mut u8, src: *const u8, n: u64));",
+      "models": ["solana-define-syscall::definitions::sol_memcpy_"],
+      "scope": "@text:84abe77fa64be87f",
+      "binding_obligations": "@shared:binding-obligations-df9d9e20a3218a68",
+      "rust_names": ["solana_define_syscall::definitions::sol_memcpy_"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.copy_bytes",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.copy_overlap",
+        "SolanalibTest.Specs.SolanaDefineSyscall.Runtime.copy_empty"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.RawMemory.copyStep"],
+      "binding_defaults": false
+    },
+    "solana-define-syscall@5.1.0::definitions::sol_get_stack_height": {
+      "order": 579,
+      "source_id": "raw-runtime::solana-define-syscall-5.1.0::src/definitions.rs",
+      "line": 9,
+      "anchor_text": "define_syscall!(fn sol_get_stack_height() -> u64);",
+      "scope": "@text:f8d2a4fa844c8cb4",
+      "binding_obligations": "@shared:binding-obligations-cfded73a7f40e27c",
+      "rust_names": ["solana_define_syscall::definitions::sol_get_stack_height"],
+      "clients": ["SolanalibTest.Specs.SolanaDefineSyscall.Runtime.stack_observation"],
+      "model_dependencies": ["Solanalib.Specs.Core.RawState.stackStep"],
+      "models": ["solana-define-syscall::definitions::sol_get_stack_height"],
+      "binding_defaults": false
+    },
+    "solana-define-syscall@4.0.1::definitions::sol_get_epoch_schedule_sysvar": {
+      "order": 580,
+      "source_id": "raw-runtime::solana-define-syscall-4.0.1::src/definitions.rs",
+      "line": 54,
+      "anchor_text": "define_syscall!(#[deprecated(since = \"3.0.0\", note = \"Use `sol_get_sysvar` with `EpochSchedule` sysvar address instead\")] fn sol_get_epoch_schedule_sysvar(addr: *mut u8) -> u64);",
+      "models": ["solana-define-syscall::definitions::sol_get_epoch_schedule_sysvar"],
+      "scope": "@text:787646352099e3d8",
+      "binding_obligations": "@shared:binding-obligations-df9d9e20a3218a68",
+      "rust_names": ["solana_define_syscall::definitions::sol_get_epoch_schedule_sysvar"],
+      "clients": ["SolanalibTest.Specs.SolanaDefineSyscall.Runtime.epoch_bytes"],
+      "model_dependencies": ["Solanalib.Specs.Core.RawState.typedStep"],
+      "binding_defaults": false
+    }
+  },
+  "applicability_sources": {
+    "solana-define-syscall": {
+      "order": 17,
+      "package": "solana-define-syscall",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-0.0.1.crate",
+          "sha256": "2a7eb07c6e72172bb4cfe47b83c7a9d5f026e2249d39c469ade56ae564bc2792"
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-0.0.2.crate",
+          "sha256": "548227df52f573e21b41a61d722ffa4b5194052114dc85cb7508c3a59e6f2f60",
+          "revision": "2d9764a01669f65d32960df605fd266cb8813891",
+          "path_prefix": "define-syscall/",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.0.crate",
+          "sha256": "7062ae1de58e294d3bee5fd2c89efc155b7f7383ddce4cb88345dfafaaabc5bd",
+          "revision": "c1080de464cfb578c301e975f498964b5d5313db",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.1.crate",
+          "sha256": "49d4c912636ef11caeca0c097d020060f0021bf2d45707c0d15811cc0ca1db78",
+          "revision": "adeac02216dae627b90d7498a26e04276e88ed29",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.2.crate",
+          "sha256": "debfb6b4d3b263112fd001e6102cba148674807ef9c6cd7a80c3883137881032",
+          "revision": "cefd3f13a2b8c1f3f8332ebeea3d7bf44d547a9a",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.4.crate",
+          "sha256": "8973c0e4811e915f5ee84b68cea4af8231e8157f47b6f6a7aebbac2777227eb5",
+          "revision": "024d047eedba22768099cc6509414202400c6231",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.5.crate",
+          "sha256": "6dae93c2bfe6a19a652d9b7c5c085540aac1e5ed6504d40ed0cb7271c935121b",
+          "revision": "4da190bd01724d1433cff65782100978aefd4c00",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.6.crate",
+          "sha256": "a23cf0144176f94019a27ce46372661f67007232eea16cae96cb985fc25131d5",
+          "revision": "c15e6692b1eb2e9196a5d51af5ee8cb57ab7e689",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.7.crate",
+          "sha256": "14a80d323dbe8866aaefb40e3c11564d82f77894d193fa66583e793f3d845723",
+          "revision": "c79c3c9e67274594ed4f43ed8386e9ddc60a99e9",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.8.crate",
+          "sha256": "6452c4a8fc77cc60ad2934b19f2d75691067f17355b34462d52285395c1c99db",
+          "revision": "6ea38fce866595908486a01c7d6b7182988f3b2d",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.9.crate",
+          "sha256": "d145184b5a9ada39c4cf1f5610cb33d342767c58f7fc87bd3b5ea51f183c2937",
+          "revision": "fdb6acc0a634fd0f1fd060d13aa4142c2e4601de",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.10.crate",
+          "sha256": "88d1b215d56d29f71782df6880d71b5a46cf9a4035046414488c7de6906899ba",
+          "revision": "33ab693d94c787e64686e7b2d2f49492eae63885",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.11.crate",
+          "sha256": "44015e77f6f321bf526f7d026b08d8f34b57b1ea6e46038fd13e59f43a53a475",
+          "revision": "134be7c14066ea00c9791187d6bbc4795dd92f0e",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.12.crate",
+          "sha256": "366739af4e4606111a1c62ab1c91376d7d42864f79b9b863b5544fc56e140c27",
+          "revision": "00cfd3ee36e9f2af78465731e87a063504753385",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.13.crate",
+          "sha256": "3c012a5bdc1122a74880faf6684b32286a9fae0086ff0a3efb16d7f3681fca90",
+          "revision": "67412607f511ded3770031280b6aaf10607713fc",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.14.crate",
+          "sha256": "3adef0610d7ef3cecb5138f0b39aa0a025e5f4cb239077d61796f1f42585f73c",
+          "revision": "3ad46824358db6337072ad2b5d50ebcab6e1f113",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.15": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.15.crate",
+          "sha256": "57e04196a96e8f2e6a9896430ab2ef0b04e6f3d5831483a8f26e23297ebf909f",
+          "revision": "535456856619786b7ac47b5b50b0a730e571365d",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.16": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.16.crate",
+          "sha256": "84f881e58ab631d40ca215ea4aae3e4a84aa8d6672ba7480c3988391fe139d3e",
+          "revision": "5002c63047230994282abd24207414126cb57e22",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.17": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.17.crate",
+          "sha256": "beb93a1260b0c48ba28a349be37b944fe5c8d4bdf234312ecf60c60e47c13cf3",
+          "revision": "4adcd0f2f9075d9a2c08e3e12a694ced58f2af29",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.18": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.18.crate",
+          "sha256": "098f32d573a4803318b4df8776450251ac424b43bc7d0c1bc5a50700f2ffccca",
+          "revision": "f91c2fcac24eee5a40f10606540ef6e08d1b6655",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.20": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.20.crate",
+          "sha256": "42087a9f1567719e19eb9f2fe91ee620881690cb8012add9926478e051329b01",
+          "revision": "89985de3c6a8643f90af5dcb14bed23382bee088",
+          "path_prefix": "define-syscall/"
+        },
+        "2.1.21": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.1.21.crate",
+          "sha256": "592a9b501608cb642af6ad9d07c8be8827772c20d1afa5173c85c561da7942a3",
+          "revision": "8a085eebcb901b6846d1f82f4636667742146545",
+          "path_prefix": "define-syscall/"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.2.0.crate",
+          "sha256": "acfe725269aac42d044cca5a99cfe8bd3b3f10e8d429b51f0c274e434fb34556",
+          "revision": "1baa4033e0d2d4175373f07b73ddda2f3cc0a8d6",
+          "path_prefix": "sdk/define-syscall/"
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.2.1.crate",
+          "sha256": "cf784bb2cb3e02cac9801813c30187344228d2ae952534902108f6150573a33d",
+          "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+          "path_prefix": "define-syscall/",
+          "repository": "https://github.com/anza-xyz/solana-sdk"
+        },
+        "2.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-2.3.0.crate",
+          "sha256": "2ae3e2abcf541c8122eafe9a625d4d194b4023c20adde1e251f94e056bb1aee2",
+          "revision": "8e5e0b87c5c07b5087e8560bdedb0ee6f6a9ce4a",
+          "path_prefix": "define-syscall/"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-3.0.0.crate",
+          "sha256": "f9697086a4e102d28a156b8d6b521730335d6951bd39a5e766512bbe09007cee",
+          "revision": "7a807539b71dc0a0e3f87f2ba7b55e63393c0c00",
+          "path_prefix": "define-syscall/"
+        },
+        "4.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.0.crate",
+          "sha256": "6de3e19c9b1e58cf36381e4d870a19f0c2d356c3f7b6b635cd8a55c258b77158",
+          "revision": "44385d6b662ffcc189482aba715602676463fcb2",
+          "path_prefix": "define-syscall/"
+        },
+        "4.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-4.0.1.crate",
+          "sha256": "57e5b1c0bc1d4a4d10c88a4100499d954c09d3fecfae4912c1a074dff68b1738",
+          "revision": "6fde52632b91530f2492abd9e8f6062509173a75",
+          "path_prefix": "define-syscall/"
+        },
+        "5.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.0.0.crate",
+          "sha256": "03aacdd7a61e2109887a7a7f046caebafce97ddf1150f33722eeac04f9039c73",
+          "revision": "f1ad353a4f64cdc0b04ab1156f0087a0ea138999",
+          "path_prefix": "define-syscall/"
+        },
+        "5.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.1.0.crate",
+          "sha256": "21e14a4f604117f379840956a8fc8695e4c84f5b0ebed192f31f60d9b85d581d",
+          "revision": "20460d626da00db050d46a103f58116bda2b3403",
+          "path_prefix": "define-syscall/"
+        },
+        "5.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.2.0.crate",
+          "sha256": "bf8209ece2bd9f1450e672858ffc0e5c8c786ff6916d2a862b126dd0128f380f",
+          "revision": "882ea29f565810bfdf6a85700f95c004d24fceda",
+          "path_prefix": "define-syscall/"
+        },
+        "5.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.3.0.crate",
+          "sha256": "e4d02bb1453b6f9e1e705383a44b98a8722669b44adcdfe3643183987fdad72e",
+          "revision": "1b210707e98d17050c5b16f229e80c94f9d5b6ae",
+          "path_prefix": "define-syscall/"
+        },
+        "5.4.0": {
+          "archive_url": "https://static.crates.io/crates/solana-define-syscall/solana-define-syscall-5.4.0.crate",
+          "sha256": "8506988b0997022c4f2801985d9c4dccfb18c16e6a38f30390a47d54efeca805",
+          "revision": "0bd22b501370658c70ed53659d5bc9fb98935e96",
+          "path_prefix": "define-syscall/"
+        }
+      },
+      "evidence": ["@text:8dafdf67556fe616"]
+    }
+  },
+  "applicability": {
+    "solana-define-syscall::definitions::abort": {
+      "order": 166,
+      "profiles": [
+        {
+          "id": "solana-define-syscall-reviewed-modern-dispatch-non-bpf",
+          "source": "solana-define-syscall",
+          "conditions": "@shared:conditions-23eb7d6fe9d52bcc",
+          "argument": "@review:source-notes/raw-syscalls.md#review-0f30b0cfb5804209",
+          "evidence": ["@text:f27709051889e20e", "@text:3d9d343f3d6d2403"],
+          "target_features": {"reason": "@text:58075a57a9bd59fb", "none": ["static-syscalls"]},
+          "target": "@shared:target-2566d5d683dcda14",
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::abort",
+              "implementation": "solana_define_syscall::definitions::abort",
+              "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"],
+              "compatible_ranges": "@shared:compatible-ranges-b01ca1c245c0a9c1"
+            }
+          ],
+          "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"]
+        },
+        {
+          "id": "solana-define-syscall-reviewed-modern-dispatch-bpf",
+          "source": "solana-define-syscall",
+          "conditions": "@shared:conditions-23eb7d6fe9d52bcc",
+          "argument": "@review:source-notes/raw-syscalls.md#review-0f30b0cfb5804209",
+          "evidence": ["@text:f27709051889e20e", "@text:3d9d343f3d6d2403"],
+          "target_features": {"reason": "@text:58075a57a9bd59fb", "none": ["static-syscalls"]},
+          "target": "@shared:target-4bfd432252e6342d",
+          "features": "@shared:features-99271f63266b36b3",
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::abort",
+              "implementation": "solana_define_syscall::definitions::abort",
+              "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"],
+              "compatible_ranges": "@shared:compatible-ranges-b01ca1c245c0a9c1"
+            }
+          ],
+          "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"]
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_curve_multiscalar_mul": {
+      "order": 167,
+      "profiles": [
+        {
+          "id": "solana-define-syscall-dynamic-legacy",
+          "source": "solana-define-syscall",
+          "conditions": ["@text:d35187a680b26309"],
+          "argument": "@review:source-notes/raw-syscalls.md#review-75b423598790bb04",
+          "evidence": ["@text:dfdff9add27f743f", "@text:e0b3cbfa27fcd70e"],
+          "target_features": {"reason": "@text:58075a57a9bd59fb", "none": ["static-syscalls"]},
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::sol_curve_multiscalar_mul",
+              "implementation": "solana_define_syscall::definitions::sol_curve_multiscalar_mul",
+              "releases": ["2.2.0", "2.2.1", "2.3.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-99da6c15d19f7d33"
+            }
+          ],
+          "releases": ["2.2.0", "2.2.1", "2.3.0", "3.0.0"]
+        },
+        {
+          "id": "solana-define-syscall-dynamic-non-bpf",
+          "source": "solana-define-syscall",
+          "conditions": ["@text:d35187a680b26309"],
+          "argument": "@review:source-notes/raw-syscalls.md#review-75b423598790bb04",
+          "evidence": ["@text:dfdff9add27f743f", "@text:e0b3cbfa27fcd70e"],
+          "target_features": {"reason": "@text:58075a57a9bd59fb", "none": ["static-syscalls"]},
+          "target": "@shared:target-2566d5d683dcda14",
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::sol_curve_multiscalar_mul",
+              "implementation": "solana_define_syscall::definitions::sol_curve_multiscalar_mul",
+              "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"],
+              "compatible_ranges": "@shared:compatible-ranges-b01ca1c245c0a9c1"
+            }
+          ],
+          "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"]
+        },
+        {
+          "id": "solana-define-syscall-dynamic-bpf",
+          "source": "solana-define-syscall",
+          "conditions": ["@text:d35187a680b26309"],
+          "argument": "@review:source-notes/raw-syscalls.md#review-75b423598790bb04",
+          "evidence": ["@text:dfdff9add27f743f", "@text:e0b3cbfa27fcd70e"],
+          "target_features": {"reason": "@text:58075a57a9bd59fb", "none": ["static-syscalls"]},
+          "target": "@shared:target-4bfd432252e6342d",
+          "features": "@shared:features-99271f63266b36b3",
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::sol_curve_multiscalar_mul",
+              "implementation": "solana_define_syscall::definitions::sol_curve_multiscalar_mul",
+              "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"],
+              "compatible_ranges": "@shared:compatible-ranges-b01ca1c245c0a9c1"
+            }
+          ],
+          "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"]
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_log_": {
+      "order": 168,
+      "profiles": [
+        {
+          "id": "solana-define-syscall-reviewed-direct",
+          "source": "solana-define-syscall",
+          "conditions": "@shared:conditions-323be628f5314e26",
+          "argument": "@review:source-notes/raw-syscalls.md#review-bed7c13206ec1363",
+          "evidence": ["@text:c3e64544dcdefda1", "@text:3d9d343f3d6d2403"],
+          "target_features": {"reason": "@text:c4937357f9eab53b", "none": ["static-syscalls"]},
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::sol_log_",
+              "implementation": "solana_define_syscall::definitions::sol_log_",
+              "releases": ["2.2.0", "2.2.1", "2.3.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-99da6c15d19f7d33"
+            }
+          ],
+          "releases": ["2.2.0", "2.2.1", "2.3.0", "3.0.0"]
+        },
+        {
+          "id": "solana-define-syscall-reviewed-modern-dispatch-non-bpf",
+          "source": "solana-define-syscall",
+          "conditions": "@shared:conditions-323be628f5314e26",
+          "argument": "@review:source-notes/raw-syscalls.md#review-bed7c13206ec1363",
+          "evidence": ["@text:c3e64544dcdefda1", "@text:3d9d343f3d6d2403"],
+          "target_features": {"reason": "@text:58075a57a9bd59fb", "none": ["static-syscalls"]},
+          "target": "@shared:target-2566d5d683dcda14",
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::sol_log_",
+              "implementation": "solana_define_syscall::definitions::sol_log_",
+              "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"],
+              "compatible_ranges": "@shared:compatible-ranges-b01ca1c245c0a9c1"
+            }
+          ],
+          "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"]
+        },
+        {
+          "id": "solana-define-syscall-reviewed-modern-dispatch-bpf",
+          "source": "solana-define-syscall",
+          "conditions": "@shared:conditions-323be628f5314e26",
+          "argument": "@review:source-notes/raw-syscalls.md#review-bed7c13206ec1363",
+          "evidence": ["@text:c3e64544dcdefda1", "@text:3d9d343f3d6d2403"],
+          "target_features": {"reason": "@text:58075a57a9bd59fb", "none": ["static-syscalls"]},
+          "target": "@shared:target-4bfd432252e6342d",
+          "features": "@shared:features-99271f63266b36b3",
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::sol_log_",
+              "implementation": "solana_define_syscall::definitions::sol_log_",
+              "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"],
+              "compatible_ranges": "@shared:compatible-ranges-b01ca1c245c0a9c1"
+            }
+          ],
+          "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"]
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_panic_": {
+      "order": 169,
+      "profiles": [
+        {
+          "id": "solana-define-syscall-reviewed-modern-dispatch-non-bpf",
+          "source": "solana-define-syscall",
+          "conditions": "@shared:conditions-554da98f540a30e4",
+          "argument": "@review:source-notes/raw-syscalls.md#review-92ce085d6e1e6425",
+          "evidence": ["@text:f27709051889e20e", "@text:3d9d343f3d6d2403"],
+          "target_features": {"reason": "@text:58075a57a9bd59fb", "none": ["static-syscalls"]},
+          "target": "@shared:target-2566d5d683dcda14",
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::sol_panic_",
+              "implementation": "solana_define_syscall::definitions::sol_panic_",
+              "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"],
+              "compatible_ranges": "@shared:compatible-ranges-b01ca1c245c0a9c1"
+            }
+          ],
+          "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"]
+        },
+        {
+          "id": "solana-define-syscall-reviewed-modern-dispatch-bpf",
+          "source": "solana-define-syscall",
+          "conditions": "@shared:conditions-554da98f540a30e4",
+          "argument": "@review:source-notes/raw-syscalls.md#review-92ce085d6e1e6425",
+          "evidence": ["@text:f27709051889e20e", "@text:3d9d343f3d6d2403"],
+          "target_features": {"reason": "@text:58075a57a9bd59fb", "none": ["static-syscalls"]},
+          "target": "@shared:target-4bfd432252e6342d",
+          "features": "@shared:features-99271f63266b36b3",
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::sol_panic_",
+              "implementation": "solana_define_syscall::definitions::sol_panic_",
+              "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"],
+              "compatible_ranges": "@shared:compatible-ranges-b01ca1c245c0a9c1"
+            }
+          ],
+          "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"]
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_sha256": {
+      "order": 170,
+      "profiles": [
+        {
+          "id": "solana-define-syscall-reviewed-direct",
+          "source": "solana-define-syscall",
+          "conditions": "@shared:conditions-b620cf1970df460f",
+          "argument": "@review:source-notes/raw-syscalls.md#review-5c1cb4fa3e7ac237",
+          "evidence": ["@text:c3e64544dcdefda1", "@text:3d9d343f3d6d2403"],
+          "target_features": {"reason": "@text:c4937357f9eab53b", "none": ["static-syscalls"]},
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::sol_sha256",
+              "implementation": "solana_define_syscall::definitions::sol_sha256",
+              "releases": ["2.2.0", "2.2.1", "2.3.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-99da6c15d19f7d33"
+            }
+          ],
+          "releases": ["2.2.0", "2.2.1", "2.3.0", "3.0.0"]
+        },
+        {
+          "id": "solana-define-syscall-reviewed-modern-dispatch-non-bpf",
+          "source": "solana-define-syscall",
+          "conditions": "@shared:conditions-b620cf1970df460f",
+          "argument": "@review:source-notes/raw-syscalls.md#review-5c1cb4fa3e7ac237",
+          "evidence": ["@text:c3e64544dcdefda1", "@text:3d9d343f3d6d2403"],
+          "target_features": {"reason": "@text:58075a57a9bd59fb", "none": ["static-syscalls"]},
+          "target": "@shared:target-2566d5d683dcda14",
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::sol_sha256",
+              "implementation": "solana_define_syscall::definitions::sol_sha256",
+              "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"],
+              "compatible_ranges": "@shared:compatible-ranges-b01ca1c245c0a9c1"
+            }
+          ],
+          "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"]
+        },
+        {
+          "id": "solana-define-syscall-reviewed-modern-dispatch-bpf",
+          "source": "solana-define-syscall",
+          "conditions": "@shared:conditions-b620cf1970df460f",
+          "argument": "@review:source-notes/raw-syscalls.md#review-5c1cb4fa3e7ac237",
+          "evidence": ["@text:c3e64544dcdefda1", "@text:3d9d343f3d6d2403"],
+          "target_features": {"reason": "@text:58075a57a9bd59fb", "none": ["static-syscalls"]},
+          "target": "@shared:target-4bfd432252e6342d",
+          "features": "@shared:features-99271f63266b36b3",
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::sol_sha256",
+              "implementation": "solana_define_syscall::definitions::sol_sha256",
+              "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"],
+              "compatible_ranges": "@shared:compatible-ranges-b01ca1c245c0a9c1"
+            }
+          ],
+          "releases": ["4.0.0", "4.0.1", "5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"]
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_sha512": {
+      "order": 171,
+      "profiles": [
+        {
+          "id": "solana-define-syscall-dynamic-non-bpf",
+          "source": "solana-define-syscall",
+          "conditions": ["@text:803c2ad7404727a5"],
+          "argument": "@review:source-notes/raw-syscalls.md#review-77c71d07debbb60f",
+          "evidence": ["@text:dfdff9add27f743f", "@text:8ebe06ac8297f2b7"],
+          "target_features": {"reason": "@text:58075a57a9bd59fb", "none": ["static-syscalls"]},
+          "target": "@shared:target-2566d5d683dcda14",
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::sol_sha512",
+              "implementation": "solana_define_syscall::definitions::sol_sha512",
+              "releases": ["5.1.0", "5.2.0", "5.3.0", "5.4.0"],
+              "compatible_ranges": [{"lower": "5.1.0", "upper": "6.0.0"}]
+            }
+          ],
+          "releases": ["5.1.0", "5.2.0", "5.3.0", "5.4.0"]
+        },
+        {
+          "id": "solana-define-syscall-dynamic-bpf",
+          "source": "solana-define-syscall",
+          "conditions": ["@text:803c2ad7404727a5"],
+          "argument": "@review:source-notes/raw-syscalls.md#review-77c71d07debbb60f",
+          "evidence": ["@text:dfdff9add27f743f", "@text:8ebe06ac8297f2b7"],
+          "target_features": {"reason": "@text:58075a57a9bd59fb", "none": ["static-syscalls"]},
+          "target": "@shared:target-4bfd432252e6342d",
+          "features": "@shared:features-99271f63266b36b3",
+          "items": [
+            {
+              "item": "solana_define_syscall::definitions::sol_sha512",
+              "implementation": "solana_define_syscall::definitions::sol_sha512",
+              "releases": ["5.1.0", "5.2.0", "5.3.0", "5.4.0"],
+              "compatible_ranges": [{"lower": "5.1.0", "upper": "6.0.0"}]
+            }
+          ],
+          "releases": ["5.1.0", "5.2.0", "5.3.0", "5.4.0"]
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_get_rent_sysvar": {
+      "order": 235,
+      "profiles": [
+        {
+          "id": "raw-runtime-solana-define-syscall-2.3.0",
+          "source": "solana-define-syscall",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_define_syscall::definitions::sol_get_rent_sysvar",
+              "implementation": "solana_define_syscall::definitions::sol_get_rent_sysvar",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-768a71178f6244da",
+          "evidence": ["@text:ffb6d10d8839010b", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-5c93e1e0ee812b52",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_create_program_address": {
+      "order": 236,
+      "profiles": [
+        {
+          "id": "raw-runtime-solana-define-syscall-2.3.0",
+          "source": "solana-define-syscall",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_define_syscall::definitions::sol_create_program_address",
+              "implementation": "solana_define_syscall::definitions::sol_create_program_address",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-768a71178f6244da",
+          "evidence": ["@text:ffb6d10d8839010b", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-5c93e1e0ee812b52",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        },
+        {
+          "id": "raw-runtime-solana-define-syscall-5.1.0-non-bpf",
+          "source": "solana-define-syscall",
+          "releases": ["5.1.0"],
+          "items": [
+            {
+              "releases": ["5.1.0"],
+              "item": "solana_define_syscall::definitions::sol_create_program_address",
+              "implementation": "solana_define_syscall::definitions::sol_create_program_address",
+              "compatible_ranges": [{"lower": "5.1.0", "upper": "6.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-ce3110321f880316",
+          "evidence": ["@text:29ce565b7265183a", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-0187b8403262eb03",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        },
+        {
+          "id": "raw-runtime-solana-define-syscall-5.1.0-bpf",
+          "source": "solana-define-syscall",
+          "releases": ["5.1.0"],
+          "items": [
+            {
+              "releases": ["5.1.0"],
+              "item": "solana_define_syscall::definitions::sol_create_program_address",
+              "implementation": "solana_define_syscall::definitions::sol_create_program_address",
+              "compatible_ranges": [{"lower": "5.1.0", "upper": "6.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-ce3110321f880316",
+          "evidence": ["@text:29ce565b7265183a", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-e57debb55d0a08a8",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"},
+          "features": "@shared:features-5b0de67497d03b2f"
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_get_clock_sysvar": {
+      "order": 237,
+      "profiles": [
+        {
+          "id": "raw-runtime-solana-define-syscall-2.3.0",
+          "source": "solana-define-syscall",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_define_syscall::definitions::sol_get_clock_sysvar",
+              "implementation": "solana_define_syscall::definitions::sol_get_clock_sysvar",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-768a71178f6244da",
+          "evidence": ["@text:ffb6d10d8839010b", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-5c93e1e0ee812b52",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_memcpy_": {
+      "order": 238,
+      "profiles": [
+        {
+          "id": "raw-runtime-solana-define-syscall-2.3.0",
+          "source": "solana-define-syscall",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_define_syscall::definitions::sol_memcpy_",
+              "implementation": "solana_define_syscall::definitions::sol_memcpy_",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-768a71178f6244da",
+          "evidence": ["@text:ffb6d10d8839010b", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-5c93e1e0ee812b52",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        },
+        {
+          "id": "raw-runtime-solana-define-syscall-4.0.1-non-bpf",
+          "source": "solana-define-syscall",
+          "releases": ["4.0.1"],
+          "items": [
+            {
+              "releases": ["4.0.1"],
+              "item": "solana_define_syscall::definitions::sol_memcpy_",
+              "implementation": "solana_define_syscall::definitions::sol_memcpy_",
+              "compatible_ranges": [{"lower": "4.0.1", "upper": "5.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-938afd7b87ad5365",
+          "evidence": ["@text:1e2398c8f5a8c375", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-0187b8403262eb03",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        },
+        {
+          "id": "raw-runtime-solana-define-syscall-4.0.1-bpf",
+          "source": "solana-define-syscall",
+          "releases": ["4.0.1"],
+          "items": [
+            {
+              "releases": ["4.0.1"],
+              "item": "solana_define_syscall::definitions::sol_memcpy_",
+              "implementation": "solana_define_syscall::definitions::sol_memcpy_",
+              "compatible_ranges": [{"lower": "4.0.1", "upper": "5.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-938afd7b87ad5365",
+          "evidence": ["@text:1e2398c8f5a8c375", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-e57debb55d0a08a8",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"},
+          "features": "@shared:features-5b0de67497d03b2f"
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_try_find_program_address": {
+      "order": 239,
+      "profiles": [
+        {
+          "id": "raw-runtime-solana-define-syscall-2.3.0",
+          "source": "solana-define-syscall",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_define_syscall::definitions::sol_try_find_program_address",
+              "implementation": "solana_define_syscall::definitions::sol_try_find_program_address",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-768a71178f6244da",
+          "evidence": ["@text:ffb6d10d8839010b", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-5c93e1e0ee812b52",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_memset_": {
+      "order": 240,
+      "profiles": [
+        {
+          "id": "raw-runtime-solana-define-syscall-2.3.0",
+          "source": "solana-define-syscall",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_define_syscall::definitions::sol_memset_",
+              "implementation": "solana_define_syscall::definitions::sol_memset_",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-768a71178f6244da",
+          "evidence": ["@text:ffb6d10d8839010b", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-5c93e1e0ee812b52",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        },
+        {
+          "id": "raw-runtime-solana-define-syscall-4.0.1-non-bpf",
+          "source": "solana-define-syscall",
+          "releases": ["4.0.1"],
+          "items": [
+            {
+              "releases": ["4.0.1"],
+              "item": "solana_define_syscall::definitions::sol_memset_",
+              "implementation": "solana_define_syscall::definitions::sol_memset_",
+              "compatible_ranges": [{"lower": "4.0.1", "upper": "5.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-0990d68b8e9497ff",
+          "evidence": ["@text:1e2398c8f5a8c375", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-0187b8403262eb03",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        },
+        {
+          "id": "raw-runtime-solana-define-syscall-4.0.1-bpf",
+          "source": "solana-define-syscall",
+          "releases": ["4.0.1"],
+          "items": [
+            {
+              "releases": ["4.0.1"],
+              "item": "solana_define_syscall::definitions::sol_memset_",
+              "implementation": "solana_define_syscall::definitions::sol_memset_",
+              "compatible_ranges": [{"lower": "4.0.1", "upper": "5.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-0990d68b8e9497ff",
+          "evidence": ["@text:1e2398c8f5a8c375", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-e57debb55d0a08a8",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"},
+          "features": "@shared:features-5b0de67497d03b2f"
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_invoke_signed_rust": {
+      "order": 267,
+      "profiles": [
+        {
+          "id": "raw-cpi-rust-solana-define-syscall-2.3.0",
+          "source": "solana-define-syscall",
+          "releases": ["2.3.0"],
+          "items": [
+            {
+              "releases": ["2.3.0"],
+              "item": "solana_define_syscall::definitions::sol_invoke_signed_rust",
+              "implementation": "solana_define_syscall::definitions::sol_invoke_signed_rust",
+              "compatible_ranges": [{"lower": "2.3.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-ca98373b1903b699",
+          "argument": "@review:source-notes/raw-syscalls.md#review-4de07d16c22dee79",
+          "evidence": ["@text:ffb6d10d8839010b"],
+          "target": "@shared:target-406ed975e9921226",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:12e6443bfc10e6ea"}
+        },
+        {
+          "id": "raw-cpi-rust-solana-define-syscall-3.0.0",
+          "source": "solana-define-syscall",
+          "releases": ["3.0.0"],
+          "items": [
+            {
+              "releases": ["3.0.0"],
+              "item": "solana_define_syscall::definitions::sol_invoke_signed_rust",
+              "implementation": "solana_define_syscall::definitions::sol_invoke_signed_rust",
+              "compatible_ranges": [{"lower": "3.0.0", "upper": "4.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-ca98373b1903b699",
+          "argument": "@review:source-notes/raw-syscalls.md#review-5470016f1e6c7833",
+          "evidence": ["@text:f3f542fc0f79d7ba"],
+          "target": "@shared:target-406ed975e9921226",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:12e6443bfc10e6ea"}
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_set_return_data": {
+      "order": 433,
+      "profiles": [
+        {
+          "id": "raw-runtime-solana-define-syscall-4.0.1-non-bpf",
+          "source": "solana-define-syscall",
+          "releases": ["4.0.1"],
+          "items": [
+            {
+              "releases": ["4.0.1"],
+              "item": "solana_define_syscall::definitions::sol_set_return_data",
+              "implementation": "solana_define_syscall::definitions::sol_set_return_data",
+              "compatible_ranges": [{"lower": "4.0.1", "upper": "5.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-730495133d19ff4c",
+          "evidence": ["@text:1e2398c8f5a8c375", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-0187b8403262eb03",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        },
+        {
+          "id": "raw-runtime-solana-define-syscall-4.0.1-bpf",
+          "source": "solana-define-syscall",
+          "releases": ["4.0.1"],
+          "items": [
+            {
+              "releases": ["4.0.1"],
+              "item": "solana_define_syscall::definitions::sol_set_return_data",
+              "implementation": "solana_define_syscall::definitions::sol_set_return_data",
+              "compatible_ranges": [{"lower": "4.0.1", "upper": "5.0.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-40336273679407c7",
+          "argument": "@review:source-notes/raw-syscalls.md#review-730495133d19ff4c",
+          "evidence": ["@text:1e2398c8f5a8c375", "@text:d8e797cfeb7a4e4d"],
+          "target": "@shared:target-e57debb55d0a08a8",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"},
+          "features": "@shared:features-5b0de67497d03b2f"
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_get_epoch_schedule_sysvar": {
+      "order": 475,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/raw-syscalls.md#review-9bb0de3a888e25af",
+          "conditions": "@shared:conditions-40336273679407c7",
+          "evidence": "@shared:evidence-345563fc0a7138af",
+          "id": "raw-runtime-solana-define-syscall-4.0.1-non-bpf",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "4.0.0", "upper": "5.0.0"}],
+              "implementation": "solana_define_syscall::definitions::sol_get_epoch_schedule_sysvar",
+              "item": "solana_define_syscall::definitions::sol_get_epoch_schedule_sysvar",
+              "releases": ["4.0.0", "4.0.1"]
+            }
+          ],
+          "releases": ["4.0.0", "4.0.1"],
+          "source": "solana-define-syscall",
+          "target": "@shared:target-0187b8403262eb03",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        },
+        {
+          "argument": "@review:source-notes/raw-syscalls.md#review-9bb0de3a888e25af",
+          "conditions": "@shared:conditions-40336273679407c7",
+          "evidence": "@shared:evidence-345563fc0a7138af",
+          "features": "@shared:features-5b0de67497d03b2f",
+          "id": "raw-runtime-solana-define-syscall-4.0.1-bpf",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "4.0.0", "upper": "5.0.0"}],
+              "implementation": "solana_define_syscall::definitions::sol_get_epoch_schedule_sysvar",
+              "item": "solana_define_syscall::definitions::sol_get_epoch_schedule_sysvar",
+              "releases": ["4.0.0", "4.0.1"]
+            }
+          ],
+          "releases": ["4.0.0", "4.0.1"],
+          "source": "solana-define-syscall",
+          "target": "@shared:target-e57debb55d0a08a8",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        }
+      ]
+    },
+    "solana-define-syscall::definitions::sol_get_stack_height": {
+      "order": 476,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/raw-syscalls.md#review-9bb0de3a888e25af",
+          "conditions": "@shared:conditions-40336273679407c7",
+          "evidence": "@shared:evidence-f00f266a2708d96e",
+          "id": "raw-runtime-solana-define-syscall-5.1.0-non-bpf",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "5.0.0", "upper": "6.0.0"}],
+              "implementation": "solana_define_syscall::definitions::sol_get_stack_height",
+              "item": "solana_define_syscall::definitions::sol_get_stack_height",
+              "releases": ["5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"]
+            }
+          ],
+          "releases": ["5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"],
+          "source": "solana-define-syscall",
+          "target": "@shared:target-0187b8403262eb03",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        },
+        {
+          "argument": "@review:source-notes/raw-syscalls.md#review-9bb0de3a888e25af",
+          "conditions": "@shared:conditions-40336273679407c7",
+          "evidence": "@shared:evidence-f00f266a2708d96e",
+          "features": "@shared:features-5b0de67497d03b2f",
+          "id": "raw-runtime-solana-define-syscall-5.1.0-bpf",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "5.0.0", "upper": "6.0.0"}],
+              "implementation": "solana_define_syscall::definitions::sol_get_stack_height",
+              "item": "solana_define_syscall::definitions::sol_get_stack_height",
+              "releases": ["5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"]
+            }
+          ],
+          "releases": ["5.0.0", "5.1.0", "5.2.0", "5.3.0", "5.4.0"],
+          "source": "solana-define-syscall",
+          "target": "@shared:target-e57debb55d0a08a8",
+          "target_features": {"none": ["static-syscalls"], "reason": "@text:bb9953e8117d000c"}
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:00e8e1acec00ca35", "@binding:0ac56aa3bf041d7f"]
+}

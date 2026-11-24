@@ -1,0 +1,311 @@
+# Decided models whose source-map `rust_names` do not include the `function` of the deciding checker:
+# observations, shared and supporting models, and models the source map binds to no Rust item.
+# `run.py --model-only` fails on a checker that declares such a model without its pair listed here,
+# and, over every family, on a pair no checker uses. The table of REFERENCE.md is generated from this file
+# by `run.py --generate-registry`. `detail` is the deciding family.
+
+[[allow]]
+model = "solana-account-info::AccountInfo::clone_observation"
+function = "<solana_account_info::AccountInfo<'a> as core::clone::Clone>::clone"
+detail = "AccountsV1"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `<solana_account_info::AccountInfo<'a> as core::clone::Clone>::clone`."
+
+[[allow]]
+model = "solana-address::Address::find_program_address"
+function = "solana_address::syscalls::<impl solana_address::Address>::find_program_address"
+detail = "Address"
+reason = "The api entry of the source map for this model binds `solana_address::syscalls::<impl solana_address::Address>::find_program_address` only to `solana-address::Address::find_program_address_solana`; this model is decided on the records of the same Rust function."
+
+[[allow]]
+model = "solana-address::Address::is_on_curve"
+function = "solana_address::Address::is_on_curve"
+detail = "Address"
+reason = "The api entry of the source map for this model binds `solana_address::Address::is_on_curve` only to `solana-address::Address::is_on_curve_solana`; this model is decided on the records of the same Rust function."
+
+[[allow]]
+model = "solana-address::Address::try_find_program_address_solana"
+function = "solana_address::syscalls::<impl solana_address::Address>::try_find_program_address"
+detail = "Address"
+reason = "Registered without an api entry (no `rust_names`); decided on the records of `solana_address::syscalls::<impl solana_address::Address>::try_find_program_address`."
+
+[[allow]]
+model = "anchor-lang::ToAccountInfo::to_account_info_observation"
+function = "<T as anchor_lang::ToAccountInfo<'info>>::to_account_info"
+detail = "Anchor"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `<T as anchor_lang::ToAccountInfo<'info>>::to_account_info`."
+
+[[allow]]
+model = "anchor-lang::accounts::account::Account::try_from_observation"
+function = "anchor_lang::accounts::account::Account::<'a, T>::try_from"
+detail = "Anchor"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `anchor_lang::accounts::account::Account::<'a, T>::try_from`."
+
+[[allow]]
+model = "anchor-lang::accounts::account_loader::AccountLoader::load_mut_observation"
+function = "anchor_lang::accounts::account_loader::AccountLoader::<'info, T>::load_mut"
+detail = "Anchor"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `anchor_lang::accounts::account_loader::AccountLoader::<'info, T>::load_mut`."
+
+[[allow]]
+model = "anchor-lang::accounts::account_loader::AccountLoader::load_observation"
+function = "anchor_lang::accounts::account_loader::AccountLoader::<'info, T>::load"
+detail = "Anchor"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `anchor_lang::accounts::account_loader::AccountLoader::<'info, T>::load`."
+
+[[allow]]
+model = "anchor-lang::accounts::account_loader::AccountLoader::try_from_observation"
+function = "anchor_lang::accounts::account_loader::AccountLoader::<'info, T>::try_from"
+detail = "Anchor"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `anchor_lang::accounts::account_loader::AccountLoader::<'info, T>::try_from`."
+
+[[allow]]
+model = "anchor-lang::accounts::interface_account::InterfaceAccount::try_from_observation"
+function = "anchor_lang::accounts::interface_account::InterfaceAccount::<'a, T>::try_from"
+detail = "Anchor"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `anchor_lang::accounts::interface_account::InterfaceAccount::<'a, T>::try_from`."
+
+[[allow]]
+model = "anchor-lang::context::CpiContext::new_with_signer_observation"
+function = "anchor_lang::context::CpiContext::<'a, 'b, 'c, 'info, T>::new_with_signer"
+detail = "Anchor"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `anchor_lang::context::CpiContext::<'a, 'b, 'c, 'info, T>::new_with_signer`."
+
+[[allow]]
+model = "anchor-lang::error::Error::from_anchor_error_observation"
+function = "<anchor_lang::error::Error as core::convert::From<anchor_lang::error::AnchorError>>::from"
+detail = "Anchor"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `<anchor_lang::error::Error as core::convert::From<anchor_lang::error::AnchorError>>::from`."
+
+[[allow]]
+model = "anchor-lang::error::Error::with_pubkeys_observation"
+function = "anchor_lang::error::Error::with_pubkeys"
+detail = "Anchor"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `anchor_lang::error::Error::with_pubkeys`."
+
+[[allow]]
+model = "anchor-lang::error::Error::with_values_observation"
+function = "anchor_lang::error::Error::with_values"
+detail = "Anchor"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `anchor_lang::error::Error::with_values`."
+
+[[allow]]
+model = "anchor-spl::token::accessor::amount_observation"
+function = "anchor_spl::token::accessor::amount"
+detail = "Anchor"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `anchor_spl::token::accessor::amount`."
+
+[[allow]]
+model = "anchor-spl::token::transfer_observation"
+function = "anchor_spl::token::transfer"
+detail = "Anchor"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `anchor_spl::token::transfer`."
+
+[[allow]]
+model = "solana-instruction::Instruction::new_with_bincode"
+function = "solana_instruction::Instruction::new_with_bincode"
+detail = "Instructions"
+reason = "Registered without an api entry (no `rust_names`); decided on the records of `solana_instruction::Instruction::new_with_bincode`."
+
+[[allow]]
+model = "solana-instruction::Instruction::new_with_wincode"
+function = "solana_instruction::Instruction::new_with_wincode"
+detail = "Instructions"
+reason = "Registered without an api entry (no `rust_names`); decided on the records of `solana_instruction::Instruction::new_with_wincode`."
+
+[[allow]]
+model = "solana-system-interface::instruction::create_account"
+function = "solana_system_interface::instruction::create_account"
+detail = "Instructions"
+reason = "The api entry of the source map for this model binds `solana_system_interface::instruction::create_account` only to `solana-system-interface::instruction::create_account_operational`; this model is decided on the records of the same Rust function."
+
+[[allow]]
+model = "solana-system-interface::instruction::transfer"
+function = "solana_system_interface::instruction::transfer"
+detail = "Instructions"
+reason = "The api entry of the source map for this model binds `solana_system_interface::instruction::transfer` only to `solana-system-interface::instruction::transfer_operational`; this model is decided on the records of the same Rust function."
+
+[[allow]]
+model = "pinocchio::sysvars::instructions::Instructions::load_current_index"
+function = "pinocchio::sysvars::instructions::Instructions::<T>::load_current_index"
+detail = "Runtime"
+reason = "`Ref`-backed support model with no Rust item; decided on the records of `pinocchio::sysvars::instructions::Instructions::<T>::load_current_index` at `T = Ref<'_, [u8]>`."
+
+[[allow]]
+model = "pinocchio::sysvars::instructions::Instructions::load_instruction_at"
+function = "pinocchio::sysvars::instructions::Instructions::<T>::load_instruction_at"
+detail = "Runtime"
+reason = "`Ref`-backed support model with no Rust item; decided on the records of `pinocchio::sysvars::instructions::Instructions::<T>::load_instruction_at` at `T = Ref<'_, [u8]>`."
+
+[[allow]]
+model = "pinocchio::sysvars::instructions::IntrospectedInstruction::get_instruction_data"
+function = "pinocchio::sysvars::instructions::IntrospectedInstruction::<'_>::get_instruction_data"
+detail = "Runtime"
+reason = "`Ref`-backed support model with no Rust item; decided on the records of `pinocchio::sysvars::instructions::IntrospectedInstruction::<'_>::get_instruction_data` at `T = Ref<'_, [u8]>`."
+
+[[allow]]
+model = "pinocchio::sysvars::instructions::IntrospectedInstruction::get_program_id"
+function = "pinocchio::sysvars::instructions::IntrospectedInstruction::<'_>::get_program_id"
+detail = "Runtime"
+reason = "`Ref`-backed support model with no Rust item; decided on the records of `pinocchio::sysvars::instructions::IntrospectedInstruction::<'_>::get_program_id` at `T = Ref<'_, [u8]>`."
+
+[[allow]]
+model = "spl-token-2022-interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee"
+function = "spl_token_2022_interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee"
+detail = "TokenInterface"
+reason = "The api entry of the source map for this model binds `spl_token_2022_interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee` only to `spl-token-2022-interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee_live`; this model is decided on the records of the same Rust function."
+
+[[allow]]
+model = "spl-token-2022-interface::instruction::close_account_value"
+function = "spl_token_2022_interface::instruction::close_account"
+detail = "TokenInterface"
+reason = "Value model of the call, with no Rust item of its own in the source map; decided on the records of `spl_token_2022_interface::instruction::close_account`."
+
+[[allow]]
+model = "spl-token-2022-interface::instruction::initialize_account3_value"
+function = "spl_token_2022_interface::instruction::initialize_account3"
+detail = "TokenInterface"
+reason = "Value model of the call, with no Rust item of its own in the source map; decided on the records of `spl_token_2022_interface::instruction::initialize_account3`."
+
+[[allow]]
+model = "spl-token-2022-interface::instruction::transfer_checked_value"
+function = "spl_token_2022_interface::instruction::transfer_checked"
+detail = "TokenInterface"
+reason = "Value model of the call, with no Rust item of its own in the source map; decided on the records of `spl_token_2022_interface::instruction::transfer_checked`."
+
+[[allow]]
+model = "spl-token-2022-interface::instruction::withdraw_excess_lamports_value"
+function = "spl_token_2022_interface::instruction::withdraw_excess_lamports"
+detail = "TokenInterface"
+reason = "Value model of the call, with no Rust item of its own in the source map; decided on the records of `spl_token_2022_interface::instruction::withdraw_excess_lamports`."
+
+[[allow]]
+model = "spl-token-2022::onchain::invoke_transfer_checked_value"
+function = "spl_token_2022::onchain::invoke_transfer_checked"
+detail = "TokenInterface"
+reason = "Value model of the call, with no Rust item of its own in the source map; decided on the records of `spl_token_2022::onchain::invoke_transfer_checked`."
+
+[[allow]]
+model = "spl-token-interface::instruction::initialize_account3_value"
+function = "spl_token_interface::instruction::initialize_account3"
+detail = "TokenInterface"
+reason = "Value model of the call, with no Rust item of its own in the source map; decided on the records of `spl_token_interface::instruction::initialize_account3`."
+
+[[allow]]
+model = "spl-token-interface::instruction::transfer_value"
+function = "spl_token_interface::instruction::transfer"
+detail = "TokenInterface"
+reason = "Value model of the call, with no Rust item of its own in the source map; decided on the records of `spl_token_interface::instruction::transfer`."
+
+[[allow]]
+model = "spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension"
+function = "spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension"
+detail = "TokenInterface"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension`."
+
+[[allow]]
+model = "spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension_types"
+function = "spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension_types"
+detail = "TokenInterface"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension_types`."
+
+[[allow]]
+model = "spl-token-2022-interface::extension::StateWithExtensions::unpack"
+function = "spl_token_2022_interface::extension::StateWithExtensions::<'data, S>::unpack"
+detail = "TokenInterface"
+reason = "Observation of the call, with no Rust item of its own in the source map; decided on the records of `spl_token_2022_interface::extension::StateWithExtensions::<'data, S>::unpack`."
+
+[[allow]]
+model = "shared-token::amount"
+function = "pinocchio_token::state::account::Account::amount"
+detail = "TokenViews"
+reason = "Shared token-state model with no Rust item; the getter of each library version decides it on its own records."
+
+[[allow]]
+model = "shared-token::amount"
+function = "pinocchio_token_2022::state::account::Account::amount"
+detail = "TokenViews"
+reason = "Shared token-state model with no Rust item; the getter of each library version decides it on its own records."
+
+[[allow]]
+model = "shared-token::decimals"
+function = "pinocchio_token::state::mint::Mint::decimals"
+detail = "TokenViews"
+reason = "Shared token-state model with no Rust item; the getter of each library version decides it on its own records."
+
+[[allow]]
+model = "shared-token::decimals"
+function = "pinocchio_token_2022::state::mint::Mint::decimals"
+detail = "TokenViews"
+reason = "Shared token-state model with no Rust item; the getter of each library version decides it on its own records."
+
+[[allow]]
+model = "shared-token::mint"
+function = "pinocchio_token::state::account::Account::mint"
+detail = "TokenViews"
+reason = "Shared token-state model with no Rust item; the getter of each library version decides it on its own records."
+
+[[allow]]
+model = "shared-token::mint"
+function = "pinocchio_token_2022::state::account::Account::mint"
+detail = "TokenViews"
+reason = "Shared token-state model with no Rust item; the getter of each library version decides it on its own records."
+
+[[allow]]
+model = "shared-token::owner"
+function = "pinocchio_token::state::account::Account::owner"
+detail = "TokenViews"
+reason = "Shared token-state model with no Rust item; the getter of each library version decides it on its own records."
+
+[[allow]]
+model = "shared-token::owner"
+function = "pinocchio_token_2022::state::account::Account::owner"
+detail = "TokenViews"
+reason = "Shared token-state model with no Rust item; the getter of each library version decides it on its own records."
+
+[[allow]]
+model = "shared-token::state"
+function = "pinocchio_token::state::account::Account::state"
+detail = "TokenViews"
+reason = "Shared token-state model with no Rust item; the getter of each library version decides it on its own records."
+
+[[allow]]
+model = "shared-token::state"
+function = "pinocchio_token_2022::state::account::Account::state"
+detail = "TokenViews"
+reason = "Shared token-state model with no Rust item; the getter of each library version decides it on its own records."
+
+[[allow]]
+model = "anchor-lang::accounts::account_loader::AccountLoader::load_init_observation"
+function = "anchor_lang::accounts::account_loader::AccountLoader::<'info, T>::load_init"
+detail = "AnchorLoader"
+reason = "The supporting initialization observation is decided on the same actual load_init records as the primary owned family. It has no separate Rust call identity and does not replace owned diagnostic/guard cleanup."
+
+[[allow]]
+model = "anchor-lang::accounts::account::Account::deref_mut"
+function = "<anchor_lang::accounts::interface_account::InterfaceAccount<'_, T> as core::ops::deref::DerefMut>::deref_mut"
+detail = "AnchorViews"
+reason = "The exact recorded Anchor 1.1.2 method uses the same registered canonical view model. Its source-map alias is listed here for native checker accounting. This supplies no additional API, source interface, Rust body, or cross-version applicability claim."
+
+[[allow]]
+model = "anchor-lang::accounts::borrowed_info_ref"
+function = "<anchor_lang::accounts::program::Program<'info, T> as core::convert::AsRef<solana_account_info::AccountInfo<'info>>>::as_ref"
+detail = "AnchorViews"
+reason = "The exact recorded Anchor 1.1.2 method uses the same registered canonical view model. Its source-map alias is listed here for native checker accounting. This supplies no additional API, source interface, Rust body, or cross-version applicability claim."
+
+[[allow]]
+model = "anchor-lang::accounts::wrapper_key"
+function = "<anchor_lang::accounts::program::Program<'_, T> as anchor_lang::Key>::key"
+detail = "AnchorViews"
+reason = "The exact recorded Anchor 1.1.2 method uses the same registered canonical view model. Its source-map alias is listed here for native checker accounting. This supplies no additional API, source interface, Rust body, or cross-version applicability claim."
+
+[[allow]]
+model = "anchor-lang::accounts::borrowed_info_ref"
+function = "<anchor_lang::accounts::interface::Interface<'info, T> as core::convert::AsRef<solana_account_info::AccountInfo<'info>>>::as_ref"
+detail = "AnchorViews"
+reason = "The exact recorded Anchor 1.1.2 method uses the same registered canonical view model. Its source-map alias is listed here for native checker accounting. This supplies no additional API, source interface, Rust body, or cross-version applicability claim."
+
+[[allow]]
+model = "anchor-lang::accounts::wrapper_key"
+function = "<anchor_lang::accounts::signer::Signer<'_> as anchor_lang::Key>::key"
+detail = "AnchorViews"
+reason = "The exact recorded Anchor 1.1.2 method uses the same registered canonical view model. Its source-map alias is listed here for native checker accounting. This supplies no additional API, source interface, Rust body, or cross-version applicability claim."

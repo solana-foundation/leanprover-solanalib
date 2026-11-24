@@ -1,0 +1,3 @@
+corpora = ["sdk_values_solana_program_1_18_26"]
+inputs = ["rust/sdk-values-common/support.rs", "rust/sdk-values-common/options.rs"]
+region = "none"

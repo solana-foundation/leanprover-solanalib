@@ -1,0 +1,13 @@
+{"schema":"solana-library-conformance/corpus/v1","corpus":"solana_program_option_3_1_0","crates":[{"name":"solana-program-option","version":"3.1.0"}],"records":[
+{"id":"is_some/u64/none","function":"solana_program_option::COption::<T>::is_some","generics":{"T":"u64"},"state":null,"args":{"option":null},"outcome":{"exit":"returned","result":false,"state":null}},
+{"id":"is_some/u64/zero","function":"solana_program_option::COption::<T>::is_some","generics":{"T":"u64"},"state":null,"args":{"option":{"some":0}},"outcome":{"exit":"returned","result":true,"state":null}},
+{"id":"is_some/u64/max","function":"solana_program_option::COption::<T>::is_some","generics":{"T":"u64"},"state":null,"args":{"option":{"some":18446744073709551615}},"outcome":{"exit":"returned","result":true,"state":null}},
+{"id":"is_some/u8/none","function":"solana_program_option::COption::<T>::is_some","generics":{"T":"u8"},"state":null,"args":{"option":null},"outcome":{"exit":"returned","result":false,"state":null}},
+{"id":"is_some/u8/zero","function":"solana_program_option::COption::<T>::is_some","generics":{"T":"u8"},"state":null,"args":{"option":{"some":0}},"outcome":{"exit":"returned","result":true,"state":null}},
+{"id":"is_some/u8/one","function":"solana_program_option::COption::<T>::is_some","generics":{"T":"u8"},"state":null,"args":{"option":{"some":1}},"outcome":{"exit":"returned","result":true,"state":null}},
+{"id":"is_some/()/none","function":"solana_program_option::COption::<T>::is_some","generics":{"T":"()"},"state":null,"args":{"option":null},"outcome":{"exit":"returned","result":false,"state":null}},
+{"id":"is_some/()/unit","function":"solana_program_option::COption::<T>::is_some","generics":{"T":"()"},"state":null,"args":{"option":{"some":null}},"outcome":{"exit":"returned","result":true,"state":null}},
+{"id":"is_some/[u8; 32]/none","function":"solana_program_option::COption::<T>::is_some","generics":{"T":"[u8; 32]"},"state":null,"args":{"option":null},"outcome":{"exit":"returned","result":false,"state":null}},
+{"id":"is_some/[u8; 32]/zero","function":"solana_program_option::COption::<T>::is_some","generics":{"T":"[u8; 32]"},"state":null,"args":{"option":{"some":"0000000000000000000000000000000000000000000000000000000000000000"}},"outcome":{"exit":"returned","result":true,"state":null}},
+{"id":"is_some/[u8; 32]/pattern","function":"solana_program_option::COption::<T>::is_some","generics":{"T":"[u8; 32]"},"state":null,"args":{"option":{"some":"052a4f7499bee3082d52779cc1e60b30557a9fc4e90e33587da2c7ec11365b80"}},"outcome":{"exit":"returned","result":true,"state":null}}
+]}

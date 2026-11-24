@@ -1,0 +1,5 @@
+corpora = ["anchor_views_0_27_0"]
+inputs = [
+  "rust/anchor-views-cases.rs",
+]
+region = "none"

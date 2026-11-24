@@ -1,0 +1,289 @@
+{
+  "abstractions": {
+    "library::anchor_lang_error": {
+      "order": 169,
+      "modules": {
+        "Solanalib.Specs.AnchorLangError": "21257f824f9e2b6383720612223b81b95db5fd25310af92852f3bcb23c37077b",
+        "Solanalib.Specs.AnchorLangError.Capabilities": "b04e3cda991b1ffa23a15d645f4dda4ebd0c1908177d2a7570a9582d902f4f37",
+        "Solanalib.Specs.AnchorLangError.error_operations": "6211ebff8f9968bf68a1007e36383e4797a1b033db1967dc7af31fa5117a38ad"
+      },
+      "source_ids": [
+        "anchor-lang-0.27.0::src/context.rs",
+        "anchor-lang-0.27.0::src/bpf_writer.rs",
+        "anchor-lang-0.27.0::src/lib.rs",
+        "anchor-lang-0.27.0::src/bpf_upgradeable_state.rs",
+        "anchor-lang-0.27.0::src/error.rs",
+        "anchor-syn-0.27.0::src/codegen/error.rs",
+        "anchor-lang-0.29.0::src/context.rs",
+        "anchor-lang-0.29.0::src/bpf_writer.rs",
+        "anchor-lang-0.29.0::src/lib.rs",
+        "anchor-lang-0.29.0::src/bpf_upgradeable_state.rs",
+        "anchor-lang-0.29.0::src/error.rs",
+        "anchor-syn-0.29.0::src/codegen/error.rs",
+        "anchor-lang-0.32.1::src/context.rs",
+        "anchor-lang-0.32.1::src/bpf_writer.rs",
+        "anchor-lang-0.32.1::src/lib.rs",
+        "anchor-lang-0.32.1::src/bpf_upgradeable_state.rs",
+        "anchor-lang-0.32.1::src/error.rs",
+        "anchor-syn-0.32.1::src/codegen/error.rs",
+        "anchor-context-1.0.2",
+        "anchor-lang-1.0.2::src/bpf_writer.rs",
+        "anchor-lang-1.0.2::src/lib.rs",
+        "anchor-lang-1.0.2::src/bpf_upgradeable_state.rs",
+        "anchor-error-values-1.0.2",
+        "anchor-syn-1.0.2::src/codegen/error.rs",
+        "anchor-lang-1.1.2::src/context.rs",
+        "anchor-lang-1.1.2::src/bpf_writer.rs",
+        "anchor-lang-1.1.2::src/lib.rs",
+        "anchor-lang-1.1.2::src/bpf_upgradeable_state.rs",
+        "anchor-syn-1.1.2::src/codegen/error.rs",
+        "anchor-lang-error-1.1.2::src/lib.rs",
+        "anchor-lang-0.27.0::src/idl.rs",
+        "solana-program-1.15.2::src/program_error.rs",
+        "solana-program-1.18.26::src/program_error.rs",
+        "solana-program-error-2.2.2::src/lib.rs",
+        "solana-program-error-3.0.1::src/lib.rs",
+        "bincode-1.3.3::src/de/mod.rs",
+        "bincode-1.3.3::src/config/mod.rs",
+        "solana-loader-v3-interface-6.1.1::src/state.rs"
+      ],
+      "argument": "@review:source-notes/anchor-values-1.0.2.md#review-ef22c2ac2931f2c5",
+      "limitations": [
+        "@text:a59033a3f7b014d2",
+        "@text:f428bee2a0798d8f",
+        "@text:efaaf108f03e5357",
+        "@text:213333ae17d64adf",
+        "@text:ec8446923195b08d"
+      ]
+    }
+  },
+  "packages": {
+    "anchor-lang-error-1.1.2": {
+      "order": 125,
+      "repository": "https://github.com/otter-sec/anchor",
+      "revision": "24035e2b0035c87e321acc1c05f97793829a87f1",
+      "path_prefix": "lang/error/"
+    }
+  },
+  "interfaces": {
+    "anchor-lang-error-1.1.2::src/lib.rs": {
+      "order": 452,
+      "crate": "anchor-lang-error-1.1.2",
+      "path": "src/lib.rs",
+      "sha256": "ee21c4ebbb3297c900d708074cc768cbf6ec76c79278987e98f6e2c848ab635c"
+    }
+  },
+  "models": {
+    "anchor-lang-error::Error::from_error_code": {
+      "order": 435,
+      "contract": "Solanalib.Specs.AnchorLangError.Error.from_error_code_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-cdb2286d6acf0e15"
+    },
+    "anchor-lang-error::Error::log": {
+      "order": 439,
+      "contract": "Solanalib.Specs.AnchorLangError.Error.log_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-cdb2286d6acf0e15"
+    },
+    "anchor-lang-error::ErrorCode::name": {
+      "order": 459,
+      "contract": "Solanalib.Specs.AnchorLangError.ErrorCode.name_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-cdb2286d6acf0e15"
+    },
+    "anchor-lang-error::Error::with_account_name": {
+      "order": 463,
+      "contract": "Solanalib.Specs.AnchorLangError.Error.with_account_name_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-cdb2286d6acf0e15"
+    }
+  },
+  "api": {
+    "anchor_lang_error_1_1_2.Error.from_error_code": {
+      "order": 446,
+      "models": ["anchor-lang-error::Error::from_error_code"],
+      "source_id": "anchor-lang-error-1.1.2::src/lib.rs",
+      "line": 34,
+      "anchor_text": "pub enum ErrorCode {",
+      "scope": "@text:eda2b83b5584fdbd",
+      "rust_names": ["<anchor_lang_error::Error as core::convert::From<anchor_lang_error::ErrorCode>>::from"],
+      "bindings": {
+        "sdk-0b46fc4c540b738ec9ab": "<anchor_lang_error::Error as core::convert::From<anchor_lang_error::ErrorCode>>::from"
+      },
+      "binding_obligations": ["@binding:8de5a33352ee0296"]
+    },
+    "anchor-lang-error@1.1.2::log": {
+      "order": 463,
+      "models": ["anchor-lang-error::Error::log"],
+      "source_id": "anchor-lang-error-1.1.2::src/lib.rs",
+      "line": 361,
+      "anchor_text": "pub fn log(&self) {",
+      "scope": "@text:0bfbec46cb38b14e",
+      "rust_names": ["anchor_lang_error::Error::log"],
+      "bindings": {"sdk-99796798da5b2821bccf": "anchor_lang_error::Error::log"},
+      "binding_obligations": ["@binding:8de5a33352ee0296"]
+    },
+    "anchor_lang_error_1_1_2.ErrorCode.name": {
+      "order": 464,
+      "models": ["anchor-lang-error::ErrorCode::name"],
+      "source_id": "anchor-lang-error-1.1.2::src/lib.rs",
+      "line": 34,
+      "anchor_text": "pub enum ErrorCode {",
+      "scope": "@text:2c849e7006fec197",
+      "rust_names": ["anchor_lang_error::ErrorCode::name"],
+      "bindings": {"sdk-6955b6e02912d1beb5ad": "anchor_lang_error::ErrorCode::name"},
+      "binding_obligations": ["@binding:8de5a33352ee0296"]
+    },
+    "anchor-lang-error@1.1.2::name": {
+      "order": 465,
+      "models": ["anchor-lang-error::Error::with_account_name"],
+      "source_id": "anchor-lang-error-1.1.2::src/lib.rs",
+      "line": 368,
+      "anchor_text": "pub fn with_account_name(mut self, account_name: impl ToString) -> Self {",
+      "scope": "@text:41b10c8786d53f2f",
+      "rust_names": ["anchor_lang_error::Error::with_account_name"],
+      "bindings": {"sdk-3ce94a95d902a09ba290": "anchor_lang_error::Error::with_account_name"},
+      "binding_obligations": ["@binding:8de5a33352ee0296"]
+    }
+  },
+  "applicability_sources": {
+    "anchor-lang-error": {
+      "order": 1,
+      "package": "anchor-lang-error",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "1.0.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.0.1.crate",
+          "sha256": "063156d2e8baf4ad87bcd375b2cbfea61713e5e3522a234d123ff31df58bebd6",
+          "revision": "4ff4db0ae883ec005e2110e182fcd54302843deb",
+          "path_prefix": "lang/error/",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "1.1.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.1.1.crate",
+          "sha256": "4e3e7298b1e3b868b1b3895ee3c637b20ec91d06f776a5f348e8000ecd0b873b",
+          "revision": "208c0b78a748700a5ab89b641b8d73e267bcfdb3",
+          "path_prefix": "lang/error/"
+        },
+        "1.1.2": {
+          "archive_url": "https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.1.2.crate",
+          "sha256": "20760a8d5b7ddd1aea7a347c43c702ea4e962ccb7b9908c952e4b372b2d9e1f7",
+          "revision": "24035e2b0035c87e321acc1c05f97793829a87f1",
+          "path_prefix": "lang/error/"
+        },
+        "1.2.0": {
+          "archive_url": "https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.2.0.crate",
+          "sha256": "521690425c1f243d6cd2cb4d1fc46f44a017ad5d58a56fd1cd57313accae7355",
+          "revision": "84a63f9f7112b23581816436fbcf3f6c515779f9",
+          "path_prefix": "lang/error/"
+        },
+        "1.2.1": {
+          "archive_url": "https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.2.1.crate",
+          "sha256": "c8677821ff5d74d02ccd9e53c23d47e073e95e1b512a3290ee2dd73a51bf4e00",
+          "revision": "f1d20a94e8857d66e39810039aa5b5eee9ff733e",
+          "path_prefix": "lang/error/"
+        },
+        "1.2.2": {
+          "archive_url": "https://static.crates.io/crates/anchor-lang-error/anchor-lang-error-1.2.2.crate",
+          "sha256": "912c2bce8889b8e46cf0b8a031736e1f8fc526ea8cf68bede947783bc7d0ba3f",
+          "revision": "8d9d1488d9b8af41b266d7513eea2e668adf15a2",
+          "path_prefix": "lang/error/"
+        }
+      },
+      "evidence": ["@text:083883fa6b5ca148"]
+    }
+  },
+  "applicability": {
+    "anchor-lang-error::Error::from_error_code": {
+      "order": 435,
+      "profiles": [
+        {
+          "id": "anchor-lang-error-1.1.2-code",
+          "source": "anchor-lang-error",
+          "releases": ["1.1.2"],
+          "items": [
+            {
+              "releases": ["1.1.2"],
+              "item": "core::convert::From::from",
+              "implementation": "<anchor_lang_error::Error as core::convert::From<anchor_lang_error::ErrorCode>>::from",
+              "compatible_ranges": [{"lower": "1.1.2", "upper": "1.2.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-cdb2286d6acf0e15",
+          "argument": "@review:source-notes/anchor-values-1.0.2.md#review-bcbc36df6003741f",
+          "evidence": ["@text:cc22f43ae1af47fd"],
+          "dependencies": "@shared:dependencies-dca985823c6606d5"
+        }
+      ]
+    },
+    "anchor-lang-error::Error::log": {
+      "order": 439,
+      "profiles": [
+        {
+          "id": "anchor-lang-error-1.1.2-log",
+          "source": "anchor-lang-error",
+          "releases": ["1.1.2"],
+          "items": [
+            {
+              "releases": ["1.1.2"],
+              "item": "anchor_lang_error::Error::log",
+              "implementation": "anchor_lang_error::Error::log",
+              "compatible_ranges": [{"lower": "1.1.2", "upper": "1.2.1"}]
+            }
+          ],
+          "conditions": "@shared:conditions-cdb2286d6acf0e15",
+          "argument": "@review:source-notes/anchor-values-1.0.2.md#review-3354de9fb955a929",
+          "evidence": ["@text:cc22f43ae1af47fd"],
+          "dependencies": ["@shared:dependencies-ed63ffc983d86414"]
+        }
+      ]
+    },
+    "anchor-lang-error::ErrorCode::name": {
+      "order": 459,
+      "profiles": [
+        {
+          "id": "anchor-lang-error-1.1.2-code-name",
+          "source": "anchor-lang-error",
+          "releases": ["1.1.2"],
+          "items": [
+            {
+              "releases": ["1.1.2"],
+              "item": "anchor_lang_error::ErrorCode::name",
+              "implementation": "anchor_lang_error::ErrorCode::name",
+              "compatible_ranges": [{"lower": "1.1.2", "upper": "1.2.0"}]
+            }
+          ],
+          "conditions": "@shared:conditions-cdb2286d6acf0e15",
+          "argument": "@review:source-notes/anchor-values-1.0.2.md#review-818169b6a66e45a1",
+          "evidence": ["@text:cc22f43ae1af47fd"],
+          "dependencies": "@shared:dependencies-dca985823c6606d5"
+        }
+      ]
+    },
+    "anchor-lang-error::Error::with_account_name": {
+      "order": 463,
+      "profiles": [
+        {
+          "id": "anchor-lang-error-1.1.2-name",
+          "source": "anchor-lang-error",
+          "releases": ["1.1.2"],
+          "items": [
+            {
+              "releases": ["1.1.2"],
+              "item": "anchor_lang_error::Error::with_account_name",
+              "implementation": "anchor_lang_error::Error::with_account_name",
+              "compatible_ranges": [{"lower": "1.1.2", "upper": "1.2.1"}]
+            }
+          ],
+          "conditions": "@shared:conditions-cdb2286d6acf0e15",
+          "argument": "@review:source-notes/anchor-values-1.0.2.md#review-b77cb7755a063f26",
+          "evidence": ["@text:cc22f43ae1af47fd"],
+          "dependencies": []
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:7bdf23307ec95f9e", "@binding:d43fca11b888da6c"]
+}

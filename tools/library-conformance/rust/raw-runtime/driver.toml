@@ -1,0 +1,2 @@
+corpora = ["raw_runtime_solana_define_syscall_5_1_0"]
+region = "none"

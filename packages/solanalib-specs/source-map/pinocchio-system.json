@@ -1,0 +1,310 @@
+{
+  "abstractions": {
+    "library::pinocchio_system": {
+      "order": 127,
+      "modules": {
+        "Solanalib.Specs.PinocchioSystem": "ad46d8da616507015e29304ffe5f14ceaad3f0aafbe81cc156f62d26cfcf0367",
+        "Solanalib.Specs.PinocchioSystem.Capabilities": "bd00005fcb0bfa43ae7f512fb1f8905e534aa8f4ae84409f52c3d3cc751348e3",
+        "Solanalib.Specs.PinocchioSystem.Request": "4f05653ea273ea03f8c6a4a0e3531a858cee431218f3074e4771ba1b0da4b6a3"
+      },
+      "source_ids": [
+        "value-request::pinocchio-system-0.6.0::src/lib.rs",
+        "value-request::pinocchio-system-0.6.0::src/instructions/allocate.rs",
+        "value-request::pinocchio-system-0.6.0::src/instructions/assign.rs",
+        "value-request::pinocchio-system-0.6.0::src/instructions/transfer.rs",
+        "value-request::solana-instruction-view-2.1.0::src/cpi.rs"
+      ],
+      "argument": "@review:source-notes/value-request-system.md#review-65cb96dc162fd1b5",
+      "limitations": "@shared:limitations-fb64b3dbaf139ef9"
+    }
+  },
+  "packages": {
+    "pinocchio-system-0.6.0": {
+      "order": 3,
+      "repository": "https://github.com/anza-xyz/pinocchio",
+      "revision": "ef16a3a3e134c44d1a5fcd49cc35d04246006bf4",
+      "path_prefix": "programs/system/"
+    }
+  },
+  "interfaces": {
+    "value-request::pinocchio-system-0.6.0::src/instructions/allocate.rs": {
+      "order": 31,
+      "crate": "pinocchio-system-0.6.0",
+      "path": "src/instructions/allocate.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "e39513e4ddd3f7fa1e690a695b3bffe68a0ae8e787a3380551b8c66fab251d42"
+    },
+    "value-request::pinocchio-system-0.6.0::src/instructions/assign.rs": {
+      "order": 32,
+      "crate": "pinocchio-system-0.6.0",
+      "path": "src/instructions/assign.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "af0f38fa18df64fe97d8e98e3140ab0d3650a29ce428ac344bf759a678089685"
+    },
+    "value-request::pinocchio-system-0.6.0::src/instructions/transfer.rs": {
+      "order": 33,
+      "crate": "pinocchio-system-0.6.0",
+      "path": "src/instructions/transfer.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "30158301a734efc0120a465735c995042ca41e4d09bfc395e54c8c07301a9b20"
+    },
+    "value-request::pinocchio-system-0.6.0::src/lib.rs": {
+      "order": 34,
+      "crate": "pinocchio-system-0.6.0",
+      "path": "src/lib.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "6c8ee17a93458c7772aa80b36097236850c7918f5d9e14487a6d057fa38889a5"
+    }
+  },
+  "models": {
+    "pinocchio-system::instructions::allocate::Allocate::invoke_signed": {
+      "order": 68,
+      "contract": "Solanalib.Specs.PinocchioSystem.instructions.allocate.Allocate.invoke_signed_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:76f35b5daea2fe4f", "@text:f23a1cc4ffe6e42e", "@text:56455cca85999cc0", "@text:4e6675e5ba3f2fbc"]
+    },
+    "pinocchio-system::instructions::assign::Assign::invoke_signed": {
+      "order": 69,
+      "contract": "Solanalib.Specs.PinocchioSystem.instructions.assign.Assign.invoke_signed_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-bec6b274aaf1ebf3"
+    },
+    "pinocchio-system::instructions::transfer::Transfer::invoke": {
+      "order": 70,
+      "contract": "Solanalib.Specs.PinocchioSystem.instructions.transfer.Transfer.invoke_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:76f35b5daea2fe4f", "@text:f23a1cc4ffe6e42e", "@text:56455cca85999cc0", "@text:c0d8d2833fc416af"]
+    }
+  },
+  "api": {
+    "pinocchio-system@0.6.0::instructions::allocate::Allocate::invoke_signed": {
+      "order": 59,
+      "anchor_text": "pub fn invoke_signed(&self, signers: &[Signer]) -> ProgramResult {",
+      "binding_obligations": ["@binding:f1d104e35bf8ce2e", "@binding:98a12e8e457dbf24"],
+      "line": 26,
+      "scope": "@text:3d412f8408fa0934",
+      "source_id": "value-request::pinocchio-system-0.6.0::src/instructions/allocate.rs",
+      "clients": [
+        "SolanalibTest.Specs.PinocchioSystem.allocate_exact_request",
+        "SolanalibTest.Specs.PinocchioSystem.allocate_normal_completion_changes_state",
+        "SolanalibTest.Specs.PinocchioSystem.allocate_live_borrow_rejects"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Instruction.systemAllocate",
+        "Solanalib.Specs.Core.CpiRequest.Checked.directV2",
+        "Solanalib.Specs.Core.CpiRequest.Checked.Syscall"
+      ],
+      "rust_names": ["pinocchio_system::instructions::allocate::Allocate::<'_>::invoke_signed"],
+      "models": ["pinocchio-system::instructions::allocate::Allocate::invoke_signed"]
+    },
+    "pinocchio-system@0.6.0::instructions::assign::Assign::invoke_signed": {
+      "order": 60,
+      "anchor_text": "pub fn invoke_signed(&self, signers: &[Signer]) -> ProgramResult {",
+      "binding_obligations": ["@binding:f1d104e35bf8ce2e"],
+      "line": 26,
+      "scope": "@text:44a410d534bc0499",
+      "source_id": "value-request::pinocchio-system-0.6.0::src/instructions/assign.rs",
+      "clients": [
+        "SolanalibTest.Specs.PinocchioSystem.assign_exact_owner_bytes_and_signers",
+        "SolanalibTest.Specs.PinocchioSystem.assign_normal_completion_changes_state",
+        "SolanalibTest.Specs.PinocchioSystem.assign_live_borrow_rejects"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Instruction.systemAssign",
+        "Solanalib.Specs.Core.CpiRequest.Checked.directV2",
+        "Solanalib.Specs.Core.CpiRequest.Checked.Syscall"
+      ],
+      "rust_names": ["pinocchio_system::instructions::assign::Assign::<'_, '_>::invoke_signed"],
+      "models": ["pinocchio-system::instructions::assign::Assign::invoke_signed"]
+    },
+    "pinocchio-system@0.6.0::instructions::transfer::Transfer::invoke": {
+      "order": 61,
+      "anchor_text": "pub fn invoke(&self) -> ProgramResult {",
+      "binding_obligations": ["@binding:f1d104e35bf8ce2e", "@binding:c8e824b432162c0e"],
+      "line": 25,
+      "scope": "@text:89f099e99fb4b6e0",
+      "source_id": "value-request::pinocchio-system-0.6.0::src/instructions/transfer.rs",
+      "clients": [
+        "SolanalibTest.Specs.PinocchioSystem.transfer_keeps_duplicate_accounts_and_unsigned_call",
+        "SolanalibTest.Specs.PinocchioSystem.transfer_normal_completion_counts_both_aliases",
+        "SolanalibTest.Specs.PinocchioSystem.transfer_forwards_terminal_reason",
+        "SolanalibTest.Specs.PinocchioSystem.transfer_destination_borrow_rejects"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Instruction.systemTransfer",
+        "Solanalib.Specs.Core.CpiRequest.Checked.directV2",
+        "Solanalib.Specs.Core.CpiRequest.Checked.Syscall"
+      ],
+      "rust_names": ["pinocchio_system::instructions::transfer::Transfer::<'_>::invoke"],
+      "models": ["pinocchio-system::instructions::transfer::Transfer::invoke"]
+    }
+  },
+  "applicability_sources": {
+    "pinocchio-system": {
+      "order": 7,
+      "package": "pinocchio-system",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.0.0.crate",
+          "sha256": "cd7c24aa78baff0b3ed553cb0d2c8def4feae31af38bec83e54e8154209a21cc",
+          "revision": "8de9d33117e036d5660d851a72dc250c824d1aac",
+          "path_prefix": "programs/system/",
+          "evidence": ["@text:6b3f4ded2b5bcc58"]
+        },
+        "0.1.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.1.0.crate",
+          "sha256": "35ed9129e7f793a640df7cd52a52883cd2db5ab26d259c264df0c7d031eae521",
+          "revision": "169e59a4b004d03ca1f6f98fd9320df60346d053",
+          "path_prefix": "programs/system/"
+        },
+        "0.1.1": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.1.1.crate",
+          "sha256": "90836b7d86473e0fb52d431b0654f561c196489815da0948a5e7d64257195d6e",
+          "revision": "d450ef52ce9da4d4a1626f718b47bda134539480",
+          "path_prefix": "programs/system/"
+        },
+        "0.1.2": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.1.2.crate",
+          "sha256": "906738307ebf61b4a3751f756ee5635018b20a9151564c265ed84982e63d4323",
+          "revision": "b2884ae1206766721ce183fdf08f8d33bdf599bc",
+          "path_prefix": "programs/system/"
+        },
+        "0.1.3": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.1.3.crate",
+          "sha256": "e22e8356e1dbbb7cf2f975e0e0001db1cef2b394b9afffed65a7efb5d420d994",
+          "revision": "f5616adec5223daae9b638cd9962318ed8d44048",
+          "path_prefix": "programs/system/"
+        },
+        "0.2.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.2.0.crate",
+          "sha256": "c6a50555b55fde54156049064cc503219068ee53ecd4add7014ec928ee21f67f",
+          "revision": "e018eb3d102ee63d7e4a267548c4be1caa781ffe",
+          "path_prefix": "programs/system/"
+        },
+        "0.2.1": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.2.1.crate",
+          "sha256": "691ec8989fcb86fba22f22deb3cae9d440dc174d1735dd785b172349e9cbbb8a",
+          "revision": "9a74038e20671fb1d7431a1ea108ab206e1a88ad",
+          "path_prefix": "programs/system/"
+        },
+        "0.2.2": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.2.2.crate",
+          "sha256": "ee1e06182bee542854db81640d0782143751a0e98331a7c67148ccb1c932acd7",
+          "revision": "62c60e740692473159176452233c53355378c3c4",
+          "path_prefix": "programs/system/"
+        },
+        "0.2.3": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.2.3.crate",
+          "sha256": "1f75423420ae70aa748cf611cab14cfd00af08d0d2d3d258cb0cf5e2880ec19c",
+          "revision": "e8e414452611a7c497f4d61f337db6efe7be95c5",
+          "path_prefix": "programs/system/"
+        },
+        "0.3.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.3.0.crate",
+          "sha256": "141ed5eafb4ab04568bb0e224e3dc9a9de13c933de4c004e0d1a553498be3a7c",
+          "revision": "5565bebe90c02c9581190dedaa2c7ebd93f5c63b",
+          "path_prefix": "programs/system/"
+        },
+        "0.4.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.4.0.crate",
+          "sha256": "4be2a6dad40b5e75d1486f021619c4bd504c34c1362c9b94ed7fa525b1cc63cc",
+          "revision": "bfee28654d04f71ad52bcac92811b8ca92b1983d",
+          "path_prefix": "programs/system/"
+        },
+        "0.5.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.5.0.crate",
+          "sha256": "24044a0815753862b558e179e78f03f7344cb755de48617a09d7d23b50883b6c",
+          "revision": "47b67add4ba574297811937db46df8b1aff30827",
+          "path_prefix": "programs/system/"
+        },
+        "0.6.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.6.0.crate",
+          "sha256": "b47216785b5877051afa074920e88b5990c4ce74f0da94c7cb5a139684c48ffe",
+          "revision": "ef16a3a3e134c44d1a5fcd49cc35d04246006bf4",
+          "path_prefix": "programs/system/"
+        },
+        "0.6.1": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.6.1.crate",
+          "sha256": "f3ae2ee67b42e2ac797dd88312da473c895660e270d8093e0ba2749b885b5778",
+          "revision": "ec5125d355a844c0a25c39ad45c2cb78e68d5138",
+          "path_prefix": "programs/system/"
+        },
+        "0.7.0": {
+          "archive_url": "https://static.crates.io/crates/pinocchio-system/pinocchio-system-0.7.0.crate",
+          "sha256": "436f1ab80f654fc35e24162bd610d86b5215d0b4265ee45479e70cea896f63fa",
+          "revision": "bfacddc20424c94d40903782619912c041aae68a",
+          "path_prefix": "programs/system/"
+        }
+      },
+      "evidence": ["@text:cf83aea300648c02"]
+    }
+  },
+  "applicability": {
+    "pinocchio-system::instructions::allocate::Allocate::invoke_signed": {
+      "order": 68,
+      "profiles": [
+        {
+          "id": "pinocchio-system-reviewed",
+          "source": "pinocchio-system",
+          "conditions": "@shared:conditions-5209df4df34c7c39",
+          "argument": "@review:source-notes/value-request-system.md#review-5209b1533c4f1f3b",
+          "evidence": ["@text:fa66bb2cf9f88fbf", "@text:e04d7e15290c8b76"],
+          "items": [
+            {
+              "item": "pinocchio_system::instructions::allocate::Allocate::<'_>::invoke_signed",
+              "implementation": "pinocchio_system::instructions::allocate::Allocate::<'_>::invoke_signed",
+              "releases": ["0.6.0", "0.6.1", "0.7.0"],
+              "compatible_ranges": "@shared:compatible-ranges-880cbbc3eedb612a"
+            }
+          ],
+          "releases": ["0.6.0", "0.6.1", "0.7.0"]
+        }
+      ]
+    },
+    "pinocchio-system::instructions::assign::Assign::invoke_signed": {
+      "order": 69,
+      "profiles": [
+        {
+          "id": "pinocchio-system-reviewed",
+          "source": "pinocchio-system",
+          "conditions": "@shared:conditions-bdf6c6bdc5769825",
+          "argument": "@review:source-notes/value-request-system.md#review-c7565d84fc60a9a5",
+          "evidence": ["@text:fa66bb2cf9f88fbf", "@text:e04d7e15290c8b76"],
+          "items": [
+            {
+              "item": "pinocchio_system::instructions::assign::Assign::<'_, '_>::invoke_signed",
+              "implementation": "pinocchio_system::instructions::assign::Assign::<'_, '_>::invoke_signed",
+              "releases": ["0.6.0", "0.6.1", "0.7.0"],
+              "compatible_ranges": "@shared:compatible-ranges-880cbbc3eedb612a"
+            }
+          ],
+          "releases": ["0.6.0", "0.6.1", "0.7.0"]
+        }
+      ]
+    },
+    "pinocchio-system::instructions::transfer::Transfer::invoke": {
+      "order": 70,
+      "profiles": [
+        {
+          "id": "pinocchio-system-reviewed",
+          "source": "pinocchio-system",
+          "conditions": "@shared:conditions-5209df4df34c7c39",
+          "argument": "@review:source-notes/value-request-system.md#review-6566cb12033f4daf",
+          "evidence": ["@text:fa66bb2cf9f88fbf", "@text:e04d7e15290c8b76"],
+          "items": [
+            {
+              "item": "pinocchio_system::instructions::transfer::Transfer::<'_>::invoke",
+              "implementation": "pinocchio_system::instructions::transfer::Transfer::<'_>::invoke",
+              "releases": ["0.6.0", "0.6.1", "0.7.0"],
+              "compatible_ranges": "@shared:compatible-ranges-880cbbc3eedb612a"
+            }
+          ],
+          "releases": ["0.6.0", "0.6.1", "0.7.0"]
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:328106abb4b8d9fb", "@binding:5190a32e6baa1ea3"]
+}

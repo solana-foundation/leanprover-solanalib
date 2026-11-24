@@ -1,0 +1,4 @@
+# Family Codecs: borsh 1.6.1, bytemuck 1.25.0, solana-address 2.6.0 and
+# solana-stake-interface 3.1.0.
+corpora = ["borsh_1_6_1", "bytemuck_1_25_0", "solana_address_2_6_0", "solana_stake_interface_3_1_0"]
+inputs = ["rust/common/borsh_de.rs", "rust/common/bytemuck_cases.rs"]

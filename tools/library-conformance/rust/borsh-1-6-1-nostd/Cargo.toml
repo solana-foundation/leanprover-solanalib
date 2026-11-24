@@ -1,0 +1,14 @@
+# With std disabled, borsh::io is the nostd_io of borsh. The separate borsh 1.6.1
+# standard-library driver exercises std::io instead; these are distinct profiles.
+
+[package]
+name = "conformance-borsh-1-6-1-nostd"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Records the no-std Write::write_all of borsh 1.6.1, with its exact version and no-std feature set"
+workspace = "../workspaces/profile-06"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+borsh = { version = "=1.6.1", default-features = false }

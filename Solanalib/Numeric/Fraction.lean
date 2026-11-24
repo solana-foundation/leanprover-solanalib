@@ -92,8 +92,7 @@ def add (a b : Fraction) : Fraction := ⟨a.bits + b.bits⟩
 
 /-- Subtraction with an explicit underflow precondition: `b ≤ a` (on
 the underlying bit encoding). Returns `⟨a.bits − b.bits⟩`. The
-precondition is mandatory: matches the dependent-type discipline used
-throughout Solanalib (compare `Account.debit`). -/
+precondition supports the inverse law in `sub_add`. -/
 def sub (a b : Fraction) (_h : b.bits ≤ a.bits) : Fraction :=
   ⟨a.bits - b.bits⟩
 

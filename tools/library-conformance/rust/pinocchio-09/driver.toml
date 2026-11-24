@@ -1,0 +1,3 @@
+corpora = ["pinocchio_0_9_2_accounts"]
+inputs = ["rust/runtime-common/syscall_cases.rs"]
+spare_writes = ["pinocchio::account_info::AccountInfo::resize"]

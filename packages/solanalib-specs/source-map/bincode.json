@@ -1,0 +1,98 @@
+{
+  "packages": {
+    "bincode-1.3.3": {
+      "order": 76,
+      "repository": "https://github.com/servo/bincode",
+      "revision": "c44b5e364e7084cdbabf9f94b63a3c7f32b8fb68",
+      "path_prefix": ""
+    }
+  },
+  "interfaces": {
+    "stake-codecs::bincode-1.3.3::src/config/mod.rs": {
+      "order": 272,
+      "crate": "bincode-1.3.3",
+      "path": "src/config/mod.rs",
+      "sha256": "d79766ac15a213293e8d684ba639e0968bf883214007ffcab6c9f7128a12bdb6",
+      "review_scope": "Selected stake constructors/getters, Pack dispatch and cleanup, lookup bincode decoding and borrowed Pubkey layout, or WriteCounter framing only; other APIs are outside this review.",
+      "repository_bytes": {
+        "sha256": "9a938d959003646be268b117af7511f6012c1afb0078868d2b5a1b2fd7142f3d",
+        "transform": "lf-to-crlf"
+      }
+    },
+    "stake-codecs::bincode-1.3.3::src/de/mod.rs": {
+      "order": 273,
+      "crate": "bincode-1.3.3",
+      "path": "src/de/mod.rs",
+      "sha256": "b91fe450aedbc9332f59f189dd438fdabfb4d7482f951aa40db18b49fa91b942",
+      "review_scope": "Selected stake constructors/getters, Pack dispatch and cleanup, lookup bincode decoding and borrowed Pubkey layout, or WriteCounter framing only; other APIs are outside this review.",
+      "repository_bytes": {
+        "sha256": "adf97b1780d7bb6b86f95ebabdfe15001924bec129b9a77001862a317049dbfb",
+        "transform": "lf-to-crlf"
+      }
+    },
+    "stake-codecs::bincode-1.3.3::src/de/read.rs": {
+      "order": 274,
+      "crate": "bincode-1.3.3",
+      "path": "src/de/read.rs",
+      "sha256": "bb32d12d8dee1b0df426e3cc48288664152468c48b1df2448edd18bf1df921be",
+      "repository_bytes": {
+        "sha256": "6a2a173cc15cb82cefac6fea73445e35b78e68ac21418031bd6f6fddd4aa942e",
+        "transform": "lf-to-crlf"
+      },
+      "review_scope": "Reached boxed decode errors, optional owned diagnostic payload, and their destruction in ALT map_err; allocation failure boundary remains explicit."
+    },
+    "stake-codecs::bincode-1.3.3::src/error.rs": {
+      "order": 275,
+      "crate": "bincode-1.3.3",
+      "path": "src/error.rs",
+      "sha256": "f1154e228fd0d2dfc73bed9efb410875a8b84a77b40c2dfbe37d3dd244ed0741",
+      "repository_bytes": {
+        "sha256": "ce6617bf8523392e6fc8b853b7768899a229b6b78dabc2918c0e2dd3f846aa01",
+        "transform": "lf-to-crlf"
+      },
+      "review_scope": "Reached boxed decode errors, optional owned diagnostic payload, and their destruction in ALT map_err; allocation failure boundary remains explicit."
+    },
+    "stake-codecs::bincode-1.3.3::src/lib.rs": {
+      "order": 276,
+      "crate": "bincode-1.3.3",
+      "path": "src/lib.rs",
+      "sha256": "c68480ac64127e196b49b75a676b7c3a3bd723020b168b4f6093a64feb548b2e",
+      "review_scope": "Selected stake constructors/getters, Pack dispatch and cleanup, lookup bincode decoding and borrowed Pubkey layout, or WriteCounter framing only; other APIs are outside this review.",
+      "repository_bytes": {
+        "sha256": "4d9f596fc3b54dc3e753fb83dcd077502baa0911ce8416cf50423b73eaff4b1e",
+        "transform": "lf-to-crlf"
+      }
+    },
+    "stake-codecs::bincode-1.3.3::src/ser/mod.rs": {
+      "order": 277,
+      "crate": "bincode-1.3.3",
+      "path": "src/ser/mod.rs",
+      "sha256": "a9cbf0b6c24c73d6f51994ebdb4c3b8ecd410011b083b7a882d823a7271d2221",
+      "review_scope": "Selected stake constructors/getters, Pack dispatch and cleanup, lookup bincode decoding and borrowed Pubkey layout, or WriteCounter framing only; other APIs are outside this review.",
+      "repository_bytes": {
+        "sha256": "f084d5731d3e89162d35f51f5b5848d1c59ce5b4ba0bea60b13aa328fa13b2bc",
+        "transform": "lf-to-crlf"
+      }
+    },
+    "bincode-1.3.3::src/config/mod.rs": {
+      "order": 446,
+      "crate": "bincode-1.3.3",
+      "path": "src/config/mod.rs",
+      "sha256": "d79766ac15a213293e8d684ba639e0968bf883214007ffcab6c9f7128a12bdb6",
+      "repository_bytes": {
+        "sha256": "9a938d959003646be268b117af7511f6012c1afb0078868d2b5a1b2fd7142f3d",
+        "transform": "lf-to-crlf"
+      }
+    },
+    "bincode-1.3.3::src/de/mod.rs": {
+      "order": 447,
+      "crate": "bincode-1.3.3",
+      "path": "src/de/mod.rs",
+      "sha256": "b91fe450aedbc9332f59f189dd438fdabfb4d7482f951aa40db18b49fa91b942",
+      "repository_bytes": {
+        "sha256": "adf97b1780d7bb6b86f95ebabdfe15001924bec129b9a77001862a317049dbfb",
+        "transform": "lf-to-crlf"
+      }
+    }
+  }
+}

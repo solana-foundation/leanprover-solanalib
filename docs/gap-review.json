@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-24",
+  "scope": "Review of model limitations, the release census, test records, links and classifications, including runtime types and transfer conservation; the pinned source reviews provide the per-model arguments.",
+  "inputs": {
+    "Solanalib/SBPF/Interpreter.lean": "7975fb8162575ef25e9a4d035db315cf33d4fa5fba63242ee91bf760119de33e",
+    "Solanalib/Transfer.lean": "316f76831223ca33d57296322462655d0e61d80ea1f6d7180d70921a47411b3c",
+    "docs/release-census.json": "f0ec356362f782e064a9a05712a08a3f4d34e246106c86c9e8a2931647872ae5",
+    "packages/solanalib-runtime/Solanalib/Runtime/Exec.lean": "0e4ca653257dc9590331f6538898cfd564ba4ae428746848cc29f570bac23d9b",
+    "packages/solanalib-runtime/source-map/sources.json": "d2f03a57021997ebb108c316cec48554ac3b43b4c4a6d360c9ae7a110afb5d29",
+    "packages/solanalib-specs/BINDINGS.md": "a45952d1fc43d32c341832cf3168281997c1bdfba27b8c5c6f0bf0b9b663890c",
+    "packages/solanalib-specs/source-map/anchor-lang-error.json": "f263a4edee03388234d7d04e3ebb51cc3a0ed4b2515de479636162781131cc57",
+    "packages/solanalib-specs/source-map/anchor-lang.json": "802207c93213ceb83086cc74a6bbdd3f1d4aac3c3fa52d4f1cb839262ca629c9",
+    "packages/solanalib-specs/source-map/anchor-spl.json": "bd0d91d6f002482f9ace636499662c7bdc8dfc58f8a125b5bf31502830a119c3",
+    "packages/solanalib-specs/source-map/anchor-syn.json": "4a4a416731935b7826643fe0cc2e9ec208ee7ef22234093b749f8e87822b1f12",
+    "packages/solanalib-specs/source-map/bincode.json": "0ef56e36169fec232e360790fbb3803e75ed3f2f074fba38241a66e638ca673c",
+    "packages/solanalib-specs/source-map/borsh-derive-internal.json": "775dfffe562481a8ef1e2370f1fc63a484fb844691f3dbf5a62c6ca7728e0eb2",
+    "packages/solanalib-specs/source-map/borsh-derive.json": "8f91a1265876c9afb81f20a3ec22dcea2c65b075ed560a5d3da50299ae50bfa8",
+    "packages/solanalib-specs/source-map/borsh.json": "2457ddd9d2af4e81dd159f21e0ad076e653a875fbf909651db838306ea3f0179",
+    "packages/solanalib-specs/source-map/bytemuck.json": "b6a0c26783c6ead7c9117ec1fae630ed6ef6ce7354d1eec87df902cccb47ba83",
+    "packages/solanalib-specs/source-map/core.json": "f569f48c4b3d40e43968264371168d710de3ef4a5be7d7ebdef2b1f1f6144524",
+    "packages/solanalib-specs/source-map/mpl-token-metadata.json": "73f85c50f75d14a595a3dd26cb19d8a0dbdf33bef14728d3d617892a4b71b42c",
+    "packages/solanalib-specs/source-map/pinocchio-associated-token-account.json": "86d9a12f84729891e2b777db50db5b586add63352adef55300cbb4fc4cdd70de",
+    "packages/solanalib-specs/source-map/pinocchio-log.json": "19bca2508ec1ad63ba339632dd9245ec51a829a8656aea60c602aed34459c001",
+    "packages/solanalib-specs/source-map/pinocchio-system.json": "3334146b9fc154cf8c727cfe66c03f5edfb10519b017c0c64d23f38163960418",
+    "packages/solanalib-specs/source-map/pinocchio-token-2022.json": "2b42eb3f8b8319ce187aa245ccc6a09093263bb7b7f0677db2d65f71eced27fd",
+    "packages/solanalib-specs/source-map/pinocchio-token.json": "1d3fb73eb7974e2d7d7f464ef80206df1c4fe7910a0f3fa1df8b2223746726ea",
+    "packages/solanalib-specs/source-map/pinocchio.json": "1c9432547a28fa53fda88e7c45e300fb3be2d65788b53b4332edd99d212b50e4",
+    "packages/solanalib-specs/source-map/pyth-solana-receiver-sdk.json": "7debde02ecdfc0ca36740dadc38fd501f2dbbb3320a78cfc61a97085c235ce69",
+    "packages/solanalib-specs/source-map/pythnet-sdk.json": "59007c42f79cef7418ab81886df4574e9af254d58f80fb6cb4e00d46976d0106",
+    "packages/solanalib-specs/source-map/shared.json": "9ea9afe8a37bf0f504f0b00e61e5d9bb82f0612259b50b0e02414a25512761af",
+    "packages/solanalib-specs/source-map/solana-account-info.json": "614fc8b3f7f748dc3315e55bf78ffa118f35f602afbbd8fb5d0d3da64a85c2a2",
+    "packages/solanalib-specs/source-map/solana-account-view.json": "b09ab3bf176e7da819eb42a86961f5b8c6a6fb844e3f1ec8a73fdb9d217934bf",
+    "packages/solanalib-specs/source-map/solana-address-lookup-table-interface.json": "724cc59d64c8b0824f88491cd8f0121ef8210029d51f4e188c32a4e1fb6a4a51",
+    "packages/solanalib-specs/source-map/solana-address.json": "9c87ba367616e01012452c8865d40c6d9ceb57aae0bbb13f7ec9a9c3fa77f8fb",
+    "packages/solanalib-specs/source-map/solana-borsh.json": "24ce61d804685e229e7497171333c8a33562a94fbef573eb4b443b39b6cb45d7",
+    "packages/solanalib-specs/source-map/solana-clock.json": "246fe1619f094feb26930f688ec8fecefa9e810f07a901b1d6fff24138c764b7",
+    "packages/solanalib-specs/source-map/solana-cpi.json": "527bf83aaf90924cf5c8a3025cc2eae3d7581623173d992a8d1d15f497076c74",
+    "packages/solanalib-specs/source-map/solana-curve25519.json": "cde65252be6703e7c0d5aa2fd7c041cda630ba74e43adddb77654bfcb1bd8ee8",
+    "packages/solanalib-specs/source-map/solana-define-syscall.json": "da09c6b3217c86ef5ae381e2c45253c237b34637c1cadd2e7054ec3e47638c7c",
+    "packages/solanalib-specs/source-map/solana-epoch-schedule.json": "c6a700ee1572827b17e492a7310664fab5e34b2720774bce04c3e9c9614a7fd1",
+    "packages/solanalib-specs/source-map/solana-hash.json": "97c174caeea2c00d5174094eeeb5e3bc49373ea17b2fe7d206432f2f3bb696a9",
+    "packages/solanalib-specs/source-map/solana-instruction-view.json": "eb52614e0a982c80cef18cf96a4e203a9974e611fb771a07dfd4fdc0fba908d8",
+    "packages/solanalib-specs/source-map/solana-instruction.json": "982ff3801d8053ff69bf9f91ad4922d654deeb7d89f417dd1f97723fd06ff03f",
+    "packages/solanalib-specs/source-map/solana-instructions-sysvar.json": "c5a9d229c5f89217f06d5c9208e2a0de2d8e310f746e12981cf131b352e06cb6",
+    "packages/solanalib-specs/source-map/solana-invoke.json": "df34834617f125102ae0af6e26ad3fd6a07093847eab0b44b3f3ceda68d646f6",
+    "packages/solanalib-specs/source-map/solana-loader-v3-interface.json": "561ba0d1288c3346dea71093a5d790e0995c32799186ad640b8f1bed392b9a8b",
+    "packages/solanalib-specs/source-map/solana-msg.json": "213bb69e24b9c201d3218850eb82bb0b99097fce42fd57d6367400fbdb4a0e21",
+    "packages/solanalib-specs/source-map/solana-nullable.json": "debbb65ce7d8a382c500345de88dc47505df641e9c701bcb9bd05cd68b60c3c6",
+    "packages/solanalib-specs/source-map/solana-program-entrypoint.json": "72c7cfe20ad7efdf3666f00a1661cda0f33c3662aa1a14b04b681eca595bb40b",
+    "packages/solanalib-specs/source-map/solana-program-error.json": "f38266c761d086068002fce091d6d7d72ad1cd3efa3bd12e37084f8e48476d4b",
+    "packages/solanalib-specs/source-map/solana-program-memory.json": "4d557563fcb2d639dcb278d9a0e72d06808ba679123b0c6476e5ea912692ce09",
+    "packages/solanalib-specs/source-map/solana-program-option.json": "8c81443ecedf136c33b821950d03df25993fbdac7cad35cb92aef7c41746722a",
+    "packages/solanalib-specs/source-map/solana-program-pack.json": "08026f14fbd96b01e30b8b9559cab26d1c865d9c8c8ff1f354490bf260b2250f",
+    "packages/solanalib-specs/source-map/solana-program.json": "46bcdae246b7b623ee48425d1e56e48406f356c0adfd3c88af40845eaf1d9965",
+    "packages/solanalib-specs/source-map/solana-pubkey.json": "889c864fec8423cb05fb8f9365463cf563341749bdadccae69a314b51307f984",
+    "packages/solanalib-specs/source-map/solana-rent.json": "d7aad46912df7698dc7271478404869908b75d3419e98e9bc68779c28924e5b4",
+    "packages/solanalib-specs/source-map/solana-sdk-ids.json": "2e33820dfa7204a570a2432977ca6601def651b2d67da39ee8536fe26ec4cbb8",
+    "packages/solanalib-specs/source-map/solana-serialize-utils.json": "e4c40b4d076ec1bf4c2f367c671205216aec80af60ebd0129e83740f274a0b52",
+    "packages/solanalib-specs/source-map/solana-sha256-hasher.json": "e4fe0b82d34664e2867b7d9269bf0c7892e7544117776eaf2f3e005f035ef909",
+    "packages/solanalib-specs/source-map/solana-stable-layout.json": "bae7b8c7a52f6399768b56a47117b7684ef0a2ec15399847d6666de76086c63c",
+    "packages/solanalib-specs/source-map/solana-stake-interface.json": "b211541e35ac355ede08d478744cc192bcecf2f07b0c171158eae862debdd167",
+    "packages/solanalib-specs/source-map/solana-system-interface.json": "aaadbdd907da51af5b932c2af48e85c858416a4a240c396e09cb68a0180be69c",
+    "packages/solanalib-specs/source-map/solana-sysvar.json": "98255a654ea9511408ad51741d8077777ffa9eeac27c4081ba807bbfe8b7d913",
+    "packages/solanalib-specs/source-map/solana-zero-copy.json": "7883f0b24db54ac1dcba68e0307213ec6cd0c66b0ef39160be379fc15fe26aa2",
+    "packages/solanalib-specs/source-map/solana-zk-sdk-pod.json": "ec9d95a322f274ca1be0f8a60250dd7cb4e94baed2199b68efe16ae808b572fb",
+    "packages/solanalib-specs/source-map/spl-associated-token-account-client.json": "e5ffab2ec53a868a7bae4cd98d42f3e42ef50f538226a8f85287241b9e0d06e7",
+    "packages/solanalib-specs/source-map/spl-associated-token-account-interface.json": "9a3d2bc61d153f8fe799389a1b3b12d10abf6a9faffd36f1e5be4f5f3b988830",
+    "packages/solanalib-specs/source-map/spl-discriminator.json": "ebb0fadd7e644b4c24a4b7dce9bb1e8e88cd903719bea191f467381dcbe57b09",
+    "packages/solanalib-specs/source-map/spl-memo.json": "0e41433ab4c5dd5e8a3aaa3d28c4c7c75292993c3afb6c4affa86536040699e3",
+    "packages/solanalib-specs/source-map/spl-pod.json": "d06cbf0948b2d51a132e876fd3acc3809eb9d1781e2f2e2fa22cb93350e5ca3b",
+    "packages/solanalib-specs/source-map/spl-tlv-account-resolution.json": "f39ecbf6568e7007c3692fce621533462449ce9b5b3bb2a7f9df503ac7122f9c",
+    "packages/solanalib-specs/source-map/spl-token-2022-interface.json": "6ceb3bc8bb5347e7bdc96e5738c1935f507759ec7b10a272c7b70a9851cd93bb",
+    "packages/solanalib-specs/source-map/spl-token-2022.json": "57cfc22115b16638c40f1821cc3228909be1adffa1f081635af5d5bc7be37cb9",
+    "packages/solanalib-specs/source-map/spl-token-group-interface.json": "fa9bd3b3c8fb8c008c4056f116c5710ad1ac1951453666857e235126bf92b53d",
+    "packages/solanalib-specs/source-map/spl-token-interface.json": "c796350699c525e1b2bf46e1eff5c972b9cff1e4da82f5b8f80c534df815f084",
+    "packages/solanalib-specs/source-map/spl-token-metadata-interface.json": "abfb61e3ab51c3e55ba188250dd8b84d2695a88f7a20277e43124149f3297c97",
+    "packages/solanalib-specs/source-map/spl-token.json": "8ed58cb49b21f30df14c24c16742d86730ea309668b645ff3ae038083cb1d699",
+    "packages/solanalib-specs/source-map/spl-transfer-hook-interface.json": "ba112a922213670797600aa75e91e10a4336da1d551c82b92ef39d20030f5da7",
+    "packages/solanalib-specs/source-map/spl-type-length-value.json": "d415c9c8601ea81c01b7082be53c848ed1cd5d059d92973a68b245fce6a8b771",
+    "packages/solanalib-specs/source-map/switchboard-on-demand.json": "ff35cd4691f43f6dc6d8e14c036022dba6d5bcdbc0c85de49dc685512f849d36",
+    "packages/solanalib-specs/source-map/texts.json": "b0ba93714e119480971ac987c233c29f0b64e4e2d3c4b9b6972262150aa0e5a2",
+    "packages/solanalib-specs/source-map.json": "3c6944a632c5e129e279341f563af2356ac4b6064f72ec4bdbbae995f8969b2f",
+    "packages/solanalib-specs/source-notes/account-info-3.1.1.md": "b9b6a0034b0e2ffa0f212635f4bbb186e697a2c157663ff0048b6f4af714af2a",
+    "packages/solanalib-specs/source-notes/account-view.md": "77792dc7f4c7b1391115250711a68fe180ebf099f111fb32ab9a457fd0e791ab",
+    "packages/solanalib-specs/source-notes/address-profiles.md": "75deefaad40a7479756ec1bb72de810ad027e697e09ce6c7834b7f2bb1a58de2",
+    "packages/solanalib-specs/source-notes/anchor-accounts-1.0.2.md": "18d43169ca3735a34d2ee9016f2520c6b132c6c495c79f5d87b8c927c91a5296",
+    "packages/solanalib-specs/source-notes/anchor-spl-1.0.2.md": "ce1c2f40dda53b868ace09f15c5e9d6f6b8d28c030ad1a92ac4efb726b4dfc5c",
+    "packages/solanalib-specs/source-notes/anchor-values-1.0.2.md": "015a499a248c00114d974af17bf7c035ed6425d3744d25f8fbfdf26415bfdffc",
+    "packages/solanalib-specs/source-notes/borsh-codecs.md": "7dd38301bb6d7d1581acb29b90fb13787b6c8675240c24e2004cb7671f0ae438",
+    "packages/solanalib-specs/source-notes/bytemuck-views.md": "de05d66d239041d0c2eb2725b2a9190716ef6265fa84ce207b8d115e54ad7c11",
+    "packages/solanalib-specs/source-notes/entry-deserialize.md": "22d873110d8bfb18e66ea3757129936754bfef4168a4ebfb9bc7f3f1a6aae0f0",
+    "packages/solanalib-specs/source-notes/error-nullable.md": "afcd347bf87d0fa5dc2fe7a76a714dac20fd3d93804e5a29f9007509248731a0",
+    "packages/solanalib-specs/source-notes/hash-helpers.md": "e5399a8c7fb7e0c5991148382486a5fca334fc50d468f7a2b749eeb0a3300d25",
+    "packages/solanalib-specs/source-notes/other-sdk-functions.md": "9ba3ea489370e52e51a727e437058602add1f601b1d4b390f9a4498713fec678",
+    "packages/solanalib-specs/source-notes/owned-dependencies.md": "2ca1d0b41061fa05e724b88661024699b6b96ecf8d7e1e2f87e2fb5597305822",
+    "packages/solanalib-specs/source-notes/program-error-3.0.1.md": "23df7c53fde85f843bb11a0a99cc1552bcee2191bb25bd0caf640edbfe0deb4a",
+    "packages/solanalib-specs/source-notes/raw-syscalls.md": "46933869124c27834cf09dcf2da340ba8c331112c32632ae944636ca23aa511b",
+    "packages/solanalib-specs/source-notes/stake-state.md": "1b57a9d4740d002e1fc7abee354013c2e89fd7018cd33937678ade3ece830062",
+    "packages/solanalib-specs/source-notes/sysvar-codec-logging.md": "f422c738ad664dc14217c51fc7a453d19b3116eded3b9f8f178eeaddac0468e9",
+    "packages/solanalib-specs/source-notes/sysvar-getters.md": "6be1927a1916f856227afe400b383013b03dd3a253f32a73bbcaac569d9deb82",
+    "packages/solanalib-specs/source-notes/sysvar-instructions.md": "a9986501f1d57876a63b07473c786d3a23f6b10b7df640e1766fb4d039ef37a2",
+    "packages/solanalib-specs/source-notes/sysvar-rent-arithmetic.md": "29b50c418aa7a9056cf79ddb78de032c77107870a3d1db14f087bfe395b2bab1",
+    "packages/solanalib-specs/source-notes/token-extensions.md": "d38676f1a1035ff4aa35e66efae3a1a95b1e911926a180ca6a0cda21de09418e",
+    "packages/solanalib-specs/source-notes/token-instructions.md": "47ba4655ad354a614be1b3ba5dfbf5386d4344da580892a47a784634c8fc756b",
+    "packages/solanalib-specs/source-notes/token-state.md": "2f281629bdf354ea190668d2dd925b7bfab9f5dafad8be6ffc7a5193a44943b5",
+    "packages/solanalib-specs/source-notes/transfer-hook-resolution-0.9.0.md": "c7819b4fd08b4b498d74a8f89d1e50d82058610176f909b72904491dea49c49d",
+    "packages/solanalib-specs/source-notes/value-request-ata.md": "3723eff8019ef557165ddec1ed4950c23e30b68937c24d10b9ea01a6ab4cfd69",
+    "packages/solanalib-specs/source-notes/value-request-instruction-view.md": "12d58c70f6eab78dc2629b3db4e7c24f901b0b1e2e90c0b7fc0b01b31b099193",
+    "packages/solanalib-specs/source-notes/value-request-instruction.md": "1f35b1b846898b25e1427023d0d5828eb324d3b04bfc6cf933f77942586d53d1",
+    "packages/solanalib-specs/source-notes/value-request-system.md": "70f30c91bc7a38f7bb0785ba5e9e83cb492193f93a24359e80dedca3af43fdd3",
+    "tools/library-conformance/checker_selection.py": "d701677d2da1e5460aa5c92fc55bc6ce0703716f12d84792ed52ee8a1443c5f8",
+    "tools/library-conformance/not-tested.toml": "37f2d4579715c263f2c8bb9b4a6a4801d1f8a365f1cefe3ee29e1dc95b9f2d9b",
+    "tools/library-conformance/requires-open.toml": "cc9ec2370935f22735b25c0f487c4a73f024a7ba4a1124a0c7a0bbf9fc503988"
+  },
+  "policies": {
+    "runtime": {
+      "affected_claims": "Runtime theorems concern the modeled functions under their stated premises. The source arguments retain the listed projections, differences and interpretation conditions.",
+      "resolution": "Establish the missing correspondence for the exact source/build and observables, or retain the explicit boundary. A mathematical theorem alone does not discharge a source interpretation."
+    },
+    "sdk-model": {
+      "affected_claims": "The canonical model role, omitted behavior and remaining requirements limit the mathematical contract. An observation or supporting facet does not replace its primary operational model.",
+      "resolution": "Address the canonical model_gaps and remaining_requirements with substantive scoped results and tests before changing the registered role or claim. Preserve existing behavior and keep separate source bindings open until proved."
+    },
+    "sdk-binding": {
+      "affected_claims": "Closed reference-correctness, satisfiability and execution witnesses establish mathematical model facts. They do not establish correctness of the registered Rust bodies or their bindings.",
+      "resolution": "Prove the source implementation and representation/dependency bindings for the exact selected functions and builds, retaining the explicit boundary of any external call."
+    },
+    "native-test": {
+      "affected_claims": "The named helper has mathematical scenarios and no standalone native entry point. Its exception does not give native conformance credit.",
+      "resolution": "Retain the justified exception and its scenarios. If a real source-facing entry is introduced, add its exact deciding checker and controls before removing the exception."
+    },
+    "precondition-test": {
+      "affected_claims": "The checker decides the registered reference on recorded inputs; the separate operational precondition at each actual record index remains unproved as recorded.",
+      "resolution": "Prove or decide the precondition at the actual recorded index, then remove the exception only when the complete replay verifies that the entry is no longer needed."
+    },
+    "checker-omission": {
+      "affected_claims": "Authenticated native observations without a selected checker, and controls targeting them, earn no conformance credit. The replay records exact selected and omitted identities.",
+      "resolution": "Add the exact versioned function/instantiation checker and relevant controls; remove its exception when complete replay succeeds without that omission. Keep the original authenticated observation."
+    },
+    "cross-layer": {
+      "affected_claims": "Runtime and SDK models share Solana value types. The System transfer theorem proves conservation for successful runtime transfers; no sBPF-to-runtime execution interpretation is established.",
+      "resolution": "Supply a scoped simulation relating machine memory, syscalls, outcomes and compute effects to the runtime program relation, with matching premises and boundary tests."
+    },
+    "release-review": {
+      "affected_claims": "The 22 November 2026 census found these stable releases outside the recorded source histories. Their release-specific applicability remains unreviewed; this finding neither changes exact reviewed releases or assumed compatible ranges nor supplies source-proof or native-test credit.",
+      "resolution": "Authenticate each release archive, review the reached functions, representations, dependencies and build conditions, and record its applicability or exclusion in the authoritative source registry with matching generated artifacts and relevant tests. Retain the original census evidence and explicitly review the gap presentation before closing the pending record."
+    }
+  },
+  "cross_layer": [
+    {
+      "id": "execution:sbpf-runtime",
+      "declarations": [
+        "Solanalib.SBPF.bpfInterp",
+        "Solanalib.Runtime.Program",
+        "Solanalib.Runtime.Exec"
+      ],
+      "sources": [
+        "Solanalib/SBPF/Interpreter.lean",
+        "packages/solanalib-runtime/Solanalib/Runtime/Exec.lean",
+        "Solanalib/Transfer.lean"
+      ],
+      "behavior": [
+        "The existing machine interpreter has no proved interpretation into the runtime abstract program/execution relation."
+      ],
+      "build_conditions": {
+        "toolchain": "leanprover/lean4:v4.34.0",
+        "scope": "The exact selected source revision; memory, syscall, outcome and compute correspondence remain explicit."
+      },
+      "tests": [
+        "SolanalibTest/SBPF/VerifierTest.lean",
+        "tools/runtime-conformance/README.md"
+      ],
+      "test_scope": "These tests cover the separate layers; they do not validate the missing execution connection."
+    }
+  ]
+}

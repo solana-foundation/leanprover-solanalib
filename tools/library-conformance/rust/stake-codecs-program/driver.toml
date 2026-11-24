@@ -1,0 +1,3 @@
+corpora = ["stake_codecs_program"]
+region = "none"
+inputs = ["rust/stake-codec-cases/lookup.rs", "rust/stake-codec-cases/packed_len.rs", "rust/stake-codec-cases/alloc_trace.rs"]

@@ -1,0 +1,6 @@
+corpora = ["sdk_accounts_1_15_2"]
+inputs = [
+  "rust/sdk-accounts-common/main.rs",
+  "rust/sdk-accounts-common/world.rs",
+  "rust/accounts-v1/src/region.rs",
+]

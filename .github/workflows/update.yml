@@ -24,7 +24,7 @@ jobs:
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
       - name: Refresh dependency manifest
-        run: lake -Kenv=dev update
+        run: lake -R -Kenv=dev update
 
       - name: Open PR if anything changed
         uses: peter-evans/create-pull-request@v7
@@ -32,7 +32,7 @@ jobs:
           commit-message: "chore(deps): refresh Lake manifest"
           title: "chore(deps): refresh Lake manifest"
           body: |
-            Automated monthly refresh of `lake-manifest.json` via `lake -Kenv=dev update`.
+            Automated monthly refresh of `lake-manifest.json` via `lake -R -Kenv=dev update`.
 
             Review the diff for any breaking dep bumps (Lean toolchain pins, Mathlib version).
             If the toolchain version changes, also bump `lean-toolchain` and the Mathlib `require`

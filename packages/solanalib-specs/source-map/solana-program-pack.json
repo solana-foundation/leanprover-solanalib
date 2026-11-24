@@ -1,0 +1,25 @@
+{
+  "packages": {
+    "solana-program-pack-3.1.0": {
+      "order": 11,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "f5f84f31e7ebf13c267af86dc81c1f512fc23f67",
+      "path_prefix": "program-pack/"
+    }
+  },
+  "interfaces": {
+    "solana-program-pack-3.1.0-lib": {
+      "order": 21,
+      "anchor_text": "pub trait IsInitialized {",
+      "cargo_package_checksum": "3d7701cb15b90667ae1c89ef4ac35a59c61e66ce58ddee13d729472af7f41d59",
+      "crate": "solana-program-pack-3.1.0",
+      "line": 14,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "e5e568d2e24049a347c0197bfa0c1afe8ef7d9bf10d225a460904ddd38ceeac1",
+        "cargo_vcs_info_sha256": "25ca6d2f7a9aa04582bcaaadbb2857ba26f1f54a4b32e171e65e87eda13a716e"
+      },
+      "path": "src/lib.rs",
+      "sha256": "3f991711b6af3206090a80a28da15f477f43ef8ce2547260927e885427b1ea53"
+    }
+  }
+}

@@ -1,0 +1,3008 @@
+{
+  "abstractions": {
+    "library::spl_token_2022_interface": {
+      "order": 152,
+      "modules": {
+        "Solanalib.Specs.SplToken2022Interface": "bb37e8001040bb5722c85cb6ca727d7ac3d59c5e74a35910c7c20fcdd34bdeef",
+        "Solanalib.Specs.SplToken2022Interface.Capabilities": "721d37808e98a3eca534a41237b780024dfb0db92a774c1a5dcc0c60ad8e5384",
+        "Solanalib.Specs.SplToken2022Interface.Extensions": "ad0f32de9bb06f061f6eb27e4f6842b770d9113cc6175ec521a0dc6ed8c2c01f",
+        "Solanalib.Specs.SplToken2022Interface.FeeReference": "228ff540ef5407e6113e205f5f9f75bf64e4f3e4cb1e1b46c4ac14e70581254e",
+        "Solanalib.Specs.SplToken2022Interface.Fees": "d6bf7aed42ad8c560a61d3aa80d0d11fb7a9e906c2da2a482386f262f93358d2",
+        "Solanalib.Specs.SplToken2022Interface.Instructions": "673021becd2ce524044dc1c0645978f7479068f5bea4f01eda1b8a66e8bd7c79",
+        "Solanalib.Specs.SplToken2022Interface.state.Mint": "172ea98b498f3edcfb3ffccb43f5836f54477a5666aee95eb616a2d38ff03429"
+      },
+      "source_ids": [
+        "spl-token-2022-interface-3.1.1-lib",
+        "spl-token-2022-interface-3.1.1-instruction",
+        "spl-token-2022-interface-3.1.1-extensions",
+        "spl-token-2022-interface-3.1.1-account-len",
+        "token-fees-3.1.1",
+        "fee-unaligned-1.2.0",
+        "fee-nullable-1.3.0",
+        "fee-address-2.6.1",
+        "spl-token-2022-interface-3.1.1-state",
+        "root-extra::solana-program-option-3.1.0::src/lib.rs",
+        "value-request::solana-address-2.6.1::src/lib.rs",
+        "token-state::spl-token-2022-8.0.1::src/extension/mod.rs",
+        "token-state::spl-token-2022-8.0.1::src/extension/permanent_delegate.rs",
+        "token-state::spl-token-2022-8.0.1::src/extension/transfer_hook/mod.rs",
+        "token-state::spl-token-2022-interface-2.1.0::src/extension/mod.rs",
+        "token-state::spl-token-2022-interface-3.0.1::src/extension/mod.rs",
+        "token-state::spl-token-2022-8.0.1::src/state.rs",
+        "token-state::spl-token-2022-8.0.1::src/extension/transfer_fee/mod.rs",
+        "token-state::spl-token-2022-interface-2.1.0::src/extension/transfer_fee/mod.rs",
+        "token-state::spl-token-metadata-interface-0.7.0::src/state.rs"
+      ],
+      "argument": "@review:source-notes/token-extensions.md#review-d61b5fb23b12511a",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:73cfb3cbae7ec412",
+        "@binding:157f977863257615",
+        "@text:0810dde14cb63cff",
+        "@text:a1e5249cc90dc726",
+        "@text:62fea2a4f9859692",
+        "@text:921ee9a2cf3201e2",
+        "@text:b74a046462432951",
+        "@text:40e266757e3d6356",
+        "@text:9b8be0780b91ae07",
+        "@text:5a4d42aa5b46b855",
+        "@binding:5353be6e65af8112",
+        "@binding:32d8ceaf1167419a",
+        "@text:a59033a3f7b014d2",
+        "@text:f428bee2a0798d8f",
+        "@binding:624aee729d2ca0fe",
+        "@binding:5d949fd403669264",
+        "@binding:a5f30773f618fd19"
+      ]
+    }
+  },
+  "packages": {
+    "spl-token-2022-interface-3.1.1": {
+      "order": 12,
+      "repository": "https://github.com/solana-program/token-2022",
+      "revision": "e18f9c6f9bf6044b934f48e3090e8e59e4820f02",
+      "path_prefix": "interface/"
+    },
+    "spl-token-2022-interface-3.0.0": {
+      "order": 35,
+      "repository": "https://github.com/solana-program/token-2022",
+      "revision": "e0ad14742f4df0e111b8fa81da1e7163525be76c",
+      "path_prefix": "interface/"
+    },
+    "spl-token-2022-interface-2.1.0": {
+      "order": 60,
+      "repository": "https://github.com/solana-program/token-2022",
+      "revision": "4fae3ba6516db0c6e4b2fe698ba2cfdb92901b93",
+      "path_prefix": "interface/"
+    },
+    "spl-token-2022-interface-3.0.1": {
+      "order": 132,
+      "repository": "https://github.com/solana-program/token-2022",
+      "revision": "8077ccf1cc4a853f08cb4c90355e19fe340d0135",
+      "path_prefix": "interface/"
+    }
+  },
+  "interfaces": {
+    "spl-token-2022-interface-3.1.1-pod": {
+      "order": 22,
+      "anchor_text": "#[repr(C)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [{"line": 164, "name": "option", "type": "[u8; 4]"}, {"line": 166, "name": "value", "type": "T"}],
+          "line": 159,
+          "repr": "#[repr(C, packed)]",
+          "repr_line": 157,
+          "source_id": "spl-token-2022-interface-3.1.1-pod",
+          "type": "PodCOption"
+        },
+        {
+          "fields": [
+            {"line": 27, "name": "mint_authority", "type": "PodCOption<Address>"},
+            {"line": 29, "name": "supply", "type": "U64"},
+            {"line": 31, "name": "decimals", "type": "u8"},
+            {"line": 33, "name": "is_initialized", "type": "Bool"},
+            {"line": 35, "name": "freeze_authority", "type": "PodCOption<Address>"}
+          ],
+          "line": 22,
+          "repr": "#[repr(C)]",
+          "repr_line": 20,
+          "source_id": "spl-token-2022-interface-3.1.1-pod",
+          "type": "PodMint"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 20,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/pod.rs",
+      "sha256": "8d1aa1366c00147dd4af820505325d4efc7d6118908b27fed29751a99963ce88"
+    },
+    "spl-token-2022-interface-3.1.1-state": {
+      "order": 23,
+      "anchor_text": "pub trait PackedSizeOf {",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 20,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/state.rs",
+      "sha256": "4566daf8b06ff2e7b975bed3e631ef4ab9591a95ddabd4117300ca1f639a59d2"
+    },
+    "spl-token-2022-interface-3.0.0-extension-mod": {
+      "order": 83,
+      "crate": "spl-token-2022-interface-3.0.0",
+      "path": "src/extension/mod.rs",
+      "sha256": "7df80a802e151ff13a4f8ac517ca103f741242a313de366de326df478d72cb9e"
+    },
+    "spl-token-2022-interface-3.0.0-extension-transfer-hook-mod": {
+      "order": 84,
+      "crate": "spl-token-2022-interface-3.0.0",
+      "path": "src/extension/transfer_hook/mod.rs",
+      "sha256": "23245c8a47f09adaf4803a6ffca8d6dfc9da1e4c87741b33338efedd07d90e3e"
+    },
+    "spl-token-2022-interface-3.0.0-instruction": {
+      "order": 85,
+      "crate": "spl-token-2022-interface-3.0.0",
+      "path": "src/instruction.rs",
+      "sha256": "672b3890cb58e5700a67f202491069ed44dffcbfa0e7d0b83a0cfbbb05b3a287"
+    },
+    "spl-token-2022-interface-3.0.0-lib": {
+      "order": 86,
+      "crate": "spl-token-2022-interface-3.0.0",
+      "path": "src/lib.rs",
+      "sha256": "5b47d475fa9da9a3aab2e98adf24d45de654caf773d96f3c89fbc85a96eada77"
+    },
+    "spl-token-2022-interface-3.0.0-pod": {
+      "order": 87,
+      "crate": "spl-token-2022-interface-3.0.0",
+      "path": "src/pod.rs",
+      "sha256": "8d1aa1366c00147dd4af820505325d4efc7d6118908b27fed29751a99963ce88"
+    },
+    "spl-token-2022-interface-3.0.0-state": {
+      "order": 88,
+      "crate": "spl-token-2022-interface-3.0.0",
+      "path": "src/state.rs",
+      "sha256": "4566daf8b06ff2e7b975bed3e631ef4ab9591a95ddabd4117300ca1f639a59d2"
+    },
+    "spl-token-2022-interface-3.1.1-account-len": {
+      "order": 89,
+      "anchor_text": "pub(crate) struct TlvLenAccumulator {",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 14,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/account_len.rs",
+      "sha256": "737c0d548f9246699da3fca3d1324ea2936a3d78096b07c51e7d961af90f04ff"
+    },
+    "spl-token-2022-interface-3.1.1-error": {
+      "order": 90,
+      "anchor_text": "#[repr(u32)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 11,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/error.rs",
+      "sha256": "15daf972b1332208c31b095d405ad33ab35b5a3900306045f6203cb0d4084aeb"
+    },
+    "spl-token-2022-interface-3.1.1-extension-confidential-mint-burn": {
+      "order": 91,
+      "anchor_text": "#[repr(C)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [
+            {
+              "alignment": 1,
+              "bytes": 64,
+              "line": 22,
+              "name": "confidential_supply",
+              "type": "PodElGamalCiphertext"
+            },
+            {"alignment": 1, "bytes": 36, "line": 24, "name": "decryptable_supply", "type": "PodAeCiphertext"},
+            {
+              "alignment": 1,
+              "bytes": 32,
+              "line": 26,
+              "name": "supply_elgamal_pubkey",
+              "type": "PodElGamalPubkey"
+            },
+            {"alignment": 1, "bytes": 64, "line": 28, "name": "pending_burn", "type": "PodElGamalCiphertext"}
+          ],
+          "line": 20,
+          "repr": "#[repr(C)]",
+          "repr_line": 19,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-confidential-mint-burn",
+          "type": "ConfidentialMintBurn"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 19,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/confidential_mint_burn/mod.rs",
+      "sha256": "52db8f0e7e7e7287c748b276655754a640d35a16c1120e9a76ac9480cbb7c150"
+    },
+    "spl-token-2022-interface-3.1.1-extension-confidential-transfer": {
+      "order": 92,
+      "anchor_text": "pub type EncryptedBalance = PodElGamalCiphertext;",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [
+            {"alignment": 1, "bytes": 32, "line": 44, "name": "authority", "type": "MaybeNull<Address>"},
+            {"alignment": 1, "bytes": 1, "line": 53, "name": "auto_approve_new_accounts", "type": "Bool"},
+            {
+              "alignment": 1,
+              "bytes": 32,
+              "line": 56,
+              "name": "auditor_elgamal_pubkey",
+              "type": "MaybeNull<PodElGamalPubkey>"
+            }
+          ],
+          "line": 39,
+          "repr": "#[repr(C)]",
+          "repr_line": 37,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-confidential-transfer",
+          "type": "ConfidentialTransferMint"
+        },
+        {
+          "fields": [
+            {"alignment": 1, "bytes": 1, "line": 70, "name": "approved", "type": "Bool"},
+            {"alignment": 1, "bytes": 32, "line": 73, "name": "elgamal_pubkey", "type": "PodElGamalPubkey"},
+            {
+              "alignment": 1,
+              "bytes": 64,
+              "line": 76,
+              "name": "pending_balance_lo",
+              "type": "EncryptedBalance"
+            },
+            {
+              "alignment": 1,
+              "bytes": 64,
+              "line": 79,
+              "name": "pending_balance_hi",
+              "type": "EncryptedBalance"
+            },
+            {"alignment": 1, "bytes": 64, "line": 82, "name": "available_balance", "type": "EncryptedBalance"},
+            {
+              "alignment": 1,
+              "bytes": 36,
+              "line": 85,
+              "name": "decryptable_available_balance",
+              "type": "DecryptableBalance"
+            },
+            {"alignment": 1, "bytes": 1, "line": 89, "name": "allow_confidential_credits", "type": "Bool"},
+            {"alignment": 1, "bytes": 1, "line": 92, "name": "allow_non_confidential_credits", "type": "Bool"},
+            {"alignment": 1, "bytes": 8, "line": 96, "name": "pending_balance_credit_counter", "type": "U64"},
+            {
+              "alignment": 1,
+              "bytes": 8,
+              "line": 101,
+              "name": "maximum_pending_balance_credit_counter",
+              "type": "U64"
+            },
+            {
+              "alignment": 1,
+              "bytes": 8,
+              "line": 105,
+              "name": "expected_pending_balance_credit_counter",
+              "type": "U64"
+            },
+            {
+              "alignment": 1,
+              "bytes": 8,
+              "line": 109,
+              "name": "actual_pending_balance_credit_counter",
+              "type": "U64"
+            }
+          ],
+          "line": 66,
+          "repr": "#[repr(C)]",
+          "repr_line": 64,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-confidential-transfer",
+          "type": "ConfidentialTransferAccount"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 32,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/confidential_transfer/mod.rs",
+      "sha256": "9dabc8e24aae9e1b2ec48abebd5beb3f16ea3fea015575d1ee37eef3f721b3a6"
+    },
+    "spl-token-2022-interface-3.1.1-extension-confidential-transfer-fee": {
+      "order": 93,
+      "anchor_text": "pub type EncryptedWithheldAmount = PodElGamalCiphertext;",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [
+            {"alignment": 1, "bytes": 32, "line": 28, "name": "authority", "type": "MaybeNull<Address>"},
+            {
+              "alignment": 1,
+              "bytes": 32,
+              "line": 36,
+              "name": "withdraw_withheld_authority_elgamal_pubkey",
+              "type": "PodElGamalPubkey"
+            },
+            {"alignment": 1, "bytes": 1, "line": 39, "name": "harvest_to_mint_enabled", "type": "Bool"},
+            {
+              "alignment": 1,
+              "bytes": 64,
+              "line": 43,
+              "name": "withheld_amount",
+              "type": "EncryptedWithheldAmount"
+            }
+          ],
+          "line": 26,
+          "repr": "#[repr(C)]",
+          "repr_line": 24,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-confidential-transfer-fee",
+          "type": "ConfidentialTransferFeeConfig"
+        },
+        {
+          "fields": [
+            {
+              "alignment": 1,
+              "bytes": 64,
+              "line": 55,
+              "name": "withheld_amount",
+              "type": "EncryptedWithheldAmount"
+            }
+          ],
+          "line": 53,
+          "repr": "#[repr(C)]",
+          "repr_line": 51,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-confidential-transfer-fee",
+          "type": "ConfidentialTransferFeeAmount"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 21,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/confidential_transfer_fee/mod.rs",
+      "sha256": "6549992f17bf35f1e3655fb689c117cf63d8eaebf8c72fbc89020c6c10d45b16"
+    },
+    "spl-token-2022-interface-3.1.1-extension-cpi-guard": {
+      "order": 94,
+      "anchor_text": "#[repr(C)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [{"alignment": 1, "bytes": 1, "line": 22, "name": "lock_cpi", "type": "Bool"}],
+          "line": 20,
+          "repr": "#[repr(C)]",
+          "repr_line": 16,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-cpi-guard",
+          "type": "CpiGuard"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 16,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/cpi_guard/mod.rs",
+      "sha256": "f7773ce63c13b2975ce69f1c6f11e2c80cffa229616daf40df0058d8ccbe7aa4"
+    },
+    "spl-token-2022-interface-3.1.1-extension-default-account-state": {
+      "order": 95,
+      "anchor_text": "#[repr(C)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [{"alignment": 1, "bytes": 1, "line": 18, "name": "state", "type": "PodAccountState"}],
+          "line": 16,
+          "repr": "#[repr(C)]",
+          "repr_line": 12,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-default-account-state",
+          "type": "DefaultAccountState"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 12,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/default_account_state/mod.rs",
+      "sha256": "2f99ac0590ada4ae651bce35dcbe4c1ede983331f0a34598c640eb5b590dd3df"
+    },
+    "spl-token-2022-interface-3.1.1-extension-group-member-pointer": {
+      "order": 96,
+      "anchor_text": "#[repr(C)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [
+            {"alignment": 1, "bytes": 32, "line": 24, "name": "authority", "type": "MaybeNull<Address>"},
+            {"alignment": 1, "bytes": 32, "line": 27, "name": "member_address", "type": "MaybeNull<Address>"}
+          ],
+          "line": 21,
+          "repr": "#[repr(C)]",
+          "repr_line": 17,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-group-member-pointer",
+          "type": "GroupMemberPointer"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 17,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/group_member_pointer/mod.rs",
+      "sha256": "70db39aa59a505e346beb5ed28117ea571a97be56c46874cbffb15150860328b"
+    },
+    "spl-token-2022-interface-3.1.1-extension-group-pointer": {
+      "order": 97,
+      "anchor_text": "#[repr(C)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [
+            {"alignment": 1, "bytes": 32, "line": 24, "name": "authority", "type": "MaybeNull<Address>"},
+            {"alignment": 1, "bytes": 32, "line": 27, "name": "group_address", "type": "MaybeNull<Address>"}
+          ],
+          "line": 21,
+          "repr": "#[repr(C)]",
+          "repr_line": 17,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-group-pointer",
+          "type": "GroupPointer"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 17,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/group_pointer/mod.rs",
+      "sha256": "8c19b494458c897c151355aa9795bab9c08201e0f64e6634d1da22711f9caf6c"
+    },
+    "spl-token-2022-interface-3.1.1-extension-immutable-owner": {
+      "order": 98,
+      "anchor_text": "#[repr(transparent)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [],
+          "line": 13,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 12,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-immutable-owner",
+          "type": "ImmutableOwner"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 12,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/immutable_owner.rs",
+      "sha256": "8346ba8c6b309d75280550585a1bd7b6a43f0059db9fda0fc4d43d5ac408647d"
+    },
+    "spl-token-2022-interface-3.1.1-extension-interest-bearing-mint": {
+      "order": 99,
+      "anchor_text": "pub type BasisPoints = I16;",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [
+            {"alignment": 1, "bytes": 32, "line": 47, "name": "rate_authority", "type": "MaybeNull<Address>"},
+            {
+              "alignment": 1,
+              "bytes": 8,
+              "line": 49,
+              "name": "initialization_timestamp",
+              "type": "UnixTimestamp"
+            },
+            {"alignment": 1, "bytes": 2, "line": 51, "name": "pre_update_average_rate", "type": "BasisPoints"},
+            {"alignment": 1, "bytes": 8, "line": 53, "name": "last_update_timestamp", "type": "UnixTimestamp"},
+            {"alignment": 1, "bytes": 2, "line": 55, "name": "current_rate", "type": "BasisPoints"}
+          ],
+          "line": 44,
+          "repr": "#[repr(C)]",
+          "repr_line": 40,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-interest-bearing-mint",
+          "type": "InterestBearingConfig"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 25,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/interest_bearing_mint/mod.rs",
+      "sha256": "230efe4355d53125756d6873ca3c5421a3641b876ba962c489e2f1827616d75e"
+    },
+    "spl-token-2022-interface-3.1.1-extension-memo-transfer": {
+      "order": 100,
+      "anchor_text": "#[repr(C)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [
+            {
+              "alignment": 1,
+              "bytes": 1,
+              "line": 19,
+              "name": "require_incoming_transfer_memos",
+              "type": "Bool"
+            }
+          ],
+          "line": 17,
+          "repr": "#[repr(C)]",
+          "repr_line": 13,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-memo-transfer",
+          "type": "MemoTransfer"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 13,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/memo_transfer/mod.rs",
+      "sha256": "831da8785a008f72bf5a442b7c18f9ecffa1ef3b5fc1ac41ace871807f5d83a0"
+    },
+    "spl-token-2022-interface-3.1.1-extension-metadata-pointer": {
+      "order": 101,
+      "anchor_text": "#[repr(C)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [
+            {"alignment": 1, "bytes": 32, "line": 24, "name": "authority", "type": "MaybeNull<Address>"},
+            {
+              "alignment": 1,
+              "bytes": 32,
+              "line": 27,
+              "name": "metadata_address",
+              "type": "MaybeNull<Address>"
+            }
+          ],
+          "line": 21,
+          "repr": "#[repr(C)]",
+          "repr_line": 17,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-metadata-pointer",
+          "type": "MetadataPointer"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 17,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/metadata_pointer/mod.rs",
+      "sha256": "db4f962e95f2a652b8faf06c8821cb2c7e6ecd31e90cc27d46df0ca143768633"
+    },
+    "spl-token-2022-interface-3.1.1-extension-mint-close-authority": {
+      "order": 102,
+      "anchor_text": "#[repr(C)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [{"alignment": 1, "bytes": 32, "line": 21, "name": "close_authority", "type": "MaybeNull<Address>"}],
+          "line": 18,
+          "repr": "#[repr(C)]",
+          "repr_line": 14,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-mint-close-authority",
+          "type": "MintCloseAuthority"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 14,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/mint_close_authority.rs",
+      "sha256": "d68a5cc324c217e5e18a86dab363f9f67c19e14e828f942f534ff6e9db441a3b"
+    },
+    "spl-token-2022-interface-3.1.1-extension-non-transferable": {
+      "order": 103,
+      "anchor_text": "#[repr(transparent)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [],
+          "line": 13,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 12,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-non-transferable",
+          "type": "NonTransferable"
+        },
+        {
+          "fields": [],
+          "line": 21,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 20,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-non-transferable",
+          "type": "NonTransferableAccount"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 12,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/non_transferable.rs",
+      "sha256": "8b0b6ac89c5746757afecee8d4af288d7eb032f8c71d14af7422ca0e19baa0a0"
+    },
+    "spl-token-2022-interface-3.1.1-extension-pausable": {
+      "order": 104,
+      "anchor_text": "#[repr(C)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [
+            {"alignment": 1, "bytes": 32, "line": 25, "name": "authority", "type": "MaybeNull<Address>"},
+            {"alignment": 1, "bytes": 1, "line": 27, "name": "paused", "type": "Bool"}
+          ],
+          "line": 22,
+          "repr": "#[repr(C)]",
+          "repr_line": 21,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-pausable",
+          "type": "PausableConfig"
+        },
+        {
+          "fields": [],
+          "line": 35,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 34,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-pausable",
+          "type": "PausableAccount"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 21,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/pausable/mod.rs",
+      "sha256": "ec2d0b938dc296c73c27bbf98b9b1ca7c71124c76cc3a2e9740cdf7093c2d708"
+    },
+    "spl-token-2022-interface-3.1.1-extension-permanent-delegate": {
+      "order": 105,
+      "anchor_text": "#[repr(C)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [{"alignment": 1, "bytes": 32, "line": 21, "name": "delegate", "type": "MaybeNull<Address>"}],
+          "line": 18,
+          "repr": "#[repr(C)]",
+          "repr_line": 14,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-permanent-delegate",
+          "type": "PermanentDelegate"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 14,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/permanent_delegate.rs",
+      "sha256": "2b6e8554448539d2c8bdb456080f24455e6011b50938612f26470afe59a49ee0"
+    },
+    "spl-token-2022-interface-3.1.1-extension-permissioned-burn": {
+      "order": 106,
+      "anchor_text": "#[repr(C)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [{"alignment": 1, "bytes": 32, "line": 24, "name": "authority", "type": "MaybeNull<Address>"}],
+          "line": 21,
+          "repr": "#[repr(C)]",
+          "repr_line": 20,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-permissioned-burn",
+          "type": "PermissionedBurnConfig"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 20,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/permissioned_burn/mod.rs",
+      "sha256": "7ecbf5d694e90d48c4e3c1f1eeb0bf31081cf9a12fb43e5f8186177ca5b58f62"
+    },
+    "spl-token-2022-interface-3.1.1-extension-scaled-ui-amount": {
+      "order": 107,
+      "anchor_text": "pub type UnixTimestamp = I64;",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [{"line": 31, "name": "0", "type": "[u8; 8]"}],
+          "line": 31,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 30,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-scaled-ui-amount",
+          "type": "PodF64"
+        },
+        {
+          "fields": [
+            {"alignment": 1, "bytes": 32, "line": 56, "name": "authority", "type": "MaybeNull<Address>"},
+            {"alignment": 1, "bytes": 8, "line": 58, "name": "multiplier", "type": "PodF64"},
+            {
+              "alignment": 1,
+              "bytes": 8,
+              "line": 60,
+              "name": "new_multiplier_effective_timestamp",
+              "type": "UnixTimestamp"
+            },
+            {"alignment": 1, "bytes": 8, "line": 62, "name": "new_multiplier", "type": "PodF64"}
+          ],
+          "line": 53,
+          "repr": "#[repr(C)]",
+          "repr_line": 49,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-scaled-ui-amount",
+          "type": "ScaledUiAmountConfig"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 24,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/scaled_ui_amount/mod.rs",
+      "sha256": "6a04b972920d43d39700ffd2a8b3873fc8b9b791f47bfe5fb18fa0922b69234b"
+    },
+    "spl-token-2022-interface-3.1.1-extension-token-group": {
+      "order": 108,
+      "anchor_text": "use {",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 1,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/token_group/mod.rs",
+      "sha256": "2bada50dabc8d472d1ed1fe55608c4e8ef518fcd2cb5911f7569781bfe1c6289"
+    },
+    "spl-token-2022-interface-3.1.1-extension-token-metadata": {
+      "order": 109,
+      "anchor_text": "use {",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 1,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/token_metadata/mod.rs",
+      "sha256": "294202a665a9c1b0c0fda959e8b037e5145f09cb198ff305e02cefaefe8f74c3"
+    },
+    "spl-token-2022-interface-3.1.1-extension-transfer-hook": {
+      "order": 110,
+      "anchor_text": "#[repr(C)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [
+            {"alignment": 1, "bytes": 32, "line": 33, "name": "authority", "type": "MaybeNull<Address>"},
+            {"alignment": 1, "bytes": 32, "line": 36, "name": "program_id", "type": "MaybeNull<Address>"}
+          ],
+          "line": 30,
+          "repr": "#[repr(C)]",
+          "repr_line": 26,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-transfer-hook",
+          "type": "TransferHook"
+        },
+        {
+          "fields": [{"alignment": 1, "bytes": 1, "line": 47, "name": "transferring", "type": "Bool"}],
+          "line": 45,
+          "repr": "#[repr(transparent)]",
+          "repr_line": 44,
+          "source_id": "spl-token-2022-interface-3.1.1-extension-transfer-hook",
+          "type": "TransferHookAccount"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 26,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/transfer_hook/mod.rs",
+      "sha256": "23245c8a47f09adaf4803a6ffca8d6dfc9da1e4c87741b33338efedd07d90e3e"
+    },
+    "spl-token-2022-interface-3.1.1-extensions": {
+      "order": 111,
+      "anchor_text": "#[repr(transparent)]",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "crate": "spl-token-2022-interface-3.1.1",
+      "layout_evidence_scope": "Source repr and field derivation only; no Rust execution or implementation proof. All constituent storage has alignment one; all 29 production tags are covered. The three cfg(test)-only tags are excluded.",
+      "line": 99,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/mod.rs",
+      "production_extension_table": [
+        {
+          "derivation": "explicit zero-size sentinel dispatch",
+          "fixed_bytes": 0,
+          "tag": 0,
+          "variant": "Uninitialized"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 108,
+          "layout": {
+            "fields": [
+              {
+                "alignment": 1,
+                "bytes": 32,
+                "line": 138,
+                "name": "transfer_fee_config_authority",
+                "type": "MaybeNull<Address>"
+              },
+              {
+                "alignment": 1,
+                "bytes": 32,
+                "line": 141,
+                "name": "withdraw_withheld_authority",
+                "type": "MaybeNull<Address>"
+              },
+              {"alignment": 1, "bytes": 8, "line": 144, "name": "withheld_amount", "type": "U64"},
+              {"alignment": 1, "bytes": 18, "line": 146, "name": "older_transfer_fee", "type": "TransferFee"},
+              {"alignment": 1, "bytes": 18, "line": 148, "name": "newer_transfer_fee", "type": "TransferFee"}
+            ],
+            "line": 135,
+            "repr": "#[repr(C)]",
+            "repr_line": 131,
+            "source_id": "token-fees-3.1.1",
+            "type": "TransferFeeConfig"
+          },
+          "rust_type": "TransferFeeConfig",
+          "tag": 1,
+          "variant": "TransferFeeConfig"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 8,
+          "layout": {
+            "fields": [{"alignment": 1, "bytes": 8, "line": 180, "name": "withheld_amount", "type": "U64"}],
+            "line": 178,
+            "repr": "#[repr(C)]",
+            "repr_line": 174,
+            "source_id": "token-fees-3.1.1",
+            "type": "TransferFeeAmount"
+          },
+          "rust_type": "TransferFeeAmount",
+          "tag": 2,
+          "variant": "TransferFeeAmount"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 32,
+          "layout": {
+            "fields": [
+              {
+                "alignment": 1,
+                "bytes": 32,
+                "line": 21,
+                "name": "close_authority",
+                "type": "MaybeNull<Address>"
+              }
+            ],
+            "line": 18,
+            "repr": "#[repr(C)]",
+            "repr_line": 14,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-mint-close-authority",
+            "type": "MintCloseAuthority"
+          },
+          "rust_type": "MintCloseAuthority",
+          "tag": 3,
+          "variant": "MintCloseAuthority"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 65,
+          "layout": {
+            "fields": [
+              {"alignment": 1, "bytes": 32, "line": 44, "name": "authority", "type": "MaybeNull<Address>"},
+              {"alignment": 1, "bytes": 1, "line": 53, "name": "auto_approve_new_accounts", "type": "Bool"},
+              {
+                "alignment": 1,
+                "bytes": 32,
+                "line": 56,
+                "name": "auditor_elgamal_pubkey",
+                "type": "MaybeNull<PodElGamalPubkey>"
+              }
+            ],
+            "line": 39,
+            "repr": "#[repr(C)]",
+            "repr_line": 37,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-confidential-transfer",
+            "type": "ConfidentialTransferMint"
+          },
+          "rust_type": "ConfidentialTransferMint",
+          "tag": 4,
+          "variant": "ConfidentialTransferMint"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 295,
+          "layout": {
+            "fields": [
+              {"alignment": 1, "bytes": 1, "line": 70, "name": "approved", "type": "Bool"},
+              {"alignment": 1, "bytes": 32, "line": 73, "name": "elgamal_pubkey", "type": "PodElGamalPubkey"},
+              {
+                "alignment": 1,
+                "bytes": 64,
+                "line": 76,
+                "name": "pending_balance_lo",
+                "type": "EncryptedBalance"
+              },
+              {
+                "alignment": 1,
+                "bytes": 64,
+                "line": 79,
+                "name": "pending_balance_hi",
+                "type": "EncryptedBalance"
+              },
+              {
+                "alignment": 1,
+                "bytes": 64,
+                "line": 82,
+                "name": "available_balance",
+                "type": "EncryptedBalance"
+              },
+              {
+                "alignment": 1,
+                "bytes": 36,
+                "line": 85,
+                "name": "decryptable_available_balance",
+                "type": "DecryptableBalance"
+              },
+              {"alignment": 1, "bytes": 1, "line": 89, "name": "allow_confidential_credits", "type": "Bool"},
+              {
+                "alignment": 1,
+                "bytes": 1,
+                "line": 92,
+                "name": "allow_non_confidential_credits",
+                "type": "Bool"
+              },
+              {
+                "alignment": 1,
+                "bytes": 8,
+                "line": 96,
+                "name": "pending_balance_credit_counter",
+                "type": "U64"
+              },
+              {
+                "alignment": 1,
+                "bytes": 8,
+                "line": 101,
+                "name": "maximum_pending_balance_credit_counter",
+                "type": "U64"
+              },
+              {
+                "alignment": 1,
+                "bytes": 8,
+                "line": 105,
+                "name": "expected_pending_balance_credit_counter",
+                "type": "U64"
+              },
+              {
+                "alignment": 1,
+                "bytes": 8,
+                "line": 109,
+                "name": "actual_pending_balance_credit_counter",
+                "type": "U64"
+              }
+            ],
+            "line": 66,
+            "repr": "#[repr(C)]",
+            "repr_line": 64,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-confidential-transfer",
+            "type": "ConfidentialTransferAccount"
+          },
+          "rust_type": "ConfidentialTransferAccount",
+          "tag": 5,
+          "variant": "ConfidentialTransferAccount"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 1,
+          "layout": {
+            "fields": [{"alignment": 1, "bytes": 1, "line": 18, "name": "state", "type": "PodAccountState"}],
+            "line": 16,
+            "repr": "#[repr(C)]",
+            "repr_line": 12,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-default-account-state",
+            "type": "DefaultAccountState"
+          },
+          "rust_type": "DefaultAccountState",
+          "tag": 6,
+          "variant": "DefaultAccountState"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 0,
+          "layout": {
+            "fields": [],
+            "line": 13,
+            "repr": "#[repr(transparent)]",
+            "repr_line": 12,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-immutable-owner",
+            "type": "ImmutableOwner"
+          },
+          "rust_type": "ImmutableOwner",
+          "tag": 7,
+          "variant": "ImmutableOwner"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 1,
+          "layout": {
+            "fields": [
+              {
+                "alignment": 1,
+                "bytes": 1,
+                "line": 19,
+                "name": "require_incoming_transfer_memos",
+                "type": "Bool"
+              }
+            ],
+            "line": 17,
+            "repr": "#[repr(C)]",
+            "repr_line": 13,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-memo-transfer",
+            "type": "MemoTransfer"
+          },
+          "rust_type": "MemoTransfer",
+          "tag": 8,
+          "variant": "MemoTransfer"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 0,
+          "layout": {
+            "fields": [],
+            "line": 13,
+            "repr": "#[repr(transparent)]",
+            "repr_line": 12,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-non-transferable",
+            "type": "NonTransferable"
+          },
+          "rust_type": "NonTransferable",
+          "tag": 9,
+          "variant": "NonTransferable"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 52,
+          "layout": {
+            "fields": [
+              {
+                "alignment": 1,
+                "bytes": 32,
+                "line": 47,
+                "name": "rate_authority",
+                "type": "MaybeNull<Address>"
+              },
+              {
+                "alignment": 1,
+                "bytes": 8,
+                "line": 49,
+                "name": "initialization_timestamp",
+                "type": "UnixTimestamp"
+              },
+              {
+                "alignment": 1,
+                "bytes": 2,
+                "line": 51,
+                "name": "pre_update_average_rate",
+                "type": "BasisPoints"
+              },
+              {
+                "alignment": 1,
+                "bytes": 8,
+                "line": 53,
+                "name": "last_update_timestamp",
+                "type": "UnixTimestamp"
+              },
+              {"alignment": 1, "bytes": 2, "line": 55, "name": "current_rate", "type": "BasisPoints"}
+            ],
+            "line": 44,
+            "repr": "#[repr(C)]",
+            "repr_line": 40,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-interest-bearing-mint",
+            "type": "InterestBearingConfig"
+          },
+          "rust_type": "InterestBearingConfig",
+          "tag": 10,
+          "variant": "InterestBearingConfig"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 1,
+          "layout": {
+            "fields": [{"alignment": 1, "bytes": 1, "line": 22, "name": "lock_cpi", "type": "Bool"}],
+            "line": 20,
+            "repr": "#[repr(C)]",
+            "repr_line": 16,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-cpi-guard",
+            "type": "CpiGuard"
+          },
+          "rust_type": "CpiGuard",
+          "tag": 11,
+          "variant": "CpiGuard"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 32,
+          "layout": {
+            "fields": [{"alignment": 1, "bytes": 32, "line": 21, "name": "delegate", "type": "MaybeNull<Address>"}],
+            "line": 18,
+            "repr": "#[repr(C)]",
+            "repr_line": 14,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-permanent-delegate",
+            "type": "PermanentDelegate"
+          },
+          "rust_type": "PermanentDelegate",
+          "tag": 12,
+          "variant": "PermanentDelegate"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 0,
+          "layout": {
+            "fields": [],
+            "line": 21,
+            "repr": "#[repr(transparent)]",
+            "repr_line": 20,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-non-transferable",
+            "type": "NonTransferableAccount"
+          },
+          "rust_type": "NonTransferableAccount",
+          "tag": 13,
+          "variant": "NonTransferableAccount"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 64,
+          "layout": {
+            "fields": [
+              {"alignment": 1, "bytes": 32, "line": 33, "name": "authority", "type": "MaybeNull<Address>"},
+              {"alignment": 1, "bytes": 32, "line": 36, "name": "program_id", "type": "MaybeNull<Address>"}
+            ],
+            "line": 30,
+            "repr": "#[repr(C)]",
+            "repr_line": 26,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-transfer-hook",
+            "type": "TransferHook"
+          },
+          "rust_type": "TransferHook",
+          "tag": 14,
+          "variant": "TransferHook"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 1,
+          "layout": {
+            "fields": [{"alignment": 1, "bytes": 1, "line": 47, "name": "transferring", "type": "Bool"}],
+            "line": 45,
+            "repr": "#[repr(transparent)]",
+            "repr_line": 44,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-transfer-hook",
+            "type": "TransferHookAccount"
+          },
+          "rust_type": "TransferHookAccount",
+          "tag": 15,
+          "variant": "TransferHookAccount"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 129,
+          "layout": {
+            "fields": [
+              {"alignment": 1, "bytes": 32, "line": 28, "name": "authority", "type": "MaybeNull<Address>"},
+              {
+                "alignment": 1,
+                "bytes": 32,
+                "line": 36,
+                "name": "withdraw_withheld_authority_elgamal_pubkey",
+                "type": "PodElGamalPubkey"
+              },
+              {"alignment": 1, "bytes": 1, "line": 39, "name": "harvest_to_mint_enabled", "type": "Bool"},
+              {
+                "alignment": 1,
+                "bytes": 64,
+                "line": 43,
+                "name": "withheld_amount",
+                "type": "EncryptedWithheldAmount"
+              }
+            ],
+            "line": 26,
+            "repr": "#[repr(C)]",
+            "repr_line": 24,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-confidential-transfer-fee",
+            "type": "ConfidentialTransferFeeConfig"
+          },
+          "rust_type": "ConfidentialTransferFeeConfig",
+          "tag": 16,
+          "variant": "ConfidentialTransferFeeConfig"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 64,
+          "layout": {
+            "fields": [
+              {
+                "alignment": 1,
+                "bytes": 64,
+                "line": 55,
+                "name": "withheld_amount",
+                "type": "EncryptedWithheldAmount"
+              }
+            ],
+            "line": 53,
+            "repr": "#[repr(C)]",
+            "repr_line": 51,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-confidential-transfer-fee",
+            "type": "ConfidentialTransferFeeAmount"
+          },
+          "rust_type": "ConfidentialTransferFeeAmount",
+          "tag": 17,
+          "variant": "ConfidentialTransferFeeAmount"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 64,
+          "layout": {
+            "fields": [
+              {"alignment": 1, "bytes": 32, "line": 24, "name": "authority", "type": "MaybeNull<Address>"},
+              {
+                "alignment": 1,
+                "bytes": 32,
+                "line": 27,
+                "name": "metadata_address",
+                "type": "MaybeNull<Address>"
+              }
+            ],
+            "line": 21,
+            "repr": "#[repr(C)]",
+            "repr_line": 17,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-metadata-pointer",
+            "type": "MetadataPointer"
+          },
+          "rust_type": "MetadataPointer",
+          "tag": 18,
+          "variant": "MetadataPointer"
+        },
+        {
+          "derivation": "sized() rejects TokenMetadata before the size_of dispatch",
+          "fixed_bytes": null,
+          "fixed_size_result": "ProgramError::InvalidArgument",
+          "tag": 19,
+          "variant": "TokenMetadata"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 64,
+          "layout": {
+            "fields": [
+              {"alignment": 1, "bytes": 32, "line": 24, "name": "authority", "type": "MaybeNull<Address>"},
+              {"alignment": 1, "bytes": 32, "line": 27, "name": "group_address", "type": "MaybeNull<Address>"}
+            ],
+            "line": 21,
+            "repr": "#[repr(C)]",
+            "repr_line": 17,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-group-pointer",
+            "type": "GroupPointer"
+          },
+          "rust_type": "GroupPointer",
+          "tag": 20,
+          "variant": "GroupPointer"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 80,
+          "layout": {
+            "fields": [
+              {
+                "alignment": 1,
+                "bytes": 32,
+                "line": 19,
+                "name": "update_authority",
+                "type": "MaybeNull<Address>"
+              },
+              {"alignment": 1, "bytes": 32, "line": 22, "name": "mint", "type": "Address"},
+              {"alignment": 1, "bytes": 8, "line": 24, "name": "size", "type": "U64"},
+              {"alignment": 1, "bytes": 8, "line": 26, "name": "max_size", "type": "U64"}
+            ],
+            "line": 17,
+            "repr": "#[repr(C)]",
+            "repr_line": 14,
+            "source_id": "spl-token-group-interface-0.7.2-state",
+            "type": "TokenGroup"
+          },
+          "rust_type": "TokenGroup",
+          "tag": 21,
+          "variant": "TokenGroup"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 64,
+          "layout": {
+            "fields": [
+              {"alignment": 1, "bytes": 32, "line": 24, "name": "authority", "type": "MaybeNull<Address>"},
+              {
+                "alignment": 1,
+                "bytes": 32,
+                "line": 27,
+                "name": "member_address",
+                "type": "MaybeNull<Address>"
+              }
+            ],
+            "line": 21,
+            "repr": "#[repr(C)]",
+            "repr_line": 17,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-group-member-pointer",
+            "type": "GroupMemberPointer"
+          },
+          "rust_type": "GroupMemberPointer",
+          "tag": 22,
+          "variant": "GroupMemberPointer"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 72,
+          "layout": {
+            "fields": [
+              {"alignment": 1, "bytes": 32, "line": 71, "name": "mint", "type": "Address"},
+              {"alignment": 1, "bytes": 32, "line": 73, "name": "group", "type": "Address"},
+              {"alignment": 1, "bytes": 8, "line": 75, "name": "member_number", "type": "U64"}
+            ],
+            "line": 68,
+            "repr": "#[repr(C)]",
+            "repr_line": 65,
+            "source_id": "spl-token-group-interface-0.7.2-state",
+            "type": "TokenGroupMember"
+          },
+          "rust_type": "TokenGroupMember",
+          "tag": 23,
+          "variant": "TokenGroupMember"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 196,
+          "layout": {
+            "fields": [
+              {
+                "alignment": 1,
+                "bytes": 64,
+                "line": 22,
+                "name": "confidential_supply",
+                "type": "PodElGamalCiphertext"
+              },
+              {
+                "alignment": 1,
+                "bytes": 36,
+                "line": 24,
+                "name": "decryptable_supply",
+                "type": "PodAeCiphertext"
+              },
+              {
+                "alignment": 1,
+                "bytes": 32,
+                "line": 26,
+                "name": "supply_elgamal_pubkey",
+                "type": "PodElGamalPubkey"
+              },
+              {
+                "alignment": 1,
+                "bytes": 64,
+                "line": 28,
+                "name": "pending_burn",
+                "type": "PodElGamalCiphertext"
+              }
+            ],
+            "line": 20,
+            "repr": "#[repr(C)]",
+            "repr_line": 19,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-confidential-mint-burn",
+            "type": "ConfidentialMintBurn"
+          },
+          "rust_type": "ConfidentialMintBurn",
+          "tag": 24,
+          "variant": "ConfidentialMintBurn"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 56,
+          "layout": {
+            "fields": [
+              {"alignment": 1, "bytes": 32, "line": 56, "name": "authority", "type": "MaybeNull<Address>"},
+              {"alignment": 1, "bytes": 8, "line": 58, "name": "multiplier", "type": "PodF64"},
+              {
+                "alignment": 1,
+                "bytes": 8,
+                "line": 60,
+                "name": "new_multiplier_effective_timestamp",
+                "type": "UnixTimestamp"
+              },
+              {"alignment": 1, "bytes": 8, "line": 62, "name": "new_multiplier", "type": "PodF64"}
+            ],
+            "line": 53,
+            "repr": "#[repr(C)]",
+            "repr_line": 49,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-scaled-ui-amount",
+            "type": "ScaledUiAmountConfig"
+          },
+          "rust_type": "ScaledUiAmountConfig",
+          "tag": 25,
+          "variant": "ScaledUiAmount"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 33,
+          "layout": {
+            "fields": [
+              {"alignment": 1, "bytes": 32, "line": 25, "name": "authority", "type": "MaybeNull<Address>"},
+              {"alignment": 1, "bytes": 1, "line": 27, "name": "paused", "type": "Bool"}
+            ],
+            "line": 22,
+            "repr": "#[repr(C)]",
+            "repr_line": 21,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-pausable",
+            "type": "PausableConfig"
+          },
+          "rust_type": "PausableConfig",
+          "tag": 26,
+          "variant": "Pausable"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 0,
+          "layout": {
+            "fields": [],
+            "line": 35,
+            "repr": "#[repr(transparent)]",
+            "repr_line": 34,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-pausable",
+            "type": "PausableAccount"
+          },
+          "rust_type": "PausableAccount",
+          "tag": 27,
+          "variant": "PausableAccount"
+        },
+        {
+          "alignment": 1,
+          "derivation": "sum of checked alignment-one fields under the recorded Rust repr",
+          "fixed_bytes": 32,
+          "layout": {
+            "fields": [{"alignment": 1, "bytes": 32, "line": 24, "name": "authority", "type": "MaybeNull<Address>"}],
+            "line": 21,
+            "repr": "#[repr(C)]",
+            "repr_line": 20,
+            "source_id": "spl-token-2022-interface-3.1.1-extension-permissioned-burn",
+            "type": "PermissionedBurnConfig"
+          },
+          "rust_type": "PermissionedBurnConfig",
+          "tag": 28,
+          "variant": "PermissionedBurn"
+        }
+      ],
+      "sha256": "502b8309d3243f81d3bb7b2ff5f9e412c48d4d68f354b8994792389fc904defd"
+    },
+    "token-fees-3.1.1": {
+      "order": 129,
+      "anchor_text": "solana_zero_copy::unaligned::{U16, U64},",
+      "cargo_package_checksum": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+      "checked_layout_declarations": [
+        {
+          "fields": [
+            {"line": 36, "name": "epoch", "type": "U64"},
+            {"line": 38, "name": "maximum_fee", "type": "U64"},
+            {"line": 41, "name": "transfer_fee_basis_points", "type": "U16"}
+          ],
+          "line": 34,
+          "repr": "#[repr(C)]",
+          "repr_line": 30,
+          "source_id": "token-fees-3.1.1",
+          "type": "TransferFee"
+        },
+        {
+          "fields": [
+            {
+              "alignment": 1,
+              "bytes": 32,
+              "line": 138,
+              "name": "transfer_fee_config_authority",
+              "type": "MaybeNull<Address>"
+            },
+            {
+              "alignment": 1,
+              "bytes": 32,
+              "line": 141,
+              "name": "withdraw_withheld_authority",
+              "type": "MaybeNull<Address>"
+            },
+            {"alignment": 1, "bytes": 8, "line": 144, "name": "withheld_amount", "type": "U64"},
+            {"alignment": 1, "bytes": 18, "line": 146, "name": "older_transfer_fee", "type": "TransferFee"},
+            {"alignment": 1, "bytes": 18, "line": 148, "name": "newer_transfer_fee", "type": "TransferFee"}
+          ],
+          "line": 135,
+          "repr": "#[repr(C)]",
+          "repr_line": 131,
+          "source_id": "token-fees-3.1.1",
+          "type": "TransferFeeConfig"
+        },
+        {
+          "fields": [{"alignment": 1, "bytes": 8, "line": 180, "name": "withheld_amount", "type": "U64"}],
+          "line": 178,
+          "repr": "#[repr(C)]",
+          "repr_line": 174,
+          "source_id": "token-fees-3.1.1",
+          "type": "TransferFeeAmount"
+        }
+      ],
+      "crate": "spl-token-2022-interface-3.1.1",
+      "line": 14,
+      "local_crate_metadata": {
+        "cargo_manifest_sha256": "317bc2ac18ac2bec7e6933a14ddd0d9fa0df66d3794364d814fa8746cfcc96ac",
+        "cargo_vcs_info_sha256": "ee5c46291b8e5b7b6a90c28a9f4afbcf2651115a37bd0104ecb3ff4613d4f6d1"
+      },
+      "path": "src/extension/transfer_fee/mod.rs",
+      "sha256": "2f51ac04733271b7578f0fb8c05805aac237f1521ffa1505b4055c03b6cbda5c"
+    },
+    "spl-token-2022-interface-3.1.1-instruction": {
+      "order": 139,
+      "crate": "spl-token-2022-interface-3.1.1",
+      "path": "src/instruction.rs",
+      "sha256": "672b3890cb58e5700a67f202491069ed44dffcbfa0e7d0b83a0cfbbb05b3a287"
+    },
+    "spl-token-2022-interface-3.1.1-lib": {
+      "order": 140,
+      "crate": "spl-token-2022-interface-3.1.1",
+      "path": "src/lib.rs",
+      "sha256": "5b47d475fa9da9a3aab2e98adf24d45de654caf773d96f3c89fbc85a96eada77"
+    },
+    "versions::spl-token-2022-interface-2.1.0::src/extension/mod.rs": {
+      "order": 172,
+      "crate": "spl-token-2022-interface-2.1.0",
+      "path": "src/extension/mod.rs",
+      "sha256": "cd82f89a77108d97331460ddbe1aa4a5babf85a6f7e19f4137b2d86fc4f7ed70"
+    },
+    "spl-token-2022-interface-2.1.0::src/instruction.rs": {
+      "order": 489,
+      "crate": "spl-token-2022-interface-2.1.0",
+      "path": "src/instruction.rs",
+      "sha256": "d855e7d0bcea3037071cf937e7c2f13dcb8d6bcef9e6b302f4d3f692e958ece4"
+    },
+    "token-state::spl-token-2022-interface-2.1.0::src/extension/mod.rs": {
+      "order": 539,
+      "crate": "spl-token-2022-interface-2.1.0",
+      "path": "src/extension/mod.rs",
+      "sha256": "cd82f89a77108d97331460ddbe1aa4a5babf85a6f7e19f4137b2d86fc4f7ed70"
+    },
+    "token-state::spl-token-2022-interface-2.1.0::src/extension/transfer_fee/mod.rs": {
+      "order": 540,
+      "crate": "spl-token-2022-interface-2.1.0",
+      "path": "src/extension/transfer_fee/mod.rs",
+      "sha256": "e76c50556a69f7dda5d23b15ad0e1c0c8a97f3b7fe9dffde1b3594ac783f8f5e"
+    },
+    "token-state::spl-token-2022-interface-3.0.1::src/extension/mod.rs": {
+      "order": 541,
+      "crate": "spl-token-2022-interface-3.0.1",
+      "path": "src/extension/mod.rs",
+      "sha256": "7df80a802e151ff13a4f8ac517ca103f741242a313de366de326df478d72cb9e"
+    }
+  },
+  "models": {
+    "spl-token-2022-interface::check_spl_token_program_account": {
+      "order": 200,
+      "contract": "Solanalib.Specs.SplToken2022Interface.check_spl_token_program_account_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SplToken2022Interface.check_spl_token_program_account_reference",
+      "witness": "Solanalib.Specs.SplToken2022Interface.check_spl_token_program_account_reference_realizes",
+      "assumptions": ["@text:7103319198c0875f"]
+    },
+    "spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension": {
+      "order": 201,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.BaseStateWithExtensions.get_extension_contract",
+      "witness_kind": "FamilyReference",
+      "kind": "supporting",
+      "assumptions": ["@text:042185cf96514c3c"],
+      "model_gaps": ["@text:3d3317192a366c7b"]
+    },
+    "spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension_operational": {
+      "order": 202,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.BaseStateWithExtensions.get_extension_operational_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:993fa640cd65649e", "@text:bc7c5de3a8f98cd4"]
+    },
+    "spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension_types": {
+      "order": 203,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.BaseStateWithExtensions.get_extension_types_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": "Solanalib.Specs.SplToken2022Interface.extension.BaseStateWithExtensions.getExtensionTypesReference",
+      "assumptions": ["@text:22b380bbe2603d5a"],
+      "model_gaps": ["@text:ab0c551bf8b208d4"]
+    },
+    "spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension_types_operational": {
+      "order": 204,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.BaseStateWithExtensions.get_extension_types_operational_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:9670235af0daf2f9", "@text:0f99146b98a81986", "@text:7393b9b9462c9a38"]
+    },
+    "spl-token-2022-interface::extension::StateWithExtensions::unpack": {
+      "order": 205,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.StateWithExtensions.unpack_contract",
+      "witness_kind": "FamilyReference",
+      "kind": "supporting",
+      "assumptions": ["@text:7e093df7820c4115"],
+      "model_gaps": ["@text:9ea5cadd9539e0f9"]
+    },
+    "spl-token-2022-interface::extension::StateWithExtensions::unpack_operational": {
+      "order": 206,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.StateWithExtensions.unpack_operational_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@text:d9c90a459008f6e5", "@text:ab52565d0556ba8b"]
+    },
+    "spl-token-2022-interface::extension::account_len::try_calculate_account_len_from_mint_data": {
+      "order": 207,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.account_len.try_calculate_account_len_from_mint_data_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SplToken2022Interface.extension.account_len.calculateAccountLengthReference",
+      "assumptions": ["@text:509ab976a5e8cb10", "@text:5e23f404e5e58712"]
+    },
+    "spl-token-2022-interface::extension::transfer_fee::TransferFee::calculate_fee": {
+      "order": 208,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.transfer_fee.TransferFee.calculate_fee_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SplToken2022Interface.extension.transfer_fee.TransferFee.calculateFeeReference",
+      "assumptions": ["@text:27e6930622e3d509"]
+    },
+    "spl-token-2022-interface::extension::transfer_fee::TransferFee::calculate_post_fee_amount": {
+      "order": 209,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.transfer_fee.TransferFee.calculate_post_fee_amount_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SplToken2022Interface.extension.transfer_fee.TransferFee.calculatePostFeeAmountReference",
+      "assumptions": ["@text:27e6930622e3d509"]
+    },
+    "spl-token-2022-interface::extension::transfer_fee::TransferFee::calculate_pre_fee_amount": {
+      "order": 210,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.transfer_fee.TransferFee.calculate_pre_fee_amount_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SplToken2022Interface.extension.transfer_fee.TransferFee.calculatePreFeeAmountReference",
+      "assumptions": ["@text:27e6930622e3d509"]
+    },
+    "spl-token-2022-interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee": {
+      "order": 211,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.transfer_fee.TransferFeeConfig.get_epoch_fee_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": "Solanalib.Specs.SplToken2022Interface.extension.transfer_fee.TransferFeeConfig.getEpochFeeReference",
+      "assumptions": ["@text:27e6930622e3d509"],
+      "model_gaps": ["@text:aee54aa2af9b3979"]
+    },
+    "spl-token-2022-interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee_live": {
+      "order": 212,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.transfer_fee.TransferFeeConfig.get_epoch_fee_live_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SplToken2022Interface.extension.transfer_fee.TransferFeeConfig.getEpochFeeLiveReference",
+      "sample": "Solanalib.Specs.SplToken2022Interface.extension.transfer_fee.TransferFeeConfig.getEpochFeeLiveSample",
+      "assumptions": ["@text:bfd0cbeeb0b65158", "@text:c93fe7646dfd2df4", "@text:0a0f1cae1963749f"]
+    },
+    "spl-token-2022-interface::id": {
+      "order": 213,
+      "contract": "Solanalib.Specs.SplToken2022Interface.id_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SplToken2022Interface.id_reference",
+      "witness": "Solanalib.Specs.SplToken2022Interface.id_reference_realizes",
+      "assumptions": ["@text:7103319198c0875f"]
+    },
+    "spl-token-2022-interface::instruction::close_account": {
+      "order": 214,
+      "contract": "Solanalib.Specs.SplToken2022Interface.instruction.close_account_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SplToken2022Interface.instruction.close_account_reference",
+      "witness": "Solanalib.Specs.SplToken2022Interface.instruction.close_account_reference_holds",
+      "assumptions": "@shared:assumptions-f9e999c8503605f2"
+    },
+    "spl-token-2022-interface::instruction::close_account_value": {
+      "order": 215,
+      "contract": "Solanalib.Specs.SplToken2022Interface.instruction.close_account_value_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": "Solanalib.Specs.SplToken2022Interface.instruction.close_account_value_reference",
+      "witness": "Solanalib.Specs.SplToken2022Interface.instruction.close_account_value_reference_realizes",
+      "assumptions": ["@text:48f74ce41a5c5f80"],
+      "model_gaps": ["@text:d8935bd03431a060"],
+      "remaining_requirements": ["@text:58546ff81e156a00"]
+    },
+    "spl-token-2022-interface::instruction::initialize_account3": {
+      "order": 216,
+      "contract": "Solanalib.Specs.SplToken2022Interface.instruction.initialize_account3_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SplToken2022Interface.instruction.initialize_account3_reference",
+      "witness": "Solanalib.Specs.SplToken2022Interface.instruction.initialize_account3_reference_holds",
+      "assumptions": "@shared:assumptions-f9e999c8503605f2"
+    },
+    "spl-token-2022-interface::instruction::initialize_account3_value": {
+      "order": 217,
+      "contract": "Solanalib.Specs.SplToken2022Interface.instruction.initialize_account3_value_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": "Solanalib.Specs.SplToken2022Interface.instruction.initialize_account3_value_reference",
+      "witness": "Solanalib.Specs.SplToken2022Interface.instruction.initialize_account3_value_reference_realizes",
+      "assumptions": ["@text:48f74ce41a5c5f80"],
+      "model_gaps": ["@text:d8935bd03431a060"],
+      "remaining_requirements": ["@text:58546ff81e156a00"]
+    },
+    "spl-token-2022-interface::instruction::transfer_checked": {
+      "order": 218,
+      "contract": "Solanalib.Specs.SplToken2022Interface.instruction.transfer_checked_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SplToken2022Interface.instruction.transfer_checked_reference",
+      "witness": "Solanalib.Specs.SplToken2022Interface.instruction.transfer_checked_reference_holds",
+      "assumptions": "@shared:assumptions-f9e999c8503605f2"
+    },
+    "spl-token-2022-interface::instruction::transfer_checked_value": {
+      "order": 219,
+      "contract": "Solanalib.Specs.SplToken2022Interface.instruction.transfer_checked_value_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": "Solanalib.Specs.SplToken2022Interface.instruction.transfer_checked_value_reference",
+      "witness": "Solanalib.Specs.SplToken2022Interface.instruction.transfer_checked_value_reference_realizes",
+      "assumptions": ["@text:48f74ce41a5c5f80"],
+      "model_gaps": ["@text:d8935bd03431a060"],
+      "remaining_requirements": ["@text:58546ff81e156a00"]
+    },
+    "spl-token-2022-interface::instruction::withdraw_excess_lamports": {
+      "order": 220,
+      "contract": "Solanalib.Specs.SplToken2022Interface.instruction.withdraw_excess_lamports_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SplToken2022Interface.instruction.withdraw_excess_lamports_reference",
+      "witness": "Solanalib.Specs.SplToken2022Interface.instruction.withdraw_excess_lamports_reference_holds",
+      "assumptions": "@shared:assumptions-f9e999c8503605f2"
+    },
+    "spl-token-2022-interface::instruction::withdraw_excess_lamports_value": {
+      "order": 221,
+      "contract": "Solanalib.Specs.SplToken2022Interface.instruction.withdraw_excess_lamports_value_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": "Solanalib.Specs.SplToken2022Interface.instruction.withdraw_excess_lamports_value_reference",
+      "witness": "Solanalib.Specs.SplToken2022Interface.instruction.withdraw_excess_lamports_value_reference_realizes",
+      "assumptions": ["@text:48f74ce41a5c5f80"],
+      "model_gaps": ["@text:d8935bd03431a060"],
+      "remaining_requirements": ["@text:58546ff81e156a00"]
+    },
+    "spl-token-2022-interface::state::Mint::clone": {
+      "order": 234,
+      "contract": "Solanalib.Specs.SplToken2022Interface.state.Mint.clone_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SplToken2022Interface.state.Mint.cloneReference",
+      "witness": "Solanalib.Specs.SplToken2022Interface.state.Mint.clone_reference",
+      "assumptions": ["@binding:5353be6e65af8112", "@binding:32d8ceaf1167419a"]
+    },
+    "spl-token-2022-interface::extension::StateWithExtensions::unpack_owned_base": {
+      "order": 451,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.StateWithExtensions.unpack_owned_base_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:624aee729d2ca0fe", "@binding:5d949fd403669264"]
+    },
+    "spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension_types_push_before_payload": {
+      "order": 481,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.BaseStateWithExtensions.get_extension_types_push_before_payload_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:624aee729d2ca0fe", "@binding:5d949fd403669264"]
+    },
+    "spl-token-2022-interface::extension::ExtensionType::try_calculate_account_len": {
+      "order": 482,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.ExtensionType.try_calculate_account_len_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:624aee729d2ca0fe", "@binding:5d949fd403669264"]
+    },
+    "spl-token-2022-interface::extension::transfer_fee::TransferFeeConfig::calculate_epoch_fee": {
+      "order": 483,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.transfer_fee.TransferFeeConfig.calculate_epoch_fee_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SplToken2022Interface.extension.transfer_fee.TransferFeeConfig.calculateEpochFeeReference"
+    },
+    "spl-token-2022-interface::extension::ExtensionType::get_required_init_account_extensions": {
+      "order": 484,
+      "contract": "Solanalib.Specs.SplToken2022Interface.extension.ExtensionType.get_required_init_account_extensions_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": ["@binding:624aee729d2ca0fe", "@binding:5d949fd403669264"]
+    }
+  },
+  "api": {
+    "spl-token-2022-interface-3.1.1::TransferFee::calculate_fee": {
+      "order": 179,
+      "anchor_text": "pub fn calculate_fee(&self, pre_fee_amount: u64) -> Option<u64> {",
+      "line": 58,
+      "scope": "@text:180808d02d7ff2b7",
+      "source_id": "token-fees-3.1.1",
+      "clients": [
+        "SolanalibTest.Specs.SplToken2022Interface.Fees.cap_from_contract",
+        "SolanalibTest.Specs.SplToken2022Interface.Fees.raw_conversion_before_cap",
+        "SolanalibTest.Specs.SplToken2022Interface.Fees.basis_point_rounding"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Token.TransferFee.calculateFee"],
+      "rust_names": ["spl_token_2022_interface::extension::transfer_fee::TransferFee::calculate_fee"],
+      "models": ["spl-token-2022-interface::extension::transfer_fee::TransferFee::calculate_fee"]
+    },
+    "spl-token-2022-interface-3.1.1::TransferFee::calculate_post_fee_amount": {
+      "order": 180,
+      "anchor_text": "pub fn calculate_post_fee_amount(&self, pre_fee_amount: u64) -> Option<u64> {",
+      "line": 73,
+      "scope": "@text:075bc16a34f92280",
+      "source_id": "token-fees-3.1.1",
+      "clients": [
+        "SolanalibTest.Specs.SplToken2022Interface.Fees.conservation_from_contracts",
+        "SolanalibTest.Specs.SplToken2022Interface.Fees.excess_rate_can_underflow_deduction",
+        "SolanalibTest.Specs.SplToken2022Interface.Fees.rounding_and_cap"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Token.TransferFee.calculatePostFeeAmount"],
+      "rust_names": ["spl_token_2022_interface::extension::transfer_fee::TransferFee::calculate_post_fee_amount"],
+      "models": ["spl-token-2022-interface::extension::transfer_fee::TransferFee::calculate_post_fee_amount"]
+    },
+    "spl-token-2022-interface-3.1.1::TransferFee::calculate_pre_fee_amount": {
+      "order": 181,
+      "anchor_text": "pub fn calculate_pre_fee_amount(&self, post_fee_amount: u64) -> Option<u64> {",
+      "line": 89,
+      "scope": "@text:91e98c4b0f9d1b43",
+      "source_id": "token-fees-3.1.1",
+      "clients": [
+        "SolanalibTest.Specs.SplToken2022Interface.Fees.excess_rate_failure_from_contract",
+        "SolanalibTest.Specs.SplToken2022Interface.Fees.inverse_chooses_smaller_gross",
+        "SolanalibTest.Specs.SplToken2022Interface.Fees.inverse_overflow_paths",
+        "SolanalibTest.Specs.SplToken2022Interface.Fees.inverse_cap_before_raw_conversion"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Token.TransferFee.calculatePreFeeAmount"],
+      "rust_names": ["spl_token_2022_interface::extension::transfer_fee::TransferFee::calculate_pre_fee_amount"],
+      "models": ["spl-token-2022-interface::extension::transfer_fee::TransferFee::calculate_pre_fee_amount"]
+    },
+    "spl-token-2022-interface-3.1.1::TransferFeeConfig::get_epoch_fee": {
+      "order": 182,
+      "anchor_text": "pub fn get_epoch_fee(&self, epoch: u64) -> &TransferFee {",
+      "binding_obligations": [
+        "@binding:fbf81f4c44a54a96",
+        "@binding:91c4a3a012f1311d",
+        "@binding:830324794a48dbe7",
+        "@binding:95a1b202c370de32",
+        "@binding:1c3a4cd8155ee3c4"
+      ],
+      "line": 152,
+      "scope": "@text:171f41df15643b8c",
+      "source_id": "token-fees-3.1.1",
+      "models": ["spl-token-2022-interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee_live"],
+      "clients": [
+        "SolanalibTest.Specs.SplToken2022Interface.Fees.epoch_boundary_and_older_epoch",
+        "SolanalibTest.Specs.SplToken2022Interface.Fees.epoch_changes_fee",
+        "SolanalibTest.Specs.SplToken2022Interface.FeeReference.exact_boundary_executions",
+        "SolanalibTest.Specs.SplToken2022Interface.FeeReference.equal_values_distinct_parents",
+        "SolanalibTest.Specs.SplToken2022Interface.FeeReference.primary_contract_nonempty",
+        "SolanalibTest.Specs.SplToken2022Interface.FeeReference.immediate_value_observation",
+        "SolanalibTest.Specs.SplToken2022Interface.FeeReference.later_read_without_reselection",
+        "SolanalibTest.Specs.SplToken2022Interface.FeeReference.retained_newer_does_not_reselect",
+        "SolanalibTest.Specs.SplToken2022Interface.FeeReference.no_read_after_expiry",
+        "SolanalibTest.Specs.SplToken2022Interface.FeeReference.no_execution_after_expiry",
+        "SolanalibTest.Specs.SplToken2022Interface.FeeReference.no_read_after_representation_loss",
+        "SolanalibTest.Specs.SplToken2022Interface.FeeReference.no_execution_after_representation_loss"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.TransferFeeConfig.getEpochFee",
+        "Solanalib.Specs.SplToken2022Interface.extension.transfer_fee.TransferFeeConfig.get_epoch_fee_contract",
+        "Solanalib.Specs.Core.FieldReference",
+        "Solanalib.Specs.Core.FieldReference.Reads",
+        "Solanalib.Specs.Core.Token.FeeReference.run",
+        "Solanalib.Specs.Core.Token.FeeReference.run_observation"
+      ],
+      "rust_names": ["spl_token_2022_interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee"]
+    },
+    "spl-token-2022-interface@3.1.1::check_spl_token_program_account": {
+      "order": 183,
+      "anchor_text": "pub fn check_spl_token_program_account(spl_token_program_id: &Address) -> ProgramResult {",
+      "binding_obligations": ["@binding:73cfb3cbae7ec412"],
+      "line": 46,
+      "scope": "@text:6f51a9a5df4ec4d6",
+      "source_id": "spl-token-2022-interface-3.1.1-lib",
+      "clients": [
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.both_ids_accepted",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.unrelated_id_rejected"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.Instruction.valueContract",
+        "Solanalib.Specs.Core.Token.Instruction.checkProgram"
+      ],
+      "rust_names": ["spl_token_2022_interface::check_spl_token_program_account"],
+      "models": ["spl-token-2022-interface::check_spl_token_program_account"],
+      "binding_defaults": false
+    },
+    "spl-token-2022-interface@3.1.1::id": {
+      "order": 184,
+      "anchor_text": "solana_address::declare_id!(\"TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb\");",
+      "binding_obligations": ["@binding:73cfb3cbae7ec412"],
+      "line": 29,
+      "scope": "@text:6f51a9a5df4ec4d6",
+      "source_id": "spl-token-2022-interface-3.1.1-lib",
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.Instruction.valueContract",
+        "Solanalib.Specs.Core.Token.Instruction.checkProgram"
+      ],
+      "rust_names": ["spl_token_2022_interface::id"],
+      "models": ["spl-token-2022-interface::id"],
+      "binding_defaults": false
+    },
+    "spl-token-2022-interface@3.1.1::instruction.close_account": {
+      "order": 185,
+      "anchor_text": "pub fn close_account(",
+      "binding_obligations": "@shared:binding-obligations-4172992c4529805d",
+      "line": 1706,
+      "scope": "@text:432ad9dc443db10d",
+      "source_id": "spl-token-2022-interface-3.1.1-instruction",
+      "clients": ["SolanalibTest.Specs.SplToken2022Interface.Instructions.withdrawal_and_close_have_different_admission"],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.InstructionAllocated.family",
+        "Solanalib.Specs.Core.Token.InstructionAllocated.run",
+        "Solanalib.Specs.SplToken2022Interface.instruction.close_account_value_contract"
+      ],
+      "rust_names": ["spl_token_2022_interface::instruction::close_account"],
+      "models": ["spl-token-2022-interface::instruction::close_account"],
+      "binding_defaults": false
+    },
+    "spl-token-2022-interface@3.1.1::instruction.initialize_account3": {
+      "order": 186,
+      "anchor_text": "pub fn initialize_account3(",
+      "binding_obligations": "@shared:binding-obligations-4172992c4529805d",
+      "line": 1436,
+      "scope": "@text:432ad9dc443db10d",
+      "source_id": "spl-token-2022-interface-3.1.1-instruction",
+      "clients": [
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.initialize_accepts_legacy",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Allocation.literal_metadata_failure_cleans_owner_encoding"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.InstructionAllocated.family",
+        "Solanalib.Specs.Core.Token.InstructionAllocated.run",
+        "Solanalib.Specs.SplToken2022Interface.instruction.initialize_account3_value_contract"
+      ],
+      "rust_names": ["spl_token_2022_interface::instruction::initialize_account3"],
+      "models": ["spl-token-2022-interface::instruction::initialize_account3"],
+      "binding_defaults": false
+    },
+    "spl-token-2022-interface@3.1.1::instruction.transfer_checked": {
+      "order": 187,
+      "anchor_text": "pub fn transfer_checked(",
+      "binding_obligations": "@shared:binding-obligations-4172992c4529805d",
+      "line": 1794,
+      "scope": "@text:432ad9dc443db10d",
+      "source_id": "spl-token-2022-interface-3.1.1-instruction",
+      "clients": [
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.checked_order_and_multiplicity",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.checked_full_decimals_byte",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Allocation.checked_execution_observes_full_instruction",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Allocation.partial_metadata_cleanup",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Allocation.partial_mutation_is_observed_and_cleanup_ordered",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Allocation.terminal_push_bypasses_both_destructors",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Allocation.double_unwind_uses_actual_state_and_policy"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.InstructionAllocated.family",
+        "Solanalib.Specs.Core.Token.InstructionAllocated.run",
+        "Solanalib.Specs.SplToken2022Interface.instruction.transfer_checked_value_contract"
+      ],
+      "rust_names": ["spl_token_2022_interface::instruction::transfer_checked"],
+      "models": ["spl-token-2022-interface::instruction::transfer_checked"],
+      "binding_defaults": false
+    },
+    "spl-token-2022-interface@3.1.1::instruction.withdraw_excess_lamports": {
+      "order": 188,
+      "anchor_text": "pub fn withdraw_excess_lamports(",
+      "binding_obligations": "@shared:binding-obligations-4172992c4529805d",
+      "line": 2177,
+      "scope": "@text:432ad9dc443db10d",
+      "source_id": "spl-token-2022-interface-3.1.1-instruction",
+      "clients": [
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.withdrawal_encoding",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.withdrawal_and_close_have_different_admission",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Withdrawal.admitted",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Withdrawal.successful_execution",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Withdrawal.successful_observations",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Withdrawal.has_execution",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Withdrawal.partial_metadata_failure",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Withdrawal.partial_metadata_observations",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Withdrawal.byte_allocation_failure_cleans_metadata",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Withdrawal.byte_allocation_failure_observations",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Withdrawal.packing_failure_cleans_data_then_metadata",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Withdrawal.packing_failure_observations",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Withdrawal.second_unwind_stops_before_metadata",
+        "SolanalibTest.Specs.SplToken2022Interface.Instructions.Withdrawal.second_unwind_observations"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.InstructionAllocated.family",
+        "Solanalib.Specs.Core.Token.InstructionAllocated.run",
+        "Solanalib.Specs.SplToken2022Interface.instruction.withdraw_excess_lamports_value_contract"
+      ],
+      "rust_names": ["spl_token_2022_interface::instruction::withdraw_excess_lamports"],
+      "models": ["spl-token-2022-interface::instruction::withdraw_excess_lamports"],
+      "binding_defaults": false
+    },
+    "token-extension-3.1.1::get_extension": {
+      "order": 211,
+      "anchor_text": "fn get_extension<V: Extension + Pod>(&self) -> Result<&V, ProgramError> {",
+      "binding_obligations": ["@binding:55a3a875a96efabf", "@binding:727a4fdff0331ec6", "@binding:8a6121a88bd9ac44"],
+      "line": 427,
+      "scope": "@text:ccc8eb7fd63f5643",
+      "source_id": "spl-token-2022-interface-3.1.1-extensions",
+      "models": ["spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension_operational"],
+      "clients": [
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.getter_cast_reads_actual_state",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.getter_override_success_preserves_reference_and_state",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.getter_override_error_preserves_state",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.getter_override_unwind_preserves_state"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.getExtensionOperational",
+        "Solanalib.Specs.Core.Token.getDefaultExtension_agrees",
+        "Solanalib.Specs.Core.Token.transferFeeConfigRepresentation"
+      ],
+      "rust_names": ["spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension"],
+      "binding_defaults": false
+    },
+    "token-extension-3.1.1::get_extension_types": {
+      "order": 212,
+      "anchor_text": "fn get_extension_types(&self) -> Result<Vec<ExtensionType>, ProgramError> {",
+      "binding_obligations": [
+        "@binding:55a3a875a96efabf",
+        "@binding:5d3abe86daa1ac06",
+        "@binding:ccebd22c9a7f08b0",
+        "@binding:e6e2c373a6bc0657"
+      ],
+      "line": 441,
+      "scope": "@text:aa60139189c1cc8d",
+      "source_id": "spl-token-2022-interface-3.1.1-extensions",
+      "models": ["spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension_types_operational"],
+      "clients": [
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.list_operational_sample_success",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.list_late_error_has_no_success",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.list_push_unwind_cleans_actual_state",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.list_double_unwind_uses_actual_state",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.list_terminal_push_skips_cleanup",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.list_reads_current_state_after_push"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.getExtensionTypesCurrent",
+        "Solanalib.Specs.Core.Token.collectCurrentExtensionTypes_success"
+      ],
+      "rust_names": ["spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension_types"],
+      "binding_defaults": false
+    },
+    "token-extension-3.1.1::try_calculate_account_len_from_mint_data": {
+      "order": 213,
+      "anchor_text": "pub fn try_calculate_account_len_from_mint_data(",
+      "binding_obligations": ["@binding:55a3a875a96efabf", "@binding:6c9ff93b9e18915d", "@binding:b7ead47d29726221"],
+      "line": 80,
+      "scope": "@text:5c43e305374d58ad",
+      "source_id": "spl-token-2022-interface-3.1.1-account-len",
+      "models": ["spl-token-2022-interface::extension::account_len::try_calculate_account_len_from_mint_data"],
+      "clients": [
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.pod_mint_acceptance_differs_from_pack",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.account_size_deduplicates_required_and_additional",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.account_size_additional_type_error_first",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.generic_size_multisig_adjustment"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.calculateAccountLengthFromMint",
+        "Solanalib.Specs.Core.Token.ExtensionType.required_is_account",
+        "Solanalib.Specs.Core.Token.ExtensionLengths.insert_duplicate"
+      ],
+      "rust_names": ["spl_token_2022_interface::extension::account_len::try_calculate_account_len_from_mint_data"],
+      "binding_defaults": false
+    },
+    "token-extension-3.1.1::unpack": {
+      "order": 214,
+      "anchor_text": "pub fn unpack(input: &'data [u8]) -> Result<Self, ProgramError> {",
+      "binding_obligations": ["@binding:55a3a875a96efabf", "@binding:597b7adb38e705aa", "@binding:238eebbfdb8383bb"],
+      "line": 535,
+      "scope": "@text:3ccd0b9f07eee1cd",
+      "source_id": "spl-token-2022-interface-3.1.1-extensions",
+      "models": ["spl-token-2022-interface::extension::StateWithExtensions::unpack_operational"],
+      "clients": [
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.unpack_layout_error_drops_owned_base",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.unpack_layout_error_propagates_drop_unwind",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.unpack_layout_error_has_no_exit",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.unpack_success_retains_region_without_drop",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.unpack_checks_current_bytes_after_parse",
+        "SolanalibTest.Specs.SplToken2022Interface.Extensions.unpack_extended_empty_keeps_input_identity"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.Token.unpackExtensionOperational",
+        "Solanalib.Specs.Core.Token.unpackExtensionOperational_success_iff",
+        "Solanalib.Specs.Core.Token.unpackExtensionTailReference_borrowed_geometry",
+        "Solanalib.Specs.Core.Token.unpackDroplessExtension_observes"
+      ],
+      "rust_names": ["spl_token_2022_interface::extension::StateWithExtensions::<'data, S>::unpack"],
+      "binding_defaults": false
+    },
+    "spl-token-2022-interface@3.1.1::state.Mint.clone": {
+      "order": 220,
+      "source_id": "spl-token-2022-interface-3.1.1-state",
+      "line": 27,
+      "anchor_text": "#[derive(Clone, Copy, Debug, Default, PartialEq)]",
+      "rust_names": ["<spl_token_2022_interface::state::Mint as core::clone::Clone>::clone"],
+      "models": ["spl-token-2022-interface::state::Mint::clone"],
+      "scope": "@text:ad0bc2d38d1f7d58",
+      "binding_obligations": ["@binding:5353be6e65af8112", "@binding:32d8ceaf1167419a"],
+      "model_dependencies": ["Solanalib.Specs.Core.Token.Mint"],
+      "clients": [
+        "SolanalibTest.Specs.SplToken2022Interface.state.Mint.copied_fields",
+        "SolanalibTest.Specs.SplToken2022Interface.state.Mint.uninitialized_is_admitted"
+      ],
+      "binding_defaults": false
+    },
+    "spl-token-2022-interface@2.1.0::extension.StateWithExtensions.unpack": {
+      "order": 442,
+      "source_id": "token-state::spl-token-2022-interface-2.1.0::src/extension/mod.rs",
+      "line": 522,
+      "anchor_text": "pub fn unpack(input: &'data [u8]) -> Result<Self, ProgramError> {",
+      "rust_names": ["spl_token_2022_interface::extension::StateWithExtensions::<'data, S>::unpack"],
+      "scope": "@text:b2618dc0498925fb",
+      "binding_obligations": ["@binding:624aee729d2ca0fe"],
+      "models": ["spl-token-2022-interface::extension::StateWithExtensions::unpack_owned_base"],
+      "binding_defaults": false
+    },
+    "spl-token-2022-interface@3.0.1::extension.StateWithExtensions.unpack": {
+      "order": 477,
+      "source_id": "token-state::spl-token-2022-interface-3.0.1::src/extension/mod.rs",
+      "line": 525,
+      "anchor_text": "pub fn unpack(input: &'data [u8]) -> Result<Self, ProgramError> {",
+      "rust_names": ["spl_token_2022_interface::extension::StateWithExtensions::<'data, S>::unpack"],
+      "scope": "@text:b2618dc0498925fb",
+      "binding_obligations": ["@binding:624aee729d2ca0fe"],
+      "models": ["spl-token-2022-interface::extension::StateWithExtensions::unpack_owned_base"],
+      "binding_defaults": false
+    },
+    "spl-token-2022-interface@2.1.0::extension.BaseStateWithExtensions.get_extension_types": {
+      "order": 591,
+      "source_id": "token-state::spl-token-2022-interface-2.1.0::src/extension/mod.rs",
+      "line": 425,
+      "anchor_text": "fn get_extension_types(&self) -> Result<Vec<ExtensionType>, ProgramError> {",
+      "rust_names": ["spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension_types"],
+      "scope": "@text:38b2589517bd0d84",
+      "binding_obligations": ["@binding:d715096aaf855717", "@binding:624aee729d2ca0fe"],
+      "models": [
+        "spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension_types_push_before_payload"
+      ],
+      "binding_defaults": false
+    },
+    "spl-token-2022-interface@2.1.0::extension.ExtensionType.try_calculate_account_len": {
+      "order": 592,
+      "source_id": "token-state::spl-token-2022-interface-2.1.0::src/extension/mod.rs",
+      "line": 1240,
+      "anchor_text": "pub fn try_calculate_account_len<S: BaseState>(",
+      "rust_names": ["spl_token_2022_interface::extension::ExtensionType::try_calculate_account_len"],
+      "scope": "@text:f1e2817553ededbb",
+      "binding_obligations": ["@binding:d715096aaf855717", "@binding:971a9ce7a19fa561"],
+      "models": ["spl-token-2022-interface::extension::ExtensionType::try_calculate_account_len"],
+      "binding_defaults": false
+    },
+    "spl-token-2022-interface@2.1.0::extension.transfer_fee.TransferFeeConfig.calculate_epoch_fee": {
+      "order": 593,
+      "source_id": "token-state::spl-token-2022-interface-2.1.0::src/extension/transfer_fee/mod.rs",
+      "line": 156,
+      "anchor_text": "pub fn calculate_epoch_fee(&self, epoch: u64, pre_fee_amount: u64) -> Option<u64> {",
+      "rust_names": ["spl_token_2022_interface::extension::transfer_fee::TransferFeeConfig::calculate_epoch_fee"],
+      "scope": "@text:a5a1ebb282404e00",
+      "binding_obligations": ["@binding:a5f30773f618fd19"],
+      "models": ["spl-token-2022-interface::extension::transfer_fee::TransferFeeConfig::calculate_epoch_fee"],
+      "binding_defaults": false
+    },
+    "spl-token-2022-interface@2.1.0::extension.ExtensionType.get_required_init_account_extensions": {
+      "order": 594,
+      "source_id": "token-state::spl-token-2022-interface-2.1.0::src/extension/mod.rs",
+      "line": 1294,
+      "anchor_text": "pub fn get_required_init_account_extensions(mint_extension_types: &[Self]) -> Vec<Self> {",
+      "rust_names": ["spl_token_2022_interface::extension::ExtensionType::get_required_init_account_extensions"],
+      "scope": "@text:1f3de06e7934d990",
+      "binding_obligations": ["@binding:d715096aaf855717", "@binding:c47dd6f1c4622b17"],
+      "models": ["spl-token-2022-interface::extension::ExtensionType::get_required_init_account_extensions"],
+      "binding_defaults": false
+    }
+  },
+  "compatibility": {
+    "token-extension-type-list": {
+      "order": 2,
+      "models": ["spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension_types_operational"],
+      "releases": ["0.0.0", "1.0.0", "2.0.0", "2.1.0", "3.0.0", "3.0.1", "3.1.0", "3.1.1", "3.1.2", "4.0.0"],
+      "reviewed_on": "2026-11-09",
+      "argument": "@review:source-notes/token-extensions.md#review-a83a7769b739bc26",
+      "differences": [
+        {
+          "source_id": "versions::spl-token-2022-interface-2.1.0::src/extension/mod.rs",
+          "line": 1135,
+          "anchor_text": "impl TryFrom<&[u8]> for ExtensionType {",
+          "reason": "@text:ee2e319b2df97457"
+        }
+      ]
+    }
+  },
+  "applicability_sources": {
+    "spl-token-2022-interface": {
+      "order": 32,
+      "package": "spl-token-2022-interface",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-0.0.0.crate",
+          "sha256": "7b768b8a30462b73406a39feca61bc1014ede479e8d3a311fdeb923d9ad68275",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-1.0.0.crate",
+          "sha256": "62d7ae2ee6b856f8ddcbdc3b3a9f4d2141582bbe150f93e5298ee97e0251fa04",
+          "revision": "690985e54d84b428ea4a37b6735192cf2f89d601",
+          "path_prefix": "interface/"
+        },
+        "2.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-2.0.0.crate",
+          "sha256": "0888304af6b3d839e435712e6c84025e09513017425ff62045b6b8c41feb77d9",
+          "revision": "26eac93ef4a2683864d85a12370c40bc6c082164",
+          "path_prefix": "interface/"
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-2.1.0.crate",
+          "sha256": "2fcd81188211f4b3c8a5eba7fd534c7142f9dd026123b3472492782cc72f4dc6",
+          "revision": "4fae3ba6516db0c6e4b2fe698ba2cfdb92901b93",
+          "path_prefix": "interface/"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-3.0.0.crate",
+          "sha256": "f1241124f1eb690d18b8e7a560d1482f126269552d175cd1b09437e9929cc23b",
+          "revision": "e0ad14742f4df0e111b8fa81da1e7163525be76c",
+          "path_prefix": "interface/"
+        },
+        "3.0.1": {
+          "archive_url": "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-3.0.1.crate",
+          "sha256": "f5404a19d91e5604db1969f981696c199b654826e5008e9d135b844211b6799e",
+          "revision": "8077ccf1cc4a853f08cb4c90355e19fe340d0135",
+          "path_prefix": "interface/"
+        },
+        "3.1.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-3.1.0.crate",
+          "sha256": "63575341ccf296f8f8e27065010573f1bd0928eed58b98b1c031b186d40db2c9"
+        },
+        "3.1.1": {
+          "archive_url": "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-3.1.1.crate",
+          "sha256": "821d96d034ea31c4965d182c742153c491ae0abee531331b55771086c5030d86",
+          "revision": "e18f9c6f9bf6044b934f48e3090e8e59e4820f02",
+          "path_prefix": "interface/"
+        },
+        "3.1.2": {
+          "archive_url": "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-3.1.2.crate",
+          "sha256": "3c8b75ca59053d3a79bb8cbaaef12c63ec08f6f1f0b8292352a39b56c455a248",
+          "revision": "0e74c157aebd5dbdef8035b526a56f0e416f9fb6",
+          "path_prefix": "interface/"
+        },
+        "4.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-token-2022-interface/spl-token-2022-interface-4.0.0.crate",
+          "sha256": "75b1e32b0637baa991cbacfe0636f45d77c1f5cd87438bd5c43de7b4e8e415ef",
+          "revision": "42022bea7a016928066cddf939b535aca6c33dc2",
+          "path_prefix": "interface/"
+        }
+      },
+      "evidence": ["@text:9cdd2f778480d632"]
+    }
+  },
+  "applicability": {
+    "spl-token-2022-interface::check_spl_token_program_account": {
+      "order": 200,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": ["@text:7103319198c0875f", "@text:0e29a81fef4f76df"],
+          "argument": "@review:source-notes/token-extensions.md#review-6e81da70805af4a8",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::check_spl_token_program_account",
+              "implementation": "spl_token_2022_interface::check_spl_token_program_account",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension": {
+      "order": 201,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-7bbab35856cb83c0",
+          "argument": "@review:source-notes/token-extensions.md#review-33c48da31756a928",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension",
+              "implementation": "spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension_operational": {
+      "order": 202,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-7bbab35856cb83c0",
+          "argument": "@review:source-notes/token-extensions.md#review-d0aaf77dfffc2e12",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension",
+              "implementation": "spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension_types": {
+      "order": 203,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-7bbab35856cb83c0",
+          "argument": "@review:source-notes/token-extensions.md#review-eaff83cf08cbd191",
+          "evidence": ["@text:e1680222e5710141", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension_types",
+              "implementation": "spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension_types",
+              "releases": ["3.0.0", "3.0.1", "3.1.0", "3.1.1", "3.1.2", "4.0.0"],
+              "compatible_ranges": [{"lower": "3.0.0", "upper": "4.0.0"}, {"lower": "4.0.0", "upper": "5.0.0"}]
+            }
+          ],
+          "releases": ["3.0.0", "3.0.1", "3.1.0", "3.1.1", "3.1.2", "4.0.0"]
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension_types_operational": {
+      "order": 204,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-7bbab35856cb83c0",
+          "argument": "@review:source-notes/token-extensions.md#review-e29949ce4b4d6eb6",
+          "evidence": ["@text:ee2d69ea27dcab18", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension_types",
+              "implementation": "spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension_types",
+              "releases": ["3.1.0", "3.1.1", "3.1.2", "4.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-0b76473b85a616fc"
+            }
+          ],
+          "releases": ["3.1.0", "3.1.1", "3.1.2", "4.0.0"]
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::StateWithExtensions::unpack": {
+      "order": 205,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-7bbab35856cb83c0",
+          "argument": "@review:source-notes/token-extensions.md#review-cc9d56c6bc60348f",
+          "evidence": ["@text:ee2d69ea27dcab18", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::extension::StateWithExtensions::<'data, S>::unpack",
+              "implementation": "spl_token_2022_interface::extension::StateWithExtensions::<'data, S>::unpack",
+              "releases": ["3.1.0", "3.1.1", "3.1.2", "4.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-0b76473b85a616fc"
+            }
+          ],
+          "releases": ["3.1.0", "3.1.1", "3.1.2", "4.0.0"]
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::StateWithExtensions::unpack_operational": {
+      "order": 206,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-7bbab35856cb83c0",
+          "argument": "@review:source-notes/token-extensions.md#review-f12e1e06895461b8",
+          "evidence": ["@text:ee2d69ea27dcab18", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::extension::StateWithExtensions::<'data, S>::unpack",
+              "implementation": "spl_token_2022_interface::extension::StateWithExtensions::<'data, S>::unpack",
+              "releases": ["3.1.0", "3.1.1", "3.1.2", "4.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-0b76473b85a616fc"
+            }
+          ],
+          "releases": ["3.1.0", "3.1.1", "3.1.2", "4.0.0"]
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::account_len::try_calculate_account_len_from_mint_data": {
+      "order": 207,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-7bbab35856cb83c0",
+          "argument": "@review:source-notes/token-extensions.md#review-9ce560439eb6425c",
+          "evidence": ["@text:ee2d69ea27dcab18", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::extension::account_len::try_calculate_account_len_from_mint_data",
+              "implementation": "spl_token_2022_interface::extension::account_len::try_calculate_account_len_from_mint_data",
+              "releases": ["3.1.0", "3.1.1", "3.1.2", "4.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-0b76473b85a616fc"
+            }
+          ],
+          "releases": ["3.1.0", "3.1.1", "3.1.2", "4.0.0"]
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::transfer_fee::TransferFee::calculate_fee": {
+      "order": 208,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-fb31f61a05f745fc",
+          "argument": "@review:source-notes/token-extensions.md#review-28e31dbe04246159",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::extension::transfer_fee::TransferFee::calculate_fee",
+              "implementation": "spl_token_2022_interface::extension::transfer_fee::TransferFee::calculate_fee",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::transfer_fee::TransferFee::calculate_post_fee_amount": {
+      "order": 209,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-fb31f61a05f745fc",
+          "argument": "@review:source-notes/token-extensions.md#review-ccb6c1643a16ec25",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::extension::transfer_fee::TransferFee::calculate_post_fee_amount",
+              "implementation": "spl_token_2022_interface::extension::transfer_fee::TransferFee::calculate_post_fee_amount",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::transfer_fee::TransferFee::calculate_pre_fee_amount": {
+      "order": 210,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-fb31f61a05f745fc",
+          "argument": "@review:source-notes/token-extensions.md#review-7b78712629aac6e6",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::extension::transfer_fee::TransferFee::calculate_pre_fee_amount",
+              "implementation": "spl_token_2022_interface::extension::transfer_fee::TransferFee::calculate_pre_fee_amount",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee": {
+      "order": 211,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-fb31f61a05f745fc",
+          "argument": "@review:source-notes/token-extensions.md#review-166cd5aa480c5d0f",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee",
+              "implementation": "spl_token_2022_interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee_live": {
+      "order": 212,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": [
+            "@text:c1cb83ff2fc332d8",
+            "@text:cfbe26db7bcd1e19",
+            "@text:123b5f5a5a046ae6",
+            "@text:bfd0cbeeb0b65158",
+            "@text:c93fe7646dfd2df4",
+            "@text:0a0f1cae1963749f"
+          ],
+          "argument": "@review:source-notes/token-extensions.md#review-8d03aede94ab48b1",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee",
+              "implementation": "spl_token_2022_interface::extension::transfer_fee::TransferFeeConfig::get_epoch_fee",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::id": {
+      "order": 213,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": ["@text:7103319198c0875f", "@text:0e29a81fef4f76df"],
+          "argument": "@review:source-notes/token-extensions.md#review-7e2afbfd5094ed77",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::id",
+              "implementation": "spl_token_2022_interface::id",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::instruction::close_account": {
+      "order": 214,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-84fa63463dfc16a0",
+          "argument": "@review:source-notes/token-extensions.md#review-b0c9ae64c62db2c8",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::instruction::close_account",
+              "implementation": "spl_token_2022_interface::instruction::close_account",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::instruction::close_account_value": {
+      "order": 215,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-1eafd55e98585bda",
+          "argument": "@review:source-notes/token-extensions.md#review-48bd7be8d2264f0a",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::instruction::close_account",
+              "implementation": "spl_token_2022_interface::instruction::close_account",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::instruction::initialize_account3": {
+      "order": 216,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-84fa63463dfc16a0",
+          "argument": "@review:source-notes/token-extensions.md#review-12548e5b65371c7e",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::instruction::initialize_account3",
+              "implementation": "spl_token_2022_interface::instruction::initialize_account3",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::instruction::initialize_account3_value": {
+      "order": 217,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-1eafd55e98585bda",
+          "argument": "@review:source-notes/token-extensions.md#review-356fa700da31921e",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::instruction::initialize_account3",
+              "implementation": "spl_token_2022_interface::instruction::initialize_account3",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::instruction::transfer_checked": {
+      "order": 218,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-84fa63463dfc16a0",
+          "argument": "@review:source-notes/token-extensions.md#review-c2df0ff347ff2ea2",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::instruction::transfer_checked",
+              "implementation": "spl_token_2022_interface::instruction::transfer_checked",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::instruction::transfer_checked_value": {
+      "order": 219,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-1eafd55e98585bda",
+          "argument": "@review:source-notes/token-extensions.md#review-f9e706a74ab30fc2",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::instruction::transfer_checked",
+              "implementation": "spl_token_2022_interface::instruction::transfer_checked",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::instruction::withdraw_excess_lamports": {
+      "order": 220,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-84fa63463dfc16a0",
+          "argument": "@review:source-notes/token-extensions.md#review-8688c973210fad86",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::instruction::withdraw_excess_lamports",
+              "implementation": "spl_token_2022_interface::instruction::withdraw_excess_lamports",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::instruction::withdraw_excess_lamports_value": {
+      "order": 221,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-reviewed",
+          "source": "spl-token-2022-interface",
+          "conditions": "@shared:conditions-1eafd55e98585bda",
+          "argument": "@review:source-notes/token-extensions.md#review-ad1d9bef8e06d13f",
+          "evidence": ["@text:e7c71b710c13e380", "@text:b72db2a7209654f8"],
+          "items": [
+            {
+              "item": "spl_token_2022_interface::instruction::withdraw_excess_lamports",
+              "implementation": "spl_token_2022_interface::instruction::withdraw_excess_lamports",
+              "releases": "@shared:releases-948056bb445b7282",
+              "compatible_ranges": "@shared:compatible-ranges-852f1084b9bd0834"
+            }
+          ],
+          "releases": "@shared:releases-948056bb445b7282"
+        }
+      ]
+    },
+    "spl-token-2022-interface::state::Mint::clone": {
+      "order": 234,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-3.1.1-mint-clone",
+          "source": "spl-token-2022-interface",
+          "releases": ["3.1.1", "3.1.2"],
+          "items": [
+            {
+              "releases": ["3.1.1", "3.1.2"],
+              "item": "core::clone::Clone::clone",
+              "implementation": "<spl_token_2022_interface::state::Mint as core::clone::Clone>::clone",
+              "compatible_ranges": [{"lower": "3.1.1", "upper": "4.0.0"}]
+            }
+          ],
+          "dependencies": [
+            {
+              "package": "solana-program-option",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["3.1.0"],
+              "reason": "@text:ba20bf90a39e2b8f",
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            },
+            {
+              "package": "solana-address",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.6.1"],
+              "reason": "@text:1cc945bf6acf3515",
+              "compatible_ranges": [{"lower": "2.6.1", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:5353be6e65af8112", "@binding:32d8ceaf1167419a"],
+          "argument": "@review:source-notes/token-extensions.md#review-ef79aabb38ac584c",
+          "evidence": [
+            "@text:964e5d1ba8422763",
+            "@text:48b52de578c9f08f",
+            "@text:18d2080e8e3c4ab7",
+            "@text:b06495e280378f79"
+          ]
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::StateWithExtensions::unpack_owned_base": {
+      "order": 451,
+      "profiles": [
+        {
+          "id": "spl-token-2022-interface-3.0.1-extension-StateWithExtensions-unpack",
+          "source": "spl-token-2022-interface",
+          "releases": ["3.0.1"],
+          "items": [
+            {
+              "releases": ["3.0.1"],
+              "item": "spl_token_2022_interface::extension::StateWithExtensions::<'data, S>::unpack",
+              "implementation": "spl_token_2022_interface::extension::StateWithExtensions::<'data, S>::unpack",
+              "compatible_ranges": [{"lower": "3.0.1", "upper": "3.1.0"}]
+            }
+          ],
+          "conditions": ["@binding:624aee729d2ca0fe"],
+          "argument": "@review:source-notes/token-extensions.md#review-66db908697abe7d4",
+          "evidence": ["@text:f91fb82141d50d53"],
+          "target": "@shared:target-9d27b5e6cfd6fec2"
+        },
+        {
+          "id": "spl-token-2022-interface-2.1.0-extension-StateWithExtensions-unpack",
+          "source": "spl-token-2022-interface",
+          "releases": ["2.1.0"],
+          "items": [
+            {
+              "releases": ["2.1.0"],
+              "item": "spl_token_2022_interface::extension::StateWithExtensions::<'data, S>::unpack",
+              "implementation": "spl_token_2022_interface::extension::StateWithExtensions::<'data, S>::unpack",
+              "compatible_ranges": [{"lower": "2.1.0", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:624aee729d2ca0fe"],
+          "argument": "@review:source-notes/token-extensions.md#review-66db908697abe7d4",
+          "evidence": ["@text:a0bb2219bf4cdb0e"],
+          "target": "@shared:target-9d27b5e6cfd6fec2"
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::BaseStateWithExtensions::get_extension_types_push_before_payload": {
+      "order": 483,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/token-extensions.md#review-b0cc2e711caa8716",
+          "conditions": ["@binding:d715096aaf855717", "@binding:624aee729d2ca0fe"],
+          "evidence": ["@text:a0bb2219bf4cdb0e", "@text:516528dcd7eebc12"],
+          "id": "spl-token-2022-interface-2.1.0-extension-BaseStateWithExtensions-get_extension_types",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}],
+              "implementation": "spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension_types",
+              "item": "spl_token_2022_interface::extension::BaseStateWithExtensions::get_extension_types",
+              "releases": ["2.0.0", "2.1.0"]
+            }
+          ],
+          "releases": ["2.0.0", "2.1.0"],
+          "source": "spl-token-2022-interface",
+          "target": "@shared:target-9d27b5e6cfd6fec2"
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::ExtensionType::get_required_init_account_extensions": {
+      "order": 484,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/token-extensions.md#review-de622f5f7245f288",
+          "conditions": ["@binding:d715096aaf855717", "@binding:c47dd6f1c4622b17"],
+          "evidence": ["@text:a0bb2219bf4cdb0e", "@text:516528dcd7eebc12"],
+          "id": "spl-token-2022-interface-2.1.0-extension-ExtensionType-get_required_init_account_extensions",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}],
+              "implementation": "spl_token_2022_interface::extension::ExtensionType::get_required_init_account_extensions",
+              "item": "spl_token_2022_interface::extension::ExtensionType::get_required_init_account_extensions",
+              "releases": ["2.0.0", "2.1.0"]
+            }
+          ],
+          "releases": ["2.0.0", "2.1.0"],
+          "source": "spl-token-2022-interface",
+          "target": "@shared:target-9d27b5e6cfd6fec2"
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::ExtensionType::try_calculate_account_len": {
+      "order": 485,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/token-extensions.md#review-472bb224cb93d2bb",
+          "conditions": ["@binding:d715096aaf855717", "@binding:971a9ce7a19fa561"],
+          "evidence": ["@text:a0bb2219bf4cdb0e", "@text:516528dcd7eebc12"],
+          "id": "spl-token-2022-interface-2.1.0-extension-ExtensionType-try_calculate_account_len",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}],
+              "implementation": "spl_token_2022_interface::extension::ExtensionType::try_calculate_account_len",
+              "item": "spl_token_2022_interface::extension::ExtensionType::try_calculate_account_len",
+              "releases": ["2.0.0", "2.1.0"]
+            }
+          ],
+          "releases": ["2.0.0", "2.1.0"],
+          "source": "spl-token-2022-interface",
+          "target": "@shared:target-9d27b5e6cfd6fec2"
+        }
+      ]
+    },
+    "spl-token-2022-interface::extension::transfer_fee::TransferFeeConfig::calculate_epoch_fee": {
+      "order": 486,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/token-extensions.md#review-daa1cf890c808f2d",
+          "conditions": [],
+          "dependencies": [
+            {
+              "package": "spl-pod",
+              "reason": "@text:e31164b2393e49e0",
+              "releases": ["0.7.3"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            },
+            {
+              "package": "solana-zero-copy",
+              "reason": "@text:885d450a5c53c12b",
+              "releases": ["1.0.1"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"}
+            }
+          ],
+          "evidence": ["@text:a0bb2219bf4cdb0e", "@text:516528dcd7eebc12"],
+          "id": "spl-token-2022-interface-2.1.0-extension-transfer_fee-TransferFeeConfig-calculate_epoch_fee",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "2.0.0", "upper": "3.0.0"}],
+              "implementation": "spl_token_2022_interface::extension::transfer_fee::TransferFeeConfig::calculate_epoch_fee",
+              "item": "spl_token_2022_interface::extension::transfer_fee::TransferFeeConfig::calculate_epoch_fee",
+              "releases": ["2.0.0", "2.1.0"]
+            }
+          ],
+          "releases": ["2.0.0", "2.1.0"],
+          "source": "spl-token-2022-interface"
+        }
+      ]
+    }
+  },
+  "binding_defaults": ["@binding:cc436e49cb47751c", "@binding:0060e01c0d962eea"]
+}

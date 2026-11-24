@@ -1,0 +1,27 @@
+# Copyright (c) 2026 Harmonic. All rights reserved.
+# Released under Apache 2.0 license as described in the file LICENSE.
+# Authors: Solanalib Contributors
+
+[workspace]
+resolver = "2"
+members = [
+  "../../pyth",
+  "../../sdk-values-modern",
+]
+
+[profile.dev]
+panic = "unwind"
+
+[profile.abort]
+inherits = "dev"
+panic = "abort"
+
+[profile.wrapping]
+inherits = "dev"
+overflow-checks = false
+
+[profile.optimized]
+inherits = "dev"
+opt-level = 3
+debug-assertions = false
+overflow-checks = false

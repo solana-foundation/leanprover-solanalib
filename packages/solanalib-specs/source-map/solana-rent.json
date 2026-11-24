@@ -1,0 +1,364 @@
+{
+  "abstractions": {
+    "library::solana_rent": {
+      "order": 144,
+      "modules": {
+        "Solanalib.Specs.SolanaRent": "335976e383d0dded97ee71904f3f78e2b58a528fe60d5719644d95a142454798",
+        "Solanalib.Specs.SolanaRent.Capabilities": "662e91633156bd7114daecea36d51fdeb9f890e144c46cffcbfefad1e24f39b7",
+        "Solanalib.Specs.SolanaRent.Rent": "ad0789107922c6f8f1c2c04842c5d3058d52ad9cea7f372d2c5e2e1abb63bdac",
+        "Solanalib.Specs.SolanaRent.RentExempt": "38079b4edf1382764942a6b991fbd545af2b6d7feabcf312d55e836089f4d2a3"
+      },
+      "source_ids": [
+        "sysvars::solana-rent-3.0.0::src/lib.rs",
+        "sdk-utilities::solana-rent-2.2.1::src/lib.rs",
+        "sdk-utilities::solana-program-1.15.2::src/rent.rs",
+        "sdk-utilities::solana-program-1.18.26::src/rent.rs"
+      ],
+      "argument": "@review:source-notes/sysvar-rent-arithmetic.md#review-a0d3ea762a626f56",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:2bdd10cfed4f63a1",
+        "@binding:b5fa051f6f3ee7b5",
+        "@binding:a5b548f00e55295a"
+      ]
+    }
+  },
+  "packages": {
+    "solana-rent-3.0.0": {
+      "order": 26,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "7208ca11e3c29a8847bb80b08635c6710041e639",
+      "path_prefix": "rent/"
+    },
+    "solana-rent-2.2.1": {
+      "order": 72,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+      "path_prefix": "rent/"
+    }
+  },
+  "interfaces": {
+    "sysvars::solana-rent-3.0.0::src/lib.rs": {
+      "order": 125,
+      "crate": "solana-rent-3.0.0",
+      "path": "src/lib.rs",
+      "sha256": "fb51f91e2e93ac41d8776c7d67579b90609a336ea343fdd27060b43305407498"
+    },
+    "sdk-utilities::solana-rent-2.2.1::src/lib.rs": {
+      "order": 220,
+      "crate": "solana-rent-2.2.1",
+      "path": "src/lib.rs",
+      "sha256": "fb51f91e2e93ac41d8776c7d67579b90609a336ea343fdd27060b43305407498"
+    }
+  },
+  "models": {
+    "solana-rent::Rent::minimum_balance": {
+      "order": 189,
+      "contract": "Solanalib.Specs.SolanaRent.Rent.minimum_balance_contract",
+      "witness_kind": "Holds",
+      "execution": "Solanalib.Specs.SolanaRent.Rent.minimum_balance_hasExecution",
+      "assumptions": ["@binding:28e35fd0e9f93d35"]
+    },
+    "solana-rent::Rent::is_exempt": {
+      "order": 242,
+      "contract": "Solanalib.Specs.SolanaRent.Rent.is_exempt_contract",
+      "witness_kind": "Holds",
+      "execution": "Solanalib.Specs.SolanaRent.Rent.is_exempt_hasExecution",
+      "assumptions": ["@binding:a5b548f00e55295a"]
+    }
+  },
+  "api": {
+    "sysvars::solana-rent-3.0.0::Rent::minimum_balance": {
+      "order": 208,
+      "anchor_text": "pub fn minimum_balance(&self, data_len: usize) -> u64 {",
+      "binding_obligations": ["@binding:2bdd10cfed4f63a1", "@binding:28e35fd0e9f93d35"],
+      "line": 93,
+      "scope": "@text:183d256ed0df00ae",
+      "source_id": "sysvars::solana-rent-3.0.0::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaRent.Rent.fractional_threshold_truncates_after_rounding",
+        "SolanalibTest.Specs.SolanaRent.Rent.nan_threshold_returns_zero",
+        "SolanalibTest.Specs.SolanaRent.Rent.checked_addition_panics_before_float",
+        "SolanalibTest.Specs.Core.Float64.separate_rounding_is_observable"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Sysvar.rent300Minimum", "Solanalib.Specs.Core.Float64.multiplyUInt64ThenCast"],
+      "rust_names": ["solana_rent::Rent::minimum_balance"],
+      "models": ["solana-rent::Rent::minimum_balance"]
+    },
+    "sdk-utilities::solana-rent-2.2.1::Rent::is_exempt": {
+      "order": 233,
+      "source_id": "sdk-utilities::solana-rent-2.2.1::src/lib.rs",
+      "line": 100,
+      "anchor_text": "pub fn is_exempt(&self, balance: u64, data_len: usize) -> bool {",
+      "scope": "@text:127a331ff95cf360",
+      "binding_obligations": ["@binding:b5fa051f6f3ee7b5", "@binding:a5b548f00e55295a"],
+      "rust_names": ["solana_rent::Rent::is_exempt"],
+      "models": ["solana-rent::Rent::is_exempt"]
+    },
+    "sdk-utilities::solana-rent-3.0.0::Rent::is_exempt": {
+      "order": 469,
+      "source_id": "sysvars::solana-rent-3.0.0::src/lib.rs",
+      "line": 100,
+      "anchor_text": "pub fn is_exempt(&self, balance: u64, data_len: usize) -> bool {",
+      "scope": "@text:127a331ff95cf360",
+      "binding_obligations": ["@binding:b5fa051f6f3ee7b5", "@binding:a5b548f00e55295a"],
+      "rust_names": ["solana_rent::Rent::is_exempt"],
+      "models": ["solana-rent::Rent::is_exempt"]
+    }
+  },
+  "applicability_sources": {
+    "solana-rent": {
+      "order": 24,
+      "package": "solana-rent",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-0.0.1.crate",
+          "sha256": "5a87bce2e20158217726a234f66c35c4981ad6e7ca4f4576e573034279399b4b"
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-0.0.2.crate",
+          "sha256": "628ccc889c014676748ad9e04869a413a357198160493ef0b4b0fb984ea0eae7",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.0.crate",
+          "sha256": "aab3f4a270196c38d62c3bb3c7a2f07732af2c772b50da49c9b1e2c9d2ace286",
+          "revision": "c1080de464cfb578c301e975f498964b5d5313db",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.1.crate",
+          "sha256": "d1d71c2a454e30cd4b190e57e95b8e89f339bfdab582c2d8443d83a0a020e175",
+          "revision": "adeac02216dae627b90d7498a26e04276e88ed29",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.2.crate",
+          "sha256": "904df8e9692d80f8f86cbccbe11b59c7b6a3d9b945d84a8a73115e36c9e2f2cd",
+          "revision": "cefd3f13a2b8c1f3f8332ebeea3d7bf44d547a9a",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.4.crate",
+          "sha256": "ef59feb19504816b3910a901ef3586eb50d6e6bf68707fbd6275faa393a07d54",
+          "revision": "024d047eedba22768099cc6509414202400c6231",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.5.crate",
+          "sha256": "51a6f5fd26b7e21caf414ef03b88b93eb4220a2aedda78085c64fa1bf4f45d69",
+          "revision": "4da190bd01724d1433cff65782100978aefd4c00",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.6.crate",
+          "sha256": "4ebcc59bff8b3c773214545d038b718a3e2e63c920b8172f85725463029f7f00",
+          "revision": "c15e6692b1eb2e9196a5d51af5ee8cb57ab7e689",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.7.crate",
+          "sha256": "05a4d15fe63d0e9a9551adfecfec495e3d50ba0bc4705001010c724fe84f65d8",
+          "revision": "c79c3c9e67274594ed4f43ed8386e9ddc60a99e9",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.8.crate",
+          "sha256": "138b60a6683d14d63b4cee532d50afcb54999679b5c53013969fd51977455e14",
+          "revision": "6ea38fce866595908486a01c7d6b7182988f3b2d",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.9.crate",
+          "sha256": "33d8893f797f09049e9c798dbc0aa58e489c42c51e553de7d1fa2504987b8a23",
+          "revision": "fdb6acc0a634fd0f1fd060d13aa4142c2e4601de",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.10.crate",
+          "sha256": "544fab48aacd3b9c740ef5206f30e8a44ef8bfe5676a9d7b1eed385265ec1265",
+          "revision": "33ab693d94c787e64686e7b2d2f49492eae63885",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.11.crate",
+          "sha256": "88b4cd58602eb0c2250cd83a8cc8287ca6271b99af95d2a33250e6592c04e286",
+          "revision": "134be7c14066ea00c9791187d6bbc4795dd92f0e",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.12.crate",
+          "sha256": "d0ae7a8fb4d869c6134d9ebdde2bb68e4cfd6034fe947932ade7721e236b66bb",
+          "revision": "00cfd3ee36e9f2af78465731e87a063504753385",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.13.crate",
+          "sha256": "4cb62c792559733d5f5d2ee42383e8d3b336e5168472ebdaaf157fd6f1949973",
+          "revision": "67412607f511ded3770031280b6aaf10607713fc",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.14.crate",
+          "sha256": "cff9c0de5523e50af35f7224a5a6e3687e1f52163b53900be62b3adca86765b5",
+          "revision": "3ad46824358db6337072ad2b5d50ebcab6e1f113",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.15": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.15.crate",
+          "sha256": "f70237aa51cbb21fa2b20e78a0c2c5cc74f4d42a66b29214378616c58a2784ff",
+          "revision": "535456856619786b7ac47b5b50b0a730e571365d",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.16": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.16.crate",
+          "sha256": "a07eabaec5f38067fe43017e249c6e0492b8b227877e49d8ebfab2575d2418b4",
+          "revision": "5002c63047230994282abd24207414126cb57e22",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.17": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.17.crate",
+          "sha256": "91d3ef072b080ca70303a41e4e4f98f455291e51e41db7207868ba2282811b5f",
+          "revision": "4adcd0f2f9075d9a2c08e3e12a694ced58f2af29",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.18": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.18.crate",
+          "sha256": "040b28d521ed28864f18b2b660ee5578f2c316990d1b1fd0520f7b20eb62c032",
+          "revision": "f91c2fcac24eee5a40f10606540ef6e08d1b6655",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.20": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.20.crate",
+          "sha256": "be7ddfa29be6122cb9682e343b55b48687360e56950c928735a5084cafaf42ad",
+          "revision": "89985de3c6a8643f90af5dcb14bed23382bee088",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.1.21": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.1.21.crate",
+          "sha256": "abb867706bd6e7bbbdf303416f44a5560bcef6f9a0fc5610a725c1a92103abc7",
+          "revision": "8a085eebcb901b6846d1f82f4636667742146545",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.2.0.crate",
+          "sha256": "c9c0ba8a033fd38dc86270843243af7769fa0575ca61f56064aa87a825649540",
+          "revision": "1baa4033e0d2d4175373f07b73ddda2f3cc0a8d6",
+          "path_prefix": "sdk/rent/"
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-2.2.1.crate",
+          "sha256": "d1aea8fdea9de98ca6e8c2da5827707fb3842833521b528a713810ca685d2480",
+          "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+          "path_prefix": "rent/",
+          "repository": "https://github.com/anza-xyz/solana-sdk"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-3.0.0.crate",
+          "sha256": "b702d8c43711e3c8a9284a4f1bbc6a3de2553deb25b0c8142f9a44ef0ce5ddc1",
+          "revision": "7208ca11e3c29a8847bb80b08635c6710041e639",
+          "path_prefix": "rent/"
+        },
+        "3.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-3.1.0.crate",
+          "sha256": "e860d5499a705369778647e97d760f7670adfb6fc8419dd3d568deccd46d5487",
+          "revision": "45d6d88bc71d13e7370e77a85d16aba55b0253b7",
+          "path_prefix": "rent/"
+        },
+        "4.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-4.0.0.crate",
+          "sha256": "763fe5c88a76ce18235db595b21d38b7aebf6db56b324cdf9fc96059f4410823",
+          "revision": "e4e9d290da0c971589ff87eda8c262875159e436",
+          "path_prefix": "rent/"
+        },
+        "4.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-4.1.0.crate",
+          "sha256": "a1771d726d4854f1818c750e14aff40b19d84720d0b1b6d53e50e8f16cb6bd62",
+          "revision": "66f65d1950dfd4a77331b5724bd0e0e5b17b9d2b",
+          "path_prefix": "rent/"
+        },
+        "4.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-4.2.0.crate",
+          "sha256": "f9809b081e99bc142ce803bcd7ee18306759ce3b30a96a9da3f6f41c45e50ef0",
+          "revision": "16cbc569480834289a909787d21ea05bf9146b69",
+          "path_prefix": "rent/"
+        },
+        "4.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-4.2.1.crate",
+          "sha256": "40f02fbe2669ebe5d851dbf29a02e91ed6244b051bb64fcc57e6644aba636063",
+          "revision": "fec90fdb10730260db26ec1cfed00bb121f1eea5",
+          "path_prefix": "rent/"
+        },
+        "4.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-4.3.0.crate",
+          "sha256": "39f0d780bf8e8a1fe8b5b5fce1acad6b209485b86dec246e7523d5e4a8b7c7fc",
+          "revision": "d8f48ef34f01bc6e66db39161165146203bcfe39",
+          "path_prefix": "rent/"
+        },
+        "4.4.0": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-4.4.0.crate",
+          "sha256": "dc016b348926395ba01f8288cdf5da25fc30f5a0806028b32d5e5b3147b10bf9",
+          "revision": "91123d4cf58736d1c8a7c247eafc5a0c222bd2d1",
+          "path_prefix": "rent/"
+        },
+        "4.5.0": {
+          "archive_url": "https://static.crates.io/crates/solana-rent/solana-rent-4.5.0.crate",
+          "sha256": "6e7c7590d4e53446a00c363783d98199d8c8f5099ca60eaf2a0f1f50d0e7a31e",
+          "revision": "bea8669db6eefa4f88f09833b9f518ede5016226",
+          "path_prefix": "rent/"
+        }
+      },
+      "evidence": ["@text:a8869bdd6a02fc4a"]
+    }
+  },
+  "applicability": {
+    "solana-rent::Rent::minimum_balance": {
+      "order": 189,
+      "profiles": [
+        {
+          "id": "solana-rent-reviewed",
+          "source": "solana-rent",
+          "conditions": ["@binding:28e35fd0e9f93d35", "@text:1f296e0ddf1710f6"],
+          "argument": "@review:source-notes/sysvar-rent-arithmetic.md#review-35e58ab2dc0ec082",
+          "evidence": ["@text:e2976da1982a52f7", "@text:16fc83f2fc6aee14"],
+          "target": [{"field": "pointer_width", "reason": "@text:e78c96a19b292193", "include": ["64"]}],
+          "items": [
+            {
+              "item": "solana_rent::Rent::minimum_balance",
+              "implementation": "solana_rent::Rent::minimum_balance",
+              "releases": "@shared:releases-4037284a390779d8",
+              "compatible_ranges": "@shared:compatible-ranges-d4731d23b05f1184"
+            }
+          ],
+          "releases": "@shared:releases-4037284a390779d8"
+        }
+      ]
+    },
+    "solana-rent::Rent::is_exempt": {
+      "order": 242,
+      "profiles": [
+        {
+          "id": "rent-exempt-solana-rent",
+          "source": "solana-rent",
+          "releases": ["2.2.1", "3.0.0", "3.1.0"],
+          "items": [
+            {
+              "releases": ["2.2.1", "3.0.0", "3.1.0"],
+              "item": "solana_rent::Rent::is_exempt",
+              "implementation": "solana_rent::Rent::is_exempt",
+              "compatible_ranges": [{"lower": "2.2.1", "upper": "3.0.0"}, {"lower": "3.0.0", "upper": "4.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:a5b548f00e55295a"],
+          "argument": "@review:source-notes/sysvar-rent-arithmetic.md#review-cbe188c592f94753",
+          "evidence": ["@text:e246dbe14a40e482", "@text:34d17a3a991004a2", "@text:16fc83f2fc6aee14"],
+          "target": "@shared:target-16cd3ce938392ff1"
+        }
+      ]
+    }
+  }
+}

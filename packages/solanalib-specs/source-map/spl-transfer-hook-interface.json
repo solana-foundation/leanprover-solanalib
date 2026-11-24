@@ -1,0 +1,404 @@
+{
+  "abstractions": {
+    "library::spl_transfer_hook_interface": {
+      "order": 167,
+      "modules": {
+        "Solanalib.Specs.SplTransferHookInterface.Onchain": "df186484d1c557546e6b31154652efe3b70d11411b55459c197f17911a187f7e",
+        "Solanalib.Specs.SplTransferHookInterface": "8e525b2cdf1aec594bfa8d4eb3aeb93e9623eaa7ae5f1674276ca216f64fe0a8",
+        "Solanalib.Specs.SplTransferHookInterface.Capabilities": "e7982397f5b24ec4ff4867f4853fe7753fcc27d93819d6d5c4ff48ea4c520052"
+      },
+      "source_ids": [
+        "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::src/onchain.rs",
+        "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::src/instruction.rs",
+        "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::src/lib.rs",
+        "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::src/error.rs",
+        "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::Cargo.toml.orig",
+        "transfer-hook-resolution::spl-tlv-account-resolution-0.9.0::src/state.rs",
+        "transfer-hook-resolution::spl-tlv-account-resolution-0.9.0::src/account.rs",
+        "transfer-hook-resolution::spl-tlv-account-resolution-0.9.0::src/seeds.rs",
+        "transfer-hook-resolution::spl-tlv-account-resolution-0.9.0::src/pubkey_data.rs",
+        "transfer-hook-resolution::spl-tlv-account-resolution-0.9.0::src/error.rs",
+        "transfer-hook-resolution::spl-type-length-value-0.7.0::src/state.rs",
+        "transfer-hook-resolution::spl-type-length-value-0.7.0::src/length.rs",
+        "transfer-hook-resolution::spl-type-length-value-0.7.0::src/error.rs",
+        "transfer-hook-resolution::spl-pod-0.5.1::src/slice.rs",
+        "transfer-hook-resolution::spl-pod-0.5.1::src/bytemuck.rs",
+        "transfer-hook-resolution::spl-pod-0.5.1::src/primitives.rs",
+        "transfer-hook-resolution::spl-pod-0.5.1::src/error.rs",
+        "transfer-hook-resolution::spl-discriminator-0.4.1::src/discriminator.rs",
+        "transfer-hook-resolution::spl-discriminator-0.4.1::src/lib.rs",
+        "transfer-hook-resolution::solana-account-info-2.3.0::src/lib.rs",
+        "transfer-hook-resolution::solana-instruction-2.2.1::src/lib.rs",
+        "transfer-hook-resolution::solana-instruction-2.2.1::src/account_meta.rs",
+        "transfer-hook-resolution::solana-program-error-2.2.2::src/lib.rs",
+        "transfer-hook-resolution::bytemuck-1.22.0::src/lib.rs",
+        "transfer-hook-resolution::bytemuck-1.22.0::src/internal.rs",
+        "addresses::solana-pubkey-2.2.1::src/lib.rs"
+      ],
+      "argument": "@review:source-notes/transfer-hook-resolution-0.9.0.md#review-1f14e27e10408d0d",
+      "limitations": [
+        "@binding:f15afa8677b4b8c2",
+        "@binding:d7227cf23647c204",
+        "@binding:90832d83de9cd52d",
+        "@binding:cc5c6bc062c36cdd",
+        "@binding:a147ebec4789a003",
+        "@text:a59033a3f7b014d2",
+        "@text:f428bee2a0798d8f"
+      ]
+    }
+  },
+  "packages": {
+    "spl-transfer-hook-interface-2.1.0": {
+      "order": 38,
+      "repository": "https://github.com/solana-program/transfer-hook",
+      "revision": "b14c7c375cdc013123b8b042e331497016439f93",
+      "path_prefix": "interface/"
+    },
+    "spl-transfer-hook-interface-0.9.0": {
+      "order": 137,
+      "repository": "https://github.com/solana-labs/solana-program-library",
+      "revision": "13ecf4dd65abfe60f38cc99b66a2d14d9c731de4",
+      "path_prefix": "token/transfer-hook/interface/"
+    }
+  },
+  "interfaces": {
+    "spl-transfer-hook-interface-2.1.0-error": {
+      "order": 114,
+      "crate": "spl-transfer-hook-interface-2.1.0",
+      "path": "src/error.rs",
+      "sha256": "aa3f4ddfa4b83b4906a40f774cc740f014de27a8deb1518a9a60a77e454ef035"
+    },
+    "spl-transfer-hook-interface-2.1.0-instruction": {
+      "order": 115,
+      "crate": "spl-transfer-hook-interface-2.1.0",
+      "path": "src/instruction.rs",
+      "sha256": "3eb15c8706faefdbb694c1681bf400d221c68dd85d69528641047daedbd5426f"
+    },
+    "spl-transfer-hook-interface-2.1.0-lib": {
+      "order": 116,
+      "crate": "spl-transfer-hook-interface-2.1.0",
+      "path": "src/lib.rs",
+      "sha256": "53a1b0436b9cdcb53b1eacd2fcf63be8d9d6aa63bf951f2e0f045d309726a5a3"
+    },
+    "spl-transfer-hook-interface-2.1.0-onchain": {
+      "order": 117,
+      "crate": "spl-transfer-hook-interface-2.1.0",
+      "path": "src/onchain.rs",
+      "sha256": "b06d08877f11dc9155c825f7e8a5820004abf4bbca83083aa135d31a6e35c259"
+    },
+    "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::Cargo.toml.orig": {
+      "order": 580,
+      "crate": "spl-transfer-hook-interface-0.9.0",
+      "path": "Cargo.toml.orig",
+      "sha256": "a2b0522f0385da233644377151fdc40613b500e325b7447cb07020373b8051ff",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed.",
+      "path_in_repository": "token/transfer-hook/interface/Cargo.toml"
+    },
+    "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::src/error.rs": {
+      "order": 581,
+      "crate": "spl-transfer-hook-interface-0.9.0",
+      "path": "src/error.rs",
+      "sha256": "48c411b042f6b1c718bf5ce54da79aca2328f7ee379eb030317337a9647437a5",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed."
+    },
+    "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::src/instruction.rs": {
+      "order": 582,
+      "crate": "spl-transfer-hook-interface-0.9.0",
+      "path": "src/instruction.rs",
+      "sha256": "9d960b1e36003ca9cea86a5e670f2e8037fe6007fc616ea621d97dcf8cdcac91",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed."
+    },
+    "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::src/lib.rs": {
+      "order": 583,
+      "crate": "spl-transfer-hook-interface-0.9.0",
+      "path": "src/lib.rs",
+      "sha256": "3237e030424569e401d7d46e7a1052503ca8697305ba299a6aed91c0a706af90",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed."
+    },
+    "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::src/onchain.rs": {
+      "order": 584,
+      "crate": "spl-transfer-hook-interface-0.9.0",
+      "path": "src/onchain.rs",
+      "sha256": "7f6c9c11fbadbd4bed16cea20c0f7135f16402e4201c5dbcda4bd792ff7043c8",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed."
+    }
+  },
+  "models": {
+    "spl-transfer-hook-interface::onchain::add_extra_accounts_for_execute_cpi": {
+      "order": 421,
+      "contract": "Solanalib.Specs.SplTransferHookInterface.onchain.add_extra_accounts_for_execute_cpi_contract",
+      "witness_kind": "FamilyReference",
+      "reference": "Solanalib.Specs.SplTransferHookInterface.onchain.add_extra_accounts_for_execute_cpi_reference",
+      "witness": "Solanalib.Specs.SplTransferHookInterface.onchain.add_extra_accounts_for_execute_cpi_reference_holds",
+      "assumptions": [
+        "@binding:f15afa8677b4b8c2",
+        "@binding:d7227cf23647c204",
+        "@binding:90832d83de9cd52d",
+        "@binding:cc5c6bc062c36cdd",
+        "@binding:a147ebec4789a003"
+      ]
+    }
+  },
+  "api": {
+    "spl-transfer-hook-interface@0.9.0::onchain::add_extra_accounts_for_execute_cpi": {
+      "order": 437,
+      "source_id": "transfer-hook-resolution::spl-transfer-hook-interface-0.9.0::src/onchain.rs",
+      "line": 67,
+      "anchor_text": "pub fn add_extra_accounts_for_execute_cpi<'a>(",
+      "rust_names": ["spl_transfer_hook_interface::onchain::add_extra_accounts_for_execute_cpi"],
+      "scope": "@review:source-notes/owned-dependencies.md#review-803098b64c833657",
+      "binding_obligations": [
+        "@binding:f15afa8677b4b8c2",
+        "@binding:d7227cf23647c204",
+        "@binding:90832d83de9cd52d",
+        "@binding:cc5c6bc062c36cdd",
+        "@binding:a147ebec4789a003"
+      ],
+      "clients": [
+        "SolanalibTest.Specs.SplTransferHookInterface.closed_execution",
+        "SolanalibTest.Specs.SplTransferHookInterface.new_signer_retained",
+        "SolanalibTest.Specs.SplTransferHookInterface.alias_privileges_clamped",
+        "SolanalibTest.Specs.SplTransferHookInterface.pod_capacity_panics"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.SolanaPubkey.Pubkey.find_program_address_solana_contract",
+        "Solanalib.Specs.Core.Address.Operations.zeroFindRun"
+      ],
+      "models": ["spl-transfer-hook-interface::onchain::add_extra_accounts_for_execute_cpi"]
+    }
+  },
+  "applicability_sources": {
+    "transfer-hook-interface-0.9.0": {
+      "order": 48,
+      "package": "spl-transfer-hook-interface",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-11",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.0.1.crate",
+          "sha256": "05f52129e4f0809fc5eaeb97fdefc1ac231eddbc54bc72ba7ecdb96a17142d3d",
+          "yanked": false,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.1.0": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.1.0.crate",
+          "sha256": "4a2326852adf88716fbac7f54cd6ee2c8a0b5a14ede24db3b4519c4ff13df04b",
+          "yanked": false,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.2.0": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.2.0.crate",
+          "sha256": "f7489940049417ae5ce909314bead0670e2a5ea5c82d43ab96dc15c8fcbbccba",
+          "yanked": false,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.3.0": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.3.0.crate",
+          "sha256": "051d31803f873cabe71aec3c1b849f35248beae5d19a347d93a5c9cccc5d5a9b",
+          "yanked": false,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.4.0": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.4.0.crate",
+          "sha256": "c6427663d772a5e66f39c1902f206136ecd952a6e0969b7281ddd851d700f022",
+          "yanked": true,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.4.1": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.4.1.crate",
+          "sha256": "7aabdb7c471566f6ddcee724beb8618449ea24b399e58d464d6b5bc7db550259",
+          "yanked": false,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.5.0": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.5.0.crate",
+          "sha256": "825a69d531baa1ff261a29b98fcf08e134249e624052a6b60183bb2eab2fa8ae",
+          "yanked": false,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.5.1": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.5.1.crate",
+          "sha256": "5f6dfe329fcff44cbe2eea994bd8f737f0b0a69faed39e56f9b6ee03badf7e14",
+          "yanked": true,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.6.0": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.6.0.crate",
+          "sha256": "c36d65a61af4911959a6bfacadbb30133317c9f35ec8ebfe0d1364856c1fd750",
+          "yanked": true,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.6.1": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.6.1.crate",
+          "sha256": "75172dae8d24c57fc82f415c152607bb1072ed77f106124ffb8ab6cfe11dea9b",
+          "yanked": true,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.6.2": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.6.2.crate",
+          "sha256": "88e7f0a04eea94f3071456c4c6775afec059d2515bb7769da87e26dfe9a28547",
+          "yanked": true,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.6.3": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.6.3.crate",
+          "sha256": "66a98359769cd988f7b35c02558daa56d496a7e3bd8626e61f90a7c757eedb9b",
+          "yanked": false,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.6.4": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.6.4.crate",
+          "sha256": "e9a2522d12c43cc65a3b1ac3fe8ef01fe668014a964fb994bea6479766912b42",
+          "yanked": false,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.6.5": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.6.5.crate",
+          "sha256": "a9b5c08a89838e5a2931f79b17f611857f281a14a2100968a3ccef352cb7414b",
+          "yanked": false,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.7.0": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.7.0.crate",
+          "sha256": "a110f33d941275d9f868b96daaa993f1e73b6806cc8836e43075b4d3ad8338a7",
+          "yanked": false,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.8.0": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.8.0.crate",
+          "sha256": "4f10dfbc703c6d1df2b3fecb800b86f44796b36baca632bdb11e255f7966df99",
+          "yanked": true,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.8.1": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.8.1.crate",
+          "sha256": "d5864c1944c24f07c2823af91b6c578e7547d82301711506451734459a42872b",
+          "yanked": true,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.8.2": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.8.2.crate",
+          "sha256": "b82e5ad62ad342d8fbb907b2a7aede7a5a258ce16366c26a686acc1df431fc63",
+          "yanked": false,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "0.9.0": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.9.0.crate",
+          "sha256": "4aa7503d52107c33c88e845e1351565050362c2314036ddf19a36cd25137c043",
+          "revision": "13ecf4dd65abfe60f38cc99b66a2d14d9c731de4"
+        },
+        "0.10.0": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-0.10.0.crate",
+          "sha256": "a7e905b849b6aba63bde8c4badac944ebb6c8e6e14817029cbe1bc16829133bd",
+          "yanked": false,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "2.0.0": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-2.0.0.crate",
+          "sha256": "bdfff2798bcdc48ba52be12a47a28cf2d003f6f9846484ad7e6fec68d2578c25",
+          "yanked": false,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/spl-transfer-hook-interface/spl-transfer-hook-interface-2.1.0.crate",
+          "sha256": "c34b46b8f39bc64a9ab177a0ea8e9a58826db76f8d9d154a2400ee60baef7b1e",
+          "yanked": false,
+          "evidence": ["@text:ba119f9df8eaf8d9"]
+        }
+      },
+      "evidence": ["@text:0292928a849e14d3"]
+    }
+  },
+  "applicability": {
+    "spl-transfer-hook-interface::onchain::add_extra_accounts_for_execute_cpi": {
+      "order": 421,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/transfer-hook-resolution-0.9.0.md#review-20153bc950caccf5",
+          "conditions": [
+            "@binding:f15afa8677b4b8c2",
+            "@binding:d7227cf23647c204",
+            "@binding:90832d83de9cd52d",
+            "@text:782f5f8f6730f4ef",
+            "@binding:a147ebec4789a003"
+          ],
+          "dependencies": [
+            {
+              "package": "spl-tlv-account-resolution",
+              "reason": "@text:31760a62144eb2b1",
+              "releases": ["0.9.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"},
+              "compatible_ranges": [{"lower": "0.9.0", "upper": "0.10.0"}]
+            },
+            {
+              "package": "spl-type-length-value",
+              "reason": "@text:d88a3c6dc6f881ca",
+              "releases": ["0.7.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"},
+              "compatible_ranges": [{"lower": "0.7.0", "upper": "0.8.0"}]
+            },
+            {
+              "package": "spl-pod",
+              "reason": "@text:a4ab8f3da77900a0",
+              "releases": ["0.5.0", "0.5.1"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"},
+              "compatible_ranges": [{"lower": "0.5.0", "upper": "0.6.0"}]
+            },
+            {
+              "package": "spl-discriminator",
+              "reason": "@text:7ef37ae4b989f13a",
+              "releases": ["0.4.1"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"},
+              "compatible_ranges": [{"lower": "0.4.1", "upper": "0.5.0"}]
+            },
+            {
+              "package": "solana-account-info",
+              "reason": "@text:86596a5a966dfa76",
+              "releases": ["2.1.0", "2.2.1", "2.3.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"},
+              "compatible_ranges": [{"lower": "2.1.0", "upper": "3.0.0"}]
+            },
+            "@shared:dependencies-55af80591835ae0b",
+            {
+              "package": "solana-pubkey",
+              "reason": "@text:78cbb531189bc8bd",
+              "releases": ["2.2.1", "2.3.0", "2.4.0"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"},
+              "compatible_ranges": [{"lower": "2.2.1", "upper": "3.0.0"}]
+            },
+            {
+              "package": "solana-program-error",
+              "reason": "@text:4468a1309b9715d3",
+              "releases": ["2.1.0", "2.2.0", "2.2.1", "2.2.2"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"},
+              "compatible_ranges": [{"lower": "2.1.0", "upper": "3.0.0"}]
+            },
+            {
+              "package": "bytemuck",
+              "reason": "@text:00f9dbda6a08d63e",
+              "releases": ["1.22.0", "1.24.0", "1.25.2"],
+              "source": {"kind": "registry", "revision": "", "url": "https://github.com/rust-lang/crates.io-index"},
+              "compatible_ranges": [{"lower": "1.22.0", "upper": "2.0.0"}]
+            }
+          ],
+          "evidence": ["@text:7c5f4a8df9ec771b", "@text:0292928a849e14d3"],
+          "id": "transfer-hook-interface-0.9.0-spl-resolution-0.9.0-solana64",
+          "items": [
+            {
+              "implementation": "spl_transfer_hook_interface::onchain::add_extra_accounts_for_execute_cpi",
+              "item": "spl_transfer_hook_interface::onchain::add_extra_accounts_for_execute_cpi",
+              "releases": ["0.9.0"],
+              "compatible_ranges": [{"lower": "0.9.0", "upper": "0.10.0"}]
+            }
+          ],
+          "releases": ["0.9.0"],
+          "source": "transfer-hook-interface-0.9.0",
+          "target": [
+            {"field": "pointer_width", "include": ["64"], "reason": "@text:81c64286c3db95a7"},
+            {"field": "os", "include": ["solana"], "reason": "@text:a8c2a96237c854dd"}
+          ]
+        }
+      ]
+    }
+  }
+}

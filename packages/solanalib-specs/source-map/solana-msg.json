@@ -1,0 +1,306 @@
+{
+  "abstractions": {
+    "library::solana_msg": {
+      "order": 141,
+      "modules": {
+        "Solanalib.Specs.SolanaMsg": "885b70331616321fba20c9468ec8e6d96f64706c4cc98e389d3ad29d2bf3b690",
+        "Solanalib.Specs.SolanaMsg.Capabilities": "0093f834c8addeba9aca7a79020e1b627b9ef1129b16204b81ac179c1e04b646",
+        "Solanalib.Specs.SolanaMsg.Log": "87d5fcc5d511d7ecf3c32e9507fe945217fefe48f00e013ac9f8c518a2bcc1f3",
+        "Solanalib.Specs.SolanaMsg.LogHostStdout": "6a76e8d6ce87c58fa4d51e240e3ae8d63aca019c2db4190f01abf76cad130b0a"
+      },
+      "source_ids": ["sysvars::solana-msg-3.1.0::src/lib.rs", "sdk-utilities::solana-msg-2.2.1::src/lib.rs"],
+      "argument": "@review:source-notes/sysvar-codec-logging.md#review-1df0300cd6018eba",
+      "limitations": [
+        "@text:520c2c9da4094cbf",
+        "@text:04171939ad29b5f0",
+        "@text:dc22091b6e8bebb9",
+        "@binding:2bdd10cfed4f63a1",
+        "@binding:7c831c1e0b4de3a2",
+        "@binding:b5fa051f6f3ee7b5",
+        "@binding:f8fdb012bb5e313a",
+        "@text:637dfd12e71b9ba7"
+      ]
+    }
+  },
+  "packages": {
+    "solana-msg-3.1.0": {
+      "order": 23,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "8f24de0096f939bf75262a645f2d4280b9d1cfd8",
+      "path_prefix": "msg/"
+    },
+    "solana-msg-2.2.1": {
+      "order": 70,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+      "path_prefix": "msg/"
+    }
+  },
+  "interfaces": {
+    "sysvars::solana-msg-3.1.0::src/lib.rs": {
+      "order": 123,
+      "crate": "solana-msg-3.1.0",
+      "path": "src/lib.rs",
+      "sha256": "9d7a15dcb6763692fa0bb561c2fc0b884ba54eff969b910e5ff9d3a05cc2f654"
+    },
+    "sdk-utilities::solana-msg-2.2.1::src/lib.rs": {
+      "order": 201,
+      "crate": "solana-msg-2.2.1",
+      "path": "src/lib.rs",
+      "sha256": "4e93dc3b9480d228899978daa74844571aad8beb79b27d4b74d81a7070bd8391"
+    }
+  },
+  "models": {
+    "solana-msg::sol_log": {
+      "order": 185,
+      "contract": "Solanalib.Specs.SolanaMsg.sol_log_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.SolanaMsg.sol_log_hasExecution",
+      "assumptions": ["@binding:7c831c1e0b4de3a2", "@text:d2f59ee03838c303"]
+    },
+    "solana-msg::host_stdout::sol_log": {
+      "order": 244,
+      "contract": "Solanalib.Specs.SolanaMsg.host_stdout.sol_log_contract",
+      "witness_kind": "FamilyReference",
+      "execution": "Solanalib.Specs.SolanaMsg.host_stdout.sol_log_hasExecution",
+      "assumptions": ["@binding:f8fdb012bb5e313a"]
+    }
+  },
+  "api": {
+    "sysvars::solana-msg-3.1.0::sol_log": {
+      "order": 206,
+      "anchor_text": "pub fn sol_log(message: &str) {",
+      "binding_obligations": ["@binding:2bdd10cfed4f63a1", "@binding:7c831c1e0b4de3a2"],
+      "line": 54,
+      "scope": "@text:9ebd0e3dd1969481",
+      "source_id": "sysvars::solana-msg-3.1.0::src/lib.rs",
+      "clients": [
+        "SolanalibTest.Specs.SolanaMsg.appends_exact_utf8",
+        "SolanalibTest.Specs.SolanaMsg.host_without_std_calls_no_sink",
+        "SolanalibTest.Specs.SolanaMsg.log_failure_preserves_callback_state"
+      ],
+      "model_dependencies": ["Solanalib.Specs.Core.Log.textCall", "Solanalib.Specs.Core.Log.Event"],
+      "rust_names": ["solana_msg::sol_log"],
+      "models": ["solana-msg::sol_log"]
+    },
+    "sdk-utilities::solana-msg-2.2.1::sol_log": {
+      "order": 229,
+      "source_id": "sdk-utilities::solana-msg-2.2.1::src/lib.rs",
+      "line": 41,
+      "anchor_text": "pub fn sol_log(message: &str) {",
+      "scope": "@text:2f98a8e2cd062209",
+      "binding_obligations": ["@binding:b5fa051f6f3ee7b5", "@binding:f8fdb012bb5e313a"],
+      "rust_names": ["solana_msg::sol_log"],
+      "models": ["solana-msg::host_stdout::sol_log"]
+    }
+  },
+  "applicability_sources": {
+    "solana-msg": {
+      "order": 21,
+      "package": "solana-msg",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "0.0.1": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-0.0.1.crate",
+          "sha256": "510571bcbc5932e940a016685e8327370c9f6456e2fefe6fcaeb8326edc88fdd"
+        },
+        "0.0.2": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-0.0.2.crate",
+          "sha256": "5cb4446085dcffc193c70385f5d1a911f06fb9e43784754046121c8c55e14fac",
+          "revision": "2d9764a01669f65d32960df605fd266cb8813891",
+          "path_prefix": "sdk/msg/",
+          "evidence": ["@text:7adddf9fdd5c9027"]
+        },
+        "2.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.0.crate",
+          "sha256": "1f7551f85064bc7299d56dbd7126258b084a2d78d0325b1579324f818b405123"
+        },
+        "2.1.1": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.1.crate",
+          "sha256": "aa324c0dabbbb43365e072a0bbc8285fbd2106ead49f9a69d654981adffaf4d6",
+          "revision": "adeac02216dae627b90d7498a26e04276e88ed29",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.2": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.2.crate",
+          "sha256": "ec7a6f57e2e4ffe12cd4fee1e717c0f2ba6336ff2439cd5738d9843458a53da0",
+          "revision": "cefd3f13a2b8c1f3f8332ebeea3d7bf44d547a9a",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.4": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.4.crate",
+          "sha256": "c9ceb28774c48fa2bf3493e96216f530c4fe555b378062eaff0c597213c93ec7",
+          "revision": "024d047eedba22768099cc6509414202400c6231",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.5": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.5.crate",
+          "sha256": "efdc384958aa8083295c137ea80da165818c23bfbe92669b2caed2349409b2ff",
+          "revision": "4da190bd01724d1433cff65782100978aefd4c00",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.6": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.6.crate",
+          "sha256": "6d6a46fcbbaa38193b5b6aeec531395da8dac8dcd183ac6d80d94e6513fc4ad8",
+          "revision": "c15e6692b1eb2e9196a5d51af5ee8cb57ab7e689",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.7": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.7.crate",
+          "sha256": "406cd9c6ed9d4d036da00c958f0f98edb248c08eb596975011a30063ac3aa902",
+          "revision": "c79c3c9e67274594ed4f43ed8386e9ddc60a99e9",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.8": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.8.crate",
+          "sha256": "fac7a109b0c7a0ed26c1fbf3b0fec8809b5d4c74b5d597f0252d45255fd0d309",
+          "revision": "6ea38fce866595908486a01c7d6b7182988f3b2d",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.9": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.9.crate",
+          "sha256": "4818fcc8b1fa46f1d0c698a0645e0cf693baf4ab5654001fcaff4623187016cf",
+          "revision": "fdb6acc0a634fd0f1fd060d13aa4142c2e4601de",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.10": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.10.crate",
+          "sha256": "5aefec09cb47fb67b8f8c448e03491d4148c1749f27dcb74d1cfae6337695f94",
+          "revision": "33ab693d94c787e64686e7b2d2f49492eae63885",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.11": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.11.crate",
+          "sha256": "80dde3316c6ee6e8d57bf105139ec93f8c32a42fe3ec42a3cda2ca9efb72c0e6",
+          "revision": "134be7c14066ea00c9791187d6bbc4795dd92f0e",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.12": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.12.crate",
+          "sha256": "b772497c73933dc8f0123f1fc1c8ccae1e6edee194606e7fd5cb0a2f074f0cc6",
+          "revision": "00cfd3ee36e9f2af78465731e87a063504753385",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.13": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.13.crate",
+          "sha256": "59b84934c69aa9799b661f87aa1c47f8d358c3912fe5843571a5d047a222a0e6",
+          "revision": "67412607f511ded3770031280b6aaf10607713fc",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.14": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.14.crate",
+          "sha256": "f7e1129289be94c35e5a16db11b821feaa38fef56df34ef7a6222385a6d3cf3a",
+          "revision": "3ad46824358db6337072ad2b5d50ebcab6e1f113",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.15": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.15.crate",
+          "sha256": "f89d55e41e3177e1250f6f6cddd4fb6e059316dbe63eccc74302284b716f9cb5",
+          "revision": "535456856619786b7ac47b5b50b0a730e571365d",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.16": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.16.crate",
+          "sha256": "75cd36830655593aca70c07ede79bfcc36e19abc314b42f9260752fcb16722bd",
+          "revision": "5002c63047230994282abd24207414126cb57e22",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.17": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.17.crate",
+          "sha256": "a85e00a3640a4f933ee9a7fc527bc26470a04b7e2c5dae0fa4afaccd9815dece",
+          "revision": "4adcd0f2f9075d9a2c08e3e12a694ced58f2af29",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.18": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.18.crate",
+          "sha256": "b3e13e83fedd6f7868bf7c553feb20d4d0acac86a87afb95beff5d36b845b507",
+          "revision": "f91c2fcac24eee5a40f10606540ef6e08d1b6655",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.20": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.20.crate",
+          "sha256": "c9b1f994633ef77862c265e4ea81dcbc5d855d144251a7ac00ac171a2d62e469",
+          "revision": "89985de3c6a8643f90af5dcb14bed23382bee088",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.1.21": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.1.21.crate",
+          "sha256": "ddbd7c6efaea83a2bd85a14a0a062ccc77039070311d2ca1af4c887be500192f",
+          "revision": "8a085eebcb901b6846d1f82f4636667742146545",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.2.0.crate",
+          "sha256": "0b17b5e3bebc5d8c8e64c2db7e42aac0232290833c8c28cb3c45ee383f1a237d",
+          "revision": "1baa4033e0d2d4175373f07b73ddda2f3cc0a8d6",
+          "path_prefix": "sdk/msg/"
+        },
+        "2.2.1": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-2.2.1.crate",
+          "sha256": "f36a1a14399afaabc2781a1db09cb14ee4cc4ee5c7a5a3cfcc601811379a8092",
+          "revision": "1c1d667f161666f12f5a43ebef8eda9470a8c6ee",
+          "path_prefix": "msg/",
+          "repository": "https://github.com/anza-xyz/solana-sdk"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-3.0.0.crate",
+          "sha256": "264275c556ea7e22b9d3f87d56305546a38d4eee8ec884f3b126236cb7dcbbb4",
+          "revision": "1ab06c50c46ec56ea423ae26aa0c069452060ad3",
+          "path_prefix": "msg/"
+        },
+        "3.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-msg/solana-msg-3.1.0.crate",
+          "sha256": "726b7cbbc6be6f1c6f29146ac824343b9415133eee8cce156452ad1db93f8008",
+          "revision": "8f24de0096f939bf75262a645f2d4280b9d1cfd8",
+          "path_prefix": "msg/"
+        }
+      },
+      "evidence": ["@text:77dc4164c411b63e"]
+    }
+  },
+  "applicability": {
+    "solana-msg::sol_log": {
+      "order": 185,
+      "profiles": [
+        {
+          "id": "solana-msg-reviewed",
+          "source": "solana-msg",
+          "conditions": ["@binding:7c831c1e0b4de3a2", "@text:d2f59ee03838c303", "@text:2a2e89a10d9d2e18"],
+          "argument": "@review:source-notes/sysvar-codec-logging.md#review-f829629b6be9428c",
+          "evidence": ["@text:a92ae321eb55435d", "@text:22619f4c3880d285"],
+          "items": [
+            {
+              "item": "solana_msg::sol_log",
+              "implementation": "solana_msg::sol_log",
+              "releases": ["3.0.0", "3.1.0"],
+              "compatible_ranges": [{"lower": "3.0.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.0.0", "3.1.0"]
+        }
+      ]
+    },
+    "solana-msg::host_stdout::sol_log": {
+      "order": 244,
+      "profiles": [
+        {
+          "id": "msg-2.2.1",
+          "source": "solana-msg",
+          "releases": ["2.2.1"],
+          "items": [
+            {
+              "releases": ["2.2.1"],
+              "item": "solana_msg::sol_log",
+              "implementation": "solana_msg::sol_log",
+              "compatible_ranges": [{"lower": "2.2.1", "upper": "3.0.0"}]
+            }
+          ],
+          "conditions": ["@binding:f8fdb012bb5e313a"],
+          "argument": "@review:source-notes/sysvar-codec-logging.md#review-9c5da246aa651a5e",
+          "evidence": ["@text:2fa72f5dcdeb0398"]
+        }
+      ]
+    }
+  }
+}

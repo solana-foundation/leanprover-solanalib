@@ -1,10 +1,18 @@
-/.lake/
+.lake/
 /build/
 .cache/
 .DS_Store
+__pycache__/
+.venv/
 
 # Claude Code per-machine settings (skills under .claude/skills/ ARE committed)
 /.claude/settings.local.json
 
 # Personal Lean playground — never committed
 /scratch/
+
+# Machine-readable export; the source registry is authoritative.
+/packages/solanalib-specs/applicability.json
+
+# Fresh native resolutions are local, including workspace and shared-crate locks.
+/tools/library-conformance/rust/**/Cargo.lock

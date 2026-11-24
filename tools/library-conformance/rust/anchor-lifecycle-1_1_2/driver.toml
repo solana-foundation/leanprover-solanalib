@@ -1,0 +1,5 @@
+corpora = ["anchor_lifecycle_1_1_2"]
+inputs = ["rust/anchor-account-world/world.rs", "rust/anchor/src/track.rs", "rust/anchor-lifecycle-shared/enc.rs", "rust/anchor-lifecycle-shared/script.rs", "rust/anchor-lifecycle-shared/cases.rs"]
+
+# The complete retained backing is checked after a close shrinks the data slice.
+spare_writes = ["<anchor_lang::accounts::account::Account<'info, T> as anchor_lang::AccountsClose<'info>>::close"]

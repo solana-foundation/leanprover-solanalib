@@ -1,0 +1,656 @@
+{
+  "abstractions": {
+    "library::solana_system_interface": {
+      "order": 148,
+      "modules": {
+        "Solanalib.Specs.SolanaSystemInterface": "07381042be12d98385e4923f81217a3b865de862da24fa3a7dca92fd707bfa61",
+        "Solanalib.Specs.SolanaSystemInterface.Capabilities": "5b104253ba8125a3a2a59a4acff5357848b6dc6c15cd1be7d859654f54122258",
+        "Solanalib.Specs.SolanaSystemInterface.Instruction": "e88f604d141f2800fb79a931d4cbf9a0fcb14c90b37e537244b160d8bed10986",
+        "Solanalib.Specs.SolanaSystemInterface.Operational": "900fd868384e81f7d999792a8daa84dcce2ffcf06311b4575d9d3f42d4bd2755",
+        "Solanalib.Specs.SolanaSystemInterface.Seeded": "4c9b6c937b4e98a62d4424bc2c08ccd5997411ad7ffa2b7df0c7eeb9fc453e55",
+        "Solanalib.Specs.SolanaSystemInterface.Extended": "392e82e5900d2c046d240196db4d372d84d861a20d1c74a5f71ad5595be06c3e"
+      },
+      "source_ids": [
+        "value-request::solana-system-interface-3.2.0::src/lib.rs",
+        "value-request::solana-system-interface-3.2.0::src/instruction.rs",
+        "instruction-extensions::solana-instruction-2.2.1::src/lib.rs",
+        "instruction-extensions::solana-instruction-2.2.1::src/account_meta.rs",
+        "instruction-extensions::solana-instruction-2.3.3::src/lib.rs",
+        "instruction-extensions::solana-instruction-2.3.3::src/account_meta.rs",
+        "instruction-extensions::solana-instruction-3.4.0::src/lib.rs",
+        "instruction-extensions::solana-instruction-3.4.0::src/account_meta.rs",
+        "instruction-extensions::solana-system-interface-1.0.0::src/instruction.rs",
+        "instruction-extensions::solana-system-interface-1.0.0::src/lib.rs",
+        "instruction-extensions::solana-system-interface-3.2.0::src/instruction.rs",
+        "instruction-extensions::solana-system-interface-3.2.0::src/lib.rs",
+        "instruction-extensions::solana-program-1.15.2::src/instruction.rs",
+        "instruction-extensions::solana-program-1.15.2::src/system_instruction.rs",
+        "instruction-extensions::solana-program-1.15.2::src/system_program.rs",
+        "instruction-extensions::solana-program-1.15.2::src/pubkey.rs",
+        "instruction-extensions::solana-program-1.18.26::src/instruction.rs",
+        "instruction-extensions::solana-program-1.18.26::src/system_instruction.rs",
+        "instruction-extensions::solana-program-1.18.26::src/system_program.rs",
+        "instruction-extensions::solana-program-1.18.26::src/pubkey.rs"
+      ],
+      "argument": "@review:source-notes/value-request-system.md#review-27fd35c41a9b380b",
+      "limitations": "@shared:limitations-c37289e6313c960d"
+    }
+  },
+  "packages": {
+    "solana-system-interface-3.2.0": {
+      "order": 51,
+      "repository": "https://github.com/anza-xyz/solana-sdk",
+      "revision": "c36b228d023aa6c1869565768b225b685d7dc7c1",
+      "path_prefix": "system-interface/"
+    },
+    "solana-system-interface-1.0.0": {
+      "order": 91,
+      "repository": "https://github.com/solana-program/system",
+      "revision": "b5304517de4b438f4948b9f727bac41ebe2d03cf",
+      "path_prefix": "interface/"
+    }
+  },
+  "interfaces": {
+    "value-request::solana-system-interface-3.2.0::src/instruction.rs": {
+      "order": 150,
+      "crate": "solana-system-interface-3.2.0",
+      "path": "src/instruction.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "1126faa2ab8c7a1ecc73dca70de34713ad25bd0e090e2bb8595fb3d767801876"
+    },
+    "value-request::solana-system-interface-3.2.0::src/lib.rs": {
+      "order": 151,
+      "crate": "solana-system-interface-3.2.0",
+      "path": "src/lib.rs",
+      "review_scope": "Ordinary value operations or local request preparation; no callee invocation implementation proof.",
+      "sha256": "bafd62e1c2d24cc2c04431c9ec8fa13a3f8403c83040b738a8c222a0fe8e3fd3"
+    },
+    "instruction-extensions::solana-system-interface-1.0.0::src/instruction.rs": {
+      "order": 268,
+      "crate": "solana-system-interface-1.0.0",
+      "path": "src/instruction.rs",
+      "sha256": "bf06e3a1037fe341cac2efc8f789d57242c1a3bf77eec674ded97e2378217b90",
+      "review_scope": "AccountMeta field-copy/constructors, Instruction field-order clone/serialization dependency, or local System constructor data/ownership. No invoked program body is included."
+    },
+    "instruction-extensions::solana-system-interface-1.0.0::src/lib.rs": {
+      "order": 269,
+      "crate": "solana-system-interface-1.0.0",
+      "path": "src/lib.rs",
+      "sha256": "8ccc2bafdd822355b1d24c944161629fe8b009dcba58164f928c3a6e32c4a645",
+      "review_scope": "AccountMeta field-copy/constructors, Instruction field-order clone/serialization dependency, or local System constructor data/ownership. No invoked program body is included."
+    },
+    "instruction-extensions::solana-system-interface-3.2.0::src/instruction.rs": {
+      "order": 270,
+      "crate": "solana-system-interface-3.2.0",
+      "path": "src/instruction.rs",
+      "sha256": "1126faa2ab8c7a1ecc73dca70de34713ad25bd0e090e2bb8595fb3d767801876",
+      "review_scope": "AccountMeta field-copy/constructors, Instruction field-order clone/serialization dependency, or local System constructor data/ownership. No invoked program body is included."
+    },
+    "instruction-extensions::solana-system-interface-3.2.0::src/lib.rs": {
+      "order": 271,
+      "crate": "solana-system-interface-3.2.0",
+      "path": "src/lib.rs",
+      "sha256": "bafd62e1c2d24cc2c04431c9ec8fa13a3f8403c83040b738a8c222a0fe8e3fd3",
+      "review_scope": "AccountMeta field-copy/constructors, Instruction field-order clone/serialization dependency, or local System constructor data/ownership. No invoked program body is included."
+    }
+  },
+  "models": {
+    "solana-system-interface::instruction::create_account": {
+      "order": 193,
+      "contract": "Solanalib.Specs.SolanaSystemInterface.instruction.create_account_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": "Solanalib.Specs.SolanaSystemInterface.instruction.create_account_model",
+      "assumptions": ["@text:ff31a84d116f89e6"],
+      "model_gaps": ["@text:459acef20649a737"]
+    },
+    "solana-system-interface::instruction::create_account_operational": {
+      "order": 194,
+      "contract": "Solanalib.Specs.SolanaSystemInterface.instruction.create_account_operational_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": [
+        "@text:c6c64b7a3105ebb9",
+        "@text:3cf9df928378dc5c",
+        "@text:524b2ad9d1a0087f",
+        "@text:d38e1f30bb952947",
+        "@text:19ce4992d0c08ac1",
+        "@text:073032ffc844d7a3"
+      ]
+    },
+    "solana-system-interface::instruction::transfer": {
+      "order": 195,
+      "contract": "Solanalib.Specs.SolanaSystemInterface.instruction.transfer_contract",
+      "witness_kind": "RealizedBy",
+      "kind": "observation",
+      "reference": "Solanalib.Specs.SolanaSystemInterface.instruction.transfer_model",
+      "assumptions": ["@text:aa58802359e30d39"],
+      "model_gaps": ["@text:459acef20649a737"]
+    },
+    "solana-system-interface::instruction::transfer_operational": {
+      "order": 196,
+      "contract": "Solanalib.Specs.SolanaSystemInterface.instruction.transfer_operational_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": [
+        "@text:c6c64b7a3105ebb9",
+        "@text:3cf9df928378dc5c",
+        "@text:524b2ad9d1a0087f",
+        "@text:d38e1f30bb952947",
+        "@text:19ce4992d0c08ac1",
+        "@text:6e0134f554cf1786"
+      ]
+    },
+    "solana-system-interface::instruction::create_account_with_seed": {
+      "order": 258,
+      "contract": "Solanalib.Specs.SolanaSystemInterface.instruction.create_account_with_seed_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": "@shared:assumptions-0bc7d3075f402fe4"
+    },
+    "solana-system-interface::instruction::create_account_allow_prefund": {
+      "order": 450,
+      "contract": "Solanalib.Specs.SolanaSystemInterface.instruction.create_account_allow_prefund_contract",
+      "witness_kind": "FamilyReference",
+      "assumptions": [
+        "@binding:34997fb89ae90ad6",
+        "@binding:6c0671bb94c95d48",
+        "@binding:1e57e9a6f8c82faa",
+        "@binding:e20913a2fdff6199",
+        "@binding:885eb82897407338",
+        "@text:f3c145fb4618502e"
+      ]
+    }
+  },
+  "api": {
+    "solana-system-interface@3.2.0::instruction::create_account": {
+      "order": 168,
+      "anchor_text": "pub fn create_account(",
+      "binding_obligations": [
+        "@binding:328106abb4b8d9fb",
+        "@binding:5190a32e6baa1ea3",
+        "@binding:8159938e2f16bac2",
+        "@binding:8a2855591da273cc",
+        "@binding:ded97d06a9e14daa",
+        "@binding:61fd13001748e776"
+      ],
+      "line": 487,
+      "scope": "@text:715b00b1055160eb",
+      "source_id": "value-request::solana-system-interface-3.2.0::src/instruction.rs",
+      "models": ["solana-system-interface::instruction::create_account_operational"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaSystemInterface.create_account_exact_data",
+        "SolanalibTest.Specs.SolanaSystemInterface.create_account_account_order_and_flags",
+        "SolanalibTest.Specs.SolanaSystemInterface.create_operational_allocation_then_serialization"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.InstructionBuilder.allocateRun",
+        "Solanalib.Specs.Core.InstructionBuilder.observe_of_current",
+        "Solanalib.Specs.Core.Instruction.OwnedValue",
+        "Solanalib.Specs.Core.Owned.protect",
+        "Solanalib.Specs.SolanaSystemInterface.instruction.create_account_model",
+        "Solanalib.Specs.SolanaSystemInterface.instruction.create_account_reference"
+      ],
+      "rust_names": ["solana_system_interface::instruction::create_account"]
+    },
+    "solana-system-interface@3.2.0::instruction::transfer": {
+      "order": 169,
+      "anchor_text": "pub fn transfer(from_address: &Address, to_address: &Address, lamports: u64) -> Instruction {",
+      "binding_obligations": [
+        "@binding:328106abb4b8d9fb",
+        "@binding:5190a32e6baa1ea3",
+        "@binding:8159938e2f16bac2",
+        "@binding:8a2855591da273cc",
+        "@binding:ded97d06a9e14daa",
+        "@binding:37df194093da7bee"
+      ],
+      "line": 902,
+      "scope": "@text:715b00b1055160eb",
+      "source_id": "value-request::solana-system-interface-3.2.0::src/instruction.rs",
+      "models": ["solana-system-interface::instruction::transfer_operational"],
+      "clients": [
+        "SolanalibTest.Specs.SolanaSystemInterface.transfer_exact_tag_and_little_endian_amount",
+        "SolanalibTest.Specs.SolanaSystemInterface.transfer_keeps_duplicate_keys_and_distinct_flags",
+        "SolanalibTest.Specs.SolanaSystemInterface.transfer_operational_preserves_flags_and_wincode_selection",
+        "SolanalibTest.Specs.SolanaSystemInterface.allocation_unwind_does_not_serialize_or_drop_unowned_vec",
+        "SolanalibTest.Specs.SolanaSystemInterface.allocation_terminal_has_no_later_callbacks",
+        "SolanalibTest.Specs.SolanaSystemInterface.returned_handles_are_actual_fresh_provider_results",
+        "SolanalibTest.Specs.SolanaSystemInterface.error_cleanup_drops_only_new_metadata_resource"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.InstructionBuilder.allocateRun",
+        "Solanalib.Specs.Core.InstructionBuilder.observe_of_current",
+        "Solanalib.Specs.Core.Instruction.OwnedValue",
+        "Solanalib.Specs.Core.Owned.protect",
+        "Solanalib.Specs.SolanaSystemInterface.instruction.transfer_model",
+        "Solanalib.Specs.SolanaSystemInterface.instruction.transfer_reference"
+      ],
+      "rust_names": ["solana_system_interface::instruction::transfer"]
+    },
+    "solana-system-interface@1.0.0::instruction::create_account_with_seed": {
+      "order": 245,
+      "source_id": "instruction-extensions::solana-system-interface-1.0.0::src/instruction.rs",
+      "line": 431,
+      "anchor_text": "pub fn create_account_with_seed(",
+      "models": ["solana-system-interface::instruction::create_account_with_seed"],
+      "rust_names": ["solana_system_interface::instruction::create_account_with_seed"],
+      "scope": "@text:ca9341e8896ecee0",
+      "clients": [
+        "SolanalibTest.Specs.SolanaSystemInterface.Seeded.three_aliases_keep_separate_flags",
+        "SolanalibTest.Specs.SolanaSystemInterface.Seeded.long_seed_is_encoded_without_validation",
+        "SolanalibTest.Specs.SolanaSystemInterface.Seeded.success_retires_temporary_and_keeps_result",
+        "SolanalibTest.Specs.SolanaSystemInterface.Seeded.copy_failure_drops_only_returned_metadata_owner",
+        "SolanalibTest.Specs.SolanaSystemInterface.Seeded.serialization_error_unwraps_then_drops_accounts_then_string",
+        "SolanalibTest.Specs.SolanaSystemInterface.Seeded.serializer_terminal_skips_both_cleanup_scopes"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.InstructionSystemExtended.seedRun",
+        "Solanalib.Specs.Core.InstructionSystemExtended.SeedSource.value"
+      ],
+      "binding_obligations": "@shared:binding-obligations-24f2e4ba0bb15db8"
+    },
+    "solana-system-interface@3.2.0::instruction::create_account_allow_prefund": {
+      "order": 449,
+      "source_id": "instruction-extensions::solana-system-interface-3.2.0::src/instruction.rs",
+      "line": 1769,
+      "anchor_text": "pub fn create_account_allow_prefund(",
+      "models": ["solana-system-interface::instruction::create_account_allow_prefund"],
+      "rust_names": ["solana_system_interface::instruction::create_account_allow_prefund"],
+      "scope": "@text:f090f6de51de9a85",
+      "clients": [
+        "SolanalibTest.Specs.SolanaSystemInterface.Extended.explicit_zero_payer_keeps_duplicate_signer",
+        "SolanalibTest.Specs.SolanaSystemInterface.Extended.absent_payer_has_one_account",
+        "SolanalibTest.Specs.SolanaSystemInterface.Extended.returned_prefund_observes_exact_value",
+        "SolanalibTest.Specs.SolanaSystemInterface.Extended.payer_push_unwind_cleans_before_serializer",
+        "SolanalibTest.Specs.SolanaSystemInterface.Extended.allocation_terminal_has_no_later_operation"
+      ],
+      "model_dependencies": [
+        "Solanalib.Specs.Core.InstructionSystemExtended.prefundRun",
+        "Solanalib.Specs.Core.InstructionSystemExtended.PrefundSource.value"
+      ],
+      "binding_obligations": "@shared:binding-obligations-24f2e4ba0bb15db8"
+    }
+  },
+  "applicability_sources": {
+    "solana-system-interface": {
+      "order": 28,
+      "package": "solana-system-interface",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-09",
+      "releases": {
+        "1.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-system-interface/solana-system-interface-1.0.0.crate",
+          "sha256": "94d7c18cb1a91c6be5f5a8ac9276a1d7c737e39a21beba9ea710ab4b9c63bc90",
+          "revision": "b5304517de4b438f4948b9f727bac41ebe2d03cf",
+          "path_prefix": "interface/"
+        },
+        "2.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-system-interface/solana-system-interface-2.0.0.crate",
+          "sha256": "4e1790547bfc3061f1ee68ea9d8dc6c973c02a163697b24263a8e9f2e6d4afa2",
+          "revision": "a06439d1be0640df23e4ac16f2ac0633bdcba25d",
+          "path_prefix": "system-interface/"
+        },
+        "3.0.0": {
+          "archive_url": "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.0.0.crate",
+          "sha256": "14591d6508042ebefb110305d3ba761615927146a26917ade45dc332d8e1ecde",
+          "revision": "2b7457588184cb6d0a4fbe11189cfb6ed24066b4",
+          "path_prefix": "system-interface/"
+        },
+        "3.1.0": {
+          "archive_url": "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.1.0.crate",
+          "sha256": "a95a6f2e23ed861d6444ad4a6d6896c418d7d101b960787e65a8e33157cee81b",
+          "revision": "658d1a8d227fb72963a6c928c9753af87bab6627",
+          "path_prefix": "system-interface/"
+        },
+        "3.2.0": {
+          "archive_url": "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.2.0.crate",
+          "sha256": "55b54965bf0b76fa8e2b35376583efddd4d916618cfe595bf48c7d7b55a9e628",
+          "revision": "c36b228d023aa6c1869565768b225b685d7dc7c1",
+          "path_prefix": "system-interface/"
+        },
+        "3.3.0": {
+          "archive_url": "https://static.crates.io/crates/solana-system-interface/solana-system-interface-3.3.0.crate",
+          "sha256": "2e2d5311d0584af231c6c2b0503ba1c3aa50118ead4f503ab215ccbdd1ffac57",
+          "revision": "ab3e8a14bf2bab443bb8af32e95efe2fb65944db",
+          "path_prefix": "system-interface/"
+        }
+      },
+      "evidence": ["@text:5154ffb65129a54d"]
+    }
+  },
+  "applicability": {
+    "solana-system-interface::instruction::create_account": {
+      "order": 193,
+      "profiles": [
+        {
+          "id": "solana-system-interface-reviewed-direct",
+          "source": "solana-system-interface",
+          "conditions": "@shared:conditions-cdee9cbd6ab2c229",
+          "argument": "@review:source-notes/value-request-system.md#review-eb933ec0c3d1825a",
+          "evidence": ["@text:5e8e7d935a177b8c", "@text:03dc6d5700980018"],
+          "features": {"reason": "@text:cb86d5470352eb50", "all": ["bincode"]},
+          "items": [
+            {
+              "item": "solana_system_interface::instruction::create_account",
+              "implementation": "solana_system_interface::instruction::create_account",
+              "releases": ["1.0.0", "2.0.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-9e4c6d8d569eb56d"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "3.0.0"]
+        },
+        {
+          "id": "solana-system-interface-reviewed-codec-selection-bincode",
+          "source": "solana-system-interface",
+          "conditions": "@shared:conditions-cdee9cbd6ab2c229",
+          "argument": "@review:source-notes/value-request-system.md#review-eb933ec0c3d1825a",
+          "evidence": ["@text:5e8e7d935a177b8c", "@text:03dc6d5700980018"],
+          "features": "@shared:features-9daf437007160b60",
+          "items": [
+            {
+              "item": "solana_system_interface::instruction::create_account",
+              "implementation": "solana_system_interface::instruction::create_account",
+              "releases": ["3.1.0", "3.2.0", "3.3.0"],
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.1.0", "3.2.0", "3.3.0"]
+        },
+        {
+          "id": "solana-system-interface-reviewed-codec-selection-wincode",
+          "source": "solana-system-interface",
+          "conditions": [
+            "@text:39e9993744c19467",
+            "@text:eb3c53ab75fa2cf9",
+            "@text:c49301af906a9fe7",
+            "@text:8ccc952e18f0ea21",
+            "@text:64ba86b28fc14627"
+          ],
+          "argument": "@review:source-notes/value-request-system.md#review-eb933ec0c3d1825a",
+          "evidence": ["@text:5e8e7d935a177b8c", "@text:03dc6d5700980018"],
+          "features": {"reason": "@text:0ebb8b81d1f1656d", "all": ["wincode"]},
+          "items": [
+            {
+              "item": "solana_system_interface::instruction::create_account",
+              "implementation": "solana_system_interface::instruction::create_account",
+              "releases": ["3.1.0", "3.2.0", "3.3.0"],
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.1.0", "3.2.0", "3.3.0"]
+        }
+      ]
+    },
+    "solana-system-interface::instruction::create_account_operational": {
+      "order": 194,
+      "profiles": [
+        {
+          "id": "solana-system-interface-reviewed-direct",
+          "source": "solana-system-interface",
+          "conditions": "@shared:conditions-37c3fe4f384a4311",
+          "argument": "@review:source-notes/value-request-system.md#review-1dc90cf64696a31e",
+          "evidence": ["@text:5e8e7d935a177b8c", "@text:03dc6d5700980018"],
+          "features": {"reason": "@text:cb86d5470352eb50", "all": ["bincode"]},
+          "items": [
+            {
+              "item": "solana_system_interface::instruction::create_account",
+              "implementation": "solana_system_interface::instruction::create_account",
+              "releases": ["1.0.0", "2.0.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-9e4c6d8d569eb56d"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "3.0.0"]
+        },
+        {
+          "id": "solana-system-interface-reviewed-codec-selection-bincode",
+          "source": "solana-system-interface",
+          "conditions": "@shared:conditions-37c3fe4f384a4311",
+          "argument": "@review:source-notes/value-request-system.md#review-1dc90cf64696a31e",
+          "evidence": ["@text:5e8e7d935a177b8c", "@text:03dc6d5700980018"],
+          "features": "@shared:features-9daf437007160b60",
+          "items": [
+            {
+              "item": "solana_system_interface::instruction::create_account",
+              "implementation": "solana_system_interface::instruction::create_account",
+              "releases": ["3.1.0", "3.2.0", "3.3.0"],
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.1.0", "3.2.0", "3.3.0"]
+        },
+        {
+          "id": "solana-system-interface-reviewed-codec-selection-wincode",
+          "source": "solana-system-interface",
+          "conditions": [
+            "@text:39e9993744c19467",
+            "@text:eb3c53ab75fa2cf9",
+            "@text:c49301af906a9fe7",
+            "@text:609403dcc09e84b3",
+            "@text:64ba86b28fc14627"
+          ],
+          "argument": "@review:source-notes/value-request-system.md#review-1dc90cf64696a31e",
+          "evidence": ["@text:5e8e7d935a177b8c", "@text:03dc6d5700980018"],
+          "features": {"reason": "@text:0ebb8b81d1f1656d", "all": ["wincode"]},
+          "items": [
+            {
+              "item": "solana_system_interface::instruction::create_account",
+              "implementation": "solana_system_interface::instruction::create_account",
+              "releases": ["3.1.0", "3.2.0", "3.3.0"],
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.1.0", "3.2.0", "3.3.0"]
+        }
+      ]
+    },
+    "solana-system-interface::instruction::transfer": {
+      "order": 195,
+      "profiles": [
+        {
+          "id": "solana-system-interface-reviewed-direct",
+          "source": "solana-system-interface",
+          "conditions": "@shared:conditions-7e9185edb4115d80",
+          "argument": "@review:source-notes/value-request-system.md#review-226697e9a0aa4d75",
+          "evidence": ["@text:5e8e7d935a177b8c", "@text:03dc6d5700980018"],
+          "features": {"reason": "@text:cb86d5470352eb50", "all": ["bincode"]},
+          "items": [
+            {
+              "item": "solana_system_interface::instruction::transfer",
+              "implementation": "solana_system_interface::instruction::transfer",
+              "releases": ["1.0.0", "2.0.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-9e4c6d8d569eb56d"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "3.0.0"]
+        },
+        {
+          "id": "solana-system-interface-reviewed-codec-selection-bincode",
+          "source": "solana-system-interface",
+          "conditions": "@shared:conditions-7e9185edb4115d80",
+          "argument": "@review:source-notes/value-request-system.md#review-226697e9a0aa4d75",
+          "evidence": ["@text:5e8e7d935a177b8c", "@text:03dc6d5700980018"],
+          "features": "@shared:features-9daf437007160b60",
+          "items": [
+            {
+              "item": "solana_system_interface::instruction::transfer",
+              "implementation": "solana_system_interface::instruction::transfer",
+              "releases": ["3.1.0", "3.2.0", "3.3.0"],
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.1.0", "3.2.0", "3.3.0"]
+        },
+        {
+          "id": "solana-system-interface-reviewed-codec-selection-wincode",
+          "source": "solana-system-interface",
+          "conditions": [
+            "@text:39e9993744c19467",
+            "@text:eb3c53ab75fa2cf9",
+            "@text:30784162974fc497",
+            "@text:8ccc952e18f0ea21",
+            "@text:64ba86b28fc14627"
+          ],
+          "argument": "@review:source-notes/value-request-system.md#review-226697e9a0aa4d75",
+          "evidence": ["@text:5e8e7d935a177b8c", "@text:03dc6d5700980018"],
+          "features": {"reason": "@text:0ebb8b81d1f1656d", "all": ["wincode"]},
+          "items": [
+            {
+              "item": "solana_system_interface::instruction::transfer",
+              "implementation": "solana_system_interface::instruction::transfer",
+              "releases": ["3.1.0", "3.2.0", "3.3.0"],
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.1.0", "3.2.0", "3.3.0"]
+        }
+      ]
+    },
+    "solana-system-interface::instruction::transfer_operational": {
+      "order": 196,
+      "profiles": [
+        {
+          "id": "solana-system-interface-reviewed-direct",
+          "source": "solana-system-interface",
+          "conditions": "@shared:conditions-17729f162ee03805",
+          "argument": "@review:source-notes/value-request-system.md#review-cef426fd77a2d448",
+          "evidence": ["@text:5e8e7d935a177b8c", "@text:03dc6d5700980018"],
+          "features": {"reason": "@text:cb86d5470352eb50", "all": ["bincode"]},
+          "items": [
+            {
+              "item": "solana_system_interface::instruction::transfer",
+              "implementation": "solana_system_interface::instruction::transfer",
+              "releases": ["1.0.0", "2.0.0", "3.0.0"],
+              "compatible_ranges": "@shared:compatible-ranges-9e4c6d8d569eb56d"
+            }
+          ],
+          "releases": ["1.0.0", "2.0.0", "3.0.0"]
+        },
+        {
+          "id": "solana-system-interface-reviewed-codec-selection-bincode",
+          "source": "solana-system-interface",
+          "conditions": "@shared:conditions-17729f162ee03805",
+          "argument": "@review:source-notes/value-request-system.md#review-cef426fd77a2d448",
+          "evidence": ["@text:5e8e7d935a177b8c", "@text:03dc6d5700980018"],
+          "features": "@shared:features-9daf437007160b60",
+          "items": [
+            {
+              "item": "solana_system_interface::instruction::transfer",
+              "implementation": "solana_system_interface::instruction::transfer",
+              "releases": ["3.1.0", "3.2.0", "3.3.0"],
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.1.0", "3.2.0", "3.3.0"]
+        },
+        {
+          "id": "solana-system-interface-reviewed-codec-selection-wincode",
+          "source": "solana-system-interface",
+          "conditions": [
+            "@text:39e9993744c19467",
+            "@text:eb3c53ab75fa2cf9",
+            "@text:30784162974fc497",
+            "@text:609403dcc09e84b3",
+            "@text:64ba86b28fc14627"
+          ],
+          "argument": "@review:source-notes/value-request-system.md#review-cef426fd77a2d448",
+          "evidence": ["@text:5e8e7d935a177b8c", "@text:03dc6d5700980018"],
+          "features": {"reason": "@text:0ebb8b81d1f1656d", "all": ["wincode"]},
+          "items": [
+            {
+              "item": "solana_system_interface::instruction::transfer",
+              "implementation": "solana_system_interface::instruction::transfer",
+              "releases": ["3.1.0", "3.2.0", "3.3.0"],
+              "compatible_ranges": [{"lower": "3.1.0", "upper": "4.0.0"}]
+            }
+          ],
+          "releases": ["3.1.0", "3.2.0", "3.3.0"]
+        }
+      ]
+    },
+    "solana-system-interface::instruction::create_account_with_seed": {
+      "order": 258,
+      "profiles": [
+        {
+          "id": "solana-system-interface-1.0.0-bincode",
+          "source": "solana-system-interface",
+          "releases": ["1.0.0"],
+          "items": [
+            {
+              "releases": ["1.0.0"],
+              "item": "solana_system_interface::instruction::create_account_with_seed",
+              "implementation": "solana_system_interface::instruction::create_account_with_seed",
+              "compatible_ranges": [{"lower": "1.0.0", "upper": "2.0.0"}]
+            }
+          ],
+          "argument": "@review:source-notes/value-request-system.md#review-822d943b46b3ac87",
+          "conditions": "@shared:conditions-b931b20620d87545",
+          "evidence": ["@text:5e8e7d935a177b8c"],
+          "features": {"all": ["bincode"], "reason": "@text:77ddc7a4085d93d9"},
+          "dependencies": [
+            {
+              "package": "solana-instruction",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["2.2.1", "2.3.3"],
+              "reason": "@text:41a5dcf4c3856bfd",
+              "compatible_ranges": [{"lower": "2.2.1", "upper": "3.0.0"}]
+            },
+            {
+              "package": "bincode",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["1.3.3"],
+              "reason": "@text:4e6da9bed5fd2d5e",
+              "compatible_ranges": [{"lower": "1.3.3", "upper": "2.0.0"}]
+            }
+          ]
+        }
+      ]
+    },
+    "solana-system-interface::instruction::create_account_allow_prefund": {
+      "order": 450,
+      "profiles": [
+        {
+          "id": "solana-system-interface-3.2.0-bincode",
+          "source": "solana-system-interface",
+          "releases": ["3.2.0"],
+          "items": [
+            {
+              "releases": ["3.2.0"],
+              "item": "solana_system_interface::instruction::create_account_allow_prefund",
+              "implementation": "solana_system_interface::instruction::create_account_allow_prefund",
+              "compatible_ranges": [{"lower": "3.2.0", "upper": "4.0.0"}]
+            }
+          ],
+          "argument": "@review:source-notes/value-request-system.md#review-151b2ada1b769d7d",
+          "conditions": "@shared:conditions-b931b20620d87545",
+          "evidence": ["@text:2b1c29627555e370"],
+          "features": {"all": ["bincode"], "reason": "@text:3c3eb76c1004596f", "none": ["wincode"]},
+          "dependencies": ["@shared:dependencies-149c8b9ff3effdcb", "@shared:dependencies-f850b3547359f95c"]
+        },
+        {
+          "id": "solana-system-interface-3.2.0-wincode",
+          "source": "solana-system-interface",
+          "releases": ["3.2.0"],
+          "items": [
+            {
+              "releases": ["3.2.0"],
+              "item": "solana_system_interface::instruction::create_account_allow_prefund",
+              "implementation": "solana_system_interface::instruction::create_account_allow_prefund",
+              "compatible_ranges": [{"lower": "3.2.0", "upper": "4.0.0"}]
+            }
+          ],
+          "argument": "@review:source-notes/value-request-system.md#review-151b2ada1b769d7d",
+          "conditions": ["@binding:34997fb89ae90ad6", "@binding:6c0671bb94c95d48", "@text:fa9a594ccde579be"],
+          "evidence": ["@text:2b1c29627555e370"],
+          "features": {"all": ["wincode"], "reason": "@text:3c3eb76c1004596f"},
+          "dependencies": [
+            "@shared:dependencies-149c8b9ff3effdcb",
+            {
+              "package": "wincode",
+              "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+              "releases": ["0.5.5"],
+              "reason": "@text:87a123ec6cdb115a",
+              "compatible_ranges": [{"lower": "0.5.5", "upper": "0.6.0"}]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

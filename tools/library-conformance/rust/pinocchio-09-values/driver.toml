@@ -1,0 +1,2 @@
+corpora = ["pinocchio_0_9_2_values", "pinocchio_log_0_5_1"]
+inputs = ["rust/runtime-common/syscall_cases.rs"]

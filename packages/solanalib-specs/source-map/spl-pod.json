@@ -1,0 +1,344 @@
+{
+  "abstractions": {
+    "library::spl_pod": {
+      "order": 166,
+      "modules": {
+        "Solanalib.Specs.SplPod.Primitives": "9129f527365aae7ea07b332069f10238fa7c87ff2fd9bd22336e73838216bc5d",
+        "Solanalib.Specs.SplPod": "c4c5cea4cf94b582c50f6550d6ded75905277b64c69ad591a2b3517e71c3450f",
+        "Solanalib.Specs.SplPod.Capabilities": "5f0125de5a415ec8eeb86e1e853759c8cc77b8647ca0104a52b575c0a105f1b3",
+        "Solanalib.Specs.SplPod.OptionalKeys": "213a5c76cc0e271139f37ca2b2835e98b2c53e9084a4a3cc7eb7b5317b7de653"
+      },
+      "source_ids": ["sdk-values::spl-pod-0.5.1::src/primitives.rs", "sdk-values::spl-pod-0.7.3::src/optional_keys.rs"],
+      "argument": "@review:source-notes/other-sdk-functions.md#review-90ece16362c5466e",
+      "limitations": ["@text:da0d819ff81c3f79", "@text:a59033a3f7b014d2", "@text:f428bee2a0798d8f"]
+    }
+  },
+  "packages": {
+    "spl-pod-0.7.3": {
+      "order": 32,
+      "repository": "https://github.com/solana-program/libraries",
+      "revision": "1b60dd54705070f862dad4f8337cbb2d2f19ddb5",
+      "path_prefix": "pod/"
+    },
+    "spl-pod-0.5.1": {
+      "order": 131,
+      "repository": "https://github.com/solana-program/libraries",
+      "revision": "b21586b58cb66152ba853c3106861e96dcb575c1",
+      "path_prefix": "pod/"
+    }
+  },
+  "interfaces": {
+    "spl-pod-0.7.3-bytemuck": {
+      "order": 72,
+      "crate": "spl-pod-0.7.3",
+      "path": "src/bytemuck.rs",
+      "sha256": "fc3f2dcc85fd67fbc98e9d3806357995da22b6c7ee72c83a1c38e9dfc52c904a"
+    },
+    "spl-pod-0.7.3-error": {
+      "order": 73,
+      "crate": "spl-pod-0.7.3",
+      "path": "src/error.rs",
+      "sha256": "6585e1d256f7fd7b5ad3567d45533cac0fc5f9efab92af41c5f5eba2f1bbb523"
+    },
+    "spl-pod-0.7.3-list-list-view": {
+      "order": 74,
+      "crate": "spl-pod-0.7.3",
+      "path": "src/list/list_view.rs",
+      "sha256": "03ac03e81d0087d025d8b3360ce7f9a70e1952e0275e2d89aa47e9403fdadbfb"
+    },
+    "spl-pod-0.7.3-list-list-view-read-only": {
+      "order": 75,
+      "crate": "spl-pod-0.7.3",
+      "path": "src/list/list_view_read_only.rs",
+      "sha256": "d36bb54609ae6c43aa2de0fb84dcf4498a4d53d485fe1e31a27a783f374f93d4"
+    },
+    "spl-pod-0.7.3-primitives": {
+      "order": 76,
+      "crate": "spl-pod-0.7.3",
+      "path": "src/primitives.rs",
+      "sha256": "effe37cdd60f5b2e89fbc3a89c4f13c8d1f87201ec087022361aa87f2000be8c"
+    },
+    "sdk-values::spl-pod-0.5.1::src/primitives.rs": {
+      "order": 529,
+      "crate": "spl-pod-0.5.1",
+      "path": "src/primitives.rs",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/sdk-values.md. No whole-crate model is claimed.",
+      "sha256": "ddb791289ebf6ce41fc1a473512aa84b95fcd0680009e3265901f1955ec04509"
+    },
+    "sdk-values::spl-pod-0.7.3::src/optional_keys.rs": {
+      "order": 562,
+      "crate": "spl-pod-0.7.3",
+      "path": "src/optional_keys.rs",
+      "review_scope": "The functions and source dependencies selected in this shard; see source-notes/sdk-values.md. No whole-crate model is claimed.",
+      "sha256": "5e6edbe3e6eed2544c4df781710812109af8048de97bcf1f029ff41acb26d022"
+    },
+    "transfer-hook-resolution::spl-pod-0.5.1::src/bytemuck.rs": {
+      "order": 571,
+      "crate": "spl-pod-0.5.1",
+      "path": "src/bytemuck.rs",
+      "sha256": "fc3f2dcc85fd67fbc98e9d3806357995da22b6c7ee72c83a1c38e9dfc52c904a",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed."
+    },
+    "transfer-hook-resolution::spl-pod-0.5.1::src/error.rs": {
+      "order": 572,
+      "crate": "spl-pod-0.5.1",
+      "path": "src/error.rs",
+      "sha256": "1c2606a300f324e000e32e01b07dd993b898ef35ec45d044559321de5161c781",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed."
+    },
+    "transfer-hook-resolution::spl-pod-0.5.1::src/primitives.rs": {
+      "order": 573,
+      "crate": "spl-pod-0.5.1",
+      "path": "src/primitives.rs",
+      "sha256": "ddb791289ebf6ce41fc1a473512aa84b95fcd0680009e3265901f1955ec04509",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed."
+    },
+    "transfer-hook-resolution::spl-pod-0.5.1::src/slice.rs": {
+      "order": 574,
+      "crate": "spl-pod-0.5.1",
+      "path": "src/slice.rs",
+      "sha256": "3f83fccaca472b8f0dd4c70900ab9a24b53aa19619398c136d4bcbeb627b1ff8",
+      "review_scope": "Reached source control flow, data representation and error order for add_extra_accounts_for_execute_cpi 0.9.0. Concrete Rust bodies and legal memory/resource interpretation remain assumed."
+    }
+  },
+  "models": {
+    "spl-pod::primitives::PodU64::into_u64": {
+      "order": 399,
+      "contract": "Solanalib.Specs.SplPod.primitives.PodU64.into_u64_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SplPod.primitives.PodU64.into_u64_model"
+    },
+    "spl-pod::primitives::PodU16::into_u16": {
+      "order": 400,
+      "contract": "Solanalib.Specs.SplPod.primitives.PodU16.into_u16_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SplPod.primitives.PodU16.into_u16_model"
+    },
+    "spl-pod::optional_keys::OptionalNonZeroPubkey::into_option": {
+      "order": 477,
+      "contract": "Solanalib.Specs.SplPod.optional_keys.OptionalNonZeroPubkey.into_option_contract",
+      "witness_kind": "RealizedBy",
+      "reference": "Solanalib.Specs.SplPod.optional_keys.OptionalNonZeroPubkey.into_option_model",
+      "assumptions": ["@binding:04ca1585f63163ad", "@text:839425c02e1e75e4"]
+    }
+  },
+  "api": {
+    "spl-pod@0.5.1::primitives.PodU64.into_u64": {
+      "order": 410,
+      "source_id": "sdk-values::spl-pod-0.5.1::src/primitives.rs",
+      "line": 108,
+      "anchor_text": "impl_int_conversion!(PodU64, u64);",
+      "scope": "@text:7fc346a13d7dd895",
+      "binding_obligations": ["@binding:d6e262b172cb3892"],
+      "rust_names": ["spl_pod::primitives::<impl core::convert::From<spl_pod::primitives::PodU64> for u64>::from"],
+      "clients": [
+        "SolanalibTest.Specs.Core.SdkValues.pod_u64_max",
+        "SolanalibTest.Specs.Core.SdkValues.pod_u64_rejects_truncation"
+      ],
+      "models": ["spl-pod::primitives::PodU64::into_u64"]
+    },
+    "spl-pod@0.5.1::primitives.PodU16.into_u16": {
+      "order": 411,
+      "source_id": "sdk-values::spl-pod-0.5.1::src/primitives.rs",
+      "line": 76,
+      "anchor_text": "impl_int_conversion!(PodU16, u16);",
+      "scope": "@text:b54064240d5158c9",
+      "binding_obligations": ["@binding:d6e262b172cb3892"],
+      "rust_names": ["spl_pod::primitives::<impl core::convert::From<spl_pod::primitives::PodU16> for u16>::from"],
+      "clients": [
+        "SolanalibTest.Specs.SplPod.Primitives.u16_little_endian",
+        "SolanalibTest.Specs.SplPod.Primitives.u16_rejects_big_endian"
+      ],
+      "models": ["spl-pod::primitives::PodU16::into_u16"]
+    },
+    "spl-pod@0.7.3::optional_keys.OptionalNonZeroPubkey.into_option": {
+      "order": 584,
+      "source_id": "sdk-values::spl-pod-0.7.3::src/optional_keys.rs",
+      "line": 57,
+      "anchor_text": "impl From<OptionalNonZeroPubkey> for Option<Pubkey> {",
+      "scope": "@text:c2cbcc15d51d3357",
+      "binding_obligations": ["@binding:04ca1585f63163ad", "@binding:d6e262b172cb3892"],
+      "rust_names": [
+        "spl_pod::optional_keys::<impl core::convert::From<spl_pod::optional_keys::OptionalNonZeroPubkey> for core::option::Option<solana_address::Address>>::from"
+      ],
+      "clients": [
+        "SolanalibTest.Specs.Core.SdkValues.zero_key_is_none",
+        "SolanalibTest.Specs.Core.SdkValues.nonzero_key_retained",
+        "SolanalibTest.Specs.Core.SdkValues.nonzero_key_rejects_none"
+      ],
+      "models": ["spl-pod::optional_keys::OptionalNonZeroPubkey::into_option"]
+    }
+  },
+  "applicability_sources": {
+    "spl-pod": {
+      "order": 46,
+      "package": "spl-pod",
+      "source": {"kind": "registry", "url": "https://github.com/rust-lang/crates.io-index", "revision": ""},
+      "reviewed_on": "2026-11-11",
+      "releases": {
+        "0.1.0": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.1.0.crate",
+          "sha256": "2881dddfca792737c0706fa0175345ab282b1b0879c7d877bad129645737c079"
+        },
+        "0.1.1": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.1.1.crate",
+          "sha256": "85a5db7e4efb1107b0b8e52a13f035437cdcb36ef99c58f6d467f089d9b2915a"
+        },
+        "0.1.2": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.1.2.crate",
+          "sha256": "1fa1263101f483b991a284ff643df59fbca7757a54b770a69ee7e00df7c59acf"
+        },
+        "0.2.0": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.2.0.crate",
+          "sha256": "bebf129108bc6e81c52ed9ad3fa0fd5a2c8ad1ad7bbae8b20e362418473e85b8"
+        },
+        "0.2.1": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.2.1.crate",
+          "sha256": "c542ced8b484eef81eddafe8c8dbc5a4441f325737bea06536617bc9fdea4531"
+        },
+        "0.2.2": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.2.2.crate",
+          "sha256": "046ce669f48cf2eca1ec518916d8725596bfb655beb1c74374cf71dc6cb773c9"
+        },
+        "0.3.0": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.3.0.crate",
+          "sha256": "e6166a591d93af33afd75bbd8573c5fd95fb1213f1bf254f0508c89fdb5ee156"
+        },
+        "0.2.3": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.2.3.crate",
+          "sha256": "c205482fede8dc42d1203761d389778fb64dc295bface9f4c504c0658d9442d0"
+        },
+        "0.2.4": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.2.4.crate",
+          "sha256": "522738e85bf0e2d4f6cf40926042120a07aa44df30b7bcd2d996927bd946881c"
+        },
+        "0.2.5": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.2.5.crate",
+          "sha256": "c52d84c55efeef8edcc226743dc089d7e3888b8e3474569aa3eff152b37b9996"
+        },
+        "0.3.1": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.3.1.crate",
+          "sha256": "c704c88fc457fa649ba3aabe195c79d885c3f26709efaddc453c8de352c90b87"
+        },
+        "0.3.2": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.3.2.crate",
+          "sha256": "fa2d1b92a6110fd2a3a711b6e99bf2f0cc8ea2c1c7732ec1a3b8a14b730a3148"
+        },
+        "0.4.0": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.4.0.crate",
+          "sha256": "00e38c99f09d58df06ca9a29fc0211786a4c34f4d099c1df27b1abaa206569a4"
+        },
+        "0.5.0": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.5.0.crate",
+          "sha256": "41a7d5950993e1ff2680bd989df298eeb169367fb2f9deeef1f132de6e4e8016"
+        },
+        "0.5.1": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.5.1.crate",
+          "sha256": "d994afaf86b779104b4a95ba9ca75b8ced3fdb17ee934e38cb69e72afbe17799",
+          "revision": "b21586b58cb66152ba853c3106861e96dcb575c1",
+          "path_prefix": "pod/"
+        },
+        "0.6.0": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.6.0.crate",
+          "sha256": "2e3fd93444b7db9eb3465b1c98af4bbb35445bd36f6db8323db835a500c41f45"
+        },
+        "0.7.0": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.7.0.crate",
+          "sha256": "c71b8383b9a7987c72168dbb321b087c7f1a0555b55ac57610b54f8ffc57f332"
+        },
+        "0.7.1": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.7.1.crate",
+          "sha256": "b1233fdecd7461611d69bb87bc2e95af742df47291975d21232a0be8217da9de"
+        },
+        "0.8.0": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.8.0.crate",
+          "sha256": "d01b7d2f9167ed4c1ecafd99fdc3ced71bd30f8b8567d707ec0266313fc3019f"
+        },
+        "0.7.2": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.7.2.crate",
+          "sha256": "d6f3df240f67bea453d4bc5749761e45436d14b9457ed667e0300555d5c271f3"
+        },
+        "0.7.3": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.7.3.crate",
+          "sha256": "2f9c6e142cdf1e7e77f480053ec9f0ce989890768ddf91f619b50f39d1b456f5",
+          "revision": "1b60dd54705070f862dad4f8337cbb2d2f19ddb5",
+          "path_prefix": "pod/"
+        },
+        "0.7.4": {
+          "archive_url": "https://static.crates.io/crates/spl-pod/spl-pod-0.7.4.crate",
+          "sha256": "4efaa79ec81a614ae4263c92481ba1444d01e5e1efcdaf92b7f48a5b1b3e282d"
+        }
+      },
+      "evidence": ["@text:0f9727ec53f48f34"]
+    }
+  },
+  "applicability": {
+    "spl-pod::primitives::PodU64::into_u64": {
+      "order": 399,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/other-sdk-functions.md#review-95da390aa988b6c1",
+          "conditions": [],
+          "evidence": ["@text:dd56f79120963327", "@text:d973fc8db61d3799"],
+          "id": "reviewed-0-5-1",
+          "items": [
+            {
+              "implementation": "spl_pod::primitives::<impl core::convert::From<spl_pod::primitives::PodU64> for u64>::from",
+              "item": "core::convert::From::from",
+              "releases": ["0.5.0", "0.5.1"],
+              "compatible_ranges": [{"lower": "0.5.0", "upper": "0.6.0"}]
+            }
+          ],
+          "releases": ["0.5.0", "0.5.1"],
+          "source": "spl-pod"
+        }
+      ]
+    },
+    "spl-pod::primitives::PodU16::into_u16": {
+      "order": 400,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/other-sdk-functions.md#review-2387a17d47ea4ad5",
+          "conditions": [],
+          "evidence": ["@text:dd56f79120963327", "@text:d973fc8db61d3799"],
+          "id": "reviewed-0-5-1",
+          "items": [
+            {
+              "implementation": "spl_pod::primitives::<impl core::convert::From<spl_pod::primitives::PodU16> for u16>::from",
+              "item": "core::convert::From::from",
+              "releases": ["0.5.0", "0.5.1"],
+              "compatible_ranges": [{"lower": "0.5.0", "upper": "0.6.0"}]
+            }
+          ],
+          "releases": ["0.5.0", "0.5.1"],
+          "source": "spl-pod"
+        }
+      ]
+    },
+    "spl-pod::optional_keys::OptionalNonZeroPubkey::into_option": {
+      "order": 482,
+      "profiles": [
+        {
+          "argument": "@review:source-notes/other-sdk-functions.md#review-31c138400add8692",
+          "conditions": ["@binding:04ca1585f63163ad", "@text:839425c02e1e75e4"],
+          "dependencies": [
+            {"package": "solana-pubkey", "reason": "@text:6be9ff6e3edf2b85", "releases": ["3.0.0"]},
+            {"package": "solana-address", "reason": "@text:8040e858f9e282e6", "releases": ["2.6.0"]}
+          ],
+          "evidence": ["@text:cb4a6e6327380b48", "@text:4e8cc05927368b94", "@text:417aab5c8ea15ac6"],
+          "id": "reviewed-0-7-3",
+          "items": [
+            {
+              "compatible_ranges": [{"lower": "0.7.1", "upper": "0.8.0"}],
+              "implementation": "spl_pod::optional_keys::<impl core::convert::From<spl_pod::optional_keys::OptionalNonZeroPubkey> for core::option::Option<solana_address::Address>>::from",
+              "item": "core::convert::From::from",
+              "releases": ["0.7.1", "0.7.3", "0.7.4"]
+            }
+          ],
+          "releases": ["0.7.1", "0.7.3", "0.7.4"],
+          "source": "spl-pod"
+        }
+      ]
+    }
+  }
+}

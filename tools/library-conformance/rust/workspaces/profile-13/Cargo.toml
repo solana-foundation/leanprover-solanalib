@@ -1,0 +1,30 @@
+# Copyright (c) 2026 Harmonic. All rights reserved.
+# Released under Apache 2.0 license as described in the file LICENSE.
+# Authors: Solanalib Contributors
+
+[workspace]
+resolver = "2"
+members = [
+  "../../anchor",
+  "../../anchor-spl-support-v102",
+  "../../instructions-3-4-0-bincode",
+  "../../token-interface-onchain",
+  "../../token-state-interface-2-1-0",
+]
+
+[profile.dev]
+panic = "unwind"
+
+[profile.abort]
+inherits = "dev"
+panic = "abort"
+
+[profile.wrapping]
+inherits = "dev"
+overflow-checks = false
+
+[profile.optimized]
+inherits = "dev"
+opt-level = 3
+debug-assertions = false
+overflow-checks = false

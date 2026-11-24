@@ -1,0 +1,16 @@
+# Direct calls of the published ordinary extern declarations. No runtime or
+# cryptographic implementation is linked; the shared test shim supplies replies.
+# The SDK has no dependencies. The other crates are the recorder and shim
+# used by this suite.
+
+[package]
+name = "conformance-raw-syscalls-5-2-0"
+version = "0.1.0"
+edition = "2021"
+publish = false
+workspace = "../workspaces/profile-03"
+
+[dependencies]
+conformance-recorder = { path = "../recorder" }
+conformance-shim = { path = "../shim" }
+solana-define-syscall = { version = "=5.2.0", default-features = false }
