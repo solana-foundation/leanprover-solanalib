@@ -4,7 +4,6 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Solanalib Contributors
 -/
 import Solanalib.SBPF.Interpreter
-import Std.Tactic.BVDecide
 
 /-!
 # SBPF.Verifier — static checks and the step-safety theorem
@@ -89,7 +88,10 @@ def verifyInstr (ins : BpfInstruction) (sv : SBPFV) : Bool :=
 
 /-- Sign-extending to 64 bits is zero exactly when the source is. -/
 @[simp] theorem signExtend64_eq_zero (i : U32) : i.signExtend 64 = 0 ↔ i = 0 := by
-  bv_decide
+  refine ⟨fun h => ?_, by rintro rfl; simp⟩
+  ext j hj
+  have := congrArg (·[j]'(by omega)) h
+  simpa [BitVec.getElem_signExtend, hj] using this
 
 /-- A non-`nok` ALU result keeps `step` out of the `err` state. -/
 theorem stepRegOutcome_ne_err {o : RegOutcome} {pc : U64} {m : Mem} {ss : StackState}

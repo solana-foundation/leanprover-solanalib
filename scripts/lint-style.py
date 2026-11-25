@@ -7,6 +7,11 @@ import sys
 from lean_source import code_only
 
 ROOT = Path(__file__).resolve().parent.parent
+# Packages whose axiom audit walks their tests. An `example` leaves no declaration,
+# so the audit cannot see its axioms; these packages name every test instead. The
+# check is here rather than in the audit because Lake replays a cached audit when
+# only an `example` changed: the module it imports compiles to the same bytes.
+NAMED_ONLY = (ROOT / 'packages' / 'solanalib-sbpf',)
 
 
 def lean_files(root=ROOT):
@@ -20,7 +25,7 @@ def lean_files(root=ROOT):
             yield from sorted((package / name).rglob('*.lean'))
 
 
-def violations(text):
+def violations(text, named_only=False):
     header = '\n'.join(text.splitlines()[:6])
     for pattern, message in (
         (r'^Copyright \(c\) [0-9]{4} .* All rights reserved\.$', 'missing copyright owner'),
@@ -38,6 +43,8 @@ def violations(text):
             yield line, "bare 'λ': use 'fun'"
         if re.search(r'(?<!\S)\$(?!\S)', body):
             yield line, "'$' application: use '<|' or '|>'"
+        if named_only and re.match(r'\s*example\b', body):
+            yield line, "'example' hides its axioms from the audit: name the theorem"
     # A module doc command is executable syntax; imports must precede it.
     docs = re.search(r'^/-!', text, re.M)
     imports = list(re.finditer(r'^(?:public )?(?:meta )?import(?: all)?\s', code, re.M))
@@ -49,7 +56,8 @@ def main():
     errors = 0
     paths = list(lean_files())
     for path in paths:
-        for line, message in violations(path.read_text()):
+        named_only = any(path.is_relative_to(package) for package in NAMED_ONLY)
+        for line, message in violations(path.read_text(), named_only):
             print(f'{path.relative_to(ROOT)}:{line}: {message}', file=sys.stderr)
             errors += 1
     if not errors:

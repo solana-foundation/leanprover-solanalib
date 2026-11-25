@@ -19,6 +19,13 @@ access widths.
 * `Solanalib.SBPF.Mem` — the byte-addressable address space.
 * `Solanalib.SBPF.loadv` — read a `Val` of a given width (`none` if unmapped).
 * `Solanalib.SBPF.storev` — write a `Val`, returning the updated memory.
+* `Solanalib.SBPF.chunkSize` — the number of bytes an access width covers.
+
+## Main statements
+* `Solanalib.SBPF.loadv_storev_same` — a load reads back what a store at the
+  same address and width wrote.
+* `Solanalib.SBPF.loadv_storev_disjoint` — a store leaves a load from a
+  disjoint range unchanged.
 -/
 
 namespace Solanalib.SBPF
@@ -126,5 +133,48 @@ def storev (mc : MemoryChunk) (m : Mem) (addr : U64) (v : Val) : Option Mem :=
             else m i
       | _ => none
   | _, _ => none
+
+/-- The number of bytes an access width covers. -/
+def chunkSize : MemoryChunk → U64
+  | .m8 => 1
+  | .m16 => 2
+  | .m32 => 4
+  | .m64 => 8
+
+/-- A load reads back what a store at the same address and width wrote. -/
+theorem loadv_storev_same {mc : MemoryChunk} {m m' : Mem} {a : U64} {v : Val}
+    (h : storev mc m a v = some m') : loadv mc m' a = some v := by
+  cases mc <;> cases v <;> simp [storev, u8ListOfU16, u8ListOfU32, u8ListOfU64] at h <;>
+    subst h <;> simp [loadv] <;> ext i hi <;>
+    simp only [BitVec.getElem_or, BitVec.getElem_shiftLeft, BitVec.getElem_setWidth,
+      BitVec.getLsbD_setWidth, BitVec.getLsbD_ushiftRight] <;>
+    rw [← BitVec.getLsbD_eq_getElem] <;>
+    rcases (by omega : i < 8 ∨ (8 ≤ i ∧ i < 16) ∨ (16 ≤ i ∧ i < 24) ∨ (24 ≤ i ∧ i < 32) ∨
+      (32 ≤ i ∧ i < 40) ∨ (40 ≤ i ∧ i < 48) ∨ (48 ≤ i ∧ i < 56) ∨ 56 ≤ i) with
+      h | ⟨h, h'⟩ | ⟨h, h'⟩ | ⟨h, h'⟩ | ⟨h, h'⟩ | ⟨h, h'⟩ | ⟨h, h'⟩ | h <;>
+    simp (disch := omega) [decide_eq_true, decide_eq_false, Nat.add_sub_cancel']
+
+/-- A store at `a` leaves a load at `b` unchanged when the two byte ranges are
+disjoint. Distances are taken modulo `2^64`, so ranges that wrap around the
+address space are covered without overflow side conditions. -/
+theorem loadv_storev_disjoint {ms ml : MemoryChunk} {m m' : Mem} {a b : U64} {v : Val}
+    (h : storev ms m a v = some m') (hab : chunkSize ms ≤ b - a)
+    (hba : chunkSize ml ≤ a - b) : loadv ml m' b = loadv ml m b := by
+  have hs : chunkSize ms ≤ 8 := by cases ms <;> decide
+  have hl : chunkSize ml ≤ 8 := by cases ml <;> decide
+  have hs0 : 0 < chunkSize ms := by cases ms <;> decide
+  have hl0 : 0 < chunkSize ml := by cases ml <;> decide
+  have key : ∀ i j : U64, i < chunkSize ms → j < chunkSize ml → (b + j = a + i) = False := by
+    intro i j hi hj
+    simp only [eq_iff_iff, iff_false]
+    intro e
+    bv_omega
+  have key0 : ∀ j : U64, j < chunkSize ml → (b + j = a) = False := fun j hj => by
+    simpa using key 0 j hs0 hj
+  have key1 : ∀ i : U64, i < chunkSize ms → (b = a + i) = False := fun i hi => by
+    simpa using key i 0 hi hl0
+  have key2 : (b = a) = False := by simpa using key0 0 hl0
+  cases ms <;> cases v <;> simp [storev, u8ListOfU16, u8ListOfU32, u8ListOfU64] at h <;>
+    subst h <;> cases ml <;> simp (disch := decide) [loadv, key, key0, key1, key2]
 
 end Solanalib.SBPF

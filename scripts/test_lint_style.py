@@ -35,6 +35,12 @@ def «λ» := 1
         self.assertTrue(self.messages('def f := λ x => x'))
         self.assertTrue(self.messages('def f := id $ 1'))
 
+    def test_example_is_rejected_where_tests_are_named(self):
+        body = '/-- `example` in prose. -/\ntheorem named : True := trivial\n'
+        self.assertEqual([m for _, m in lint.violations(HEADER + body, True)], [])
+        self.assertTrue([m for _, m in lint.violations(HEADER + 'example : True := trivial', True)])
+        self.assertEqual(self.messages('example : True := trivial'), [])
+
     def test_public_import_order_is_checked(self):
         self.assertTrue(self.messages('/-! Module. -/\npublic import Init\n'))
 

@@ -23,10 +23,10 @@ def programBytes : BpfBin :=
    149#8, 0#8, 0#8, 0#8, 0#8, 0#8, 0#8, 0#8]
 
 /-- The lifted bytes decode and run to `5`. -/
-example :
+theorem lifted_bytes_return_five :
     (match bpfInterp 8 programBytes
         (.ok 0 initRegMap initMem initStackState .v2 initFuncMap 0 8) true 0x100000000 with
       | .success v => v
-      | _ => 0) = 5 := by native_decide
+      | _ => 0) = 5 := by decide +kernel
 
 end SolanalibTest.SBPF.Lift
