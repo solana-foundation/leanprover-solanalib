@@ -41,4 +41,25 @@ theorem unmapped_load_rejected : (loadv .m32 initMem 0x1000).isNone := by decide
 /-- Storing a value whose tag does not match the access width fails. -/
 theorem width_mismatch_store_rejected : (storev .m32 initMem 0 (.vlong 5)).isNone := by decide
 
+/-! ## Frame rules -/
+
+/-- Writing one `u64` field leaves the next one unchanged, in any memory. -/
+theorem adjacent_u64_field_unchanged (m m' : Mem) (a x : U64)
+    (h : storev .m64 m a (.vlong x) = some m') :
+    loadv .m64 m' (a + 8) = loadv .m64 m (a + 8) :=
+  loadv_storev_disjoint h (by simp only [chunkSize]; bv_omega) (by simp only [chunkSize]; bv_omega)
+
+/-- The last 8 bytes of the address space and the first 8 are disjoint. -/
+theorem wrapped_ranges_disjoint (m m' : Mem) (x : U64)
+    (h : storev .m64 m 0xFFFFFFFFFFFFFFF8 (.vlong x) = some m') :
+    loadv .m64 m' 0 = loadv .m64 m 0 :=
+  loadv_storev_disjoint h (by decide) (by decide)
+
+/-- Negative control: a store at `2^64 - 4` wraps onto address 0 and changes the
+byte there, and the hypothesis of `loadv_storev_disjoint` rejects that store. -/
+theorem wrapping_store_overlaps :
+    (storev .m64 initMem 0xFFFFFFFFFFFFFFFC (.vlong 0x0123456789ABCDEF)).bind
+        (fun m => loadv .m8 m 0) ≠ loadv .m8 initMem 0 ∧
+      ¬ chunkSize .m64 ≤ 0 - 0xFFFFFFFFFFFFFFFC := by decide
+
 end SolanalibTest.SBPF.Memory
